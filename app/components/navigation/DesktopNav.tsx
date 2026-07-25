@@ -31,7 +31,7 @@ export const DesktopNav = ({
             key={link.label}
             className="relative"
             onMouseEnter={() => {
-              console.log('Hover on:', link.label); // Debug
+              console.log('Hover on:', link.label); 
               if (isServices) {
                 onServicesEnter();
               } else {
@@ -39,7 +39,7 @@ export const DesktopNav = ({
               }
             }}
             onMouseLeave={() => {
-              console.log('Leave from:', link.label); // Debug
+              console.log('Leave from:', link.label); 
               if (isServices) {
                 onServicesLeave();
               } else {
@@ -63,8 +63,6 @@ export const DesktopNav = ({
                 />
               )}
             </Link>
-
-            {/* ✅ FIXED: Show dropdown for all items except Services */}
             {link.dropdown && isActive && !isServices && (
               <DesktopDropdown items={link.dropdown} />
             )}

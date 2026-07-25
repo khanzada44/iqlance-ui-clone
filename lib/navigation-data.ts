@@ -1,4 +1,5 @@
 import { NavLink, ServicesData } from '@/types/navigation';
+import Link from "next/link";
 
 export const navLinks: NavLink[] = [
   {

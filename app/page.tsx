@@ -1,5 +1,5 @@
-import Image from "next/image";
+import Manepage from "@/app/components/pages/home/page"
 
 export default function Home() {
-  return <></>;
+  return <Manepage />;
 }

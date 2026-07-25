@@ -19,7 +19,7 @@ export const ServicesMegaDropdown = ({
 }: ServicesMegaDropdownProps) => {
   return (
     <div
-      className="absolute left-0 right-0 top-full block bg-white shadow-xl xl:block" // ✅ Fixed: removed hidden
+      className="absolute left-0 right-0 top-full block bg-white shadow-xl xl:block"
       onMouseEnter={() => {
         console.log('Mega dropdown - Enter');
         onMouseEnter();
