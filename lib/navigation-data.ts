@@ -9,7 +9,7 @@ export const navLinks: NavLink[] = [
     dropdown: [
       { label: "About Us", href: "/about", icon: "/icons/about.svg" },
       { label: "Engagement Model", href: "/engagement-model", icon: "/icons/engagement.svg"},
-      { label: "FAQ", href: "/faq", icon: "/icons/faq.svg" },
+      { label: "FAQ", href: "/faqs", icon: "/icons/faq.svg" },
       { label: "Why iQlance", href: "/why-iqlance", icon: "/icons/officeBuilding.svg" },
       { label: "Testimonials", href: "/testimonials", icon: "/icons/testimonials.svg" },
       { label: "Contact", href: "/contact", icon: "/icons/contact.svg" },

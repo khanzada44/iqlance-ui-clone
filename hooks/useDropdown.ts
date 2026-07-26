@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 
-const DROPDOWN_DELAY = 200; // ✅ Increased for better UX
+const DROPDOWN_DELAY = 200;
 
 export const useDropdown = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -34,7 +34,6 @@ export const useDropdown = () => {
     }
   }, []);
 
-  // ✅ FIXED: Manual setter with proper cleanup
   const setActive = useCallback((label: string | null) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
