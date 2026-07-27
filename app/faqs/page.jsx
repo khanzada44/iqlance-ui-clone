@@ -1,5 +1,5 @@
 import Faq from "../components/pages/faqs/page";
 
-export default function AboutPage() {
+export default function FaqPage() {
   return <Faq />;
 }
