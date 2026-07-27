@@ -145,9 +145,9 @@ export default function ourProcess() {
             </p>
           </div>
         </section>
-              <div className="mt-2 pt-2">
-                <ContactForm />
-              </div>
+        <div className="mt-2 pt-2">
+          <ContactForm />
+        </div>
       </div>
     </>
   );
