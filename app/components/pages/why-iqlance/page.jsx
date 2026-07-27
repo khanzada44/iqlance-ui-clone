@@ -168,7 +168,7 @@ export default function whyIqlance() {
         </section>
 
         <section className="max-w-7xl mx-auto px-6 py-2">
-          <p class="text-center text-gray-600 text-lg mb-3">
+          <p className="text-center text-gray-600 text-lg mb-3">
             Mobile app and web development solution under one roof
           </p>
 

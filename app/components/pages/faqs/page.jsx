@@ -41,20 +41,15 @@ export default function faqs() {
             development. Get in touch with us today. Let's collaborate to make
             your success a step forward.{" "}
           </p>
-          <div className="flex justify-center mt-12 gap-3">
-            <button className="bg-[#0C4A8A] hover:bg-[#083b70] text-white px-8 py-4 rounded-md text-s font-semibold flex items-center gap-3 transition">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
+            <button className="w-full sm:w-auto bg-[#0C4A8A] hover:bg-[#083b70] text-white px-8 py-4 rounded-md text-sm font-semibold flex items-center justify-center gap-3 transition">
               Contact Us
-              <span className="text-2xl">
-                {" "}
-                <ArrowRight size={14} />
-              </span>
+              <ArrowRight size={18} />
             </button>
-            <button className="bg-[#eef0f2] text-black px-10 py-4 rounded-md text-s font-semibold flex items-center gap-3 transition">
+
+            <button className="w-full sm:w-auto bg-[#eef0f2] hover:bg-gray-200 text-black px-8 py-4 rounded-md text-sm font-semibold flex items-center justify-center gap-3 transition">
               See Our Work
-              <span className="text-2xl">
-                {" "}
-                <ArrowRight size={14} />
-              </span>
+              <ArrowRight size={18} />
             </button>
           </div>
         </section>

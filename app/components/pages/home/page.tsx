@@ -77,36 +77,36 @@ export default function Home() {
                 </p>
               </div>
 
-<div className="pt-6 px-1 sm:px-4">
-  <ul className="flex flex-col sm:flex-row gap-4 sm:gap-6 font-bold">
-    <li>
-      <Link
-        href="/mobile-app"
-        className="underline hover:no-underline transition-all text-sm sm:text-base md:text-lg"
-      >
-        Mobile App
-      </Link>
-    </li>
+              <div className="pt-6 px-1 sm:px-4">
+                <ul className="flex flex-col sm:flex-row gap-4 sm:gap-6 font-bold">
+                  <li>
+                    <Link
+                      href="/mobile-app"
+                      className="underline hover:no-underline transition-all text-sm sm:text-base md:text-lg"
+                    >
+                      Mobile App
+                    </Link>
+                  </li>
 
-    <li>
-      <Link
-        href="/software-development"
-        className="underline hover:no-underline transition-all text-sm sm:text-base md:text-lg"
-      >
-        Software Development
-      </Link>
-    </li>
+                  <li>
+                    <Link
+                      href="/software-development"
+                      className="underline hover:no-underline transition-all text-sm sm:text-base md:text-lg"
+                    >
+                      Software Development
+                    </Link>
+                  </li>
 
-    <li>
-      <Link
-        href="/hire-developer"
-        className="underline hover:no-underline transition-all text-sm sm:text-base md:text-lg"
-      >
-        Hire Developer
-      </Link>
-    </li>
-  </ul>
-</div>
+                  <li>
+                    <Link
+                      href="/hire-developer"
+                      className="underline hover:no-underline transition-all text-sm sm:text-base md:text-lg"
+                    >
+                      Hire Developer
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-6">
                 <button className="flex items-center justify-center gap-3 bg-[#184A8C] hover:bg-[#143d74] text-white font-semibold text-sm sm:text-base px-5 sm:px-4 py-2 rounded-lg transition-all duration-300 w-full sm:w-auto">
