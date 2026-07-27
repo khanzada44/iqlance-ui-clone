@@ -165,7 +165,7 @@ export default function EngagementSection() {
 
             {/* Table */}
             <div className="mt-10 sm:mt-14 overflow-x-auto -mx-3 px-3 sm:mx-0 sm:px-0">
-              <table className="w-full min-w-[640px] border border-gray-300 text-center">
+              <table className="w-full min-w-160 border border-gray-300 text-center">
                 <thead>
                   <tr>
                     <th className="border border-gray-300 p-3 sm:p-6 bg-white w-40 sm:w-64">
@@ -175,7 +175,7 @@ export default function EngagementSection() {
                           alt="Logo"
                           width={100}
                           height={35}
-                          className="w-20 sm:w-[120px] h-auto"
+                          className="w-20 sm:w-30 h-auto"
                         />
                         <p className="mt-2 font-bold text-base sm:text-xl md:text-2xl">
                           Engagement Model
@@ -190,7 +190,7 @@ export default function EngagementSection() {
                           alt=""
                           width={35}
                           height={35}
-                          className="w-8 sm:w-[45px] h-auto"
+                          className="w-8 sm:w-11.25 h-auto"
                         />
                         <span className="mt-2 sm:mt-3 font-semibold text-xs sm:text-base">
                           Time and Material
@@ -205,7 +205,7 @@ export default function EngagementSection() {
                           alt=""
                           width={35}
                           height={35}
-                          className="w-8 sm:w-[45px] h-auto"
+                          className="w-8 sm:w-11.25 h-auto"
                         />
                         <span className="mt-2 sm:mt-3 font-semibold text-xs sm:text-base">
                           Fixed
@@ -220,7 +220,7 @@ export default function EngagementSection() {
                           alt=""
                           width={35}
                           height={35}
-                          className="w-8 sm:w-[45px] h-auto"
+                          className="w-8 sm:w-11.25 h-auto"
                         />
                         <span className="mt-2 sm:mt-3 font-semibold text-xs sm:text-base">
                           Dedicated
