@@ -26,7 +26,7 @@ export const navLinks: NavLink[] = [
     label: "Industry",
     href: "/industry",
     dropdown: [
-      { label: "Healthcare", href: "/services/web-development", icon: "/icons/healthcare.svg" },
+      { label: "Healthcare", href: "/services/healthcare", icon: "/icons/healthcare.svg" },
       { label: "Logistics", href: "/services/mobile-app", icon: "/icons/logistics.svg" },
       { label: "Wellness & Fitness", href: "/services/mobile-app", icon: "/icons/wellnessFitness.svg" },
       { label: "Real estate", href: "/services/mobile-app", icon: "/icons/realestate.svg" },
