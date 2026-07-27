@@ -12,7 +12,7 @@ export const navLinks: NavLink[] = [
       { label: "FAQ", href: "/faqs", icon: "/icons/faq.svg" },
       { label: "Why iQlance", href: "/why-iqlance", icon: "/icons/officeBuilding.svg" },
       { label: "Testimonials", href: "/testimonials", icon: "/icons/testimonials.svg" },
-      { label: "Contact", href: "/contact", icon: "/icons/contact.svg" },
+      { label: "Contact", href: "/contact-us", icon: "/icons/contact.svg" },
       { label: "Our Process", href: "/our-process", icon: "/icons/ourProcess.svg" },
       { label: "Careers", href: "/careers", icon: "/icons/careers.svg" },
     ],
