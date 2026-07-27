@@ -67,12 +67,9 @@ export default function About() {
         </section>
         <section className="py-14 bg-white">
           <div className="max-w-7xl mx-auto px-5">
-            {/* Heading */}
             <h2 className="text-3xl font-bold text-center">
               Trusted Custom Software, Web Mobile App Development Services
             </h2>
-
-            {/* Description */}
             <p className="max-w-4xl mx-auto mt-4 text-center text-[16px] leading-7 text-black">
               iQlance solutions is a leading Software, Web, & Mobile App
               Development Company with a extensive experience in crafting
@@ -80,8 +77,6 @@ export default function About() {
               excellent expertise of the industry followed by an well-planned
               approach to accelerate your business growth.
             </p>
-
-            {/* Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-7 mt-24">
               {stats.map((item, index) => {
                 const Icon = item.icon;
@@ -119,7 +114,6 @@ export default function About() {
         <section className="py-2 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              {/* Left Content */}
               <div>
                 <h2 className="text-[15px] md:text-[28px] font-bold leading-tight text-black">
                   You Need a Technology Partner, Not Just a Developer
@@ -169,7 +163,6 @@ export default function About() {
         </section>
         <section className="py-4 bg-white">
           <div className="max-w-6xl mx-auto px-5">
-            {/* Heading */}
             <h2 className="text-3xl font-bold text-center">Our Mission</h2>
 
             <p className="max-w-4xl mx-auto mt-4 text-center text-[16px] leading-7 text-gray-700">
@@ -179,8 +172,6 @@ export default function About() {
               design to solve complex business challenges and create measurable
               value for our clients.
             </p>
-
-            {/* Cards */}
             <div className="grid md:grid-cols-2 gap-5 mt-12">
               {missionData.map((item, index) => (
                 <div
@@ -209,12 +200,9 @@ export default function About() {
         </section>
         <section className="bg-white">
           <div className="max-w-7xl mx-auto px-5">
-            {/* Heading */}
             <h2 className="text-center text-4xl font-bold text-black">
               About iQlance
             </h2>
-
-            {/* Content */}
             <div className="max-w-6xl mx-auto mt-8 space-y-8">
               <p className="text-center text-[17px] leading-8 text-[#333]">
                 iQlance came into the existence with the aspirations to develop
@@ -242,8 +230,6 @@ export default function About() {
                 always dominates the position on App store and Play store.
               </p>
             </div>
-
-            {/* Image */}
             <div className="mt-12">
               <img
                 src="https://www.iqlance.com/wp-content/themes/iqlance/img/about-us-iqlance.jpg"
@@ -257,7 +243,6 @@ export default function About() {
         </section>
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-5">
-            {/* Heading */}
             <h2 className="text-4xl font-bold text-center">
               Frequently Asked Questions
             </h2>
@@ -268,7 +253,6 @@ export default function About() {
               a successful digital product.
             </p>
 
-            {/* FAQ */}
             <div className="mt-12 space-y-4">
               {faqs.map((faq, index) => (
                 <div
@@ -298,8 +282,6 @@ export default function About() {
                 </div>
               ))}
             </div>
-
-            {/* Bottom Section */}
             <div className="mt-20 text-center">
               <h3 className="text-4xl font-bold">
                 Have Something in Mind? Let's Talk
@@ -316,7 +298,7 @@ export default function About() {
           </div>
         </section>
         <div className="mb-2.5 pb-2">
-        <ContactForm />
+          <ContactForm />
         </div>
       </div>
     </>
