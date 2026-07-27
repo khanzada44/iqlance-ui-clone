@@ -88,7 +88,7 @@ export default function whyIqlance() {
             );
           })}
         </div>
-        <section class="max-w-7xl mx-auto px-6 py-16">
+        <section className="max-w-7xl mx-auto px-6 py-16">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 class="text-4xl font-bold text-gray-900 mb-2">
@@ -167,16 +167,16 @@ export default function whyIqlance() {
           </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-6 py-2">
+        <section className="max-w-7xl mx-auto px-6 py-2">
           <p class="text-center text-gray-600 text-lg mb-3">
             Mobile app and web development solution under one roof
           </p>
 
-          <h2 class="text-center text-4xl font-bold text-gray-900 mb-2">
+          <h2 className="text-center text-4xl font-bold text-gray-900 mb-2">
             Top App Development Company in Canada
           </h2>
 
-          <p class="max-w-5xl mx-auto text-center text-gray-700 text-lg leading-6 mb-3">
+          <p className="max-w-5xl mx-auto text-center text-gray-700 text-lg leading-6 mb-3">
             iQlance being the quickest growing Top Toronto mobile app
             development company, possesses the team of developers, designers,
             Testers, Business Developers, Marketers and much more. The
@@ -187,7 +187,7 @@ export default function whyIqlance() {
             with other mobile app development companies in Canada.
           </p>
 
-          <p class="max-w-5xl mx-auto text-center text-gray-700 text-lg leading-6 mb-3">
+          <p className="max-w-5xl mx-auto text-center text-gray-700 text-lg leading-6 mb-3">
             If you have an amazing idea for web or mobile app development, you
             can rely upon us to execute your idea. Our Top app developers in
             Canada understands the need of your mobile app and hence, develops
@@ -197,20 +197,20 @@ export default function whyIqlance() {
             industrial domain.
           </p>
 
-          <p class="text-center text-xl text-gray-800 mb-5">
+          <p className="text-center text-xl text-gray-800 mb-5">
             Latest technology features find a way into our daily business
             practices that helps us stand out.
           </p>
 
-          <div class="flex justify-center">
+          <div className="flex justify-center">
             <img
               src="https://www.iqlance.com/wp-content/themes/iqlance/img/top-company-whyus.jpg"
               alt="App Development"
-              class="w-full max-w-5xl rounded-lg shadow-lg object-cover"
+              className="w-full max-w-5xl rounded-lg shadow-lg object-cover"
             />
           </div>
         </section>
-        <section class="max-w-6xl mx-auto px-6 py-20">
+        <section className="max-w-6xl mx-auto px-6 py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <div

@@ -1,40 +1,40 @@
 export const services = [
-    {
-        image: "https://www.iqlance.com/wp-content/themes/iqlance/img/csd-icn.png.webp",
-        title: "Custom Software Development",
-        description:
-            "Build custom software solutions designed around your business processes, streamline operations, and accelerate growth with secure, scalable applications.",
-    },
-    {
-        image: "https://www.iqlance.com/wp-content/themes/iqlance/img/es-icn.png.webp",
-        title: "AI Development",
-        description:
-            "Develop advanced AI-powered solutions, including generative AI applications, AI agents, chatbots, and automation tools.",
-    },
-    {
-        image: "https://www.iqlance.com/wp-content/themes/iqlance/img/wd-icn.png.webp",
-        title: "Web Development",
-        description:
-            "Develop responsive, high-performing websites and web apps that strengthen your online presence.",
-    },
-    {
-        image: "https://www.iqlance.com/wp-content/themes/iqlance/img/mad-icn.png.webp",
-        title: "Mobile App Development",
-        description:
-            "Create engaging iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences.",
-    },
-    {
-        image: "https://www.iqlance.com/wp-content/uploads/2026/07/IT-staff-augmentation.png",
-        title: "IT Staff Augmentation",
-        description:
-            "Expand your development capabilities with experienced IT professionals who integrate seamlessly with your team.",
-    },
-    {
-        image: "https://www.iqlance.com/wp-content/uploads/2026/07/cloud-service-1.png",
-        title: "Cloud Consulting",
-        description:
-            "Optimize your cloud infrastructure with expert consulting services that improve scalability and security.",
-    },
+  {
+    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/csd-icn.png.webp",
+    title: "Custom Software Development",
+    description:
+      "Build custom software solutions designed around your business processes, streamline operations, and accelerate growth with secure, scalable applications.",
+  },
+  {
+    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/es-icn.png.webp",
+    title: "AI Development",
+    description:
+      "Develop advanced AI-powered solutions, including generative AI applications, AI agents, chatbots, and automation tools.",
+  },
+  {
+    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/wd-icn.png.webp",
+    title: "Web Development",
+    description:
+      "Develop responsive, high-performing websites and web apps that strengthen your online presence.",
+  },
+  {
+    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/mad-icn.png.webp",
+    title: "Mobile App Development",
+    description:
+      "Create engaging iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences.",
+  },
+  {
+    image: "https://www.iqlance.com/wp-content/uploads/2026/07/IT-staff-augmentation.png",
+    title: "IT Staff Augmentation",
+    description:
+      "Expand your development capabilities with experienced IT professionals who integrate seamlessly with your team.",
+  },
+  {
+    image: "https://www.iqlance.com/wp-content/uploads/2026/07/cloud-service-1.png",
+    title: "Cloud Consulting",
+    description:
+      "Optimize your cloud infrastructure with expert consulting services that improve scalability and security.",
+  },
 ];
 export const industries = [
   {
@@ -120,7 +120,7 @@ export const partners = [
     image: "https://www.iqlance.com/wp-content/themes/iqlance/img/goodfirm-logo.png.webp",
     alt: "GoodFirms",
   },
-    {
+  {
     id: 3,
     image: "https://www.iqlance.com/wp-content/themes/iqlance/img/g-rating-logo.png.webp",
     alt: "GESIA",
