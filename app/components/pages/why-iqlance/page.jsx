@@ -3,6 +3,7 @@ import Link from "next/link";
 import ContactForm from "../../contactForm/ContactForm";
 import { stats } from "../about-us/data";
 import { features } from "../why-iqlance/data";
+
 export default function whyIqlance() {
   return (
     <>
@@ -89,14 +90,14 @@ export default function whyIqlance() {
           })}
         </div>
         <section className="max-w-7xl mx-auto px-6 py-16">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 class="text-4xl font-bold text-gray-900 mb-2">
+              <h2 className="text-4xl font-bold text-gray-900 mb-2">
                 We as Trusted Partners
               </h2>
 
-              <p class="text-gray-700 text-lg leading-8 ">
-                <span class="font-semibold">
+              <p className="text-gray-700 text-lg leading-8 ">
+                <span className="font-semibold">
                   iQlance Solution as a leading Mobile App & Software
                   Development Company
                 </span>
@@ -104,7 +105,7 @@ export default function whyIqlance() {
                 innovating apps.
               </p>
 
-              <p class="text-gray-700 text-lg leading-8 ">
+              <p className="text-gray-700 text-lg leading-8 ">
                 We carry out thru research to understand exactly what your app
                 needs. We always push ourselves to deliver extremely trendy
                 products by making use of top-notch technologies. As one of the
@@ -113,45 +114,45 @@ export default function whyIqlance() {
                 process.
               </p>
 
-              <ul class="space-y-5">
-                <li class="flex items-center gap-3">
-                  <span class="text-blue-700 text-xl">&#8250;</span>
-                  <span class="text-lg font-medium text-gray-800">
+              <ul className="space-y-5">
+                <li className="flex items-center gap-3">
+                  <span className="text-blue-700 text-xl">&#8250;</span>
+                  <span className="text-lg font-medium text-gray-800">
                     Security of your App idea.
                   </span>
                 </li>
 
-                <li class="flex items-center gap-3">
-                  <span class="text-blue-700 text-xl">&#8250;</span>
-                  <span class="text-lg font-medium text-gray-800">
+                <li className="flex items-center gap-3">
+                  <span className="text-blue-700 text-xl">&#8250;</span>
+                  <span className="text-lg font-medium text-gray-800">
                     Fluent communication
                   </span>
                 </li>
 
-                <li class="flex items-center gap-3">
-                  <span class="text-blue-700 text-xl">&#8250;</span>
-                  <span class="text-lg font-medium text-gray-800">
+                <li className="flex items-center gap-3">
+                  <span className="text-blue-700 text-xl">&#8250;</span>
+                  <span className="text-lg font-medium text-gray-800">
                     Transparent App Development
                   </span>
                 </li>
 
-                <li class="flex items-center gap-3">
-                  <span class="text-blue-700 text-xl">&#8250;</span>
-                  <span class="text-lg font-medium text-gray-800">
+                <li className="flex items-center gap-3">
+                  <span className="text-blue-700 text-xl">&#8250;</span>
+                  <span className="text-lg font-medium text-gray-800">
                     App Design Verification before Approval
                   </span>
                 </li>
 
-                <li class="flex items-center gap-3">
-                  <span class="text-blue-700 text-xl">&#8250;</span>
-                  <span class="text-lg font-medium text-gray-800">
+                <li className="flex items-center gap-3">
+                  <span className="text-blue-700 text-xl">&#8250;</span>
+                  <span className="text-lg font-medium text-gray-800">
                     On-Time App Delivery
                   </span>
                 </li>
 
-                <li class="flex items-center gap-3">
-                  <span class="text-blue-700 text-xl">&#8250;</span>
-                  <span class="text-lg font-medium text-gray-800">
+                <li className="flex items-center gap-3">
+                  <span className="text-blue-700 text-xl">&#8250;</span>
+                  <span className="text-lg font-medium text-gray-800">
                     App Quality is Assured
                   </span>
                 </li>
@@ -161,7 +162,7 @@ export default function whyIqlance() {
               <img
                 src="https://www.iqlance.com/wp-content/themes/iqlance/img/part-b-whyus.jpg"
                 alt="Trusted Partners"
-                class="w-full h-auto object-cover shadow-lg"
+                className="w-full h-auto object-cover shadow-lg"
               />
             </div>
           </div>
