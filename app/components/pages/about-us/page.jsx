@@ -77,38 +77,33 @@ export default function About() {
               excellent expertise of the industry followed by an well-planned
               approach to accelerate your business growth.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-7 mt-24">
-              {stats.map((item, index) => {
-                const Icon = item.icon;
-
-                return (
-                  <div
-                    key={index}
-                    className="relative h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
-                  >
-                    {/* Floating Icon */}
-                    <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
-                      <img
-                        src={item.icon}
-                        size={44}
-                        strokeWidth={1.5}
-                        className="text-[#4B5563]"
-                      />
-                    </div>
-
-                    <h3 className="text-[46px] font-bold text-[#3B3F4A] leading-none">
-                      {item.value}
-                    </h3>
-
-                    <p className="mt-3 text-[20px] leading-[1.6] text-black">
-                      {item.line1}
-                      <br />
-                      {item.line2}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
+                <div className="flex flex-wrap justify-center gap-7 mt-24">
+                         {stats.map((item, index) => (
+                           <div
+                             key={index}
+                             className="relative w-full sm:w-70 lg:w-55 h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
+                           >
+                             {/* Floating Icon */}
+                             <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                               <img
+                                 src={item.icon}
+                                 alt=""
+                                 className="w-11 h-11 object-contain"
+                               />
+                             </div>
+           
+                             <h3 className="text-lg font-bold text-black leading-none">
+                               {item.value}
+                             </h3>
+           
+                             <p className="mt-3 text-lg leading-none text-black">
+                               {item.line1}
+                               <br />
+                               {item.line2}
+                             </p>
+                           </div>
+                         ))}
+                       </div>
           </div>
         </section>
         <section className="py-2 bg-white">
