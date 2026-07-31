@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
@@ -15,7 +15,9 @@ import {
   partners,
   servicesData,
   processSteps,
-  processSteps2,
+  
+  slides,
+  portfolioSlides
 } from "../home/services-data";
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -23,7 +25,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 export default function Home() {
   return (
     <>
-      <div className="w-[92%] sm:w-[90%] mx-auto">
+      <div className="w-[90%] sm:w-[90%] mx-auto">
         {/* HERO */}
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12">
           <div className="max-w-6xl mx-auto px-2 sm:px-4 py-6 sm:py-8 font-sans lg:w-1/2">
@@ -49,29 +51,41 @@ export default function Home() {
             </p>
 
             <div>
-              <div className="flex items-start gap-2 pt-4 md:pt-6">
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1" />
+              <div className="flex items-center gap-2 pt-4 md:pt-6">
+                <ChevronRight
+                  size={14}
+                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
+                />
                 <p className="text-black text-sm sm:text-base md:text-lg font-medium leading-relaxed">
                   Industry Specific Dedicated Developers
                 </p>
               </div>
 
-              <div className="flex items-start gap-2 pt-4 md:pt-6">
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1" />
+              <div className="flex items-center gap-2 pt-4 md:pt-6">
+                <ChevronRight
+                  size={14}
+                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
+                />
                 <p className="text-black text-sm sm:text-base md:text-lg font-medium leading-relaxed">
                   Customized App with Affordable Price
                 </p>
               </div>
 
-              <div className="flex items-start gap-2 pt-4 md:pt-6">
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1" />
+              <div className="flex items-center gap-2 pt-4 md:pt-6">
+                <ChevronRight
+                  size={14}
+                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
+                />
                 <p className="text-black text-sm sm:text-base md:text-lg font-medium leading-relaxed">
                   Provide Risk-Free Trial for 1 Week
                 </p>
               </div>
 
-              <div className="flex items-start gap-2 pt-4 md:pt-6">
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1" />
+              <div className="flex items-center gap-2 pt-4 md:pt-6">
+                <ChevronRight
+                  size={14}
+                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
+                />
                 <p className="text-black text-sm sm:text-base md:text-lg font-medium leading-relaxed">
                   Flexible Engagement Models
                 </p>
@@ -109,14 +123,20 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-6">
-                <button className="flex items-center justify-center gap-3 bg-[#184A8C] hover:bg-[#143d74] text-white font-semibold text-sm sm:text-base px-5 sm:px-4 py-2 rounded-lg transition-all duration-300 w-full sm:w-auto">
-                  <span>Schedule Your Free Consultation</span>
-                  <ArrowRight size={20} />
+                <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                  Schedule Your Free Consultation
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
                 </button>
 
-                <button className="flex items-center justify-center gap-3 bg-white border border-gray-300 hover:border-[#184A8C] hover:text-[#184A8C] text-black font-semibold text-sm sm:text-base px-4 sm:px-4 py-2 rounded-lg transition-all duration-300 w-full sm:w-auto">
-                  <span>Our work</span>
-                  <ArrowRight size={20} />
+                <button className="group w-full sm:w-auto border border-gray-300 hover:border-[#184A8B] px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                  Our work
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
                 </button>
               </div>
             </div>
@@ -134,18 +154,28 @@ export default function Home() {
         {/* STATS BAR */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 border-y border-gray-200">
           <div className="text-center flex flex-col items-center justify-center">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
-              96%
-            </p>
+            <div className="flex items-end gap-1">
+              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
+                96
+              </p>
+              <span>%</span>
+            </div>
             <p className="text-xs sm:text-sm text-gray-600 font-medium">
               Client Retention
             </p>
           </div>
 
           <div className="text-center flex flex-col items-center justify-center">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
+            {/* <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
               19+
             </p>
+          */}
+            <div className="flex items-end gap-1">
+              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
+                19
+              </p>
+              <span>+</span>
+            </div>
             <p className="text-xs sm:text-sm text-gray-600 font-medium">
               SaaS Built
             </p>
@@ -176,18 +206,26 @@ export default function Home() {
           </div>
 
           <div className="text-center flex flex-col items-center justify-center">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
-              15+
-            </p>
+            <div className="flex items-end gap-1">
+              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
+                15
+              </p>
+              <span>+</span>
+            </div>
+
             <p className="text-xs sm:text-sm text-gray-600 font-medium">
               Industries
             </p>
           </div>
 
           <div className="text-center flex flex-col items-center justify-center col-span-2 sm:col-span-1">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
-              24+
-            </p>
+            <div className="flex items-end gap-1">
+              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
+                24
+              </p>
+              <span>Hrs</span>
+            </div>
+
             <p className="text-xs sm:text-sm text-gray-600 font-medium">
               Project Start
             </p>
@@ -196,211 +234,77 @@ export default function Home() {
 
         {/* SWIPER 1 */}
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          navigation
+          modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 30000 }}
-          loop
+          autoplay={{ delay: 300000 }}
+          loop={true}
         >
-          <SwiperSlide>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start px-1">
-              <div>
-                <h2 className="text-lg sm:text-xl font-bold text-black mb-4 sm:mb-5">
-                  Deliver Mobile App and Software Development Services Across
-                  the USA
-                </h2>
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start px-1">
+                {/* Left */}
+                <div>
+                  <h2 className="mt-8 text-2xl font-bold leading-snug">
+                    {slide.title}
+                  </h2>
 
-                <p className="text-gray-700 leading-6 text-xs sm:text-sm">
-                  iQlance delivers innovative software development and app
-                  development services all over the USA. We offer design-led
-                  agile development solutions for customers in North America,
-                  including startups, SMEs, established corporations, and
-                  non-profit organizations.
-                </p>
-
-                <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-10 mt-3 text-xs sm:text-sm">
-                  By partnering with iQlance, clients can expect to work with a
-                  staff that pays close attention to detail. Together, we
-                  transform your app idea into a scalable, user-focused
-                  solution.
-                </p>
-
-                <div className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8 m-0">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      Mobile App Development
-                    </h3>
-                    <ul className="list-disc pl-5 space-y-2 text-sm">
-                      <li className="m-0">iOS App Development</li>
-                      <li className="m-0">Android App Development</li>
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8 m-0">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      Website Development
-                    </h3>
-                    <ul className="list-disc pl-5 text-sm">
-                      <li className="m-0">
-                        React, Angular, WordPress, and more
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8 m-0">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      Software Development
-                    </h3>
-                    <ul className="list-disc pl-5 text-sm">
-                      <li className="m-0">
-                        .NET, Java, PHP, Node.js, and more
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8 m-0">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      Cloud Consulting
-                    </h3>
-                    <ul className="list-disc pl-5 text-sm">
-                      <li className="m-0">Unity, Cocos 2D, Virtual Reality</li>
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      AI Development
-                    </h3>
-                    <ul className="list-disc pl-5 text-sm">
-                      <li className="m-0">
-                        OpenAI, Azure AI, Generative AI, AI Agents
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-center lg:items-start">
-                <img
-                  src="https://www.iqlance.com/wp-content/uploads/2024/10/app-development-comapny-canada.png.webp"
-                  alt=""
-                  className="w-full max-w-xs sm:max-w-sm md:max-w-md"
-                />
-
-                <div className="mt-6 sm:mt-8 w-full text-center lg:text-left">
-                  <h3 className="text-lg sm:text-xl font-bold text-[#184A8B] leading-snug">
-                    Schedule a free consultation today with Project Manager.
-                  </h3>
-                  <p className="text-gray-600 mt-2 text-sm sm:text-base">
-                    (We sign NDA)
+                  <p className="text-black leading-6 text-xs sm:text-sm mt-3">
+                    {slide.description1}
                   </p>
-                  <button className="mt-4 bg-[#184A8B] text-white px-6 py-2 rounded-md hover:bg-[#133b70] transition justify-center items-center gap-1.5 flex mx-auto lg:mx-0 w-full sm:w-auto">
-                    Let's Talk <ArrowRight size={16} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
 
-          <SwiperSlide>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start px-1">
-              <div>
-                <h2 className="text-lg sm:text-xl font-bold text-black mb-4 sm:mb-5">
-                  Deliver Mobile App and Software Development Services Across
-                  the USA
-                </h2>
-
-                <p className="text-gray-700 leading-6 text-xs sm:text-sm">
-                  iQlance delivers innovative software development and app
-                  development services all over the USA. We offer design-led
-                  agile development solutions for customers in North America,
-                  including startups, SMEs, established corporations, and
-                  non-profit organizations.
-                </p>
-
-                <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-10 mt-3 text-xs sm:text-sm">
-                  By partnering with iQlance, clients can expect to work with a
-                  staff that pays close attention to detail. Together, we
-                  transform your app idea into a scalable, user-focused
-                  solution.
-                </p>
-
-                <div className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8 m-0">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      Mobile App Development
-                    </h3>
-                    <ul className="list-disc pl-5 space-y-2 text-sm">
-                      <li className="m-0">iOS App Development</li>
-                      <li className="m-0">Android App Development</li>
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8 m-0">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      Website Development
-                    </h3>
-                    <ul className="list-disc pl-5 text-sm">
-                      <li className="m-0">
-                        React, Angular, WordPress, and more
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8 m-0">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      Software Development
-                    </h3>
-                    <ul className="list-disc pl-5 text-sm">
-                      <li className="m-0">
-                        .NET, Java, PHP, Node.js, and more
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8 m-0">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      Cloud Consulting
-                    </h3>
-                    <ul className="list-disc pl-5 text-sm">
-                      <li className="m-0">Unity, Cocos 2D, Virtual Reality</li>
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8">
-                    <h3 className="font-bold text-[#184A8B] text-sm">
-                      AI Development
-                    </h3>
-                    <ul className="list-disc pl-5 text-sm">
-                      <li className="m-0">
-                        OpenAI, Azure AI, Generative AI, AI Agents
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-center lg:items-start">
-                <img
-                  src="https://www.iqlance.com/wp-content/uploads/2024/10/app-development-comapny-canada.png.webp"
-                  alt=""
-                  className="w-full max-w-xs sm:max-w-sm md:max-w-md"
-                />
-
-                <div className="mt-6 sm:mt-8 w-full text-center lg:text-left">
-                  <h3 className="text-lg sm:text-xl font-bold text-[#184A8B] leading-snug">
-                    Schedule a free consultation today with Project Manager.
-                  </h3>
-                  <p className="text-gray-600 mt-2 text-sm sm:text-base">
-                    (We sign NDA)
+                  <p className="text-black leading-[revert] sm:leading-8 mb-6 sm:mb-10 mt-3 text-xs sm:text-sm">
+                    {slide.description2}
                   </p>
-                  <button className="mt-4 bg-[#184A8B] text-white px-6 py-2 rounded-md hover:bg-[#133b70] transition justify-center items-center gap-1.5 flex mx-auto lg:mx-0 w-full sm:w-auto">
-                    Let's Talk <ArrowRight size={16} />
+
+              <div className="space-y-5">
+              {slide.services.map((service, i) => (
+                <div
+                  key={i}
+                  className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-1 md:gap-8"
+                >
+                  <span className="text-[#02449a] text-1xl font-extrabold">
+                    {service.title}
+                  </span>
+
+                  <ul className="list-disc pl-5 text-sm space-y-2">
+                    {service.items.map((item, j) => (
+                      <li key={j}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+                </div>
+
+                {/* Right */}
+                <div className="flex flex-col items-center lg:items-start">
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="w-full max-w-xs sm:max-w-sm md:max-w-md"
+                  />
+
+                  <div className="mt-6 sm:mt-8 w-full text-center lg:text-left">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#184A8B] leading-snug">
+                      {slide.consultation}
+                    </h3>
+
+                    <p className="text-gray-600 mt-2 text-sm sm:text-base">
+                      (We sign NDA)
+                    </p>
+
+                  <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer mt-2">
+                    Let's Talk
+                    <ArrowRight
+                      size={16}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
                   </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
         </Swiper>
 
         {/* TRAVIS SECTION */}
@@ -434,7 +338,7 @@ export default function Home() {
               </p>
 
               <div className="mt-6 sm:mt-8 flex justify-center lg:justify-start">
-                <button className="border border-black rounded-md px-4 sm:px-6 py-3 text-base sm:text-xl font-semibold hover:bg-gray-100 transition flex gap-1.5 items-center w-full sm:w-auto justify-center">
+                <button className="border border-black px-4 sm:px-6 py-3 text-base sm:text-xl font-semibold hover:bg-gray-100 transition flex gap-1.5 items-center w-full sm:w-auto justify-center">
                   <img
                     src="https://www.iqlance.com/wp-content/themes/iqlance/img/phone-icon.svg"
                     alt=""
@@ -444,9 +348,13 @@ export default function Home() {
               </div>
 
               <div className="mt-4 sm:mt-5 flex justify-center lg:justify-start">
-                <button className="bg-[#184A8B] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#123b72] transition justify-center items-center gap-1.5 flex w-full sm:w-auto">
-                  Schedule a Free Consultation <ArrowRight size={16} />
-                </button>
+                <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                    Schedule a Free Consultation 
+                    <ArrowRight
+                      size={18}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </button>
               </div>
 
               <div className="flex gap-6 sm:gap-8 mt-8 sm:mt-10 text-2xl sm:text-3xl text-[#184A8B] justify-center lg:justify-start">
@@ -506,237 +414,66 @@ export default function Home() {
 
         {/* SWIPER 2 - CASE STUDIES */}
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          navigation
+          modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 30000 }}
-          loop
+          autoplay={{ delay: 300000 }}
+          loop={true}
         >
-          <SwiperSlide>
-            <div className="bg-[#F2F1FF] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-10">
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-                Endeavors that Make us Proud
-              </h2>
+    {portfolioSlides.map((slide, index) => (
+  <SwiperSlide key={index}>
+    <div className="bg-[#F2F1FF] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-10">
+      <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
+        {slide.heading}
+      </h2>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                <div>
-                  <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                    Supply Chain Management App
-                  </h3>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+        <div>
+          <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
+            {slide.title}
+          </h3>
 
-                  <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                    Embark on a transformative journey with the chain supply
-                    management app, an advanced application designed to
-                    modernize operations and streamline B2B transactions.
-                    Overcoming challenges of data integration and user-friendly
-                    design, this app redefines efficiency and security in B2B
-                    platforms.
-                  </p>
+          <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+            {slide.description}
+          </p>
 
-                  <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                    <li>› Global Chemical Procurement Hub</li>
-                    <li>› Diverse Industry Representation</li>
-                    <li>› Innovation and Experience</li>
-                  </ul>
+          <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
+            {slide.features.map((feature, i) => (
+              <li key={i}>› {feature}</li>
+            ))}
+          </ul>
 
-                  <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/themes/iqlance/img/technologies-ios-icn.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">iOS</p>
-                    </div>
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/themes/iqlance/img/android-technologies-icn.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">Android</p>
-                    </div>
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">SQL</p>
-                    </div>
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/uploads/2024/08/Flutter.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">Flutter</p>
-                    </div>
-                  </div>
-
-                  <button className="bg-[#184A8B] text-white px-6 sm:px-8 py-3 rounded-md hover:bg-[#123c73] transition flex items-center gap-2 w-full sm:w-auto justify-center">
-                    View Case Study <ArrowRight size={22} />
-                  </button>
-                </div>
-
-                <div className="flex justify-center">
-                  <img
-                    src="https://www.iqlance.com/wp-content/uploads/2024/08/chain-supply-management.png.webp"
-                    alt=""
-                    className="w-full max-w-xs sm:max-w-sm"
-                  />
-                </div>
+          <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
+            {slide.technologies.map((tech, i) => (
+              <div key={i} className="text-center">
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
+                />
+                <p className="text-xs sm:text-sm mt-2">{tech.name}</p>
               </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="bg-[#F2F1FF] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-10">
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-                Endeavors that Make us Proud
-              </h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                <div>
-                  <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                    Supply Chain Management App
-                  </h3>
-
-                  <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                    Embark on a transformative journey with the chain supply
-                    management app, an advanced application designed to
-                    modernize operations and streamline B2B transactions.
-                    Overcoming challenges of data integration and user-friendly
-                    design, this app redefines efficiency and security in B2B
-                    platforms.
-                  </p>
-
-                  <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                    <li>› Global Chemical Procurement Hub</li>
-                    <li>› Diverse Industry Representation</li>
-                    <li>› Innovation and Experience</li>
-                  </ul>
-
-                  <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/themes/iqlance/img/technologies-ios-icn.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">iOS</p>
-                    </div>
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/themes/iqlance/img/android-technologies-icn.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">Android</p>
-                    </div>
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">SQL</p>
-                    </div>
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/themes/iqlance/img/laravel-technologies-icn.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">laravel</p>
-                    </div>
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/uploads/2024/08/React.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">React Native</p>
-                    </div>
-                  </div>
-
-                  <button className="bg-[#184A8B] text-white px-6 sm:px-8 py-3 rounded-md hover:bg-[#123c73] transition flex items-center gap-2 w-full sm:w-auto justify-center">
-                    View Case Study <ArrowRight size={22} />
-                  </button>
-                </div>
-
-                <div className="flex justify-center">
-                  <img
-                    src="https://www.iqlance.com/wp-content/uploads/2024/08/image_2024_08_05T07_26_10_247Z.png.webp"
-                    alt=""
-                    className="w-full max-w-xs sm:max-w-sm"
+            ))}
+          </div>
+           <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                  View Case Study
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
                   />
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
+              </button>
+        </div>
 
-          <SwiperSlide>
-            <div className="bg-[#F2F1FF] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-10">
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-                Endeavors that Make us Proud
-              </h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                <div>
-                  <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                    Supply Chain Management App
-                  </h3>
-
-                  <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                    Embark on a transformative journey with the chain supply
-                    management app, an advanced application designed to
-                    modernize operations and streamline B2B transactions.
-                    Overcoming challenges of data integration and user-friendly
-                    design, this app redefines efficiency and security in B2B
-                    platforms.
-                  </p>
-
-                  <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                    <li>› Global Chemical Procurement Hub</li>
-                    <li>› Diverse Industry Representation</li>
-                    <li>› Innovation and Experience</li>
-                  </ul>
-
-                  <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">SQL</p>
-                    </div>
-                    <div className="text-center">
-                      <img
-                        src="https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp"
-                        className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                        alt=""
-                      />
-                      <p className="text-xs sm:text-sm mt-2">Azur</p>
-                    </div>
-                  </div>
-
-                  <button className="bg-[#184A8B] text-white px-6 sm:px-8 py-3 rounded-md hover:bg-[#123c73] transition flex items-center gap-2 w-full sm:w-auto justify-center">
-                    View Case Study <ArrowRight size={22} />
-                  </button>
-                </div>
-
-                <div className="flex justify-center">
-                  <img
-                    src="https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp"
-                    alt=""
-                    className="w-full max-w-xs sm:max-w-sm"
-                  />
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
+        <div className="flex justify-center">
+          <img
+            src={slide.image}
+            alt={slide.title}
+            className="w-full max-w-xs sm:max-w-sm"
+          />
+        </div>
+      </div>
+    </div>
+  </SwiperSlide>
+))}
         </Swiper>
 
         {/* CHECK PRODUCT SECTION */}
@@ -757,11 +494,12 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center">
-              <button className="bg-[#184A8B] hover:bg-[#143d74] transition text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-md flex items-center gap-3 w-full sm:w-auto justify-center">
-                Schedule a free consultation
-                <span className="text-xl">
-                  <ArrowRight size={22} />
-                </span>
+               <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                   Schedule a free consultation
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
               </button>
             </div>
           </div>
@@ -920,7 +658,7 @@ export default function Home() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center">
             Our Design and Development Approach
           </h1>
-          <p className="max-w-5xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base">
+          <p className="max-w-5xl mx-auto text-center text-black mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base font-semibold">
             Every successful digital solution starts with a clear strategy and a
             structured process. Whether you're building a mobile app, custom
             software, web application, or AI-powered solution, we follow a
@@ -931,80 +669,57 @@ export default function Home() {
         </div>
 
         {/* PROCESS STEPS */}
-        <section className="py-10 sm:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-3 sm:px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
-              {processSteps.map((step) => (
-                <div
-                  key={step.id}
-                  className="relative bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 pt-14 sm:pt-8 hover:shadow-lg transition"
-                >
-                  <div className="absolute -top-5 right-6 w-16 h-16 sm:w-24 sm:h-24 bg-white border border-[#184A8B] rounded-2xl flex items-center justify-center">
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      className="w-9 h-9 sm:w-14 sm:h-14 object-contain"
-                    />
-                  </div>
+<section className="py-10 sm:py-14 lg:py-16 bg-white overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4">
 
-                  <div className="flex items-start gap-4 sm:gap-5 mt-4 sm:mt-8">
-                    <div className="w-10 h-10 sm:w-14 sm:h-14 border border-[#184A8B] rounded-xl flex items-center justify-center text-lg sm:text-2xl font-bold shrink-0">
-                      {step.id}
-                    </div>
-                    <h3 className="text-lg sm:text-2xl font-bold leading-tight">
-                      {step.title}
-                    </h3>
-                  </div>
+    {/* Connector Line - Desktop Only */}
+    <div className="hidden xl:flex justify-center mb-8">
+      <img
+        src="https://www.iqlance.com/wp-content/uploads/2024/10/line-pink-1.png.webp"
+        alt=""
+        className="relative xl:right-69.25 xl:-bottom-8.25"
+      />
+    </div>
 
-                  <p className="mt-6 sm:mt-10 text-gray-700 text-sm sm:text-lg md:text-xl leading-7 sm:leading-10">
-                    {step.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PROCESS STEPS 2 */}
-        <section className="relative py-4 sm:py-5 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 relative">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+      {processSteps.map((step) => (
+        <div
+          key={step.id}
+          className="group relative border border-gray-200 rounded-3xl sm:rounded-[30px] bg-white pt-16 sm:pt-20 pb-6 sm:pb-8 px-5 sm:px-8 hover:shadow-xl transition-all duration-300 mb-10"
+        >
+          {/* Floating Icon */}
+          <div className="absolute -top-8 sm:-top-10 right-5 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24  border-2 border-gray-300  rounded-2xl flex items-center justify-center transition-all duration-300">
             <img
-              src="https://www.iqlance.com/wp-content/uploads/2024/10/line-grey-2.png.webp"
-              alt=""
-              className="hidden xl:block absolute top-0 left-1/2 -translate-x-1/2 w-[95%] -z-10"
+              src={step.image}
+              alt={step.title}
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 object-contain"
             />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 relative z-10">
-              {processSteps2.map((step) => (
-                <div
-                  key={step.id}
-                  className="relative bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 pt-14 sm:pt-16 hover:shadow-lg transition"
-                >
-                  <div className="absolute -top-5 right-6 w-16 h-16 sm:w-24 sm:h-24 bg-white border border-[#184A8B] rounded-2xl flex items-center justify-center">
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      className="w-9 h-9 sm:w-14 sm:h-14 object-contain"
-                    />
-                  </div>
-
-                  <div className="flex gap-4 sm:gap-5 items-start">
-                    <div className="w-10 h-10 sm:w-14 sm:h-14 border border-[#184A8B] rounded-xl flex items-center justify-center text-lg sm:text-2xl font-bold shrink-0">
-                      {step.id}
-                    </div>
-                    <h3 className="text-lg sm:text-2xl font-bold leading-tight">
-                      {step.title}
-                    </h3>
-                  </div>
-
-                  <p className="mt-5 sm:mt-8 text-gray-700 text-sm sm:text-lg leading-7 sm:leading-9">
-                    {step.description}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
-        </section>
+
+          <div className="flex items-start gap-3 sm:gap-5">
+            {/* Number Box */}
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 group-hover:bg-[#184A8B] rounded-tr-2xl rounded-br-2xl flex items-center justify-center shrink-0 transition-all duration-300">
+              <span className=" group-hover:text-white text-xl sm:text-2xl font-bold">
+                {step.id}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold leading-tight text-black transition-colors duration-300">
+              {step.title}
+            </h3>
+          </div>
+
+          {/* Description */}
+          <p className="mt-5 sm:mt-8 text-sm sm:text-base text-[#555] leading-7 sm:leading-8 font-semibold transition-colors duration-300">
+            {step.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* INDUSTRIES */}
         <section className="py-10 sm:py-16">

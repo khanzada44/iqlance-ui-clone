@@ -218,11 +218,8 @@ export const processSteps = [
     image:
       "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-3.svg",
   },
-];
-
-export const processSteps2 = [
   {
-    id: 6,
+    id: 4,
     title: "Maintenance and Upgrades",
     description:
       "Our partnership continues beyond deployment. We provide ongoing maintenance, performance monitoring, security updates, bug fixes, and feature enhancements to keep your digital solution optimized, secure, and ready to scale as your business grows.",
@@ -233,16 +230,220 @@ export const processSteps2 = [
     id: 5,
     title: "Deployment",
     description:
-      "After successful testing, we deploy your application, software, or website to the appropriate production environment. Whether it's a cloud platform, enterprise server, web hosting environment, or mobile app store, we ensure a secure, seamless, and well-monitored launch.",
+      "After successful testing, we deploy your application, software, or website to the appropriate production environment. Whether it’s a cloud platform, enterprise server, web hosting environment, or mobile app store, we ensure a secure, seamless, and well-monitored launch.",
     image:
       "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-5.svg",
   },
   {
-    id: 4,
+    id: 6,
     title: "Quality Assurance",
     description:
       "Our QA team performs comprehensive testing to verify functionality, usability, security, compatibility, and performance. Multiple testing cycles, including automated and manual testing, ensure your solution works reliably across different devices, browsers, and operating environments before deployment.",
     image:
       "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-6.svg",
   },
+];
+
+
+export const slides = [
+  {
+    title: "Deliver Mobile App and Software Development Services Across the USA",
+    description1:
+      "iQlance delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs.",
+    description2:
+      "By partnering with iQlance, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today’s competitive app marketplace.",
+
+    services: [
+      {
+        title: "Mobile App Development",
+        items: ["iOS App Development", "Android App Development"],
+      },
+      {
+        title: "Website Development",
+        items: ["React, Angular, WordPress, and more"],
+      },
+      {
+        title: "Software Development",
+        items: [".NET, Java, PHP, Node.js, and more"],
+      },
+      {
+        title: "Cloud Consulting",
+        items: ["Unity, Cocos 2D, Virtual Reality"],
+      },
+      {
+        title: "AI Development",
+        items: ["OpenAI, Azure AI, Generative AI, AI Agents"],
+      },
+    ],
+
+    image:
+      "https://www.iqlance.com/wp-content/uploads/2024/10/app-development-comapny-canada.png.webp",
+
+    consultation:
+      "Schedule a free consultation today with Project Manager.",
+  },
+
+  // Dusri slide
+  {
+  title: "Deliver Mobile App and Software Development Services Across the USA",
+
+  description1:
+    "iQlance delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs.",
+
+  description2:
+    "By partnering with iQlance, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
+
+  services: [
+    {
+      title: "Mobile App Development",
+      items: [
+        "iOS App Development",
+        "Android App Development",
+      ],
+    },
+    {
+      title: "Cross platform Development",
+      items: [
+        "React Native Development Services",
+        "Flutter App Development Services"
+      ],
+    },
+    {
+      title: "Software Development",
+      items: [
+        "Microsoft .NET, Node JS, Python, React, Laravel, Angular",
+      ],
+    },
+    {
+      title: "AI Development",
+      items: [
+        "Generative AI, Agentic AI, AI Agents, and more ",
+      ],
+    },
+    {
+      title: "Cloud Consulting",
+      items: [
+        "AWS, Microsoft Azure, Google Cloud",
+      ],
+    },
+    {
+      title: "IT Staff Augmentation",
+      items: [
+        "Hire Dedicated Developers, Software Engineers, and Development Teams"
+      ],
+    },
+  ],
+
+  image:
+    "https://www.iqlance.com/wp-content/uploads/2024/10/app-development-comapny-canada.png.webp",
+
+  consultation:
+    "Schedule a free consultation today with Project Manager.",
+
+  note: "(We sign NDA)",
+
+  buttonText: "Let's Talk",
+}
+];
+export const portfolioSlides = [
+  {
+    heading: "Endeavors that Make us Proud",
+    title: "Supply Chain Management App",
+    description:
+      "Embark on a transformative journey with the chain supply management app, an advanced application designed to modernize operations and streamline B2B transactions. Overcoming challenges of data integration and user-friendly design, this app redefines efficiency and security in B2B platforms.",
+
+    features: [
+      "Global Chemical Procurement Hub",
+      "Diverse Industry Representation",
+      "Innovation and Experience",
+    ],
+
+    technologies: [
+      {
+        name: "iOS",
+        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/technologies-ios-icn.png.webp",
+      },
+      {
+        name: "Android",
+        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/android-technologies-icn.png.webp",
+      },
+      {
+        name: "SQL",
+        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+      },
+      {
+        name: "Flutter",
+        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/Flutter.png.webp",
+      },
+    ],
+
+    image:
+      "https://www.iqlance.com/wp-content/uploads/2024/08/chain-supply-management.png.webp",
+  },
+
+  {
+    heading: "Endeavors that Make us Proud",
+    title: "Supply Chain Management App",
+    description:
+      "Embark on a transformative journey with the chain supply management app, an advanced application designed to modernize operations and streamline B2B transactions. Overcoming challenges of data integration and user-friendly design, this app redefines efficiency and security in B2B platforms.",
+
+    features: [
+      "Global Chemical Procurement Hub",
+      "Diverse Industry Representation",
+      "Innovation and Experience",
+    ],
+
+    technologies: [
+      {
+        name: "iOS",
+        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/technologies-ios-icn.png.webp",
+      },
+      {
+        name: "Android",
+        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/android-technologies-icn.png.webp",
+      },
+      {
+        name: "SQL",
+        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+      },
+      {
+        name: "Laravel",
+        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/laravel-technologies-icn.png.webp",
+      },
+      {
+        name: "React Native",
+        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/React.png.webp",
+      },
+    ],
+
+    image:
+      "https://www.iqlance.com/wp-content/uploads/2024/08/image_2024_08_05T07_26_10_247Z.png.webp",
+  },
+  {
+    heading: "Endeavors that Make us Proud",
+    title: "Supply Chain Management",
+    description:
+      "Embark on a transformative journey with the chain supply management app, an advanced application designed to modernize operations and streamline B2B transactions. Overcoming challenges of data integration and user-friendly design, this app redefines efficiency and security in B2B platforms.",
+
+    features: [
+      "Global Chemical Procurement Hub",
+      "Diverse Industry Representation",
+      "Innovation and Experience",
+    ],
+
+    technologies: [
+      {
+        name: "SQL",
+        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+      },
+      {
+        name: "Azur",
+        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
+      },
+    ],
+
+    image:
+      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
+  },
+
 ];
