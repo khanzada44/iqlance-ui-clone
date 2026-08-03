@@ -20,3 +20,4 @@ export const ROUTES = {
   INDUSTRY: '/industry',
   SOLUTIONS: '/solutions',
 } as const;
+
