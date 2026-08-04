@@ -25,7 +25,7 @@ import {
   services,
   testimonials,
   faqsData,
-  partners
+  partners,
 } from "../logistics/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -1387,32 +1387,40 @@ export default function Logistic() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">Have Something in Mind? Let's Talk</h1>
-            <p>Have a look at the services and development process of the iQlance solution. See What process we follow for mobile app and software development. Have a look at how we are praised by our clients Start a conversation to innovate your next great idea into reality with us.</p>
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+              Have Something in Mind? Let's Talk
+            </h1>
+            <p>
+              Have a look at the services and development process of the iQlance
+              solution. See What process we follow for mobile app and software
+              development. Have a look at how we are praised by our clients
+              Start a conversation to innovate your next great idea into reality
+              with us.
+            </p>
           </div>
         </section>
         <div className="mb-2.5 pb-2">
-                  <ContactForm />
+          <ContactForm />
         </div>
       </div>
-              <section className="mb-5">
-                <div className="">
-                  <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
-                    {partners.map((item) => (
-                      <div
-                        key={item.id}
-                        className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.alt}
-                          className="max-h-full max-w-full object-contain"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </section>
+      <section className="mb-5">
+        <div className="">
+          <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
+            {partners.map((item) => (
+              <div
+                key={item.id}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

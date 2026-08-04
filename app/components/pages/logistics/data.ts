@@ -57,7 +57,7 @@ export const slides = [
 //   title: string;
 //   description: string;
 //   features: string[];
-//   imageUrl: string;
+//   imageUrl: string
 //   imageAlt: string;
 // }
 
