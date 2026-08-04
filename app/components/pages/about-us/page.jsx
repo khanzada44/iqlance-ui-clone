@@ -8,6 +8,7 @@ import Link from "next/link";
 
 export default function About() {
   const [open, setOpen] = useState(0);
+  
 
   return (
     <>

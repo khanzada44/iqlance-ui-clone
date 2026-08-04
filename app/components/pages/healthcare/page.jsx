@@ -1079,6 +1079,7 @@ export default function HeroQuoteSection() {
               </div>
             ))}
           </div>
+
         </section>
         <section>
           <div>
@@ -1129,67 +1130,99 @@ export default function HeroQuoteSection() {
             </p>
           </div>
         </section>
-        <section className="max-w-7xl mx-auto relative">
-          <Swiper
-            modules={[Navigation]}
-            slidesPerView={1}
-            navigation={{
-              nextEl: ".testimonial-next",
-              prevEl: ".testimonial-prev",
-            }}
-          >
-            {testimonials.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="border border-gray-300 p-8 md:p-12 min-h-90 flex flex-col justify-between">
+<section className="w-full max-w-6xl mx-auto px-4 py-12">
+          {/* Outer Card Wrapper with Fixed Border & Accent */}
+          <div className="relative bg-white border border-gray-300 p-8 md:p-10  shadow-sm hover:border-[#1e40af] transition-all duration-300">
+            {/* Left Blue Accent Line (Static) */}
+            <div className="absolute top-0 left-0 bottom-0  z-10" />
+
+            {/* Swiper Slider Component */}
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              spaceBetween={30}
+              slidesPerView={1}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              navigation={{
+                nextEl: ".custom-next",
+                prevEl: ".custom-prev",
+              }}
+              loop={true}
+              className="w-full"
+            >
+              {testimonials.map((item) => (
+                <SwiperSlide key={item.id}>
                   <div>
-                    <div className="flex items-center gap-5">
-                      <img
-                        src={item.image}
-                        alt=""
-                        className="w-20 h-20 rounded-full border"
-                      />
+                    {/* Top User Info & Rating Section */}
+                    <div className="flex items-center gap-4 mb-6">
+                      {/* Avatar Circle */}
+                      <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-contain rounded-full"
+                          onError={(e) => {
+                            e.currentTarget.src =
+                              "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg";
+                          }}
+                        />
+                      </div>
 
                       <div>
-                        <h3 className="text-2xl font-bold">{item.name}</h3>
-
-                        <div className="flex mt-2 gap-1">
-                          {[...Array(5)].map((_, i) => (
+                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                          {item.name}
+                        </h4>
+                        {/* Stars */}
+                        <div className="flex items-center gap-1">
+                          {[...Array(item.review)].map((_, index) => (
                             <Star
-                              key={i}
-                              size={20}
-                              fill="#FDBA12"
-                              color="#FDBA12"
+                              key={index}
+                              className="w-5 h-5 fill-amber-400 text-amber-400"
                             />
                           ))}
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-xl leading-7 mt-10 text-gray-800">
-                      {item.review}
+                    {/* Review Text */}
+                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                       {item.review}
                     </p>
-                  </div>
 
-                  <div className="mt-10">
-                    <p className="font-semibold">Verified by</p>
-
-                    <img
-                      src={item.verifiedImage}
-                      className="h-10 mt-3"
-                      alt=""
-                    />
+                    {/* Google Verified Branding */}
+                    <div className="space-y-1 pb-2 md:pb-0">
+                      <span className="text-xs text-gray-500 font-medium block">
+                        verified
+                      </span>
+                      <img
+                        src={item.verifiedImage}
+                        alt="Google Logo"
+                        className="h-7 object-contain"
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg";
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="flex justify-end gap-4 mt-5">
-            <button className="testimonial-prev w-12 h-12 bg-[#184A8B] text-white flex items-center justify-center hover:bg-[#143b72] transition cursor-pointer">
-              <ArrowLeft size={20} />
-            </button>
-            <button className="testimonial-next w-12 h-12 bg-[#184A8B] text-white flex items-center justify-center hover:bg-[#143b72] transition cursor-pointer">
-              <ArrowRight size={20} />
-            </button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
+            <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
+              <button
+                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                aria-label="Previous Slide"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <button
+                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                aria-label="Next Slide"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </section>
         <section>
