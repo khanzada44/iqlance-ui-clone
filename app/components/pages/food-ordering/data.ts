@@ -1,26 +1,26 @@
 export const bottomFeatures = [
   {
     title: " App for your Business niche: ",
-    description:"Our experienced programmers at iQlance understand your business niche and go in the depths to find the perfect blend of features for you."},
+    description:"Our group of professionals creates application initiatives for everyone that is tailored to their specific requirements. We research industry developments and client interests to create a bespoke app design catered to a specific target."},
   {
-    title: "Branding:",
+    title: " Instant access:",
     description:
-      " We are responsible for creating a secured and functional app packed with numerous features to improve customer experience. Thus, ensuring a better branding base.",
+      "With our assistance, customers may have immediate accessibility to a range of services, products. Customers may reach out to our qualified and skilled app developers at any moment.",
   },
   {
-    title: "Instant access:",
+    title: " Secured payment: ",
     description:
-      " Our certified developers offer a push notification feature for instant access. So, you can be assured that your users will never miss a workout session ever.",
+      " The food service software accepts a variety of payment methods, including credit/debit cards, incorporated transaction eWallets, as well as cash on delivery. We make sure to apply the most up-to-date security updates to keep users’ information secure. Before completing the last transaction, customers may use the discounts and rewards function.",
   },
   {
-    title: " Attractive UI + Unbeatable Performance: ",
+    title: "  Attractive UI + Unbeatable Performance: ",
     description:
-      " Our highly qualified healthcare app developers ensure that users get the best experience by building an interactive user interface and engaging platform.",
+      " We provide assistance in the development of high-quality mobile applications with distinctive graphics. Our designers use cutting-edge techniques, algorithms, programmes, and equipment to build a user interface that is simple to navigate and run smoothly.",
   },
   {
-    title: "  Secured payment:  ",
+    title: "   Branding",
     description:
-      " What makes us the best Health App development company is we specialize in integrating secured payment gateway. We do this by ensuring safe transactions through wallets, credit cards, and online mediums.",
+      " Without a question, we are living in the era of digital media . We have a lot of opportunities for company growth using social media. We promote our offerings on social media . To entice customers, use paid promos accessible on various social media sites..",
   },
 ];
 export const slides = [

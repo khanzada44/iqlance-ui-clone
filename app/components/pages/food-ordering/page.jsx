@@ -69,31 +69,49 @@ export default function foodOrdering() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
-                Wellness & Fitness
+                Food & Restaurant
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Recently it is seen that the wellness and fitness industry are
-                in need of technology revolution, which is why business leaders
-                are inclining towards mobility solutions. iQlance acknowledges
-                this requirement, thus providing you with a team of experts
-                experienced at crafting the best digital solution for you.
+                To deliver flawless & fastest food & restaurant app development services,
+                iQlance is your answer. If you want to earn a huge profit in your restaurant business,
+                you are on the right platform now. Our experts are here to assist you with various ways
+                to get profit from Food application development.
+
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                The fitness app we develop will ensure your business will reach
-                heights by offering you many opportunities. It is not only you
-                who will benefit but also the target audience by low-stress
-                level, high productivity, lower healthcare cost, etc.
+                iQlance is your way to add you in quest for restaurant creativity. So,
+                our in-house developer team strives hard to make the process of choosing and
+                delivering foods from selected restaurants to your place without facing any technical
+                issue.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Being the best Health and fitness app development company, we
-                make sure our comprehensive fitness app contains every feature a
-                fitness enthusiast will require to maintain a good shape, like
-                forming diet plans, connecting with fitness gurus, scheduling
-                workouts, etc.
+                If you have a startup or any well-established food & restaurant business,
+                having a user-friendly app is really helpful to take your business to the new heights.
+                Here are some other benefits of having this app:
               </p>
+
+              <ul className="mt-8 space-y-5 text-lg">
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Stand out from crowd in the industry
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />Perfect blend of advanced technology
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Important to create brand awareness
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Direct channel between your customers and brand
+                </li>
+              </ul>
+
+
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
@@ -238,42 +256,138 @@ export default function foodOrdering() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Fetch Gym Trainers And Nutritionists Easily With Our Wellness
-                And Fitness App Development Solutions
+                Offering You Full-Scale Restaurant App Development Solutions for Your Restaurants
               </h2>
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Our team at iQlance always strives hard to provide you with the
-                best possible fitness solutions. For this, we have delivered a
-                variety of innovative wellness and fitness app development
-                solutions and allowed fitness enthusiasts to get their
-                fitness-related queries resolved within less possible span of
-                time.
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                iQlance is a renowned Toronto app development company 
+                to develop a variety of top quality web and mobile solutions to benefit your 
+                restaurant business. Since our first-step in the industry, we succeeded to hold full-scale 
+                of development team for Restaurant app development and design solutions. 
+                Until now, we worked with many restaurant owners and food business ventures, 
+                including startups to convert their traditional offline businesses into an innovative online 
+                approach.
               </p>
               <br />
               <p>
-                We assist gym trainers, dieticians/nutritionists, yoga trainer,
-                aerobic/zumba trainers and similar other experts to integrate
-                their web and mobile applications, so that athletes or fitness
-                freaks easily fetch their services in time. We do this by
-                providing:
+
+                Do you own any restaurant business and want to develop good mobile applications to obtain 
+                huge returns on investment? Alternatively, if you are the one searching for a quality app to 
+                understand your specific business requirements, your search will definitely end here. 
+                iQlance has everything you need, as we understand your important business requirements and work 
+                pattern for strategizing a mobile
+                app directed towards earning you highest possible returns on your investments.
+              </p>
+              <br />
+              <p>
+
+                Combining countless establishments and numbers of consumers in one system to digitalize 
+                the food purchase and takeout service. We’re redefining millions of people’s eating experiences 
+                all over the world by offering them the convenience of choosing food online and having it 
+                delivered right to their doorway. We’re available for all of your stakeholders, no matter how many 
+                there are. Our restaurant smartphone application services are designed to make the procedure of 
+                choosing and delivering meals from restaurant and 
+                at residence more convenient while simplifying complicated backend operations.
+              </p>
+              <br />
+              <p>
+                Our on-demand online food supply development application squad consists of over 400+ 
+                business professionals that are well familiar with the dining sector’s inner workings 
+                and technological requirements. 
+                We’re ready to join you in your quest for restaurant creativity.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
+            <div className="text-center">
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Start a Conversation<ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm mt-10">
+            <img
+              src="/images/restaurant-app-full.jpg"
+              alt="Cost Calculation & Financial Planning"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </section>
+        
+        <section>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10 mt-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+               Businesses May Profit from Food Application Development in a Variety of Ways
+              
+              </h2>
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                  Things flipped in an instant when the Covid-19 catastrophe occurred. 
+                  Customers prefer to avoid becoming infected. As a result, digital food service 
+                  applications have grown in popularity. Customers may purchase meals from the 
+                  convenience of their own houses and have it transported to their front door. 
+                  And that’s fantastic. If someone runs a food supply service, the company might 
+                  desire to consider building a powerful service application such as GrubHub.
+              </p>
+              <br />
+              <p>
+                    A meal delivery app may be quite beneficial to any company. 
+                    From persuading the application users to place their initial meal order to taking 
+                    advantage of promotional offers, we’ve got users covered. Customers are generally 
+                    intrigued and make purchases. To get remarkable outcomes, 
+                    adopt a bespoke app that allows businesses to quickly focus the correct audience.
+              </p>
+              <br />
+              <p>
+                  Reach out to the particular audience, 
+                  and the company will reap several rewards. It is essential to develop smartphone 
+                  software that helps to attract the billions of individuals who want dining or 
+                  takeaway solutions to increase the consumer base. 
+                  The smartphone program can assist users in accomplishing this without difficulty. 
+                  Clients in a variety of sectors benefit from iQlance’s 
+                  expertise in offering food delivery app development services on property. 
+                  There are few important aspects of developing on-demand meal delivery 
+                  software to help businesses succeed.
+              </p>
+              <br />
+            </div>
+          </div>
+        </section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
+            <div className="flex justify-center lg:justify-end">
+              <img 
+                src="/images/food-app-dev-left.jpg" 
+                alt="Customer Support" 
+                className="w-full max-w-md h-auto object-cover"
+              />
+            </div>
+
+            <div className="flex flex-col gap-y-6">
               {bottomFeatures.map((item, index) => (
-                <div key={index} className="flex items-start gap-2.5">
-                  <ChevronRight className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    <strong className="font-bold text-gray-900">
-                      {item.title}
+                <div key={index} className="flex items-start gap-3">
+                  {/* Chevron Right Icon */}
+                  <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
+                  
+                  {/* Text Content */}
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                    <strong className="font-semibold text-gray-900">
+                      {item.title}:
                     </strong>{" "}
                     {item.description}
                   </p>
                 </div>
               ))}
+              <div className="">
+                  <Link
+                    href="#contact"
+                    className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                  >
+                    Start a Conversation<ArrowRight className="w-4 h-4" />
+                  </Link>
+            </div>
             </div>
           </div>
-        </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+                  <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -288,14 +402,12 @@ export default function foodOrdering() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App for Your Business?
+              Looking to Hire Dedicated Team?
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to create
-              scalable, feature-rich logistics mobile applications tailored to
-              your needs.
+              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
             </p>
 
             {/* Contact Info Box */}
@@ -306,7 +418,7 @@ export default function foodOrdering() {
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                  <img src="/icons/email-icon.svg" alt="" />
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -314,7 +426,7 @@ export default function foodOrdering() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                  <img src="/icons/phone-icon.svg" alt="" />
                   <span>US :</span>
                   <a
                     href="tel:+14697939837"
@@ -333,84 +445,36 @@ export default function foodOrdering() {
                 </div>
               </div>
             </div>
-
+ 
+  
             {/* Action Button */}
             <div>
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 rounded-md transition duration-200 shadow-md"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Request a Free Quote <ArrowRight className="w-4 h-4" />
+               Hire Dedicated Developers <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
-        <section className="py-10">
-          <div className="mx-auto max-w-7xl">
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              slidesPerView={1}
-              spaceBetween={0}
-              loop={true}
-              autoplay={{
-                delay: 30000,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-            >
-              {slides.map((slide) => (
-                <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center">
-                    {/* Image */}
-                    <div className="w-full lg:w-1/2">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
-                      />
-                    </div>
-
-                    {/* Content */}
-                    <div className="w-full lg:w-1/2">
-                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
-                        {slide.title}
-                      </h2>
-
-                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
-                        {slide.description}
-                      </p>
-
-                      <div className="space-y-3 lg:space-y-4">
-                        {slide.points.map((point, index) => (
-                          <div
-                            key={index}
-                            className="flex gap-3 items-baseline"
-                          >
-                            <ChevronRight size={10} />
-                            <span>{point}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </section>
+        <div className="text-center mb-10 mt-10">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+          Customized App Solutions and Handle Diverse Aspects
+          </h1>
+          <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+              The most significant advantage of bespoke technology is that it includes capabilities not available in off-the-shelf programs. When we develop a software with your company’s requirements in mind, you’re more likely to see an improvement in efficiency once it’s installed.
+          </p>
+        </div>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
-            // Checking if index is odd to reverse layout dynamically
             const isEven = index % 2 === 0;
 
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -1034,19 +1098,17 @@ export default function foodOrdering() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
-                        ? "text-black font-semibold"
-                        : "text-gray-500 hover:text-black"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
+                      ? "text-black font-semibold"
+                      : "text-gray-500 hover:text-black"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1396,11 +1458,10 @@ export default function foodOrdering() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-gray-200 shadow-md"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-gray-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1412,21 +1473,19 @@ export default function foodOrdering() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">
@@ -1476,24 +1535,24 @@ export default function foodOrdering() {
           <ContactForm />
         </div>
       </div>
-       <section className="mb-5">
-              <div className="">
-                <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
-                  {partners.map((item) => (
-                    <div
-                      key={item.id}
-                      className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.alt}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
+      <section className="mb-5">
+        <div className="">
+          <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
+            {partners.map((item) => (
+              <div
+                key={item.id}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
-            </section>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

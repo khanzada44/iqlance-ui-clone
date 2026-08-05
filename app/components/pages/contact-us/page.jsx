@@ -37,11 +37,22 @@ export default function ContactSection() {
                   a prestigious product.
                 </p>
 
-                <ul className="mt-8 space-y-5">
-                  <li>› 45 minutes of free consultation</li>
-                  <li>› A strict non-disclosure policy</li>
-                  <li>› Detailed Feature List Document</li>
-                  <li>› Action plan to kick start your project</li>
+                <ul className="mt-8 space-y-5 text-lg">
+                  <li className="flex items-center gap-3 mb-2">
+                    <ChevronRight size={14} />
+                    45 minutes of free consultation
+                  </li>
+                  <li className="flex items-center gap-1 mb-2">
+                    <ChevronRight size={14} />A strict non-disclosure policy
+                  </li>
+                  <li className="flex items-center gap-1 mb-2">
+                    <ChevronRight size={14} />
+                    Detailed Feature List Document
+                  </li>
+                  <li className="flex items-center gap-1 mb-2">
+                    <ChevronRight size={14} />
+                    Action plan to kick start your project
+                  </li>
                 </ul>
 
                 <button className="mt-10 bg-[#EEF2F7] hover:bg-gray-200 transition px-6 py-3 rounded-md flex items-center gap-3 font-semibold">

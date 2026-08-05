@@ -1,6 +1,6 @@
 export const bottomFeatures = [
   {
-    title: "  App for your Business niche: : ",
+    title: "  App for your Business niche:",
     description:"  We develop an app that is perfect for your business by a careful investigation into the operation of your business and designing the best solution."},
   {
     title: " Instant access:",
@@ -26,200 +26,197 @@ export const bottomFeatures = [
 export const slides = [
   {
     id: 1,
-    image:"/images/wellness-left-1.jpg",
-    title: "Comprehensive App for Fitness Enthusiasts",
+    image:"/images/realeaste-left-1.jpg",
+    title: "Customer-centric approach",
     description:
-      "We at iQlance offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
-    points: [
-      "Getting regular fitness sessions guided by experts of the fitness sector",
-      "Schedule the fitness regime and get the necessary alerts",
-      "Tips and recommendations on physical exercises",
-      "In-app fitness coach and operating assistant",
-      "Systems for laboratory information",
+      "We know very well that a top quality of real estate app development requires detailed research work and in-depth knowledge to come up with a business-oriented, result oriented and customer-centric application.",
+      points: [
+      "Applications to achieve property management",
+      "Online property booking services",
+      "Lead management solutions",
+      "CRM and enterprise Solutions",
+      "Necessary app maintenance and support solutions",
     ],
   },
   {
     id: 2,
     image:
-      "/images/wellness-left-2.jpg",
-    title: "Tracking of Calorie Intake Regularly",
+      "/images/realeaste-left-2.jpg",
+    title: "Assistance in Buy/Sell of Property",
     description:
-      "Our iQlance team is well aware that besides physical exercise, diet of a person has a prime role in achieving fitness goals, whether to get toned muscles and abs, loose extra body fat, increase muscular strength or anything else. Hence, we have developed nutrition app to allow our clients finding healthy food options or getting the necessary consultation solutions from experienced dieticians located in almost any part of the world.",
-    points: [
-      "Check your calorie intake and compare it with burned calories",
-      "Recommendations from an experienced nutritionist to follow an appropriate weight loss/muscle building diet plan",
-      "Stay updated on what to eat or what to avoid",
-      "Gain knowledge about glycemic index and other essential nutrition constituents in different food items",
+      "Our real estate app helps you in accomplishing your every possible need while you go to buy or sell your property. Thus, our team at iQlance delivers you unrivaled solutions to fulfill almost need of our clients. These are-",
+          points: [
+      "Display of any property based on interest of customers",
+      "Virtual tour, photo and video galleries",
+      "Application of latest 3D rendering technology",
+      "Advanced search criteria to perform search based on location",
+      "Various other essential features to provide you with outstanding real estate solutions",
     ],
   },
   {
     id: 3,
-    image:"/images/wellness-left-3.jpg",
-    title: "Workout Mobile Apps to Increase Motivation",
+      image:"/images/realeaste-left-3.jpg",
+    title: "Property Search and Listings in mobile/web app",
     description:
-      "Whether you are a newbie associated with wellness and fitness sector or possess good experience in strength training, power lifting and bodybuilding, you will expect to boost your motivation level and thereby, get close to your fitness goals with our workout apps.",
+      "To develop any real estate mobile application, we comprehend each aspect of a real estate business group and focus on incorporating features that influences the users and provide exceptional experience. These are-",
     points: [
-      "Gain muscular strength by losing unwanted body fat.",
-      "Calories burnt from cardio workouts",
-      "Building body muscles and perfect shape of abs",
-      "Regular yoga sessions at the fingertip.",
+      "Advanced and customized search criteria",
+      "Interest rate calculators and currency converters",
+      "Virtual tours",
+      "GPS integrations",
+      "Push notifications to",
     ],
   },
   {
     id: 4,
-    image:"/images/wellness-left-4.jpg",
-    title: "Activity Tracking Solutions to Track Your Activities",
+    image:"/images/realeaste-left-4.jpg",
+    title: "Emerging functionalities",
      description:
-      "The apps offer well organized workflow of the clinic with advanced hospital mobility. We let the healthcare industry go smart with the simplified processes and managed inventories with the help of our incredible healthcare mobility solutions. ",
+      "Apart from simple buy and sell transaction real estate applications are now supercharged with the extraordinary features. These functionalities have made the life of a user very easy to learn each and every fact from an app itself. These are-",
     points: [
-      "Get real-time stats for your walks, runs and rides, speed, pace, elevation",
-      "Maintain an appropriate track of your each fitness activity you opt to carry out",
-      "Get information on workout you need to achieve your fitness goals",
-      "Track your chosen route, pace, speed, laps and total distance you covered",
+      "Booking, listing and searching of rental properties",
+      "Insurance, accounting and property inspection functions",
+      "Property search and estimation solutions",
+      "Directions, map view, inspection planner",
+      "Detailed information on various properties",
     ],
   },
 ];
 export const ServiceSectionData = [
   {
     title:
-      "Advantages to Get a Sound Wellness and Fitness App",
+      "Advantages of Building Real Estate Mobile Applications with iQlance",
     description:
-      " Unbelievable technologies applied in the mentioned apps and numerous benefits offered by wellness and fitness app development services make installation of such applications mandatory for fitness enthusiasts worldwide.",
+      " Award winning strategies to deliver comprehensive mobile app development solutions, along with marketing and optimization of apps successfully. Let us look on some important aspects, which set us apart from our competitor groups.",
     features: [
-      "To maintain a regular and proper track of progress towards achievement of business goals",
-      "To track varying activity levels and increase reps as well as available time gradually",
-      "To view progress within no time by using the app",
-      "To train as well as monitor the progression of heart rate",
+      " Give preference to customer-centric approaches",
+      " Possess the highest possible domain expertise to deliver you the advanced mobility solution",
+      "Proficiency to deliver the work on-time",
+      "Adopted agile methodology to develop apps and offer you at the most cost-effective rate",
     ],
-    imageUrl: "/images/sound-wellness-right.jpg",
+    imageUrl: "/images/building-app-re.jpg",
     imageAlt: "Logistics App Development",
   },
   {
     title:
       "",
     description:
-      "Fitness apps synchronize with heart rate monitors, scales and other related devices to track progress automatically and save valuable time.",
+      "Our quality and reliable real estate applications have proffered tons of benefits to the entire real estate industry with the aim to give customers with unmatched flexibility related to searching of required properties in an efficient way.",
     features: [
-      "Get free workout ideas",
-      "Carry your exercise kit with you",
-      "Set and achieve goals in desired time",
-      "Design and plan your diet",
+      "Skilled workforce, innovation and latest infrastructure are our major strengths",
+      "Manage various complicated projects efficiently",
+      "Amplify your business contemporarily",
+      "As a real estate owner or an agency, you will deliver convenient services to customers",
     ],
-    imageUrl: "/images/fitness-apps-left.jpg",
+    imageUrl: "/images/advantages-photo-re.jpg",
     imageAlt: "Logistics App Development",
   },
 ];
 export const portfolioSlides = [
-  {
+    {
     heading: "",
-    title: "Commercial Movers",
+    title: "Fantasy App Development",
     description:
-      "iQlance Solutions created the commercial movers app, a comprehensive business management platform to solve staffing challenges. This platform provides access to a vetted network of mobile movers and dynamic pricing models. Our technology helps moving companies expand seamlessly and efficiently across projects and regions.",
+      "DFS-style fantasy app that lets you play fantasy baseball in a whole new way.",
 
     features: [
-      "Access vetted mobile movers",
-      "Dynamic pricing models",
-      "Staff support tools",
-      "Staff support tools",
+      "Engaging User Experience",
+      "Real-Time Data Integration",
+      "Secure and Scalable Platform",
     ],
 
     technologies: [
+       {
+        name: "iOS",
+        icon: "/icons/ios-icon.webp",
+      },
+      {
+        name: "Android",
+        icon: "/icons/android-technologies-icn.webp",
+      },
+      {
+        name: "Laravel",
+        icon: "/icons/laravel-technologies-icn.webp",
+      },
       {
         name: "Flutter",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/Flutter.png.webp",
+        icon: "/images/Flutter.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/chain-supply-management.png.webp",
+      "/images/image_2024_08_05T12_52_05_867Z.png",
   },
-
   {
     heading: "",
-    title: "Tracking Device",
+    title: "Manufacturing App Development",
     description:
-      "The app provides a comprehensive security solution for all your devices, from student tablets to personal laptops. Its powerful combination of remote-controlled locking hardware and advanced tracking software gives you the trusted protection you need, allowing you to manage your devices with confidence from anywhere.",
+      "E-commerce management system is a distinguished player in film conversion, extrusion, and manufacturing. Our unwavering commitment to quality and customer satisfaction has propelled us to the forefront of innovation in the film industry.",
 
     features: [
-      "Remote locking and wiping",
-      "Real-time device tracking",
-      "Protects all your devices",
-      "Advanced security you can trust",
+      "Innovation-driven Experience",
+      "Customer-Centric Approach",
+      "Efficiency through Technology",
     ],
 
     technologies: [
+      {
+        name: "iOS",
+        icon: "/icons/ios-icon.webp",
+      },
+      {
+        name: "Android",
+        icon: "/icons/android-technologies-icn.webp",
+      },
+      {
+        name: "Laravel",
+        icon: "/icons/laravel-technologies-icn.webp",
+      },
+      {
+        name: "SQL",
+        icon: "/icons/microsoft-sql-icn.webp",
+      },
       {
         name: "React Native",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/React.png.webp",
+        icon: "/icons/React.webp",
       },
+      
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/image_2024_08_05T07_26_10_247Z.png.webp",
+      "/images/image_2024_08_05T07_26_10_247Z.webp",
   },
+
+
   {
     heading: "",
-    title: "ERP Software",
+    title: "Immigration Management Software",
     description:
-      "We built an ERP system for transportation businesses. Unlike generic software, it integrates customized modules for logistics, helping companies reduce costs and save time. Our solution creates a connected ecosystem, ensuring seamless interaction between drivers, dispatchers, and clients.",
+      " At iQlance this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
 
     features: [
-      "Manages transportation operations",
-      "Reduces time and cost",
-      "Real-time team collaboration",
-      "Ensures regulatory compliance",
+      "Easy Operational Visibility",
+      "Low Operational Costs",
+      "Accurate or Accessible Data",
+      "Full Automation?",
+      "Lack of Operational Visibility",
+      "High Operational Costs",
     ],
 
     technologies: [
-      {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
+
       {
         name: "microsoft-net",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        icon: "/images/Microsoft-Dot-Net-1.png",
       },
       {
-        name: "Azur",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
+        name: "SQL",
+        icon: "/icons/microsoft-sql-icn.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
-  },
-  {
-    heading: "",
-    title: "Driver Tracking App",
-    description:
-      "The truck driver tracking app is a custom solution built for drivers, and this app supports our logistics software. As a leading transportation app development company across the globe, we designed this app to simplify drivers’ and admins’ daily operations, including load management, route tracking, punch-in & out, communication, and more.  It ensures efficiency, accountability, and seamless workflows.",
-
-    features: [
-      "Efficient Workday Management",
-      "Real-time Location Tracking",
-      "Payment Automation",
-      "Profile Management",
-      "In-App Chat with Admin",
-      "Geofencing",
-    ],
-
-    technologies: [
-      {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "microsoft-net",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "Azur",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
-      },
-    ],
-
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
+      "/images/immigration-software-slider-2.png",
   },
 
 ];
@@ -561,59 +558,59 @@ export const industries = [
 export const services = [
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-80/data-protection-icn.png",
+      "/images/data-protection-icn.png",
     title: "Data Protection",
     description:
-      "Our every app is ultimately data protected to cope with the heavy malware attack and increased cyber-crime to support new technologies entering the healthcare world.",
+      "Our deeply experienced full-stack developers ensure that all your data is entirely encrypted, so there is no leakage of sensitive information. So, you feel secured and tension-free.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/custom-dp-icn.png",
+      "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "iQlance focuses on the rapid delivery of projects with a seamless connection between all clients. Also, ensuring solid documentation for extensive support and training.",
+      "We strive to provide rapid project delivery through a seamless connection between different stakeholders and a robust system for support and training.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-80/easy-commution-icn.png",
+      "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
-      "We make sure to develop an app that is realistic, scalable, plausible, and communicative, bringing only positive results. As a result, it will meet all expectations of providers and patients.",
+      "24×7 message option to connect with your party whenever you want with just a tap. So, there is no kind of miscommunication in between.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/dedicated-teams.png",
+      "/images/dedicated-teams.png",
     title: "Dedicated Development Team",
     description:
-      "Our talented professionals ensure a flawless experience to everyone who use the app. Because a lasting experience always creates a greater impact.",
+      "Our dedicated team of professionals provides 24×7 support service, so you don’t feel alone. We are ready to serve you with your every question.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/on-time-icn.png",
+     "/images/on-time-icn.png",
     title: "On – Time Delivery",
     description:
-      "100% support available to every client with the assurance of timely delivery every time so you can complete your project on time. Also, meeting superior quality standards.",
+      "100% operation process with staff, so you get your project right on time and ensuring the highest quality work.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/quality-first-icn.png",
+      "/images/quality-first-icn.png",
     title: "Quality – First Approach",
     description:
-      "Our professionals also make sure to run the idea in the market to analyze the demand to build a quality app experience. This saves your time & resources also provides success assurance.",
+      "We make tailor-made plans that meet the needs of all small and big firms and ensure their work quality remains intact.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/cost-effective-icn.png",
+      "/images/cost-effective-icn.png",
     title: "Cost Effective Development Model",
     description:
-      "Tailor-made plan to provide the maximum benefit to you at an affordable cost. It is sure to fit every small and big need with full scalability of technology resources without spending extra pennies.",
+      "We prepare a model that undertakes all your requirement and tailors it to a pocket-friendly option. So, you don’t have to spend on different technologies.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp",
+      "/images/letdiscuss-icon.webp",
     title: "Technical Support",
     description:
-      "The apps are set to abide by every rule set by health standards and regulations. Plus, in case of the app experiences any bug issue, there is a whole team of certified engineers for comprehensive technical support.",
+      "Multiple integrations with state-of-the-art technologies to allow a centralized view of real estate data for better accessibility and performance.",
   },
 ];
 export const testimonials = [
@@ -670,55 +667,67 @@ export const testimonials = [
 ];
 export const faqsData = [
   {
-    question: " How is a logistics app development firm helpful to a business?",
-    answer:
-      " An app development company for Logistics  can develop diverse management systems for transportation, fleet, and warehouse. Therefore, firms can improve their business operations because of benefits like package tracking, automated routine process types, and others. All ultimately boost user experience.",
-    points: [
-    ],
-  },
-  {
-    question: " What types of logistics app are available?",
+    question: "What are the features that will improve the long-term performance of the real estate app?",
     answer:
       "",
     points: [
-        "Asset management",
-        "Supply chain management",
-        "Transportation management systems",
-        "Warehouse management systems",
+      "Dashboard",
+      "Calenders",
+      "Currency converted",
+      "Messenger",
+      "Push Notification",
+      "Map integration",
+      "Apartment details",
     ],
   },
   {
-    question: " How to develop logistics app?",
+    question: "How much will it take for me to get a custom real estate app?",
     answer:
-      " Firstly, prepare a foundational overview of your idea, with defined requirements. Research the consumer base and other apps in the niche market and analyse how they would affect your company and operations. Then, consult with a reliable logistics app development company for help with the development process.",
+      "The time of developing the app will depend on several reasons. However, it takes a time of 2 to 4 months for a simple solution and six months for a finely-tuned product.",
+    points: [
+       
+    ],
+  },
+  {
+    question: "How can we benefit from the real estate app?",
+    answer:
+      "There are tons of benefits tagged along with real estate applications like bringing you several leads, making your agency the one that is ready to solve every query, and initiates property visits.",
     points: [
 
     ],
   },
   {
-    question: "Is a Logistics app really that important to develop?",
+    question: "How can I gain the competitive edge through the real estate app?",
     answer:
-      "Yes, logistics custom app development services are important to focus on for companies. This is because it helps balance the work performance and enhance business activities equality. The logistics tracking apps update their functions frequently, which also help companies.",
+      "You can do this by incorporating:",
+      points: [
+        "Blockchain",
+        "Detailing information",
+        "Low listing fees",
+        "Updating MLS integration",
+    ],
   },
   {
-    question: "How does logistics app development revolutionize the business industry?",
+    question: "The technologies that the real estate app must support?",
     answer:
-      "With logistics app development, companies and their clients notice a new manner of handling and monitoring transportation. They gain complete control over important details and functions, like shipment process, cargo management and information.",
+      "",
+      points: [
+        "Google places API",
+        "CoreData or Realm framework",
+        "Facebook SDK",
+        "Firebase SDK or iOS push notification",
+        "MapBoxGoogle maps APIs",
+      ]
   },
   {
-    question: "Which technology should I use for logistics app development?",
+    question: "How much money will it require to develop the real estate app?",
     answer:
-      "The developers would utilize the most compatible technology stacks, based on your project needs. For example, if you want to build an iOS app, they would use Swift. But, if you have an Android app in mind, they would utilize Kotlin programming.",
+      "Even though it is impossible to estimate the cost of the app without knowing the requirement, it mainly depends on the app’s features, technology, and support system.",
   },
   {
-    question: "Is it possible to add a feature after app deployment?",
+    question: "What are the best real estate apps available in the market?",
     answer:
-      "Our app development company  for logistics does focus on providing customized features after launch. Discuss further with our developers during your project’s planning period.",
-  },
-  {
-    question: "Is post-launch app maintenance always available?",
-    answer:
-      "At iQlance, we have support professionals who focus entirely on post-launch support for companies. Contact the support team whenever.",
+      "Multiple real estate apps are famous in the market, but the ones that serve as a standard of comparison include Trulia and Zillow.",
   },
 ];
 export const partners = [
