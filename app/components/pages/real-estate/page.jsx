@@ -69,30 +69,21 @@ export default function realEstate() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
-                Wellness & Fitness
+                Real Estate
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Recently it is seen that the wellness and fitness industry are
-                in need of technology revolution, which is why business leaders
-                are inclining towards mobility solutions. iQlance acknowledges
-                this requirement, thus providing you with a team of experts
-                experienced at crafting the best digital solution for you.
+
+                With many people shifting to bigger cities, more and more people are looking for well-furnished homes and rental spaces. As a result, there is a boom in the real estate industry. To provide the most advantage of the situation to Aggregators, Realtors, Builders, and stakeholders, we provide them with the best Real Estate App development solution. Thus, marking the digital presence in the real estate sector.
+
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                The fitness app we develop will ensure your business will reach
-                heights by offering you many opportunities. It is not only you
-                who will benefit but also the target audience by low-stress
-                level, high productivity, lower healthcare cost, etc.
+                As the real estate app development company, we aim at enhancing the experience of the buyers and real estate firms. We make it possible by offering them an app that supports advanced technologies like IoT, chatbots, and third-party app support.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Being the best Health and fitness app development company, we
-                make sure our comprehensive fitness app contains every feature a
-                fitness enthusiast will require to maintain a good shape, like
-                forming diet plans, connecting with fitness gurus, scheduling
-                workouts, etc.
+                In addition, we extend our real estate app development services to Virtual CTO services for carrying tech strategies successfully. Thus, ensuring our real estate partner a comprehensive development.
               </p>
 
               {/* Action Buttons */}
@@ -238,25 +229,21 @@ export default function realEstate() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Fetch Gym Trainers And Nutritionists Easily With Our Wellness
-                And Fitness App Development Solutions
+                Custom App Development Solutions For Your Real Estate Business
               </h2>
               <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Our team at iQlance always strives hard to provide you with the
-                best possible fitness solutions. For this, we have delivered a
-                variety of innovative wellness and fitness app development
-                solutions and allowed fitness enthusiasts to get their
-                fitness-related queries resolved within less possible span of
-                time.
+                
+              We have a qualified and an experienced real estate app development team toronto to provide cutting-edge solutions to meet your specific real estate business requirements. Whether you are one of the top-class real estate companies, a small firm or an individual agent related to a property business, you may not overlook the significance of a good real estate web development service.
               </p>
               <br />
               <p>
-                We assist gym trainers, dieticians/nutritionists, yoga trainer,
-                aerobic/zumba trainers and similar other experts to integrate
-                their web and mobile applications, so that athletes or fitness
-                freaks easily fetch their services in time. We do this by
-                providing:
+               This is because; we at iQlance provide you with the best possible real estate application to get lucrative benefits. Also, our real estate app service provides brokers, aggregators, and brokers a platform that provides 24×7 support services to end-users without even attending them.
               </p>
+              <br />
+              <p>
+                Also, our team contains top app developers of different areas to power the app with cutting-edge technologies. It is built in such a way that fulfills not only present demands but also the demands of the future.
+         
+             </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
               {bottomFeatures.map((item, index) => (
@@ -271,6 +258,21 @@ export default function realEstate() {
                 </div>
               ))}
             </div>
+            <div className="text-center mb-10" >
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Start a Conversation <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+                    <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
+            <img
+              src="/images/custom-app-re.jpg"
+              alt="Cost Calculation & Financial Planning"
+              className="w-full h-full object-cover"
+            />
           </div>
         </section>
         <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
@@ -408,9 +410,8 @@ export default function realEstate() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -1034,19 +1035,17 @@ export default function realEstate() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
-                        ? "text-black font-semibold"
-                        : "text-gray-500 hover:text-black"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
+                      ? "text-black font-semibold"
+                      : "text-gray-500 hover:text-black"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1396,11 +1395,10 @@ export default function realEstate() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-gray-200 shadow-md"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-gray-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1412,21 +1410,19 @@ export default function realEstate() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">
@@ -1476,24 +1472,24 @@ export default function realEstate() {
           <ContactForm />
         </div>
       </div>
-       <section className="mb-5">
-              <div className="">
-                <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
-                  {partners.map((item) => (
-                    <div
-                      key={item.id}
-                      className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.alt}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
+      <section className="mb-5">
+        <div className="">
+          <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
+            {partners.map((item) => (
+              <div
+                key={item.id}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
-            </section>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

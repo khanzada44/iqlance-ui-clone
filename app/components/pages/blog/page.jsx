@@ -1,4 +1,6 @@
 "use client";
+
+import { useEffect, useState } from "react";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,8 +10,30 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { blogs } from "../blog/data";
 import Image from "next/image";
+import { getBlogs } from "@/services/blog";
+
 
 export default function Blog() {
+  const [blogs, setBlogs] = useState([]); // default empty array, not null
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const data = await getBlogs();
+        console.log(data);
+        setBlogs(data);
+      } catch (error) {
+        console.log("Message:", error.message);
+        console.log("Code:", error.code);
+        console.log("Response:", error.response);
+        console.log("Request:", error.request);
+        setBlogs([]);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <>
       <div className="w-[90%] mx-auto">
@@ -149,6 +173,42 @@ export default function Blog() {
               </p>
             </div>
           </section>
+          {/* <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {blogs.map((blog, index) => (
+              <div
+                key={`${blog.slug}-${index}`}
+                className="p-px bg-transparent hover:bg-linear-to-r hover:from-blue-300 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+              >
+                <Link
+                  href={`/blog/${blog.slug}`}
+                  className="group block overflow-hidden bg-white"
+                >
+                  <div className="relative aspect-4/3 overflow-hidden">
+                    {blog.image ? (
+                      <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        fill
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-gray-200">
+                        No Image
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="p-5">
+                    <span className="text-sm text-gray-500">{blog.date}</span>
+
+                    <h3 className="mt-3 text-xl font-semibold leading-7 text-black line-clamp-2">
+                      {blog.title}
+                    </h3>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </section> */}
           <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {blogs.map((blog, index) => (
               <div

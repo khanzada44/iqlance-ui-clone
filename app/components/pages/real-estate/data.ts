@@ -1,26 +1,26 @@
 export const bottomFeatures = [
   {
-    title: " App for your Business niche: ",
-    description:"Our experienced programmers at iQlance understand your business niche and go in the depths to find the perfect blend of features for you."},
+    title: "  App for your Business niche: : ",
+    description:"  We develop an app that is perfect for your business by a careful investigation into the operation of your business and designing the best solution."},
   {
-    title: "Branding:",
+    title: " Instant access:",
     description:
-      " We are responsible for creating a secured and functional app packed with numerous features to improve customer experience. Thus, ensuring a better branding base.",
+      " We develop an app that is perfect for your business by a careful investigation into the operation of your business and designing the best solution.",
   },
   {
-    title: "Instant access:",
+    title: " Secured payment: ",
     description:
-      " Our certified developers offer a push notification feature for instant access. So, you can be assured that your users will never miss a workout session ever.",
+      " With multiple internet benefits, there also comes some threat like malware who can steal your bank details. But not with us. We ensure secured payment through cards, online platforms, and wallets.",
   },
   {
-    title: " Attractive UI + Unbeatable Performance: ",
+    title: "  Attractive UI + Unbeatable Performance:  ",
     description:
-      " Our highly qualified healthcare app developers ensure that users get the best experience by building an interactive user interface and engaging platform.",
+      "As UI or UX is the first thing that builds a user’s experience, we make sure it to be of top-notch quality. Thus, ensuring a loyal customer base and a better future.",
   },
   {
-    title: "  Secured payment:  ",
+    title: "   Branding:  ",
     description:
-      " What makes us the best Health App development company is we specialize in integrating secured payment gateway. We do this by ensuring safe transactions through wallets, credit cards, and online mediums.",
+      " We ensure the app’s branding by adding valuable sections to the app like user feedback, reviews, and rating options. Thus, while the user gets the benefit of the service, you benefit from their review.",
   },
 ];
 export const slides = [
