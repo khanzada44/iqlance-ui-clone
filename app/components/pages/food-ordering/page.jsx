@@ -1388,7 +1388,7 @@ export default function foodOrdering() {
           {[...partners, ...partners].map((item, index) => (
             <div
               key={`${item.id}-${index}`}
-              className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 flex-shrink-0"
+              className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
             >
               <img
                 src={item.image}
