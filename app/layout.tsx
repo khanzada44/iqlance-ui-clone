@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../app/components/navigation/Navbar";
 import Footer from "../app/components/footer/Footer";
+import FloatingTalkToExpert from '../app/components/pages/FloatingTalkToExpert/page';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main>{children}</main>
+        <FloatingTalkToExpert />
         <Footer />
       </body>
     </html>

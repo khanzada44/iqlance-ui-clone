@@ -26,14 +26,17 @@ import {
   industries,
   services,
   faqsData,
-  testimonials
+  testimonials,
+  tabs,
+  appData,
 } from "../ecommerce/data";
 import Image from "next/image";
 
-export default function Ecommerce() {
-  const [activeTab, setActiveTab] = useState("driver");
+export default function foodOrdering() {
+  // const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
+  const [activeTab, setActiveTab] = useState("customer");
   // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
   // Form State
   const [formData, setFormData] = useState({
@@ -69,30 +72,28 @@ export default function Ecommerce() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
-                Wellness & Fitness
+                E-Commerce Development Company
               </h1>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Recently it is seen that the wellness and fitness industry are
-                in need of technology revolution, which is why business leaders
-                are inclining towards mobility solutions. iQlance acknowledges
-                this requirement, thus providing you with a team of experts
-                experienced at crafting the best digital solution for you.
+              <p className="text-base md:text-lg leading-relaxed text-gray-900">
+                The E-Commerce industry is growing rapidly and shifting gradually towards the world of Smartphone devices. 
+                Since, a large number of people today prefer browsing eCommerce stores by using their 
+                mobile devices and operating apps, instead of visiting any website physically. 
+                Because of this, eCommerce app development helps to search products present in 
+                the store and at the same time, to make payment easily with it.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                The fitness app we develop will ensure your business will reach
-                heights by offering you many opportunities. It is not only you
-                who will benefit but also the target audience by low-stress
-                level, high productivity, lower healthcare cost, etc.
+              <p className="text-base md:text-lg leading-relaxed text-gray-900">
+                  Keeping this is mind, our iQlance, known as a leading eCommerce app developer 
+                  has offered an improved end-to-end functionality. We always remain ready to deliver 
+                  you with the best possible eCommerce development solutions and help you to integrate your 
+                  business with mobiles with the help of innovative eCommerce mobile app USA.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Being the best Health and fitness app development company, we
-                make sure our comprehensive fitness app contains every feature a
-                fitness enthusiast will require to maintain a good shape, like
-                forming diet plans, connecting with fitness gurus, scheduling
-                workouts, etc.
+              <p className="text-base md:text-lg leading-relaxed text-gray-900">
+              Our apps come with almost every possible efficient marketing strategy to deliver you an 
+              engaging digital 
+              experience for your clients to maintain the best possible standards in eCommerce.
               </p>
 
               {/* Action Buttons */}
@@ -238,113 +239,60 @@ export default function Ecommerce() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Fetch Gym Trainers And Nutritionists Easily With Our Wellness
-                And Fitness App Development Solutions
+                Creative eCommerce App Development Services
               </h2>
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Our team at iQlance always strives hard to provide you with the
-                best possible fitness solutions. For this, we have delivered a
-                variety of innovative wellness and fitness app development
-                solutions and allowed fitness enthusiasts to get their
-                fitness-related queries resolved within less possible span of
-                time.
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                    Mobile E-Commerce application development is an important task for businesses, with developers 
+                    focusing on it to improve interactions between companies and their consumers. In addition, by always just a “touch” apart, 
+                    mobile eCommerce apps are well-known for getting to understand their consumers faster. Company owners may engage clients at any moment and from any 
+                    location with an eCommerce mobile app.
               </p>
               <br />
               <p>
-                We assist gym trainers, dieticians/nutritionists, yoga trainer,
-                aerobic/zumba trainers and similar other experts to integrate
-                their web and mobile applications, so that athletes or fitness
-                freaks easily fetch their services in time. We do this by
-                providing:
+                Leading companies have worked with us to bring their trademarks and firms to the 
+                smartphone market, and iQlance is a well-known name in online eCommerce services. We’ve 
+                worked on service applications, B2B and B2C eCommerce apps, 
+                and corporate apps to assist companies to enhance their operations and productivity.
               </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
-              {bottomFeatures.map((item, index) => (
-                <div key={index} className="flex items-start gap-2.5">
-                  <ChevronRight className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    <strong className="font-bold text-gray-900">
-                      {item.title}
-                    </strong>{" "}
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+              
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src="/images/eccom-app-dev-left.jpg"
+              alt="Customer Support"
+              className="w-full max-w-md h-auto object-cover"
+            />
+          </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App for Your Business?
-            </h2>
+          <div className="flex flex-col gap-y-6">
+            {bottomFeatures.map((item, index) => (
+              <div key={index} className="flex items-start gap-3">
+                {/* Chevron Right Icon */}
+                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to create
-              scalable, feature-rich logistics mobile applications tailored to
-              your needs.
-            </p>
-
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
+                {/* Text Content */}
+                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                  <strong className="font-semibold text-gray-900">
+                    {item.title}:
+                  </strong>{" "}
+                  {item.description}
+                </p>
               </div>
-            </div>
-
-            {/* Action Button */}
-            <div>
+            ))}
+            <div className="">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 rounded-md transition duration-200 shadow-md"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Request a Free Quote <ArrowRight className="w-4 h-4" />
+                Start a Conversation
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
-        </section>
+        </div>
         <section className="py-10">
           <div className="mx-auto max-w-7xl">
             <Swiper
@@ -388,7 +336,7 @@ export default function Ecommerce() {
                             key={index}
                             className="flex gap-3 items-baseline"
                           >
-                            <ChevronRight size={10} />
+                            <ChevronRight size={20} />
                             <span>{point}</span>
                           </div>
                         ))}
@@ -402,7 +350,6 @@ export default function Ecommerce() {
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
-            // Checking if index is odd to reverse layout dynamically
             const isEven = index % 2 === 0;
 
             return (
@@ -472,7 +419,7 @@ export default function Ecommerce() {
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6]  py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
@@ -521,129 +468,55 @@ export default function Ecommerce() {
         <section className="max-w-6xl mx-auto px-4 py-16 text-center font-sans">
           {/* Heading & Subtitle */}
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
-            Features of Wellness and Fitness App Development
+            Efforts that make us proud include
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our wellness and fitness app successfully grabs the eyeballs of
-            health maniacs because of the valuable features we add. Making the
-            process of being fit effortless for people.
+            Our crew of experienced food app developers has dedicated their
+            attention and effort to developing a variety of on-demand bespoke
+            applications for consumers. We are pleased to report that our
+            initiatives have received positive feedback from our consumers.
           </p>
 
-          {/* Main 3x3 Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
-            {/* Card 1 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/doctor-patient-profile-icn.png"
-                alt="Login & Profile Creation"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Login & Profile Creation
-              </h3>
+          <div className="max-w-6xl mx-auto p-6 font-sans">
+            {/* Navigation Tabs */}
+            <div className="flex justify-center border-b border-gray-200 mb-8">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-6 py-3 text-lg font-medium transition-colors duration-200 border-b-2 ${
+                    activeTab === tab.id
+                      ? "border-blue-600 text-blue-600 font-semibold"
+                      : "border-transparent text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/push-h-icn.png"
-                alt="Push Notification"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Push Notification
-              </h3>
-            </div>
+            {/* Feature Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {appData[activeTab]?.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white border border-gray-200 p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-40"
+                >
+                  <img src={item.iconPath} alt="" />
+                  {/* Custom Icon Placeholder - Yahan aap apna image/icon tag laga sakte hain */}
 
-            {/* Card 3 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/sm-icon.png"
-                alt="Social Sharing"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Social Sharing
-              </h3>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/content-h-icn.png"
-                alt="Geolocation"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Geolocation
-              </h3>
-            </div>
-
-            {/* Card 5 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/reminders-h-icn.png"
-                alt="Reminders"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Reminders
-              </h3>
-            </div>
-
-            {/* Card 6 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/200cal.png"
-                alt="Food and Calorie Tracker"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Food and Calorie Tracker
-              </h3>
-            </div>
-
-            {/* Card 7 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/calender-icn-new.png"
-                alt="Schedules and Calendar"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Schedules and Calendar
-              </h3>
-            </div>
-
-            {/* Card 8 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/game-remote.png"
-                alt="Gamification"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Gamification
-              </h3>
-            </div>
-
-            {/* Card 9 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/online-icon-w.png"
-                alt="Online Sessions"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Online Sessions
-              </h3>
+                  <span className="text-gray-800 font-medium text-base">
+                    {item.title}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Bottom Centered Row (2 Cards) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {/* Card 10 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+            <div className="bg-white border border-gray-200  p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/analytics-h-icn.png"
                 alt="Analytics & Reports"
@@ -655,7 +528,7 @@ export default function Ecommerce() {
             </div>
 
             {/* Card 11 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+            <div className="bg-white border border-gray-200 p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/chat-h-icn.png"
                 alt="Chat"
@@ -682,24 +555,23 @@ export default function Ecommerce() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App?
+              So, We Guess You want to talk about your Project
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to streamline
-              fleet management, delivery tracking, and supply chain operations.
+              Send your Requirements on
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                  <img src="/icons/email-icon.svg" alt="" />
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -707,7 +579,7 @@ export default function Ecommerce() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                  <img src="/icons/phone-icon.svg" alt="" />
                   <span>US :</span>
                   <a
                     href="tel:+14697939837"
@@ -733,94 +605,12 @@ export default function Ecommerce() {
                 href="#contact"
                 className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Discuss Your Project <ArrowRight className="w-4 h-4" />
+                Let’s Talk <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
-          {/* Section Header */}
-          <div className="text-center space-y-3 mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Key Features of Logistics and Transportation App Development
-            </h2>
-            <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
-              Our logistics app solutions contain a host of features that shall
-              help you manage your activities in a more organized manner.
-            </p>
-          </div>
-        </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App?
-            </h2>
-
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to streamline
-              fleet management, delivery tracking, and supply chain operations.
-            </p>
-
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Action Button */}
-            <div>
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Let’s Discuss Your Project <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Image Side */}
@@ -835,30 +625,24 @@ export default function Ecommerce() {
             {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Expert Logistics App Developers with Proven Technical Expertise
+                For All Technologies, We Have Specialized and Qualified
+                Developers on Our Team
               </h2>
 
               <p>
-                In our family, we have a group of highly competent developers
-                with full-stack development aptitudes. All our experts have
-                previously worked in different types of app development
-                projects, long before joining our team. With their years of
-                service experience, our App Developers have long since upgraded
-                their skills; they provide high-grade apps for clients.
+                We’re here to assist business in finding the finest food app for
+                the specific requirements and needs. We match the capabilities
+                of our employees to business requirements. Before recruiting,
+                companies can conduct an assessment with programmers. With an
+                authorized programmer, business can begin a one-week hazardless
+                experiment.
               </p>
 
               <p>
-                To us, our clients are the main priority. Whatever features they
-                require and the speed at which they want their service, our
-                developers focus on delivering well-designed custom mobile apps.
-              </p>
-
-              <p>
-                We create apps for different types of companies, be it smaller
-                ones just starting or enterprise-level corporations with
-                big-scale logistics demands. Expect noticeable business growth,
-                smoother operations, and maximized profits in the future with
-                our ad per design services.
+                Our developers will devote their whole attention to the
+                assignment. Our staff becomes a part of the organization. You
+                receive a committed programming staff that users can manage
+                independently.
               </p>
             </div>
           </div>
@@ -867,38 +651,26 @@ export default function Ecommerce() {
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How Much Does It Cost to Build a Custom Logistics App?
+              How much does it cost to develop a food app that is comparable to
+              popular rivals on the market?
             </h2>
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                While constructing a customized logistics mobile app integrated
-                with multiple features, the question of cost does come into
-                play. Our team of{" "}
-                <span className="font-bold text-gray-900">
-                  app developers USA
-                </span>{" "}
-                also includes financial specialists. They would carefully
-                evaluate your app requirement and devise the most efficient app
-                cost structure.
-              </p>
-
-              <p>
-                There is no standard fee that we offer for our craft though. All
-                our clients get personalized costs for development depending on
-                multiple factors. These include the technologies we utilized for
-                the app&apos;s frontend and backend development, technology
-                stack, and platform compatibility.
-              </p>
-
-              <p>
-                Our team takes the time to understand your business goals,
-                operational challenges, and budget to create custom logistic app
-                development tailored to your specific requirements. Get in touch
-                with us today to explore a cost-effective solution that enhances
-                efficiency, optimizes workflows, and supports long-term growth.
+                Our development group left zero leaf uncovered in their pursuit of creating accessible 
+                apps with sophisticated functionality 
+                for restaurants and customers. We are well-equipped to deal with many forms of 
+                equipment and to effectively apply those to our application design services.
               </p>
             </div>
+          </div>
+          <div className="flex justify-center">
+          <Link
+                href="#"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Get a Quotation <ArrowRight className="w-4 h-4" />
+          </Link>
           </div>
 
           {/* Banner Image */}
@@ -913,13 +685,12 @@ export default function Ecommerce() {
           {/* Success Stories Heading Section */}
           <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-              Success Stories That Showcase Our Logistics Expertise
+              Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
+              iQlance solutions has always been honored with valuable words for the efforts given 
+              on mobile app development that are efficiently unique and user centric. 
+              Here are some of the best examples for this.
             </p>
           </div>
         </section>
@@ -949,7 +720,7 @@ export default function Ecommerce() {
 
                       <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
                         {slide.features.map((feature, i) => (
-                          <li key={i}>› {feature}</li>
+                          <li key={i} className="flex items-center gap-2"><ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" /> {feature}</li>
                         ))}
                       </ul>
 
@@ -991,7 +762,7 @@ export default function Ecommerce() {
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}
-          <div className="bg-[#F4F8FC] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-[#F4F8FC]  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
                 Check How We turn Your Idea into Innovative Product
@@ -1004,7 +775,7 @@ export default function Ecommerce() {
 
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 rounded-md transition-colors shrink-0"
+              className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
             >
               <span>See Our Work</span>
               <ArrowRight className="w-4 h-4" />
@@ -1088,52 +859,13 @@ export default function Ecommerce() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Transform Your Transportation and Logistics Mobile Apps
-              Development
+               We are Team of Talented, Experienced, and Certified Designers and Developers.
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to build custom
-              logistics mobile applications that streamline operations and drive
-              growth.
+             Let us Build Something Extraordinary.
             </p>
-
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
-              </div>
-            </div>
 
             {/* Action Button */}
             <div>
@@ -1147,17 +879,15 @@ export default function Ecommerce() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-              {" "}
-              Your Trusted Logistics App Development Company in the USA
+            Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App
-              Development Company with a vast area of experience in crafting
-              stunning and end to end encrypted technology solutions. We offer
-              excellent expertise of the industry followed by an exactly planned
-              approach to elevate your growth.
+              iQlance solutions is a leading Software, Web, & Mobile App Development Company with a 
+              vast area of experience in crafting stunning and end to end encrypted technology solutions. 
+              We offer excellent expertise of the industry 
+              followed by an exactly planned approach to elevate your growth.
             </p>
           </div>
         </section>
@@ -1166,10 +896,10 @@ export default function Ecommerce() {
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
+                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
               >
                 {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
                     alt=""
@@ -1193,54 +923,52 @@ export default function Ecommerce() {
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-              {" "}
-              Industries We Serve with Custom Logistics App Development
+              Industries We Serve
             </h1>
             <p>
-              Over the years, we have collaborated with multiple companies, both
-              large firms with big teams and small-scale businesses, across
-              several industries.
+              We’ve worked with a variety of organization throughout the years, 
+              including major corporations with 
+              enormous employees and local firms in a variety of sectors.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
-            {industries.map((item, index) => (
-              <div
-                key={index}
-                className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
-              >
-                <img
-                  src={item.bgImage}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
-                    <img
-                      src={item.icon}
-                      alt=""
-                      className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
-                    />
-                  </div>
-                </div>
-                <h3 className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 text-white font-bold text-sm sm:text-lg md:text-xl text-center w-full px-2">
-                  {item.title}
-                </h3>
-              </div>
-            ))}
-          </div>
+                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
+                     {industries.map((item, index) => (
+                       <div
+                         key={index}
+                         className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
+                       >
+                         <img
+                           src={item.bgImage}
+                           alt={item.title}
+                           className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                         />
+                         <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
+                         <div className="absolute inset-0 flex items-center justify-center">
+                           <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
+                             <img
+                               src={item.icon}
+                               alt=""
+                               className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
+                             />
+                           </div>
+                         </div>
+                         <h3 className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 text-white font-bold text-sm sm:text-lg md:text-xl text-center w-full px-2">
+                           {item.title}
+                         </h3>
+                       </div>
+                     ))}
+                   </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
-              Why Businesses Choose Our Logistics App Development Company
+              Why should you choose us?
             </h1>
             <p>
-              iQlance Solutions specializes in developing scalable, feature-rich
-              mobile applications for different operating systems, like Android
-              and iPhone. Our experts deliver a centralized workflow for every
-              client and offer dedicated service at all times.{" "}
+             
+            iQlance is a top-tier food application creation company that creates applications for a variety of operating systems, including Android and iPhone. Our professionals provide a centralized process for each customer and provide personalised assistance in any way.
+         
             </p>
           </div>
         </section>
@@ -1271,13 +999,12 @@ export default function Ecommerce() {
         <section>
           <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
-              Client Testimonialss
+              Client Testimonials
             </h1>
             <p>
-              Our purpose as a logistics app development company, has always
-              centered around putting customer satisfaction first. Here are some
-              of the things our past clients have to say about our services,
-              directly from them.
+              As a food software development business, our mission has always been to 
+              prioritize client happiness. Here is what some of our previous clients had to 
+              comment regarding our offerings, straight from them.
             </p>
           </div>
         </section>
@@ -1306,11 +1033,11 @@ export default function Ecommerce() {
                     {/* Top User Info & Rating Section */}
                     <div className="flex items-center gap-4 mb-6">
                       {/* Avatar Circle */}
-                      <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
+                      <div className="w-16 h-16  border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="w-full h-full object-contain rounded-full"
+                          className="w-full h-full object-contain "
                           onError={(e) => {
                             e.target.src =
                               "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg";
@@ -1362,13 +1089,13 @@ export default function Ecommerce() {
             {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
-                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Previous Slide"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button
-                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Next Slide"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -1384,8 +1111,7 @@ export default function Ecommerce() {
             </h1>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
-              Here you will find the answers you are looking for because we know
-              what’s in our client’s mind.
+              Customers frequently ask us the same questions when it comes to bespoke software development for food delivery management at their businesses. Here are a few that have been solved.
             </p>
           </div>
 
@@ -1476,24 +1202,24 @@ export default function Ecommerce() {
           <ContactForm />
         </div>
       </div>
-       <section className="mb-5">
-              <div className="">
-                <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
-                  {partners.map((item) => (
-                    <div
-                      key={item.id}
-                      className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.alt}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+      <section className="mb-5 overflow-hidden">
+      <div className="marquee">
+        <div className="marquee-content">
+          {[...partners, ...partners].map((item, index) => (
+            <div
+              key={`${item.id}-${index}`}
+              className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+            >
+              <img
+                src={item.image}
+                alt={item.alt}
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
     </>
   );
 }

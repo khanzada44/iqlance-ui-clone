@@ -1,225 +1,222 @@
 export const bottomFeatures = [
   {
-    title: " App for your Business niche: ",
-    description:"Our experienced programmers at iQlance understand your business niche and go in the depths to find the perfect blend of features for you."},
-  {
-    title: "Branding:",
+    title: "App for your Business niche:",
     description:
-      " We are responsible for creating a secured and functional app packed with numerous features to improve customer experience. Thus, ensuring a better branding base.",
+      "Our squad of specialists develops software programs for corporate partners that are personalized to their unique demands. We analyze business patterns, and user preferences to develop a personalized app design targeted to a particular niche.",
   },
   {
     title: "Instant access:",
     description:
-      " Our certified developers offer a push notification feature for instant access. So, you can be assured that your users will never miss a workout session ever.",
+      "We provide distinctive options to create your online company a great success by using creative concepts and clear code.",
   },
   {
-    title: " Attractive UI + Unbeatable Performance: ",
+    title: "Secured payment:",
     description:
-      " Our highly qualified healthcare app developers ensure that users get the best experience by building an interactive user interface and engaging platform.",
+      "Our eCommerce web solutions, which have been around for a long time, ensure that your eCommerce site is as secure as possible. Our upgraded technology and innovations enable your online marketplace to become safer, accessible and easily expandable to new features whenever you choose.",
   },
   {
-    title: "  Secured payment:  ",
+    title: "Attractive UI + Unbeatable Performance:",
     description:
-      " What makes us the best Health App development company is we specialize in integrating secured payment gateway. We do this by ensuring safe transactions through wallets, credit cards, and online mediums.",
+      "We give support in the construction of elevated smartphone software with unique styles. Our App Developers Toronto apply innovative methodologies, procedures, software, and materials to produce a custom layout that is intuitive, manageable, and works perfectly.",
+  },
+  {
+    title: "Branding:",
+    description:
+      "To harness the potential of engaging clients, companies must interact with them regularly via mobile eCommerce. Besides keeping customers engaged in the business, smartphone shopping is useful for providing customers with offers, rebates, and vouchers quickly.",
   },
 ];
 export const slides = [
   {
     id: 1,
-    image:"/images/wellness-left-1.jpg",
-    title: "Comprehensive App for Fitness Enthusiasts",
+    image:"/images/food-ordering-left-1.jpg",
+    title: "Native Restaurant Applications",
     description:
-      "We at iQlance offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
+      "As a reputed restaurant application development team USA , we have a huge experience to deliver and develop customized mobile apps for restaurants and that too on their dominant native platforms, such as iOS and Android.",
     points: [
-      "Getting regular fitness sessions guided by experts of the fitness sector",
-      "Schedule the fitness regime and get the necessary alerts",
-      "Tips and recommendations on physical exercises",
-      "In-app fitness coach and operating assistant",
-      "Systems for laboratory information",
+      "Consultation, branding, project management, design, testing, development, implementation and launching of apps",
+      "Apps will contain a perfect blend of innovative technology and uniqueness",
+      "Apps that make your food business app to stand out from your competitors in the industry",
+      "Starting from simple eCommerce mobile app to unique ordering app, we have expertise to serve you by delivering the best results.",
+      "For restaurants with several locations, finding neighbouring eateries is a must.",
     ],
   },
   {
     id: 2,
     image:
-      "/images/wellness-left-2.jpg",
-    title: "Tracking of Calorie Intake Regularly",
+      "/images/food-ordering-left-2.jpg",
+    title: "Elegant Mobile App to Acquire Food Orders",
     description:
-      "Our iQlance team is well aware that besides physical exercise, diet of a person has a prime role in achieving fitness goals, whether to get toned muscles and abs, loose extra body fat, increase muscular strength or anything else. Hence, we have developed nutrition app to allow our clients finding healthy food options or getting the necessary consultation solutions from experienced dieticians located in almost any part of the world.",
+      "We have a qualified team to perform Online-food ordering app development for the progress of your business and thereby, let you to achieve customer satisfaction by ensuring delivery of food without any waiting list.",
     points: [
-      "Check your calorie intake and compare it with burned calories",
-      "Recommendations from an experienced nutritionist to follow an appropriate weight loss/muscle building diet plan",
-      "Stay updated on what to eat or what to avoid",
-      "Gain knowledge about glycemic index and other essential nutrition constituents in different food items",
+      "To place order of food at the doorstep with only one tap or based on address search",
+      "Simple and easy product and menu options to find various food items",
+      "Real time notifications about changes in the status of placed orders",
+      "Single checkouts as well as order history to assure about easy ordering of foods",
+      "Guests may insert or remove items from the list, as well as pick the primary elements themselves.",
     ],
   },
   {
     id: 3,
-    image:"/images/wellness-left-3.jpg",
-    title: "Workout Mobile Apps to Increase Motivation",
+    image:"/images/food-ordering-left-3.jpg",
+    title: "Sound Menu Management",
     description:
-      "Whether you are a newbie associated with wellness and fitness sector or possess good experience in strength training, power lifting and bodybuilding, you will expect to boost your motivation level and thereby, get close to your fitness goals with our workout apps.",
+      "We know that each restaurant or food business has different types of menu preparation. Considering this fact, our apps focus on such bespoke requirements in the most effective manner. Our app thus creates attractive menu to entice your prospects. Key features are-",
     points: [
-      "Gain muscular strength by losing unwanted body fat.",
-      "Calories burnt from cardio workouts",
-      "Building body muscles and perfect shape of abs",
-      "Regular yoga sessions at the fingertip.",
+      "To create the necessary updates and push them as live within only a few seconds",
+      "To include, remove or edit menu items, subgroups and modifiers, while adjust workflow-related operations during any time",
+      "Options to collect information about availability of specific menu items",
+      "Menu analytics and creation of detailed reports on product mix for available menus",
+      "Gamification elements include a structure of rewards, tasks, and championships in which customers may gain in-app cash to spend for items.",
     ],
   },
   {
     id: 4,
-    image:"/images/wellness-left-4.jpg",
-    title: "Activity Tracking Solutions to Track Your Activities",
+    image:"/images/food-ordering-left-4.jpg",
+    title: "Smooth Inventory Management",
      description:
-      "The apps offer well organized workflow of the clinic with advanced hospital mobility. We let the healthcare industry go smart with the simplified processes and managed inventories with the help of our incredible healthcare mobility solutions. ",
+      "Inventory management is of huge significance for any diner. Keeping this fact in mind, we include many exceptional features in the backend; while simultaneously include latest tools to operate it. ",
     points: [
-      "Get real-time stats for your walks, runs and rides, speed, pace, elevation",
-      "Maintain an appropriate track of your each fitness activity you opt to carry out",
-      "Get information on workout you need to achieve your fitness goals",
-      "Track your chosen route, pace, speed, laps and total distance you covered",
+      "Monitoring of available stock",
+      "Management of available recipes and related costs",
+      "Centralized management of any restaurant/food center’s kitchen",
+      "Table booking for the customer who prefer advance reservation",
+      "Producing an augmented reality sample of the hotel’s atmosphere to let consumers imagine a cheerful gathering or an intimate meal",
     ],
   },
 ];
 export const ServiceSectionData = [
   {
     title:
-      "Advantages to Get a Sound Wellness and Fitness App",
+      "Advantages to Install/Acquire Restaurant Business App",
     description:
-      " Unbelievable technologies applied in the mentioned apps and numerous benefits offered by wellness and fitness app development services make installation of such applications mandatory for fitness enthusiasts worldwide.",
+      "Installation or acquisition of good restaurant app development  benefits you to increase the returns on your investments in business in many ways.",
     features: [
-      "To maintain a regular and proper track of progress towards achievement of business goals",
-      "To track varying activity levels and increase reps as well as available time gradually",
-      "To view progress within no time by using the app",
-      "To train as well as monitor the progression of heart rate",
+      "Acts as an important tool to create brand awareness",
+      "Creates a direct marketing/promotion channel in between your customers and your brand",
+      "Saves the valuable time of your customers by providing them a variety of options, such as as payment via different types cards, easy placing of orders and many more",
+      "Featuring shorter and better efficient units, they assist to increase server productivity while also contributing to vacant counter space.",
+      "We will provide NFC and EMV capabilities, which means they will take transaction methods like Apple Pay.",
     ],
-    imageUrl: "/images/sound-wellness-right.jpg",
+    imageUrl: "/images/advantages-food-app.jpg",
     imageAlt: "Logistics App Development",
   },
   {
     title:
       "",
     description:
-      "Fitness apps synchronize with heart rate monitors, scales and other related devices to track progress automatically and save valuable time.",
+      "Therefore, our iQlance team succeeded to offer flamboyant app solutions for a wide range of restaurant and food business industries.",
     features: [
-      "Get free workout ideas",
-      "Carry your exercise kit with you",
-      "Set and achieve goals in desired time",
-      "Design and plan your diet",
+      "Allows you to stay connected with your customers on a round-the-clock basis",
+      "Third-party CRM integration in combination with backend apps",
+      "Great platform to promote your business and boost your customer relationships",
     ],
-    imageUrl: "/images/fitness-apps-left.jpg",
+    imageUrl: "/images/advantages-food-app-right.jpg",
     imageAlt: "Logistics App Development",
   },
 ];
 export const portfolioSlides = [
   {
     heading: "",
-    title: "Commercial Movers",
+    title: "Fantasy App Development",
     description:
-      "iQlance Solutions created the commercial movers app, a comprehensive business management platform to solve staffing challenges. This platform provides access to a vetted network of mobile movers and dynamic pricing models. Our technology helps moving companies expand seamlessly and efficiently across projects and regions.",
+      "DFS-style fantasy app that lets you play fantasy baseball in a whole new way.",
 
     features: [
-      "Access vetted mobile movers",
-      "Dynamic pricing models",
-      "Staff support tools",
-      "Staff support tools",
+      "Engaging User Experience",
+      "Real-Time Data Integration",
+      "Secure and Scalable Platform",
     ],
 
     technologies: [
+      {
+        name: "iOS",
+        icon: "/icons/ios-icon.webp",
+      },
+      {
+        name: "Android",
+        icon: "/icons/android-technologies-icn.webp",
+      },
+      {
+        name: "Laravel",
+        icon: "/icons/laravel-technologies-icn.webp",
+      },
       {
         name: "Flutter",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/Flutter.png.webp",
+        icon: "/images/Flutter.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/chain-supply-management.png.webp",
+      "/images/image_2024_08_05T12_52_05_867Z.png",
   },
 
   {
     heading: "",
-    title: "Tracking Device",
+    title: "Manufacturing App Development",
     description:
-      "The app provides a comprehensive security solution for all your devices, from student tablets to personal laptops. Its powerful combination of remote-controlled locking hardware and advanced tracking software gives you the trusted protection you need, allowing you to manage your devices with confidence from anywhere.",
+      "E-commerce management system is a distinguished player in film conversion, extrusion, and manufacturing. Our unwavering commitment to quality and customer satisfaction has propelled us to the forefront of innovation in the film industry.",
 
     features: [
-      "Remote locking and wiping",
-      "Real-time device tracking",
-      "Protects all your devices",
-      "Advanced security you can trust",
+      "Innovation-driven Experience",
+      "Customer-Centric Approach",
+      "Efficiency through Technology",
     ],
 
     technologies: [
+      {
+        name: "iOS",
+        icon: "/icons/ios-icon.webp",
+      },
+      {
+        name: "Android",
+        icon: "/icons/android-technologies-icn.webp",
+      },
+      {
+        name: "Laravel",
+        icon: "/icons/laravel-technologies-icn.webp",
+      },
+      {
+        name: "SQL",
+        icon: "/icons/microsoft-sql-icn.webp",
+      },
       {
         name: "React Native",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/React.png.webp",
+        icon: "/icons/React.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/image_2024_08_05T07_26_10_247Z.png.webp",
+      "/images/image_2024_08_05T07_26_10_247Z.webp",
   },
   {
     heading: "",
-    title: "ERP Software",
+    title: "Immigration Management Software",
     description:
-      "We built an ERP system for transportation businesses. Unlike generic software, it integrates customized modules for logistics, helping companies reduce costs and save time. Our solution creates a connected ecosystem, ensuring seamless interaction between drivers, dispatchers, and clients.",
+      " At iQlance this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
 
     features: [
-      "Manages transportation operations",
-      "Reduces time and cost",
-      "Real-time team collaboration",
-      "Ensures regulatory compliance",
+      "Easy Operational Visibility",
+      "Low Operational Costs",
+      "Accurate or Accessible Data",
+      "Full Automation?",
+      "Lack of Operational Visibility",
+      "High Operational Costs",
     ],
 
     technologies: [
-      {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
+
       {
         name: "microsoft-net",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        icon: "/images/Microsoft-Dot-Net-1.png",
       },
       {
-        name: "Azur",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
+        name: "SQL",
+        icon: "/icons/microsoft-sql-icn.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
-  },
-  {
-    heading: "",
-    title: "Driver Tracking App",
-    description:
-      "The truck driver tracking app is a custom solution built for drivers, and this app supports our logistics software. As a leading transportation app development company across the globe, we designed this app to simplify drivers’ and admins’ daily operations, including load management, route tracking, punch-in & out, communication, and more.  It ensures efficiency, accountability, and seamless workflows.",
-
-    features: [
-      "Efficient Workday Management",
-      "Real-time Location Tracking",
-      "Payment Automation",
-      "Profile Management",
-      "In-App Chat with Admin",
-      "Geofencing",
-    ],
-
-    technologies: [
-      {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "microsoft-net",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "Azur",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
-      },
-    ],
-
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
+      "/images/immigration-software-slider-2.png",
   },
 
 ];
@@ -561,61 +558,64 @@ export const industries = [
 export const services = [
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-80/data-protection-icn.png",
+      "/images/data-protection-icn.png",
     title: "Data Protection",
     description:
-      "Our every app is ultimately data protected to cope with the heavy malware attack and increased cyber-crime to support new technologies entering the healthcare world.",
+      "From virus prevention to information confidentiality, we ensure that only you get accessibility of important economic and private information. We place a strong priority on cybersecurity. We ensure that no third party other than you can access your information.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/custom-dp-icn.png",
+      "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "iQlance focuses on the rapid delivery of projects with a seamless connection between all clients. Also, ensuring solid documentation for extensive support and training.",
+      "At iQlance, we don’t believe in stagnation. To put it another way, we stay up with current developments and technology, eliminate duplicate alternatives, and continually enhance our abilities and application development ideas.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-80/easy-commution-icn.png",
+      "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
-      "We make sure to develop an app that is realistic, scalable, plausible, and communicative, bringing only positive results. As a result, it will meet all expectations of providers and patients.",
+      "At any moment, contact our team at the iQlance app development business for a food app. For all of our clients, we are always accessible to answer questions and offer emergency solutions.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/dedicated-teams.png",
+      "/images/dedicated-teams.png",
     title: "Dedicated Development Team",
     description:
-      "Our talented professionals ensure a flawless experience to everyone who use the app. Because a lasting experience always creates a greater impact.",
+      "We put our customers first, so customers can anticipate customized and fast assistance with the whole digital project from beginning to end.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/on-time-icn.png",
+     "/images/on-time-icn.png",
     title: "On – Time Delivery",
     description:
-      "100% support available to every client with the assurance of timely delivery every time so you can complete your project on time. Also, meeting superior quality standards.",
+      "One of our biggest assets is scheduled planning; our team members correctly prepare, employ a solid software system, evaluate, and deploy the application on schedule.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/quality-first-icn.png",
+      "/images/quality-first-icn.png",
     title: "Quality – First Approach",
     description:
-      "Our professionals also make sure to run the idea in the market to analyze the demand to build a quality app experience. This saves your time & resources also provides success assurance.",
+      "Our Application Designers build handy and straightforward applications with much effective functionality, a fast connectivity, and a top-notch design using verified modern tools and methods.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/cost-effective-icn.png",
+      "/images/cost-effective-icn.png",
     title: "Cost Effective Development Model",
     description:
-      "Tailor-made plan to provide the maximum benefit to you at an affordable cost. It is sure to fit every small and big need with full scalability of technology resources without spending extra pennies.",
+      "We examine our clients’ needs, avoid utilizing unnecessary technology, and provide cost estimate suggestions after thorough consideration.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp",
+      "/images/letdiscuss-icon.webp",
     title: "Technical Support",
     description:
-      "The apps are set to abide by every rule set by health standards and regulations. Plus, in case of the app experiences any bug issue, there is a whole team of certified engineers for comprehensive technical support.",
+      "Our staff has qualified experts that have worked on a variety of app development projects. We are ready to assist with app concerns such as problem fixing.",
   },
 ];
+
+
+
 export const testimonials = [
   {
     id: 1,
@@ -772,3 +772,49 @@ export const partners = [
     alt: "ISO",
   },
 ];
+
+export const tabs = [
+  { id: 'customer', label: 'Customer App' },
+  { id: 'driver', label: 'Driver App' },
+  { id: 'restaurant', label: 'Restaurant App' },
+];
+
+export const appData = {
+  customer: [
+    { id: 1, title: "Login", iconPath: "/images/doctor-patient-profile-icn.png" },
+    { id: 2, title: "Search Restaurants", iconPath: "/images/search-h-icn.png" },
+    { id: 3, title: "Listing", iconPath: "/images/view-assign-job-h.png" },
+    { id: 4, title: "Restaurant Details", iconPath: "/images/rest-detail-icn.png" },
+    { id: 5, title: "Reserve a Table", iconPath: "/images/r-a-table.png" },
+    { id: 6, title: "Order Food", iconPath: "/images/food-order.png" },
+    { id: 7, title: "Menu Access", iconPath: "/images/menu-icn.png" },
+    { id: 8, title: "QR Code", iconPath: "/images/qr-code.png" },
+    { id: 9, title: "Payment", iconPath: "/images/payment-m-h-icn.png" },
+    { id: 10, title: "Favourite", iconPath: "/images/fav-icn.png" },
+    { id: 11, title: "Reviews & Rewards", iconPath: "/images/rating-h-icn.png" },
+    { id: 12, title: "Settings", iconPath: "/images/settings-h-icn.png" },
+  ],
+  driver: [
+    { id: 1, title: "Login", iconPath: "/images/doctor-patient-profile-icn.png" },
+    { id: 2, title: "Job Details", iconPath: "/images/job-h-icn.png" },
+    { id: 3, title: "Map", iconPath: "/images/view-assign-job-h.png" },
+    { id: 5, title: "Route ", iconPath: "/images/mr-h-icn.png" },
+    { id: 4, title: "Earning", iconPath: "/images/revnues-h-icn.png" },
+    { id: 6, title: "Project Management", iconPath: "/images/project-icn.png" },
+    { id: 7, title: "Payment & earning", iconPath: "/images/payment2-m-h-icn.png" },
+    { id: 8, title: "Reviews", iconPath: "/images/rating-h-icn.png" },
+    { id: 9, title: "Report ", iconPath: "/images/repoert-h-icn.png" },
+    { id: 10, title: "Logout ", iconPath: "/images/logout-icn.png" },
+  ],
+  restaurant: [
+    { id: 1, title: " Login & Profile Creation ", iconPath: "/images/doctor-patient-profile-icn.png" },
+    { id: 2, title: "Upload Menu", iconPath: "/images/menu-icn.png" },
+    { id: 3, title: "Upload Images", iconPath: "/images/upload-im-icn.png" },
+    { id: 5, title: "View Orders ", iconPath: "/images/view-assign-job-h.png" },
+    { id: 4, title: "Accept Order", iconPath: "/images/start-h-icn.png" },
+    { id: 6, title: "Order Management", iconPath: "/images/odr-icn.png" },
+    { id: 7, title: "Revenue", iconPath: "/images/revnues-h-icn.png" },
+    { id: 8, title: "Reports", iconPath: "/images/repoert-h-icn.png" },
+    { id: 9, title: "History ", iconPath: "/images/upcoming-h-icn.png" },
+  ],
+};
