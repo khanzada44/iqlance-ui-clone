@@ -8,7 +8,7 @@ export const bottomFeatures = [
       "With our assistance, customers may have immediate accessibility to a range of services, products. Customers may reach out to our qualified and skilled app developers at any moment.",
   },
   {
-    title: " Secured payment: ",
+    title: " Secured payment ",
     description:
       " The food service software accepts a variety of payment methods, including credit/debit cards, incorporated transaction eWallets, as well as cash on delivery. We make sure to apply the most up-to-date security updates to keep users’ information secure. Before completing the last transaction, customers may use the discounts and rewards function.",
   },

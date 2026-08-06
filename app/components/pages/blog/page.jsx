@@ -3,25 +3,22 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import ContactForm from "../../contactForm/ContactForm";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { blogs } from "../blog/data";
 import Image from "next/image";
+import ContactForm from "../../contactForm/ContactForm";
 import { getBlogs } from "@/services/blog";
-
+import { useRouter } from "next/navigation";
+import { partners } from "../blog/data";
 
 export default function Blog() {
-  const [blogs, setBlogs] = useState([]); // default empty array, not null
+  const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         const data = await getBlogs();
-        console.log(data);
-        setBlogs(data);
+        // API response me se array nikalna
+        const blogList = data?.response?.data || [];
+        setBlogs(blogList);
       } catch (error) {
         console.log("Message:", error.message);
         console.log("Code:", error.code);
@@ -159,6 +156,7 @@ export default function Blog() {
               </div>
             </div>
           </section>
+
           <section>
             <div>
               <h1 className="md:text-5xl text-center leading-tight text-3xl font-bold text-[29px] ">
@@ -173,80 +171,76 @@ export default function Blog() {
               </p>
             </div>
           </section>
-          {/* <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {blogs.map((blog, index) => (
-              <div
-                key={`${blog.slug}-${index}`}
-                className="p-px bg-transparent hover:bg-linear-to-r hover:from-blue-300 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
-              >
-                <Link
-                  href={`/blog/${blog.slug}`}
-                  className="group block overflow-hidden bg-white"
+
+          {/* Dynamic Blogs Rendering */}
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-12">
+            {blogs && blogs.length > 0 ? (
+              blogs.map((blog, index) => (
+                <div
+                  key={`${blog.slug}-${index}`}
+                  className="p-px bg-transparent hover:bg-linear-to-r hover:from-blue-300 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
                 >
-                  <div className="relative aspect-4/3 overflow-hidden">
-                    {blog.image ? (
-                      <Image
-                        src={blog.image}
-                        alt={blog.title}
-                        fill
-                        className="object-cover transition duration-500 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-gray-200">
-                        No Image
-                      </div>
-                    )}
-                  </div>
+                  <Link
+                    href={`/single-blog?slug=${blog.slug}`}
+                    className="group block overflow-hidden bg-white h-full"
+                  >
+                    <div className="relative aspect-4/3 overflow-hidden">
+                      {blog.image_url ? (
+                        <Image
+                          src={blog.image_url}
+                          alt={blog.title}
+                          fill
+                          unoptimized
+                          className="object-cover transition duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-gray-200">
+                          No Image
+                        </div>
+                      )}
+                    </div>
 
-                  <div className="p-5">
-                    <span className="text-sm text-gray-500">{blog.date}</span>
+                    <div className="p-5">
+                      {blog.category?.name && (
+                        <span className="text-sm text-[#1F4E99] font-medium">
+                          {blog.category.name}
+                        </span>
+                      )}
 
-                    <h3 className="mt-3 text-xl font-semibold leading-7 text-black line-clamp-2">
-                      {blog.title}
-                    </h3>
-                  </div>
-                </Link>
+                      <h3 className="mt-3 text-xl font-semibold leading-7 text-black line-clamp-2">
+                        {blog.title}
+                      </h3>
+                    </div>
+                  </Link>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-10 text-gray-500">
+                No blogs available.
               </div>
-            ))}
-          </section> */}
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {blogs.map((blog, index) => (
-              <div
-                key={`${blog.slug}-${index}`}
-                className="p-px bg-transparent hover:bg-linear-to-r hover:from-blue-300 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
-              >
-                <Link
-                  href={`/blog/${blog.slug}`}
-                  className="group block overflow-hidden bg-white"
-                >
-                  <div className="relative aspect-4/3 overflow-hidden">
-                    {blog.image ? (
-                      <Image
-                        src={blog.image}
-                        alt={blog.title}
-                        fill
-                        className="object-cover transition duration-500 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-gray-200">
-                        No Image
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="p-5">
-                    <span className="text-sm text-gray-500">{blog.date}</span>
-
-                    <h3 className="mt-3 text-xl font-semibold leading-7 text-black line-clamp-2">
-                      {blog.title}
-                    </h3>
-                  </div>
-                </Link>
-              </div>
-            ))}
+            )}
           </section>
         </div>
+        <ContactForm/>
       </div>
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

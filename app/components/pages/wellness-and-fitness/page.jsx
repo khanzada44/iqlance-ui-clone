@@ -1493,7 +1493,7 @@ export default function wellnessFitness() {
                   ))}
                 </div>
               </div>
-            </section>
+        </section>
     </>
   );
 }

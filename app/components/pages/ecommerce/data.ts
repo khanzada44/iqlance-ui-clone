@@ -10,7 +10,7 @@ export const bottomFeatures = [
       "We provide distinctive options to create your online company a great success by using creative concepts and clear code.",
   },
   {
-    title: "Secured payment:",
+    title: "Secured payment",
     description:
       "Our eCommerce web solutions, which have been around for a long time, ensure that your eCommerce site is as secure as possible. Our upgraded technology and innovations enable your online marketplace to become safer, accessible and easily expandable to new features whenever you choose.",
   },
@@ -26,91 +26,84 @@ export const bottomFeatures = [
   },
 ];
 export const slides = [
+
   {
     id: 1,
-    image:"/images/food-ordering-left-1.jpg",
-    title: "Native Restaurant Applications",
+    image: "/images/eCommerce-left-1.jpg",
+    title: "Experience a Rich e-Commerce Application Development",
     description:
-      "As a reputed restaurant application development team USA , we have a huge experience to deliver and develop customized mobile apps for restaurants and that too on their dominant native platforms, such as iOS and Android.",
+      "Application for eCommerce store comes with countless features to provide intuitive experience to the users. They include:",
     points: [
-      "Consultation, branding, project management, design, testing, development, implementation and launching of apps",
-      "Apps will contain a perfect blend of innovative technology and uniqueness",
-      "Apps that make your food business app to stand out from your competitors in the industry",
-      "Starting from simple eCommerce mobile app to unique ordering app, we have expertise to serve you by delivering the best results.",
-      "For restaurants with several locations, finding neighbouring eateries is a must.",
+      "Secure payment gateway integration for fool-proofing financial information",
+      "High resolutions image of products to hold the interest",
+      "Multiple currency support",
+      "Customer database management",
     ],
   },
   {
     id: 2,
-    image:
-      "/images/food-ordering-left-2.jpg",
-    title: "Elegant Mobile App to Acquire Food Orders",
+    image: "/images/eCommerce-left-2.jpg",
+    title: "Display of Personalized Suggestions",
     description:
-      "We have a qualified team to perform Online-food ordering app development for the progress of your business and thereby, let you to achieve customer satisfaction by ensuring delivery of food without any waiting list.",
+      "Our iQlance eCommerce solution provider knows very well that success of any eCommerce store depends solely on buying behavior of individual users. For this-",
     points: [
-      "To place order of food at the doorstep with only one tap or based on address search",
-      "Simple and easy product and menu options to find various food items",
-      "Real time notifications about changes in the status of placed orders",
-      "Single checkouts as well as order history to assure about easy ordering of foods",
-      "Guests may insert or remove items from the list, as well as pick the primary elements themselves.",
+      "Usage of recommendation engine to analyze your users’ behavior to display personalized recommendations",
+      "To retain customers, engage them and increase cross-selling activities",
+      "To analyze buying behavior and preferences of users",
     ],
   },
   {
     id: 3,
-    image:"/images/food-ordering-left-3.jpg",
-    title: "Sound Menu Management",
+    image: "/images/eCommerce-left-3.jpg",
+    title: "Ease Your User’s Login and Signup via Social Media",
     description:
-      "We know that each restaurant or food business has different types of menu preparation. Considering this fact, our apps focus on such bespoke requirements in the most effective manner. Our app thus creates attractive menu to entice your prospects. Key features are-",
+      "Our eCommerce app development services include social media integration of eCommerce stores. This helps you to ease both login and signup procedures. In addition, social media allows your users to share their buying experience on Facebook, Twitter and other popular social media and thereby, help you in gaining a good recognition.",
     points: [
-      "To create the necessary updates and push them as live within only a few seconds",
-      "To include, remove or edit menu items, subgroups and modifiers, while adjust workflow-related operations during any time",
-      "Options to collect information about availability of specific menu items",
-      "Menu analytics and creation of detailed reports on product mix for available menus",
-      "Gamification elements include a structure of rewards, tasks, and championships in which customers may gain in-app cash to spend for items.",
+      "Placement of share plugins on your product page in Facebook/Twitter",
+      "Onsite sharing of user-generated social contents",
+      "Facility of social sign-in and usage of social comment systems",
+      "Display of any trending product on behalf of clients",
     ],
   },
   {
     id: 4,
-    image:"/images/food-ordering-left-4.jpg",
-    title: "Smooth Inventory Management",
-     description:
-      "Inventory management is of huge significance for any diner. Keeping this fact in mind, we include many exceptional features in the backend; while simultaneously include latest tools to operate it. ",
+    image: "/images/eCommerce-left-4.jpg",
+    title: "One-Stop Shopping Facility",
+    description:
+      "eCommerce solution comes with a wealth of capabilities designed to help you launch a powerful online web store in a very short time. As a leading eCommerce solution provider company, we bundle our managed services with eCommerce websites to provide one-stop-shopping experience",
     points: [
-      "Monitoring of available stock",
-      "Management of available recipes and related costs",
-      "Centralized management of any restaurant/food center’s kitchen",
-      "Table booking for the customer who prefer advance reservation",
-      "Producing an augmented reality sample of the hotel’s atmosphere to let consumers imagine a cheerful gathering or an intimate meal",
+      "Product catalog building and features listing",
+      "Product reviews for making purchase decisions",
+      "Product search with QR codes to each reach the desired item",
+      "Cart development",
     ],
   },
 ];
 export const ServiceSectionData = [
   {
     title:
-      "Advantages to Install/Acquire Restaurant Business App",
+      "Advantages to Get an e-Commerce Mobile App Solutions for Retail Stores",
     description:
-      "Installation or acquisition of good restaurant app development  benefits you to increase the returns on your investments in business in many ways.",
+      "Today, with the consistent increase in competition in the online shopping industry, well-designed online store in combination with a highly optimized app are obviously the basic assets for any successful e-commerce business.",
     features: [
-      "Acts as an important tool to create brand awareness",
-      "Creates a direct marketing/promotion channel in between your customers and your brand",
-      "Saves the valuable time of your customers by providing them a variety of options, such as as payment via different types cards, easy placing of orders and many more",
-      "Featuring shorter and better efficient units, they assist to increase server productivity while also contributing to vacant counter space.",
-      "We will provide NFC and EMV capabilities, which means they will take transaction methods like Apple Pay.",
+      "Mobile operated eCommerce apps help you to get a large number of loyal audiences and brand loyalty",
+      "Loading of contents at faster rate with apps than via any website",
+      "Brings improvement in usability of various mobile solutions",
     ],
-    imageUrl: "/images/advantages-food-app.jpg",
+    imageUrl: "/images/retail-stores-right.jpg",
     imageAlt: "Logistics App Development",
   },
   {
     title:
       "",
     description:
-      "Therefore, our iQlance team succeeded to offer flamboyant app solutions for a wide range of restaurant and food business industries.",
+      "Mobile app solutions play a significant role to setup a strong connection in between customers and online stores.",
     features: [
-      "Allows you to stay connected with your customers on a round-the-clock basis",
-      "Third-party CRM integration in combination with backend apps",
-      "Great platform to promote your business and boost your customer relationships",
+      "Mobile apps are responsible to drive the highest possible user engagement",
+      "Significant growth in the tendency of app usage and eCommerce market associated with mobile apps development",
+      "Formulation of an effective and an advanced marketing/promotion strategy",
     ],
-    imageUrl: "/images/advantages-food-app-right.jpg",
+    imageUrl: "/images/retail-stores-left.jpg",
     imageAlt: "Logistics App Development",
   },
 ];
@@ -561,56 +554,56 @@ export const services = [
       "/images/data-protection-icn.png",
     title: "Data Protection",
     description:
-      "From virus prevention to information confidentiality, we ensure that only you get accessibility of important economic and private information. We place a strong priority on cybersecurity. We ensure that no third party other than you can access your information.",
+      "We ensure that your money and personal information is only available to you, from virus prevention to data encryption security. We place a lot of emphasis on cybersecurity. ",
   },
   {
     image:
       "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "At iQlance, we don’t believe in stagnation. To put it another way, we stay up with current developments and technology, eliminate duplicate alternatives, and continually enhance our abilities and application development ideas.",
+      "At iQlance, people don’t believe in immobility. We stay on top of fresh ideas and innovations, remove superfluous alternatives, and constantly boost our expertise.",
   },
   {
     image:
       "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
-      "At any moment, contact our team at the iQlance app development business for a food app. For all of our clients, we are always accessible to answer questions and offer emergency solutions.",
+      "Contact our Mobile App Development Company USA , iQlance, at any moment. For all of our clients, we are constantly present to handle problems and supply support solutions.",
   },
   {
     image:
       "/images/dedicated-teams.png",
     title: "Dedicated Development Team",
     description:
-      "We put our customers first, so customers can anticipate customized and fast assistance with the whole digital project from beginning to end.",
+      "We are adaptable to your current interaction paradigm and can assist in fine-tuning the necessary tools and environments for your group to interact with ours without extra effort.",
   },
   {
     image:
      "/images/on-time-icn.png",
     title: "On – Time Delivery",
     description:
-      "One of our biggest assets is scheduled planning; our team members correctly prepare, employ a solid software system, evaluate, and deploy the application on schedule.",
+      "Perhaps one of our major talents is time planning; our group of members appropriately organizes, apply a powerful cloud solution, analyze, and publish the app within timeframes.",
   },
   {
     image:
       "/images/quality-first-icn.png",
     title: "Quality – First Approach",
     description:
-      "Our Application Designers build handy and straightforward applications with much effective functionality, a fast connectivity, and a top-notch design using verified modern tools and methods.",
+      "We build convenient and easy applications with many smart capabilities, a swift link, and an elevated design using well-tested modern technologies and tools.",
   },
   {
     image:
       "/images/cost-effective-icn.png",
     title: "Cost Effective Development Model",
     description:
-      "We examine our clients’ needs, avoid utilizing unnecessary technology, and provide cost estimate suggestions after thorough consideration.",
+      "We take into account our clients’ needs, prevent employing extraneous equipment, and offer budget prediction suggestions after a detailed examination.",
   },
   {
     image:
       "/images/letdiscuss-icon.webp",
     title: "Technical Support",
     description:
-      "Our staff has qualified experts that have worked on a variety of app development projects. We are ready to assist with app concerns such as problem fixing.",
+      "Our group is composed of certified professionals who have performed on a multitude of app development projects. We are happy to guide you with app difficulties such as software upgrades and bug fixes.",
   },
 ];
 
@@ -670,55 +663,38 @@ export const testimonials = [
 ];
 export const faqsData = [
   {
-    question: " How is a logistics app development firm helpful to a business?",
-    answer:
-      " An app development company for Logistics  can develop diverse management systems for transportation, fleet, and warehouse. Therefore, firms can improve their business operations because of benefits like package tracking, automated routine process types, and others. All ultimately boost user experience.",
-    points: [
-    ],
+    question: "What role does an eCommerce software development firm have in a company’s success?",
+    answer: "Ecommerce agency provides a wide range of benefits to businesses, including marketing possibilities, expanding product lines, and improving revenues through a well-designed and structured website.",
+    points: [],
   },
   {
-    question: " What types of logistics app are available?",
-    answer:
-      "",
-    points: [
-        "Asset management",
-        "Supply chain management",
-        "Transportation management systems",
-        "Warehouse management systems",
-    ],
+    question: "How to develop eCommerce software?",
+    answer: "Begin by formulating a strategy. For your eCommerce website, pick a domain and platform. Make a pricing decision and set up payment options. Create a store and begin adding products. Make a fantastic check-out experience with the guidance of our App Developers, Toronto. Promote your expanding company. Data can help you increase your online sales.",
+    points: [],
   },
   {
-    question: " How to develop logistics app?",
-    answer:
-      " Firstly, prepare a foundational overview of your idea, with defined requirements. Research the consumer base and other apps in the niche market and analyse how they would affect your company and operations. Then, consult with a reliable logistics app development company for help with the development process.",
-    points: [
-
-    ],
+    question: "How does eCommerce app development revolutionize the business industry?",
+    answer: "It may assist you in reaching a larger audience, increasing consumer interaction, promoting your brand, and generating a greater return on investment. Because it is the latest craze, you may take advantage of it to develop efficient mobile eCommerce applications.",
   },
   {
-    question: "Is a Logistics app really that important to develop?",
-    answer:
-      "Yes, logistics custom app development services are important to focus on for companies. This is because it helps balance the work performance and enhance business activities equality. The logistics tracking apps update their functions frequently, which also help companies.",
+    question: "Do I have a good professional future in digital eCommerce?",
+    answer: "The e-commerce industry is constantly developing and improving, in content, features, and applications. It is expected to improve in the upcoming years with the digitalization of e-commerce. So, businesses in this field can benefit in the long run.",
   },
   {
-    question: "How does logistics app development revolutionize the business industry?",
-    answer:
-      "With logistics app development, companies and their clients notice a new manner of handling and monitoring transportation. They gain complete control over important details and functions, like shipment process, cargo management and information.",
+    question: "How soon does an e-Commerce app development project complete?",
+    answer: "The duration of the app development varies based on which eCommerce Mobile App Development Company Dallas, USA one hires, the features to add, the proficiency of the developers, and the technology stack used, among other reasons.",
   },
   {
-    question: "Which technology should I use for logistics app development?",
-    answer:
-      "The developers would utilize the most compatible technology stacks, based on your project needs. For example, if you want to build an iOS app, they would use Swift. But, if you have an Android app in mind, they would utilize Kotlin programming.",
+    question: "Is after-sales support available?",
+    answer: "Our App developers, Toronto deliver after-sales maintenance and support to all clients. Discuss with our agents about the support duration.",
   },
   {
-    question: "Is it possible to add a feature after app deployment?",
-    answer:
-      "Our app development company  for logistics does focus on providing customized features after launch. Discuss further with our developers during your project’s planning period.",
+    question: "What can my team make using e-commerce app development?",
+    answer: "You can create a multi-channel marketplace or a niche-specific e-commerce app. The final project depends on your requirements, like the industry you wish to target.",
   },
   {
-    question: "Is post-launch app maintenance always available?",
-    answer:
-      "At iQlance, we have support professionals who focus entirely on post-launch support for companies. Contact the support team whenever.",
+    question: "How to begin operating an e-commerce mobile app?",
+    answer: "Sell your products and services by first displaying them per type and category. Focus on the app design and understand your audience through prior research.",
   },
 ];
 export const partners = [

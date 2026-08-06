@@ -2,40 +2,67 @@
 
 import React, { useState } from "react";
 import { Phone, X } from "lucide-react";
-
+import { submitCallRequest } from "@/services/send-call-request"; 
 export default function FloatingTalkToExpert() {
   const [isOpen, setIsOpen] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted phone number:", phoneNumber);
-    setPhoneNumber("");
+    setLoading(true);
+    setStatusMessage({ type: "", text: "" });
+
+    try {
+      // Sirf phone number API me bhejna
+      const payload = { number: phoneNumber };
+      const response = await submitCallRequest(payload);
+      console.log("Success:", response);
+
+      setStatusMessage({
+        type: "success",
+        text: "Call request sent successfully!",
+      });
+
+      setPhoneNumber(""); // Clear input field
+
+      // 3 seconds baad drawer auto-close
+      setTimeout(() => {
+        setIsOpen(false);
+        setStatusMessage({ type: "", text: "" });
+      }, 3000);
+    } catch (error) {
+      console.error("Error submitting request:", error);
+      setStatusMessage({
+        type: "error",
+        text: error?.response?.data?.message || "Something went wrong. Try again!",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
       <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50">
-        {/* 1. Side Trigger Button (Bada size aur rounded-l edge) */}
+        {/* 1. Side Trigger Button */}
         <div>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center justify-center bg-[#134479] hover:bg-[#0d3056] text-white px-2 py-3 shadow-2xl cursor-pointer z-10 transition-all duration-200"
+            className="flex items-center justify-center bg-[#134479] hover:bg-[#0d3056] text-white px-2 py-3 shadow-2xl cursor-pointer z-10 transition-all duration-200 rounded-l-md"
             style={{ writingMode: "vertical-rl" }}
           >
             <Phone size={15} className="rotate-90 mb-2" />
-            <span className="font-bold text-sm ">
-              Talk to Expert
-            </span>
+            <span className="font-bold text-sm">Talk to Expert</span>
           </button>
         </div>
 
         {/* 2. Slide-in Drawer Card */}
         <div
-          className={`fixed right-0 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md border border-gray-200 shadow-2xl p-6 w-80 text-gray-800 transition-transform duration-300 ease-in-out ${
+          className={`fixed right-0 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md border border-gray-200 shadow-2xl p-6 w-80 text-gray-800 transition-transform duration-300 ease-in-out rounded-l-xl ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
-          style={{ marginRight: isOpen ? "0px" : "-320px" }}
         >
           {/* Close Button */}
           <button
@@ -82,7 +109,7 @@ export default function FloatingTalkToExpert() {
             </span>
           </div>
 
-          {/* Callback Request Form */}
+          {/* Callback Request Form - Single Field */}
           <form onSubmit={handleSubmit} className="space-y-3">
             <input
               type="tel"
@@ -92,11 +119,26 @@ export default function FloatingTalkToExpert() {
               onChange={(e) => setPhoneNumber(e.target.value)}
               className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#134479] text-sm"
             />
+
+            {/* Status Feedback Message */}
+            {statusMessage.text && (
+              <p
+                className={`text-xs text-center font-semibold ${
+                  statusMessage.type === "success"
+                    ? "text-green-600"
+                    : "text-red-600"
+                }`}
+              >
+                {statusMessage.text}
+              </p>
+            )}
+
             <button
               type="submit"
-              className="w-full bg-[#134479] hover:bg-[#0d3056] text-white font-semibold py-3 rounded-lg transition-colors text-sm shadow-md"
+              disabled={loading}
+              className="w-full bg-[#134479] hover:bg-[#0d3056] text-white font-semibold py-3 rounded-lg transition-colors text-sm shadow-md disabled:opacity-50"
             >
-              Request a Call Back
+              {loading ? "Submitting..." : "Request a Call Back"}
             </button>
           </form>
         </div>

@@ -8,7 +8,7 @@ export const bottomFeatures = [
       " We develop an app that is perfect for your business by a careful investigation into the operation of your business and designing the best solution.",
   },
   {
-    title: " Secured payment: ",
+    title: " Secured payment ",
     description:
       " With multiple internet benefits, there also comes some threat like malware who can steal your bank details. But not with us. We ensure secured payment through cards, online platforms, and wallets.",
   },

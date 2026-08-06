@@ -293,6 +293,21 @@ export default function foodOrdering() {
             </div>
           </div>
         </div>
+        <section>
+          <div>
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+               Let’s Take a Deep Dive into The Extraordinary Features of The e-Commerce App Development Done by us
+              
+              </h2>
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                
+              Before focusing on Mobile E-Commerce Application Development, businesses and developers must plan out what they need to add to the app. The right features can help manage the challenges of e-commerce app development better, and our solutions focus on this securely.
+              
+              </p>
+            </div>
+          </div>
+        </section>
         <section className="py-10">
           <div className="mx-auto max-w-7xl">
             <Swiper
@@ -347,6 +362,76 @@ export default function foodOrdering() {
               ))}
             </Swiper>
           </div>
+           <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+             Looking to Hire Dedicated Team?
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6]  py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img src="/icons/email-icon.svg" alt="" />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img src="/icons/phone-icon.svg" alt="" />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Hire Dedicated Developers <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
@@ -468,74 +553,159 @@ export default function foodOrdering() {
         <section className="max-w-6xl mx-auto px-4 py-16 text-center font-sans">
           {/* Heading & Subtitle */}
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
-            Efforts that make us proud include
+            eCommerce App Development Features
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our crew of experienced food app developers has dedicated their
-            attention and effort to developing a variety of on-demand bespoke
-            applications for consumers. We are pleased to report that our
-            initiatives have received positive feedback from our consumers.
+           
+         Our eCommerce agency offers a handful of functionalities that will support you in better organising your activities.
+         
           </p>
-
-          <div className="max-w-6xl mx-auto p-6 font-sans">
-            {/* Navigation Tabs */}
-            <div className="flex justify-center border-b border-gray-200 mb-8">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-3 text-lg font-medium transition-colors duration-200 border-b-2 ${
-                    activeTab === tab.id
-                      ? "border-blue-600 text-blue-600 font-semibold"
-                      : "border-transparent text-gray-500 hover:text-gray-700"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Feature Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {appData[activeTab]?.map((item) => (
-                <div
-                  key={item.id}
-                  className="bg-white border border-gray-200 p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-40"
-                >
-                  <img src={item.iconPath} alt="" />
-                  {/* Custom Icon Placeholder - Yahan aap apna image/icon tag laga sakte hain */}
-
-                  <span className="text-gray-800 font-medium text-base">
-                    {item.title}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom Centered Row (2 Cards) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {/* Card 10 */}
-            <div className="bg-white border border-gray-200  p-8 flex flex-col items-center justify-center min-h-35">
+ <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+            {/* Card 1 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
-                src="/images/analytics-h-icn.png"
-                alt="Analytics & Reports"
+                src="/images/doctor-patient-profile-icn.png"
+                alt="Login & Profile Creation"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Analytics & Reports
+                Social Media & User Profile
               </h3>
             </div>
 
-            {/* Card 11 */}
-            <div className="bg-white border border-gray-200 p-8 flex flex-col items-center justify-center min-h-35">
+            {/* Card 2 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
-                src="/images/chat-h-icn.png"
+                src="/images/ril-icn.png"
+                alt="Push Notification"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Property List
+              </h3>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/search-h-icn.png"
+                alt="Social Sharing"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Search
+              </h3>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/filter-h-icn.png"
+                alt="Filter"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Filter
+              </h3>
+            </div>
+
+            {/* Card 5 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/categeory-icn.png"
+                alt="Category"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Categories
+              </h3>
+            </div>
+
+            {/* Card 6 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/fav-icn.png"
+                alt="Food and Calorie Tracker"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Favourite
+              </h3>
+            </div>
+
+            {/* Card 7 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/settings-h-icn.png"
+                alt="Schedules and Calendar"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Settings
+              </h3>
+            </div>
+
+            {/* Card 8 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/map-h-icn.png"
+                alt="Gamification"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Map
+              </h3>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/upcoming-h-icn.png"
+                alt="Gamification"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                History
+              </h3>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/recommended-h-icn.png"
+                alt="Gamification"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Recommendation
+              </h3>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/push-h-icn.png"
+                alt="Gamification"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Push Notification
+              </h3>
+            </div>
+
+            {/* Card 9 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/revnues-h-icn.png"
+                alt="Online Sessions"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Cost Calculator
+              </h3>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/calender-icn-new.png"
                 alt="Chat"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Chat
+                Calendar
               </h3>
             </div>
           </div>
@@ -625,24 +795,25 @@ export default function foodOrdering() {
             {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                For All Technologies, We Have Specialized and Qualified
-                Developers on Our Team
+                Qualified and Trained Programmers, for Various Technologies, Make Up Our Team
               </h2>
 
               <p>
-                We’re here to assist business in finding the finest food app for
-                the specific requirements and needs. We match the capabilities
-                of our employees to business requirements. Before recruiting,
-                companies can conduct an assessment with programmers. With an
-                authorized programmer, business can begin a one-week hazardless
-                experiment.
+                We’ll put together a squad and handle their incorporation, 
+                inspiration, and supervision, while customers maintain leadership and influence 
+                throughout the project’s general development. Our IT professionals have a clear 
+                knowledge of the market- they can concentrate swiftly incorporating into the production 
+                procedure, no matter how specialised it is.
               </p>
-
               <p>
-                Our developers will devote their whole attention to the
-                assignment. Our staff becomes a part of the organization. You
-                receive a committed programming staff that users can manage
-                independently.
+                  All our members have a collaborative mentality and a nice demeanour, 
+                  which makes it easy for them to work with other teams. Our App Developers Toronto 
+                  have long ago improved 
+                  their abilities and now supply clients with high-quality apps.
+              </p>
+              <p>               
+                    We assign a professional project administrator to oversee the everyday operations and processes, among other tasks. As a result, you’ll 
+                    have extra time to concentrate on the development’s key components.
               </p>
             </div>
           </div>
@@ -651,16 +822,22 @@ export default function foodOrdering() {
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How much does it cost to develop a food app that is comparable to
-              popular rivals on the market?
+              How Much will It Take to Develop an eCommerce App?
             </h2>
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                Our development group left zero leaf uncovered in their pursuit of creating accessible 
-                apps with sophisticated functionality 
-                for restaurants and customers. We are well-equipped to deal with many forms of 
-                equipment and to effectively apply those to our application design services.
+                Over time, the notion of e-commerce must have expanded its feathers and become a part of our everyday life. In reality, after WhatsApp or Instagram, eCommerce apps are indeed the next highest popular system to connect with individuals or participate in conversations today.
+              </p>
+              <p>
+                
+According to one study by experts, the approximate eCommerce App Development cost for basic apps falls between $38,000 to $91,000. The price of moderate apps ranges from $55,000 to $131,000, while complicated software may cost $91,550 or more.
+                
+              </p>
+              <p>
+                
+So, based on the company’s average price of $30, here is an approximate estimate of how much it takes to construct an app: A simple application will set you back approximately $30,000, a moderate quality application would set you back $50,000+, and a difficult application will set you back around $75,000+.
+            
               </p>
             </div>
           </div>
@@ -967,7 +1144,9 @@ export default function foodOrdering() {
             </h1>
             <p>
              
-            iQlance is a top-tier food application creation company that creates applications for a variety of operating systems, including Android and iPhone. Our professionals provide a centralized process for each customer and provide personalised assistance in any way.
+            
+             iQlance is a leading Mobile App Development Company USA  has to offer that develops applications for different operating systems. Our specialists develop a consolidated procedure for every business as well as deliver customized guidance at regular instances.
+         
          
             </p>
           </div>
@@ -999,12 +1178,10 @@ export default function foodOrdering() {
         <section>
           <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
-              Client Testimonials
+            Testimonials From Our Clients
             </h1>
             <p>
-              As a food software development business, our mission has always been to 
-              prioritize client happiness. Here is what some of our previous clients had to 
-              comment regarding our offerings, straight from them.
+           Customer satisfaction has always been at the forefront of our mission as an Ecommerce software development business in USA. Here are some actual quotes from some of our previous clients on our services.
             </p>
           </div>
         </section>
@@ -1111,7 +1288,7 @@ export default function foodOrdering() {
             </h1>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
-              Customers frequently ask us the same questions when it comes to bespoke software development for food delivery management at their businesses. Here are a few that have been solved.
+              Answers to Some of the frequently asked questions on our E-commerce app and software development services by some valuable clients such as you!
             </p>
           </div>
 

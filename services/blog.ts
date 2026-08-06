@@ -5,7 +5,7 @@ export const getBlogs = async () => {
   return response.data;
 };
 
-export const getBlog = async (slug: string) => {
-  const response = await api.get(`/blogs/${slug}`);
+export const getSingleBlog = async (slug: string) => {
+  const response = await api.get(`/single-blog?slug=${slug}`);
   return response.data;
 };

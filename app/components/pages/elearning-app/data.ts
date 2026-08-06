@@ -18,7 +18,7 @@ export const bottomFeatures = [
       " Our highly qualified healthcare app developers ensure that users get the best experience by building an interactive user interface and engaging platform.",
   },
   {
-    title: "  Secured payment:  ",
+    title: "  Secured payment  ",
     description:
       " What makes us the best Health App development company is we specialize in integrating secured payment gateway. We do this by ensuring safe transactions through wallets, credit cards, and online mediums.",
   },
