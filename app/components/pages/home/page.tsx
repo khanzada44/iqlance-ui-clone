@@ -1133,7 +1133,7 @@ export default function Home() {
 
             <div className="flex justify-center mt-8 sm:mt-12">
               <Link
-                href="/blogs"
+                href="/blog"
                 className="bg-[#0C4A8A] hover:bg-[#083b70] text-white px-8 sm:px-10 py-3 sm:py-4  text-base sm:text-xl font-semibold inline-flex items-center justify-center gap-3 transition w-full sm:w-auto"
               >
                 All Blogs

@@ -1,32 +1,34 @@
 export const bottomFeatures = [
   {
-    title: " App for your Business niche: ",
-    description:"Our experienced programmers at iQlance understand your business niche and go in the depths to find the perfect blend of features for you."},
-  {
-    title: "Branding:",
+    title: "App for business niche",
     description:
-      " We are responsible for creating a secured and functional app packed with numerous features to improve customer experience. Thus, ensuring a better branding base.",
+      "We understand the value of personalized solutions, and offer such a dedication in our app development efforts. We consider the demands of customers in niche markets and research all market trends to plan an intuitive and user-friendly on-demand app design.",
   },
   {
-    title: "Instant access:",
+    title: "Instant access",
     description:
-      " Our certified developers offer a push notification feature for instant access. So, you can be assured that your users will never miss a workout session ever.",
+      "Our experienced On Demand App Developers are always available for support, both during and after the development process. Additionally, get useful cutting-edge technologies, methodologies, tools, and more at your disposal for quicker access.",
   },
   {
-    title: " Attractive UI + Unbeatable Performance: ",
+    title: "Secure payment",
     description:
-      " Our highly qualified healthcare app developers ensure that users get the best experience by building an interactive user interface and engaging platform.",
+      "We at iQlance Mobile App Development Company USA. are particular about security, ensuring encrypted, malware, and firewall protection for all our solutions. Protect your personal data well with our support.",
   },
   {
-    title: "  Secured payment ",
+    title: "Attractive UI + Unbeatable Performance",
     description:
-      " What makes us the best Health App development company is we specialize in integrating secured payment gateway. We do this by ensuring safe transactions through wallets, credit cards, and online mediums.",
+      "From the design of the app to the functionality, we prioritize the UI and UX layouts of the app highly and guarantee speedy service. Our developers utilize the best and latest techniques, tools, and programs to optimize app performance for long-term usage.",
+  },
+  {
+    title: "Branding",
+    description:
+      "An app acts as the face of the brand for many customers; better quality designs and top-grade features appeal to them. Our on-Demand App Developers prioritize this during the building process and promotion and ensure a notable standing in the market.",
   },
 ];
 export const slides = [
   {
     id: 1,
-    image:"/images/wellness-left-1.jpg",
+    image:"/images/on-demand-left-1.jpg",
     title: "Comprehensive App for Fitness Enthusiasts",
     description:
       "We at iQlance offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
@@ -41,7 +43,7 @@ export const slides = [
   {
     id: 2,
     image:
-      "/images/wellness-left-2.jpg",
+      "/images/on-demand-left-2.jpg",
     title: "Tracking of Calorie Intake Regularly",
     description:
       "Our iQlance team is well aware that besides physical exercise, diet of a person has a prime role in achieving fitness goals, whether to get toned muscles and abs, loose extra body fat, increase muscular strength or anything else. Hence, we have developed nutrition app to allow our clients finding healthy food options or getting the necessary consultation solutions from experienced dieticians located in almost any part of the world.",
@@ -54,7 +56,7 @@ export const slides = [
   },
   {
     id: 3,
-    image:"/images/wellness-left-3.jpg",
+    image:"/images/on-demand-left-3.jpg",
     title: "Workout Mobile Apps to Increase Motivation",
     description:
       "Whether you are a newbie associated with wellness and fitness sector or possess good experience in strength training, power lifting and bodybuilding, you will expect to boost your motivation level and thereby, get close to your fitness goals with our workout apps.",
@@ -67,7 +69,7 @@ export const slides = [
   },
   {
     id: 4,
-    image:"/images/wellness-left-4.jpg",
+    image:"/images/on-demand-left-4.jpg",
     title: "Activity Tracking Solutions to Track Your Activities",
      description:
       "The apps offer well organized workflow of the clinic with advanced hospital mobility. We let the healthcare industry go smart with the simplified processes and managed inventories with the help of our incredible healthcare mobility solutions. ",
@@ -82,144 +84,130 @@ export const slides = [
 export const ServiceSectionData = [
   {
     title:
-      "Advantages to Get a Sound Wellness and Fitness App",
+      "Experience The Quickest Application Development With Us!",
     description:
-      " Unbelievable technologies applied in the mentioned apps and numerous benefits offered by wellness and fitness app development services make installation of such applications mandatory for fitness enthusiasts worldwide.",
+      "The customers who believe in receiving the app development services  on the go. We, at iQlance, build ever-evolving on-demand app solutions in order to promote the next generation services for the business growth. Have an amazing experience of scalable and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced admin dashboard and powerful analytics panel for both android as well as iOS. <br/><br/>Our unparalleled set of solutions helps the businesses to acquire new customers along with the pervasive solutions that can be deployed for any business. We believe your business on mobile should be easy and convenient for the customers. The demand of on-demand mobile app development  has created a great buzz in the market." ,
     features: [
-      "To maintain a regular and proper track of progress towards achievement of business goals",
-      "To track varying activity levels and increase reps as well as available time gradually",
-      "To view progress within no time by using the app",
-      "To train as well as monitor the progression of heart rate",
+      
     ],
-    imageUrl: "/images/sound-wellness-right.jpg",
+    imageUrl: "/images/quickest-application-right.jpg",
     imageAlt: "Logistics App Development",
   },
   {
     title:
-      "",
+      " On-Demand Solutions for Other Businesses ",
     description:
-      "Fitness apps synchronize with heart rate monitors, scales and other related devices to track progress automatically and save valuable time.",
+      " Our App Developers Toronto cater to different types of businesses for their on-demand app demands. Whether your speciality lies in food delivery, stock delivery, or on-demand video services, our developers are trained to create different app models efficiently. We offer the same level of dedication and work quality to each customer, startup or enterprise-level. Our work covers all steps from researching to preparation, from completing the design to adding the elements, from launching the app to after-launch maintenance. Our client business can expect the best-of-the-best help from us, always.",
     features: [
-      "Get free workout ideas",
-      "Carry your exercise kit with you",
-      "Set and achieve goals in desired time",
-      "Design and plan your diet",
+     
     ],
-    imageUrl: "/images/fitness-apps-left.jpg",
+    imageUrl: "/images/on-demand-solution-left.jpg",
     imageAlt: "Logistics App Development",
   },
 ];
 export const portfolioSlides = [
   {
     heading: "",
-    title: "Commercial Movers",
+    title: "Fantasy App Development",
     description:
-      "iQlance Solutions created the commercial movers app, a comprehensive business management platform to solve staffing challenges. This platform provides access to a vetted network of mobile movers and dynamic pricing models. Our technology helps moving companies expand seamlessly and efficiently across projects and regions.",
+      "DFS-style fantasy app that lets you play fantasy baseball in a whole new way.",
 
     features: [
-      "Access vetted mobile movers",
-      "Dynamic pricing models",
-      "Staff support tools",
-      "Staff support tools",
+      "Engaging User Experience",
+      "Real-Time Data Integration",
+      "Secure and Scalable Platform",
     ],
 
     technologies: [
+      {
+        name: "iOS",
+        icon: "/icons/ios-icon.webp",
+      },
+      {
+        name: "Android",
+        icon: "/icons/android-technologies-icn.webp",
+      },
+      {
+        name: "Laravel",
+        icon: "/icons/laravel-technologies-icn.webp",
+      },
       {
         name: "Flutter",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/Flutter.png.webp",
+        icon: "/images/Flutter.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/chain-supply-management.png.webp",
+      "/images/image_2024_08_05T12_52_05_867Z.png",
   },
 
   {
     heading: "",
-    title: "Tracking Device",
+    title: "Manufacturing App Development",
     description:
-      "The app provides a comprehensive security solution for all your devices, from student tablets to personal laptops. Its powerful combination of remote-controlled locking hardware and advanced tracking software gives you the trusted protection you need, allowing you to manage your devices with confidence from anywhere.",
+      "E-commerce management system is a distinguished player in film conversion, extrusion, and manufacturing. Our unwavering commitment to quality and customer satisfaction has propelled us to the forefront of innovation in the film industry.",
 
     features: [
-      "Remote locking and wiping",
-      "Real-time device tracking",
-      "Protects all your devices",
-      "Advanced security you can trust",
+      "Innovation-driven Experience",
+      "Customer-Centric Approach",
+      "Efficiency through Technology",
     ],
 
     technologies: [
+      {
+        name: "iOS",
+        icon: "/icons/ios-icon.webp",
+      },
+      {
+        name: "Android",
+        icon: "/icons/android-technologies-icn.webp",
+      },
+      {
+        name: "Laravel",
+        icon: "/icons/laravel-technologies-icn.webp",
+      },
+      {
+        name: "SQL",
+        icon: "/icons/microsoft-sql-icn.webp",
+      },
       {
         name: "React Native",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/React.png.webp",
+        icon: "/icons/React.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/image_2024_08_05T07_26_10_247Z.png.webp",
+      "/images/image_2024_08_05T07_26_10_247Z.webp",
   },
   {
     heading: "",
-    title: "ERP Software",
+    title: "Immigration Management Software",
     description:
-      "We built an ERP system for transportation businesses. Unlike generic software, it integrates customized modules for logistics, helping companies reduce costs and save time. Our solution creates a connected ecosystem, ensuring seamless interaction between drivers, dispatchers, and clients.",
+      " At iQlance this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
 
     features: [
-      "Manages transportation operations",
-      "Reduces time and cost",
-      "Real-time team collaboration",
-      "Ensures regulatory compliance",
+      "Easy Operational Visibility",
+      "Low Operational Costs",
+      "Accurate or Accessible Data",
+      "Full Automation?",
+      "Lack of Operational Visibility",
+      "High Operational Costs",
     ],
 
     technologies: [
-      {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
+
       {
         name: "microsoft-net",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        icon: "/images/Microsoft-Dot-Net-1.png",
       },
       {
-        name: "Azur",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
+        name: "SQL",
+        icon: "/icons/microsoft-sql-icn.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
-  },
-  {
-    heading: "",
-    title: "Driver Tracking App",
-    description:
-      "The truck driver tracking app is a custom solution built for drivers, and this app supports our logistics software. As a leading transportation app development company across the globe, we designed this app to simplify drivers’ and admins’ daily operations, including load management, route tracking, punch-in & out, communication, and more.  It ensures efficiency, accountability, and seamless workflows.",
-
-    features: [
-      "Efficient Workday Management",
-      "Real-time Location Tracking",
-      "Payment Automation",
-      "Profile Management",
-      "In-App Chat with Admin",
-      "Geofencing",
-    ],
-
-    technologies: [
-      {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "microsoft-net",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "Azur",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
-      },
-    ],
-
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
+      "/images/immigration-software-slider-2.png",
   },
 
 ];
@@ -770,5 +758,43 @@ export const partners = [
     image:
       "https://www.iqlance.com/wp-content/themes/iqlance/img/ypca-logo.png.webp",
     alt: "ISO",
+  },
+];
+export const steps = [
+  {
+    id: "01",
+    title: "1. Discover",
+    stepLabel: "STEP 1",
+    heading: "Discover",
+    description:
+      "We conduct full-scale research and gather insights on market trends, customer satisfaction points, and competitors first to plan a success-worthy app design.",
+    icon: "/icons/discover.svg", // Ya jo bhi aapka image path/icon ho
+  },
+  {
+    id: "02",
+    title: "2. Design",
+    stepLabel: "STEP 2",
+    heading: "Design",
+    description:
+      "We create intuitive user flows, interactive wireframes, and stunning UI components tailored to deliver an exceptional user experience.",
+    icon: "/icons/design.svg",
+  },
+  {
+    id: "03",
+    title: "3. Build",
+    stepLabel: "STEP 3",
+    heading: "Build",
+    description:
+      "Our developers turn designs into clean, scalable code using modern tech stacks, maintaining seamless performance and security.",
+    icon: "/icons/build.svg",
+  },
+  {
+    id: "04",
+    title: "4. Deliver",
+    stepLabel: "STEP 4",
+    heading: "Deliver",
+    description:
+      "We perform rigorous quality assurance tests before launching your solution smoothly into production for market access.",
+    icon: "/icons/deliver.svg",
   },
 ];

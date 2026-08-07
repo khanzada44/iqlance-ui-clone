@@ -23,6 +23,9 @@ export default function ContactSection() {
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeTab, setActiveTab] = useState("customer");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Form States
   const [formData, setFormData] = useState({
@@ -49,53 +52,48 @@ export default function ContactSection() {
   };
 
   // API Integration Submit Handler
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setStatusMessage({ type: "", text: "" });
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setErrorMessage("");
+  setSuccessMessage("");
+  setIsSubmitting(true);
 
-    try {
-      // Form Data construct karna file upload ke liye
-      const bodyData = new FormData();
-      bodyData.append("name", formData.name);
-      bodyData.append("email", formData.email);
-      bodyData.append("phone", formData.phone);
-      bodyData.append("message", formData.message);
-      bodyData.append("sendNda", formData.sendNda);
+  // 1. Plain JavaScript Object ki jagah FormData banayein
+  const payload = new FormData();
+  payload.append("name", formData.name);
+  payload.append("email", formData.email);
+  payload.append("phone", formData.phone);
+  payload.append("message", formData.message);
+  payload.append("sendNda", String(formData.sendNda));
 
-      if (formData.file) {
-        bodyData.append("file", formData.file);
-      }
+  // File binary append karein
+  if (formData.file) {
+    payload.append("file", formData.file);
+  }
 
-      // API Call
-      await submitContactForm(bodyData);
-
-      setStatusMessage({
-        type: "success",
-        text: "Thank you! Your inquiry has been submitted successfully.",
-      });
-
-      // Form reset
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-        file: null,
-        sendNda: false,
-      });
-    } catch (error) {
-      console.error("Submission Error:", error);
-      setStatusMessage({
-        type: "error",
-        text:
-          error?.response?.data?.message ||
-          "Something went wrong. Please try again.",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    // 2. Dynamic FormData Pass karein
+    const result = await submitContactForm(payload);
+    
+    setSuccessMessage("Form submitted successfully!");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      sendNda: false,
+      file: null,
+    });
+  } catch (error) {
+    const backendMessage =
+      error.response?.data?.message ||
+      error.message ||
+      "Failed to submit form.";
+    setErrorMessage(backendMessage);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <>
       <div className="w-[90%] md:w-[80%] mx-auto max-w-full overflow-hidden">
@@ -183,102 +181,117 @@ export default function ContactSection() {
                     We Guarantee To Get Back To You Within A Business Day.
                   </p>
 
-                  <form onSubmit={handleSubmit} className="space-y-6 w-full">
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Name*"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
+                 <form onSubmit={handleSubmit} className="space-y-6 w-full">
+  {/* Error Message Display */}
+  {errorMessage && (
+    <div className="bg-red-50 border-l-4 border-red-500 p-3 text-red-700 text-sm">
+      {errorMessage}
+    </div>
+  )}
 
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email*"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
+  {/* Success Message Display */}
+  {successMessage && (
+    <div className="bg-green-50 border-l-4 border-green-500 p-3 text-green-700 text-sm">
+      {successMessage}
+    </div>
+  )}
 
-                    <div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone*"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
+  <div>
+    <input
+      type="text"
+      name="name"
+      placeholder="Name*"
+      required
+      value={formData.name}
+      onChange={handleChange}
+      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+    />
+  </div>
 
-                    <div>
-                      <textarea
-                        name="message"
-                        rows={3}
-                        placeholder="Write here Brief about the project..."
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
-                      />
-                    </div>
+  <div>
+    <input
+      type="email"
+      name="email"
+      placeholder="Email*"
+      required
+      value={formData.email}
+      onChange={handleChange}
+      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+    />
+  </div>
 
-                    {/* File Upload */}
-                    <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
-                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                        <Paperclip className="w-4 h-4 text-gray-600" />
-                        <span>Upload file:</span>
-                        <input
-                          type="file"
-                          onChange={handleFileChange}
-                          className="hidden"
-                        />
-                      </label>
-                      <span className="text-gray-500 truncate max-w-37.5 sm:max-w-50">
-                        {formData.file ? formData.file.name : "No file chosen."}
-                      </span>
-                    </div>
+  <div>
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Phone*"
+      required
+      value={formData.phone}
+      onChange={handleChange}
+      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+    />
+  </div>
 
-                    {/* Checkbox */}
-                    <div className="flex items-center gap-2 pt-1">
-                      <input
-                        type="checkbox"
-                        id="nda"
-                        checked={formData.sendNda}
-                        onChange={(e) =>
-                          setFormData((prev) => ({
-                            ...prev,
-                            sendNda: e.target.checked,
-                          }))
-                        }
-                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
-                      />
-                      <label
-                        htmlFor="nda"
-                        className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
-                      >
-                        Please Send NDA
-                      </label>
-                    </div>
+  <div>
+    <textarea
+      name="message"
+      rows={3}
+      placeholder="Write here Brief about the project..."
+      value={formData.message}
+      onChange={handleChange}
+      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+    />
+  </div>
 
-                    {/* Submit Button */}
-                    <div className="pt-2">
-                      <button
-                        type="submit"
-                        className="w-full sm:w-auto bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
-                      >
-                        Schedule a free consultation
-                      </button>
-                    </div>
-                  </form>
+  {/* File Upload */}
+  <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
+    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
+      <Paperclip className="w-4 h-4 text-gray-600" />
+      <span>Upload file:</span>
+      <input
+        type="file"
+        onChange={handleFileChange}
+        className="hidden"
+      />
+    </label>
+    <span className="text-gray-500 truncate max-w-37.5 sm:max-w-50">
+      {formData.file ? formData.file.name : "No file chosen."}
+    </span>
+  </div>
+
+  {/* Checkbox */}
+  <div className="flex items-center gap-2 pt-1">
+    <input
+      type="checkbox"
+      id="nda"
+      checked={formData.sendNda}
+      onChange={(e) =>
+        setFormData((prev) => ({
+          ...prev,
+          sendNda: e.target.checked,
+        }))
+      }
+      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+    />
+    <label
+      htmlFor="nda"
+      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
+    >
+      Please Send NDA
+    </label>
+  </div>
+
+  {/* Submit Button */}
+  <div className="pt-2">
+    <button
+      type="submit"
+      disabled={isSubmitting}
+      className="w-full sm:w-auto bg-[#1E4B82] hover:bg-[#163a66] disabled:opacity-50 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
+    >
+      {isSubmitting ? "Submitting..." : "Schedule a free consultation"}
+    </button>
+  </div>
+                </form>
                 </div>
               </div>
             </div>
