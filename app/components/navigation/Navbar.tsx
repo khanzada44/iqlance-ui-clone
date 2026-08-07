@@ -127,7 +127,7 @@ export default function Navbar() {
           onServicesLeave={handleServicesMouseLeave}
         />
         <Link
-          href={ROUTES.CONTACT}
+          href="/request-a-quote"
           className="flex items-center gap-1.5 rounded-md bg-[#1f4b83] px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-[#173d6c] sm:gap-2 sm:px-4 sm:py-2 sm:text-sm lg:flex lg:px-5 lg:py-2.5"
         >
           Enquire Now

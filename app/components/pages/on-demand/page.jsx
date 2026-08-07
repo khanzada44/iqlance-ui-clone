@@ -1271,7 +1271,7 @@ export default function Ondemadd() {
         <section>
           <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
-              Client Testimonialss
+              Client Testimonials
             </h1>
             <p>
               Our purpose as a logistics app development company, has always

@@ -1,13 +1,12 @@
 "use client";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronRight, Star } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { FaLinkedinIn, FaXTwitter, FaEnvelope } from "react-icons/fa6";
-import { FiShare2 } from "react-icons/fi";
 import {
   services,
   industries,
@@ -15,9 +14,10 @@ import {
   partners,
   servicesData,
   processSteps,
-  
   slides,
-  portfolioSlides
+  portfolioSlides,
+  testimonials,
+  stats,
 } from "../home/services-data";
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -25,7 +25,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 export default function Home() {
   return (
     <>
-      <div className="w-[90%] sm:w-[90%] mx-auto">
+      <div className="w-full max-w-[80%] mx-auto">
         {/* HERO */}
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12">
           <div className="max-w-6xl mx-auto px-2 sm:px-4 py-6 sm:py-8 font-sans lg:w-1/2">
@@ -123,21 +123,25 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-6">
-                <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                  Schedule Your Free Consultation
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </button>
+                <Link href="/contact-us" className="w-full sm:w-auto">
+                  <button className="group w-full bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                    Schedule Your Free Consultation
+                    <ArrowRight
+                      size={18}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </button>
+                </Link>
 
-                <button className="group w-full sm:w-auto border border-gray-300 hover:border-[#184A8B] px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                  Our work
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </button>
+                <Link href="/portfolio" className="w-full sm:w-auto">
+                  <button className="group w-full sm:w-auto border border-gray-300 hover:border-[#184A8B] px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                    Our work
+                    <ArrowRight
+                      size={18}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -145,7 +149,7 @@ export default function Home() {
           <div className="lg:w-1/2 flex justify-center px-4 w-full">
             <img
               className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto object-contain"
-              src="https://www.iqlance.com/wp-content/uploads/2024/10/iq-tech.webp"
+              src="/images/iq-tech.webp"
               alt="IQLance Tech"
             />
           </div>
@@ -184,7 +188,7 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <img
               className="max-w-25 sm:max-w-32.5 lg:max-w-40 w-full h-auto object-contain"
-              src="https://www.iqlance.com/wp-content/uploads/2026/04/North-Dallas-Chamber-Logo.png"
+              src="/images/North-Dallas-Chamber-Logo.png"
               alt="North Dallas Chamber Logo"
             />
           </div>
@@ -192,7 +196,7 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <img
               className="w-14 sm:w-16 md:w-20 lg:w-24 h-auto object-contain"
-              src="https://www.iqlance.com/wp-content/uploads/2024/10/iso-1080x675-1.webp"
+              src="/images/iso-1080x675-1.webp"
               alt="ISO Certification"
             />
           </div>
@@ -200,7 +204,7 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <img
               className="max-w-22.5 sm:max-w-27.5 lg:max-w-35 w-full h-auto object-contain"
-              src="https://www.iqlance.com/wp-content/uploads/2024/10/clutch-logo-update.png.webp"
+              src="/images/clutch-logo-update.png.webp"
               alt="Clutch Logo"
             />
           </div>
@@ -256,24 +260,24 @@ export default function Home() {
                     {slide.description2}
                   </p>
 
-              <div className="space-y-5">
-              {slide.services.map((service, i) => (
-                <div
-                  key={i}
-                  className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-1 md:gap-8"
-                >
-                  <span className="text-[#02449a] text-1xl font-extrabold">
-                    {service.title}
-                  </span>
+                  <div className="space-y-5">
+                    {slide.services.map((service, i) => (
+                      <div
+                        key={i}
+                        className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-1 md:gap-8"
+                      >
+                        <span className="text-[#02449a] text-1xl font-extrabold">
+                          {service.title}
+                        </span>
 
-                  <ul className="list-disc pl-5 text-sm space-y-2">
-                    {service.items.map((item, j) => (
-                      <li key={j}>{item}</li>
+                        <ul className="list-disc pl-5 text-sm space-y-2">
+                          {service.items.map((item, j) => (
+                            <li key={j}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+                  </div>
                 </div>
 
                 {/* Right */}
@@ -292,14 +296,18 @@ export default function Home() {
                     <p className="text-gray-600 mt-2 text-sm sm:text-base">
                       (We sign NDA)
                     </p>
-
-                  <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer mt-2">
-                    Let's Talk
-                    <ArrowRight
-                      size={16}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </button>
+                    <Link
+                      href="/lets-talk"
+                      className="inline-block w-full sm:w-auto"
+                    >
+                      <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer mt-2">
+                        Let's Talk
+                        <ArrowRight
+                          size={16}
+                          className="transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -312,7 +320,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
             <div className="flex justify-center">
               <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/travis_h.png"
+                src="/images/travis_h.png"
                 alt="Travis H"
                 className="w-48 sm:w-64 md:w-72 lg:w-85 object-contain"
               />
@@ -339,22 +347,22 @@ export default function Home() {
 
               <div className="mt-6 sm:mt-8 flex justify-center lg:justify-start">
                 <button className="border border-black px-4 sm:px-6 py-3 text-base sm:text-xl font-semibold hover:bg-gray-100 transition flex gap-1.5 items-center w-full sm:w-auto justify-center">
-                  <img
-                    src="https://www.iqlance.com/wp-content/themes/iqlance/img/phone-icon.svg"
-                    alt=""
-                  />
+                  <img src="/icons/phone-icon.svg" alt="" />
                   US : +1 469 793 9837
                 </button>
               </div>
 
               <div className="mt-4 sm:mt-5 flex justify-center lg:justify-start">
-                <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                    Schedule a Free Consultation 
-                    <ArrowRight
-                      size={18}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </button>
+                <Link
+                  href="/lets-talk"
+                  className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer"
+                >
+                  Schedule a Free Consultation
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
               </div>
 
               <div className="flex gap-6 sm:gap-8 mt-8 sm:mt-10 text-2xl sm:text-3xl text-[#184A8B] justify-center lg:justify-start">
@@ -367,17 +375,17 @@ export default function Home() {
           </div>
 
           <div className="flex gap-6 sm:gap-8 mt-8 sm:mt-10 text-xl sm:text-2xl text-[#184A8B] justify-center">
-            <FaLinkedinIn />
-            <FaXTwitter />
-            <FaEnvelope />
-            <FiShare2 />
+            <img src="/icons/linkedin-icn.svg" alt="" />
+            <img src="/icons/twitter-icon.svg" alt="" />
+            <img src="/icons/email-icon.svg" alt="" />
+            <img src="/icons/hubspot.svg" alt="" />
           </div>
 
           <div className="mt-8 sm:mt-5 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               Services We Offer
             </h2>
-            <p className="mt-4 sm:mt-6 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-gray-700 leading-7 sm:leading-9">
+            <p className="mt-4 sm:mt-6 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-black leading-5 sm:leading-9">
               From custom software and mobile app development to AI solutions,
               cloud consulting, and IT staff augmentation, iQlance delivers
               technology services that help businesses innovate, improve
@@ -419,61 +427,61 @@ export default function Home() {
           autoplay={{ delay: 300000 }}
           loop={true}
         >
-    {portfolioSlides.map((slide, index) => (
-  <SwiperSlide key={index}>
-    <div className="bg-[#F2F1FF] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-10">
-      <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-        {slide.heading}
-      </h2>
+          {portfolioSlides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-[#F2F1FF] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-10">
+                <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
+                  {slide.heading}
+                </h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-        <div>
-          <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-            {slide.title}
-          </h3>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
+                      {slide.title}
+                    </h3>
 
-          <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-            {slide.description}
-          </p>
+                    <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+                      {slide.description}
+                    </p>
 
-          <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-            {slide.features.map((feature, i) => (
-              <li key={i}>› {feature}</li>
-            ))}
-          </ul>
+                    <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
+                      {slide.features.map((feature, i) => (
+                        <li key={i}>› {feature}</li>
+                      ))}
+                    </ul>
 
-          <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-            {slide.technologies.map((tech, i) => (
-              <div key={i} className="text-center">
-                <img
-                  src={tech.icon}
-                  alt={tech.name}
-                  className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                />
-                <p className="text-xs sm:text-sm mt-2">{tech.name}</p>
+                    <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
+                      {slide.technologies.map((tech, i) => (
+                        <div key={i} className="text-center">
+                          <img
+                            src={tech.icon}
+                            alt={tech.name}
+                            className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
+                          />
+                          <p className="text-xs sm:text-sm mt-2">{tech.name}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                      View Case Study
+                      <ArrowRight
+                        size={18}
+                        className="transition-transform duration-300 group-hover:translate-x-1"
+                      />
+                    </button>
+                  </div>
+
+                  <div className="flex justify-center">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full max-w-xs sm:max-w-sm"
+                    />
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
-           <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                  View Case Study
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-              </button>
-        </div>
-
-        <div className="flex justify-center">
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className="w-full max-w-xs sm:max-w-sm"
-          />
-        </div>
-      </div>
-    </div>
-  </SwiperSlide>
-))}
+            </SwiperSlide>
+          ))}
         </Swiper>
 
         {/* CHECK PRODUCT SECTION */}
@@ -494,13 +502,13 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center">
-               <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                   Schedule a free consultation
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-              </button>
+              <Link
+                href="/contact-us"
+                className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3  font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
+              >
+                Schedule a free consultation
+                <ArrowRight size={22} />
+              </Link>
             </div>
           </div>
         </div>
@@ -517,7 +525,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div>
                 <img
-                  src="https://www.iqlance.com/wp-content/uploads/2026/07/AI_Development_Company-2.png"
+                  src="/images/AI_Development_Company-2.png"
                   alt="Travis"
                   className="object-cover w-full h-auto"
                 />
@@ -555,7 +563,7 @@ export default function Home() {
         <section className="bg-[#F4F8FC] rounded-lg py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
           <div className="max-w-4xl mx-auto text-center">
             <img
-              src="https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp"
+              src="/images/letdiscuss-icon.png.webp"
               alt="Hire Team"
               className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 object-contain"
             />
@@ -571,30 +579,26 @@ export default function Home() {
 
             <div className="mt-6 sm:mt-8 border border-gray-400 rounded-md px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
               <span className="font-semibold flex gap-1 items-center">
-                <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/email-icon.svg"
-                  alt=""
-                />
+                <img src="/icons/email-icon.svg" alt="" />
                 info@iqlance.com
               </span>
 
               <span className="hidden md:block">or</span>
 
               <span className="flex flex-wrap gap-1 items-center justify-center">
-                <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/phone-icon.svg"
-                  alt=""
-                />
+                <img src="/icons/phone-icon.svg" alt="" />
                 US :<strong> +1 469 793 9837</strong>, CA :
                 <strong> +1 647 637 9108</strong>
               </span>
             </div>
 
-            <button className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 sm:px-8 py-3 rounded-md font-semibold hover:bg-[#143B72] transition w-full sm:w-auto">
-              <span className="flex items-center justify-center gap-2.5">
-                Let's Talk <ArrowRight size={16} />
-              </span>
-            </button>
+            <Link
+              href="/lets-talk"
+              className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto inline-flex"
+            >
+              Let's Discuss
+              <ArrowRight size={22} />
+            </Link>
           </div>
         </section>
 
@@ -669,59 +673,255 @@ export default function Home() {
         </div>
 
         {/* PROCESS STEPS */}
-<section className="py-10 sm:py-14 lg:py-16 bg-white overflow-hidden">
-  <div className="max-w-7xl mx-auto px-4">
+        <section className="py-10 sm:py-14 lg:py-16 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+              {processSteps.map((step) => (
+                <div
+                  key={step.id}
+                  className="group relative border border-gray-200 rounded-3xl sm:rounded-[30px] bg-white pt-16 sm:pt-20 pb-6 sm:pb-8 px-5 sm:px-8 hover:shadow-xl transition-all duration-300 mb-10"
+                >
+                  {/* Floating Icon */}
+                  <div className="absolute -top-8 sm:-top-10 right-5 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24  border-2 border-gray-300  rounded-2xl flex items-center justify-center transition-all duration-300">
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 object-contain"
+                    />
+                  </div>
 
-    {/* Connector Line - Desktop Only */}
-    <div className="hidden xl:flex justify-center mb-8">
-      <img
-        src="https://www.iqlance.com/wp-content/uploads/2024/10/line-pink-1.png.webp"
-        alt=""
-        className="relative xl:right-69.25 xl:-bottom-8.25"
-      />
-    </div>
+                  <div className="flex items-start gap-3 sm:gap-5">
+                    {/* Number Box */}
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 group-hover:bg-[#184A8B] rounded-tr-2xl rounded-br-2xl flex items-center justify-center shrink-0 transition-all duration-300">
+                      <span className=" group-hover:text-white text-xl sm:text-2xl font-bold">
+                        {step.id}
+                      </span>
+                    </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-      {processSteps.map((step) => (
-        <div
-          key={step.id}
-          className="group relative border border-gray-200 rounded-3xl sm:rounded-[30px] bg-white pt-16 sm:pt-20 pb-6 sm:pb-8 px-5 sm:px-8 hover:shadow-xl transition-all duration-300 mb-10"
-        >
-          {/* Floating Icon */}
-          <div className="absolute -top-8 sm:-top-10 right-5 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24  border-2 border-gray-300  rounded-2xl flex items-center justify-center transition-all duration-300">
-            <img
-              src={step.image}
-              alt={step.title}
-              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 object-contain"
-            />
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold leading-tight text-black transition-colors duration-300">
+                      {step.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="mt-5 sm:mt-8 text-sm sm:text-base text-[#555] leading-7 sm:leading-8 font-semibold transition-colors duration-300">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
+        </section>
+        <section className="w-full max-w-6xl mx-auto px-4 py-12">
+          {/* Outer Card Wrapper with Fixed Border & Accent */}
+          <div className="relative bg-white border border-gray-300 p-8 md:p-10  shadow-sm hover:border-[#1e40af] transition-all duration-300">
+            {/* Left Blue Accent Line (Static) */}
+            <div className="absolute top-0 left-0 bottom-0  z-10" />
 
-          <div className="flex items-start gap-3 sm:gap-5">
-            {/* Number Box */}
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 group-hover:bg-[#184A8B] rounded-tr-2xl rounded-br-2xl flex items-center justify-center shrink-0 transition-all duration-300">
-              <span className=" group-hover:text-white text-xl sm:text-2xl font-bold">
-                {step.id}
-              </span>
+            {/* Swiper Slider Component */}
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              spaceBetween={30}
+              slidesPerView={1}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              navigation={{
+                nextEl: ".custom-next",
+                prevEl: ".custom-prev",
+              }}
+              loop={true}
+              className="w-full"
+            >
+              {testimonials.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <div>
+                    {/* Top User Info & Rating Section */}
+                    <div className="flex items-center gap-4 mb-6">
+                      {/* Avatar Circle */}
+                      <div className="w-16 h-16  border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-contain "
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src =
+                              "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg";
+                          }}
+                        />
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                          {item.name}
+                        </h4>
+                        {/* Stars */}
+                        <div className="flex items-center gap-1">
+                          {[...Array(item.review)].map((_, index) => (
+                            <Star
+                              key={index}
+                              className="w-5 h-5 fill-amber-400 text-amber-400"
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Review Text */}
+                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                      {item.review}
+                    </p>
+
+                    {/* Google Verified Branding */}
+                    <div className="space-y-1 pb-2 md:pb-0">
+                      <span className="text-xs text-gray-500 font-medium block">
+                        verified
+                      </span>
+                      <img
+                        src={item.verifiedImage}
+                        alt="Google Logo"
+                        className="h-7 object-contain"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src =
+                            "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg";
+                        }}
+                      />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
+            <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
+              <button
+                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
+                aria-label="Previous Slide"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <button
+                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
+                aria-label="Next Slide"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </section>
+        {/* INDUSTRIES */}
+        <section>
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+              Offshore Web, Mobile & Software Development Company
+            </h1>
+            <p>
+              iQlance solutions is a leading Software, Web, & Mobile App
+              Development Company with a vast area of experience in crafting
+              stunning and end to end encrypted technology solutions. We offer
+              excellent expertise of the industry followed by an exactly planned
+              approach to elevate your growth.
+            </p>
+          </div>
+        </section>
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
             </div>
 
-            {/* Title */}
-            <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold leading-tight text-black transition-colors duration-300">
-              {step.title}
-            </h3>
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+              Ready to Get Started?
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+              Send your Requirements on
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6]  py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img src="/icons/email-icon.svg" alt="" />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img src="/icons/phone-icon.svg" alt="" />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Talk <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
+        </section>
+        <section>
+          <div className="flex flex-wrap justify-center gap-7 mt-24">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
+              >
+                {/* Floating Icon */}
+                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="w-11 h-11 object-contain"
+                  />
+                </div>
 
-          {/* Description */}
-          <p className="mt-5 sm:mt-8 text-sm sm:text-base text-[#555] leading-7 sm:leading-8 font-semibold transition-colors duration-300">
-            {step.description}
-          </p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+                <h3 className="text-lg font-bold text-black leading-none">
+                  {item.value}
+                </h3>
 
-
-        {/* INDUSTRIES */}
+                <p className="mt-3 text-lg leading-none text-black">
+                  {item.line1}
+                  <br />
+                  {item.line2}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
         <section className="py-10 sm:py-16">
           <div className="max-w-7xl mx-auto px-3 sm:px-5">
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center">
@@ -801,12 +1001,13 @@ export default function Home() {
               </p>
 
               <div className="flex justify-center lg:justify-start">
-                <button className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 rounded-md font-semibold flex items-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto justify-center">
+                <Link
+                  href="/lets-talk"
+                  className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 rounded-md font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto inline-flex"
+                >
                   Let's Discuss
-                  <span className="text-xl">
-                    <ArrowRight size={22} />
-                  </span>
-                </button>
+                  <ArrowRight size={22} />
+                </Link>
               </div>
             </div>
           </div>
@@ -835,7 +1036,7 @@ export default function Home() {
 
               <div className="flex justify-center lg:justify-end px-4">
                 <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/globe-vector.png.webp"
+                  src="/images/globe-vector.png.webp"
                   alt="Globe"
                   className="w-full max-w-xs sm:max-w-md lg:max-w-130 object-contain"
                 />
@@ -849,7 +1050,7 @@ export default function Home() {
           <div className="mx-auto bg-[#F5FAFF] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-12">
             <div className="flex justify-center">
               <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp"
+                src="/images/letdiscuss-icon.png.webp"
                 alt="Discuss"
                 className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
               />
@@ -867,32 +1068,27 @@ export default function Home() {
 
             <div className="mt-6 sm:mt-8 max-w-4xl mx-auto border border-gray-400 bg-white px-4 sm:px-6 py-4 sm:py-5 rounded flex flex-col md:flex-row items-center justify-center gap-3 text-sm sm:text-lg md:text-xl">
               <span className="font-semibold flex items-center gap-1">
-                <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/email-icon.svg"
-                  alt=""
-                />
+                <img src="/icons/email-icon.svg" alt="" />
                 info@iqlance.com
               </span>
 
               <span className="hidden md:inline">or</span>
 
               <span className="flex flex-wrap items-center justify-center gap-1">
-                <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/phone-icon.svg"
-                  alt=""
-                />
+                <img src="/icons/phone-icon.svg" alt="" />
                 <strong> +1 469 793 9837</strong>, CA :
                 <strong> +1 647 637 9108</strong>
               </span>
             </div>
 
             <div className="flex justify-center mt-6 sm:mt-8">
-              <button className="bg-[#184A8B] hover:bg-[#123B73] transition text-white font-semibold px-6 sm:px-8 py-3 rounded-md flex items-center gap-3 w-full sm:w-auto justify-center">
-                Request a Quote
-                <span className="text-xl">
-                  <ArrowRight size={14} />
-                </span>
-              </button>
+              <Link
+                href="/request-a-quote"
+                className="bg-[#184A8B] hover:bg-[#123B73] transition text-white font-semibold px-6 sm:px-8 py-3 rounded-md flex items-center justify-center gap-3 w-full sm:w-auto cursor-pointer"
+              >
+                <span>Request a Quote</span>
+                <ArrowRight size={18} className="shrink-0" />
+              </Link>
             </div>
           </div>
         </section>
@@ -936,12 +1132,13 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center mt-8 sm:mt-12">
-              <button className="bg-[#0C4A8A] hover:bg-[#083b70] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-md text-base sm:text-xl font-semibold flex items-center gap-3 transition w-full sm:w-auto justify-center">
+              <Link
+                href="/blogs"
+                className="bg-[#0C4A8A] hover:bg-[#083b70] text-white px-8 sm:px-10 py-3 sm:py-4  text-base sm:text-xl font-semibold inline-flex items-center justify-center gap-3 transition w-full sm:w-auto"
+              >
                 All Blogs
-                <span className="text-2xl">
-                  <ArrowRight size={14} />
-                </span>
-              </button>
+                <ArrowRight size={22} />
+              </Link>
             </div>
           </div>
         </section>
@@ -963,18 +1160,18 @@ export default function Home() {
       </div>
 
       {/* PARTNERS - outside main container */}
-      <section className="py-8 sm:py-10">
-        <div className="px-3 sm:px-4">
-          <div className="flex flex-wrap justify-center gap-2">
-            {partners.map((item) => (
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
               <div
-                key={item.id}
-                className="w-32.5 h-16.25 sm:w-40 sm:h-17.5 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center"
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
               >
                 <img
                   src={item.image}
                   alt={item.alt}
-                  className="max-h-10 sm:max-h-12 md:max-h-14 max-w-25 sm:max-w-32.5 md:max-w-42.5 object-contain"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
             ))}

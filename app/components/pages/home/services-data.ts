@@ -88,7 +88,58 @@ export const industries = [
     icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/oil-fas-icn.png.webp",
   },
 ];
-
+export const testimonials = [
+  {
+    id: 1,
+    name: "Elisha",
+    image:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
+    verifiedImage:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+    review:
+      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
+  },
+  {
+    id: 2,
+    name: "Gregor I",
+    image:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/google-icon.png.webp",
+    verifiedImage:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/google-logo-new.png.webp",
+    review:
+      "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
+  },
+  {
+    id: 3,
+    name: "Stephanie A",
+    image:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
+    verifiedImage:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+    review:
+      "Their developers were skilled, and they helped us to integrate development with UI design were necessary. They were able to respond with high flexibility to the development model we requested. They did an excellent job. Their mobile app developer and UI designers are very expert. We can hire them again for future apps development…Thanks",
+  },
+  {
+    id: 4,
+    name: "Dubie B",
+    image:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
+    verifiedImage:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+    review:
+      "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
+  },
+  {
+    id: 5,
+    name: "Chris",
+    image:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
+    verifiedImage:
+      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+    review:
+      "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
+  },
+];
 export const blogs = [
   {
     image:
@@ -243,8 +294,6 @@ export const processSteps = [
       "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-6.svg",
   },
 ];
-
-
 export const slides = [
   {
     title: "Deliver Mobile App and Software Development Services Across the USA",
@@ -447,3 +496,35 @@ export const portfolioSlides = [
   },
 
 ];
+export const stats = [
+  {
+    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-5.svg',
+    value: "8+",
+    line1: "Years",
+    line2: "of experience",
+  },
+  {
+    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-6.svg',
+    value: "1500+",
+    line1: "Successful",
+    line2: "Projects",
+  },
+  {
+    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-7.svg',
+    value: "200+",
+    line1: "Happy Clients",
+    line2: "World Wide",
+  },
+  {
+    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-8.svg',
+    value: "800K+",
+    line1: "Hours",
+    line2: "Invested",
+  },
+  {
+    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-9.svg',
+    value: "100%",
+    line1: "Best",
+    line2: "Quality Delivery",
+  },
+]; 

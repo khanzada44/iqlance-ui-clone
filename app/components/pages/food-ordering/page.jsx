@@ -1074,7 +1074,7 @@ export default function foodOrdering() {
         <section>
           <div className="flex flex-wrap justify-center gap-7 mt-24">
             {stats.map((item, index) => (
-              <div
+              <div 
                 key={index}
                 className="relative w-full sm:w-70 lg:w-55 h-55 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
               >

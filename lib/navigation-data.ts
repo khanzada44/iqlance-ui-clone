@@ -22,7 +22,7 @@ export const navLinks: NavLink[] = [
   },
   {
     label: "Industry",
-    href: "/industry",
+    href: "/industry/healthcare",
     dropdown: [
       { label: "Healthcare", href: "/industry/healthcare", icon: "/icons/healthcare.svg" },
       { label: "Logistics", href: "/industry/logistics", icon: "/icons/logistics.svg" },
@@ -35,7 +35,7 @@ export const navLinks: NavLink[] = [
   },
   {
     label: "Solutions",
-    href: "/solutions",
+    href: "/solutions/on-demand",
     dropdown: [
       { label: "On Demand", href: "/solutions/on-demand", icon: "/icons/ondemand.svg" },
       { label: "Taxi Booking", href: "/solutions/taxi", icon: "/icons/taxiBooking.svg" },
