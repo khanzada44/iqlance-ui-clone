@@ -69,31 +69,55 @@ export default function elearning() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
-                Wellness & Fitness
+                E-Learning Development Company
               </h1>
 
+              {/* Image content added below */}
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Recently it is seen that the wellness and fitness industry are
-                in need of technology revolution, which is why business leaders
-                are inclining towards mobility solutions. iQlance acknowledges
-                this requirement, thus providing you with a team of experts
-                experienced at crafting the best digital solution for you.
+                Our education application development solutions provide a pool of
+                opportunities to the entire education industry. Our{" "}
+                <span className="font-semibold text-gray-900">
+                  education app development
+                </span>{" "}
+                helps both students and institutes by providing a gamut of learning
+                activities in a compact manner with the help of our app.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                The fitness app we develop will ensure your business will reach
-                heights by offering you many opportunities. It is not only you
-                who will benefit but also the target audience by low-stress
-                level, high productivity, lower healthcare cost, etc.
+                We have a qualified and an experienced team of many veteran app developers
+                to apply their years of experience and huge expertise for designing of
+                innovative educational apps and thereby, fulfill customized requirements of
+                your educational institute.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Being the best Health and fitness app development company, we
-                make sure our comprehensive fitness app contains every feature a
-                fitness enthusiast will require to maintain a good shape, like
-                forming diet plans, connecting with fitness gurus, scheduling
-                workouts, etc.
+                It's time to tear down geographical and temporal obstacles to information
+                dissemination. We develop e-learning applications that encourage youngsters
+                to enjoy learning.
               </p>
+
+              <ul className="space-y-3 pt-2 text-base md:text-lg font-medium text-gray-800">
+                <li className="flex items-center gap-2">
+                  <ChevronRight size={17} />
+                  Create A Scalable
+                  Education App
+                </li>
+                <li className="flex items-center gap-2">
+                  <ChevronRight size={17} />
+                  Trusted by 1000+
+                  Companies
+                </li>
+                <li className="flex items-center gap-2">
+                  <ChevronRight size={17} />
+                  Expert Team 70+
+                  Developers
+                </li>
+                <li className="flex items-center gap-2">
+                  <ChevronRight size={17} />
+                  Create A Scalable
+                  Education App
+                </li>
+              </ul>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
@@ -238,113 +262,62 @@ export default function elearning() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Fetch Gym Trainers And Nutritionists Easily With Our Wellness
-                And Fitness App Development Solutions
+                Get a Gamut Of Learning Activities Compactly With Our Education App Development
               </h2>
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Our team at iQlance always strives hard to provide you with the
-                best possible fitness solutions. For this, we have delivered a
-                variety of innovative wellness and fitness app development
-                solutions and allowed fitness enthusiasts to get their
-                fitness-related queries resolved within less possible span of
-                time.
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                In today’s economy, innovation plays a crucial influence in how firms grow and fail. Companies are increasingly opting for online marketing over conventional marketing. There’s a lot of demand to evolve, that’s why traditional marketing channels like print and television are being squeezed out in favour of facebook. Consequently, eLearning is displacing conventional means of learning as well as staff training.
               </p>
               <br />
               <p>
-                We assist gym trainers, dieticians/nutritionists, yoga trainer,
-                aerobic/zumba trainers and similar other experts to integrate
-                their web and mobile applications, so that athletes or fitness
-                freaks easily fetch their services in time. We do this by
-                providing:
+                Despite its inaccurate reputation as a pricey and complex teaching technique, eLearning has evolved as the most popular way for organization to educate their staff. When compared to older techniques, eLearning facilitates the procedure of keeping updates.
               </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
-              {bottomFeatures.map((item, index) => (
-                <div key={index} className="flex items-start gap-2.5">
-                  <ChevronRight className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    <strong className="font-bold text-gray-900">
-                      {item.title}
-                    </strong>{" "}
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+              <br />
+              <p>
+                So, rather than trying to redo the whole text and incur extra printing expenses, our LMS systems allow you modify your documents and instructions by just attaching new lessons to current manual documents and notifying the modifications to the employees.
+              </p>
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src="/images/gamut -of-earning-left.jpg"
+              alt="Customer Support"
+              className="w-full max-w-md h-auto object-cover"
+            />
+          </div>
+          
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App for Your Business?
-            </h2>
+          <div className="flex flex-col gap-y-6">
+            {bottomFeatures.map((item, index) => (
+              <div key={index} className="flex items-start gap-3">
+                {/* Chevron Right Icon */}
+                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to create
-              scalable, feature-rich logistics mobile applications tailored to
-              your needs.
-            </p>
-
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
+                {/* Text Content */}
+                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                  <strong className="font-semibold text-gray-900">
+                    {item.title}:
+                  </strong>{" "}
+                  {item.description}
+                </p>
               </div>
-            </div>
-
-            {/* Action Button */}
-            <div>
+            ))}
+            <div className="">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 rounded-md transition duration-200 shadow-md"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Request a Free Quote <ArrowRight className="w-4 h-4" />
+                Start a Conversation
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
-        </section>
+        </div>
+        <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">Indulging in Mobile Immersive Learning/Teaching</h2>
+            <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">We possess an extremely competent and knowledgeable group of educational application designers who have produced a number of high-quality online audio as well as videos broadcasting e-learning applications for learners to use during live classes.</p>
+          </div>
         <section className="py-10">
           <div className="mx-auto max-w-7xl">
             <Swiper
@@ -388,7 +361,7 @@ export default function elearning() {
                             key={index}
                             className="flex gap-3 items-baseline"
                           >
-                            <ChevronRight size={10} />
+                            <ChevronRight size={15} />
                             <span>{point}</span>
                           </div>
                         ))}
@@ -400,6 +373,76 @@ export default function elearning() {
             </Swiper>
           </div>
         </section>
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+             Looking to Hire Dedicated Team?
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img src="/icons/email-icon.svg" alt="" />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img src="/icons/phone-icon.svg" alt="" />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Talk <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
             // Checking if index is odd to reverse layout dynamically
@@ -408,9 +451,8 @@ export default function elearning() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -1034,19 +1076,17 @@ export default function elearning() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                         ? "text-black font-semibold"
                         : "text-gray-500 hover:text-black"
-                    }`}
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1396,11 +1436,10 @@ export default function elearning() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
+                    className={`border bg-white transition-all duration-300 ${open === index
                         ? "border-gray-200 shadow-md"
                         : "border-gray-200 hover:border-gray-300"
-                    }`}
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1412,21 +1451,19 @@ export default function elearning() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
                             ? "rotate-180 text-black"
                             : "rotate-0 text-black"
-                        }`}
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
                           ? "max-h-150 opacity-100"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">
@@ -1476,24 +1513,24 @@ export default function elearning() {
           <ContactForm />
         </div>
       </div>
-       <section className="mb-5">
-              <div className="">
-                <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
-                  {partners.map((item) => (
-                    <div
-                      key={item.id}
-                      className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.alt}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
+      <section className="mb-5">
+        <div className="">
+          <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
+            {partners.map((item) => (
+              <div
+                key={item.id}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
-            </section>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

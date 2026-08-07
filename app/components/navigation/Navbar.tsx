@@ -109,7 +109,7 @@ export default function Navbar() {
           </button>
           <Link href={ROUTES.HOME} className="flex items-center shrink-0">
             <Image
-              src="https://www.iqlance.com/wp-content/themes/iqlance/img/logo.png.webp"
+              src="/images/iqlance-Logo.webp"
               alt="iQlance Logo"
               width={215}
               height={62}

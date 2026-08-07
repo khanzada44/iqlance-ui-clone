@@ -1,22 +1,108 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, ChevronRight, Paperclip } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "../../contactForm/ContactForm";
 import { getBlogs } from "@/services/blog";
-import { useRouter } from "next/navigation";
+import { submitContactForm } from "@/services/send-call-request"; 
 import { partners } from "../blog/data";
 
 export default function Blog() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    service: "",
+    service_category: "",
+    file: null,
+    sendNda: false,
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
   const [blogs, setBlogs] = useState([]);
+  const fileInputRef = useRef(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatusMessage({ type: "", text: "" });
+
+    try {
+      const payload = new FormData();
+      payload.append("name", formData.name || "");
+      payload.append("email", formData.email || "");
+      payload.append("phone", formData.phone || "");
+      payload.append("message", formData.message || "");
+      payload.append("is_nda", formData.sendNda ? "1" : "0");
+      payload.append("service", formData.service || "");
+      payload.append("service_category", formData.service_category || "");
+
+      // File ko tabhi payload me append karein jab ye valid File instance ho
+      if (formData.file && formData.file instanceof File) {
+        payload.append("file", formData.file);
+      }
+
+      await submitContactForm(payload);
+
+      setStatusMessage({
+        type: "success",
+        text: "Your message has been sent successfully!",
+      });
+
+      // Reset Form State
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        service: "",
+        service_category: "",
+        file: null,
+        sendNda: false,
+      });
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error("API Error Response:", error?.response?.data);
+
+      // Backend Error response handling
+      let errorMsg = "Failed to send message. Please try again later.";
+      if (error?.response?.data?.errors?.file) {
+        errorMsg = error.response.data.errors.file.join(" ");
+      } else if (error?.response?.data?.message) {
+        errorMsg = error.response.data.message;
+      }
+
+      setStatusMessage({
+        type: "error",
+        text: errorMsg,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         const data = await getBlogs();
-        // API response me se array nikalna
         const blogList = data?.response?.data || [];
         setBlogs(blogList);
       } catch (error) {
@@ -66,7 +152,7 @@ export default function Blog() {
                     business.
                   </p>
 
-                  <ul className="mt-8 space-y-5 text-lg text-black ">
+                  <ul className="mt-8 space-y-5 text-lg text-black">
                     <li className="flex items-center gap-1 mb-2 font-semibold">
                       <ChevronRight size={14} />
                       Software Development News
@@ -98,7 +184,6 @@ export default function Blog() {
 
                 {/* Right Form */}
                 <div className="relative">
-                  {/* Badge */}
                   <img
                     src="https://www.iqlance.com/wp-content/uploads/2025/11/badge-sameday-resposnse.png"
                     alt="Guaranteed"
@@ -107,49 +192,120 @@ export default function Blog() {
 
                   <div className="bg-[#EEF5FF] border border-[#BFD3F6] rounded-2xl shadow-lg p-6 md:p-8">
                     <h2 className="text-3xl font-bold">Request a Free Quote</h2>
-
-                    <p className="mt-3 text-lg">
+                    <p className="mt-3 text-lg mb-6">
                       Guaranteed Response within One Business Day!
                     </p>
 
-                    <form className="mt-8 space-y-6">
-                      <input
-                        type="text"
-                        placeholder="Name*"
-                        className="w-full bg-transparent border-b border-gray-400 py-3 outline-none"
-                      />
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      {statusMessage.text && (
+                        <div
+                          className={`p-3 text-sm rounded ${
+                            statusMessage.type === "success"
+                              ? "bg-green-100 text-green-700"
+                              : "bg-red-100 text-red-700"
+                          }`}
+                        >
+                          {statusMessage.text}
+                        </div>
+                      )}
 
-                      <input
-                        type="email"
-                        placeholder="Email*"
-                        className="w-full bg-transparent border-b border-gray-400 py-3 outline-none"
-                      />
+                      <div>
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Name*"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        />
+                      </div>
 
-                      <input
-                        type="text"
-                        placeholder="Phone*"
-                        className="w-full bg-transparent border-b border-gray-400 py-3 outline-none"
-                      />
+                      <div>
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Email*"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        />
+                      </div>
 
-                      <textarea
-                        rows={3}
-                        placeholder="Write here Brief about the project..."
-                        className="w-full bg-transparent border-b border-gray-400 py-3 outline-none resize-none"
-                      />
+                      <div>
+                        <input
+                          type="tel"
+                          name="phone"
+                          placeholder="Phone*"
+                          required
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        />
+                      </div>
 
-                      <input type="file" className="text-sm" />
+                      <div>
+                        <textarea
+                          name="message"
+                          rows={3}
+                          placeholder="Write here Brief about the project..."
+                          value={formData.message}
+                          onChange={handleChange}
+                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                        />
+                      </div>
 
-                      <label className="flex items-center gap-2 text-sm">
-                        <input type="checkbox" />
-                        Please Send NDA
-                      </label>
+                      {/* File Upload */}
+                      <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
+                        <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900">
+                          <Paperclip className="w-4 h-4 text-gray-600" />
+                          <span>Upload file:</span>
+                          <input
+                            ref={fileInputRef}
+                            type="file"
+                            accept=".pdf,.doc,.docx,.jpg,.png"
+                            onChange={handleFileChange}
+                            className="hidden"
+                          />
+                        </label>
+                        <span className="text-gray-500 truncate max-w-45">
+                          {formData.file ? formData.file.name : "No file chosen."}
+                        </span>
+                      </div>
 
-                      <button
-                        type="submit"
-                        className="w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 rounded-md font-semibold transition"
-                      >
-                        Schedule a free consultation
-                      </button>
+                      {/* Checkbox */}
+                      <div className="flex items-center gap-2 pt-1">
+                        <input
+                          type="checkbox"
+                          id="nda"
+                          checked={formData.sendNda}
+                          onChange={(e) =>
+                            setFormData((prev) => ({
+                              ...prev,
+                              sendNda: e.target.checked,
+                            }))
+                          }
+                          className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                        />
+                        <label
+                          htmlFor="nda"
+                          className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
+                        >
+                          Please Send NDA
+                        </label>
+                      </div>
+
+                      {/* Submit Button */}
+                      <div className="pt-2">
+                        <button
+                          type="submit"
+                          disabled={loading}
+                          className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-50"
+                        >
+                          {loading ? "Submitting..." : "Schedule a free consultation"}
+                        </button>
+                      </div>
                     </form>
                   </div>
                 </div>
@@ -159,11 +315,10 @@ export default function Blog() {
 
           <section>
             <div>
-              <h1 className="md:text-5xl text-center leading-tight text-3xl font-bold text-[29px] ">
+              <h1 className="md:text-5xl text-center leading-tight text-3xl font-bold">
                 Our Blog
               </h1>
               <p className="mt-2 space-y-6 text-center md:text-lg leading-7">
-                {" "}
                 Have a software and mobile app development project in mind? Here
                 are some of the blogs that will offer valuable insights when you
                 are planning to hire a software and mobile app development
@@ -221,8 +376,10 @@ export default function Blog() {
             )}
           </section>
         </div>
-        <ContactForm/>
+        <ContactForm />
       </div>
+
+      {/* Partners Marquee */}
       <section className="mb-5 overflow-hidden">
         <div className="marquee">
           <div className="marquee-content">

@@ -1,88 +1,89 @@
 export const bottomFeatures = [
   {
-    title: " App for your Business niche: ",
-    description:"Our experienced programmers at iQlance understand your business niche and go in the depths to find the perfect blend of features for you."},
-  {
-    title: "Branding:",
+    title: "App for your Business niche",
     description:
-      " We are responsible for creating a secured and functional app packed with numerous features to improve customer experience. Thus, ensuring a better branding base.",
+      "We conduct an industry investigation. We ensure that your app should be interesting to the targeted audience in order to be successful. We constantly keep an eye on the competition. We'll see what performs, whatever doesn't, and what kind of response we get.",
   },
   {
-    title: "Instant access:",
+    title: "Instant access",
     description:
-      " Our certified developers offer a push notification feature for instant access. So, you can be assured that your users will never miss a workout session ever.",
+      "This type of e-learning is flexible and takes into consideration the studying methods and interests of pupils. Teachers may quickly build a vibrant and interesting learning session by combining pictures, slideshows, audio clips, YouTube clips, and assessments.",
   },
   {
-    title: " Attractive UI + Unbeatable Performance: ",
+    title: "Secured payment",
     description:
-      " Our highly qualified healthcare app developers ensure that users get the best experience by building an interactive user interface and engaging platform.",
+      "Paying is simple, and learning is simple. The online payment option included in eLearning app construction helps families to deposit school payments with ease, keep track of received and overdue payments, and get reminders for delinquent costs.",
   },
   {
-    title: "  Secured payment  ",
+    title: "Attractive UI + Unbeatable Performance",
     description:
-      " What makes us the best Health App development company is we specialize in integrating secured payment gateway. We do this by ensuring safe transactions through wallets, credit cards, and online mediums.",
+      "We provide unique education websites with simple information monitoring systems and a simple design for students. We developed schooling platforms for everybody and made sure they were simple to maintain with the most up-to-date information.",
+  },
+  {
+    title: "Branding",
+    description:
+      "The stronger the caliber of your software, the more likely it is that its clients will stick with it. After offering great client contentment, develop your brand's status in the industry. Because your growth is our priority.",
   },
 ];
 export const slides = [
   {
     id: 1,
-    image:"/images/wellness-left-1.jpg",
-    title: "Comprehensive App for Fitness Enthusiasts",
+    image: "/images/eLearning-left-1.jpg",
+    title: "App Features for Students",
     description:
-      "We at iQlance offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
+      "Today, mobile immersive teaching or learning is important for success and better future of kids. Hence, as a reputed Education solution provider, our team designs and develops engaging education apps to allow students to indulge them in learning new things. Our major aspects of the app are-",
     points: [
-      "Getting regular fitness sessions guided by experts of the fitness sector",
-      "Schedule the fitness regime and get the necessary alerts",
-      "Tips and recommendations on physical exercises",
-      "In-app fitness coach and operating assistant",
+      "eBooks in EPUB, PDF, and Adobe DRM format",
+      "Uninterrupted access to the digital library to view and download content",
+      "View upcoming schedule on activity and events",
+      "Keep a track of classes, homework and homework reminder",
       "Systems for laboratory information",
     ],
   },
   {
     id: 2,
-    image:
-      "/images/wellness-left-2.jpg",
-    title: "Tracking of Calorie Intake Regularly",
+    image: "/images/eLearning-left-2.jpg",
+    title: "App Features for Teachers",
     description:
-      "Our iQlance team is well aware that besides physical exercise, diet of a person has a prime role in achieving fitness goals, whether to get toned muscles and abs, loose extra body fat, increase muscular strength or anything else. Hence, we have developed nutrition app to allow our clients finding healthy food options or getting the necessary consultation solutions from experienced dieticians located in almost any part of the world.",
+      "Gone those days, when imparting education takes place by only chalk, black board and chalk. At iQlance, we always strive hard to embrace top quality and innovative teaching models for teachers. We aim to bring a huge excitement in the process of imparting knowledge and education through mobile app. It includes-",
     points: [
-      "Check your calorie intake and compare it with burned calories",
-      "Recommendations from an experienced nutritionist to follow an appropriate weight loss/muscle building diet plan",
-      "Stay updated on what to eat or what to avoid",
-      "Gain knowledge about glycemic index and other essential nutrition constituents in different food items",
+      "Creating a profile of teacher feeding in all the necessary details",
+      "Booking classrooms to make sure the availability at specific time",
+      "Digital attendance facility which makes processing and accessing easy",
+      "Student report generation to assess their performance",
     ],
   },
   {
     id: 3,
-    image:"/images/wellness-left-3.jpg",
-    title: "Workout Mobile Apps to Increase Motivation",
+    image: "/images/eLearning-left-3.jpg",
+    title: "App Features for Institutes",
     description:
-      "Whether you are a newbie associated with wellness and fitness sector or possess good experience in strength training, power lifting and bodybuilding, you will expect to boost your motivation level and thereby, get close to your fitness goals with our workout apps.",
+      "Our education app development solutions USA implement learning programs, backend systems and online fees management to make sure about smooth operation of a particular education institute. We thus help in creating outstanding students' experiences and simultaneously, give research experts and institutes access to scalable and potent computing competencies.",
     points: [
-      "Gain muscular strength by losing unwanted body fat.",
-      "Calories burnt from cardio workouts",
-      "Building body muscles and perfect shape of abs",
-      "Regular yoga sessions at the fingertip.",
+      "To regulate and monitor the valuable educational resources",
+      "To bring drastic improvement in the operational activities of an institute",
+      "To provide robust mechanism in admission procedure and fees collection",
+      "To provide you with a sound campus management system",
     ],
   },
   {
     id: 4,
-    image:"/images/wellness-left-4.jpg",
-    title: "Activity Tracking Solutions to Track Your Activities",
-     description:
-      "The apps offer well organized workflow of the clinic with advanced hospital mobility. We let the healthcare industry go smart with the simplified processes and managed inventories with the help of our incredible healthcare mobility solutions. ",
+    image: "/images/eLearning-left-4.jpg",
+    title: "Appealing user interface",
+    description:
+      "Teachers and faculty members now no longer have to bother about attention span of students. This is because; we have come up with sophisticated educational app solutions to provide appealing user interface and make sure proper interaction of teachers with students. Other than this, faculty members will get the complete module on their mobile systems and make sure timely completion of syllabus to supplement improved results among their students.",
     points: [
-      "Get real-time stats for your walks, runs and rides, speed, pace, elevation",
-      "Maintain an appropriate track of your each fitness activity you opt to carry out",
-      "Get information on workout you need to achieve your fitness goals",
-      "Track your chosen route, pace, speed, laps and total distance you covered",
+      "Customized content development",
+      "Module management",
+      "Graphic embedment in a demonstrative way",
+      "Implementation of evaluation process in a standardized way",
     ],
   },
 ];
 export const ServiceSectionData = [
   {
     title:
-      "Advantages to Get a Sound Wellness and Fitness App",
+      "Advantages to Install Education Apps for Students and Institutes",
     description:
       " Unbelievable technologies applied in the mentioned apps and numerous benefits offered by wellness and fitness app development services make installation of such applications mandatory for fitness enthusiasts worldwide.",
     features: [

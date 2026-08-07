@@ -268,7 +268,7 @@ export const MobileNav = ({ isOpen, onClose, navLinks }: MobileNavProps) => {
           <div className="flex-1 overflow-y-auto py-2">
             {selectedCategory?.items.map((item, itemIndex) => (
               <Link
-                key={item}
+                key={`${selectedCategory?.id ?? 'category'}-${itemIndex}`}
                 href="#"
                 className={`flex items-center gap-3 px-4 py-3 text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-blue-600 ${
                   activeCategory
