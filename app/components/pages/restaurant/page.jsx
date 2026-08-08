@@ -28,7 +28,7 @@ import {
   services,
   faqsData,
   testimonials
-} from "../restaurant/data";
+ } from "../../../../utils/data"
 import Image from "next/image";
 
 export default function Restaurant() {

@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { submitContactForm } from "@/services/send-call-request";
+
 import {
   partners,
   bottomFeatures,
@@ -28,7 +29,7 @@ import {
   services,
   faqsData,
   testimonials
-} from "../taxi/data";
+ } from "../../../../utils/data"
 import Image from "next/image";
 
 export default function Taxi() {

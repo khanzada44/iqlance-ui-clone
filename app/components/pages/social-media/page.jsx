@@ -27,8 +27,8 @@ import {
   industries,
   services,
   faqsData,
-  testimonials,
-} from "../social-media/data";
+  testimonials
+ } from "../../../../utils/data"
 import Image from "next/image";
 
 export default function SocialMedia() {
