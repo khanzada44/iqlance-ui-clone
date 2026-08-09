@@ -188,32 +188,33 @@ export default function SocialMedia() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
-                On Demand <br />
-                Application <br />
-                Development
+                Dating App
+                <br />
+                Development <br />
+                Company
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Planning on creating a completely unique app solution for your
-                company to increase your progress in the digital market? Take
-                the help of our experts at iQlance for this endeavour; we
-                complete each step of app design and development, from the
-                origin to deployment, to ensure top-notch performance.
+                We offer secure, scalable, and user-centric dating app
+                development services. What’s your purpose for building a dating
+                app? Whether it is for casual meetings or serious relationships,
+                or it could be anything, you name it. We will turn your idea
+                into a digital platform using cutting-edge technology.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                All of our on-Demand App Developers have the necessary resources
-                and skills to create mobile intuitive solutions with the best
-                features. With years of practice in handling various projects
-                and an intensive knowledge of new cutting-edge technologies and
-                market trends, the team would prepare innovative features and
-                scalable app infrastructure.
+                We have experienced developers who bring their expertise in
+                dating mobile app development, combining intuitive design with
+                scalable backend architecture. We support end-to-end software
+                development services with high-tech security and quality coding.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Expect high growth for your brand with customizable app
-                solutions; impress your customers and improve your brand
-                reputation with our high-quality apps.
+                Having a proven track record of building secure and
+                high-performing apps, iQlancs Solutions ensures every feature is
+                user-centric and scalable. Let’s build a dating app that not
+                only encourages lasting relationships but also delivers on
+                technical and digital promises.
               </p>
 
               {/* Action Buttons */}
