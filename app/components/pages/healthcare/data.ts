@@ -1,99 +1,93 @@
-export interface Feature {
-  id: number;
-  title: string;
-  icon: string;
-}
-
-export const healthcareFeatures: Feature[] = [
+export const healthcareFeatures = [
   {
     id: 1,
     title: "Doctor and Patient Profile",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/doctor-patient-profile-icn.png",
+    icon: "/images/doctor-patient-profile-icn.png",
   },
   {
     id: 2,
     title: "Appointment Schedule",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/a-chedule-icn.png",
+    icon: "/images/a-chedule-icn.png",
   },
   {
     id: 3,
     title: "Search",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/search-h-icn.png",
+    icon: "/images/search-h-icn.png",
   },
   {
     id: 4,
     title: "Profile",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/profile-h-icn.png",
+    icon: "/images/profile-h-icn.png",
   },
   {
     id: 5,
     title: "Rating and Reviews",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/rating-h-icn.png",
+    icon: "/images/rating-h-icn.png",
   },
   {
     id: 6,
     title: "Map",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/map-h-icn.png",
+    icon: "/images/map-h-icn.png",
   },
   {
     id: 7,
     title: "Share",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/share-h-icn.png",
+    icon: "/images/share-h-icn.png",
   },
   {
     id: 8,
     title: "Filter",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/filter-h-icn.png",
+    icon: "/images/filter-h-icn.png",
   },
   {
     id: 9,
     title: "Push Notification",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/prescription-h-icn.png",
+    icon: "/images/prescription-h-icn.png",
   },
   {
     id: 10,
     title: "Prescription Reminders",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/reminders-h-icn.png",
+    icon: "/images/reminders-h-icn.png",
   },
   {
     id: 11,
     title: "Appointment Reminders",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/video-conferencing-h-icn.png",
+    icon: "/images/video-conferencing-h-icn.png",
   },
   {
     id: 12,
     title: "Video Conferencing",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/progress-h-icn.png",
+    icon: "/images/progress-h-icn.png",
   },
   {
     id: 13,
     title: "Progress Tracking",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/chat-h-icn.png",
+    icon: "/images/chat-h-icn.png",
   },
   {
     id: 14,
     title: "Chat",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/prescription-h-icn.png",
+    icon: "/images/prescription-h-icn.png",
   },
   {
     id: 15,
     title: "Payment Integration",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/payment-h-icn.png",
+    icon: "/images/payment-h-icn.png",
   },
   {
     id: 16,
     title: "Analytics & Report",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/analytics-h-icn.png",
+    icon: "/images/analytics-h-icn.png",
   },
   {
     id: 17,
     title: "Multilingual",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/multilingual-h-icn.png",
+    icon: "/images/multilingual-h-icn.png",
   },
   {
     id: 18,
     title: "Settings",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-48/settings-h-icn.png",
+    icon: "/images/settings-h-icn.png",
   },
 ];
 export const healthcareBenefits = [
@@ -290,57 +284,57 @@ export const technologies = [
       {
         name: "iOS",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/ios-icn-tab.svg",
+          "/icons/next.svg",
       },
       {
         name: "Android",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/android.svg",
+          "/icons/android.svg",
       },
       {
         name: "React Native",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/reactnative.svg",
+          "/icons/reactnative.svg",
       },
       {
         name: "Flutter",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/flutter.svg",
+          "/icons/flutter.svg",
       },
       {
         name: "Augmented Reality",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-80/ar-icn.png.webp",
+          "/images/ar-icn.png.webp",
       },
       {
         name: "Swift",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/swift.svg",
+          "/icons/swift.svg",
       },
       {
         name: "Kotlin",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/kokin-icn-tab.svg",
+          "/icons/kokin-icn-tab.svg",
       },
       {
         name: "Objective C",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/object-c-icn-tab.svg",
+          "/icons/object-c-icn-tab.svg",
       },
       {
         name: "Cross Platform",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/crossplatform-icn-tab.png.webp",
+          "/images/crossplatform-icn-tab.png.webp",
       },
       {
         name: "Ibecon",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/ib-icn-tab.svg",
+          "/icons/ib-icn-tab.svg",
       },
       {
         name: "Xamarin",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/xamarin-icn-tab.png.webp",
+          "/images/xamarin-icn-tab.png.webp",
       },
     ],
   },
@@ -350,37 +344,37 @@ export const technologies = [
       {
         name: "Angular",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/angular-icon.svg",
+          "/icons/angular-icon.svg",
       },
       {
         name: "React",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/reactnative.svg",
+          "/icons/reactnative.svg",
       },
       {
         name: "Blockchain",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/blockchain.svg",
+          "/icons/blockchain.svg",
       },
       {
         name: "Sass",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/sass.svg",
+          "/icons/sass.svg",
       },
       {
         name: "jQuery",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/jquery.svg",
+          "/icons/jquery.svg",
       },
       {
         name: "HTML 5",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/html-5.svg",
+          "/icons/html-5.svg",
       },
       {
         name: "CSS3",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/css3.svg",
+          "/icons/css3.svg",
       },
     ],
   },
@@ -390,27 +384,27 @@ export const technologies = [
       {
         name: "MySQL",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/mysql-logo.svg",
+          "/icons/mysql-logo.svg",
       },
       {
         name: "MsSQL",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/mssql.svg",
+          "/icons/mssql.svg",
       },
       {
         name: "Azure",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/azure.svg",
+          "/icons/azure.svg",
       },
       {
         name: "Firebase",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/firebase.svg",
+          "/icons/firebase.svg",
       },
       {
         name: "MongoDB",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/mongodb.svg",
+          "/icons/mongodb.svg",
       },
     ],
   },
@@ -420,32 +414,32 @@ export const technologies = [
       {
         name: "PHP",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/php-logo.svg",
+          "/icons/php-logo.svg",
       },
       {
         name: ".NET",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/.net.svg",
+          "/icons/net.svg",
       },
       {
         name: "Laravel",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/laravel.svg",
+          "/icons/laravel.svg",
       },
       {
         name: "Node .JS",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/nodejs.svg",
+          "/icons/nodejs.svg",
       },
       {
         name: "Rails",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/ruby_on_rails-icon.svg",
+          "/icons/ruby_on_rails-icon.svg",
       },
       {
         name: "Python",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/python.svg",
+          "/icons/python.svg",
       },
     ],
   },
@@ -455,27 +449,27 @@ export const technologies = [
       {
         name: "Drupal",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/drupal.svg",
+          "/icons/drupal.svg",
       },
       {
         name: "Joomla",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/Joomla.svg",
+          "/icons/Joomla.svg",
       },
       {
         name: "WordPress",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/wordpress.svg",
+          "/icons/wordpress.svg",
       },
       {
         name: "Magento",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/magento.svg",
+          "/icons/magento.svg",
       },
       {
         name: "Shopify",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/shopify.svg",
+          "/icons/shopify.svg",
       },
     ],
   },
@@ -486,190 +480,190 @@ export const technologies = [
       {
         name: "AWS",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/amazon-web-services.svg",
+          "/icons/amazon-web-services.svg",
       },
       {
         name: "Google Cloud",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/google-cloud.svg",
+          "/icons/google-cloud.svg",
       },
       {
         name: "Git",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/git.svg",
+          "/icons/git.svg",
       },
       {
         name: "Gradle",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/gradle.svg",
+          "/icons/gradle.svg",
       },
       {
         name: "Selenium",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/selenium.svg",
+          "/icons/selenium.svg",
       },
       {
         name: "Jenkins",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/jenkins.svg",
+          "/icons/jenkins.svg",
       },
       {
         name: "Docker",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/docker.svg",
+          "/icons/docker.svg",
       },
       {
         name: "Kubernetes",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/kubernetes.svg",
+          "/icons/kubernetes.svg",
       },
     ],
   },
-];
+]
 export const stats = [
   {
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/icon-5.svg",
+    icon: '/icons/icon-5.svg',
     value: "8+",
     line1: "Years",
     line2: "of experience",
   },
   {
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/icon-6.svg",
+    icon: '/icons/icon-6.svg',
     value: "1500+",
     line1: "Successful",
     line2: "Projects",
   },
   {
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/icon-7.svg",
+    icon: '/icons/icon-7.svg',
     value: "200+",
     line1: "Happy Clients",
     line2: "World Wide",
   },
   {
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/icon-8.svg",
+    icon: '/icons/icon-8.svg',
     value: "800K+",
     line1: "Hours",
     line2: "Invested",
   },
   {
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/icon-9.svg",
+    icon: '/icons/icon-9.svg',
     value: "100%",
     line1: "Best",
     line2: "Quality Delivery",
   },
-];
+]; 
 export const industries = [
   {
     title: "Wellness & Fitness",
     bgImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo6Ck6XR5R_CadBULJne89UeaBx8YkRoHOA-WS_QBNjckXeGnIHGo7rSs&s=10",
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/wellness_fitness_icon.png.webp",
+      "/images/wellness_fitness_images.jpg",
+    icon: "/images/wellness_fitness_icon.png.webp",
   },
   {
     title: "Food & Restaurant",
     bgImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi0UdHpkOXsdu3Jr-EX5GT3ZkVmT47dqheoZZJ35xd9TYF8sAU7kAvYQc&s=10",
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/food_restaurant_icon.png.webp",
+      "/images/food_restaurant_images.jpg",
+    icon: "/images/food_restaurant_icon.png.webp",
   },
   {
     title: "Media & Entertainment",
     bgImage:
-      "https://omdia.tech.informa.com/-/media/tech/omdia/omdia-website-enhancement-oct-2023/streaming-concept-screens-of-content.jpg?rev=0d8ea073e28247c3be47eaacff5d83e8",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/media-icn.png.webp",
+      "/images/streamingconceptscreensofcontent.jpg",
+    icon: "/images/media-icn.png.webp",
   },
   {
     title: "Real Estate",
-    bgImage: "https://www.krahejarealty.com/img/blog/guide-to-real-estate.webp",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/real-easte-icn.png.webp",
+    bgImage: "/images/guide-to-real-estate.webp",
+    icon: "/images/real-easte-icn.png.webp",
   },
   {
     title: "Healthcare",
-    bgImage: "https://borgenproject.org/wp-content/uploads/healthcare-apps.jpg",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/healthcare-icn.png.webp",
+    bgImage: "/images/healthcare-apps.jpg",
+    icon: "/images/healthcare-icn.png.webp",
   },
   {
     title: "E-commerce",
     bgImage:
-      "https://ebz-static.s3.ap-south-1.amazonaws.com/easebuzz-static/upi-credit-cards-v1.png",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/reatail-icn.png.webp",
+      "/images/upi-credit-cards-v1.png",
+    icon: "/images/reatail-icn.png.webp",
   },
   {
     title: "Education",
-    bgImage: "https://i.dawn.com/primary/2021/07/60fc9ce79bf37.jpg",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/educ-icn.png.webp",
+    bgImage: "/images/60fc9ce79bf37.jpg",
+    icon: "/images/educ-icn.png.webp",
   },
   {
     title: "Logistics",
     bgImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKprMTl4jtUCa011p-LGbUBuinjnpY3SOMA68uiQ8wUQ&s=10",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/logistic-icon.png.webp",
+      "/images/images.jpg",
+    icon: "/images/logistic-icon.png.webp",
   },
   {
     title: "Travel & Hospitality",
     bgImage:
-      "https://foundever.com/wp-content/uploads/2023/01/travel-and-hospitality-industry-banner-1400x800-1.jpg",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/travel-icn.png.webp",
+      "/images/travel-and-hospitality-industry-banner-1400x800-1.jpg",
+    icon: "/images/travel-icn.png.webp",
   },
   {
     title: "Oil & Gas",
     bgImage:
-      "https://eco-cdn.iqpc.com/eco/images/channel_content/images/biggest_oil_and_gas_companies.webp",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/oil-fas-icn.png.webp",
+      "/images/biggest_oil_and_gas_companies.webp",
+    icon: "/images/oil-fas-icn.png.webp",
   },
 ];
 export const services = [
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-80/data-protection-icn.png",
+      "/images/data-protection-icn.png",
     title: "Data Protection",
     description:
       "Our every app is ultimately data protected to cope with the heavy malware attack and increased cyber-crime to support new technologies entering the healthcare world.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/custom-dp-icn.png",
+      "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
       "iQlance focuses on the rapid delivery of projects with a seamless connection between all clients. Also, ensuring solid documentation for extensive support and training.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-80/easy-commution-icn.png",
+      "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
       "We make sure to develop an app that is realistic, scalable, plausible, and communicative, bringing only positive results. As a result, it will meet all expectations of providers and patients.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/dedicated-teams.png",
+      "/images/dedicated-teams.png",
     title: "Dedicated Development Team",
     description:
       "Our talented professionals ensure a flawless experience to everyone who use the app. Because a lasting experience always creates a greater impact.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/on-time-icn.png",
+      "/images/on-time-icn.png",
     title: "On – Time Delivery",
     description:
       "100% support available to every client with the assurance of timely delivery every time so you can complete your project on time. Also, meeting superior quality standards.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/quality-first-icn.png",
+      "/images/quality-first-icn.png",
     title: "Quality – First Approach",
     description:
       "Our professionals also make sure to run the idea in the market to analyze the demand to build a quality app experience. This saves your time & resources also provides success assurance.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/cost-effective-icn.png",
+      "/images/cost-effective-icn.png",
     title: "Cost Effective Development Model",
     description:
       "Tailor-made plan to provide the maximum benefit to you at an affordable cost. It is sure to fit every small and big need with full scalability of technology resources without spending extra pennies.",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp",
+      "/images/letdiscuss-icon.png.webp",
     title: "Technical Support",
     description:
       "The apps are set to abide by every rule set by health standards and regulations. Plus, in case of the app experiences any bug issue, there is a whole team of certified engineers for comprehensive technical support.",
@@ -680,9 +674,9 @@ export const testimonials = [
     id: 1,
     name: "Elisha",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
+      "/images/clutch-icon-1.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+      "/images/clutch-icon.png.webp",
     review:
       "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
   },
@@ -690,9 +684,9 @@ export const testimonials = [
     id: 2,
     name: "Gregor I",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/google-icon.png.webp",
+      "/images/google-icon.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/google-logo-new.png.webp",
+      "/images.google-logo-new.png.webp",
     review:
       "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
   },
@@ -700,9 +694,9 @@ export const testimonials = [
     id: 3,
     name: "Stephanie A",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
+      "/images/good-firms-icon.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "/images/good-firms-logo-new.png.webp",
     review:
       "Their developers were skilled, and they helped us to integrate development with UI design were necessary. They were able to respond with high flexibility to the development model we requested. They did an excellent job. Their mobile app developer and UI designers are very expert. We can hire them again for future apps development…Thanks",
   },
@@ -710,9 +704,9 @@ export const testimonials = [
     id: 4,
     name: "Dubie B",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
+      "/images/good-firms-icon.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "/images/good-firms-logo-new.png.webp",
     review:
       "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
   },
@@ -720,9 +714,9 @@ export const testimonials = [
     id: 5,
     name: "Chris",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
+      "/images/clutch-icon-1.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+      "/images/clutch-icon.png.webp",
     review:
       "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
   },
@@ -796,50 +790,50 @@ export const partners = [
   {
     id: 1,
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/clutch-update.jpg.webp",
+      "/images/clutch-update.jpg.webp",
     alt: "Clutch",
   },
   {
     id: 2,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/goodfirm-logo.png.webp",
+      "/images/goodfirm-logo.png.webp",
     alt: "GoodFirms",
   },
   {
     id: 3,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/g-rating-logo.png.webp",
+      "/images/g-rating-logo.png.webp",
     alt: "GESIA",
   },
   {
     id: 4,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/gesia-logo.png.webp",
+      "/images/gesia-logo.png.webp",
     alt: "Google",
   },
 
   {
     id: 5,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/iso-logo.png.webp",
+      "/images/iso-logo.png.webp",
     alt: "ISO",
   },
   {
     id: 6,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/nasscom-logo.png.webp",
+      "/images/nasscom-logo.png.webp",
     alt: "ISO",
   },
   {
     id: 7,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/itfirm-logo.png.webp",
+      "/images/itfirm-logo.png.webp",
     alt: "ISO",
   },
   {
     id: 8,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/ypca-logo.png.webp",
+      "/images/ypca-logo.png.webp",
     alt: "ISO",
   },
 ];

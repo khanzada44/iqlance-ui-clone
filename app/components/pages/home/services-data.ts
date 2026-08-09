@@ -251,7 +251,7 @@ export const processSteps = [
     description:
       "We begin by understanding your business objectives, project requirements, target audience, and technical challenges. Through collaborative discussions, we identify the right technology approach and define a roadmap that supports your long-term business vision.",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-1.svg",
+      "/icons/proces-icon-1.svg",
   },
   {
     id: 2,
@@ -259,7 +259,7 @@ export const processSteps = [
     description:
       "Our UI/UX designers, solution architects, and technical experts create user-focused designs, system architecture, wireframes, and project plans. Every feature is carefully planned to ensure an intuitive user experience, seamless functionality, and long-term scalability.",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-2.svg",
+      "/icons/proces-icon-2.svg",
   },
   {
     id: 3,
@@ -267,7 +267,7 @@ export const processSteps = [
     description:
       "Once the solution is approved, our developers build secure, scalable, and high-performing applications using modern technologies, AI-assisted tools, and agile methodologies. Throughout development, we maintain transparency, share regular updates, and adapt quickly to evolving business needs.",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-3.svg",
+      "/icons/proces-icon-3.svg",
   },
   {
     id: 4,
@@ -275,7 +275,7 @@ export const processSteps = [
     description:
       "Our partnership continues beyond deployment. We provide ongoing maintenance, performance monitoring, security updates, bug fixes, and feature enhancements to keep your digital solution optimized, secure, and ready to scale as your business grows.",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-4.svg",
+      "/icons/proces-icon-4.svg",
   },
   {
     id: 5,
@@ -283,7 +283,7 @@ export const processSteps = [
     description:
       "After successful testing, we deploy your application, software, or website to the appropriate production environment. Whether it’s a cloud platform, enterprise server, web hosting environment, or mobile app store, we ensure a secure, seamless, and well-monitored launch.",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-5.svg",
+      "/icons/proces-icon-5.svg",
   },
   {
     id: 6,
@@ -291,7 +291,7 @@ export const processSteps = [
     description:
       "Our QA team performs comprehensive testing to verify functionality, usability, security, compatibility, and performance. Multiple testing cycles, including automated and manual testing, ensure your solution works reliably across different devices, browsers, and operating environments before deployment.",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/proces-icon-6.svg",
+      "/icons/proces-icon-6.svg",
   },
 ];
 export const slides = [

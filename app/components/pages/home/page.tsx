@@ -594,7 +594,7 @@ export default function Home() {
 
             <Link
               href="/lets-talk"
-              className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto inline-flex"
+              className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
             >
               Let's Discuss
               <ArrowRight size={22} />
@@ -1003,7 +1003,7 @@ export default function Home() {
               <div className="flex justify-center lg:justify-start">
                 <Link
                   href="/lets-talk"
-                  className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 rounded-md font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto inline-flex"
+                  className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 rounded-md font-semibold items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto inline-flex"
                 >
                   Let's Discuss
                   <ArrowRight size={22} />

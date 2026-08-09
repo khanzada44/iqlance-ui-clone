@@ -20,7 +20,6 @@ import {
   partners,
   bottomFeatures,
   slides,
-  ServiceSectionData,
   portfolioSlides,
   technologies,
   stats,
@@ -29,6 +28,7 @@ import {
   faqsData,
   testimonials,
 } from "../../../../utils/data";
+import { ServiceSectionData,fitnessFeatures,process_Steps } from "../fitness/data"
 import Image from "next/image";
 
 export default function fitness() {
@@ -188,33 +188,47 @@ export default function fitness() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
-                On Demand <br />
-                Application <br />
-                Development
+                Fitness App <br />
+                Development <br />
+                Company in USA
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Planning on creating a completely unique app solution for your
-                company to increase your progress in the digital market? Take
-                the help of our experts at iQlance for this endeavour; we
-                complete each step of app design and development, from the
-                origin to deployment, to ensure top-notch performance.
+                With people increasingly turning attention to the intrinsic
+                quality of life, the need for fitness solutions has shot up
+                exponentially. Many fitness app development services around the
+                country are now competing to catch up with iQlance Solutions USA
+                since it sets the standard for innovation, customization, and
+                technological integration. It’s important to note that all of
+                our apps are focused on helping the user find fitness and
+                wellness in their busy lives.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                All of our on-Demand App Developers have the necessary resources
-                and skills to create mobile intuitive solutions with the best
-                features. With years of practice in handling various projects
-                and an intensive knowledge of new cutting-edge technologies and
-                market trends, the team would prepare innovative features and
-                scalable app infrastructure.
+                We are also aware that your success centers on the usability of
+                your applications and hence we are here to provide you with
+                premier development services. Our team of PMP-certified project
+                managers is located in the USA, so we can arrange a face-to-face
+                meeting, which will contribute to better understanding of your
+                project and build trustful relations. It is time to bring your
+                visions into real life, with individual approaches throughout
+                the process.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-black">
-                Expect high growth for your brand with customizable app
-                solutions; impress your customers and improve your brand
-                reputation with our high-quality apps.
-              </p>
+              <ul className="mt-8 space-y-5 text-lg">
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Exceptional Experience
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Trusted by brands
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Knowledge of Business
+                </li>
+              </ul>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
@@ -393,61 +407,7 @@ export default function fitness() {
           </div>
         </section>
         <section>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
-                Top On-Demand Solutions Company
-              </h2>
-              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                We, at iQlance, build ever-evolving on-demand app solutions in
-                order to promote the next generation-level services for business
-                growth. Have an amazing experience of scalable and solely
-                integrated solutions along with custom front-end and back-end
-                UI/UX. We assure advanced admin dashboard and powerful analytics
-                panel for both Android as well as iOS.
-              </p>
-              <br />
-            </div>
-          </div>
-        </section>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src="/images/top-solution-right.jpg"
-              alt="Customer Support"
-              className="w-full max-w-md h-auto object-cover"
-            />
-          </div>
-
-          <div className="flex flex-col gap-y-6">
-            {bottomFeatures.map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
-                {/* Chevron Right Icon */}
-                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-
-                {/* Text Content */}
-                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                  <strong className="font-semibold text-gray-900">
-                    {item.title}:
-                  </strong>{" "}
-                  {item.description}
-                </p>
-              </div>
-            ))}
-            <div className="">
-              <Link
-                href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Start a Conversation
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
+           <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
             // Checking if index is odd to reverse layout dynamically
             const isEven = index % 2 === 0;
@@ -455,7 +415,7 @@ export default function fitness() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
                   isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
@@ -495,20 +455,210 @@ export default function fitness() {
             );
           })}
         </section>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
+                 Smart Options for Custom Fitness App Development Services
+              </h2>
+              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
+               Our fitness app development services come with a variety of smart options designed 
+                  to meet the needs of a wide range of users. 
+                  Here are some key features that set our fitness app solutions apart:
+              </p>
+              <br />
+            </div>
+          </div>
+        </section>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src="/images/fitness-sec-left.jpg"
+              alt="Customer Support"
+              className="w-full max-w-md h-auto object-cover"
+            />
+          </div>
+
+          <div className="flex flex-col gap-y-6">
+            {bottomFeatures.map((item, index) => (
+              <div key={index} className="flex items-start gap-3">
+                {/* Chevron Right Icon */}
+                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
+
+                {/* Text Content */}
+                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                  <strong className="font-semibold text-gray-900">
+                    {item.title}:
+                  </strong>{" "}
+                  {item.description}
+                </p>
+              </div>
+            ))}
+            <div className="">
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Start a Conversation
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div> 
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
           {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
-              Endeavors that Make us Proud
+             Key Features of Our Health & Fitness App Development Services
             </h2>
-            <p className="text-black text-sm md:text-base max-w-3xl mx-auto">
-              iQlance solutions has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
+            <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
+                 At iQlance Solutions USA, we pride ourselves on offering an extensive range of features that empower fitness enthusiasts to take control of their health and wellness journey. Our fitness apps are designed to deliver exceptional user experiences, helping users stay motivated, track progress, and achieve their fitness goals. Below are the standout features of our fitness app development:
             </p>
           </div>
         </section>
+        <section className="py-12 px-4 max-w-7xl mx-auto font-sans bg-white">
+      {/* 3-Column Grid with Equal Height Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        {fitnessFeatures.map((item) => (
+          <div
+            key={item.id}
+            className="w-full h-full bg-white border border-gray-200 p-8 flex flex-col items-center text-center shadow-xs transition-shadow duration-300 hover:shadow-md"
+          >
+            {/* Top Icon */}
+            <div className="w-12 h-12 mb-5 flex items-center justify-center shrink-0">
+              <img
+                src={item.icon}
+                alt={item.title}
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Title */}
+            <h3 className="text-base md:text-lg font-bold text-black mb-4">
+              {item.title}
+            </h3>
+
+            {/* Description (grow class ensures uniform filling) */}
+            <p className="text-gray-600 text-xs md:text-sm leading-relaxed grow">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+            <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              Ready to Get Started?
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Send your Requirements on
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img src="/icons/email-icon.svg" alt="" />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img src="/icons/phone-icon.svg" alt="" />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Talk <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
+      
+      {/* Block 1 */}
+      <div className="mb-12">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
+          Custom Fitness Mobile App Development Solutions for Every Client
+        </h2>
+        <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto">
+          <p>
+            The fitness and wellness market is thriving, with millions of users downloading fitness apps annually. However, with so many options available, it can be hard to stand out. At iQlance USA, we specialize in creating tailored fitness app solutions that deliver value, innovation, and a superior user experience.
+          </p>
+          <p>
+            Whether you're looking for a white-label fitness app, a fully branded app, or a custom solution, our team of experts will work closely with you to deliver a product that meets your exact specifications. We take pride in developing apps that are scientifically accurate, intuitive to use, and designed for long-term success.
+          </p>
+        </div>
+      </div>
+
+      {/* Block 2 */}
+      <div className="mb-12">
+        <h3 className="text-xl md:text-2xl font-extrabold text-black mb-6">
+          Our USA-Based Approach
+        </h3>
+        <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto">
+          <p>
+            Unlike other development companies that outsource their work, we are locally based in the USA and take a hands-on approach. By meeting face-to-face with our clients, we ensure that we fully understand your vision. This collaborative method helps us tailor our fitness app development process to your specific business model and target audience.
+          </p>
+          <p>
+            Our PMP-certified project managers are available to answer any questions you may have, ensuring the development process is transparent, efficient, and tailored to your needs. We take pride in our ability to turn your ideas into a high-performing app that not only meets but exceeds your expectations.
+          </p>
+        </div>
+      </div>
+
+      {/* Block 3 */}
+      <div>
+        <h3 className="text-xl md:text-2xl font-extrabold text-black mb-4">
+          Endeavors That Make Us Proud
+        </h3>
+        <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-3xl mx-auto">
+          iQlance solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
+        </p>
+      </div>
+
+    </section>
         <section>
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -604,81 +754,19 @@ export default function fitness() {
           </div>
 
           {/* Technology Stack Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-4">
+          <div className="text-center max-w-5xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Our On-Demand App Development Solutions
+              Unlock Your Fitness Vision with Secure and Scalable Tech Stack
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              Expect interactive and fast processing on-demand services and
-              models from our certified developers
+              By using this advanced technology stack, we create apps that deliver an intuitive, seamless experience for users while ensuring long-term
+               scalability and security for your business. At iQlance USA,
+               we use the latest technology and frameworks to create fast, scalable, and secure fitness apps. Here’s a look at the technology we use:
             </p>
           </div>
         </section>
-        <section className="">
-          <div className="mx-auto max-w-7xl">
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              slidesPerView={1}
-              spaceBetween={0}
-              loop={true}
-              autoplay={{
-                delay: 30000,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-            >
-              {slides.map((slide) => (
-                <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center">
-                    {/* Image */}
-                    <div className="w-full lg:w-1/2">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
-                      />
-                    </div>
-
-                    {/* Content */}
-                    <div className="w-full lg:w-1/2">
-                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
-                        {slide.title}
-                      </h2>
-
-                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
-                        {slide.description}
-                      </p>
-
-                      <div className="space-y-3 lg:space-y-4">
-                        {slide.points.map((point, index) => (
-                          <div
-                            key={index}
-                            className="flex gap-3 items-baseline"
-                          >
-                            <ChevronRight size={15} />
-                            <span>{point}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </section>
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-            Technologies We Use
-          </h2>
-          <p className="text-black text-sm md:text-base leading-relaxed">
-            Capabilities and tools aside, you can expect top-notch technologies
-            in use at our best on-demand app development company; we use them
-            generously for an intuitive and customised app generation.
-          </p>
-        </div>
+     
+  
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 ">
             {/* Tabs */}
@@ -727,7 +815,38 @@ export default function fitness() {
             </div>
           </div>
         </section>
+      <section className="py-12 px-4 max-w-6xl mx-auto font-sans">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        
+        {/* Left Side: Image Container */}
+        <div className="w-full h-full overflow-hidden rounded-xs">
+          <img
+            src="/images/highlight-left.jpg" 
+            alt="Track, Analyze, and Improve"
+            className="w-full h-auto object-cover rounded-xs"
+          />
+        </div>
 
+        {/* Right Side: Content Container */}
+        <div className="flex flex-col space-y-4 text-gray-800">
+          {/* Main Heading */}
+          <h2 className="text-2xl lg:text-3xl font-extrabold text-black leading-snug">
+            Track, Analyze, and Improve with Our Fitness Apps
+          </h2>
+
+          {/* Paragraph 1 */}
+          <p className="text-sm lg:text-base leading-relaxed text-gray-700">
+            Our fitness apps offer a range of standout features designed to help users achieve their fitness goals efficiently. Whether it’s tracking calories burned during workouts or offering detailed analytics on user performance, our Fitness Trainer App Development solutions ensure that users can surpass the limitations of traditional fitness routines.
+          </p>
+
+          {/* Paragraph 2 */}
+          <p className="text-sm lg:text-base leading-relaxed text-gray-700">
+            The app tracks movements, activities, and even provides a summary chart after each workout, helping users stay informed and motivated.
+          </p>
+        </div>
+
+      </div>
+    </section>
         <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
@@ -799,64 +918,100 @@ export default function fitness() {
             </div>
           </div>
         </section>
-        <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
-              Industries We Serve
-            </h1>
-            <p>
-              Our on-demand app development services extend across multiple
-              different industries, offering advanced features, rich technology
-              stacks, and high-quality performance improvement.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
-            {industries.map((item, index) => (
-              <div
-                key={index}
-                className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
-              >
-                <img
-                  src={item.bgImage}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
-                    <img
-                      src={item.icon}
-                      alt=""
-                      className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
-                    />
-                  </div>
-                </div>
-                <h3 className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 text-white font-bold text-sm sm:text-lg md:text-xl text-center w-full px-2">
-                  {item.title}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
-              Offshore Web, Mobile & Software Development Company
+              Our Proven Fitness App Development Process: Concept to Launch
             </h1>
             <p>
-              iQlance is a leading Software Development Company currently
-              available in the market, with over 7 years of experience under the
-              belt. Over the years, our team members have honed their skills,
-              handling over 1,500 projects of different types and companies,
-              offering flexible solutions and comprehensive benefits to all.
+              Our app development process is designed to deliver the best possible product on time and within budget. Being a Best Mobile Application 
+              Developing Organization, we provide Mobile apps development services that are specialized for your firm’s demands. Partnering with our 
+              specialists will astound you.Here’s how we work:
             </p>
           </div>
         </section>
+ <section className="py-5 sm:py-5 lg:py-8 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+              {process_Steps.map((step) => (
+                <div
+                  key={step.id}
+                  className="group relative border border-gray-200 rounded-3xl sm:rounded-[30px] bg-white pt-16 sm:pt-20 pb-6 sm:pb-8 px-5 sm:px-8 hover:shadow-xl transition-all duration-300 mb-10"
+                >
+                  {/* Floating Icon */}
+                  <div className="absolute -top-8 sm:-top-10 right-5 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24  border-2 border-gray-300  rounded-2xl flex items-center justify-center transition-all duration-300">
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 object-contain"
+                    />
+                  </div>
+
+                  <div className="flex items-start gap-3 sm:gap-5">
+                    {/* Number Box */}
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 group-hover:bg-[#184A8B] rounded-tr-2xl rounded-br-2xl flex items-center justify-center shrink-0 transition-all duration-300">
+                      <span className=" group-hover:text-white text-xl sm:text-2xl font-bold">
+                        {step.id}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold leading-tight text-black transition-colors duration-300">
+                      {step.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="mt-5 sm:mt-8 text-sm sm:text-base text-[#555] leading-7 sm:leading-8 font-semibold transition-colors duration-300">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+<section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
+      
+      {/* Block 1 */}
+      <div className="mb-12">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
+          In-Person Collaboration for Better Results
+        </h2>
+        <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto">
+          What sets us apart is our commitment to in-person collaboration. By being locally available in the USA, we can meet with you face-to-face to discuss your needs, goals, and any challenges you may face. Our PMP-certified project managers ensure a smooth and transparent process, keeping you informed at every stage of development.
+        </p>
+      </div>
+
+      {/* Block 2 */}
+      <div>
+        <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
+          Offshore Web, Mobile & Software Development Company
+        </h2>
+        <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto">
+          We as leading app and <span className="font-bold text-black">software development company USA</span> have delivered a range of innovative and unique solutions across the globe making clients happy. We have one of the top-notch offshore web, mobile and software development companies across the globe.
+        </p>
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <section>
-          <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
+          <div className="flex flex-wrap justify-center gap-7 mb-10">
             {stats.map((item, index) => (
               <div
                 key={index}
@@ -887,225 +1042,18 @@ export default function fitness() {
             ))}
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
-
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-              Ready to Get Started?
-            </h2>
-
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
-            </p>
-
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <img src="/icons/email-icon.svg" alt="" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img src="/icons/phone-icon.svg" alt="" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Action Button */}
-            <div>
-              <Link
-                href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
 
         <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-            The Process We Follow For Web Design and Development
+           Why Choose Our Fitness App Development Company?
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
-            Our team of App Developers Toronto have worked on different types of
-            on-demand app development projects, with satisfactory results. We
-            provide dedicated attention and care throughout the development
-            journey, using top-notch techniques. Here, we shall tailor our
-            development plan as per your needs.
+           
+            At iQlance Solutions USA, we strive to build fitness apps that are not only 
+            cutting-edge but also user-friendly
+             and impactful. Here’s why we stand out from the competition: 
           </p>
         </div>
-        <div className="w-full max-w-5xl mx-auto px-4 py-12">
-          {/* Top Tabs Header */}
-          <div className="flex items-center gap-6 border-b border-gray-100 pb-3 mb-12 overflow-x-auto">
-            {processSteps.map((step, index) => (
-              <div key={index} className="flex items-center gap-6">
-                <button
-                  type="button"
-                  onClick={() => setActiveStepIndex(index)}
-                  className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${
-                    activeStepIndex === index
-                      ? "text-gray-900 border-blue-600 font-bold"
-                      : "text-gray-400 border-transparent hover:text-gray-600"
-                  }`}
-                >
-                  {step.tabTitle}
-                </button>
-                {index < processSteps.length - 1 && (
-                  <span className="text-gray-400 font-light">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Main Layout (Circular Icons + Description) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left Process Image Container */}
-            <div className="relative w-72 h-72 mx-auto flex items-center justify-center">
-              {/* Step 1 Image - Discover */}
-              {activeStepIndex === 0 && (
-                <div className="">
-                  <img
-                    src="/images/discover.webp"
-                    alt="Discover"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 2 Image - Design */}
-              {activeStepIndex === 1 && (
-                <div className="">
-                  <img
-                    src="/images/uiux-design.webp"
-                    alt="Design"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 3 Image - Build */}
-              {activeStepIndex === 2 && (
-                <div className="">
-                  <img
-                    src="/images/development.webp"
-                    alt="Build"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 4 Image - Deliver */}
-              {activeStepIndex === 3 && (
-                <div className="">
-                  <img
-                    src="/images/user-testing.webp"
-                    alt="Deliver"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Right Side Content Display */}
-            <div className="flex flex-col justify-center">
-              <span className="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-2">
-                {currentStep.stepLabel}
-              </span>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
-                {currentStep.heading}
-              </h2>
-              <p className="text-gray-600 leading-relaxed text-sm max-w-md">
-                {currentStep.description}
-              </p>
-            </div>
-          </div>
-        </div>
-        <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left Text Content */}
-            <div className="flex flex-col ">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 leading-tight">
-                Fast &amp; Efficient Access To Services
-              </h2>
-
-              <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
-                <p>
-                  We perfectly connect your business with your customers We will
-                  help you find out how to supply the rightest as per user
-                  demands, which is sure to make them wonder that how did they
-                  survive without your app all these days. We develop to meet
-                  macro-level and micro-level delivery requirements of users
-                  across all industries.
-                </p>
-                <p>
-                  Ready to take a comprehensive consultation for your next
-                  on-demand app?
-                </p>
-              </div>
-            </div>
-
-            {/* Right Side 3D Image Banner */}
-            <div className="relative w-full h-80 sm:h-96 md:h-105 overflow-hidden">
-              <Image
-                src="/images/efficient-access-right.jpg"
-                alt="Fast & Efficient Access To Services"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </section>
-        <section>
-          <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why Choose iQlance?
-            </h1>
-            <p className="text-black text-sm md:text-base leading-relaxed">
-              From development to testing, design to deployment, and everything
-              in between, we are the best on-demand app development company that
-              offers a vast range of scalable solutions.
-            </p>
-          </div>
-        </section>
         <section className="max-w-7xl mx-auto px-3 sm:px-5 py-10 sm:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-6">
             {services.map((service, index) => (
