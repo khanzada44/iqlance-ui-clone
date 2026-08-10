@@ -1,97 +1,140 @@
-export const stats = [
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-5.svg',
-    number: "8+",
-    title: "Years",
-    subtitle: "of experience",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-6.svg',
-    number: "1500+",
-    title: "Successful",
-    subtitle: "Projects",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-7.svg',
-    number: "200+",
-    title: "Happy Clients",
-    subtitle: "World Wide",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-7.svg',
-    number: "800K+",
-    title: "Hours",
-    subtitle: "Invested",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-8.svg',
-    number: "100%",
-    title: "Best",
-    subtitle: "Quality Delivery",
-  },
-];
 export const testimonialsData = [
   {
     id: 1,
-    logo: "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-profile.png",
-    name: "Karl",
+    logo: "/images/clutch-profile.png",
+    name: "Elisha ",
     source: "Google",
     review:
-      "We have developed website with app for a service for finding and renting a car with a taxi license in a very limited time and budget...",
-    verifiedLogo: "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
+    verifiedLogo: "/images/clutch-icon.png.webp",
   },
   {
     id: 2,
-    logo: "https://www.iqlance.com/wp-content/uploads/2022/04/goodfirms-profile.png",
-    name: "Al",
+    logo: "/images/goodfirms-profile.png",
+    name: "Dubie B ",
     source: "Clutch",
     review:
-      "iQlance has been really nice to deal with them in terms of their communication skills and availability.",
-    verifiedLogo: "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
+    verifiedLogo: "/images/good-firms-logo-new.png.webp",
   },
   {
     id: 3,
-    logo: "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-profile.png",
+    logo: "/images/clutch-profile.png",
     name: "Mukhebi",
     source: "GoodFirms",
     review:
-      "I have built a new app and promotional website with iQlance Solutions...",
-    verifiedLogo: "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+      "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
+    verifiedLogo: "/images/clutch-icon.png.webp",
   },
   {
     id: 4,
-    logo: "https://www.iqlance.com/wp-content/uploads/2022/04/goodfirms-profile.png",
+    logo: "/images/goodfirms-profile.png",
     name: "Brandon",
     source: "Google",
     review:
-      "iQlance was responsive within hours and they followed their development schedule faithfully...",
-    verifiedLogo: "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "I hired iQlance to building an eCommerce application and website. They were just an absolute pleasure to work with. I had a lot of doubts about my project but I'm so glad I found them. The entire team is friendly, very knowledgeable, diligent and very easy to communicate.",
+    verifiedLogo: "/images/good-firms-logo-new.png.webp",
   },
   {
     id: 5,
-    logo: "https://www.iqlance.com/wp-content/uploads/2022/04/google-profile.png",
+    logo: "/images/google-profile.png",
     name: "Client",
     source: "GoodFirms",
     review:
-      "I have connected with iQlance to enhance my offline business work into an online business...",
-    verifiedLogo: "https://www.iqlance.com/wp-content/uploads/2022/04/google-logo-new.png.webp",
+      "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner",
+    verifiedLogo: "/images/google-logo-new.png.webp",
   },
   {
     id: 6,
-    logo: "https://www.iqlance.com/wp-content/uploads/2022/04/goodfirms-profile.png",
+    logo: "/images/goodfirms-profile.png",
     name: "Isaac",
     source: "Google",
     review:
-      "Have been working with iQlance now for over 4 months on developing my GPS Tracking apps...",
-    verifiedLogo: "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "Web development, on a serious level, purely for yourself and the company",
+    verifiedLogo: "/images/good-firms-logo-new.png.webp",
   },
   {
     id: 7,
-    logo: "https://www.iqlance.com/wp-content/uploads/2022/04/goodfirms-profile.png",
+    logo: "/images/goodfirms-profile.png",
     name: "TryButtender",
     source: "Clutch",
     review:
-      "They stayed on top of their deadlines, were responsive, and communicated well.",
-    verifiedLogo: "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "Their developers were skilled, and they helped us to integrate development with UI design were necessary. They were able to respond with high flexibility to the development model we requested. They did an excellent job. Their mobile app developer and UI designers are very expert. We can hire them again for future apps development…Thanks",
+    verifiedLogo: "/images/good-firms-logo-new.png.webp",
   },
+  {
+    id: 8,
+    logo: "/images/clutch-profile.png",
+    name: "TryButtender",
+    source: "Clutch",
+    review:
+      "iQlance delivered such strong professionalism and responsive communications that they earned a second project as well as recommendations for additional partnerships. The significant time difference was barely recognizable because they always responded quickly.",
+    verifiedLogo: "/images/clutch-icon.png.webp",
+  },
+];
+export const testimonials2Data = [
+  {
+    id: 1,
+    logo: "/images/clutch-profile.png",
+    name: "Elisha ",
+    source: "Google",
+    review:
+      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
+    verifiedLogo: "/images/clutch-icon.png.webp",
+  },
+  {
+    id: 2,
+    logo: "/images/goodfirms-profile.png",
+    name: "Dubie B ",
+    source: "Clutch",
+    review:
+      "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
+    verifiedLogo: "/images/good-firms-logo-new.png.webp",
+  },
+  {
+    id: 3,
+    logo: "/images/clutch-profile.png",
+    name: "Mukhebi",
+    source: "GoodFirms",
+    review:
+      "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
+    verifiedLogo: "/images/clutch-icon.png.webp",
+  },
+  {
+    id: 4,
+    logo: "/images/goodfirms-profile.png",
+    name: "Brandon",
+    source: "Google",
+    review:
+      "I hired iQlance to building an eCommerce application and website. They were just an absolute pleasure to work with. I had a lot of doubts about my project but I'm so glad I found them. The entire team is friendly, very knowledgeable, diligent and very easy to communicate.",
+    verifiedLogo: "/images/good-firms-logo-new.png.webp",
+  },
+  {
+    id: 5,
+    logo: "/images/google-profile.png",
+    name: "Client",
+    source: "GoodFirms",
+    review:
+      "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner",
+    verifiedLogo: "/images/google-logo-new.png.webp",
+  },
+  {
+    id: 6,
+    logo: "/images/goodfirms-profile.png",
+    name: "Isaac",
+    source: "Google",
+    review:
+      "Web development, on a serious level, purely for yourself and the company",
+    verifiedLogo: "/images/good-firms-logo-new.png.webp",
+  },
+  {
+    id: 7,
+    logo: "/images/goodfirms-profile.png",
+    name: "TryButtender",
+    source: "Clutch",
+    review:
+      "Their developers were skilled, and they helped us to integrate development with UI design were necessary. They were able to respond with high flexibility to the development model we requested. They did an excellent job. Their mobile app developer and UI designers are very expert. We can hire them again for future apps development…Thanks",
+    verifiedLogo: "/images/good-firms-logo-new.png.webp",
+  },
+  
 ];

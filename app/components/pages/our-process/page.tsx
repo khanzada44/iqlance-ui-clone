@@ -1,21 +1,123 @@
 "use client";
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import { processSteps } from "../our-process/data";
 import ContactForm from "../../contactForm/ContactForm";
+import { stats, partners, faqsData } from "../../../../utils/data";
 
 export default function ourProcess() {
+  const [open, setOpen] = useState(-1);
   return (
     <>
-      <div className="w-[90%] mx-auto">
+      <div className="w-full max-w-[80%] mx-auto">
         <div className="mt-10">
           <img
-            src="https://www.iqlance.com/wp-content/themes/iqlance/img/our-process-header.png"
+            src="/images/our-process-header.png"
             alt=""
           />
         </div>
+        <section className="py-16 bg-white text-center">
+          <div className="max-w-6xl mx-auto px-4">
+            {/* Top Subtitle */}
+            <p className="text-gray-700 text-sm md:text-base font-normal tracking-wide">
+              Process-driven Methodology, Result-driven Solutions
+            </p>
+
+            {/* Main Heading */}
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#2A599B] mt-2 mb-6">
+              Our Process
+            </h2>
+
+            {/* Description Paragraph */}
+            <p className="max-w-5xl mx-auto text-gray-700 text-sm md:text-base leading-relaxed mb-8">
+              We at iQlance Solution as a renowned app and software development
+              agency follow Process-Driven Methodology, Result-Driven Solutions. To
+              acquire expected and desired results it is necessary to follow a
+              strict and Simplified process. We ensure our client's 100%
+              satisfaction in the development of mobile and software applications.
+              To gain our results we are committed to following vigorous methods.
+            </p>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
+              {/* Contact Us Button */}
+              <Link
+                href="/contact"
+                className="group w-full sm:w-auto bg-[#1B4B79] hover:bg-[#153B60] text-white font-semibold text-sm px-6 py-3 transition-colors flex items-center justify-center gap-2"
+              >
+                <span>Contact Us</span>
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
+              </Link>
+
+              {/* See Our Work Button */}
+              <Link
+                href="/portfolio"
+                className="group w-full sm:w-auto border border-gray-200 hover:border-[#1B4B79] bg-white text-gray-900 font-semibold text-sm px-6 py-3 transition-all flex items-center justify-center gap-2"
+              >
+                <span>See Our Work</span>
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
+              </Link>
+            </div>
+
+            {/* Bottom Section */}
+            <div className="max-w-5xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
+                Offshore Web, Mobile & Software Development Company
+              </h3>
+              <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                iQlance solutions is a leading Software, Web, & Mobile App
+                Development Company with a vast area of experience in crafting
+                stunning and end to end encrypted technology solutions. We offer
+                excellent expertise of the industry followed by an exactly planned
+                approach to elevate your growth.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-7">
+              {stats.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="relative min-h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-20 pb-8"
+                  >
+                    {/* Floating Icon */}
+                    <div className="absolute -top-8 right-0 w-20 h-20 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                      <img
+                        src={item.icon}
+                        alt="stat icon"
+                        className="w-10 h-10 text-[#4B5563]"
+                      />
+                    </div>
+
+                    <h3 className="text-[40px] font-bold text-[#3B3F4A] leading-none">
+                      {item.value}
+                    </h3>
+
+                    <p className="mt-3 text-lg leading-[1.6] text-black">
+                      {item.line1}
+                      <br />
+                      {item.line2}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left Content */}
               <div>
                 <h2 className="text-3xl md:text-5xl font-bold leading-tight text-black">
@@ -31,18 +133,25 @@ export default function ourProcess() {
                   app development process.
                 </p>
 
-                <button className="mt-10 bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 rounded-md font-semibold flex items-center gap-3 transition">
+                <Link
+                  href="/contact-us"
+                  className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72] mt-10"
+                >
                   Explore Our Process
-                  <ArrowRight size={18} />
-                </button>
+                  <ArrowRight
+                    size={22}
+                    className="transition-transform duration-300 group-hover:translate-x-1.5"
+                  />
+                </Link>
+
               </div>
 
               {/* Right Image */}
               <div>
                 <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/our-process-right.jpg"
+                  src="/images/our-process-right.jpg"
                   alt="Development Process"
-                  className="w-full rounded-lg object-cover"
+                  className="w-full object-cover"
                 />
               </div>
             </div>
@@ -117,11 +226,10 @@ export default function ourProcess() {
                     hidden lg:block
                     absolute
                     h-24
-                    ${
-                      index % 2 === 0
-                        ? "right-4 -bottom-14"
-                        : "left-4 -bottom-14"
-                    }
+                    ${index % 2 === 0
+                          ? "right-4 -bottom-14"
+                          : "left-4 -bottom-14"
+                        }
                   `}
                     />
                   )}
@@ -130,25 +238,170 @@ export default function ourProcess() {
             </div>
           </div>
         </section>
-        <section className="bg-white py-6 md:py-10">
-          <div className="max-w-5xl mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-center text-black leading-tight">
-              Have Something in Mind? Let's Talk
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans mb-10">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/letdiscuss-icon.webp"
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain w-auto h-auto"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              Ready to Get Started?
             </h2>
 
-            <p className="mt-6 text-center text-gray-700 text-base md:text-lg leading-7 md:leading-9 max-w-4xl mx-auto">
-              Have a look at the services and development process of the iQlance
-              solution. See what process we follow for mobile app and software
-              development. Have a look at how we are praised by our clients.
-              Start a conversation to innovate your next great idea into reality
-              with us.
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Call us Today for a Free Consultation:
             </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img
+                    src="/icons/email-icon.svg"
+                    alt="Email"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img
+                    src="/icons/phone-icon.svg"
+                    alt="Phone"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/lets-talk"
+                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+              >
+                Let’s Discuss
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
+              </Link>
+            </div>
           </div>
         </section>
+        <section className="py-20 bg-white">
+          <div className="w-full px-5">
+            <h2 className="text-4xl font-bold text-center">
+              Frequently Asked Questions
+            </h2>
+
+            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+              Find answers to common questions about our app and software
+              development services and learn how we can help turn your idea into
+              a successful digital product.
+            </p>
+
+            <div className="mt-12 space-y-4">
+              {faqsData.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpen(open === index ? -1 : index)}
+                    className="w-full flex justify-between items-center px-5 py-5 text-left"
+                  >
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
+
+                    {open === index ? (
+                      <ChevronUp size={22} />
+                    ) : (
+                      <ChevronDown size={22} />
+                    )}
+                  </button>
+
+                  {open === index && (
+                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-20 text-center">
+              <h3 className="text-4xl font-bold">
+                Have Something in Mind? Let's Talk
+              </h3>
+
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+                Have a look at the services and development process of the
+                iQlance solution. See what process we follow for mobile app and
+                software development. Have a look at how we are praised by our
+                clients. Start a conversation to innovate your next great idea
+                into reality with us.
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+
         <div className="mt-2 pt-2">
           <ContactForm />
         </div>
       </div>
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

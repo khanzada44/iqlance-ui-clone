@@ -1,10 +1,13 @@
+"use client";
+import { useState } from "react";
 import { ArrowRight, ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image"; 
+import Image from "next/image";
 import ContactForm from "../../contactForm/ContactForm";
 import { features } from "../why-iqlance/data";
-import { stats } from "../../../../utils/data";
+import { stats, partners, faqsData } from "../../../../utils/data";
 export default function whyIqlance() {
+  const [open, setOpen] = useState(-1);
   return (
     <>
       <div className="w-full max-w-[80%] mx-auto">
@@ -34,19 +37,24 @@ export default function whyIqlance() {
 
           <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+              href="/contact-us"
+              className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
             >
               Contact Us
-              <ArrowRight size={22} />
+              <ArrowRight
+                size={22}
+                className="transition-transform duration-300 group-hover:translate-x-1.5"
+              />
             </Link>
-
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-3 border border-gray-300 bg-white px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-100"
+              className="group inline-flex items-center gap-3 bg-white px-8 py-4 text-lg font-semibold text-black transition  hover:bg-gray-100"
             >
               See Our Work
-              <ArrowRight size={22} />
+              <ArrowRight
+                size={22}
+                className="transition-transform duration-300 group-hover:translate-x-1.5"
+              />
             </Link>
           </div>
         </div>
@@ -235,10 +243,13 @@ export default function whyIqlance() {
             <div className="shrink-0">
               <Link
                 href="/portfolio"
-                className="inline-flex items-center justify-center gap-2 bg-[#1C4670] hover:bg-[#153658] text-white font-semibold px-6 py-3.5 transition duration-200"
+                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
               >
                 See Our Work
-                <ArrowRight size={18} />
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
               </Link>
             </div>
           </div>
@@ -347,9 +358,13 @@ export default function whyIqlance() {
             <div>
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
               >
-                Let’s Discuss <ArrowRight className="w-4 h-4" />
+                Let’s Discuss
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
               </Link>
             </div>
           </div>
@@ -369,11 +384,85 @@ export default function whyIqlance() {
             </p>
           </div>
         </section>
+        <section className="py-20 bg-white">
+          <div className="w-full px-5">
+            <h2 className="text-4xl font-bold text-center">
+              Frequently Asked Questions
+            </h2>
 
+            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+              Find answers to common questions about our app and software
+              development services and learn how we can help turn your idea into
+              a successful digital product.
+            </p>
+
+            <div className="mt-12 space-y-4">
+              {faqsData.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpen(open === index ? -1 : index)}
+                    className="w-full flex justify-between items-center px-5 py-5 text-left"
+                  >
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
+
+                    {open === index ? (
+                      <ChevronUp size={22} />
+                    ) : (
+                      <ChevronDown size={22} />
+                    )}
+                  </button>
+
+                  {open === index && (
+                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-20 text-center">
+              <h3 className="text-4xl font-bold">
+                Have Something in Mind? Let's Talk
+              </h3>
+
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+                Have a look at the services and development process of the
+                iQlance solution. See what process we follow for mobile app and
+                software development. Have a look at how we are praised by our
+                clients. Start a conversation to innovate your next great idea
+                into reality with us.
+              </p>
+            </div>
+          </div>
+        </section>
         <div className="mb-2.5 pb-2 mt-2 w-full">
           <ContactForm />
         </div>
       </div>
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

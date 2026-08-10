@@ -1,206 +1,31 @@
-export const services = [
-  {
-    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/csd-icn.png.webp",
-    title: "Custom Software Development",
-    description:
-      "Build custom software solutions designed around your business processes, streamline operations, and accelerate growth with secure, scalable applications.",
-  },
-  {
-    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/es-icn.png.webp",
-    title: "AI Development",
-    description:
-      "Develop advanced AI-powered solutions, including generative AI applications, AI agents, chatbots, and automation tools.",
-  },
-  {
-    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/wd-icn.png.webp",
-    title: "Web Development",
-    description:
-      "Develop responsive, high-performing websites and web apps that strengthen your online presence.",
-  },
-  {
-    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/mad-icn.png.webp",
-    title: "Mobile App Development",
-    description:
-      "Create engaging iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences.",
-  },
-  {
-    image: "https://www.iqlance.com/wp-content/uploads/2026/07/IT-staff-augmentation.png",
-    title: "IT Staff Augmentation",
-    description:
-      "Expand your development capabilities with experienced IT professionals who integrate seamlessly with your team.",
-  },
-  {
-    image: "https://www.iqlance.com/wp-content/uploads/2026/07/cloud-service-1.png",
-    title: "Cloud Consulting",
-    description:
-      "Optimize your cloud infrastructure with expert consulting services that improve scalability and security.",
-  },
-];
-export const industries = [
-  {
-    title: "Wellness & Fitness",
-    bgImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo6Ck6XR5R_CadBULJne89UeaBx8YkRoHOA-WS_QBNjckXeGnIHGo7rSs&s=10",
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/wellness_fitness_icon.png.webp",
-  },
-  {
-    title: "Food & Restaurant",
-    bgImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi0UdHpkOXsdu3Jr-EX5GT3ZkVmT47dqheoZZJ35xd9TYF8sAU7kAvYQc&s=10",
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/food_restaurant_icon.png.webp",
-  },
-  {
-    title: "Media & Entertainment",
-    bgImage: "https://omdia.tech.informa.com/-/media/tech/omdia/omdia-website-enhancement-oct-2023/streaming-concept-screens-of-content.jpg?rev=0d8ea073e28247c3be47eaacff5d83e8",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/media-icn.png.webp",
-  },
-  {
-    title: "Real Estate",
-    bgImage: "https://www.krahejarealty.com/img/blog/guide-to-real-estate.webp",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/real-easte-icn.png.webp",
-  },
-  {
-    title: "Healthcare",
-    bgImage: "https://borgenproject.org/wp-content/uploads/healthcare-apps.jpg",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/healthcare-icn.png.webp",
-  },
-  {
-    title: "E-commerce",
-    bgImage: "https://ebz-static.s3.ap-south-1.amazonaws.com/easebuzz-static/upi-credit-cards-v1.png",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/reatail-icn.png.webp",
-  },
-  {
-    title: "Education",
-    bgImage: "https://i.dawn.com/primary/2021/07/60fc9ce79bf37.jpg",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/educ-icn.png.webp",
-  },
-  {
-    title: "Logistics",
-    bgImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKprMTl4jtUCa011p-LGbUBuinjnpY3SOMA68uiQ8wUQ&s=10",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/logistic-icon.png.webp",
-  },
-  {
-    title: "Travel & Hospitality",
-    bgImage: "https://foundever.com/wp-content/uploads/2023/01/travel-and-hospitality-industry-banner-1400x800-1.jpg",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/travel-icn.png.webp",
-  },
-  {
-    title: "Oil & Gas",
-    bgImage: "https://eco-cdn.iqpc.com/eco/images/channel_content/images/biggest_oil_and_gas_companies.webp",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/oil-fas-icn.png.webp",
-  },
-];
-export const testimonials = [
-  {
-    id: 1,
-    name: "Elisha",
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
-    verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
-    review:
-      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
-  },
-  {
-    id: 2,
-    name: "Gregor I",
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/google-icon.png.webp",
-    verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/google-logo-new.png.webp",
-    review:
-      "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
-  },
-  {
-    id: 3,
-    name: "Stephanie A",
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
-    verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
-    review:
-      "Their developers were skilled, and they helped us to integrate development with UI design were necessary. They were able to respond with high flexibility to the development model we requested. They did an excellent job. Their mobile app developer and UI designers are very expert. We can hire them again for future apps development…Thanks",
-  },
-  {
-    id: 4,
-    name: "Dubie B",
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
-    verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
-    review:
-      "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
-  },
-  {
-    id: 5,
-    name: "Chris",
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
-    verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
-    review:
-      "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
-  },
-];
 export const blogs = [
   {
     image:
-      "https://www.iqlance.com/wp-content/uploads/2026/07/How-Much-Does-It-Cost-To-Build-a-Mobile-App-2.png",
+      "/images/How-Much-Does-It-Cost-To-Build-a-Mobile-App-2.png",
     date: "Jul 16, 2026",
     title: "How Much Does It Cost To Build a Mobile App?",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/uploads/2026/07/Top-10-Healthcare-Software-2.png",
+      "/images/Top-10-Healthcare-Software-2.png",
     date: "Jul 02, 2026",
     title: "Top 10 Healthcare Software Features for USA Healthcare Organizations",
   },
   {
     image:
-      "https://www.iqlance.com/wp-content/uploads/2026/06/Top-Enterprise-Mobile-App-Development-Companies-in-the-USA-2.png",
+      "/images/Top-Enterprise-Mobile-App-Development-Companies-in-the-USA-2.png",
     date: "Jul 01, 2026",
     title: "Top Enterprise Mobile App Development Companies in the USA",
   },
 ];
-export const partners = [
-  {
-    id: 1,
-    image: "https://www.iqlance.com/wp-content/uploads/2024/10/clutch-update.jpg.webp",
-    alt: "Clutch",
-  },
-  {
-    id: 2,
-    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/goodfirm-logo.png.webp",
-    alt: "GoodFirms",
-  },
-  {
-    id: 3,
-    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/g-rating-logo.png.webp",
-    alt: "GESIA",
-  },
-  {
-    id: 4,
-    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/gesia-logo.png.webp",
-    alt: "Google",
-  },
 
-  {
-    id: 5,
-    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/iso-logo.png.webp",
-    alt: "ISO",
-  },
-  {
-    id: 6,
-    image: "https://www.iqlance.com/wp-content/themes/iqlance/img/nasscom-logo.png.webp",
-    alt: "ISO",
-  },
-
-];
 export const servicesData = [
   {
     id: 1,
     title: "Hire Mobile App Developers",
     description:
       "Hire mobile app developers in the USA to build feature-rich iOS, Android, and cross-platform apps that ensure scalable, secure, and user-friendly solutions customized to your business objectives and user expectations.",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/mobile-app-hire-icn.svg",
+    icon: "/icons/mobile-app-hire-icn.svg",
     button: "Hire Now",
   },
   {
@@ -208,7 +33,7 @@ export const servicesData = [
     title: "Hire Software Developers",
     description:
       "Hire skilled software developers to build custom, enterprise-grade applications that streamline operations, boost efficiency, and support your long-term business growth with dependable, well-architected solutions.",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/wd-icn.png.webp",
+    icon: "/images/wd-icn.png.webp",
     button: "Hire Now",
   },
   {
@@ -216,7 +41,7 @@ export const servicesData = [
     title: "Hire AI Developers",
     description:
       "Leverage AI expertise to develop intelligent applications, automate workflows, implement ML solutions, improve decision-making, and elevate customer experience with advanced AI-powered systems.",
-    icon: "https://www.iqlance.com/wp-content/uploads/2026/05/ai-ml-offer-Generative-ai.png",
+    icon: "/images/ai-ml-offer-Generative-ai.png",
     button: "Hire Now",
   },
   {
@@ -224,7 +49,7 @@ export const servicesData = [
     title: "Hire Web Developers",
     description:
       "Build responsive, scalable, and high-performance websites and web applications tailored to your business needs using the latest web technologies and industry best practices.",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/react-hire-icn.svg",
+    icon: "/icons/react-hire-icn.svg",
     button: "Hire Now",
   },
   {
@@ -232,7 +57,7 @@ export const servicesData = [
     title: "Hire UI/UX Designers",
     description:
       "Create intuitive, visually appealing, and user-focused digital experiences with professional UI/UX designers dedicated to improving usability and customer satisfaction.",
-    icon: "https://www.iqlance.com/wp-content/uploads/2026/07/full-stack-developer_icon.png",
+    icon: "/images/full-stack-developer_icon.png",
     button: "Hire Now",
   },
   {
@@ -240,7 +65,7 @@ export const servicesData = [
     title: "Hire QA Engineers",
     description:
       "Ensure your applications are reliable, secure, and bug-free with experienced QA engineers providing comprehensive manual and automated testing services.",
-    icon: "https://www.iqlance.com/wp-content/uploads/2026/07/full-stack-developer_icon.png",
+    icon: "/images/full-stack-developer_icon.png",
     button: "Hire Now",
   },
 ];
@@ -326,7 +151,7 @@ export const slides = [
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/app-development-comapny-canada.png.webp",
+      "/images/app-development-comapny-canada.png.webp",
 
     consultation:
       "Schedule a free consultation today with Project Manager.",
@@ -384,7 +209,7 @@ export const slides = [
   ],
 
   image:
-    "https://www.iqlance.com/wp-content/uploads/2024/10/app-development-comapny-canada.png.webp",
+     "/images/app-development-comapny-canada.png.webp",
 
   consultation:
     "Schedule a free consultation today with Project Manager.",
@@ -406,28 +231,27 @@ export const portfolioSlides = [
       "Diverse Industry Representation",
       "Innovation and Experience",
     ],
-
-    technologies: [
+      technologies: [
       {
         name: "iOS",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/technologies-ios-icn.png.webp",
+        icon: "/icons/ios-icon.webp",
       },
       {
         name: "Android",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/android-technologies-icn.png.webp",
+        icon: "/icons/android-technologies-icn.webp",
       },
       {
         name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        icon: "/icons/microsoft-sql-icn.webp",
       },
       {
         name: "Flutter",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/Flutter.png.webp",
+        icon: "/images/Flutter.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/chain-supply-management.png.webp",
+      "/images/chain-supply-management.png.webp",
   },
 
   {
@@ -445,28 +269,28 @@ export const portfolioSlides = [
     technologies: [
       {
         name: "iOS",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/technologies-ios-icn.png.webp",
+        icon: "/icons/ios-icon.webp",
       },
       {
         name: "Android",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/android-technologies-icn.png.webp",
+        icon: "/icons/android-technologies-icn.webp",
       },
       {
         name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        icon: "/icons/microsoft-sql-icn.webp",
       },
       {
         name: "Laravel",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/laravel-technologies-icn.png.webp",
+        icon: "/icons/laravel-technologies-icn.webp",
       },
       {
         name: "React Native",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/React.png.webp",
+        icon: "/icons/React.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/image_2024_08_05T07_26_10_247Z.png.webp",
+      "/images/image_2024_08_05T07_26_10_247Z.png.webp",
   },
   {
     heading: "Endeavors that Make us Proud",
@@ -483,48 +307,16 @@ export const portfolioSlides = [
     technologies: [
       {
         name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        icon: "/icons/microsoft-sql-icn.webp",
       },
       {
         name: "Azur",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
+        icon: "/images/Azure.png.webp",
       },
     ],
 
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
+      "/images/erp1.png.webp",
   },
 
 ];
-export const stats = [
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-5.svg',
-    value: "8+",
-    line1: "Years",
-    line2: "of experience",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-6.svg',
-    value: "1500+",
-    line1: "Successful",
-    line2: "Projects",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-7.svg',
-    value: "200+",
-    line1: "Happy Clients",
-    line2: "World Wide",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-8.svg',
-    value: "800K+",
-    line1: "Hours",
-    line2: "Invested",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-9.svg',
-    value: "100%",
-    line1: "Best",
-    line2: "Quality Delivery",
-  },
-]; 

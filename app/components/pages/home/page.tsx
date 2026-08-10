@@ -8,18 +8,19 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import {
-  services,
-  industries,
   blogs,
-  partners,
   servicesData,
   processSteps,
-  slides,
   portfolioSlides,
-  testimonials,
-  stats,
+  slides
 } from "../home/services-data";
-
+import {
+  partners,
+  stats,
+  industries,
+  services,
+  testimonials
+} from "../../../../utils/data"
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 export default function Home() {
@@ -428,55 +429,63 @@ export default function Home() {
           loop={true}
         >
           {portfolioSlides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-[#F2F1FF] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-10">
-                <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-                  {slide.heading}
-                </h2>
+            <SwiperSlide key={index} className="h-auto!">
+              {/* h-full add kiya hai taakay har slide ki height ek barabar rahe */}
+              <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between">
+                <div>
+                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
+                    {slide.heading}
+                  </h2>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                      {slide.title}
-                    </h3>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
+                        {slide.title}
+                      </h3>
 
-                    <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                      {slide.description}
-                    </p>
+                      <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+                        {slide.description}
+                      </p>
 
-                    <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                      {slide.features.map((feature, i) => (
-                        <li key={i}>› {feature}</li>
-                      ))}
-                    </ul>
+                      <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
+                        {slide.features.map((feature, i) => (
+                          <li key={i} className="flex gap-2">
+                            <ChevronRight
+                              size={14}
+                              className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1 "
+                            /> {feature}</li>
+                        ))}
+                      </ul>
 
-                    <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                      {slide.technologies.map((tech, i) => (
-                        <div key={i} className="text-center">
-                          <img
-                            src={tech.icon}
-                            alt={tech.name}
-                            className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                          />
-                          <p className="text-xs sm:text-sm mt-2">{tech.name}</p>
-                        </div>
-                      ))}
+                      <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
+                        {slide.technologies.map((tech, i) => (
+                          <div key={i} className="text-center">
+                            <img
+                              src={tech.icon}
+                              alt={tech.name}
+                              className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
+                            />
+                            <p className="text-xs sm:text-sm mt-2">{tech.name}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                        View Case Study
+                        <ArrowRight
+                          size={18}
+                          className="transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                      </button>
                     </div>
-                    <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                      View Case Study
-                      <ArrowRight
-                        size={18}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
-                      />
-                    </button>
-                  </div>
 
-                  <div className="flex justify-center">
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="w-full max-w-xs sm:max-w-sm"
-                    />
+                    <div className="flex justify-center">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full max-w-xs sm:max-w-sm object-contain max-h-87.5"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -485,7 +494,7 @@ export default function Home() {
         </Swiper>
 
         {/* CHECK PRODUCT SECTION */}
-        <div className="bg-[#F4F8FC] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-10 mt-6">
+        <div className="bg-[#F4F8FC] px-4 sm:px-6 md:px-12 py-8 sm:py-10 mt-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 sm:gap-8 text-center lg:text-left">
             <div>
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight">
@@ -504,10 +513,13 @@ export default function Home() {
             <div className="flex justify-center">
               <Link
                 href="/contact-us"
-                className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3  font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
+                className="group mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
               >
                 Schedule a free consultation
-                <ArrowRight size={22} />
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-2"
+                />
               </Link>
             </div>
           </div>
@@ -560,7 +572,7 @@ export default function Home() {
         </div>
 
         {/* HIRE TEAM CTA */}
-        <section className="bg-[#F4F8FC] rounded-lg py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
+        <section className="bg-[#F4F8FC] py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
           <div className="max-w-4xl mx-auto text-center">
             <img
               src="/images/letdiscuss-icon.png.webp"
@@ -577,7 +589,7 @@ export default function Home() {
               developers. Let us build something extraordinary.
             </p>
 
-            <div className="mt-6 sm:mt-8 border border-gray-400 rounded-md px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
+            <div className="mt-6 sm:mt-8 border border-gray-400 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
               <span className="font-semibold flex gap-1 items-center">
                 <img src="/icons/email-icon.svg" alt="" />
                 info@iqlance.com
@@ -592,17 +604,22 @@ export default function Home() {
               </span>
             </div>
 
-            <Link
-              href="/lets-talk"
-              className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
-            >
-              Let's Discuss
-              <ArrowRight size={22} />
-            </Link>
+            <div className="flex justify-center">
+              <Link
+                href="/lets-talk"
+                className="group mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
+              >
+                Let's Discuss
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-2"
+                />
+              </Link>
+            </div>
           </div>
         </section>
 
-        <div className="max-w-5xl mx-auto text-center mt-10 sm:mt-14 px-3">
+        <div className="max-w-5xl mx-auto text-center mt-10 sm:mt-14 px-3 mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
             Hire Mobile App and Software Developers
           </h2>
@@ -618,39 +635,53 @@ export default function Home() {
         </div>
 
         {/* SWIPER 3 - SERVICES */}
-        <section>
+        <section className="mb-10 max-w-7xl mx-auto px-4">
           <Swiper
             modules={[Autoplay]}
             slidesPerView={3}
-            spaceBetween={20}
+            spaceBetween={24}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             breakpoints={{
               0: { slidesPerView: 1, spaceBetween: 16 },
-              640: { slidesPerView: 1.2, spaceBetween: 20 },
-              768: { slidesPerView: 2, spaceBetween: 24 },
-              1024: { slidesPerView: 3, spaceBetween: 30 },
+              640: { slidesPerView: 1.5, spaceBetween: 20 },
+              768: { slidesPerView: 2.2, spaceBetween: 24 },
+              1024: { slidesPerView: 3, spaceBetween: 24 },
             }}
           >
             {servicesData.map((service) => (
-              <SwiperSlide key={service.id}>
-                <div className="border border-gray-200 p-6 sm:p-8 md:p-10 h-full bg-white">
-                  <img
-                    src={service.icon}
-                    alt={service.title}
-                    className="w-12 h-12 sm:w-16 sm:h-16"
-                  />
+              <SwiperSlide key={service.id} className="h-auto!">
+                {/* Sirf Hover Par Border Dikhega */}
+                <div className="border border-transparent hover:border-[#164273] hover:shadow-lg transition-all duration-300 rounded-none p-6 sm:p-8 h-full bg-white flex flex-col justify-between cursor-pointer">
+                  <div>
+                    {/* Icon */}
+                    <img
+                      src={service.icon}
+                      alt={service.title}
+                      className="w-10 h-10 object-contain mb-6"
+                    />
 
-                  <h3 className="text-xl sm:text-2xl font-bold mt-4 sm:mt-6">
-                    {service.title}
-                  </h3>
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl font-bold text-black mb-3 leading-snug">
+                      {service.title}
+                    </h3>
 
-                  <p className="text-sm sm:text-base md:text-lg leading-7 sm:leading-9 mt-4 sm:mt-6 text-gray-700">
-                    {service.description}
-                  </p>
-
-                  <button className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#123b72] transition w-full sm:w-auto">
-                    {service.button}
-                  </button>
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal">
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <Link
+                      href="/lets-talk"
+                      className="group mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
+                    >
+                      <span>{service.button || "Hire Now"}</span>
+                      <ArrowRight
+                        size={18}
+                        className="transition-transform duration-300 group-hover:translate-x-2"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
@@ -662,7 +693,7 @@ export default function Home() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center">
             Our Design and Development Approach
           </h1>
-          <p className="max-w-5xl mx-auto text-center text-black mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base font-semibold">
+          <p className="max-w-5xl mx-auto text-center text-black mt-5 sm:mt-6 leading-5 sm:leading-8 text-sm sm:text-base font-semibold">
             Every successful digital solution starts with a clear strategy and a
             structured process. Whether you're building a mobile app, custom
             software, web application, or AI-powered solution, we follow a
@@ -673,7 +704,7 @@ export default function Home() {
         </div>
 
         {/* PROCESS STEPS */}
-        <section className="py-10 sm:py-14 lg:py-16 bg-white overflow-hidden">
+        <section className="mt-20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
               {processSteps.map((step) => (
@@ -712,6 +743,14 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+        <section>
+          <div className="flex justify-center">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+              Client Testimonials
+            </h1>
+          </div>
+
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
           {/* Outer Card Wrapper with Fixed Border & Accent */}
@@ -812,15 +851,44 @@ export default function Home() {
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-              Offshore Web, Mobile & Software Development Company
+              Why Businesses Trust Us
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App
-              Development Company with a vast area of experience in crafting
-              stunning and end to end encrypted technology solutions. We offer
-              excellent expertise of the industry followed by an exactly planned
-              approach to elevate your growth.
+              We help businesses of all sizes turn ideas into high-performance digital solutions. Our developers use cutting-edge technologies to deliver measurable results, on time and within budget.
             </p>
+          </div>
+        </section>
+
+        <section>
+          <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+              >
+                {/* Floating Icon */}
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="w-11 h-11 object-contain"
+                  />
+                </div>
+
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
+
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
         <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
@@ -883,43 +951,20 @@ export default function Home() {
             </div>
 
             {/* Action Button */}
-            <div>
+
+
+            <div className="flex justify-center">
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Let’s Talk
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-2"
+                />
               </Link>
             </div>
-          </div>
-        </section>
-        <section>
-          <div className="flex flex-wrap justify-center gap-7 mt-24">
-            {stats.map((item, index) => (
-              <div
-                key={index}
-                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
-              >
-                {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                  <img
-                    src={item.icon}
-                    alt=""
-                    className="w-11 h-11 object-contain"
-                  />
-                </div>
-
-                <h3 className="text-lg font-bold text-black leading-none">
-                  {item.value}
-                </h3>
-
-                <p className="mt-3 text-lg leading-none text-black">
-                  {item.line1}
-                  <br />
-                  {item.line2}
-                </p>
-              </div>
-            ))}
           </div>
         </section>
         <section className="py-10 sm:py-16">
@@ -928,7 +973,7 @@ export default function Home() {
               Industries We Serve
             </h2>
 
-            <p className="max-w-5xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base">
+            <p className="max-w-6xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base">
               At iQlance, we serve a wide range of industries by delivering
               custom solutions tailored to their unique business needs. Backed
               by extensive industry experience, we develop high-quality web
@@ -979,13 +1024,17 @@ export default function Home() {
                 Great Idea?
               </p>
 
-              <div className="flex justify-center lg:justify-start">
-                <button className="mt-6 sm:mt-8 bg-white border border-gray-200 px-6 py-3 rounded-md font-semibold flex items-center gap-3 hover:bg-gray-100 transition w-full sm:w-auto justify-center">
+              <div className="flex justify-center lg:justify-start mt-8">
+                <Link
+                  href="/lets-talk"
+                  className="group mt-6 sm:mt-8 bg-white text-black px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-gray-100 transition w-full sm:w-auto"
+                >
                   Hire Developers
-                  <span className="text-xl">
-                    <ArrowRight size={22} />
-                  </span>
-                </button>
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-2"
+                  />
+                </Link>
               </div>
             </div>
 
@@ -1003,10 +1052,13 @@ export default function Home() {
               <div className="flex justify-center lg:justify-start">
                 <Link
                   href="/lets-talk"
-                  className="mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 rounded-md font-semibold items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto inline-flex"
+                  className="group mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
                 >
                   Let's Discuss
-                  <ArrowRight size={22} />
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-2"
+                  />
                 </Link>
               </div>
             </div>
@@ -1015,7 +1067,7 @@ export default function Home() {
 
         {/* WHO WE WORK WITH */}
         <section className="py-4">
-          <div className="bg-[#F5FAFF] rounded-lg overflow-hidden">
+          <div className="bg-[#F5FAFF] overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               <div className="px-4 sm:px-8 md:px-14 py-8 sm:py-12 text-center lg:text-left">
                 <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black mb-4 sm:mb-8">
@@ -1046,55 +1098,54 @@ export default function Home() {
         </section>
 
         {/* FINAL DISCUSS CTA */}
-        <section className="py-4">
-          <div className="mx-auto bg-[#F5FAFF] rounded-lg px-4 sm:px-6 md:px-12 py-8 sm:py-12">
-            <div className="flex justify-center">
-              <img
-                src="/images/letdiscuss-icon.png.webp"
-                alt="Discuss"
-                className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
-              />
-            </div>
+        <section className="bg-[#F4F8FC] py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
+          <div className="max-w-4xl mx-auto text-center">
+            <img
+              src="/images/letdiscuss-icon.png.webp"
+              alt="Hire Team"
+              className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 object-contain"
+            />
 
-            <h2 className="mt-4 text-center text-xl sm:text-2xl md:text-4xl font-bold leading-tight text-black">
-              Let's Discuss with our Technical Expert to Bring your Idea into
-              <br className="hidden md:block" />
-              Reality.
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+              Let's Discuss with our Technical Expert to Bring your Idea into Reality.
             </h2>
 
-            <p className="mt-4 sm:mt-6 text-center text-base sm:text-lg md:text-xl text-gray-700">
+            <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg">
               Send your Requirements on
             </p>
 
-            <div className="mt-6 sm:mt-8 max-w-4xl mx-auto border border-gray-400 bg-white px-4 sm:px-6 py-4 sm:py-5 rounded flex flex-col md:flex-row items-center justify-center gap-3 text-sm sm:text-lg md:text-xl">
-              <span className="font-semibold flex items-center gap-1">
+            <div className="mt-6 sm:mt-8 border border-gray-400 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
+              <span className="font-semibold flex gap-1 items-center">
                 <img src="/icons/email-icon.svg" alt="" />
                 info@iqlance.com
               </span>
 
-              <span className="hidden md:inline">or</span>
+              <span className="hidden md:block">or</span>
 
-              <span className="flex flex-wrap items-center justify-center gap-1">
+              <span className="flex flex-wrap gap-1 items-center justify-center">
                 <img src="/icons/phone-icon.svg" alt="" />
-                <strong> +1 469 793 9837</strong>, CA :
+                US :<strong> +1 469 793 9837</strong>, CA :
                 <strong> +1 647 637 9108</strong>
               </span>
             </div>
 
-            <div className="flex justify-center mt-6 sm:mt-8">
+            <div className="flex justify-center">
               <Link
-                href="/request-a-quote"
-                className="bg-[#184A8B] hover:bg-[#123B73] transition text-white font-semibold px-6 sm:px-8 py-3 rounded-md flex items-center justify-center gap-3 w-full sm:w-auto cursor-pointer"
+                href="/lets-talk"
+                className="group mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
               >
-                <span>Request a Quote</span>
-                <ArrowRight size={18} className="shrink-0" />
+                Let's Discuss
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-2"
+                />
               </Link>
             </div>
           </div>
         </section>
 
         {/* BLOGS */}
-        <div className="px-3">
+        <div className="px-3 mt-10">
           <h1 className="flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight text-center">
             Insights and News
           </h1>
@@ -1131,13 +1182,17 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="flex justify-center mt-8 sm:mt-12">
+
+            <div className="flex justify-center">
               <Link
                 href="/blog"
-                className="bg-[#0C4A8A] hover:bg-[#083b70] text-white px-8 sm:px-10 py-3 sm:py-4  text-base sm:text-xl font-semibold inline-flex items-center justify-center gap-3 transition w-full sm:w-auto"
+                className="group mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
               >
                 All Blogs
-                <ArrowRight size={22} />
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-2"
+                />
               </Link>
             </div>
           </div>

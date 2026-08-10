@@ -5,8 +5,9 @@ import { ArrowRight } from "lucide-react";
 import ContactForm from "../../contactForm/ContactForm";
 import { faqsData } from "../faqs/data";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { stats , partners} from "../../../../utils/data";
+import { stats, partners } from "../../../../utils/data";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function faqs() {
   const [open, setOpen] = useState(0);
@@ -45,21 +46,28 @@ export default function faqs() {
             your success a step forward.{" "}
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
+
             <Link
               href="/contact-us"
-              className="w-full sm:w-auto bg-[#0C4A8A] hover:bg-[#083b70] text-white px-8 py-4 text-sm font-semibold flex items-center justify-center gap-3 transition"
+              className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
             >
               Contact Us
-              <ArrowRight size={18} />
+              <ArrowRight
+                size={22}
+                className="transition-transform duration-300 group-hover:translate-x-1.5"
+              />
             </Link>
 
             <Link
               href="/portfolio"
-              className="w-full sm:w-auto bg-[#eef0f2] hover:bg-gray-200 text-black px-8 py-4 text-sm font-semibold flex items-center justify-center gap-3 transition"
+              className="group inline-flex items-center gap-3 bg-[#eef0f2] px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-200"
             >
               See Our Work
-              <ArrowRight size={18} />
-            </Link>
+              <ArrowRight
+                size={22}
+                className="transition-transform duration-300 group-hover:translate-x-1.5"
+              />
+              </Link>
           </div>
         </section>
 
@@ -80,7 +88,7 @@ export default function faqs() {
             </p>
 
             {/* Cards */}
-                        <section>
+            <section>
               <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
                 {stats.map((item, index) => (
                   <div
@@ -161,7 +169,88 @@ export default function faqs() {
             </div>
           </div>
         </section>
+   <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans mb-10">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/letdiscuss-icon.webp"
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain w-auto h-auto"
+              />
+            </div>
 
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              Let’s Discuss with our Technical Expert to Bring your Idea into Reality.
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Send your Requirements on :
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img
+                    src="/icons/email-icon.svg"
+                    alt="Email"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img
+                    src="/icons/phone-icon.svg"
+                    alt="Phone"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/lets-talk"
+                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+              >
+                Let’s Discuss
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
+              </Link>
+            </div>
+          </div>
+        </section>
         <section className="py-4 bg-white">
           <div className="w-full px-5 text-center">
             <h2 className="text-3xl md:text-[44px] font-bold text-black">
@@ -182,24 +271,24 @@ export default function faqs() {
           <ContactForm />
         </div>
       </div>
-         <section className="mb-5 overflow-hidden">
-              <div className="marquee">
-                <div className="marquee-content">
-                  {[...partners, ...partners].map((item, index) => (
-                    <div
-                      key={`${item.id}-${index}`}
-                      className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.alt}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
-            </section>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

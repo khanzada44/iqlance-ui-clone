@@ -13,7 +13,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import ContactForm from "../../contactForm/ContactForm";
-import { partners, testimonials } from "../../pages/contact-us/data";
+import { testimonials } from "../../pages/contact-us/data";
+import { stats, partners, faqsData } from "../../../../utils/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -99,7 +100,7 @@ export default function ContactSection() {
   };
   return (
     <>
-      <div className="w-[90%] md:w-[80%] mx-auto max-w-full overflow-hidden">
+      <div className="w-full max-w-[80%] mx-auto">
         {/* Main Contact Section */}
         <section className="py-6 bg-white">
           <div className="max-w-7xl mx-auto px-4 w-full">
@@ -146,13 +147,16 @@ export default function ContactSection() {
                     <span>Action plan to kick start your project</span>
                   </li>
                 </ul>
-
-                <Link href="/portfolio" className="inline-block mt-10">
-                  <button className="bg-[#EEF2F7] hover:bg-gray-200 transition px-6 py-3 rounded-md flex items-center gap-3 font-semibold">
+                 <Link
+                    href="/portfolio"
+                    className=" border border-gray-300 group inline-flex items-center gap-3 bg-gray-50  px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-50 mt-10"
+                  >
                     See Our Work
-                    <ArrowRight size={18} />
-                  </button>
-                </Link>
+                    <ArrowRight
+                      size={22}
+                      className="transition-transform duration-300 group-hover:translate-x-1.5"
+                    />
+                  </Link>
               </div>
 
               {/* Right Side Form */}
@@ -223,7 +227,7 @@ export default function ContactSection() {
                           className="hidden"
                         />
                       </label>
-                      <span className="text-gray-500 truncate max-w-[180px]">
+                      <span className="text-gray-500 truncate max-w-45">
                         {formData.file ? formData.file.name : "No file chosen."}
                       </span>
                     </div>
@@ -289,15 +293,16 @@ export default function ContactSection() {
           </div>
         </section>
 
-        {/* Cards Section */}
-        <section className="py-10 bg-[#f8f9fb]">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {offices.map((office) => (
-                <div
-                  key={office.id}
-                  className="bg-white shadow-sm hover:shadow-lg transition rounded-md p-6 md:p-10 text-center"
-                >
+      
+      <section className="py-10 bg-[#f8f9fb]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {offices.map((office) => (
+              <div
+                key={office.id}
+                className="bg-white shadow-sm hover:shadow-lg transition rounded-md p-6 md:p-10 text-center h-full flex flex-col justify-between"
+              >
+                <div>
                   {office.title && (
                     <h4 className="text-2xl font-bold mb-6">{office.title}</h4>
                   )}
@@ -306,23 +311,26 @@ export default function ContactSection() {
                     alt={office.city}
                     className="w-24 h-24 mx-auto object-contain"
                   />
-                  <h3 className="text-3xl md:text-4xl font-bold mt-6">
+                  <h3 className="text-2xl md:text-3xl font-bold mt-6">
                     {office.city}
                   </h3>
-                  <p className="text-gray-600 mt-5 leading-relaxed">
+                  <p className="text-gray-600 mt-3 text-sm md:text-base leading-relaxed">
                     {office.address}
                   </p>
-                  {office.phone && (
-                    <div className="flex justify-center items-center gap-2 mt-8 text-xl md:text-2xl font-semibold">
-                      <Phone size={24} />
-                      <span>{office.phone}</span>
-                    </div>
-                  )}
                 </div>
-              ))}
-            </div>
+
+                {/* Bottom aligned phone section */}
+                {office.phone && (
+                  <div className="flex justify-center items-center gap-2 mt-8 text-lg md:text-xl font-semibold">
+                    <Phone size={22} />
+                    <span>{office.phone}</span>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Testimonials */}
         <section className="py-10 bg-white">

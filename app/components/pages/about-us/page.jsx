@@ -48,22 +48,30 @@ export default function About() {
               high levels of client satisfaction.
             </p>
 
-            {/* Buttons */}
+
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6">
+              {/* Inquiry Now Link */}
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+                href="/contact-us"
+                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
               >
                 Inquiry Now
-                <ArrowRight size={22} />
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
               </Link>
 
+              {/* See Our Work Link */}
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-3 border border-gray-300 bg-white px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-100"
+                className="group inline-flex items-center gap-3 border border-gray-300 bg-white px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-100"
               >
                 See Our Work
-                <ArrowRight size={22} />
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
               </Link>
             </div>
           </div>
@@ -74,7 +82,7 @@ export default function About() {
             <h2 className="text-4xl font-bold text-center">
               Trusted Custom Software, Web Mobile App Development Services
             </h2>
-            <p className="w-full mx-auto mt-4 text-center text-2xl leading-8 text-black">
+            <p className="w-full mx-auto mt-4 text-center text-1sxl leading-8 text-black">
               iQlance solutions is a leading Software, Web, & Mobile App
               Development Company with a extensive experience in crafting
               stunning and secure, end-to-end technology solutions. We offer
@@ -146,13 +154,15 @@ export default function About() {
                   such as Doggy Dates, Bidda, Stable Hub, and Ukitchen. We are
                   proud to have worked with 250+ satisfied clients worldwide.
                 </p>
-
                 <Link
-                  href="/contact"
-                  className="mt-10 inline-flex items-center gap-3 bg-[#1F4D8C] px-8 py-4 text-white font-semibold hover:bg-[#173d70] transition"
+                  href="/contact-us"
+                  className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
                 >
                   Get in touch
-                  <ArrowRight size={20} />
+                  <ArrowRight
+                    size={22}
+                    className="transition-transform duration-300 group-hover:translate-x-1.5"
+                  />
                 </Link>
               </div>
               <div>
@@ -278,9 +288,13 @@ export default function About() {
             <div>
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
               >
-                Let’s Discuss <ArrowRight className="w-4 h-4" />
+                Let’s Discuss
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
               </Link>
             </div>
           </div>
@@ -413,9 +427,13 @@ export default function About() {
             <div>
               <Link
                 href="/request-a-quote"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
               >
-                Request a Quote <ArrowRight className="w-4 h-4" />
+                Request a Quote
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
               </Link>
             </div>
           </div>

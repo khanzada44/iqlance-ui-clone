@@ -100,7 +100,7 @@ export default function EngagementModelSection() {
                 <ul className="mt-6 sm:mt-8 space-y-4 sm:space-y-5 inline-block lg:block text-left">
                   {features?.map((item) => (
                     <li key={item} className="flex items-center gap-3">
-                      <ChevronRight className="w-5 h-5 text-[#2F67C8] shrink-0" />
+                      <ChevronRight className="w-5 h-5 shrink-0" />
                       <span className="text-base sm:text-lg md:text-xl font-medium">
                         {item}
                       </span>
@@ -109,20 +109,26 @@ export default function EngagementModelSection() {
                 </ul>
 
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-8 sm:mt-10 items-center lg:items-start">
-                  <Link
-                    href="/contact"
-                    className="bg-[#1D4F91] text-white px-6 sm:px-8 py-3 sm:py-4  font-semibold flex items-center justify-center gap-3 hover:bg-[#173c6d] w-full sm:w-auto"
-                  >
-                    Contact Us
-                    <ArrowRight size={18} />
-                  </Link>
 
                   <Link
+                    href="/contact-us"
+                    className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+                  >
+                    Contact Us
+                    <ArrowRight
+                      size={22}
+                      className="transition-transform duration-300 group-hover:translate-x-1.5"
+                    />
+                  </Link>
+                  <Link
                     href="/portfolio"
-                    className="border border-gray-300 px-6 sm:px-8 py-3 sm:py-4 font-semibold flex items-center justify-center gap-3 hover:bg-gray-50 w-full sm:w-auto"
+                    className=" border border-gray-300 group inline-flex items-center gap-3 bg-gray-50  px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-50 "
                   >
                     See Our Work
-                    <ArrowRight size={18} />
+                    <ArrowRight
+                      size={22}
+                      className="transition-transform duration-300 group-hover:translate-x-1.5"
+                    />
                   </Link>
                 </div>
               </div>
@@ -387,11 +393,10 @@ export default function EngagementModelSection() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveModelTab(tab.id)}
-                  className={`pb-3 text-sm font-semibold transition-all relative ${
-                    activeModelTab === tab.id
-                      ? "text-slate-800 border-b-2 border-slate-800"
-                      : "text-gray-400 hover:text-gray-600"
-                  }`}
+                  className={`pb-3 text-sm font-semibold transition-all relative ${activeModelTab === tab.id
+                    ? "text-slate-800 border-b-2 border-slate-800"
+                    : "text-gray-400 hover:text-gray-600"
+                    }`}
                 >
                   {tab.navLabel}
                 </button>
@@ -511,9 +516,13 @@ export default function EngagementModelSection() {
             <div>
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
               >
-                Let’s Discuss <ArrowRight className="w-4 h-4" />
+                Let’s Discuss
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
               </Link>
             </div>
           </div>
@@ -637,9 +646,13 @@ export default function EngagementModelSection() {
             <div>
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
               >
-                Let’s Discuss <ArrowRight className="w-4 h-4" />
+                Let’s Discuss
+                <ArrowRight
+                  size={22}
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
+                />
               </Link>
             </div>
           </div>
