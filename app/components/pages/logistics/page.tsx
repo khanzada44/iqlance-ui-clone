@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, type ChangeEvent, type FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "../../contactForm/ContactForm";
@@ -15,57 +15,139 @@ import {
   Star,
 } from "lucide-react";
 import {
-  slides,
   ServiceSectionData,
   featuresTabsData,
   portfolioSlides,
+} from "../logistics/data";
+import {
+  partners,
+  slides,
   technologies,
   stats,
   industries,
   services,
-  testimonials,
   faqsData,
-  partners,
-} from "../logistics/data";
+  testimonials,
+} from "../../../../utils/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { submitContactForm } from "@/services/send-call-request";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { getBlogs } from "@/services/blog";
 
 export default function Logistic() {
   const [activeTab, setActiveTab] = useState<string>("driver");
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState<number>(-1);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const currentTab =
     featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
   // Form State
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+    service: string;
+    service_category: string;
+    file: File | null;
+    sendNda: boolean;
+  }>({
     name: "",
     email: "",
     phone: "",
     message: "",
-    file: null as File | null,
+    service: "",
+    service_category: "",
+    file: null,
     sendNda: false,
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (e: any) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({ ...prev, file: e.target.files![0] }));
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    setLoading(true);
+    setStatusMessage({ type: "", text: "" });
+
+    try {
+      const payload = new FormData();
+      payload.append("name", formData.name || "");
+      payload.append("email", formData.email || "");
+      payload.append("phone", formData.phone || "");
+      payload.append("message", formData.message || "");
+      payload.append("is_nda", formData.sendNda ? "1" : "0");
+      payload.append("service", formData.service || "");
+      payload.append("service_category", formData.service_category || "");
+
+      // File ko tabhi payload me append karein jab ye valid File instance ho
+      if (formData.file && formData.file instanceof File) {
+        payload.append("file", formData.file);
+      }
+
+      await submitContactForm(payload);
+
+      setStatusMessage({
+        type: "success",
+        text: "Your message has been sent successfully!",
+      });
+
+      // Reset Form State
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        service: "",
+        service_category: "",
+        file: null,
+        sendNda: false,
+      });
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error: any) {
+      console.error("API Error Response:", error?.response?.data);
+
+      // Backend Error response handling
+      let errorMsg = "Failed to send message. Please try again later.";
+      if (error?.response?.data?.errors?.file) {
+        errorMsg = error.response.data.errors.file.join(" ");
+      } else if (error?.response?.data?.message) {
+        errorMsg = error.response.data.message;
+      }
+
+      setStatusMessage({
+        type: "error",
+        text: errorMsg,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+  useEffect(() => {
+    if (statusMessage.text) {
+      const timer = setTimeout(() => {
+        setStatusMessage({ type: "", text: "" });
+      }, 5000);
+
+      return () => clearTimeout(timer); // Cleanup timer on unmount or state change
+    }
+  }, [statusMessage.text]);
 
   // Section 1 Bullet Points
   const topBulletPoints = [
@@ -101,7 +183,7 @@ export default function Logistic() {
 
   return (
     <>
-      <div className="w-[90%] sm:w-[90%] mx-auto">
+      <div className="w-full max-w-[80%] mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
@@ -141,7 +223,7 @@ export default function Logistic() {
                 {topBulletPoints.map((point, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-3 font-semibold text-gray-800 text-base md:text-lg"
+                    className="flex items-center gap- font-semibold text-gray-800 text-base md:text-lg"
                   >
                     <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
                     <span>{point}</span>
@@ -152,17 +234,19 @@ export default function Logistic() {
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 rounded-md transition duration-200 shadow-md"
+                  href="/contact-us"
+                  className="group inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md cursor-pointer"
                 >
-                  Request a Quote <ArrowRight className="w-4 h-4" />
+                  Request a Quote
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
                 </Link>
 
                 <Link
-                  href="#portfolio"
-                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 rounded-md transition duration-200 shadow-sm"
+                  href="/portfolio"
+                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
                 >
-                  See Our Work <ArrowRight className="w-4 h-4 text-gray-600" />
+                  See Our Work
+                  <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -237,9 +321,9 @@ export default function Logistic() {
                   </div>
 
                   {/* File Upload */}
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         type="file"
@@ -264,23 +348,59 @@ export default function Logistic() {
                           sendNda: e.target.checked,
                         }))
                       }
-                      className="w-4 h-4 rounded border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
                     >
                       Please Send NDA
                     </label>
                   </div>
 
-                  {/* Submit Button */}
+                  {statusMessage.text && (
+                    <div
+                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                        ? "bg-green-100 border border-green-400 text-green-800"
+                        : "bg-red-100 border border-red-400 text-red-800"
+                        }`}
+                    >
+                      {statusMessage.text}
+                    </div>
+                  )}
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 rounded-md transition-colors shadow flex items-center justify-center cursor-pointer"
+                      disabled={loading}
+                      className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Schedule a free consultation
+                      {loading ? (
+                        <span className="flex items-center gap-2">
+                          <svg
+                            className="animate-spin h-4 w-4 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        "Schedule a free consultation"
+                      )}
                     </button>
                   </div>
                 </form>
@@ -402,7 +522,11 @@ export default function Logistic() {
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                  <img
+                    src="/icons/email-icon.svg"
+                    alt="mail-icon"
+                    className="w-5 h-5 shrink-0"
+                  />
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -410,7 +534,11 @@ export default function Logistic() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                  <img
+                    src="/icons/phone-icon.svg"
+                    alt="phone-icon"
+                    className="w-5 h-5 shrink-0"
+                  />
                   <span>US :</span>
                   <a
                     href="tel:+14697939837"
@@ -433,10 +561,11 @@ export default function Logistic() {
             {/* Action Button */}
             <div>
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 rounded-md transition duration-200 shadow-md"
+                href="/contact-us"
+                className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
               >
-                Request a Free Quote <ArrowRight className="w-4 h-4" />
+                Request a Free Quote
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
               </Link>
             </div>
           </div>
@@ -458,7 +587,7 @@ export default function Logistic() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
                     {/* Image */}
                     <div className="w-full lg:w-1/2">
                       <img
@@ -484,7 +613,7 @@ export default function Logistic() {
                             key={index}
                             className="flex gap-3 items-baseline"
                           >
-                            <ChevronRight size={10} />
+                            <ChevronRight size={18} />
                             <span>{point}</span>
                           </div>
                         ))}
@@ -504,9 +633,8 @@ export default function Logistic() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -545,7 +673,7 @@ export default function Logistic() {
           })}
         </section>
         <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+          <div className="max-w-4xl mx-auto  flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
@@ -576,7 +704,11 @@ export default function Logistic() {
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                 <img
+                    src="/icons/email-icon.svg"
+                    alt="mail-icon"
+                    className="w-5 h-5 shrink-0"
+                  />
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -584,7 +716,11 @@ export default function Logistic() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                   <img
+                    src="/icons/phone-icon.svg"
+                    alt="phone-icon"
+                    className="w-5 h-5 shrink-0"
+                  />
                   <span>US :</span>
                   <a
                     href="tel:+14697939837"
@@ -606,13 +742,14 @@ export default function Logistic() {
 
             {/* Action Button */}
             <div>
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Let’s Discuss Your Project <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+            <Link
+              href="/contact-us"
+              className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+            >
+              Let’s Discuss Your Project 
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
+            </Link>
+          </div>
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
@@ -636,11 +773,10 @@ export default function Logistic() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`pb-3 text-sm md:text-base font-semibold transition-all relative cursor-pointer whitespace-nowrap ${
-                      isActive
-                        ? "text-blue-900 border-b-2 border-blue-600 font-bold"
-                        : "text-gray-500 hover:text-gray-800"
-                    }`}
+                    className={`pb-3 text-sm md:text-base font-semibold transition-all relative cursor-pointer whitespace-nowrap ${isActive
+                      ? "text-blue-900 border-b-2 border-blue-600 font-bold"
+                      : "text-gray-500 hover:text-gray-800"
+                      }`}
                   >
                     {tab.label}
                   </button>
@@ -709,7 +845,11 @@ export default function Logistic() {
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                  <img
+                    src="/icons/email-icon.svg"
+                    alt="mail-icon"
+                    className="w-5 h-5 shrink-0"
+                  />
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -717,7 +857,11 @@ export default function Logistic() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                   <img
+                    src="/icons/phone-icon.svg"
+                    alt="phone-icon"
+                    className="w-5 h-5 shrink-0"
+                  />
                   <span>US :</span>
                   <a
                     href="tel:+14697939837"
@@ -738,18 +882,19 @@ export default function Logistic() {
             </div>
 
             {/* Action Button */}
-            <div>
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Let’s Discuss Your Project <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+           <div>
+            <Link
+              href="/contact-us"
+              className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
+            >
+              Let’s Discuss Your Project 
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
+            </Link>
+          </div>
           </div>
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Image Side */}
             <div className="w-full h-full min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
               <img
@@ -850,64 +995,71 @@ export default function Logistic() {
             </p>
           </div>
         </section>
-        <section>
+        <section >
           <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
             autoplay={{ delay: 300000 }}
             loop={true}
+            className="w-full h-162.5 sm:h-150 [&_.swiper-slide]:h-full!"
           >
             {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10">
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
+              <SwiperSlide key={index} className="h-full!">
+                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between overflow-hidden">
+                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 shrink-0">
                     {slide.heading}
                   </h2>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                        {slide.title}
-                      </h3>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center flex-1 overflow-hidden">
+                    <div className="flex flex-col justify-between h-full py-2">
+                      <div>
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 line-clamp-2">
+                          {slide.title}
+                        </h3>
 
-                      <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                        {slide.description}
-                      </p>
+                        <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base line-clamp-3">
+                          {slide.description}
+                        </p>
 
-                      <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                        {slide.features.map((feature, i) => (
-                          <li key={i}>› {feature}</li>
-                        ))}
-                      </ul>
-
-                      <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                        {slide.technologies.map((tech, i) => (
-                          <div key={i} className="text-center">
-                            <img
-                              src={tech.icon}
-                              alt={tech.name}
-                              className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                            />
-                            <p className="text-xs sm:text-sm mt-2">
-                              {tech.name}
-                            </p>
-                          </div>
-                        ))}
+                        <ul className="space-y-2 mb-4 text-sm sm:text-base">
+                          {slide.features.slice(0, 3).map((feature, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <ChevronRight className="w-4 h-4 text-gray-600 shrink-0" />
+                              <span className="truncate">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                        View Case Study
-                        <ArrowRight
-                          size={18}
-                          className="transition-transform duration-300 group-hover:translate-x-1"
-                        />
-                      </button>
+
+                      <div>
+                        <div className="flex flex-wrap gap-4 sm:gap-6 mb-4 items-center">
+                          {slide.technologies.map((tech, i) => (
+                            <div key={i} className="text-center">
+                              <img
+                                src={tech.icon}
+                                alt={tech.name}
+                                className="w-6 h-6 sm:w-7 sm:h-7 mx-auto"
+                              />
+                              <p className="text-xs mt-1">{tech.name}</p>
+                            </div>
+                          ))}
+                        </div>
+
+                        <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-6 py-3 font-semibold flex justify-center items-center gap-3 transition cursor-pointer self-start text-sm sm:text-base">
+                          View Case Study
+                          <ArrowRight
+                            size={18}
+                            className="transition-transform duration-300 group-hover:translate-x-1"
+                          />
+                        </button>
+                      </div>
                     </div>
 
-                    <div className="flex justify-center">
+                    <div className="hidden lg:flex justify-center items-center h-full max-h-87.5">
                       <img
                         src={slide.image}
                         alt={slide.title}
-                        className="w-full max-w-xs sm:max-w-sm"
+                        className="w-full max-w-xs sm:max-w-sm max-h-full object-contain"
                       />
                     </div>
                   </div>
@@ -918,7 +1070,7 @@ export default function Logistic() {
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}
-          <div className="bg-[#F4F8FC] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-[#F4F8FC] p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
                 Check How We turn Your Idea into Innovative Product
@@ -929,13 +1081,13 @@ export default function Logistic() {
               </p>
             </div>
 
-            <a
-              href="#portfolio"
-              className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 rounded-md transition-colors shrink-0"
-            >
-              <span>See Our Work</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+           <Link
+            href="/portfolio"
+            className="group inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0 cursor-pointer"
+          >
+            <span>See Our Work</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
+          </Link>
           </div>
 
           {/* Technology Stack Heading Section */}
@@ -961,19 +1113,17 @@ export default function Logistic() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
-                        ? "text-black font-semibold"
-                        : "text-gray-500 hover:text-black"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
+                      ? "text-black font-semibold"
+                      : "text-gray-500 hover:text-black"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1323,11 +1473,10 @@ export default function Logistic() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-gray-200 shadow-md"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-gray-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1339,21 +1488,19 @@ export default function Logistic() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">
@@ -1403,13 +1550,13 @@ export default function Logistic() {
           <ContactForm />
         </div>
       </div>
-      <section className="mb-5">
-        <div className="">
-          <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
-            {partners.map((item) => (
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
               <div
-                key={item.id}
-                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
               >
                 <img
                   src={item.image}

@@ -121,7 +121,7 @@ export const slides = [
   {
     id: 1,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/healthcare-left-4.jpg",
+      "/images/healthcare-left-4.jpg",
     title: "Vigorous Administration",
     description:
       "Administration of the pharmacology made robust and incredible. The healthcare app development done by us is also helpful to the manufacturers as well as agencies of the pharmaceutical industry.",
@@ -133,7 +133,7 @@ export const slides = [
   {
     id: 2,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/healthcare-left-1.jpg",
+      "/images/healthcare-left-1.jpg",
     title: "Hospital Agility Improved",
     description:
       "The apps offer well organized workflow of the clinic with advanced hospital mobility. We let the healthcare industry go smart with the simplified processes and managed inventories with the help of our incredible healthcare mobility solutions. ",
@@ -148,7 +148,7 @@ export const slides = [
   {
     id: 3,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/healthcare-left-3.jpg",
+      "/images/healthcare-left-3.jpg",
     title: "Compliance of Doctor",
     description:
       "The custom mobility consulting helps improving the doctor’s productivity in almost every way. Integrate our healthcare application and make sure the doctors of the clinic offer better and personalized solutions to the patients.",
@@ -162,7 +162,7 @@ export const slides = [
   {
     id: 4,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/healthcare-left-2.jpg",
+      "/images/healthcare-left-2.jpg",
     title: "Enhanced Patient Engagement",
     description:
       "The ehealth app development USA  redefines the patient engagement as it offers mobile care management. As the communication between patient and doctor increases, the diagnosis of the diseases becomes specific. Make use of this functional application to let the patients monitor the disease and get guidance by the experts whenever required.",
@@ -182,28 +182,32 @@ export const caseStudies = [
       "DFS-style fantasy app that lets you play fantasy baseball in a whole new way.",
     bgColor: "#ffd2d2",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/chain-supply-management.png.webp",
+      "/images/chain-supply-management.png.webp",
     features: [
       "Engaging User Experience",
       "Real-Time Data Integration",
       "Secure and Scalable Platform",
     ],
     technologies: [
-      {
+       {
         name: "iOS",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/technologies-ios-icn.png.webp",
+        image:
+          "/icons/next.svg",
       },
       {
         name: "Android",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/android-technologies-icn.png.webp",
+        image:
+          "/icons/android.svg",
       },
       {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        name: "MsSQL",
+        image:
+          "/icons/mssql.svg",
       },
       {
         name: "Flutter",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/Flutter.png.webp",
+        image:
+          "/icons/flutter.svg",
       },
     ],
     buttonText: "View Case Study",
@@ -216,7 +220,7 @@ export const caseStudies = [
       "E-commerce management system is a distinguished player in film conversion, extrusion, and manufacturing. Our unwavering commitment to quality and customer satisfaction has propelled us to the forefront of innovation in the film industry.",
     bgColor: "#e7e7ff",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/image_2024_08_05T07_26_10_247Z.png.webp",
+      "/images/image_2024_08_05T07_26_10_247Z.png.webp",
     features: [
       "Innovation-driven Experience",
       "Customer-Centric Approach",
@@ -225,24 +229,30 @@ export const caseStudies = [
     technologies: [
       {
         name: "iOS",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/technologies-ios-icn.png.webp",
+        image:
+          "/icons/next.svg",
       },
       {
         name: "Android",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/android-technologies-icn.png.webp",
-      },
-      {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "Laravel",
-        icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/laravel-technologies-icn.png.webp",
+        image:
+          "/icons/android.svg",
       },
       {
         name: "React Native",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/React.png.webp",
+        image:
+          "/icons/reactnative.svg",
       },
+      {
+        name: "Flutter",
+        image:
+          "/icons/flutter.svg",
+      },
+      {
+        name: "MsSQL",
+        image:
+          "/icons/mssql.svg",
+      },
+      
     ],
     buttonText: "View Case Study",
     buttonLink: "#",
@@ -254,7 +264,7 @@ export const caseStudies = [
       "At iQlance this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
     bgColor: "#c5edff",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/immigration-software-slider-2.png",
+      "/images/immigration-software-slider-2.png",
     features: [
       "Easy Operational Visibility",
       "Low Operational Costs",
@@ -265,12 +275,14 @@ export const caseStudies = [
     ],
     technologies: [
       {
-        name: "Microsoft .NET",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Microsoft-Dot-Net-1.png",
+        name: ".NET",
+        image:
+          "/icons/net.svg",
       },
       {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        name: "MsSQL",
+        image:
+          "/icons/mssql.svg",
       },
     ],
     buttonText: "View Case Study",

@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, ChevronUp, ChevronRight, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, ChevronRight, Star, Paperclip } from "lucide-react";
 import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { submitContactForm } from "@/services/send-call-request";
 
 import {
   healthcareFeatures,
@@ -26,14 +27,132 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function HeroQuoteSection() {
+  const [activetechnologies, setActivetechnologies] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [open, setOpen] = useState(-1);
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
+
+  // ADD THIS LINE: formData state yahan add karein
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    service: "",
+    service_category: "",
+    file: null,
+    sendNda: false,
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+
+  const [blogs, setBlogs] = useState([]);
+  const fileInputRef = useRef(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatusMessage({ type: "", text: "" });
+
+    try {
+      const payload = new FormData();
+      payload.append("name", formData.name || "");
+      payload.append("email", formData.email || "");
+      payload.append("phone", formData.phone || "");
+      payload.append("message", formData.message || "");
+      payload.append("is_nda", formData.sendNda ? "1" : "0");
+      payload.append("service", formData.service || "");
+      payload.append("service_category", formData.service_category || "");
+
+      // File ko tabhi payload me append karein jab ye valid File instance ho
+      if (formData.file && formData.file instanceof File) {
+        payload.append("file", formData.file);
+      }
+
+      await submitContactForm(payload);
+
+      setStatusMessage({
+        type: "success",
+        text: "Your message has been sent successfully!",
+      });
+
+      // Reset Form State
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        service: "",
+        service_category: "",
+        file: null,
+        sendNda: false,
+      });
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error("API Error Response:", error?.response?.data);
+
+      // Backend Error response handling
+      let errorMsg = "Failed to send message. Please try again later.";
+      if (error?.response?.data?.errors?.file) {
+        errorMsg = error.response.data.errors.file.join(" ");
+      } else if (error?.response?.data?.message) {
+        errorMsg = error.response.data.message;
+      }
+
+      setStatusMessage({
+        type: "error",
+        text: errorMsg,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const observer = new IntersectionObserver(() => {});
+    const fetchBlogs = async () => {
+      try {
+        const data = await getBlogs();
+        const blogList = data?.response?.data || [];
+        setBlogs(blogList);
+      } catch (error) {
+        console.log("Message:", error.message);
+        console.log("Code:", error.code);
+        console.log("Response:", error.response);
+        console.log("Request:", error.request);
+        setBlogs([]);
+      }
+    };
+
+    fetchBlogs();
   }, []);
+  useEffect(() => {
+    if (statusMessage.text) {
+      const timer = setTimeout(() => {
+        setStatusMessage({ type: "", text: "" });
+      }, 5000);
+
+      return () => clearTimeout(timer); // Cleanup timer on unmount or state change
+    }
+  }, [statusMessage.text]);
+
   return (
     <>
-      <div className="w-[90%] mx-auto">
+      <div className="w-full max-w-[80%] mx-auto">
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -85,78 +204,183 @@ export default function HeroQuoteSection() {
                 </ul>
 
                 <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                  <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                  {/* Request a Quote Link */}
+                  <Link
+                    href="/contact-us"
+                    className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer"
+                  >
                     Request a Quote
                     <ArrowRight
                       size={18}
                       className="transition-transform duration-300 group-hover:translate-x-1"
                     />
-                  </button>
+                  </Link>
 
-                  <button className="group w-full sm:w-auto border border-gray-300 hover:border-[#184A8B] px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                  {/* See Our Work Link */}
+                  <Link
+                    href="/portfolio"
+                    className="group w-full sm:w-auto border border-gray-300 hover:border-[#184A8B] px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer text-black hover:text-[#184A8B]"
+                  >
                     See Our Work
                     <ArrowRight
                       size={18}
                       className="transition-transform duration-300 group-hover:translate-x-1"
                     />
-                  </button>
+                  </Link>
                 </div>
               </div>
-
               {/* Right Form */}
-              <div className="relative">
-                {/* Badge */}
-                <img
-                  src="https://www.iqlance.com/wp-content/uploads/2025/11/badge-sameday-resposnse.png"
-                  alt="Guaranteed"
-                  className="absolute -top-12 right-6 w-28 z-10"
-                />
+              <div>
+                <div className="relative bg-[#EFF6FF] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
+                  {/* Top Right Ribbon Badge */}
+                  <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
+                    <img
+                      src="/images/badge-sameday-resposnse.png"
+                      alt="Same Day Response Guaranteed"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
 
-                <div className="bg-[#EEF5FF] border border-[#BFD3F6] rounded-2xl shadow-lg p-6 md:p-8">
-                  <h2 className="text-3xl font-bold">Request a Free Quote</h2>
-
-                  <p className="mt-3 text-lg">
+                  {/* Form Heading */}
+                  <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
+                    Request a Free Quote
+                  </h2>
+                  <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
                     Guaranteed Response within One Business Day!
                   </p>
 
-                  <form className="mt-8 space-y-6">
-                    <input
-                      type="text"
-                      placeholder="Name*"
-                      className="w-full bg-transparent border-b border-gray-400 py-3 outline-none"
-                    />
+                  {/* Form Inputs */}
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name*"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
 
-                    <input
-                      type="email"
-                      placeholder="Email*"
-                      className="w-full bg-transparent border-b border-gray-400 py-3 outline-none"
-                    />
+                    <div>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email*"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
 
-                    <input
-                      type="text"
-                      placeholder="Phone*"
-                      className="w-full bg-transparent border-b border-gray-400 py-3 outline-none"
-                    />
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone*"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
 
-                    <textarea
-                      rows={3}
-                      placeholder="Write here Brief about the project..."
-                      className="w-full bg-transparent border-b border-gray-400 py-3 outline-none resize-none"
-                    />
+                    <div>
+                      <textarea
+                        name="message"
+                        rows={3}
+                        placeholder="Write here Brief about the project..."
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      />
+                    </div>
 
-                    <input type="file" className="text-sm" />
+                    {/* File Upload */}
+                    <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
+                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
+                        <Paperclip className="w-4 h-4 text-black" />
+                        <span>Upload file:</span>
+                        <input
+                          type="file"
+                          onChange={handleFileChange}
+                          className="hidden"
+                        />
+                      </label>
+                      <span className="text-gray-500 truncate max-w-45">
+                        {formData.file ? formData.file.name : "No file chosen."}
+                      </span>
+                    </div>
 
-                    <label className="flex items-center gap-2 text-sm">
-                      <input type="checkbox" />
-                      Please Send NDA
-                    </label>
+                    {/* Checkbox */}
+                    <div className="flex items-center gap-2 pt-1">
+                      <input
+                        type="checkbox"
+                        id="nda"
+                        checked={formData.sendNda}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            sendNda: e.target.checked,
+                          }))
+                        }
+                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                      />
+                      <label
+                        htmlFor="nda"
+                        className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
+                      >
+                        Please Send NDA
+                      </label>
+                    </div>
 
-                    <button
-                      type="submit"
-                      className="w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 rounded-md font-semibold transition"
-                    >
-                      Schedule a free consultation
-                    </button>
+                    {statusMessage.text && (
+                      <div
+                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                            ? "bg-green-100 border border-green-400 text-green-800"
+                            : "bg-red-100 border border-red-400 text-red-800"
+                          }`}
+                      >
+                        {statusMessage.text}
+                      </div>
+                    )}
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      >
+                        {loading ? (
+                          <span className="flex items-center gap-2">
+                            <svg
+                              className="animate-spin h-4 w-4 text-white"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                              ></circle>
+                              <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                              ></path>
+                            </svg>
+                            Sending...
+                          </span>
+                        ) : (
+                          "Schedule a free consultation"
+                        )}
+                      </button>
+                    </div>
                   </form>
                 </div>
               </div>
@@ -206,9 +430,9 @@ export default function HeroQuoteSection() {
             {/* Image */}
             <div className="mt-12">
               <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/change/healthcare-full-photo.jpg"
+                src="/images/healthcare-full-photo.jpg"
                 alt="Healthcare Mobile App Development"
-                className="w-full rounded-xl object-cover shadow-md"
+                className="w-full object-cover shadow-md"
               />
             </div>
 
@@ -269,18 +493,18 @@ export default function HeroQuoteSection() {
               {/* Right */}
               <div>
                 <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/main/apply-change-healthcare.jpg"
+                  src="/images/apply-change-healthcare.jpg"
                   alt="Healthcare"
-                  className="w-full rounded-xl object-cover shadow-md"
+                  className="w-full object-cover shadow-md"
                 />
               </div>
             </div>
 
             {/* CTA Box */}
 
-            <div className="mt-12 md:mt-20 bg-[#f5f9fc] rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-20 bg-[#f5f9fc] px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp"
+                src="/images/letdiscuss-icon.png.webp"
                 alt=""
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
@@ -296,31 +520,34 @@ export default function HeroQuoteSection() {
               </p>
 
               {/* Contact Box */}
-              <div className="mt-8 border border-[#184A8B] bg-white p-5 flex flex-col lg:flex-row justify-center items-center gap-5 rounded-lg">
-                <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                  <img
-                    src="https://www.iqlance.com/wp-content/themes/iqlance/img/email-icon.svg"
-                    alt="mail-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span className="font-medium text-sm sm:text-base">
-                    info@iqlance.com
-                  </span>
-                </div>
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-[#184A8B] bg-white p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <img
+                      src="/icons/email-icon.svg"
+                      alt="mail-icon"
+                      className="w-5 h-5 shrink-0"
+                    />
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                  <img
-                    src="https://www.iqlance.com/wp-content/themes/iqlance/img/phone-icon.svg"
-                    alt="phone-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span className="font-medium text-sm sm:text-base leading-6">
-                    US: +1 469 793 9837 <br className="sm:hidden" />
-                    <span className="hidden sm:inline"> | </span>
-                    CA: +1 647 637 9108
-                  </span>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <img
+                      src="/icons/phone-icon.svg"
+                      alt="phone-icon"
+                      className="w-5 h-5 shrink-0"
+                    />
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837 <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
+
 
               <button className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition rounded-md cursor-pointer">
                 Hire Dedicated Developers
@@ -362,13 +589,13 @@ export default function HeroQuoteSection() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
                     {/* Image */}
                     <div className="w-full lg:w-1/2">
                       <img
                         src={slide.image}
                         alt={slide.title}
-                        className="w-full h-64 sm:h-80 md:h-96 lg:h-125 object-cover rounded-lg"
+                        className="w-full h-64 sm:h-80 md:h-96 lg:h-125 object-cover"
                       />
                     </div>
 
@@ -388,7 +615,7 @@ export default function HeroQuoteSection() {
                             key={index}
                             className="flex gap-3 items-baseline"
                           >
-                            <ChevronRight size={10} />
+                            <ChevronRight size={16} />
                             <span>{point}</span>
                           </div>
                         ))}
@@ -452,10 +679,10 @@ export default function HeroQuoteSection() {
           </div>
         </section>
         <section>
-          <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
+          <div className="flex flex-col-reverse lg:flex-row gap-10 mt-10">
             {/* Left Content */}
             <div className="w-full lg:w-1/2">
-              <p className="text-gray-700 leading-7 mb-8">
+              <p className="text-black leading-7 mb-8">
                 The healthcare mobility solutions tend to offer new tools and
                 efficiencies to make the integrated healthcare system work with
                 a view of ensuring better treatment to the patients. These are
@@ -464,27 +691,27 @@ export default function HeroQuoteSection() {
               </p>
 
               <div className="space-y-4">
-                <p className="flex items-start gap-2 text-gray-700">
+                <p className="flex items-start gap-2 text-black">
                   <ChevronRight
-                    size={16}
-                    className="mt-1 shrink-0 text-[#184A8B]"
+                    size={18}
+                    className="mt-1 shrink-0"
                   />
                   Reduced costs of treatment with enhanced perfection.
                 </p>
 
-                <p className="flex items-start gap-2 text-gray-700">
+                <p className="flex items-start gap-2 text-black">
                   <ChevronRight
-                    size={16}
-                    className="mt-1 shrink-0 text-[#184A8B]"
+                    size={18}
+                    className="mt-1 shrink-0 "
                   />
                   Improved management of disease with continuous monitoring
                   during treatment.
                 </p>
 
-                <p className="flex items-start gap-2 text-gray-700">
+                <p className="flex items-start gap-2 text-black">
                   <ChevronRight
-                    size={16}
-                    className="mt-1 shrink-0 text-[#184A8B]"
+                    size={18}
+                    className="mt-1 shrink-0 ]"
                   />
                   Advanced patient experience through connected devices and
                   proactive treatment.
@@ -495,7 +722,7 @@ export default function HeroQuoteSection() {
             {/* Right Image */}
             <div className="w-full lg:w-1/2 flex justify-center">
               <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/change/healthcare-right.jpg"
+                src="/images/healthcare-right.jpg"
                 alt="Healthcare"
                 className="w-full max-w-md lg:max-w-full h-auto object-cover"
               />
@@ -506,9 +733,9 @@ export default function HeroQuoteSection() {
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-[#f5f9fc] rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-20 bg-[#f5f9fc] px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp"
+                src="/images/letdiscuss-icon.png.webp"
                 alt=""
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
@@ -524,40 +751,45 @@ export default function HeroQuoteSection() {
               </p>
 
               {/* Contact Box */}
-              <div className="mt-8 border border-[#184A8B] bg-white rounded-lg p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                  <img
-                    src="https://www.iqlance.com/wp-content/themes/iqlance/img/email-icon.svg"
-                    alt="mail-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span className="font-medium text-sm sm:text-base">
-                    info@iqlance.com
-                  </span>
-                </div>
+              <div className="flex items-center justify-center">
+                <div className="w-[50%] mt-8 border border-[#184A8B] bg-white p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <img
+                      src="/icons/email-icon.svg"
+                      alt="mail-icon"
+                      className="w-5 h-5 shrink-0"
+                    />
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                  <img
-                    src="https://www.iqlance.com/wp-content/themes/iqlance/img/phone-icon.svg"
-                    alt="phone-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span className="font-medium text-sm sm:text-base leading-6">
-                    US: +1 469 793 9837
-                    <br className="sm:hidden" />
-                    <span className="hidden sm:inline"> | </span>
-                    CA: +1 647 637 9108
-                  </span>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <img
+                      src="/icons/phone-icon.svg"
+                      alt="phone-icon"
+                      className="w-5 h-5 shrink-0"
+                    />
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              <button className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 rounded-md transition cursor-pointer">
+              <Link
+                href="/lets-talk"
+                className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+              >
                 Let&apos;s Talk
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
                 />
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -652,7 +884,7 @@ export default function HeroQuoteSection() {
             {/* CTA Box */}
             <div className="mt-12 md:mt-20 bg-[#f5f9fc] rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp"
+                src="/images/letdiscuss-icon.png.webp"
                 alt=""
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
@@ -666,50 +898,56 @@ export default function HeroQuoteSection() {
               </p>
 
               {/* Contact Box */}
-              <div className="mt-8 border border-[#184A8B] bg-white rounded-lg p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                  <img
-                    src="https://www.iqlance.com/wp-content/themes/iqlance/img/email-icon.svg"
-                    alt="mail-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span className="font-medium text-sm sm:text-base">
-                    info@iqlance.com
-                  </span>
-                </div>
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-[#184A8B] bg-white p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <img
+                      src="/icons/email-icon.svg"
+                      alt="mail-icon"
+                      className="w-5 h-5 shrink-0"
+                    />
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                  <img
-                    src="https://www.iqlance.com/wp-content/themes/iqlance/img/phone-icon.svg"
-                    alt="phone-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span className="font-medium text-sm sm:text-base leading-6">
-                    US: +1 469 793 9837
-                    <br className="sm:hidden" />
-                    <span className="hidden sm:inline"> | </span>
-                    CA: +1 647 637 9108
-                  </span>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <img
+                      src="/icons/phone-icon.svg"
+                      alt="phone-icon"
+                      className="w-5 h-5 shrink-0"
+                    />
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              <button className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 rounded-md transition cursor-pointer">
+
+              <Link
+                href="/lets-talk"
+                className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+              >
                 Let&apos;s Talk
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
                 />
-              </button>
+              </Link>
             </div>
           </div>
         </section>
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-5">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left Image */}
               <div>
                 <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/main/our-developers.jpg" // apni image ka path
+                  src="/images/our-developers.jpg"
                   alt="Healthcare Developers"
                   width={600}
                   height={600}
@@ -780,19 +1018,22 @@ export default function HeroQuoteSection() {
               Android will depend on the services you choose. Also, the added
               features and functionality will determine the price.
             </p>
-            <button className="group mt-8 bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer">
+            <Link
+              href="/contact"
+              className="group mt-8 bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
+            >
               Get a Quotation
               <ArrowRight
                 size={18}
                 className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
               />
-            </button>
+            </Link>
           </div>
         </section>
         <section>
           <div>
             <img
-              src="https://www.iqlance.com/wp-content/themes/iqlance/img/main/healthcare-app-built.jpg"
+              src="/images/healthcare-app-built.jpg"
               alt=""
             />
             <h1 className="mt-5 flex justify-center font-bold text-3xl">
@@ -822,74 +1063,76 @@ export default function HeroQuoteSection() {
               clickable: true,
             }}
           >
-            <Swiper>
-              {caseStudies.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <div
-                    className="rounded-lg min-h-162.5 lg:min-h-140 px-6 py-10 flex items-center"
-                    style={{ backgroundColor: item.bgColor }}
-                  >
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                      {/* Left */}
-                      <div>
-                        <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                          {item.title}
-                        </h3>
+            {caseStudies.map((item, index) => (
+              <SwiperSlide key={index} className="h-auto!">
+                <div
+                  className=" h-full px-6 py-10 flex items-center"
+                  style={{ backgroundColor: item.bgColor }}
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center w-full">
+                    {/* Left */}
+                    <div>
+                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
+                        {item.title}
+                      </h3>
 
-                        <p className="text-black leading-4 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                          {item.description}
-                        </p>
+                      <p className="text-black leading-6 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+                        {item.description}
+                      </p>
 
-                        <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                          {item.features.map((feature, i) => (
-                            <li key={i} className="flex items-center gap-2 m-0">
-                              <ChevronRight size={18} />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
+                      <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
+                        {item.features.map((feature, i) => (
+                          <li key={i} className="flex items-center gap-2 m-0">
+                            <ChevronRight size={18} />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
 
-                        <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                          {item.technologies.map((tech, i) => (
-                            <div key={i} className="text-center">
-                              <img
-                                src={tech.icon}
-                                alt={tech.name}
-                                className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                              />
-                              <p className="text-xs sm:text-sm mt-2">
-                                {tech.name}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                        <button className="group mt-8 bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer">
-                          {item.buttonText}
-                          <ArrowRight
-                            size={18}
-                            className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
-                          />
-                        </button>
+                      <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
+                        {item.technologies.map((tech, i) => (
+                          <div key={i} className="text-center">
+                            <img
+                              src={tech.image}
+                              alt={tech.name}
+                              className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
+                            />
+                            <p className="text-xs sm:text-sm mt-2">
+                              {tech.name}
+                            </p>
+                          </div>
+                        ))}
                       </div>
 
-                      {/* Right */}
-                      <div className="flex justify-center">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full max-w-xs sm:max-w-sm"
+                      <Link
+                        href="/portfolio"
+                        className="group mt-8 bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
+                      >
+                        {item.buttonText}
+                        <ArrowRight
+                          size={18}
+                          className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
                         />
-                      </div>
+                      </Link>
+                    </div>
+
+                    {/* Right */}
+                    <div className="flex justify-center">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full max-w-xs sm:max-w-sm max-h-100 object-contain"
+                      />
                     </div>
                   </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </section>
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="bg-[#F3F7FC] rounded-lg px-8 md:px-16 py-10 md:py-14">
+            <div className="bg-[#F3F7FC]  px-8 md:px-16 py-10 md:py-14">
               <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                 {/* Left Content */}
                 <div className="max-w-2xl">
@@ -907,13 +1150,16 @@ export default function HeroQuoteSection() {
 
                 {/* Button */}
                 <div className="shrink-0">
-                  <button className="group mt-8 bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer">
+                  <Link
+                    href="/portfolio"
+                    className="group mt-8 bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
+                  >
                     See Our Work
                     <ArrowRight
                       size={18}
                       className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
                     />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -941,19 +1187,17 @@ export default function HeroQuoteSection() {
                   <button
                     key={index}
                     onClick={() => setActiveTab(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activeTab === index
-                        ? "text-black font-semibold"
-                        : "text-gray-500 hover:text-black"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activeTab === index
+                      ? "text-black font-semibold"
+                      : "text-gray-500 hover:text-black"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
-                        activeTab === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activeTab === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -984,7 +1228,7 @@ export default function HeroQuoteSection() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-[#f5f9fc] rounded-xl text-center px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12">
               <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp"
+                src="/images/letdiscuss-icon.png.webp"
                 alt=""
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
@@ -998,7 +1242,7 @@ export default function HeroQuoteSection() {
                 Let us Build Something Extraordinary.
               </p>
 
-              <button className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 rounded-md transition cursor-pointer">
+              <button className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer">
                 Hire Dedicated Developer
                 <ArrowRight
                   size={18}
@@ -1130,7 +1374,7 @@ export default function HeroQuoteSection() {
             </p>
           </div>
         </section>
-<section className="w-full max-w-6xl mx-auto px-4 py-12">
+        <section className="w-full max-w-6xl mx-auto px-4 py-12">
           {/* Outer Card Wrapper with Fixed Border & Accent */}
           <div className="relative bg-white border border-gray-300 p-8 md:p-10  shadow-sm hover:border-[#1e40af] transition-all duration-300">
             {/* Left Blue Accent Line (Static) */}
@@ -1185,7 +1429,7 @@ export default function HeroQuoteSection() {
 
                     {/* Review Text */}
                     <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
-                       {item.review}
+                      {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
@@ -1245,11 +1489,10 @@ export default function HeroQuoteSection() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-gray-200 shadow-md"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-gray-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1261,21 +1504,19 @@ export default function HeroQuoteSection() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">
@@ -1325,26 +1566,24 @@ export default function HeroQuoteSection() {
           <ContactForm />
         </div>
       </div>
-      <div>
-        <section className="mb-5">
-          <div className="">
-            <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
-              {partners.map((item) => (
-                <div
-                  key={item.id}
-                  className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
-              ))}
-            </div>
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   );
 }
