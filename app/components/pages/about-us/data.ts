@@ -1,44 +1,12 @@
-export const stats = [
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-5.svg',
-    value: "8+",
-    line1: "Years",
-    line2: "of experience",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-6.svg',
-    value: "1500+",
-    line1: "Successful",
-    line2: "Projects",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-7.svg',
-    value: "200+",
-    line1: "Happy Clients",
-    line2: "World Wide",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-8.svg',
-    value: "800K+",
-    line1: "Hours",
-    line2: "Invested",
-  },
-  {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-9.svg',
-    value: "100%",
-    line1: "Best",
-    line2: "Quality Delivery",
-  },
-];
 export const missionData = [
   {
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/startup-icn-abt.png",
+    icon: "/images/startup-icn-abt.png",
     title: "Working with startup",
     description:
       "Our mission is to strengthen the capabilities of start-ups as a global leader of future technologies. We're dedicated in providing first-rate customer service in a timely and fiscally responsible manner and use agile approach that hits bull's eye in the IT market.",
   },
   {
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/ep-icn.png.webp",
+    icon: "/images/ep-icn.png.webp",
     title: "Working with Enterprise",
     description:
       "Our mission is to help the enterprise with dynamic and unique ideas that can make distinctive, lasting and substantial enhancements to attract end-customers. iQlance makes the use of latest tools and technologies which can help the businesses to stand tall amongst competition.",

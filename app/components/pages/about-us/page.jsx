@@ -1,26 +1,28 @@
 "use client";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { ArrowRight } from "lucide-react";
-import ContactForm from "../../contactForm/ContactForm";
-import { stats, missionData, faqs } from "../about-us/data";
+import Image from "next/image"; // Next.js Image Component
 import Link from "next/link";
+import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react"; // Combined Lucide Icons
+import ContactForm from "../../contactForm/ContactForm";
+import { missionData, faqs } from "../about-us/data";
+import { stats, partners } from "../../../../utils/data";
 
 export default function About() {
   const [open, setOpen] = useState(0);
-  
 
   return (
     <>
-      <div className="w-[90%] mx-auto">
+      <div className="w-[80%] mx-auto">
         <div className="mt-6 pt-2">
           <img
-            src="https://www.iqlance.com/wp-content/themes/iqlance/img/about-header.png"
+            src="/images/about-header.png"
             alt=""
+            className="w-full object-cover"
           />
         </div>
+
         <section className="bg-white py-20">
-          <div className="container mx-auto max-w-6xl px-6 text-center">
+          <div className="w-full px-6 text-center">
             {/* Heading */}
             <h2 className="text-4xl md:text-6xl font-bold text-[#2E63B8]">
               About iQlance
@@ -32,7 +34,7 @@ export default function About() {
             </h3>
 
             {/* Paragraph 1 */}
-            <p className="mx-auto mt-8 max-w-6xl text-lg md:text-[22px] leading-relaxed text-[#222]">
+            <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
               iQlance Solutions is a leading software and mobile app development
               company serving clients in the USA. Our team of dedicated
               developers is always eager to innovate customized solutions based
@@ -40,7 +42,7 @@ export default function About() {
             </p>
 
             {/* Paragraph 2 */}
-            <p className="mx-auto mt-10 max-w-6xl text-lg md:text-[22px] leading-relaxed text-[#222]">
+            <p className="mx-auto mt-10 w-full text-lg md:text-[22px] leading-relaxed text-black">
               Our highly experienced dedicated developers make us award-winning
               app development agency in the USA. We design solutions that lend
               high levels of client satisfaction.
@@ -50,7 +52,7 @@ export default function About() {
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 rounded-md bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+                className="inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
               >
                 Inquiry Now
                 <ArrowRight size={22} />
@@ -58,7 +60,7 @@ export default function About() {
 
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-3 rounded-md border border-gray-300 bg-white px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-100"
+                className="inline-flex items-center gap-3 border border-gray-300 bg-white px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-100"
               >
                 See Our Work
                 <ArrowRight size={22} />
@@ -66,56 +68,64 @@ export default function About() {
             </div>
           </div>
         </section>
-        <section className="py-14 bg-white">
-          <div className="max-w-7xl mx-auto px-5">
-            <h2 className="text-3xl font-bold text-center">
+
+        <section>
+          <div className="w-full px-5">
+            <h2 className="text-4xl font-bold text-center">
               Trusted Custom Software, Web Mobile App Development Services
             </h2>
-            <p className="max-w-4xl mx-auto mt-4 text-center text-[16px] leading-7 text-black">
+            <p className="w-full mx-auto mt-4 text-center text-2xl leading-8 text-black">
               iQlance solutions is a leading Software, Web, & Mobile App
               Development Company with a extensive experience in crafting
               stunning and secure, end-to-end technology solutions. We offer
               excellent expertise of the industry followed by an well-planned
               approach to accelerate your business growth.
             </p>
-                <div className="flex flex-wrap justify-center gap-7 mt-24">
-                         {stats.map((item, index) => (
-                           <div
-                             key={index}
-                             className="relative w-full sm:w-70 lg:w-55 h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
-                           >
-                             {/* Floating Icon */}
-                             <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
-                               <img
-                                 src={item.icon}
-                                 alt=""
-                                 className="w-11 h-11 object-contain"
-                               />
-                             </div>
-           
-                             <h3 className="text-lg font-bold text-black leading-none">
-                               {item.value}
-                             </h3>
-           
-                             <p className="mt-3 text-lg leading-none text-black">
-                               {item.line1}
-                               <br />
-                               {item.line2}
-                             </p>
-                           </div>
-                         ))}
-                       </div>
+
+            <section>
+              <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
+                {stats.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+                  >
+                    {/* Floating Icon */}
+                    <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                      <img
+                        src={item.icon}
+                        alt=""
+                        className="w-11 h-11 object-contain"
+                      />
+                    </div>
+
+                    {/* Text Container */}
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-lg font-bold text-black leading-none">
+                        {item.value}
+                      </h3>
+
+                      <p className="text-sm leading-tight text-black">
+                        {item.line1}
+                        <br />
+                        {item.line2}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
         </section>
+
         <section className="py-2 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-[15px] md:text-[28px] font-bold leading-tight text-black">
                   You Need a Technology Partner, Not Just a Developer
                 </h2>
 
-                <p className="mt-4 text-[15px] leading-9 text-[#333]">
+                <p className="mt-4 text-[17px] leading-9 text-black]">
                   At iQlance, we believe successful digital products are built
                   through collaboration, strategic planning, and technical
                   expertise. We work closely with our clients to understand
@@ -123,14 +133,14 @@ export default function About() {
                   digital solutions.
                 </p>
 
-                <p className="mt-1 text-[15px] leading-9 text-[#333]">
+                <p className="mt-1 text-[17px] leading-9 text-black">
                   Our dedicated team of software and app developers in the USA
                   follows a structured approach covering strategy, design,
                   development, testing, and deployment to create customized
                   solutions that drive business growth.
                 </p>
 
-                <p className="mt-1 text-[15px] leading-9 text-[#333]">
+                <p className="mt-1 text-[17px] leading-9 ">
                   Since 2014, iQlance Solutions has delivered more than 1,500
                   digital products, including software and mobile applications
                   such as Doggy Dates, Bidda, Stable Hub, and Ukitchen. We are
@@ -139,7 +149,7 @@ export default function About() {
 
                 <Link
                   href="/contact"
-                  className="mt-10 inline-flex items-center gap-3 rounded-md bg-[#1F4D8C] px-8 py-4 text-white font-semibold hover:bg-[#173d70] transition"
+                  className="mt-10 inline-flex items-center gap-3 bg-[#1F4D8C] px-8 py-4 text-white font-semibold hover:bg-[#173d70] transition"
                 >
                   Get in touch
                   <ArrowRight size={20} />
@@ -147,7 +157,7 @@ export default function About() {
               </div>
               <div>
                 <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/main/why-choose-us-hb.jpg"
+                  src="/images/why-choose-us-hb.jpg"
                   alt="Technology Partner"
                   width={650}
                   height={700}
@@ -157,18 +167,20 @@ export default function About() {
             </div>
           </div>
         </section>
-        <section className="py-4 bg-white">
-          <div className="max-w-6xl mx-auto px-5">
+
+        <section className="py-4 bg-white mt-4">
+          <div className="w-full px-5">
             <h2 className="text-3xl font-bold text-center">Our Mission</h2>
 
-            <p className="max-w-4xl mx-auto mt-4 text-center text-[16px] leading-7 text-gray-700">
+            <p className="w-full mx-auto mt-4 text-center text-[16px] leading-7 text-gray-700">
               Our mission is to help businesses achieve sustainable growth
               through innovative, secure, and customized digital solutions. We
               combine technology expertise, strategic thinking, and user-focused
               design to solve complex business challenges and create measurable
               value for our clients.
             </p>
-            <div className="grid md:grid-cols-2 gap-5 mt-12">
+
+            <div className="grid md:grid-cols-2 gap-5 mt-12 mb-10">
               {missionData.map((item, index) => (
                 <div
                   key={index}
@@ -194,13 +206,105 @@ export default function About() {
             </div>
           </div>
         </section>
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans mb-10">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/letdiscuss-icon.webp"
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain w-auto h-auto"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              Ready to Turn Your Idea Into a Successful Digital Product? Let’s
+              Build It Together.
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Call us Today for a Free Consultation:
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img
+                    src="/icons/email-icon.svg"
+                    alt="Email"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img
+                    src="/icons/phone-icon.svg"
+                    alt="Phone"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Discuss <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <div className="mb-7">
+          {/* Section Heading */}
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-black mb-4">
+            Our Vision
+          </h2>
+          <p className="max-w-8xl mx-auto text-center text-black text-base md:text-lg mb-12">
+            Our vision is to become a trusted technology partner for businesses
+            seeking innovative and scalable digital solutions. By combining our
+            clients’ industry knowledge with our technology expertise, we aim to
+            create solutions that improve efficiency, enhance user experiences,
+            and support long-term business growth.
+          </p>
+        </div>
         <section className="bg-white">
-          <div className="max-w-7xl mx-auto px-5">
+          <div className="w-full px-5">
             <h2 className="text-center text-4xl font-bold text-black">
               About iQlance
             </h2>
-            <div className="max-w-6xl mx-auto mt-8 space-y-8">
-              <p className="text-center text-[17px] leading-8 text-[#333]">
+            <div className="w-full mx-auto mt-8 space-y-8">
+              <p className="text-center text-[17px] leading-8 text-black">
                 iQlance came into the existence with the aspirations to develop
                 customize creative mobile apps that can cater the requirements
                 of clients in a cost-effective manner. The company was started
@@ -228,7 +332,7 @@ export default function About() {
             </div>
             <div className="mt-12">
               <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/about-us-iqlance.jpg"
+                src="/images/about-us-iqlance.jpg"
                 alt="About iQlance"
                 width={1200}
                 height={500}
@@ -237,13 +341,92 @@ export default function About() {
             </div>
           </div>
         </section>
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans mb-10">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/letdiscuss-icon.webp"
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain w-auto h-auto"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              Let’s Discuss with our Technical Expert to Bring your Idea into
+              Reality.
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Send your Requirements on:
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img
+                    src="/icons/email-icon.svg"
+                    alt="Email"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img
+                    src="/icons/phone-icon.svg"
+                    alt="Phone"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/request-a-quote"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Request a Quote <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
         <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-5">
+          <div className="w-full px-5">
             <h2 className="text-4xl font-bold text-center">
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-5 text-center text-[17px] text-gray-600 max-w-4xl mx-auto">
+            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
               Find answers to common questions about our app and software
               development services and learn how we can help turn your idea into
               a successful digital product.
@@ -278,12 +461,13 @@ export default function About() {
                 </div>
               ))}
             </div>
+
             <div className="mt-20 text-center">
               <h3 className="text-4xl font-bold">
                 Have Something in Mind? Let's Talk
               </h3>
 
-              <p className="mt-6 max-w-5xl mx-auto text-[17px] leading-8 text-gray-600">
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
                 iQlance solution. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
@@ -293,10 +477,29 @@ export default function About() {
             </div>
           </div>
         </section>
+
         <div className="mb-2.5 pb-2">
           <ContactForm />
         </div>
       </div>
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

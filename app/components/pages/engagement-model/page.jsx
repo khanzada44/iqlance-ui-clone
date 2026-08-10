@@ -1,16 +1,75 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image"; // Next.js Image Component
 import Link from "next/link";
+import { ChevronDown, ChevronUp } from "lucide-react"; // Combined Lucide Icons
+import ContactForm from "../../contactForm/ContactForm";
 import { ArrowRight, ChevronRight, Paperclip } from "lucide-react";
-import { features, comparisonData } from "../engagement-model/data";
+import { comparisonData, features, tabsData } from "../engagement-model/data";
+import { stats, partners, faqsData } from "../../../../utils/data";
 
-export default function EngagementSection() {
+export default function EngagementModelSection() {
+  const [activeModelTab, setActiveModelTab] = useState("hourly");
+  const [activetechnologies, setActivetechnologies] = useState(0);
+  const [open, setOpen] = useState(-1);
+  const [activeTab, setActiveTab] = useState("customer");
+  const currentTab =
+    tabsData.find((tab) => tab.id === activeModelTab) || tabsData[0];
+
+  // Form State & Event Handlers
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    file: null,
+    sendNda: false,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Form Submitted:", formData);
+
+    // API Call integration logic
+    try {
+      const data = new FormData();
+      data.append("name", formData.name);
+      data.append("email", formData.email);
+      data.append("phone", formData.phone);
+      data.append("message", formData.message);
+      data.append("sendNda", formData.sendNda);
+      if (formData.file) data.append("file", formData.file);
+
+      /* 
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: data,
+      });
+      */
+    } catch (error) {
+      console.error("API Error:", error);
+    }
+  };
+
   return (
     <>
-      <div className="w-[92%] sm:w-[90%] mx-auto">
+      <div className="w-[80%] mx-auto">
         <section className="py-2 bg-white">
-          <div className="max-w-7xl mx-auto px-3 sm:px-5">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-              {/* Left */}
-              <div className="text-center lg:text-left">
+          <div className="w-full px-3 sm:px-5">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+              {/* Left Content */}
+              <div className="lg:col-span-7 text-center lg:text-left mt-8">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
                   <span className="text-[#2F67C8]">Engagement</span>{" "}
                   <span className="text-[#13294B]">Model</span>
@@ -20,7 +79,7 @@ export default function EngagementSection() {
                   Process-driven Methodology, Result-driven Solutions
                 </h3>
 
-                <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-gray-700">
+                <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
                   iQlance Solutions is a trusted software and app development
                   company focused on building long-term professional
                   relationships with our clients. Our experienced development
@@ -29,7 +88,7 @@ export default function EngagementSection() {
                   transparency, and achieving successful project outcomes.
                 </p>
 
-                <p className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-gray-700">
+                <p className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
                   As an experienced mobile app and software development company,
                   iQlance offers three flexible engagement models to meet
                   different project requirements, budgets, and business goals.
@@ -39,7 +98,7 @@ export default function EngagementSection() {
                 </p>
 
                 <ul className="mt-6 sm:mt-8 space-y-4 sm:space-y-5 inline-block lg:block text-left">
-                  {features.map((item) => (
+                  {features?.map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <ChevronRight className="w-5 h-5 text-[#2F67C8] shrink-0" />
                       <span className="text-base sm:text-lg md:text-xl font-medium">
@@ -52,7 +111,7 @@ export default function EngagementSection() {
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-8 sm:mt-10 items-center lg:items-start">
                   <Link
                     href="/contact"
-                    className="bg-[#1D4F91] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold flex items-center justify-center gap-3 hover:bg-[#173c6d] w-full sm:w-auto"
+                    className="bg-[#1D4F91] text-white px-6 sm:px-8 py-3 sm:py-4  font-semibold flex items-center justify-center gap-3 hover:bg-[#173c6d] w-full sm:w-auto"
                   >
                     Contact Us
                     <ArrowRight size={18} />
@@ -60,7 +119,7 @@ export default function EngagementSection() {
 
                   <Link
                     href="/portfolio"
-                    className="border border-gray-300 px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold flex items-center justify-center gap-3 hover:bg-gray-50 w-full sm:w-auto"
+                    className="border border-gray-300 px-6 sm:px-8 py-3 sm:py-4 font-semibold flex items-center justify-center gap-3 hover:bg-gray-50 w-full sm:w-auto"
                   >
                     See Our Work
                     <ArrowRight size={18} />
@@ -68,58 +127,122 @@ export default function EngagementSection() {
                 </div>
               </div>
 
-              {/* Right */}
-              <div className="relative">
-                <div className="bg-[#EEF5FF] border border-[#C9D8F5] rounded-3xl p-5 sm:p-8 shadow-sm">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-                    Request a Free Quote
-                  </h3>
+              {/* Right Form Container */}
+              <div className="lg:col-span-5 relative pt-6 pr-4">
+                <div className="relative bg-[#EFF6FF] border border-blue-100/60 p-6 md:p-8 w-full shadow-lg">
+                  {/* Top Right Ribbon Badge */}
+                  <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
+                    <img
+                      src="/images/badge-sameday-resposnse.png"
+                      alt="Same Day Response Guaranteed"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
 
-                  <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg">
+                  {/* Form Heading */}
+                  <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
+                    Request a Free Quote
+                  </h2>
+                  <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
                     Guaranteed Response within One Business Day!
                   </p>
 
-                  <form className="mt-6 sm:mt-10 space-y-5 sm:space-y-7">
-                    <input
-                      type="text"
-                      placeholder="Name*"
-                      className="w-full bg-transparent border-b border-gray-500 outline-none pb-3 text-sm sm:text-base"
-                    />
-
-                    <input
-                      type="email"
-                      placeholder="Email*"
-                      className="w-full bg-transparent border-b border-gray-500 outline-none pb-3 text-sm sm:text-base"
-                    />
-
-                    <input
-                      type="text"
-                      placeholder="Phone*"
-                      className="w-full bg-transparent border-b border-gray-500 outline-none pb-3 text-sm sm:text-base"
-                    />
-
-                    <textarea
-                      rows={3}
-                      placeholder="Write here Brief about the project..."
-                      className="w-full bg-transparent border-b border-gray-500 outline-none resize-none text-sm sm:text-base"
-                    />
-
-                    <div className="flex items-center gap-3 flex-wrap">
-                      <Paperclip size={18} className="shrink-0" />
-                      <input type="file" className="text-sm max-w-full" />
+                  {/* Form Inputs */}
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name*"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
                     </div>
 
-                    <label className="flex items-center gap-3 text-sm sm:text-base">
-                      <input type="checkbox" />
-                      <span>Please Send NDA</span>
-                    </label>
+                    <div>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email*"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
 
-                    <button
-                      type="submit"
-                      className="bg-[#1D4F91] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold hover:bg-[#173c6d] w-full sm:w-auto"
-                    >
-                      Schedule a free consultation
-                    </button>
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone*"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <textarea
+                        name="message"
+                        rows={3}
+                        placeholder="Write here Brief about the project..."
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      />
+                    </div>
+
+                    {/* File Upload */}
+                    <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
+                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900">
+                        <Paperclip className="w-4 h-4 text-gray-600" />
+                        <span>Upload file:</span>
+                        <input
+                          type="file"
+                          onChange={handleFileChange}
+                          className="hidden"
+                        />
+                      </label>
+                      <span className="text-gray-500 truncate max-w-45">
+                        {formData.file ? formData.file.name : "No file chosen."}
+                      </span>
+                    </div>
+
+                    {/* Checkbox */}
+                    <div className="flex items-center gap-2 pt-1">
+                      <input
+                        type="checkbox"
+                        id="nda"
+                        checked={formData.sendNda}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            sendNda: e.target.checked,
+                          }))
+                        }
+                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                      />
+                      <label
+                        htmlFor="nda"
+                        className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
+                      >
+                        Please Send NDA
+                      </label>
+                    </div>
+
+                    {/* Submit Button */}
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
+                      >
+                        Schedule a free consultation
+                      </button>
+                    </div>
                   </form>
                 </div>
               </div>
@@ -127,13 +250,13 @@ export default function EngagementSection() {
           </div>
         </section>
 
-        <section className="mb-2 bg-white">
-          <div className="max-w-7xl mx-auto px-3 sm:px-5">
-            {/* Top Section */}
+        {/* Comparison & Table Section */}
+        <section className="mb-2 bg-white mt-12">
+          <div className="w-full px-3 sm:px-5">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-start">
               <div>
                 <img
-                  src="https://www.iqlance.com/wp-content/themes/iqlance/img/main/engagement-model-lefts.jpg"
+                  src="/images/engagement-model-lefts.jpg"
                   alt="Engagement Model"
                   width={700}
                   height={450}
@@ -171,7 +294,7 @@ export default function EngagementSection() {
                     <th className="border border-gray-300 p-3 sm:p-6 bg-white w-40 sm:w-64">
                       <div className="flex flex-col items-center">
                         <img
-                          src="https://www.iqlance.com/wp-content/themes/iqlance/img/ct/iq-logo-ct.svg"
+                          src="/icons/iq-logo-ct.svg"
                           alt="Logo"
                           width={100}
                           height={35}
@@ -186,7 +309,7 @@ export default function EngagementSection() {
                     <th className="border border-gray-300 bg-[#F6F7FF] p-3 sm:p-6">
                       <div className="flex flex-col items-center">
                         <img
-                          src="https://www.iqlance.com/wp-content/themes/iqlance/img/emodel-hourly-icn.png"
+                          src="/blog-images/emodel-hourly-icn.png"
                           alt=""
                           width={35}
                           height={35}
@@ -201,7 +324,7 @@ export default function EngagementSection() {
                     <th className="border border-gray-300 bg-[#F6F7FF] p-3 sm:p-6">
                       <div className="flex flex-col items-center">
                         <img
-                          src="https://www.iqlance.com/wp-content/themes/iqlance/img/fixbg-icn-em.png"
+                          src="/images/fixbg-icn-em.png"
                           alt=""
                           width={35}
                           height={35}
@@ -216,7 +339,7 @@ export default function EngagementSection() {
                     <th className="border border-gray-300 bg-[#F6F7FF] p-3 sm:p-6">
                       <div className="flex flex-col items-center">
                         <img
-                          src="https://www.iqlance.com/wp-content/themes/iqlance/img/dedicated-icn-em.png"
+                          src="/images/dedicated-icn-em.png"
                           alt=""
                           width={35}
                           height={35}
@@ -231,7 +354,7 @@ export default function EngagementSection() {
                 </thead>
 
                 <tbody>
-                  {comparisonData.map((row, index) => (
+                  {comparisonData?.map((row, index) => (
                     <tr key={index}>
                       <td className="border border-gray-300 text-left px-3 sm:px-5 py-3 sm:py-4 font-medium text-sm sm:text-base">
                         {row.title}
@@ -255,7 +378,352 @@ export default function EngagementSection() {
             </div>
           </div>
         </section>
+
+        <section className="w-full max-w-6xl mx-auto px-4 py-12 text-gray-700">
+          {/* Navigation Tabs */}
+          <div className="border-b border-gray-200 mb-8">
+            <nav className="flex space-x-8">
+              {tabsData.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveModelTab(tab.id)}
+                  className={`pb-3 text-sm font-semibold transition-all relative ${
+                    activeModelTab === tab.id
+                      ? "text-slate-800 border-b-2 border-slate-800"
+                      : "text-gray-400 hover:text-gray-600"
+                  }`}
+                >
+                  {tab.navLabel}
+                </button>
+              ))}
+            </nav>
+          </div>
+
+          {/* Main Content Layout (LEFT Text, RIGHT Image) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            {/* LEFT SIDE: Text Details */}
+            <div className="lg:col-span-7 space-y-4">
+              <span className="text-sm text-gray-400 font-medium block">
+                {currentTab.modelNum}
+              </span>
+              <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+                {currentTab.title}
+              </h2>
+
+              <div className="space-y-4 text-sm leading-relaxed text-gray-600">
+                {currentTab.paragraphs.map((para, index) => (
+                  <p key={index}>{para}</p>
+                ))}
+              </div>
+
+              <div className="pt-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  How It Works
+                </h3>
+                <div className="space-y-3 text-sm leading-relaxed text-gray-600">
+                  {currentTab.howItWorks.map((para, index) => (
+                    <p key={index}>{para}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE: Image */}
+            <div className="lg:col-span-5 relative w-full h-full overflow-hidden">
+              <Image
+                src={currentTab.image}
+                alt={currentTab.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </section>
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans mb-10">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/letdiscuss-icon.webp"
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain w-auto h-auto"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              Let’s Discuss Your Project With Our Technical Experts and Bring
+              Your Idea to Life.
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Send your Requirements on :
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img
+                    src="/icons/email-icon.svg"
+                    alt="Email"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img
+                    src="/icons/phone-icon.svg"
+                    alt="Phone"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Discuss <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="w-full px-5">
+            <h2 className="text-4xl font-bold text-center">
+              Trusted Custom Software, Web, and Mobile App Development Services
+            </h2>
+            <p className="w-full mx-auto mt-4 text-center text-1xl leading-8 text-black">
+              iQlance Solutions is a trusted software, web, and mobile app
+              development company with extensive experience delivering secure,
+              scalable, and customized technology solutions. Our team combines
+              technical expertise with a structured development approach to help
+              businesses build and grow successful digital products.
+            </p>
+
+            <section>
+              <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
+                {stats.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+                  >
+                    {/* Floating Icon */}
+                    <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                      <img
+                        src={item.icon}
+                        alt=""
+                        className="w-11 h-11 object-contain"
+                      />
+                    </div>
+
+                    {/* Text Container */}
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-lg font-bold text-black leading-none">
+                        {item.value}
+                      </h3>
+
+                      <p className="text-sm leading-tight text-black">
+                        {item.line1}
+                        <br />
+                        {item.line2}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+        </section>
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans mb-10">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/letdiscuss-icon.webp"
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain w-auto h-auto"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              Not Sure Which Engagement Model Is Right for Your Project? Talk to
+              Our Experts Today.
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Call us Today for a Free Consultation:
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img
+                    src="/icons/email-icon.svg"
+                    alt="Email"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img
+                    src="/icons/phone-icon.svg"
+                    alt="Phone"
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Discuss <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section className="py-20 bg-white">
+          <div className="w-full px-5">
+            <h2 className="text-4xl font-bold text-center">
+              Frequently Asked Questions
+            </h2>
+
+            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+              Find answers to common questions about our app and software
+              development services and learn how we can help turn your idea into
+              a successful digital product.
+            </p>
+
+            <div className="mt-12 space-y-4">
+              {faqsData.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpen(open === index ? -1 : index)}
+                    className="w-full flex justify-between items-center px-5 py-5 text-left"
+                  >
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
+
+                    {open === index ? (
+                      <ChevronUp size={22} />
+                    ) : (
+                      <ChevronDown size={22} />
+                    )}
+                  </button>
+
+                  {open === index && (
+                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-20 text-center">
+              <h3 className="text-4xl font-bold">
+                Have Something in Mind? Let's Talk
+              </h3>
+
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+                Have a look at the services and development process of the
+                iQlance solution. See what process we follow for mobile app and
+                software development. Have a look at how we are praised by our
+                clients. Start a conversation to innovate your next great idea
+                into reality with us.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div className="mb-2.5 pb-2">
+          <ContactForm />
+        </div>
       </div>
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
