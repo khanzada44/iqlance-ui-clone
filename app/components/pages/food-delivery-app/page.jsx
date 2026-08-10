@@ -20,7 +20,6 @@ import {
   partners,
   bottomFeatures,
   slides,
-  ServiceSectionData,
   portfolioSlides,
   technologies,
   stats,
@@ -29,6 +28,10 @@ import {
   faqsData,
   testimonials,
 } from "../../../../utils/data";
+import {
+  ServiceSectionData,
+  foodDeliverySlides,
+} from "../food-delivery-app/data";
 import Image from "next/image";
 
 export default function fitness() {
@@ -188,33 +191,48 @@ export default function fitness() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
-                On Demand <br />
-                Application <br />
-                Development
+                Food Delivery App <br />
+                Development <br />
+                Company in the USA
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Planning on creating a completely unique app solution for your
-                company to increase your progress in the digital market? Take
-                the help of our experts at iQlance for this endeavour; we
-                complete each step of app design and development, from the
-                origin to deployment, to ensure top-notch performance.
+                Looking to launch a high-performing food ordering platform in
+                the USA? iQlance Solutions is recognized as the best food
+                delivery app development company, delivering scalable,
+                cloud-ready, and feature-rich digital solutions. We build custom
+                food delivery ecosystems designed to streamline ordering,
+                payments, dispatch, and customer engagement, all powered by
+                modern architecture and secure integrations.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                All of our on-Demand App Developers have the necessary resources
-                and skills to create mobile intuitive solutions with the best
-                features. With years of practice in handling various projects
-                and an intensive knowledge of new cutting-edge technologies and
-                market trends, the team would prepare innovative features and
-                scalable app infrastructure.
+                As a trusted online food delivery app development company, we
+                engineer end-to-end applications for restaurants, aggregators,
+                and cloud kitchens. Our team leverages advanced tech stacks, API
+                integrations, real-time tracking modules, and AI-driven
+                analytics to create seamless user experiences across iOS,
+                Android, and web platforms.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Expect high growth for your brand with customizable app
-                solutions; impress your customers and improve your brand
-                reputation with our high-quality apps.
+                From intuitive UI/UX design to robust backend development and
+                DevOps deployment, we focus on performance, security, and
+                scalability. Partner with iQlance Solutions to transform your
+                food delivery idea into a reliable, revenue-generating digital
+                platform.
               </p>
+
+              <ul className="mt-8 space-y-5 text-lg">
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={16} />
+                  Custom food delivery app development
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={16} />
+                  Food delivery app modernization
+                </li>
+              </ul>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
@@ -455,7 +473,7 @@ export default function fitness() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
                   isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
@@ -495,6 +513,46 @@ export default function fitness() {
             );
           })}
         </section>
+        <section>
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
+              {" "}
+              Trusted Web, Mobile & Software Development Company
+            </h1>
+          </div>
+        </section>
+        <section>
+          <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+              >
+                {/* Floating Icon */}
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="w-11 h-11 object-contain"
+                  />
+                </div>
+
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
+
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
           {/* Section Header */}
           <div className="text-center space-y-3">
@@ -513,7 +571,7 @@ export default function fitness() {
           <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
+            autoplay={{ delay: 3000 }}
             loop={true}
           >
             {portfolioSlides.map((slide, index) => (
@@ -604,79 +662,120 @@ export default function fitness() {
           </div>
 
           {/* Technology Stack Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-4">
+          <div className="text-center max-w-6xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Our On-Demand App Development Solutions
+              Agile App Development Process to Build High-Performing Apps
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              Expect interactive and fast processing on-demand services and
-              models from our certified developers
+              We follow a structured agile methodology to deliver scalable and
+              secure food delivery platforms. Our iterative approach ensures
+              faster releases, transparent collaboration, and continuous
+              optimization. This proven process helps us stand among trusted
+              food delivery app development companies, delivering reliable
+              digital solutions across the U.S.
             </p>
           </div>
         </section>
-        <section className="">
-          <div className="mx-auto max-w-7xl">
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              slidesPerView={1}
-              spaceBetween={0}
-              loop={true}
-              autoplay={{
-                delay: 30000,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-            >
-              {slides.map((slide) => (
-                <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center">
-                    {/* Image */}
-                    <div className="w-full lg:w-1/2">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
-                      />
-                    </div>
-
-                    {/* Content */}
-                    <div className="w-full lg:w-1/2">
-                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
-                        {slide.title}
-                      </h2>
-
-                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
-                        {slide.description}
-                      </p>
-
-                      <div className="space-y-3 lg:space-y-4">
-                        {slide.points.map((point, index) => (
-                          <div
-                            key={index}
-                            className="flex gap-3 items-baseline"
-                          >
-                            <ChevronRight size={15} />
-                            <span>{point}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+        <div className="w-full max-w-5xl mx-auto px-4 py-12">
+          {/* Top Tabs Header */}
+          <div className="flex items-center gap-6 border-b border-gray-100 pb-3 mb-12 overflow-x-auto">
+            {processSteps.map((step, index) => (
+              <div key={index} className="flex items-center gap-6">
+                <button
+                  type="button"
+                  onClick={() => setActiveStepIndex(index)}
+                  className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${
+                    activeStepIndex === index
+                      ? "text-gray-900 border-blue-600 font-bold"
+                      : "text-gray-400 border-transparent hover:text-gray-600"
+                  }`}
+                >
+                  {step.tabTitle}
+                </button>
+                {index < processSteps.length - 1 && (
+                  <span className="text-gray-400 font-light">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
-        </section>
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+
+          {/* Main Layout (Circular Icons + Description) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left Process Image Container */}
+            <div className="relative w-72 h-72 mx-auto flex items-center justify-center">
+              {/* Step 1 Image - Discover */}
+              {activeStepIndex === 0 && (
+                <div className="">
+                  <img
+                    src="/images/discover.webp"
+                    alt="Discover"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+
+              {/* Step 2 Image - Design */}
+              {activeStepIndex === 1 && (
+                <div className="">
+                  <img
+                    src="/images/uiux-design.webp"
+                    alt="Design"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+
+              {/* Step 3 Image - Build */}
+              {activeStepIndex === 2 && (
+                <div className="">
+                  <img
+                    src="/images/development.webp"
+                    alt="Build"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+
+              {/* Step 4 Image - Deliver */}
+              {activeStepIndex === 3 && (
+                <div className="">
+                  <img
+                    src="/images/user-testing.webp"
+                    alt="Deliver"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* Right Side Content Display */}
+            <div className="flex flex-col justify-center">
+              <span className="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-2">
+                {currentStep.stepLabel}
+              </span>
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
+                {currentStep.heading}
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-sm max-w-md">
+                {currentStep.description}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center max-w-6xl mx-auto space-y-4 mt-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-            Technologies We Use
+            Technologies that Powering Future-Ready Food Delivery App
+            Development
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
-            Capabilities and tools aside, you can expect top-notch technologies
-            in use at our best on-demand app development company; we use them
-            generously for an intuitive and customised app generation.
+            We leverage a modern and scalable technology stack to build
+            high-performance food delivery applications. Our expert developers
+            utilize robust frontend frameworks, secure backend technologies,
+            cloud infrastructure, and advanced DevOps tools to ensure seamless
+            functionality, security, and long-term scalability.
           </p>
         </div>
         <section className="py-16">
@@ -799,6 +898,71 @@ export default function fitness() {
             </div>
           </div>
         </section>
+
+        <div className="text-center max-w-4xl mx-auto space-y-4 mt-10 mb-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            Our On-Demand App Development Solutions
+          </h2>
+          <p className="text-black text-sm md:text-base leading-relaxed">
+            Expect interactive and fast processing on-demand services and models
+            from our certified developers
+          </p>
+        </div>
+        <section className="">
+          <div className="mx-auto max-w-7xl">
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={0}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+            >
+              {foodDeliverySlides.map((slide) => (
+                <SwiperSlide key={slide.id}>
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                    {/* Image */}
+                    <div className="w-full lg:w-1/2">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="w-full lg:w-1/2">
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
+                        {slide.title}
+                      </h2>
+
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
+                        {slide.description}
+                      </p>
+
+                      <div className="space-y-3 lg:space-y-4">
+                        {slide.points.map((point, index) => (
+                          <div
+                            key={index}
+                            className="flex gap-3 items-baseline"
+                          >
+                            <ChevronRight size={15} />
+                            <span>{point}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
@@ -855,38 +1019,7 @@ export default function fitness() {
             </p>
           </div>
         </section>
-        <section>
-          <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
-            {stats.map((item, index) => (
-              <div
-                key={index}
-                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
-              >
-                {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                  <img
-                    src={item.icon}
-                    alt=""
-                    className="w-11 h-11 object-contain"
-                  />
-                </div>
 
-                {/* Text Container */}
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-lg font-bold text-black leading-none">
-                    {item.value}
-                  </h3>
-
-                  <p className="text-sm leading-tight text-black">
-                    {item.line1}
-                    <br />
-                    {item.line2}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
         <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
@@ -958,106 +1091,6 @@ export default function fitness() {
           </div>
         </section>
 
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-            The Process We Follow For Web Design and Development
-          </h2>
-          <p className="text-black text-sm md:text-base leading-relaxed">
-            Our team of App Developers Toronto have worked on different types of
-            on-demand app development projects, with satisfactory results. We
-            provide dedicated attention and care throughout the development
-            journey, using top-notch techniques. Here, we shall tailor our
-            development plan as per your needs.
-          </p>
-        </div>
-        <div className="w-full max-w-5xl mx-auto px-4 py-12">
-          {/* Top Tabs Header */}
-          <div className="flex items-center gap-6 border-b border-gray-100 pb-3 mb-12 overflow-x-auto">
-            {processSteps.map((step, index) => (
-              <div key={index} className="flex items-center gap-6">
-                <button
-                  type="button"
-                  onClick={() => setActiveStepIndex(index)}
-                  className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${
-                    activeStepIndex === index
-                      ? "text-gray-900 border-blue-600 font-bold"
-                      : "text-gray-400 border-transparent hover:text-gray-600"
-                  }`}
-                >
-                  {step.tabTitle}
-                </button>
-                {index < processSteps.length - 1 && (
-                  <span className="text-gray-400 font-light">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Main Layout (Circular Icons + Description) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left Process Image Container */}
-            <div className="relative w-72 h-72 mx-auto flex items-center justify-center">
-              {/* Step 1 Image - Discover */}
-              {activeStepIndex === 0 && (
-                <div className="">
-                  <img
-                    src="/images/discover.webp"
-                    alt="Discover"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 2 Image - Design */}
-              {activeStepIndex === 1 && (
-                <div className="">
-                  <img
-                    src="/images/uiux-design.webp"
-                    alt="Design"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 3 Image - Build */}
-              {activeStepIndex === 2 && (
-                <div className="">
-                  <img
-                    src="/images/development.webp"
-                    alt="Build"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 4 Image - Deliver */}
-              {activeStepIndex === 3 && (
-                <div className="">
-                  <img
-                    src="/images/user-testing.webp"
-                    alt="Deliver"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Right Side Content Display */}
-            <div className="flex flex-col justify-center">
-              <span className="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-2">
-                {currentStep.stepLabel}
-              </span>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
-                {currentStep.heading}
-              </h2>
-              <p className="text-gray-600 leading-relaxed text-sm max-w-md">
-                {currentStep.description}
-              </p>
-            </div>
-          </div>
-        </div>
         <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Text Content */}
@@ -1095,14 +1128,16 @@ export default function fitness() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+          <div className="text-center max-w-6xl mx-auto space-y-4 mt-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why Choose iQlance?
+              Why We’re the Go-To Food Delivery App Development Partner for
+              Growing Food Businesses
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              From development to testing, design to deployment, and everything
-              in between, we are the best on-demand app development company that
-              offers a vast range of scalable solutions.
+              As the best food delivery app development company, we deliver
+              scalable, secure, and performance-driven solutions tailored for
+              U.S. businesses. We combine technical expertise, certified talent,
+              and modern frameworks to ensure measurable digital growth.
             </p>
           </div>
         </section>
