@@ -1,0 +1,146 @@
+export const datingSolutions = [
+  {
+    title: "General Dating App",
+    description:
+      "We offer modern dating apps with swipe functionality, geolocation, and chatting features that attract users. Our dating app development services are custom to provide a seamless experience, user retention, and scalable success across all demographics.",
+  },
+  {
+    title: "LGBTQ+ Dating App",
+    description:
+      "As a leading dating app development company, we have experience in building safe and welcoming platforms for LGBTQ+ communities (lesbian, gay, bisexual, transgender, and queer) with features like advanced filters, safety reporting, confidential and secure chat, etc.",
+  },
+  {
+    title: "Interest-based Dating App",
+    description:
+      "Common interests encourage meaningful relationships; hence, as a leading dating mobile app development company, we develop interest-based dating apps based on common fitness goals, travel diaries, music preferences, and hobbies.",
+  },
+  {
+    title: "Religion-based Dating App",
+    description:
+      "If you are looking for religion-based (Christian, Jewish, Muslim, Hindu, or other spiritual communities) dating app solutions to connect with ideal matches, then iQlance Solutions will be the right choice for you, having proven experience in the same.",
+  },
+  {
+    title: "Senior Citizen Dating App",
+    description:
+      "As a leading custom dating app development company, we offer an ideal platform for senior citizens to find compatible partners. We ensure that the apps are rich in features with easy navigation and a smoother dating experience.",
+  },
+];
+export const slides = [
+  {
+    id: 1,
+    image: "/images/Voice-Video-Profile-Intros.png",
+    title: "Voice/Video Profile Intros",
+    description:
+      "As a leading dating app development company USA, we offer advanced voice/video profile intros that connect people before the first message. This feature helps individuals express themselves and build a comfort zone and trust early in the matchmaking process. This feature is important for those who value realness in modern dating.",
+    points: [
+      "Shows personality along with static photos",
+      "Builds trust before chatting begins",
+      "Encourages genuine engagement",
+      "Works best for shy or first-timers",
+      "Improves match quality and interaction",
+    ],
+  },
+  {
+    id: 2,
+    image: "/images/Photo-Video-Verification.png",
+    title: "Photo/Video Verification",
+    description:
+      "We ensure safety and authenticity with built-in photo/video verification. We offer both AI and manual review to verify profiles and block fake profiles, bots, and catfishing. Data security is our utmost priority, ensuring the platform remains credible and user-friendly, which boosts user retention and app reputation.",
+    points: [
+      "Blocks bots and fake users",
+      "Builds app credibility and safety",
+      "AI-powered and manual checks",
+      "Increases user confidence",
+      "Trusted by modern dating platforms",
+    ],
+  },
+  {
+    id: 3,
+    image: "/images/Incognito-Mode.png",
+    title: "Incognito Mode",
+    description:
+      "Dating apps prioritize privacy for all users; hence, we offer incognito mode support to explore matches without being seen. This feature ensures control over visibility, which is ideal for professionals or privacy-conscious individuals who are seeking low-profile interactions within the dating ecosystem.",
+    points: [
+      "Browse profiles without appearing online",
+      "Hide from selected or all users",
+      "Engage only when you are ready",
+      "Boosts user comfort and control",
+      "Ideal for privacy-focused users",
+    ],
+  },
+  {
+    id: 4,
+    image: "/images/Gamification-Elements.png",
+    title: "Gamification Elements",
+    description:
+      "As part of our dating app development strategy, we offer an interactive dating app with gamified experiences, providing features such as daily streaks, badges, and match challenges to increase user engagement and retention.",
+    points: [
+      "Earn badges for profile activity",
+      "Daily swipes with reward points",
+      "Use advanced features via fun challenges",
+      "Improve engagement through achievements",
+      "Increase user retention playfully",
+    ],
+  },
+];
+export const ServiceSectionData = [
+  {
+    title:
+      "Experience The Quickest Application Development With Us!",
+    description:
+      "The customers who believe in receiving the app development services  on the go. We, at iQlance, build ever-evolving on-demand app solutions in order to promote the next generation services for the business growth. Have an amazing experience of scalable and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced admin dashboard and powerful analytics panel for both android as well as iOS. <br/><br/>Our unparalleled set of solutions helps the businesses to acquire new customers along with the pervasive solutions that can be deployed for any business. We believe your business on mobile should be easy and convenient for the customers. The demand of on-demand mobile app development  has created a great buzz in the market." ,
+    features: [
+      
+    ],
+    imageUrl: "/images/Build-An-Advanced-Dating-App-Leveraging-AI.png",
+    imageAlt: "Logistics App Development",
+  },
+  {
+    title:
+      " On-Demand Solutions for Other Businesses ",
+    description:
+      " Our App Developers Toronto cater to different types of businesses for their on-demand app demands. Whether your speciality lies in food delivery, stock delivery, or on-demand video services, our developers are trained to create different app models efficiently. We offer the same level of dedication and work quality to each customer, startup or enterprise-level. Our work covers all steps from researching to preparation, from completing the design to adding the elements, from launching the app to after-launch maintenance. Our client business can expect the best-of-the-best help from us, always.",
+    features: [
+     
+    ],
+    imageUrl: "/images/Build-Dating-App-development.png",
+    imageAlt: "Logistics App Development",
+  },
+];
+export const tabs = [
+  { id: "trainer", label: "Trainer App" },
+  { id: "userapp", label: "User App" },
+  { id: "adminpanel", label: "Admin Panel" },
+];
+
+export const appData = {
+  trainer: [
+    { id: 1, title: "Photo/video album", iconPath: "/images/doctor-patient-profile-icn.png" },
+    { id: 2, title: "Language translation", iconPath: "/images/search-h-icn.png" },
+    { id: 3, title: "Guest users", iconPath: "/images/view-assign-job-h.png" },
+    { id: 4, title: "Matchmaking", iconPath: "/images/rest-detail-icn.png" },
+    { id: 5, title: "Chat/call/share", iconPath: "/images/r-a-table.png" },
+    { id: 6, title: "Search and filter profiles", iconPath: "/images/food-order.png" },
+  ],
+  userapp: [
+    { id: 1, title: "User Registration & Social Login", iconPath: "/images/doctor-patient-profile-icn.png" },
+    { id: 2, title: "Profile Creation & Customization", iconPath: "/images/job-h-icn.png" },
+    { id: 3, title: "Swipe & Match", iconPath: "/images/view-assign-job-h.png" },
+    { id: 4, title: "Search & Filters", iconPath: "/images/mr-h-icn.png" },
+    { id: 5, title: "Real-Time Chat & Media Sharing", iconPath: "/images/revnues-h-icn.png" },
+    { id: 6, title: "Voice & Video Calling", iconPath: "/images/project-icn.png" },
+    { id: 7, title: "Push Notifications", iconPath: "/images/payment2-m-h-icn.png" },
+    { id: 8, title: "Block & Report", iconPath: "/images/rating-h-icn.png" },
+  ],
+  adminpanel: [
+    { id: 1, title: "Admin Dashboard Overview", iconPath: "/images/doctor-patient-profile-icn.png" },
+    { id: 2, title: "User Management", iconPath: "/images/menu-icn.png" },
+    { id: 3, title: "Content Moderation", iconPath: "/images/upload-im-icn.png" },
+    { id: 4, title: "Revenue & Subscription Tracking", iconPath: "/images/view-assign-job-h.png" },
+    { id: 5, title: "Push Notification Control", iconPath: "/images/start-h-icn.png" },
+    { id: 6, title: "Analytics & Reporting", iconPath: "/images/odr-icn.png" },
+    { id: 7, title: "Match & Chat Monitoring", iconPath: "/images/revnues-h-icn.png" },
+    { id: 8, title: "CMS", iconPath: "/images/repoert-h-icn.png" },
+    { id: 9, title: "Manage Offers & Promos", iconPath: "/images/upcoming-h-icn.png" },
+  ],
+};

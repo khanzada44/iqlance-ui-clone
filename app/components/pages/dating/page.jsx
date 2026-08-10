@@ -19,8 +19,6 @@ import { submitContactForm } from "@/services/send-call-request";
 import {
   partners,
   bottomFeatures,
-  slides,
-  ServiceSectionData,
   portfolioSlides,
   technologies,
   stats,
@@ -29,10 +27,17 @@ import {
   faqsData,
   testimonials,
 } from "../../../../utils/data";
+import {
+  datingSolutions,
+  slides,
+  ServiceSectionData,
+  appData,
+  tabs,
+} from "../dating/data";
 import Image from "next/image";
 
 export default function SocialMedia() {
-  const [activeTab, setActiveTab] = useState("driver");
+  const [activeTab, setActiveTab] = useState("trainer");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
@@ -216,6 +221,24 @@ export default function SocialMedia() {
                 only encourages lasting relationships but also delivers on
                 technical and digital promises.
               </p>
+              <ul className="mt-8 space-y-5 text-lg">
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Custom UI/UX as per desired user flow
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Secure user authentication & privacy features
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Real-time chat, match, and notification modules
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Scalable backend for user growth and analytics
+                </li>
+              </ul>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
@@ -393,61 +416,171 @@ export default function SocialMedia() {
             </div>
           </div>
         </section>
-        <section>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
-                Top On-Demand Solutions Company
-              </h2>
-              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                We, at iQlance, build ever-evolving on-demand app solutions in
-                order to promote the next generation-level services for business
-                growth. Have an amazing experience of scalable and solely
-                integrated solutions along with custom front-end and back-end
-                UI/UX. We assure advanced admin dashboard and powerful analytics
-                panel for both Android as well as iOS.
-              </p>
-              <br />
-            </div>
+        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
+          {/* Main Heading */}
+          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
+            Why iQlance for Custom Dating App Development in USA
+          </h2>
+
+          {/* Paragraph Content */}
+          <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto mb-10">
+            <p>
+              As a leading mobile app development company in the USA, iQlance
+              Solutions understands every story is unique, so your app should be
+              too. Our seasoned development team develops dating app solutions
+              that are custom-built to match your business model, user behavior,
+              and growth goals. We ensure high-tech security and quality testing
+              right from UI/UX design to the deployment of the app.
+            </p>
+
+            <p>
+              We follow an agile approach to ensure transparency. We also ensure
+              providing advanced features like AI-powered matchmaking
+              algorithms, location-based date notifications, voice/video chat
+              along with text messages, profile verification, easy document
+              sharing (photos, video, or any documents), etc., to increase trust
+              and engagement. If you want to build a dating app from scratch or
+              want to scale up your existing app, our experienced team ensures
+              you are provided with a solution that performs flawlessly on both
+              platforms, i.e., Android and iOS. We focus on clean design,
+              AI-powered features, and scalability for the competitive USA
+              market.
+            </p>
+
+            <p>
+              Our experienced dating app developers are committed to
+              transforming your concept into a widely used app across the globe.
+              We ensure fast delivery without compromising the quality of code
+              and the quality assurance process. Hence, we don't just build
+              apps; we create a platform people accept and trust to use.
+            </p>
+          </div>
+
+          {/* Bottom Banner Image */}
+          <div className="w-full overflow-hidden ">
+            <img
+              src="/images/Custom-Dating-App-Development-USA.png" // Apni image ka path yahan dein
+              alt="Dating App Development Banner"
+              className="w-full h-auto object-cover"
+            />
           </div>
         </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src="/images/top-solution-right.jpg"
-              alt="Customer Support"
-              className="w-full max-w-md h-auto object-cover"
-            />
-          </div>
+        <section className="py-12 px-4 max-w-7xl mx-auto font-sans">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            {/* Left Side: Content & List */}
+            <div className="flex flex-col gap-y-6">
+              {/* Main Heading */}
+              <h2 className="text-2xl lg:text-3xl font-extrabold text-black leading-snug">
+                On-Demand Dating App Development Solutions We Offer
+              </h2>
 
-          <div className="flex flex-col gap-y-6">
-            {bottomFeatures.map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
-                {/* Chevron Right Icon */}
-                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
+              {/* Subtitle / Intro Text */}
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                We offer on-demand dating app solutions customized to diverse
+                audiences and their relationship goals. We are not just app
+                developers, but we ensure to be your trusted technology partner
+                to build an app that stands ahead in the highly competitive
+                market.
+              </p>
 
-                {/* Text Content */}
-                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                  <strong className="font-semibold text-gray-900">
-                    {item.title}:
-                  </strong>{" "}
-                  {item.description}
-                </p>
+              {/* Feature List */}
+              <div className="flex flex-col gap-y-5">
+                {datingSolutions.map((item, index) => (
+                  <div key={index} className="flex items-start gap-2.5">
+                    {/* Bullet Icon */}
+                    <span className="text-gray-500 font-bold text-lg leading-snug shrink-0">
+                      &#8250;
+                    </span>
+
+                    {/* Text Content */}
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                      <strong className="font-bold text-black">
+                        {item.title}:
+                      </strong>{" "}
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-            <div className="">
-              <Link
-                href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Start a Conversation
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+
+              {/* Call to Action Button */}
+              <div className="pt-2">
+                <Link
+                  href="/lets-talk"
+                  className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-6 py-3 transition duration-200 shadow-sm"
+                >
+                  Start a Conversation
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side: Image Container */}
+            <div className="w-full h-full flex justify-center lg:justify-end">
+              <img
+                src="/images/On-Demand-Dating-App-Solutions.png" // Apni image ka path yahan lagayein
+                alt="On-Demand Dating App Development"
+                className="w-full max-w-lg lg:max-w-none h-auto object-cover rounded-xs"
+              />
             </div>
           </div>
-        </div>
+        </section>
+        <section className="mt-10">
+          <div className="mx-auto max-w-7xl">
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={0}
+              loop={true}
+              autoplay={{
+                delay: 30000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+            >
+              {slides.map((slide) => (
+                <SwiperSlide key={slide.id}>
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                    {/* Image */}
+                    <div className="w-full lg:w-1/2">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
+                      />
+                    </div>
 
+                    {/* Content */}
+                    <div className="w-full lg:w-1/2">
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
+                        {slide.title}
+                      </h2>
+
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
+                        {slide.description}
+                      </p>
+
+                      <div className="space-y-3 lg:space-y-4">
+                        {slide.points.map((point, index) => (
+                          <div
+                            key={index}
+                            className="flex gap-3 items-baseline"
+                          >
+                            <ChevronRight size={17} />
+                            <span>{point}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
             // Checking if index is odd to reverse layout dynamically
@@ -456,7 +589,7 @@ export default function SocialMedia() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
                   isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
@@ -496,20 +629,319 @@ export default function SocialMedia() {
             );
           })}
         </section>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              Ready to Get Started?
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Call us Today for a Free Consultation:
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img src="/icons/email-icon.svg" alt="" />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img src="/icons/phone-icon.svg" alt="" />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Discuss <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section className="w-full max-w-6xl mx-auto md:py-16">
           {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
-              Endeavors that Make us Proud
+              Essential Features of Dating Mobile App Development
             </h2>
             <p className="text-black text-sm md:text-base max-w-3xl mx-auto">
-              iQlance solutions has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
+              When it comes to developing a dating app, users always look for
+              the best features. We ensure that our app has top-notch dating app
+              features that improve user retention.
             </p>
           </div>
         </section>
+        <div className="max-w-6xl mx-auto p-6 font-sans">
+          {/* Navigation Tabs */}
+          <div className="flex justify-center mb-8 w-full">
+            <div className="flex gap-8 border-b border-gray-200">
+              {tabs.map((tab) => {
+                const isActive = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`relative pb-3 text-base md:text-lg transition-colors duration-200 ${
+                      isActive
+                        ? "text-gray-900 font-semibold"
+                        : "text-gray-500 hover:text-gray-700 font-normal cursor-pointer"
+                    }`}
+                  >
+                    {tab.label}
+
+                    {/* Active Blue Bottom Line */}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#1B4B82]" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Feature Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {appData[activeTab]?.map((item) => (
+              <div
+                key={item.id}
+                className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center rounded-sm min-h-36 gap-3"
+              >
+                <img
+                  src={item.iconPath}
+                  alt={item.title}
+                  className="w-10 h-10 object-contain"
+                />
+                <span className="text-gray-800 font-medium text-sm md:text-base">
+                  {item.title}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              So, We Guess You want to talk about your Project
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Send your Requirements on
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img src="/icons/email-icon.svg" alt="" />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img src="/icons/phone-icon.svg" alt="" />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Talk <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-gray-800 space-y-16">
+          {/* Top Section: Image + Content Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left Image */}
+            <div className="w-full h-full overflow-hidden rounded-sm">
+              <img
+                src="/images/our-developers.jpg" // Apni top image ka path lagayein
+                alt="Hire Developers"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Right Content */}
+            <div className="space-y-4 text-left">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-black">
+                Hire Top Dating App Developers in the USA
+              </h2>
+
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                As a leading dating app development company USA, we offer
+                top-tier talent and years of experience to ensure the delivery
+                of cutting-edge dating app solutions. We specialize in building
+                modern, feature-rich dating apps that stand out in a competitive
+                market and align with your brand's vision.
+              </p>
+
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                Our seasoned developers analyze user behavior and industry
+                trends before starting the development process. We blend
+                functionality with innovation to ensure seamless, engaging, and
+                intuitive experiences for users.
+              </p>
+
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                Hire the best developers for custom dating app development in
+                the USA and get a secure, scalable, and user-centric dating app.
+                If you want to develop an app from scratch or want to scale up
+                your existing app; we offer custom solutions and guaranteed
+                creativity, boosting performance and technical excellence so
+                your app doesn't just get a great launch, but it leads in the
+                market.
+              </p>
+            </div>
+          </div>
+
+          {/* Middle Section: Cost Section + Center Aligned Button */}
+          <div className="text-center max-w-4xl mx-auto space-y-6">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-black">
+              Cost To Hire a Custom Dating App Development Company
+            </h2>
+
+            <div className="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed">
+              <p>
+                The cost to hire a dating app development company depends on
+                various factors, including app complexity, features, platform
+                selection (Android, iOS, or both), and tech stack selection. If
+                you want to integrate AI or AR, it will cost you more. The
+                custom UI/UX design, backend scalability, and high-tech user
+                privacy and data security measures also need advanced features,
+                which cost you more.
+              </p>
+
+              <p>
+                We offer flexible dating app development engagement models
+                custom to startups, mid-size businesses, and enterprise
+                solutions. Our pricing structure is transparent, competitive,
+                and value-driven, so you can choose as per your business needs.
+              </p>
+
+              <p>
+                Our custom dating mobile app development solutions are designed
+                to meet your unique business goals. We also ensure the delivery
+                of a secure, high-performing, and user-friendly dating platform
+                within your budget and without compromising quality.
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="pt-2">
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Get a Quote <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Bottom Section: Wide Image Banner + Bottom Text */}
+          <div className="space-y-8 text-center">
+            <div className="w-full overflow-hidden ">
+              <img
+                src="/images/healthcare-app-built.jpg" // Apni wide image ka path lagayein
+                alt="Cost Analysis Banner"
+                className="w-full h-auto object-cover max-h-96"
+              />
+            </div>
+
+            <div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-3">
+                Endeavors That Make Us Proud
+              </h2>
+              <p className="text-sm md:text-base text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                iQlance solutions has always been honored with valuable words
+                for the efforts given on mobile app development that are
+                efficiently unique and user centric. Here are some of the best
+                examples for this.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section>
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -605,71 +1037,8 @@ export default function SocialMedia() {
           </div>
 
           {/* Technology Stack Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Our On-Demand App Development Solutions
-            </h2>
-            <p className="text-black text-sm md:text-base leading-relaxed">
-              Expect interactive and fast processing on-demand services and
-              models from our certified developers
-            </p>
-          </div>
         </section>
-        <section className="">
-          <div className="mx-auto max-w-7xl">
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              slidesPerView={1}
-              spaceBetween={0}
-              loop={true}
-              autoplay={{
-                delay: 30000,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-            >
-              {slides.map((slide) => (
-                <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center">
-                    {/* Image */}
-                    <div className="w-full lg:w-1/2">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
-                      />
-                    </div>
 
-                    {/* Content */}
-                    <div className="w-full lg:w-1/2">
-                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
-                        {slide.title}
-                      </h2>
-
-                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
-                        {slide.description}
-                      </p>
-
-                      <div className="space-y-3 lg:space-y-4">
-                        {slide.points.map((point, index) => (
-                          <div
-                            key={index}
-                            className="flex gap-3 items-baseline"
-                          >
-                            <ChevronRight size={15} />
-                            <span>{point}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </section>
         <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Technologies We Use
@@ -744,13 +1113,13 @@ export default function SocialMedia() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-              Looking to Hire Dedicated Team?
+              We are Team of Talented, Experienced, and Certified Designers and
+              Developers.
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              We are team of talented, experienced, and certified designers and
-              developers. Let us build something extraordinary.
+              Let us Build Something Extraordinary.
             </p>
 
             {/* Contact Info Box */}
@@ -795,49 +1164,9 @@ export default function SocialMedia() {
                 href="/lets-talk"
                 className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Hire Dedicated Developer <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-          </div>
-        </section>
-        <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
-              Industries We Serve
-            </h1>
-            <p>
-              Our on-demand app development services extend across multiple
-              different industries, offering advanced features, rich technology
-              stacks, and high-quality performance improvement.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
-            {industries.map((item, index) => (
-              <div
-                key={index}
-                className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
-              >
-                <img
-                  src={item.bgImage}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
-                    <img
-                      src={item.icon}
-                      alt=""
-                      className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
-                    />
-                  </div>
-                </div>
-                <h3 className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 text-white font-bold text-sm sm:text-lg md:text-xl text-center w-full px-2">
-                  {item.title}
-                </h3>
-              </div>
-            ))}
           </div>
         </section>
 
@@ -888,215 +1217,49 @@ export default function SocialMedia() {
             ))}
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
-
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-              Ready to Get Started?
-            </h2>
-
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
+        <section>
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
+              {" "}
+              Industries We Serve
+            </h1>
+            <p>
+              Our on-demand app development services extend across multiple
+              different industries, offering advanced features, rich technology
+              stacks, and high-quality performance improvement.
             </p>
-
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <img src="/icons/email-icon.svg" alt="" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img src="/icons/phone-icon.svg" alt="" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Action Button */}
-            <div>
-              <Link
-                href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
           </div>
-        </section>
-
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-            The Process We Follow For Web Design and Development
-          </h2>
-          <p className="text-black text-sm md:text-base leading-relaxed">
-            Our team of App Developers Toronto have worked on different types of
-            on-demand app development projects, with satisfactory results. We
-            provide dedicated attention and care throughout the development
-            journey, using top-notch techniques. Here, we shall tailor our
-            development plan as per your needs.
-          </p>
-        </div>
-        <div className="w-full max-w-5xl mx-auto px-4 py-12">
-          {/* Top Tabs Header */}
-          <div className="flex items-center gap-6 border-b border-gray-100 pb-3 mb-12 overflow-x-auto">
-            {processSteps.map((step, index) => (
-              <div key={index} className="flex items-center gap-6">
-                <button
-                  type="button"
-                  onClick={() => setActiveStepIndex(index)}
-                  className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${
-                    activeStepIndex === index
-                      ? "text-gray-900 border-blue-600 font-bold"
-                      : "text-gray-400 border-transparent hover:text-gray-600"
-                  }`}
-                >
-                  {step.tabTitle}
-                </button>
-                {index < processSteps.length - 1 && (
-                  <span className="text-gray-400 font-light">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                )}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
+            {industries.map((item, index) => (
+              <div
+                key={index}
+                className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
+              >
+                <img
+                  src={item.bgImage}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
+                    <img
+                      src={item.icon}
+                      alt=""
+                      className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
+                    />
+                  </div>
+                </div>
+                <h3 className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 text-white font-bold text-sm sm:text-lg md:text-xl text-center w-full px-2">
+                  {item.title}
+                </h3>
               </div>
             ))}
           </div>
-
-          {/* Main Layout (Circular Icons + Description) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left Process Image Container */}
-            <div className="relative w-72 h-72 mx-auto flex items-center justify-center">
-              {/* Step 1 Image - Discover */}
-              {activeStepIndex === 0 && (
-                <div className="">
-                  <img
-                    src="/images/discover.webp"
-                    alt="Discover"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 2 Image - Design */}
-              {activeStepIndex === 1 && (
-                <div className="">
-                  <img
-                    src="/images/uiux-design.webp"
-                    alt="Design"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 3 Image - Build */}
-              {activeStepIndex === 2 && (
-                <div className="">
-                  <img
-                    src="/images/development.webp"
-                    alt="Build"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 4 Image - Deliver */}
-              {activeStepIndex === 3 && (
-                <div className="">
-                  <img
-                    src="/images/user-testing.webp"
-                    alt="Deliver"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Right Side Content Display */}
-            <div className="flex flex-col justify-center">
-              <span className="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-2">
-                {currentStep.stepLabel}
-              </span>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
-                {currentStep.heading}
-              </h2>
-              <p className="text-gray-600 leading-relaxed text-sm max-w-md">
-                {currentStep.description}
-              </p>
-            </div>
-          </div>
-        </div>
-        <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left Text Content */}
-            <div className="flex flex-col ">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 leading-tight">
-                Fast &amp; Efficient Access To Services
-              </h2>
-
-              <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
-                <p>
-                  We perfectly connect your business with your customers We will
-                  help you find out how to supply the rightest as per user
-                  demands, which is sure to make them wonder that how did they
-                  survive without your app all these days. We develop to meet
-                  macro-level and micro-level delivery requirements of users
-                  across all industries.
-                </p>
-                <p>
-                  Ready to take a comprehensive consultation for your next
-                  on-demand app?
-                </p>
-              </div>
-            </div>
-
-            {/* Right Side 3D Image Banner */}
-            <div className="relative w-full h-80 sm:h-96 md:h-105 overflow-hidden">
-              <Image
-                src="/images/efficient-access-right.jpg"
-                alt="Fast & Efficient Access To Services"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
         </section>
+
         <section>
-          <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+          <div className="text-center max-w-4xl mx-auto space-y-4 mt-10">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Why Choose iQlance?
             </h1>
