@@ -1,73 +1,88 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import { getSingleBlog } from "@/services/blog";
-import ContactForm from "../components/contactForm/ContactForm";
-import { partners, categories } from "../single-blog/data";
-
-// Dummy Popular Posts Data (Apne dynamic data se replace kar sakte hain)
-const popularPosts = [
-    {
-        id: 1,
-        title: "Top Food Delivery Apps in Australia",
-        image: "/images/popular-1.jpg",
-        slug: "top-food-delivery-apps-in-australia",
-    },
-    {
-        id: 2,
-        title: "Best NYC Apps for Locals and Tourists",
-        image: "/images/popular-1.jpg",
-        slug: "best-nyc-apps-for-locals-and-tourists",
-    },
-    {
-        id: 3,
-        title: "Top 10 Food Delivery Apps in Toronto",
-        image: "/images/popular-1.jpg",
-        slug: "top-10-food-delivery-apps-in-toronto",
-    },
-    {
-        id: 4,
-        title: "TOP 10 Fantasy Sports Apps in USA",
-        image: "/images/popular-1.jpg",
-        slug: "top-10-fantasy-sports-apps-in-usa",
-    },
-];
+import Image from "next/image";
+import { useSearchParams, useRouter } from "next/navigation";
+import { ChevronRight, ArrowRight } from "lucide-react";
+// Assumed service imports
+import { getSingleBlog, blogCategories } from "@/services/blog";
+import { blogByCategory } from "../../services/blog"; 
 
 export default function SingleBlogPage() {
+    const router = useRouter();
     const searchParams = useSearchParams();
     const slug = searchParams.get("slug");
 
+    const [categories, setCategories] = useState([]);
     const [blog, setBlog] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    // Dynamic Category Click Handler (API hit + Redirect)
+    const [loadingCatId, setLoadingCatId] = useState(null);
+
+    const handleCategoryClick = async (e, cat) => {
+        e.preventDefault();
+
+        const catId = typeof cat === "object" ? cat?.id || cat?._id : null;
+        const catName = typeof cat === "string" ? cat : cat?.name || cat?.title || cat?.category_name || "";
+        const catSlug = typeof cat === "object" && cat?.slug ? cat.slug : String(catName).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+        if (catId) {
+            try {
+                setLoadingCatId(catId);
+                // 1. API Hit for Sub-Categories
+                const subCatRes = await blogCategories(catId);
+                console.log("Sub Categories Data:", subCatRes);
+            } catch (err) {
+                console.error("Failed to fetch sub-categories:", err);
+            } finally {
+                setLoadingCatId(null);
+            }
+        }
+
+        // 2. Redirect to /blog page with Query Params
+        if (catId) {
+            router.push(`/blog?category_id=${catId}&category=${catSlug}`);
+        } else {
+            router.push(`/blog?category=${catSlug}`);
+        }
+    };
+
     useEffect(() => {
         if (!slug) return;
-
-        const fetchBlogData = async () => {
+        const fetchInitialData = async () => {
             try {
                 setLoading(true);
-                const res = await getSingleBlog(slug);
-                const actualData = res?.response?.data || res?.data || res;
-                setBlog(actualData);
+
+                // Fetch Categories
+                const catRes = await blogCategories();
+                const catData = catRes?.response?.data || catRes?.data || catRes || [];
+                console.log('catData', catData);
+
+                setCategories(Array.isArray(catData) ? catData : []);
+
+                // Fetch Single Blog if Slug Available
+                if (slug) {
+                    const res = await getSingleBlog(slug);
+                    const actualData = res?.response?.data || res?.data || res;
+                    setBlog(actualData);
+                }
             } catch (err) {
-                console.error("Failed to fetch blog:", err);
+                console.error("Failed to fetch data:", err);
                 setError("Blog load karne me error aaya.");
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchBlogData();
+        fetchInitialData();
     }, [slug]);
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center min-h-[400px]">
+            <div className="flex justify-center items-center min-h-100">
                 <p className="text-gray-500 font-medium">Loading blog details...</p>
             </div>
         );
@@ -116,7 +131,7 @@ export default function SingleBlogPage() {
                         </div>
 
                         {/* Main Image */}
-                        <div className="relative aspect-16/9 w-full overflow-hidden rounded-xl mb-8 bg-gray-100 shadow-sm">
+                        <div className="relative aspect-video w-full overflow-hidden rounded-xl mb-8 bg-gray-100 shadow-sm">
                             {imageUrl ? (
                                 <Image
                                     src={imageUrl}
@@ -141,36 +156,39 @@ export default function SingleBlogPage() {
                     </div>
 
                     {/* RIGHT SIDEBAR: Popular Posts + Contact Form Widget (4 Columns) */}
-                    <aside className="lg:col-span-3 space-y-10 lg:sticky lg:top-6">
+                    <aside className="lg:col-span-4 space-y-10 lg:sticky lg:top-6">
 
                         {/* Popular Posts Section */}
-                        <div className="bg-white rounded-lg p-2">
-                            <h3 className="text-xl font-bold text-slate-900 mb-6">
-                                Popular Post
-                            </h3>
-                            <div className="space-y-5">
-                                {popularPosts.map((post) => (
-                                    <Link
-                                        key={post.id}
-                                        href={`/blog?slug=${post.slug}`}
-                                        className="flex items-center gap-4 group transition-colors"
-                                    >
-                                        <div className="relative w-20 h-16 shrink-0 overflow-hidden bg-gray-100">
-                                            <img
-                                                src={post.image}
-                                                alt={post.title}
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                                            />
-                                        </div>
-                                        <p className="text-sm font-semibold text-slate-800 group-hover:text-blue-600 line-clamp-2 leading-snug">
-                                            {post.title}
-                                        </p>
-                                    </Link>
-                                ))}
+                        {typeof popularPosts !== "undefined" && popularPosts.length > 0 && (
+                            <div className="bg-white rounded-lg p-2">
+                                <h3 className="text-xl font-bold text-slate-900 mb-6">
+                                    Popular Post
+                                </h3>
+                                <div className="space-y-5">
+                                    {popularPosts.map((post) => (
+                                        <Link
+                                            key={post.id}
+                                            href={`/blog?slug=${post.slug}`}
+                                            className="flex items-center gap-4 group transition-colors"
+                                        >
+                                            <div className="relative w-20 h-16 shrink-0 overflow-hidden bg-gray-100">
+                                                <img
+                                                    src={post.image}
+                                                    alt={post.title}
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                                                />
+                                            </div>
+                                            <p className="text-sm font-semibold text-slate-800 group-hover:text-blue-600 line-clamp-2 leading-snug">
+                                                {post.title}
+                                            </p>
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
+
+                        {/* Sidebar Contact Form */}
                         <div className="relative bg-[#EAF3FC] border border-[#D0E2F7] rounded-2xl p-6 md:p-8 pt-12 shadow-sm mt-10">
-                            {/* Badge Image / Header Tag (Absolute Top Center) */}
                             <div className="absolute -top-10 left-3/4 -translate-x-1/2 z-5 w-10 sm:w-30">
                                 <img
                                     src="/images/badge-sameday-resposnse.png"
@@ -179,13 +197,11 @@ export default function SingleBlogPage() {
                                 />
                             </div>
 
-                            {/* Form Title */}
                             <h3 className="text-2xl font-bold text-[#0F172A] mb-6">
                                 Get in Touch
                             </h3>
 
                             <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-                                {/* Full Name */}
                                 <div>
                                     <input
                                         type="text"
@@ -193,8 +209,6 @@ export default function SingleBlogPage() {
                                         className="w-full bg-transparent border-b border-[#94A3B8] py-2 text-sm text-slate-800 placeholder-[#64748B] focus:outline-none focus:border-blue-600 transition-colors"
                                     />
                                 </div>
-
-                                {/* Email */}
                                 <div>
                                     <input
                                         type="email"
@@ -202,8 +216,6 @@ export default function SingleBlogPage() {
                                         className="w-full bg-transparent border-b border-[#94A3B8] py-2 text-sm text-slate-800 placeholder-[#64748B] focus:outline-none focus:border-blue-600 transition-colors"
                                     />
                                 </div>
-
-                                {/* Mobile Number */}
                                 <div>
                                     <input
                                         type="tel"
@@ -211,8 +223,6 @@ export default function SingleBlogPage() {
                                         className="w-full bg-transparent border-b border-[#94A3B8] py-2 text-sm text-slate-800 placeholder-[#64748B] focus:outline-none focus:border-blue-600 transition-colors"
                                     />
                                 </div>
-
-                                {/* Message */}
                                 <div>
                                     <textarea
                                         rows={3}
@@ -221,7 +231,6 @@ export default function SingleBlogPage() {
                                     ></textarea>
                                 </div>
 
-                                {/* Math Captcha Row */}
                                 <div className="pt-2 flex items-center gap-3">
                                     <span className="text-sm font-medium text-slate-700 whitespace-nowrap">
                                         9 - 1 =
@@ -232,7 +241,6 @@ export default function SingleBlogPage() {
                                     />
                                 </div>
 
-                                {/* Submit Button */}
                                 <div className="pt-2">
                                     <button
                                         type="submit"
@@ -243,23 +251,44 @@ export default function SingleBlogPage() {
                                 </div>
                             </form>
                         </div>
+
+                        {/* Dynamic Categories Section */}
                         <div className="bg-[#EEF2F6] rounded-lg p-5 border border-slate-200 shadow-sm">
                             <h3 className="text-xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-300">
                                 Categories
                             </h3>
 
                             <ul className="space-y-2.5">
-                                {categories.map((category, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={`/category/${category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                                            className="flex items-start gap-2 text-sm text-slate-700 hover:text-blue-600 transition-colors group leading-snug"
-                                        >
-                                            <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-blue-600 shrink-0 mt-0.5" />
-                                            <span>{category}</span>
-                                        </Link>
-                                    </li>
-                                ))}
+                                {categories.length > 0 ? (
+                                    categories.map((cat, index) => {
+                                        const catName =
+                                            typeof cat === "string"
+                                                ? cat
+                                                : cat?.name || cat?.title || cat?.category_name || "";
+
+                                        const catId = typeof cat === "object" ? cat?.id || cat?._id : null;
+
+                                        return (
+                                            <li key={catId || index}>
+                                                <button
+                                                    type="button"
+                                                    onClick={(e) => handleCategoryClick(e, cat)}
+                                                    className="w-full flex items-center justify-between text-left text-sm text-slate-700 hover:text-blue-600 transition-colors group leading-snug cursor-pointer"
+                                                >
+                                                    <div className="flex items-start gap-2">
+                                                        <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-blue-600 shrink-0 mt-0.5" />
+                                                        <span>{catName}</span>
+                                                    </div>
+                                                    {loadingCatId === catId && (
+                                                        <span className="text-xs text-blue-500 animate-pulse">Loading...</span>
+                                                    )}
+                                                </button>
+                                            </li>
+                                        );
+                                    })
+                                ) : (
+                                    <p className="text-xs text-slate-500">No categories found.</p>
+                                )}
                             </ul>
                         </div>
 
@@ -326,29 +355,33 @@ export default function SingleBlogPage() {
             </section>
 
             {/* Main Contact Form */}
-            <div className="mb-2.5 pb-2">
-                <ContactForm />
-            </div>
+            {typeof ContactForm !== "undefined" && (
+                <div className="mb-2.5 pb-2">
+                    <ContactForm />
+                </div>
+            )}
 
             {/* Partners Marquee */}
-            <section className="mb-5 overflow-hidden">
-                <div className="marquee">
-                    <div className="marquee-content">
-                        {[...partners, ...partners].map((item, index) => (
-                            <div
-                                key={`${item.id}-${index}`}
-                                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
-                            >
-                                <img
-                                    src={item.image}
-                                    alt={item.alt}
-                                    className="max-h-full max-w-full object-contain"
-                                />
-                            </div>
-                        ))}
+            {typeof partners !== "undefined" && Array.isArray(partners) && (
+                <section className="mb-5 overflow-hidden">
+                    <div className="marquee">
+                        <div className="marquee-content">
+                            {[...partners, ...partners].map((item, index) => (
+                                <div
+                                    key={`${item.id}-${index}`}
+                                    className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+                                >
+                                    <img
+                                        src={item.image}
+                                        alt={item.alt}
+                                        className="max-h-full max-w-full object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
         </>
     );
 }

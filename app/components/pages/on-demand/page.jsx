@@ -7,7 +7,7 @@ import {
   Paperclip,
 } from "lucide-react";
 import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect ,params} from 'react';
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
@@ -16,6 +16,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { submitContactForm } from "@/services/send-call-request";
+import { portfolioSubCategories } from "../../../../services/all-sub-categories"
+import PortfolioSlider from '../portfolio-slider/PortfolioSlider';
 import {
   partners,
   bottomFeatures,
@@ -28,14 +30,15 @@ import {
   services,
   faqsData,
   testimonials
- } from "../../../../utils/data"
+} from "../../../../utils/data"
 import Image from "next/image";
 
 export default function Ondemadd() {
- const [activeTab, setActiveTab] = useState("driver");
+  const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
+  const [portfolios, setPortfolios] = useState([]);
 
   // ADD THIS LINE: formData state yahan add karein
   const [formData, setFormData] = useState({
@@ -179,6 +182,39 @@ export default function Ondemadd() {
 
     fetchBlogs();
   }, []);
+  useEffect(() => {
+    const fetchPortfolioData = async () => {
+      try {
+        setLoading(true);
+        const selectedId = localStorage.getItem('selectedCategoryId');
+
+        const res = await portfolioSubCategories(selectedId);
+
+        // Exact API structure mapping: res.response.data ya res.data.response.data
+        const rawList = res?.response?.data || res?.data?.response?.data || [];
+
+        // Single map function to clean objects for PortfolioSlider
+        const formattedData = rawList.map((item, index) => ({
+          id: item.slug || index,
+          title: item.title,
+          slug: item.slug,
+          description: item.description,
+          image: item.image_url || item.image,
+          heading: "",
+          features: item.features || [],
+          technologies: item.technologies || [],
+        }));
+
+        setPortfolios(formattedData);
+      } catch (error) {
+        console.error('Error fetching portfolios:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPortfolioData();
+  }, [params?.slug]);
 
   return (
     <>
@@ -246,17 +282,16 @@ export default function Ondemadd() {
                 <p className="text-xs md:text-sm text-black font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
-                  {statusMessage.text && (
-                    <p
-                      className={`text-xs text-center font-semibold ${
-                        statusMessage.type === "success"
-                          ? "text-green-600"
-                          : "text-red-600"
+                {statusMessage.text && (
+                  <p
+                    className={`text-xs text-center font-semibold ${statusMessage.type === "success"
+                        ? "text-green-600"
+                        : "text-red-600"
                       }`}
-                    >
-                      {statusMessage.text}
-                    </p>
-                  )}
+                  >
+                    {statusMessage.text}
+                  </p>
+                )}
                 {/* Form Inputs */}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -346,40 +381,40 @@ export default function Ondemadd() {
 
                   {/* Submit Button */}
                   <div className="pt-2">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
-                  >
-                    {loading ? (
-                      <span className="flex items-center gap-2">
-                        <svg
-                          className="animate-spin h-4 w-4 text-white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          ></circle>
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                          ></path>
-                        </svg>
-                        Sending...
-                      </span>
-                    ) : (
-                      "Schedule a free consultation"
-                    )}
-                  </button>
-                </div>
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {loading ? (
+                        <span className="flex items-center gap-2">
+                          <svg
+                            className="animate-spin h-4 w-4 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        "Schedule a free consultation"
+                      )}
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -500,7 +535,7 @@ export default function Ondemadd() {
           </div>
         </section>
         <section>
-          <Swiper
+          {/* <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
             autoplay={{ delay: 300000 }}
@@ -568,7 +603,10 @@ export default function Ondemadd() {
                 </div>
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
+          <main className="min-h-screen py-10">
+            <PortfolioSlider slides={portfolios} heading={`Solution: ${params?.slug}`} />
+          </main>
         </section>
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
           {/* Top CTA Banner Box */}
@@ -1024,42 +1062,42 @@ export default function Ondemadd() {
           </div>
         </div>
         <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-        
-        {/* Left Text Content */}
-        <div className="flex flex-col ">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 leading-tight">
-            Fast &amp; Efficient Access To Services
-          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
 
-          <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
-            <p>
-              We perfectly connect your business with your customers We will
-              help you find out how to supply the rightest as per user demands,
-              which is sure to make them wonder that how did they survive without
-              your app all these days. We develop to meet macro-level and
-              micro-level delivery requirements of users across all industries.
-            </p>
-            <p>
-              Ready to take a comprehensive consultation for your next on-demand
-              app?
-            </p>
+            {/* Left Text Content */}
+            <div className="flex flex-col ">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 leading-tight">
+                Fast &amp; Efficient Access To Services
+              </h2>
+
+              <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+                <p>
+                  We perfectly connect your business with your customers We will
+                  help you find out how to supply the rightest as per user demands,
+                  which is sure to make them wonder that how did they survive without
+                  your app all these days. We develop to meet macro-level and
+                  micro-level delivery requirements of users across all industries.
+                </p>
+                <p>
+                  Ready to take a comprehensive consultation for your next on-demand
+                  app?
+                </p>
+              </div>
+            </div>
+
+            {/* Right Side 3D Image Banner */}
+            <div className="relative w-full h-80 sm:h-96 md:h-105 overflow-hidden">
+              <Image
+                src="/images/efficient-access-right.jpg"
+                alt="Fast & Efficient Access To Services"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
           </div>
-        </div>
-
-        {/* Right Side 3D Image Banner */}
-        <div className="relative w-full h-80 sm:h-96 md:h-105 overflow-hidden">
-          <Image
-            src="/images/efficient-access-right.jpg" 
-            alt="Fast & Efficient Access To Services"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-
-      </div>
-    </section>
+        </section>
         <section>
           <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">Why Choose iQlance?</h1>
@@ -1299,24 +1337,24 @@ export default function Ondemadd() {
           <ContactForm />
         </div>
       </div>
-       <section className="mb-5 overflow-hidden">
-              <div className="marquee">
-                <div className="marquee-content">
-                  {[...partners, ...partners].map((item, index) => (
-                    <div
-                      key={`${item.id}-${index}`}
-                      className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.alt}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
-            </section>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

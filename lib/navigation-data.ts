@@ -1,6 +1,5 @@
 import { NavLink, ServicesData } from "@/types/navigation";
-import React, { useEffect, useState } from "react";
-import { allSubCategories } from "../services/all-sub-categories";
+import { allSubCategories , portfolioSubCategories } from "../services/all-sub-categories";
 
 
 
@@ -55,13 +54,66 @@ export const navLinks: NavLink[] = [
 
 ];
 
+// export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
+//   try {
+//     const res = await allSubCategories();
+
+//     const itemsArray = res?.response?.data || res?.data || (Array.isArray(res) ? res : []);
+//     const solutionSlugs = [
+//       "on-demand",
+//       "taxi-booking",
+//       "restaurant",
+//       "fitness",
+//       "social-networking",
+//       "dating-app",
+//       "online-food-ordering",
+//     ];
+
+//     return navLinks.map((link) => {
+//       if (link.label === "Solutions") {
+//         const solutionsData = itemsArray.filter((item: any) =>
+//           solutionSlugs.includes(item.slug)
+//         );
+
+//         return {
+//           ...link,
+//           dropdown: solutionsData.map((item: any) => ({
+//             label: item.name || item.title || item.label,
+//             href: `/solutions/${item.slug || ""}`,
+//             icon: item.icon_url || item.icon || "/icons/default.svg",
+//           })),
+//         };
+//       }
+
+//       if (link.label === "Industry") {
+//         const industryData = itemsArray.filter(
+//           (item: any) => !solutionSlugs.includes(item.slug)
+//         );
+
+//         return {
+//           ...link,
+//           dropdown: industryData.map((item: any) => ({
+//             label: item.name || item.title || item.label,
+//             href: `/industry/${item.slug || ""}`,
+//             icon: item.icon_url || item.icon || "/icons/default.svg",
+//           })),
+//         };
+//       }
+
+//       return link;
+//     });
+//   } catch (error) {
+//     console.error("Failed to load nav links from API:", error);
+//     return navLinks;
+//   }
+// };
+
+
 export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
   try {
     const res = await allSubCategories();
-
     const itemsArray = res?.response?.data || res?.data || (Array.isArray(res) ? res : []);
 
-    // Slugs defining Solutions items
     const solutionSlugs = [
       "on-demand",
       "taxi-booking",
@@ -73,14 +125,18 @@ export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
     ];
 
     return navLinks.map((link) => {
-      if (link.label === "Solutions") {
+      // Label comparison ko safe aur lowercase handle karein
+      const currentLabel = link.label?.trim().toLowerCase();
+
+      if (currentLabel === "solutions") {
         const solutionsData = itemsArray.filter((item: any) =>
-          solutionSlugs.includes(item.slug)
+          solutionSlugs.includes(item.slug?.toLowerCase())
         );
 
         return {
           ...link,
           dropdown: solutionsData.map((item: any) => ({
+            id: item.id, // FIX: 'category_id' ki jagah 'id' rakhein taake DesktopDropdown ko item.id mile
             label: item.name || item.title || item.label,
             href: `/solutions/${item.slug || ""}`,
             icon: item.icon_url || item.icon || "/icons/default.svg",
@@ -88,14 +144,15 @@ export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
         };
       }
 
-      if (link.label === "Industry") {
+      if (currentLabel === "industry") {
         const industryData = itemsArray.filter(
-          (item: any) => !solutionSlugs.includes(item.slug)
+          (item: any) => !solutionSlugs.includes(item.slug?.toLowerCase())
         );
 
         return {
           ...link,
           dropdown: industryData.map((item: any) => ({
+            id: item.id, // Direct 'id' match
             label: item.name || item.title || item.label,
             href: `/industry/${item.slug || ""}`,
             icon: item.icon_url || item.icon || "/icons/default.svg",
@@ -110,7 +167,6 @@ export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
     return navLinks;
   }
 };
-
 export const servicesData: ServicesData = {
   title: "What we can do for you",
   categories: [

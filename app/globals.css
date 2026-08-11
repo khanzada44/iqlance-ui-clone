@@ -49,3 +49,268 @@
   border: 1px solid #cbd5e1 !important;
   color: #1e293b !important;
 }
+.tech-icons{
+    display: flex;
+    margin-top: 20px;
+    gap: 15px;
+}
+/* ==========================================================
+   DYNAMIC PORTFOLIO SHOWCASE STYLES (COMPLETE SOLUTION)
+   ========================================================== */
+
+/* 1. Main Container Wrapper */
+.portfolio-dynamic-content {
+  color: #1e293b;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+/* 2. Headings & Typography */
+.portfolio-dynamic-content h1,
+.portfolio-dynamic-content h2,
+.portfolio-dynamic-content h3,
+.portfolio-dynamic-content h4 {
+  color: #0f172a;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+.portfolio-dynamic-content h2 {
+  font-size: 2.25rem;
+  margin-top: 4rem;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-dynamic-content h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Headings Subtitles / Description Paragraphs */
+.portfolio-dynamic-content h2 + p,
+.portfolio-dynamic-content h3 + p {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #64748b;
+  font-size: 1.05rem;
+  margin-bottom: 3rem;
+}
+
+.portfolio-dynamic-content p {
+  margin-bottom: 1.25rem;
+}
+
+/* 3. Bootstrap Grid Overrides (Fixes Single Column & Layout Issues) */
+.portfolio-dynamic-content .container,
+.portfolio-dynamic-content .container-fluid {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+.portfolio-dynamic-content .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-right: -12px !important;
+  margin-left: -12px !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+}
+
+/* Column Base Reset */
+.portfolio-dynamic-content [class*="col-"] {
+  padding-right: 12px !important;
+  padding-left: 12px !important;
+  box-sizing: border-box !important;
+}
+
+/* Responsive Column Sizing Overrides */
+@media (min-width: 992px) {
+  .portfolio-dynamic-content .col-lg-3 {
+    flex: 0 0 20% !important; /* 5 Columns Row Layout */
+    max-width: 20% !important;
+  }
+  .portfolio-dynamic-content .col-lg-4 {
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+  }
+  .portfolio-dynamic-content .col-lg-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .portfolio-dynamic-content .col-md-4 {
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+  }
+  .portfolio-dynamic-content .col-md-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-dynamic-content .col-sm-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  .portfolio-dynamic-content .col-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* 4. App Screenshot Gallery Grid (5 Mobile Screens Fix) */
+.portfolio-dynamic-content .app_screenshot_image_block .row,
+.portfolio-dynamic-content .app_screenshot_section .row,
+.portfolio-dynamic-content .snapshots-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 1.5rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 3rem 0 !important;
+}
+
+.portfolio-dynamic-content .app_screenshot_image_block .row > [class*="col-"],
+.portfolio-dynamic-content .app_screenshot_section .row > [class*="col-"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: none !important;
+}
+
+/* Responsive Images Styling */
+.portfolio-dynamic-content img,
+.portfolio-dynamic-content .img-fluid {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  object-fit: contain;
+}
+
+.portfolio-dynamic-content .app_screenshot_image_block img,
+.portfolio-dynamic-content .app_screenshot_section img {
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Feature Cards Grid Styling */
+.portfolio-dynamic-content ul:has(li img),
+.portfolio-dynamic-content .features-grid,
+.portfolio-dynamic-content .grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem 0;
+}
+
+.portfolio-dynamic-content ul:has(li img) li,
+.portfolio-dynamic-content .feature-card {
+  background-color: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-dynamic-content ul:has(li img) li:hover,
+.portfolio-dynamic-content .feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-dynamic-content ul:has(li img) li img,
+.portfolio-dynamic-content .feature-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem !important;
+}
+
+/* 6. User Journey & Timeline Process */
+.portfolio-dynamic-content ol,
+.portfolio-dynamic-content .timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0;
+}
+
+.portfolio-dynamic-content ol li,
+.portfolio-dynamic-content .timeline-step {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  flex: 1 1 160px;
+  max-width: 200px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* 7. Call-To-Action & Buttons */
+.portfolio-dynamic-content .cta-banner,
+.portfolio-dynamic-content div[style*="background"] {
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  margin: 4rem 0;
+}
+
+.portfolio-dynamic-content button,
+.portfolio-dynamic-content a.btn,
+.portfolio-dynamic-content .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f172a;
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  margin-top: 1rem;
+}
+
+.portfolio-dynamic-content button:hover,
+.portfolio-dynamic-content a.btn:hover {
+  background-color: #1e293b;
+}
+
+/* Mobile Responsiveness Adjustments */
+@media (max-width: 768px) {
+  .portfolio-dynamic-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .portfolio-dynamic-content ol {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio-dynamic-content ol li {
+    max-width: 100%;
+    width: 100%;
+  }
+}

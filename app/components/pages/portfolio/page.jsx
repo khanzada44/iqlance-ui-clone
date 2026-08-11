@@ -1,140 +1,85 @@
 "use client";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import ContactForm from "../../contactForm/ContactForm";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { partners } from "../portfolio/data";
 
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { ArrowRight, ChevronRight } from "lucide-react";
+import ContactForm from "../../contactForm/ContactForm";
+import { partners } from "../portfolio/data";
+import { categoriesWithPortfolio } from '../../../../services/all-sub-categories';
 
 export default function Portfolio() {
-  const [activeTab, setActiveTab] = useState('Domain');
-  const [activeCategory, setActiveCategory] = useState('ALL');
+  const [categoriesData, setCategoriesData] = useState([]);
 
-  const categories = [
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const [activeTab, setActiveTab] = useState('');
+  const [activeSubCategory, setActiveSubCategory] = useState('ALL');
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const res = await categoriesWithPortfolio();
+
+        // Handle response layout securely
+        const dataList = res?.response?.data || res?.data || [];
+        console.log('dataList', dataList);
+
+        setCategoriesData(dataList);
+
+        if (dataList.length > 0) {
+          setActiveTab(dataList[0].name);
+        }
+      } catch (err) {
+        console.error("Error fetching portfolio categories:", err);
+        setError("Failed to load portfolio data.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // 2. Extract Active Category object
+  const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
+
+  // 3. Subcategories list for Sub-tabs Filter
+  const subCategoriesList = [
     'ALL',
-    'BUSINESS',
-    'E-COMMERCE',
-    'FITNESS',
-    'GPS TRACKING',
-    'LIFE-STYLE',
-    'MARKET PLACE',
-    'MUSIC',
-    'NUTRITION',
-    'ONLINE FOOD ORDERING',
-    'REAL ESTATE',
-    'SOCIAL NETWORKING',
+    ...(currentCategoryObj?.subcategories?.map(sub => sub.name) || [])
   ];
 
-  // Portfolio items ka complete data list
-  const portfolioData = [
-    {
-      id: 1,
-      category: 'BUSINESS',
-      tab: 'Domain',
-      title: 'Event Booking App',
-      description:
-        'iQlance Solutions built a fully connected Event application that transforms how partygoers discover venues and how clubs manage their bookings. The app eliminates the usual booking hassle by giving users instant access to nearby clubs, pubs, lounges, and live events, along with the ability to host their own parties effortlessly. You can also host a party using this app. So, no more booking issues; this is what the Event App ensures.',
-      features: [
-        'Explore Nearby Clubs and Events',
-        'Venue Management Dashboard',
-        'Instant Booking and Payments',
-        'Notifications and Updates',
-      ],
-      techStack: [
-        { name: 'React Native', icon: '/images/React.png.webp' },
-        { name: 'AWS', icon: '/images/Aws.png' },
-        { name: 'Node.js', icon: '/images/nodejs-nav-iq-act.png' },
-        { name: 'MongoDB', icon: '/images/mongodb-iq-tech.svg' },
-      ],
-      bgColor: 'bg-[#E6DEFF]',
-      image: '/images/vr-feature.png',
-      link: '/case-study/event-booking-app',
-    },
-    {
-      id: 2,
-      category: 'E-COMMERCE',
-      tab: 'Domain',
-      title: 'Multi-Vendor Marketplace',
-      description:
-        'A comprehensive e-commerce ecosystem connecting buyers and multiple vendors. Features real-time order tracking, seamless payment gateway integrations, and personalized recommendations driven by intelligent user behavior analytics.',
-      features: [
-        'Multi-Storefront Management',
-        'Integrated Payment Gateways',
-        'Real-time Order & Inventory Tracking',
-        'Custom Vendor Dashboard',
-      ],
-      techStack: [
-        { name: 'React Native', icon: '/images/React.png.webp' },
-        { name: 'AWS', icon: '/images/Aws.png' },
-        { name: 'Node.js', icon: '/images/nodejs-nav-iq-act.png' },
-        { name: 'MongoDB', icon: '/images/mongodb-iq-tech.svg' },
-      ],
-      bgColor: 'bg-[#E3F2FD]',
-      image: '/images/Moving-Force-Feature.png',
-      link: '/case-study/e-commerce-app',
-    },
-    {
-      id: 3,
-      category: 'FITNESS',
-      tab: 'Domain',
-      title: 'Fitness & Workout Tracker',
-      description:
-        'An interactive fitness companion offering personalized workout routines, live trainer sessions, macro tracking, and seamless integration with smartwatches and wearables.',
-      features: [
-        'Personalized Workout Plans',
-        'Wearable Device Integration',
-        'Calorie & Meal Planner',
-        'Community Activity Leaderboards',
-      ],
-      techStack: [
-        { name: 'React Native', icon: '/images/React.png.webp' },
-        { name: 'AWS', icon: '/images/Aws.png' },
-        { name: 'Node.js', icon: '/images/nodejs-nav-iq-act.png' },
-        { name: 'MongoDB', icon: '/images/mongodb-iq-tech.svg' },
-      ],
-      bgColor: 'bg-[#E8F5E9]',
-      image: '/images/LocShark-feature.png',
-      link: '/case-study/fitness-tracker-app',
-    },
-    {
-      id: 4,
-      category: 'ONLINE FOOD ORDERING',
-      tab: 'Domain',
-      title: 'Food Delivery Platform',
-      description:
-        'A fast and reliable food delivery application connecting hungry customers with local restaurants. Features real-time GPS tracking for delivery drivers, automated dispatch, and reward programs.',
-      features: [
-        'Live GPS Order Tracking',
-        'Automated Driver Dispatch',
-        'In-App Promo Codes & Wallet',
-        'Restaurant Menu Customizer',
-      ],
-      techStack: [
-        { name: 'React Native', icon: '/images/React.png.webp' },
-        { name: 'AWS', icon: '/images/Aws.png' },
-        { name: 'Node.js', icon: '/images/nodejs-nav-iq-act.png' },
-        { name: 'MongoDB', icon: '/images/mongodb-iq-tech.svg' },
-      ],
-      bgColor: 'bg-[#FFF3E0]',
-      image: '/images/highburnation-feature-imag.png',
-      link: '/case-study/food-delivery-app',
-    },
-  ];
+  // 4. Flatten all portfolios inside current active main category
+  const allPortfolios = currentCategoryObj?.subcategories?.reduce((acc, subCat) => {
+    if (subCat.portfolios && subCat.portfolios.length > 0) {
+      const itemsWithSub = subCat.portfolios.map(item => ({
+        ...item,
+        subCategoryName: subCat.name
+      }));
+      return acc.concat(itemsWithSub);
+    }
+    return acc;
+  }, []) || [];
 
-  // Selected category / tab ke basis par items filter karne ka function
-  const filteredData = portfolioData.filter((item) => {
-    const matchesCategory =
-      activeCategory === 'ALL' || item.category === activeCategory;
-    return matchesCategory;
-  });
+  // 5. Filter portfolios by active subcategory
+  const filteredPortfolios = activeSubCategory === 'ALL'
+    ? allPortfolios
+    : allPortfolios.filter(
+      item => item.subCategoryName.toUpperCase() === activeSubCategory.toUpperCase()
+    );
+
+  const handleTabChange = (tabName) => {
+    setActiveTab(tabName);
+    setActiveSubCategory('ALL');
+  };
+
   return (
     <>
-      <div className="w-[90%] md:w-[80%] mx-auto max-w-full overflow-hidden">
-        {/* Banner Section */}
+      <div className="w-full max-w-[80%] mx-auto">
+        {/* Header & Hero Section */}
         <section>
           <img
             src="/images/porfoilo-header-banner.jpg"
@@ -148,15 +93,15 @@ export default function Portfolio() {
             Portfolio
           </p>
           <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center mt-4">
-            As a market leader in providing the best app, web and mobile app development services, iQlance team is striving hard to offer you the best assistance. satisfaction.
+            As a market leader in providing the best app, web and mobile app development services, our team is striving hard to offer you the best assistance.
           </p>
           <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center mt-4">
-            Your dreams are not only a project for us, it's our responsibility to fulfill it with full dedication so that you can take your business to the new heights.
+            Your dreams are not only a project for us, it's our responsibility to fulfill it with full dedication so that you can take your business to new heights.
           </p>
           <div className="text-center">
             <Link
               href="/request-a-quote"
-              className="group mt-8 inline-flex w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition rounded-md cursor-pointer"
+              className="group mt-8 inline-flex w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
             >
               Get a Free Quote
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -170,42 +115,37 @@ export default function Portfolio() {
             The Glimpse of our Creative Works
           </h2>
           <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center text-gray-700">
-            We are strategists. We are innovators. We are a team of full-stack software and mobile app developers, which doesn’t get settled for good but work for great and innovative solutions to take your business to the next level. iQlance has developed over 150+ iOS and Android mobile applications for many enterprise clients.
+            We are strategists. We are innovators. We are a team of full-stack software and mobile app developers, working for great and innovative solutions to take your business to the next level.
           </p>
         </section>
 
-        {/* Domain / Tech Filter Tabs */}
+        {/* Dynamic Category & Subcategory Filters */}
         <section className="mt-12">
-          <div className="flex justify-center border-b border-gray-200 mb-8">
-            <button
-              onClick={() => setActiveTab('Domain')}
-              className={`px-8 py-3 text-base font-medium transition-all ${activeTab === 'Domain'
+          {/* Main Category Tabs */}
+          <div className="flex justify-center border-b border-gray-200 mb-8 overflow-x-auto">
+            {categoriesData.map((cat) => (
+              <button
+                key={cat.id || cat.name}
+                onClick={() => handleTabChange(cat.name)}
+                className={`px-8 py-3 text-base font-medium transition-all whitespace-nowrap ${activeTab === cat.name
                   ? 'border-b-2 border-[#184A8B] text-gray-900 font-semibold'
                   : 'text-gray-500 hover:text-gray-700'
-                }`}
-            >
-              Domain
-            </button>
-            <button
-              onClick={() => setActiveTab('Technology')}
-              className={`px-8 py-3 text-base font-medium transition-all ${activeTab === 'Technology'
-                  ? 'border-b-2 border-[#184A8B] text-gray-900 font-semibold'
-                  : 'text-gray-500 hover:text-gray-700'
-                }`}
-            >
-              Technology
-            </button>
+                  }`}
+              >
+                {cat.name}
+              </button>
+            ))}
           </div>
 
-          {/* Categories Pill Buttons */}
+          {/* Dynamic Subcategory Pills */}
           <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 text-xs md:text-sm font-semibold">
-            {categories.map((category) => (
+            {subCategoriesList.map((category, index) => (
               <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-3 py-1.5 rounded transition ${activeCategory === category
-                    ? 'bg-[#184A8B] text-white'
-                    : 'bg-transparent text-gray-800 hover:bg-gray-100'
+                key={index}
+                onClick={() => setActiveSubCategory(category)}
+                className={`px-3 py-1.5 rounded transition uppercase ${activeSubCategory.toUpperCase() === category.toUpperCase()
+                  ? 'bg-[#184A8B] text-white'
+                  : 'bg-transparent text-gray-800 hover:bg-gray-100'
                   }`}
               >
                 {category}
@@ -213,80 +153,96 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Dynamic Portfolio Cards Mapping */}
-          <div className="space-y-10">
-            {filteredData.length > 0 ? (
-              filteredData.map((item) => (
-                <div
-                  key={item.id}
-                  className={`${item.bgColor} p-6 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center transition-all duration-300`}
-                >
-                  {/* Left Column Content */}
-                  <div className="space-y-6">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-gray-800 leading-relaxed">
-                      {item.description}
-                    </p>
+          {/* Dynamic Portfolio Items Rendering */}
+          {loading ? (
+            <div className="text-center py-16 text-gray-600 font-medium">Loading Portfolio...</div>
+          ) : error ? (
+            <div className="text-center py-16 text-red-500 font-medium">{error}</div>
+          ) : (
+            <div className="space-y-10">
+              {filteredPortfolios.length > 0 ? (
+                filteredPortfolios.map((item, idx) => (
+                  <div
+                    key={item.id || idx}
+                    className={`${item.bgColor || 'bg-[#F4F6F8]'
+                      } p-6 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center transition-all duration-300`}
+                  >
+                    {/* Left Details */}
+                    <div className="space-y-6">
+                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                        {item.title}
+                      </h3>
 
-                    {/* Features List */}
-                    <ul className="space-y-3 py-2">
-                      {item.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm md:text-base font-semibold text-gray-900">
-                          <ChevronRight size={18} className="text-gray-800 flex-shrink-0" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      {/* Description with HTML support */}
+                      <div
+                        className="text-sm md:text-base text-gray-800 leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                      />
 
-                    {/* Tech Stack Icons */}
-                    <div className="flex flex-wrap items-center gap-6 pt-4">
-                      {item.techStack.map((tech, idx) => (
-                        <div key={idx} className="flex flex-col items-center gap-2">
-                          <img src={tech.icon} alt={tech.name} className="h-8 w-8 object-contain" />
-                          <span className="text-xs font-semibold text-gray-800">{tech.name}</span>
+                      {/* Features List */}
+                      {item.features && Array.isArray(item.features) && item.features.length > 0 && (
+                        <ul className="space-y-3 py-2">
+                          {item.features.map((feature, fIdx) => (
+                            <li key={fIdx} className="flex items-center gap-2 text-sm md:text-base font-semibold text-gray-900">
+                              <ChevronRight size={18} className="text-gray-800 shrink-0" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {/* Tech Stack Icons */}
+                      {item.techStack && Array.isArray(item.techStack) && item.techStack.length > 0 && (
+                        <div className="flex flex-wrap items-center gap-6 pt-4">
+                          {item.techStack.map((tech, tIdx) => (
+                            <div key={tIdx} className="flex flex-col items-center gap-2">
+                              <img src={tech.icon} alt={tech.name} className="h-8 w-8 object-contain" />
+                              <span className="text-xs font-semibold text-gray-800">{tech.name}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      )}
+
+                      <div className="pt-4">
+                        <Link
+                          href={`/single-portfolio?slug=${item.slug}`}
+                          className="group mt-8 inline-flex w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
+                        >
+                          View Case Study
+                          <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                        </Link>
+                      </div>
                     </div>
 
-                    {/* Case Study Link Button */}
-                    <div className="pt-4">
-                      <Link
-                        href={item.link}
-                        className="inline-flex items-center gap-2 bg-[#184A8B] hover:bg-[#143b72] text-white font-medium px-6 py-3 transition"
-                      >
-                        View Case Study
-                        <ArrowRight size={18} />
-                      </Link>
+                    {/* Right Mockup Image */}
+                    <div className="flex justify-center items-center">
+                      <img
+                        src={item.image_url || item.image || '/images/vr-feature.png'}
+                        alt={item.title}
+                        className="max-w-full h-auto object-contain drop-shadow-xl rounded-md"
+                      />
                     </div>
                   </div>
-
-                  {/* Right Column App Mockup */}
-                  <div className="flex justify-center items-center">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="max-w-full h-auto object-contain drop-shadow-xl"
-                    />
-                  </div>
+                ))
+              ) : (
+                <div className="text-center py-16 text-gray-500 font-medium">
+                  No projects found for the selected category.
                 </div>
-              ))
-            ) : (
-              <div className="text-center py-10 text-gray-500 font-medium">
-                No projects found for the selected category.
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
         </section>
 
-        <div className="mb-2.5 pb-2">
+        {/* Contact Form */}
+        <div className="mb-2.5 pb-2 mt-16">
           <ContactForm />
         </div>
       </div>
+
+      {/* Partners Marquee */}
       <section className="mb-5 overflow-hidden">
         <div className="marquee">
-          <div className="marquee-content">
+          <div className="marquee-content flex gap-4">
             {[...partners, ...partners].map((item, index) => (
               <div
                 key={`${item.id}-${index}`}
@@ -294,7 +250,7 @@ export default function Portfolio() {
               >
                 <img
                   src={item.image}
-                  alt={item.alt}
+                  alt={item.alt || 'Partner'}
                   className="max-h-full max-w-full object-contain"
                 />
               </div>
@@ -305,3 +261,4 @@ export default function Portfolio() {
     </>
   );
 }
+

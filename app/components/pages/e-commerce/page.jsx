@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, params } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -11,6 +11,7 @@ import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
+import { portfolioSubCategories } from "../../../../services/all-sub-categories"
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -31,14 +32,14 @@ import {
   appData,
 } from "./data";
 import Image from "next/image";
+import PortfolioSlider from '../portfolio-slider/PortfolioSlider';
 
 export default function foodOrdering() {
-  // const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeTab, setActiveTab] = useState("customer");
-  // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
-  // Form State
+  const [portfolios, setPortfolios] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,10 +64,43 @@ export default function foodOrdering() {
     e.preventDefault();
     console.log("Form Submitted:", formData);
   };
+  useEffect(() => {
+    const fetchPortfolioData = async () => {
+      try {
+        setLoading(true);
+        const selectedId = localStorage.getItem('selectedCategoryId');
+
+        const res = await portfolioSubCategories(selectedId);
+
+        // Exact API structure mapping: res.response.data ya res.data.response.data
+        const rawList = res?.response?.data || res?.data?.response?.data || [];
+
+        // Single map function to clean objects for PortfolioSlider
+        const formattedData = rawList.map((item, index) => ({
+          id: item.slug || index,
+          title: item.title,
+          slug: item.slug,
+          description: item.description,
+          image: item.image_url || item.image,
+          heading: "",
+          features: item.features || [],
+          technologies: item.technologies || [],
+        }));
+
+        setPortfolios(formattedData);
+      } catch (error) {
+        console.error('Error fetching portfolios:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPortfolioData();
+  }, [params?.slug]);
 
   return (
     <>
-      <div className="w-[90%] sm:w-[90%] mx-auto">
+      <div className="w-full max-w-[80%] mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
@@ -76,24 +110,24 @@ export default function foodOrdering() {
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-900">
-                The E-Commerce industry is growing rapidly and shifting gradually towards the world of Smartphone devices. 
-                Since, a large number of people today prefer browsing eCommerce stores by using their 
-                mobile devices and operating apps, instead of visiting any website physically. 
-                Because of this, eCommerce app development helps to search products present in 
+                The E-Commerce industry is growing rapidly and shifting gradually towards the world of Smartphone devices.
+                Since, a large number of people today prefer browsing eCommerce stores by using their
+                mobile devices and operating apps, instead of visiting any website physically.
+                Because of this, eCommerce app development helps to search products present in
                 the store and at the same time, to make payment easily with it.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-900">
-                  Keeping this is mind, our iQlance, known as a leading eCommerce app developer 
-                  has offered an improved end-to-end functionality. We always remain ready to deliver 
-                  you with the best possible eCommerce development solutions and help you to integrate your 
-                  business with mobiles with the help of innovative eCommerce mobile app USA.
+                Keeping this is mind, our iQlance, known as a leading eCommerce app developer
+                has offered an improved end-to-end functionality. We always remain ready to deliver
+                you with the best possible eCommerce development solutions and help you to integrate your
+                business with mobiles with the help of innovative eCommerce mobile app USA.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-900">
-              Our apps come with almost every possible efficient marketing strategy to deliver you an 
-              engaging digital 
-              experience for your clients to maintain the best possible standards in eCommerce.
+                Our apps come with almost every possible efficient marketing strategy to deliver you an
+                engaging digital
+                experience for your clients to maintain the best possible standards in eCommerce.
               </p>
 
               {/* Action Buttons */}
@@ -242,19 +276,19 @@ export default function foodOrdering() {
                 Creative eCommerce App Development Services
               </h2>
               <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-                    Mobile E-Commerce application development is an important task for businesses, with developers 
-                    focusing on it to improve interactions between companies and their consumers. In addition, by always just a “touch” apart, 
-                    mobile eCommerce apps are well-known for getting to understand their consumers faster. Company owners may engage clients at any moment and from any 
-                    location with an eCommerce mobile app.
+                Mobile E-Commerce application development is an important task for businesses, with developers
+                focusing on it to improve interactions between companies and their consumers. In addition, by always just a “touch” apart,
+                mobile eCommerce apps are well-known for getting to understand their consumers faster. Company owners may engage clients at any moment and from any
+                location with an eCommerce mobile app.
               </p>
               <br />
               <p>
-                Leading companies have worked with us to bring their trademarks and firms to the 
-                smartphone market, and iQlance is a well-known name in online eCommerce services. We’ve 
-                worked on service applications, B2B and B2C eCommerce apps, 
+                Leading companies have worked with us to bring their trademarks and firms to the
+                smartphone market, and iQlance is a well-known name in online eCommerce services. We’ve
+                worked on service applications, B2B and B2C eCommerce apps,
                 and corporate apps to assist companies to enhance their operations and productivity.
               </p>
-              
+
             </div>
           </div>
         </section>
@@ -297,13 +331,13 @@ export default function foodOrdering() {
           <div>
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-               Let’s Take a Deep Dive into The Extraordinary Features of The e-Commerce App Development Done by us
-              
+                Let’s Take a Deep Dive into The Extraordinary Features of The e-Commerce App Development Done by us
+
               </h2>
               <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-                
-              Before focusing on Mobile E-Commerce Application Development, businesses and developers must plan out what they need to add to the app. The right features can help manage the challenges of e-commerce app development better, and our solutions focus on this securely.
-              
+
+                Before focusing on Mobile E-Commerce Application Development, businesses and developers must plan out what they need to add to the app. The right features can help manage the challenges of e-commerce app development better, and our solutions focus on this securely.
+
               </p>
             </div>
           </div>
@@ -362,76 +396,76 @@ export default function foodOrdering() {
               ))}
             </Swiper>
           </div>
-           <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
+          <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+            <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+              {/* Top Icon Illustration */}
+              <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+                <Image
+                  src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                  alt="Custom Logistics App Support"
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                />
+              </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-             Looking to Hire Dedicated Team?
-            </h2>
+              {/* Section Heading */}
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                Looking to Hire Dedicated Team?
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
-            </p>
+              {/* Subtitle Paragraph */}
+              <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+                We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6]  py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <img src="/icons/email-icon.svg" alt="" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img src="/icons/phone-icon.svg" alt="" />
-                  <span>US :</span>
+              {/* Contact Info Box */}
+              <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6]  py-4 px-6 mb-8 shadow-xs">
+                <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+                  {/* Email link */}
                   <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
+                    href="mailto:info@iqlance.com"
+                    className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                   >
-                    +1 469 793 9837
+                    <img src="/icons/email-icon.svg" alt="" />
+                    <span>info@iqlance.com</span>
                   </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+
+                  <span className="text-gray-500 font-normal">or</span>
+
+                  {/* Phone links */}
+                  <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                    <img src="/icons/phone-icon.svg" alt="" />
+                    <span>US :</span>
+                    <a
+                      href="tel:+14697939837"
+                      className="hover:text-[#1B4B82] transition-colors"
+                    >
+                      +1 469 793 9837
+                    </a>
+                    <span>,</span>
+                    <span>CA :</span>
+                    <a
+                      href="tel:+16476379108"
+                      className="hover:text-[#1B4B82] transition-colors"
+                    >
+                      +1 647 637 9108
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-            <div>
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Hire Dedicated Developers <ArrowRight className="w-4 h-4" />
-              </Link>
+              {/* Action Button */}
+              <div>
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                >
+                  Hire Dedicated Developers <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
@@ -440,9 +474,8 @@ export default function foodOrdering() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -556,11 +589,11 @@ export default function foodOrdering() {
             eCommerce App Development Features
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
-           
-         Our eCommerce agency offers a handful of functionalities that will support you in better organising your activities.
-         
+
+            Our eCommerce agency offers a handful of functionalities that will support you in better organising your activities.
+
           </p>
- <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
             {/* Card 1 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
@@ -799,21 +832,21 @@ export default function foodOrdering() {
               </h2>
 
               <p>
-                We’ll put together a squad and handle their incorporation, 
-                inspiration, and supervision, while customers maintain leadership and influence 
-                throughout the project’s general development. Our IT professionals have a clear 
-                knowledge of the market- they can concentrate swiftly incorporating into the production 
+                We’ll put together a squad and handle their incorporation,
+                inspiration, and supervision, while customers maintain leadership and influence
+                throughout the project’s general development. Our IT professionals have a clear
+                knowledge of the market- they can concentrate swiftly incorporating into the production
                 procedure, no matter how specialised it is.
               </p>
               <p>
-                  All our members have a collaborative mentality and a nice demeanour, 
-                  which makes it easy for them to work with other teams. Our App Developers Toronto 
-                  have long ago improved 
-                  their abilities and now supply clients with high-quality apps.
+                All our members have a collaborative mentality and a nice demeanour,
+                which makes it easy for them to work with other teams. Our App Developers Toronto
+                have long ago improved
+                their abilities and now supply clients with high-quality apps.
               </p>
-              <p>               
-                    We assign a professional project administrator to oversee the everyday operations and processes, among other tasks. As a result, you’ll 
-                    have extra time to concentrate on the development’s key components.
+              <p>
+                We assign a professional project administrator to oversee the everyday operations and processes, among other tasks. As a result, you’ll
+                have extra time to concentrate on the development’s key components.
               </p>
             </div>
           </div>
@@ -830,24 +863,24 @@ export default function foodOrdering() {
                 Over time, the notion of e-commerce must have expanded its feathers and become a part of our everyday life. In reality, after WhatsApp or Instagram, eCommerce apps are indeed the next highest popular system to connect with individuals or participate in conversations today.
               </p>
               <p>
-                
-According to one study by experts, the approximate eCommerce App Development cost for basic apps falls between $38,000 to $91,000. The price of moderate apps ranges from $55,000 to $131,000, while complicated software may cost $91,550 or more.
-                
+
+                According to one study by experts, the approximate eCommerce App Development cost for basic apps falls between $38,000 to $91,000. The price of moderate apps ranges from $55,000 to $131,000, while complicated software may cost $91,550 or more.
+
               </p>
               <p>
-                
-So, based on the company’s average price of $30, here is an approximate estimate of how much it takes to construct an app: A simple application will set you back approximately $30,000, a moderate quality application would set you back $50,000+, and a difficult application will set you back around $75,000+.
-            
+
+                So, based on the company’s average price of $30, here is an approximate estimate of how much it takes to construct an app: A simple application will set you back approximately $30,000, a moderate quality application would set you back $50,000+, and a difficult application will set you back around $75,000+.
+
               </p>
             </div>
           </div>
           <div className="flex justify-center">
-          <Link
-                href="#"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Get a Quotation <ArrowRight className="w-4 h-4" />
-          </Link>
+            <Link
+              href="#"
+              className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+            >
+              Get a Quotation <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
           {/* Banner Image */}
@@ -865,13 +898,13 @@ So, based on the company’s average price of $30, here is an approximate estima
               Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for the efforts given 
-              on mobile app development that are efficiently unique and user centric. 
+              iQlance solutions has always been honored with valuable words for the efforts given
+              on mobile app development that are efficiently unique and user centric.
               Here are some of the best examples for this.
             </p>
           </div>
         </section>
-        <section>
+        {/* <section>
           <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
@@ -936,7 +969,13 @@ So, based on the company’s average price of $30, here is an approximate estima
               </SwiperSlide>
             ))}
           </Swiper>
-        </section>
+        </section> */}
+
+
+        <main className="min-h-screen py-10">
+          <PortfolioSlider slides={portfolios} heading={`Solution: ${params?.slug}`} />
+        </main>
+
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}
           <div className="bg-[#F4F8FC]  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -982,19 +1021,17 @@ So, based on the company’s average price of $30, here is an approximate estima
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
-                        ? "text-black font-semibold"
-                        : "text-gray-500 hover:text-black"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
+                      ? "text-black font-semibold"
+                      : "text-gray-500 hover:text-black"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1036,12 +1073,12 @@ So, based on the company’s average price of $30, here is an approximate estima
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-               We are Team of Talented, Experienced, and Certified Designers and Developers.
+              We are Team of Talented, Experienced, and Certified Designers and Developers.
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-             Let us Build Something Extraordinary.
+              Let us Build Something Extraordinary.
             </p>
 
             {/* Action Button */}
@@ -1058,12 +1095,12 @@ So, based on the company’s average price of $30, here is an approximate estima
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-            Offshore Web, Mobile & Software Development Company
+              Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App Development Company with a 
-              vast area of experience in crafting stunning and end to end encrypted technology solutions. 
-              We offer excellent expertise of the industry 
+              iQlance solutions is a leading Software, Web, & Mobile App Development Company with a
+              vast area of experience in crafting stunning and end to end encrypted technology solutions.
+              We offer excellent expertise of the industry
               followed by an exactly planned approach to elevate your growth.
             </p>
           </div>
@@ -1103,38 +1140,38 @@ So, based on the company’s average price of $30, here is an approximate estima
               Industries We Serve
             </h1>
             <p>
-              We’ve worked with a variety of organization throughout the years, 
-              including major corporations with 
+              We’ve worked with a variety of organization throughout the years,
+              including major corporations with
               enormous employees and local firms in a variety of sectors.
             </p>
           </div>
-                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
-                     {industries.map((item, index) => (
-                       <div
-                         key={index}
-                         className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
-                       >
-                         <img
-                           src={item.bgImage}
-                           alt={item.title}
-                           className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                         />
-                         <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
-                         <div className="absolute inset-0 flex items-center justify-center">
-                           <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
-                             <img
-                               src={item.icon}
-                               alt=""
-                               className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
-                             />
-                           </div>
-                         </div>
-                         <h3 className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 text-white font-bold text-sm sm:text-lg md:text-xl text-center w-full px-2">
-                           {item.title}
-                         </h3>
-                       </div>
-                     ))}
-                   </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
+            {industries.map((item, index) => (
+              <div
+                key={index}
+                className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
+              >
+                <img
+                  src={item.bgImage}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
+                    <img
+                      src={item.icon}
+                      alt=""
+                      className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
+                    />
+                  </div>
+                </div>
+                <h3 className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 text-white font-bold text-sm sm:text-lg md:text-xl text-center w-full px-2">
+                  {item.title}
+                </h3>
+              </div>
+            ))}
+          </div>
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10">
@@ -1143,11 +1180,11 @@ So, based on the company’s average price of $30, here is an approximate estima
               Why should you choose us?
             </h1>
             <p>
-             
-            
-             iQlance is a leading Mobile App Development Company USA  has to offer that develops applications for different operating systems. Our specialists develop a consolidated procedure for every business as well as deliver customized guidance at regular instances.
-         
-         
+
+
+              iQlance is a leading Mobile App Development Company USA  has to offer that develops applications for different operating systems. Our specialists develop a consolidated procedure for every business as well as deliver customized guidance at regular instances.
+
+
             </p>
           </div>
         </section>
@@ -1178,10 +1215,10 @@ So, based on the company’s average price of $30, here is an approximate estima
         <section>
           <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
-            Testimonials From Our Clients
+              Testimonials From Our Clients
             </h1>
             <p>
-           Customer satisfaction has always been at the forefront of our mission as an Ecommerce software development business in USA. Here are some actual quotes from some of our previous clients on our services.
+              Customer satisfaction has always been at the forefront of our mission as an Ecommerce software development business in USA. Here are some actual quotes from some of our previous clients on our services.
             </p>
           </div>
         </section>
@@ -1299,11 +1336,10 @@ So, based on the company’s average price of $30, here is an approximate estima
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-gray-200 shadow-md"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-gray-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1315,21 +1351,19 @@ So, based on the company’s average price of $30, here is an approximate estima
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">
@@ -1380,23 +1414,23 @@ So, based on the company’s average price of $30, here is an approximate estima
         </div>
       </div>
       <section className="mb-5 overflow-hidden">
-      <div className="marquee">
-        <div className="marquee-content">
-          {[...partners, ...partners].map((item, index) => (
-            <div
-              key={`${item.id}-${index}`}
-              className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
-            >
-              <img
-                src={item.image}
-                alt={item.alt}
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-          ))}
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }

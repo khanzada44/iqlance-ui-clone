@@ -2,18 +2,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { DropdownItem } from '@/types/navigation';
+import { portfolioSubCategories } from '../../../services/all-sub-categories';
 
 interface DesktopDropdownProps {
   items: DropdownItem[];
 }
-
 export const DesktopDropdown = ({ items }: DesktopDropdownProps) => {
+  const handleItemClick = (id?: number | string) => {
+    if (!id) return;
+    // Set selected category ID so target page picks up the user's choice
+    localStorage.setItem('selectedCategoryId', String(id));
+  };
+
   return (
     <div className="absolute left-0 top-full mt-5 min-w-55 rounded-lg bg-white py-2 shadow-xl font-bold">
       {items.map((item) => (
         <Link
           key={item.label}
           href={item.href}
+          prefetch={false} // Disable background pre-fetching overhead
+          onClick={() => handleItemClick(item.id)}
           className="group flex items-center justify-between px-4 py-2.5 text-sm font-bold text-gray-700 transition-all duration-200 hover:text-blue-600"
         >
           <div className="flex items-center gap-3">

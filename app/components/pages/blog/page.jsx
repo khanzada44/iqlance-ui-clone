@@ -1,15 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { ArrowRight, ChevronRight, Paperclip } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ContactForm from "../../contactForm/ContactForm";
+import { useSearchParams } from "next/navigation";
+import { ChevronRight, ArrowRight, Paperclip } from "lucide-react";
+// Assumed service imports - inko apne file structure ke hisab se update rakhein
 import { getBlogs } from "@/services/blog";
-import { submitContactForm } from "@/services/send-call-request"; 
-import { partners } from "../blog/data";
+import { blogByCategory } from "../../../../services/blog";
+import { submitContactForm } from "../../../../services/send-call-request";
 
 export default function Blog() {
+  const searchParams = useSearchParams();
+  const categoryId = searchParams.get("category_id"); // URL se category_id check kar rahe hain
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,6 +28,10 @@ export default function Blog() {
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
   const [blogs, setBlogs] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [lastPage, setLastPage] = useState(1);
+  const [fetchingBlogs, setFetchingBlogs] = useState(false);
+
   const fileInputRef = useRef(null);
 
   const handleChange = (e) => {
@@ -52,7 +60,6 @@ export default function Blog() {
       payload.append("service", formData.service || "");
       payload.append("service_category", formData.service_category || "");
 
-      // File ko tabhi payload me append karein jab ye valid File instance ho
       if (formData.file && formData.file instanceof File) {
         payload.append("file", formData.file);
       }
@@ -64,7 +71,6 @@ export default function Blog() {
         text: "Your message has been sent successfully!",
       });
 
-      // Reset Form State
       setFormData({
         name: "",
         email: "",
@@ -82,7 +88,6 @@ export default function Blog() {
     } catch (error) {
       console.error("API Error Response:", error?.response?.data);
 
-      // Backend Error response handling
       let errorMsg = "Failed to send message. Please try again later.";
       if (error?.response?.data?.errors?.file) {
         errorMsg = error.response.data.errors.file.join(" ");
@@ -99,27 +104,54 @@ export default function Blog() {
     }
   };
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const data = await getBlogs();
-        const blogList = data?.response?.data || [];
-        setBlogs(blogList);
-      } catch (error) {
-        console.log("Message:", error.message);
-        console.log("Code:", error.code);
-        console.log("Response:", error.response);
-        console.log("Request:", error.request);
-        setBlogs([]);
-      }
-    };
+  // Condition-based Blog Fetch Function
+  const fetchBlogs = async (page = 1) => {
+    setFetchingBlogs(true);
+    try {
+      let res;
 
-    fetchBlogs();
-  }, []);
+      // Check: Agar URL me category_id mojood hai
+      if (categoryId) {
+        // all-blogs API bypass ho jayegi, directly Category API hit hogi
+        res = await blogByCategory(categoryId, page);
+      } else {
+        // Agar normal blog route par aaye hain to standard all-blogs API hit hogi
+        res = await getBlogs(page);
+      }
+
+      const paginatedData = res?.response?.data || res?.data || res;
+
+      // Data handling depending on response structure
+      const blogList = Array.isArray(paginatedData)
+        ? paginatedData
+        : paginatedData?.data || [];
+
+      setBlogs(blogList);
+      setCurrentPage(paginatedData?.current_page || 1);
+      setLastPage(paginatedData?.last_page || 1);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+      setBlogs([]);
+    } finally {
+      setFetchingBlogs(false);
+    }
+  };
+
+  // Re-fetch trigger jab page number ya category_id badle
+  useEffect(() => {
+    fetchBlogs(currentPage);
+  }, [currentPage, categoryId]);
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= lastPage) {
+      setCurrentPage(newPage);
+      window.scrollTo({ top: 500, behavior: "smooth" });
+    }
+  };
 
   return (
     <>
-      <div className="w-[90%] mx-auto">
+      <div className="w-full max-w-[80%] mx-auto">
         <div>
           <section className="py-10 bg-white mt-2">
             <div className="max-w-7xl mx-auto px-4">
@@ -199,11 +231,10 @@ export default function Blog() {
                     <form onSubmit={handleSubmit} className="space-y-6">
                       {statusMessage.text && (
                         <div
-                          className={`p-3 text-sm rounded ${
-                            statusMessage.type === "success"
-                              ? "bg-green-100 text-green-700"
-                              : "bg-red-100 text-red-700"
-                          }`}
+                          className={`p-3 text-sm rounded ${statusMessage.type === "success"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-red-100 text-red-700"
+                            }`}
                         >
                           {statusMessage.text}
                         </div>
@@ -327,10 +358,13 @@ export default function Blog() {
             </div>
           </section>
 
-          {/* Dynamic Blogs Rendering */}
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-12">
-            {blogs && blogs.length > 0 ? (
-              blogs.map((blog, index) => (
+
+        <section className="mt-12 mb-8">
+          {fetchingBlogs ? (
+            <div className="text-center py-10 text-gray-500">Loading blogs...</div>
+          ) : blogs && blogs.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogs.map((blog, index) => (
                 <div
                   key={`${blog.slug}-${index}`}
                   className="p-px bg-transparent hover:bg-linear-to-r hover:from-blue-300 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
@@ -340,9 +374,9 @@ export default function Blog() {
                     className="group block overflow-hidden bg-white h-full"
                   >
                     <div className="relative aspect-4/3 overflow-hidden">
-                      {blog.image_url ? (
+                      {blog.image_url || blog.image ? (
                         <Image
-                          src={blog.image_url}
+                          src={blog.image_url || blog.image}
                           alt={blog.title}
                           fill
                           unoptimized
@@ -362,42 +396,122 @@ export default function Blog() {
                         </span>
                       )}
 
-                      <h3 className="mt-3 text-xl font-semibold leading-7 text-black line-clamp-2">
+                      <h3 className="mt-3 text-xl font-semibold leading-7 text-blue-800 line-clamp-2">
                         {blog.title}
                       </h3>
                     </div>
                   </Link>
                 </div>
-              ))
-            ) : (
-              <div className="col-span-full text-center py-10 text-gray-500">
-                No blogs available.
+              ))}
+            </div>
+          ) : 
+          (
+            <div className="text-center py-10 text-gray-500">
+              No blogs available.
+            </div>
+          )}
+
+          {/* Custom Joined Group Pagination */}
+          {lastPage >= 1 && (
+            <div className="flex  mt-10 mb-6">
+              <div className="inline-flex rounded-md shadow-xs border border-blue-200 overflow-hidden bg-white">
+                
+                {/* Previous Arrow Button */}
+                {currentPage > 1 && (
+                  <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    className="px-3.5 py-2 text-blue-600 border-r border-blue-200 hover:bg-gray-50 flex items-center justify-center transition cursor-pointer"
+                  >
+                    <ChevronRight className="w-4 h-4 rotate-180" />
+                  </button>
+                )}
+
+                {/* Page 1 */}
+                <button
+                  onClick={() => handlePageChange(1)}
+                  className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${
+                    currentPage === 1
+                      ? "bg-blue-950 text-white font-bold"
+                      : "text-blue-600 hover:bg-gray-50"
+                  }`}
+                >
+                  1
+                </button>
+
+                {/* Page 2 (if available) */}
+                {lastPage >= 2 && (
+                  <button
+                    onClick={() => handlePageChange(2)}
+                    className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${
+                      currentPage === 2
+                        ? "bg-blue-950 text-white font-bold"
+                        : "text-blue-600 hover:bg-gray-50"
+                    }`}
+                  >
+                    2
+                  </button>
+                )}
+
+                {/* Ellipsis (...) */}
+                {lastPage > 3 && (
+                  <span className="px-3 py-2 text-blue-600 text-sm font-medium border-r border-blue-200 bg-white select-none">
+                    ...
+                  </span>
+                )}
+
+                {/* Last Page Number */}
+                {lastPage > 2 && (
+                  <button
+                    onClick={() => handlePageChange(lastPage)}
+                    className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${
+                      currentPage === lastPage
+                        ? "bg-black text-white font-bold"
+                        : "text-blue-600 hover:bg-gray-50"
+                    }`}
+                  >
+                    {lastPage}
+                  </button>
+                )}
+
+                {/* Next Arrow Button */}
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === lastPage}
+                  className="px-3.5 py-2 text-blue-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition cursor-pointer"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+
               </div>
-            )}
-          </section>
+            </div>
+          )}
+        </section>
         </div>
-        <ContactForm />
+
+        {typeof ContactForm !== "undefined" && <ContactForm />}
       </div>
 
       {/* Partners Marquee */}
-      <section className="mb-5 overflow-hidden">
-        <div className="marquee">
-          <div className="marquee-content">
-            {[...partners, ...partners].map((item, index) => (
-              <div
-                key={`${item.id}-${index}`}
-                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
-              >
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  className="max-h-full max-w-full object-contain"
-                />
-              </div>
-            ))}
+      {typeof partners !== "undefined" && Array.isArray(partners) && (
+        <section className="mb-5 overflow-hidden">
+          <div className="marquee">
+            <div className="marquee-content">
+              {[...partners, ...partners].map((item, index) => (
+                <div
+                  key={`${item.id}-${index}`}
+                  className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }
