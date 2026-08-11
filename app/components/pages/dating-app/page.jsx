@@ -1,27 +1,25 @@
 "use client";
-
-import { useState, useRef, useEffect, type ChangeEvent, type FormEvent } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import ContactForm from "../../contactForm/ContactForm";
 import {
-  ArrowLeft,
-  ArrowRight,
-  ChevronRight,
   ChevronDown,
-  Mail,
-  Paperclip,
-  Phone,
+  ChevronUp,
+  ChevronRight,
   Star,
+  Paperclip,
 } from "lucide-react";
-import {
-  ServiceSectionData,
-  featuresTabsData,
-  portfolioSlides,
-} from "../logistics/data";
+import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
+import { useState, useCallback, useRef, useEffect } from "react";
+import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ContactForm from "../../contactForm/ContactForm";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { submitContactForm } from "@/services/send-call-request";
 import {
   partners,
-  slides,
+  bottomFeatures,
+  portfolioSlides,
   technologies,
   stats,
   industries,
@@ -29,34 +27,23 @@ import {
   faqsData,
   testimonials,
 } from "../../../../utils/data";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { submitContactForm } from "@/services/send-call-request";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { getBlogs } from "@/services/blog";
+import {
+  datingSolutions,
+  slides,
+  ServiceSectionData,
+  appData,
+  tabs,
+} from "./data";
+import Image from "next/image";
 
-export default function Logistic() {
-  const [activeTab, setActiveTab] = useState<string>("driver");
-  const [loading, setLoading] = useState(false);
-  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+export default function SocialMedia() {
+  const [activeTab, setActiveTab] = useState("trainer");
   const [activetechnologies, setActivetechnologies] = useState(0);
-  const [open, setOpen] = useState<number>(-1);
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const currentTab =
-    featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
-  // Form State
-  const [formData, setFormData] = useState<{
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-    service: string;
-    service_category: string;
-    file: File | null;
-    sendNda: boolean;
-  }>({
+  const [open, setOpen] = useState(-1);
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
+
+  // ADD THIS LINE: formData state yahan add karein
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
@@ -67,18 +54,58 @@ export default function Logistic() {
     sendNda: false,
   });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+  // Data Array (Component ke bahar ya andar define karein)
+  const processSteps = [
+    {
+      stepLabel: "STEP 1",
+      tabTitle: "1. Discover",
+      heading: "Discover",
+      description:
+        "We conduct full-scale research and gather insights on market trends, customer satisfaction points, and competitors first to plan a success-worthy app design.",
+    },
+    {
+      stepLabel: "STEP 2",
+      tabTitle: "2. Design",
+      heading: "Design",
+      description:
+        "Our designers develop an interactive and iterative app infrastructure, with a simple UI/UX, user-friendly navigations, and more.",
+    },
+    {
+      stepLabel: "STEP 3",
+      tabTitle: "3. Build",
+      heading: "Build",
+      description:
+        "Next, trained developers at our Top On-Demand App Development company use the planned technology stack and coding skills to complete the app-building process, adding features and configurations.",
+    },
+    {
+      stepLabel: "STEP 4",
+      tabTitle: "4. Deliver",
+      heading: "Deliver",
+      description:
+        "After multiple testing batches, the app is finally ready to deploy, across iOS or Android platforms, or both- we focus on after-launch support as well.",
+    },
+  ];
+
+  const currentStep = processSteps[activeStepIndex] || processSteps[0];
+  // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
+  // Form State
+  const [blogs, setBlogs] = useState([]);
+  const fileInputRef = useRef(null);
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e: any) => {
+  const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
-      setFormData((prev) => ({ ...prev, file: e.target.files![0] }));
+      setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
     }
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatusMessage({ type: "", text: "" });
@@ -120,7 +147,7 @@ export default function Logistic() {
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error("API Error Response:", error?.response?.data);
 
       // Backend Error response handling
@@ -139,47 +166,24 @@ export default function Logistic() {
       setLoading(false);
     }
   };
+
   useEffect(() => {
-    if (statusMessage.text) {
-      const timer = setTimeout(() => {
-        setStatusMessage({ type: "", text: "" });
-      }, 5000);
+    const fetchBlogs = async () => {
+      try {
+        const data = await getBlogs();
+        const blogList = data?.response?.data || [];
+        setBlogs(blogList);
+      } catch (error) {
+        console.log("Message:", error.message);
+        console.log("Code:", error.code);
+        console.log("Response:", error.response);
+        console.log("Request:", error.request);
+        setBlogs([]);
+      }
+    };
 
-      return () => clearTimeout(timer); // Cleanup timer on unmount or state change
-    }
-  }, [statusMessage.text]);
-
-  // Section 1 Bullet Points
-  const topBulletPoints = [
-    "45 minutes of free consultation",
-    "A strict non-disclosure policy",
-    "Detailed Feature List Document",
-    "Action plan to kick start your project",
-  ];
-
-  // Section 2 Feature Items
-  const bottomFeatures = [
-    {
-      title: "App for your Business niche:",
-      description:
-        "Our team of experts create app projects for business clients based on their needs. We study market trends and customer interest points to plan a custom app design fit for niche audiences.",
-    },
-    {
-      title: "Secured payment:",
-      description:
-        "Worry less about the unauthorized access to your private data or malware wiping out your system. We utilize the best online security details and work with secure encrypted protocols.",
-    },
-    {
-      title: "Instant access:",
-      description:
-        "Gain instant access to a variety of features, tools, and resources with our help. Not to mention, get in contact with our experienced and licensed app development experts at any time.",
-    },
-    {
-      title: "Attractive UI + Unbeatable Performance:",
-      description:
-        "We help in the creation of high-quality responsive apps with memorable designs. Our developers utilize advanced techniques, codes, programs, and tools to create an easily navigable UI with fast-loading speed.",
-    },
-  ];
+    fetchBlogs();
+  }, []);
 
   return (
     <>
@@ -189,71 +193,74 @@ export default function Logistic() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
-                Transportation and <br className="hidden md:inline" />
-                Logistics App <br className="hidden md:inline" />
-                Development <br className="hidden md:inline" />
-                Company in USA
+                Dating App
+                <br />
+                Development <br />
+                Company
               </h1>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                At iQlance, our developers are equipped to build usable,
-                mobile-intuitive apps for brands. As a trusted logistics app
-                development company in the USA, we understand that logistics is
-                a crucial part of any company&apos;s work process. Our team
-                members understand this priority and focus on creating secure,
-                interactive, and responsive app management solutions.
+              <p className="text-base md:text-lg leading-relaxed text-black">
+                We offer secure, scalable, and user-centric dating app
+                development services. What’s your purpose for building a dating
+                app? Whether it is for casual meetings or serious relationships,
+                or it could be anything, you name it. We will turn your idea
+                into a digital platform using cutting-edge technology.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                With custom app development for logistics, you can prepare a
-                streamlined app version for your business, fit with all the
-                necessary features that would smoothen the entire work process,
-                right in the palm of your hands.
+              <p className="text-base md:text-lg leading-relaxed text-black">
+                We have experienced developers who bring their expertise in
+                dating mobile app development, combining intuitive design with
+                scalable backend architecture. We support end-to-end software
+                development services with high-tech security and quality coding.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Our team of certified developers apply their deep understanding
-                of business logistics requirements, their experience, and
-                polished app development skills to bring forward high-quality
-                and feature-rich custom applications.
+              <p className="text-base md:text-lg leading-relaxed text-black">
+                Having a proven track record of building secure and
+                high-performing apps, iQlancs Solutions ensures every feature is
+                user-centric and scalable. Let’s build a dating app that not
+                only encourages lasting relationships but also delivers on
+                technical and digital promises.
               </p>
-
-              {/* Bullet points */}
-              <ul className="space-y-3 pt-2">
-                {topBulletPoints.map((point, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center gap- font-semibold text-gray-800 text-base md:text-lg"
-                  >
-                    <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
-                    <span>{point}</span>
-                  </li>
-                ))}
+              <ul className="mt-8 space-y-5 text-lg">
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Custom UI/UX as per desired user flow
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Secure user authentication & privacy features
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Real-time chat, match, and notification modules
+                </li>
+                <li className="flex items-center gap-1 mb-2">
+                  <ChevronRight size={14} />
+                  Scalable backend for user growth and analytics
+                </li>
               </ul>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
-                  className="group inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
-                  Request a Quote
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+                  Contact Us <ArrowRight className="w-4 h-4" />
                 </Link>
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
-                  See Our Work
-                  <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+                  See Our Work <ArrowRight className="w-4 h-4 text-black" />
                 </Link>
               </div>
             </div>
 
             {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
-              <div className="relative bg-[#EFF6FF] border border-blue-100/60 rounded-2xl p-6 md:p-8 w-full shadow-lg">
+              <div className="relative bg-[#EFF6FF] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
                 {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
@@ -264,13 +271,23 @@ export default function Logistic() {
                 </div>
 
                 {/* Form Heading */}
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
-                  Book a Free Consultation
+                <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
+                  Request a Free Quote
                 </h2>
-                <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
+                <p className="text-xs md:text-sm text-black font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
-
+                {statusMessage.text && (
+                  <p
+                    className={`text-xs text-center font-semibold ${
+                      statusMessage.type === "success"
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    {statusMessage.text}
+                  </p>
+                )}
                 {/* Form Inputs */}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -358,16 +375,7 @@ export default function Logistic() {
                     </label>
                   </div>
 
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
-                        ? "bg-green-100 border border-green-400 text-green-800"
-                        : "bg-red-100 border border-red-400 text-red-800"
-                        }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
+                  {/* Submit Button */}
                   <div className="pt-2">
                     <button
                       type="submit"
@@ -408,169 +416,117 @@ export default function Logistic() {
             </div>
           </div>
         </section>
+        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
+          {/* Main Heading */}
+          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
+            Why iQlance for Custom Dating App Development in USA
+          </h2>
 
-        <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16 border-t border-gray-100">
-          {/* Top Heading */}
-          <div className="text-center max-w-4xl mx-auto mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
-              Custom Logistics App Development Services for Transportation
-              Businesses
-            </h2>
-
-            <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
-              <p>
-                In this competitive environment, there is always pressure to
-                deliver goods fast; hence companies are using alternative
-                transport modes and smarter routes to achieve their goals. So to
-                pace up with the market, companies are deploying robust
-                transport logistics IT solutions as one of the means to address
-                these challenges using proven logistics app development tips.
-              </p>
-              <p>
-                iQlance leverages its leadership in providing logistic app
-                development solutions either on-premise or in the cloud to
-                customers across varieties of industries. We know how
-                challenging it is to manage logistics when it comes to
-                transportation, so to overcome that, we specialize in developing
-                logistic solutions which can be tailor-made for every retailer’s
-                business needs. We follow an enterprise mobility strategy which
-                can provide improved management capabilities and can increase
-                the sales of perfect orders.
-              </p>
-              <p>
-                We help the transportation firms to meet the emerging technology
-                needs for higher efficiency. We have rich domain expertise and
-                significant experience in deploying reliable IT solutions that
-                can help to reduce risk and open up more opportunities for them.
-              </p>
-            </div>
-          </div>
-
-          {/* Middle Banner Image */}
-          <div className="w-full my-12 overflow-hidden rounded-md">
-            <Image
-              src="/images/logistics-fullwidth.jpg" // Put your image in /public/images/
-              alt="Transportation and Logistics Modes"
-              width={1200}
-              height={400}
-              className="w-full h-auto object-cover"
-              priority
-            />
-          </div>
-
-          {/* Bottom Heading & 2-Column Grid */}
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Logistics App Development Solutions for Modern Transportation
-                Challenges
-              </h2>
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Developing user-friendly apps for businesses in various
-                industries for management of the logistics, like vehicular
-                management, trip planning, risk reports, GPS location routing,
-                and on-demand delivery. Use our services and solutions to combat
-                the common Challenges in Logistics App Development.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
-              {bottomFeatures.map((item, index) => (
-                <div key={index} className="flex items-start gap-2.5">
-                  <ChevronRight className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    <strong className="font-bold text-gray-900">
-                      {item.title}
-                    </strong>{" "}
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
-
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App for Your Business?
-            </h2>
-
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to create
-              scalable, feature-rich logistics mobile applications tailored to
-              your needs.
+          {/* Paragraph Content */}
+          <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto mb-10">
+            <p>
+              As a leading mobile app development company in the USA, iQlance
+              Solutions understands every story is unique, so your app should be
+              too. Our seasoned development team develops dating app solutions
+              that are custom-built to match your business model, user behavior,
+              and growth goals. We ensure high-tech security and quality testing
+              right from UI/UX design to the deployment of the app.
             </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+            <p>
+              We follow an agile approach to ensure transparency. We also ensure
+              providing advanced features like AI-powered matchmaking
+              algorithms, location-based date notifications, voice/video chat
+              along with text messages, profile verification, easy document
+              sharing (photos, video, or any documents), etc., to increase trust
+              and engagement. If you want to build a dating app from scratch or
+              want to scale up your existing app, our experienced team ensures
+              you are provided with a solution that performs flawlessly on both
+              platforms, i.e., Android and iOS. We focus on clean design,
+              AI-powered features, and scalability for the competitive USA
+              market.
+            </p>
+
+            <p>
+              Our experienced dating app developers are committed to
+              transforming your concept into a widely used app across the globe.
+              We ensure fast delivery without compromising the quality of code
+              and the quality assurance process. Hence, we don't just build
+              apps; we create a platform people accept and trust to use.
+            </p>
+          </div>
+
+          {/* Bottom Banner Image */}
+          <div className="w-full overflow-hidden ">
+            <img
+              src="/images/Custom-Dating-App-Development-USA.png" // Apni image ka path yahan dein
+              alt="Dating App Development Banner"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </section>
+
+        <section className="py-12 px-4 max-w-7xl mx-auto font-sans">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            {/* Left Side: Content & List */}
+            <div className="flex flex-col gap-y-6">
+              {/* Main Heading */}
+              <h2 className="text-2xl lg:text-3xl font-extrabold text-black leading-snug">
+                On-Demand Dating App Development Solutions We Offer
+              </h2>
+
+              {/* Subtitle / Intro Text */}
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                We offer on-demand dating app solutions customized to diverse
+                audiences and their relationship goals. We are not just app
+                developers, but we ensure to be your trusted technology partner
+                to build an app that stands ahead in the highly competitive
+                market.
+              </p>
+
+              {/* Feature List */}
+              <div className="flex flex-col gap-y-5">
+                {datingSolutions.map((item, index) => (
+                  <div key={index} className="flex items-start gap-2.5">
+                    {/* Bullet Icon */}
+                    <span className="text-gray-500 font-bold text-lg leading-snug shrink-0">
+                      &#8250;
+                    </span>
+
+                    {/* Text Content */}
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                      <strong className="font-bold text-black">
+                        {item.title}:
+                      </strong>{" "}
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Call to Action Button */}
+              <div className="pt-2">
+                <Link
+                  href="/lets-talk"
+                  className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-6 py-3 transition duration-200 shadow-sm"
                 >
-                  <img
-                    src="/icons/email-icon.svg"
-                    alt="mail-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img
-                    src="/icons/phone-icon.svg"
-                    alt="phone-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
+                  Start a Conversation
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
 
-            {/* Action Button */}
-            <div>
-              <Link
-                href="/contact-us"
-                className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
-              >
-                Request a Free Quote
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-              </Link>
+            {/* Right Side: Image Container */}
+            <div className="w-full h-full flex justify-center lg:justify-end">
+              <img
+                src="/images/On-Demand-Dating-App-Solutions.png" // Apni image ka path yahan lagayein
+                alt="On-Demand Dating App Development"
+                className="w-full max-w-lg lg:max-w-none h-auto object-cover rounded-xs"
+              />
             </div>
           </div>
         </section>
-        <section className="py-10">
+        <section className="mt-10">
           <div className="mx-auto max-w-7xl">
             <Swiper
               modules={[Pagination, Autoplay]}
@@ -603,7 +559,7 @@ export default function Logistic() {
                         {slide.title}
                       </h2>
 
-                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
                         {slide.description}
                       </p>
 
@@ -613,7 +569,7 @@ export default function Logistic() {
                             key={index}
                             className="flex gap-3 items-baseline"
                           >
-                            <ChevronRight size={18} />
+                            <ChevronRight size={17} />
                             <span>{point}</span>
                           </div>
                         ))}
@@ -633,27 +589,28 @@ export default function Logistic() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
+                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                     {item.title}
                   </h2>
 
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                    {item.description}
-                  </p>
-
+                  <p
+                    className="text-black text-sm md:text-base leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                  />
                   {/* Dynamic Feature List */}
                   <ul className="space-y-4 pt-2">
                     {item.features.map((feature, fIndex) => (
                       <li
                         key={fIndex}
-                        className="flex items-center gap-3 text-gray-900 font-semibold text-sm md:text-base"
+                        className="flex items-center gap-3 text-black font-semibold text-sm md:text-base"
                       >
-                        <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />
+                        <ChevronRight className="w-4 h-4 text-black shrink-0 stroke-[2.5]" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -673,7 +630,7 @@ export default function Logistic() {
           })}
         </section>
         <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto  flex flex-col items-center">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
@@ -686,29 +643,24 @@ export default function Logistic() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App?
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              Ready to Get Started?
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to streamline
-              fleet management, delivery tracking, and supply chain operations.
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Call us Today for a Free Consultation:
             </p>
 
             {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
-                 <img
-                    src="/icons/email-icon.svg"
-                    alt="mail-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
+                  <img src="/icons/email-icon.svg" alt="" />
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -716,11 +668,7 @@ export default function Logistic() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                   <img
-                    src="/icons/phone-icon.svg"
-                    alt="phone-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
+                  <img src="/icons/phone-icon.svg" alt="" />
                   <span>US :</span>
                   <a
                     href="tel:+14697939837"
@@ -742,77 +690,76 @@ export default function Logistic() {
 
             {/* Action Button */}
             <div>
-            <Link
-              href="/contact-us"
-              className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-            >
-              Let’s Discuss Your Project 
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-            </Link>
-          </div>
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Discuss <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </section>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <section className="w-full max-w-6xl mx-auto md:py-16">
           {/* Section Header */}
-          <div className="text-center space-y-3 mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Key Features of Logistics and Transportation App Development
+          <div className="text-center space-y-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-black">
+              Essential Features of Dating Mobile App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
-              Our logistics app solutions contain a host of features that shall
-              help you manage your activities in a more organized manner.
+            <p className="text-black text-sm md:text-base max-w-3xl mx-auto">
+              When it comes to developing a dating app, users always look for
+              the best features. We ensure that our app has top-notch dating app
+              features that improve user retention.
             </p>
           </div>
-
-          {/* Tabs Navigation */}
-          <div className="flex justify-center border-b border-gray-200 mb-10 overflow-x-auto">
-            <div className="flex gap-8">
-              {featuresTabsData.map((tab) => {
+        </section>
+        <div className="max-w-6xl mx-auto p-6 font-sans">
+          {/* Navigation Tabs */}
+          <div className="flex justify-center mb-8 w-full">
+            <div className="flex gap-8 border-b border-gray-200">
+              {tabs.map((tab) => {
                 const isActive = activeTab === tab.id;
                 return (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`pb-3 text-sm md:text-base font-semibold transition-all relative cursor-pointer whitespace-nowrap ${isActive
-                      ? "text-blue-900 border-b-2 border-blue-600 font-bold"
-                      : "text-gray-500 hover:text-gray-800"
-                      }`}
+                    className={`relative pb-3 text-base md:text-lg transition-colors duration-200 ${
+                      isActive
+                        ? "text-gray-900 font-semibold"
+                        : "text-gray-500 hover:text-gray-700 font-normal cursor-pointer"
+                    }`}
                   >
                     {tab.label}
+
+                    {/* Active Blue Bottom Line */}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#1B4B82]" />
+                    )}
                   </button>
                 );
               })}
             </div>
           </div>
 
-          {/* Grid Content */}
+          {/* Feature Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {currentTab.features.map((feature) => (
+            {appData[activeTab]?.map((item) => (
               <div
-                key={feature.id}
-                className="border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow bg-white min-h-35"
+                key={item.id}
+                className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center rounded-sm min-h-36 gap-3"
               >
-                {/* Feature Icon */}
-                <div className="w-12 h-12 mb-3 flex items-center justify-center">
-                  <img
-                    src={feature.icon}
-                    alt={feature.title}
-                    className="w-full h-full object-contain"
-                    // Fallback icon placeholder if image missing
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        "https://via.placeholder.com/48?text=Icon";
-                    }}
-                  />
-                </div>
-                {/* Feature Title */}
-                <h3 className="text-sm md:text-base font-semibold text-gray-800">
-                  {feature.title}
-                </h3>
+                <img
+                  src={item.iconPath}
+                  alt={item.title}
+                  className="w-10 h-10 object-contain"
+                />
+                <span className="text-gray-800 font-medium text-sm md:text-base">
+                  {item.title}
+                </span>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+
         <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
@@ -827,29 +774,24 @@ export default function Logistic() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App?
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              So, We Guess You want to talk about your Project
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to streamline
-              fleet management, delivery tracking, and supply chain operations.
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Send your Requirements on
             </p>
 
             {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
-                  <img
-                    src="/icons/email-icon.svg"
-                    alt="mail-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
+                  <img src="/icons/email-icon.svg" alt="" />
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -857,11 +799,7 @@ export default function Logistic() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                   <img
-                    src="/icons/phone-icon.svg"
-                    alt="phone-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
+                  <img src="/icons/phone-icon.svg" alt="" />
                   <span>US :</span>
                   <a
                     href="tel:+14697939837"
@@ -882,170 +820,178 @@ export default function Logistic() {
             </div>
 
             {/* Action Button */}
-           <div>
-            <Link
-              href="/contact-us"
-              className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
-            >
-              Let’s Discuss Your Project 
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-            </Link>
-          </div>
+            <div>
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Talk <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </section>
-        <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left Image Side */}
-            <div className="w-full h-full min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
+        <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-gray-800 space-y-16">
+          {/* Top Section: Image + Content Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left Image */}
+            <div className="w-full h-full overflow-hidden rounded-sm">
               <img
-                src="/images/our-developers.jpg"
-                alt="Expert Logistics App Developers"
+                src="/images/our-developers.jpg" // Apni top image ka path lagayein
+                alt="Hire Developers"
                 className="w-full h-full object-cover"
               />
             </div>
 
-            {/* Right Content Side */}
-            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Expert Logistics App Developers with Proven Technical Expertise
+            {/* Right Content */}
+            <div className="space-y-4 text-left">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-black">
+                Hire Top Dating App Developers in the USA
               </h2>
 
-              <p>
-                In our family, we have a group of highly competent developers
-                with full-stack development aptitudes. All our experts have
-                previously worked in different types of app development
-                projects, long before joining our team. With their years of
-                service experience, our App Developers have long since upgraded
-                their skills; they provide high-grade apps for clients.
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                As a leading dating app development company USA, we offer
+                top-tier talent and years of experience to ensure the delivery
+                of cutting-edge dating app solutions. We specialize in building
+                modern, feature-rich dating apps that stand out in a competitive
+                market and align with your brand's vision.
               </p>
 
-              <p>
-                To us, our clients are the main priority. Whatever features they
-                require and the speed at which they want their service, our
-                developers focus on delivering well-designed custom mobile apps.
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                Our seasoned developers analyze user behavior and industry
+                trends before starting the development process. We blend
+                functionality with innovation to ensure seamless, engaging, and
+                intuitive experiences for users.
               </p>
 
-              <p>
-                We create apps for different types of companies, be it smaller
-                ones just starting or enterprise-level corporations with
-                big-scale logistics demands. Expect noticeable business growth,
-                smoother operations, and maximized profits in the future with
-                our ad per design services.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
-          {/* Top Text Content */}
-          <div className="text-center max-w-5xl mx-auto space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How Much Does It Cost to Build a Custom Logistics App?
-            </h2>
-
-            <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
-              <p>
-                While constructing a customized logistics mobile app integrated
-                with multiple features, the question of cost does come into
-                play. Our team of{" "}
-                <span className="font-bold text-gray-900">
-                  app developers USA
-                </span>{" "}
-                also includes financial specialists. They would carefully
-                evaluate your app requirement and devise the most efficient app
-                cost structure.
-              </p>
-
-              <p>
-                There is no standard fee that we offer for our craft though. All
-                our clients get personalized costs for development depending on
-                multiple factors. These include the technologies we utilized for
-                the app&apos;s frontend and backend development, technology
-                stack, and platform compatibility.
-              </p>
-
-              <p>
-                Our team takes the time to understand your business goals,
-                operational challenges, and budget to create custom logistic app
-                development tailored to your specific requirements. Get in touch
-                with us today to explore a cost-effective solution that enhances
-                efficiency, optimizes workflows, and supports long-term growth.
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                Hire the best developers for custom dating app development in
+                the USA and get a secure, scalable, and user-centric dating app.
+                If you want to develop an app from scratch or want to scale up
+                your existing app; we offer custom solutions and guaranteed
+                creativity, boosting performance and technical excellence so
+                your app doesn't just get a great launch, but it leads in the
+                market.
               </p>
             </div>
           </div>
 
-          {/* Banner Image */}
-          <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
-            <img
-              src="/images/healthcare-app-built.jpg"
-              alt="Cost Calculation & Financial Planning"
-              className="w-full h-full object-cover"
-            />
+          {/* Middle Section: Cost Section + Center Aligned Button */}
+          <div className="text-center max-w-4xl mx-auto space-y-6">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-black">
+              Cost To Hire a Custom Dating App Development Company
+            </h2>
+
+            <div className="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed">
+              <p>
+                The cost to hire a dating app development company depends on
+                various factors, including app complexity, features, platform
+                selection (Android, iOS, or both), and tech stack selection. If
+                you want to integrate AI or AR, it will cost you more. The
+                custom UI/UX design, backend scalability, and high-tech user
+                privacy and data security measures also need advanced features,
+                which cost you more.
+              </p>
+
+              <p>
+                We offer flexible dating app development engagement models
+                custom to startups, mid-size businesses, and enterprise
+                solutions. Our pricing structure is transparent, competitive,
+                and value-driven, so you can choose as per your business needs.
+              </p>
+
+              <p>
+                Our custom dating mobile app development solutions are designed
+                to meet your unique business goals. We also ensure the delivery
+                of a secure, high-performing, and user-friendly dating platform
+                within your budget and without compromising quality.
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="pt-2">
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Get a Quote <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
-          {/* Success Stories Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-              Success Stories That Showcase Our Logistics Expertise
-            </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
-            </p>
+          {/* Bottom Section: Wide Image Banner + Bottom Text */}
+          <div className="space-y-8 text-center">
+            <div className="w-full overflow-hidden ">
+              <img
+                src="/images/healthcare-app-built.jpg" // Apni wide image ka path lagayein
+                alt="Cost Analysis Banner"
+                className="w-full h-auto object-cover max-h-96"
+              />
+            </div>
+
+            <div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-3">
+                Endeavors That Make Us Proud
+              </h2>
+              <p className="text-sm md:text-base text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                iQlance solutions has always been honored with valuable words
+                for the efforts given on mobile app development that are
+                efficiently unique and user centric. Here are some of the best
+                examples for this.
+              </p>
+            </div>
           </div>
         </section>
-        <section >
+
+        <section>
           <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
             autoplay={{ delay: 300000 }}
             loop={true}
-            className="w-full h-162.5 sm:h-150 [&_.swiper-slide]:h-full!"
           >
             {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index} className="h-full!">
-                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between overflow-hidden">
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 shrink-0">
-                    {slide.heading}
-                  </h2>
+              <SwiperSlide key={index} className="h-auto!">
+                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
+                      {slide.heading}
+                    </h2>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center flex-1 overflow-hidden">
-                    <div className="flex flex-col justify-between h-full py-2">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
                       <div>
-                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 line-clamp-2">
+                        <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
                           {slide.title}
                         </h3>
 
-                        <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base line-clamp-3">
+                        <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
                           {slide.description}
                         </p>
 
-                        <ul className="space-y-2 mb-4 text-sm sm:text-base">
-                          {slide.features.slice(0, 3).map((feature, i) => (
+                        <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
+                          {slide.features.map((feature, i) => (
                             <li key={i} className="flex items-center gap-2">
-                              <ChevronRight className="w-4 h-4 text-gray-600 shrink-0" />
-                              <span className="truncate">{feature}</span>
+                              <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />{" "}
+                              {feature}
                             </li>
                           ))}
                         </ul>
-                      </div>
 
-                      <div>
-                        <div className="flex flex-wrap gap-4 sm:gap-6 mb-4 items-center">
+                        <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
                           {slide.technologies.map((tech, i) => (
                             <div key={i} className="text-center">
                               <img
                                 src={tech.icon}
                                 alt={tech.name}
-                                className="w-6 h-6 sm:w-7 sm:h-7 mx-auto"
+                                className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
                               />
-                              <p className="text-xs mt-1">{tech.name}</p>
+                              <p className="text-xs sm:text-sm mt-2">
+                                {tech.name}
+                              </p>
                             </div>
                           ))}
                         </div>
 
-                        <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-6 py-3 font-semibold flex justify-center items-center gap-3 transition cursor-pointer self-start text-sm sm:text-base">
+                        <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
                           View Case Study
                           <ArrowRight
                             size={18}
@@ -1053,14 +999,14 @@ export default function Logistic() {
                           />
                         </button>
                       </div>
-                    </div>
 
-                    <div className="hidden lg:flex justify-center items-center h-full max-h-87.5">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full max-w-xs sm:max-w-sm max-h-full object-contain"
-                      />
+                      <div className="flex justify-center">
+                        <img
+                          src={slide.image}
+                          alt={slide.title}
+                          className="w-full max-w-xs sm:max-w-sm"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1068,7 +1014,7 @@ export default function Logistic() {
             ))}
           </Swiper>
         </section>
-        <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
+        <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
           {/* Top CTA Banner Box */}
           <div className="bg-[#F4F8FC] p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
@@ -1081,29 +1027,28 @@ export default function Logistic() {
               </p>
             </div>
 
-           <Link
-            href="/portfolio"
-            className="group inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0 cursor-pointer"
-          >
-            <span>See Our Work</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-          </Link>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
+            >
+              <span>See Our Work</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
           {/* Technology Stack Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Technology Stack for Custom Logistics App Development
-            </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              Our team of developers leave stones unturned in their quest to
-              create usable apps with advanced features for companies, drivers,
-              and consumers. We are equipped to handle different types of
-              technology, and justly utilize them for our app development
-              solutions.
-            </p>
-          </div>
         </section>
+
+        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
+            Technologies We Use
+          </h2>
+          <p className="text-black text-sm md:text-base leading-relaxed">
+            Capabilities and tools aside, you can expect top-notch technologies
+            in use at our best on-demand app development company; we use them
+            generously for an intuitive and customised app generation.
+          </p>
+        </div>
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 ">
             {/* Tabs */}
@@ -1113,17 +1058,19 @@ export default function Logistic() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                      ? "text-black font-semibold"
-                      : "text-gray-500 hover:text-black"
-                      }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
+                      activetechnologies === index
+                        ? "text-black font-semibold"
+                        : "text-gray-500 hover:text-black"
+                    }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
-                        }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
+                        activetechnologies === index ? "w-full" : "w-0"
+                      }`}
                     />
                   </button>
                 ))}
@@ -1150,6 +1097,7 @@ export default function Logistic() {
             </div>
           </div>
         </section>
+
         <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
@@ -1164,27 +1112,25 @@ export default function Logistic() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Transform Your Transportation and Logistics Mobile Apps
-              Development
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+              We are Team of Talented, Experienced, and Certified Designers and
+              Developers.
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to build custom
-              logistics mobile applications that streamline operations and drive
-              growth.
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+              Let us Build Something Extraordinary.
             </p>
 
             {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                  <img src="/icons/email-icon.svg" alt="" />
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -1192,7 +1138,7 @@ export default function Logistic() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                  <img src="/icons/phone-icon.svg" alt="" />
                   <span>US :</span>
                   <a
                     href="tel:+14697939837"
@@ -1215,39 +1161,39 @@ export default function Logistic() {
             {/* Action Button */}
             <div>
               <Link
-                  href="/contact-us"
-                  className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
-                >
-                  Hire Dedicated Developer 
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-                </Link>
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Hire Dedicated Developer <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
+
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
-              Your Trusted Logistics App Development Company in the USA
+              Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App
-              Development Company with a vast area of experience in crafting
-              stunning and end to end encrypted technology solutions. We offer
-              excellent expertise of the industry followed by an exactly planned
-              approach to elevate your growth.
+              iQlance is a leading Software Development Company currently
+              available in the market, with over 7 years of experience under the
+              belt. Over the years, our team members have honed their skills,
+              handling over 1,500 projects of different types and companies,
+              offering flexible solutions and comprehensive benefits to all.
             </p>
           </div>
         </section>
         <section>
-          <div className="flex flex-wrap justify-center gap-7 mt-24">
+          <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
                 {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
                     alt=""
@@ -1255,29 +1201,32 @@ export default function Logistic() {
                   />
                 </div>
 
-                <h3 className="text-lg font-bold text-black leading-none">
-                  {item.value}
-                </h3>
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
 
-                <p className="mt-3 text-lg leading-none text-black">
-                  {item.line1}
-                  <br />
-                  {item.line2}
-                </p>
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
-              Industries We Serve with Custom Logistics App Development
+              Industries We Serve
             </h1>
             <p>
-              Over the years, we have collaborated with multiple companies, both
-              large firms with big teams and small-scale businesses, across
-              several industries.
+              Our on-demand app development services extend across multiple
+              different industries, offering advanced features, rich technology
+              stacks, and high-quality performance improvement.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1308,17 +1257,16 @@ export default function Logistic() {
             ))}
           </div>
         </section>
+
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-              {" "}
-              Why Businesses Choose Our Logistics App Development Company
+          <div className="text-center max-w-4xl mx-auto space-y-4 mt-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
+              Why Choose iQlance?
             </h1>
-            <p>
-              iQlance Solutions specializes in developing scalable, feature-rich
-              mobile applications for different operating systems, like Android
-              and iPhone. Our experts deliver a centralized workflow for every
-              client and offer dedicated service at all times.{" "}
+            <p className="text-black text-sm md:text-base leading-relaxed">
+              From development to testing, design to deployment, and everything
+              in between, we are the best on-demand app development company that
+              offers a vast range of scalable solutions.
             </p>
           </div>
         </section>
@@ -1339,16 +1287,17 @@ export default function Logistic() {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-700 leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
+                <p className="text-black leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
                   {service.description}
                 </p>
               </div>
             ))}
           </div>
         </section>
+
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center">
+            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
             <p>
@@ -1390,14 +1339,14 @@ export default function Logistic() {
                           alt={item.name}
                           className="w-full h-full object-contain rounded-full"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src =
+                            e.target.src =
                               "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg";
                           }}
                         />
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                        <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
                         {/* Stars */}
@@ -1427,7 +1376,7 @@ export default function Logistic() {
                         alt="Google Logo"
                         className="h-7 object-contain"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src =
+                          e.target.src =
                             "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg";
                         }}
                       />
@@ -1474,10 +1423,11 @@ export default function Logistic() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-gray-300"
-                      }`}
+                    className={`border bg-white transition-all duration-300 ${
+                      open === index
+                        ? "border-gray-200 shadow-md"
+                        : "border-gray-200 hover:border-gray-300"
+                    }`}
                   >
                     {/* Question */}
                     <button
@@ -1489,22 +1439,24 @@ export default function Logistic() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          open === index
+                            ? "rotate-180 text-black"
+                            : "rotate-0 text-black"
+                        }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
-                        }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        open === index
+                          ? "max-h-150 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
-                        <p className="text-[17px] leading-8 text-gray-600">
+                        <p className="text-[17px] leading-8 text-black">
                           {faq.answer}
                         </p>
 
@@ -1513,7 +1465,7 @@ export default function Logistic() {
                             {faq.points.map((point, i) => (
                               <li
                                 key={i}
-                                className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
+                                className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
                               >
                                 <ChevronRight
                                   size={18}
@@ -1535,7 +1487,7 @@ export default function Logistic() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
             </h1>
             <p>

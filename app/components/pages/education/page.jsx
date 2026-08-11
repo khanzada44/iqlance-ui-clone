@@ -27,10 +27,10 @@ import {
   services,
   faqsData,
   testimonials
-} from "../real-estate/data";
+} from "./data";
 import Image from "next/image";
 
-export default function realEstate() {
+export default function elearning() {
   const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
@@ -63,28 +63,61 @@ export default function realEstate() {
 
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-[90%] sm:w-[90%] mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
-                Real Estate
+                E-Learning Development Company
               </h1>
 
+              {/* Image content added below */}
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-
-                With many people shifting to bigger cities, more and more people are looking for well-furnished homes and rental spaces. As a result, there is a boom in the real estate industry. To provide the most advantage of the situation to Aggregators, Realtors, Builders, and stakeholders, we provide them with the best Real Estate App development solution. Thus, marking the digital presence in the real estate sector.
-
+                Our education application development solutions provide a pool of
+                opportunities to the entire education industry. Our{" "}
+                <span className="font-semibold text-gray-900">
+                  education app development
+                </span>{" "}
+                helps both students and institutes by providing a gamut of learning
+                activities in a compact manner with the help of our app.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                As the real estate app development company, we aim at enhancing the experience of the buyers and real estate firms. We make it possible by offering them an app that supports advanced technologies like IoT, chatbots, and third-party app support.
+                We have a qualified and an experienced team of many veteran app developers
+                to apply their years of experience and huge expertise for designing of
+                innovative educational apps and thereby, fulfill customized requirements of
+                your educational institute.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                In addition, we extend our real estate app development services to Virtual CTO services for carrying tech strategies successfully. Thus, ensuring our real estate partner a comprehensive development.
+                It's time to tear down geographical and temporal obstacles to information
+                dissemination. We develop e-learning applications that encourage youngsters
+                to enjoy learning.
               </p>
+
+              <ul className="space-y-3 pt-2 text-base md:text-lg font-medium text-gray-800">
+                <li className="flex items-center gap-2">
+                  <ChevronRight size={17} />
+                  Create A Scalable
+                  Education App
+                </li>
+                <li className="flex items-center gap-2">
+                  <ChevronRight size={17} />
+                  Trusted by 1000+
+                  Companies
+                </li>
+                <li className="flex items-center gap-2">
+                  <ChevronRight size={17} />
+                  Expert Team 70+
+                  Developers
+                </li>
+                <li className="flex items-center gap-2">
+                  <ChevronRight size={17} />
+                  Create A Scalable
+                  Education App
+                </li>
+              </ul>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
@@ -229,133 +262,62 @@ export default function realEstate() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Custom App Development Solutions For Your Real Estate Business
+                Get a Gamut Of Learning Activities Compactly With Our Education App Development
               </h2>
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-
-                We have a qualified and an experienced real estate app development team toronto to provide cutting-edge solutions to meet your specific real estate business requirements. Whether you are one of the top-class real estate companies, a small firm or an individual agent related to a property business, you may not overlook the significance of a good real estate web development service.
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                In today’s economy, innovation plays a crucial influence in how firms grow and fail. Companies are increasingly opting for online marketing over conventional marketing. There’s a lot of demand to evolve, that’s why traditional marketing channels like print and television are being squeezed out in favour of facebook. Consequently, eLearning is displacing conventional means of learning as well as staff training.
               </p>
               <br />
               <p>
-                This is because; we at iQlance provide you with the best possible real estate application to get lucrative benefits. Also, our real estate app service provides brokers, aggregators, and brokers a platform that provides 24×7 support services to end-users without even attending them.
+                Despite its inaccurate reputation as a pricey and complex teaching technique, eLearning has evolved as the most popular way for organization to educate their staff. When compared to older techniques, eLearning facilitates the procedure of keeping updates.
               </p>
               <br />
               <p>
-                Also, our team contains top app developers of different areas to power the app with cutting-edge technologies. It is built in such a way that fulfills not only present demands but also the demands of the future.
-
+                So, rather than trying to redo the whole text and incur extra printing expenses, our LMS systems allow you modify your documents and instructions by just attaching new lessons to current manual documents and notifying the modifications to the employees.
               </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
-              {bottomFeatures.map((item, index) => (
-                <div key={index} className="flex items-start gap-2.5">
-                  <ChevronRight className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    <strong className="font-bold text-gray-900">
-                      {item.title}
-                    </strong>{" "}
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mb-10" >
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Start a Conversation <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
           </div>
-          <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
+        </section>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
+          <div className="flex justify-center lg:justify-end">
             <img
-              src="/images/custom-app-re.jpg"
-              alt="Cost Calculation & Financial Planning"
-              className="w-full h-full object-cover"
+              src="/images/gamut -of-earning-left.jpg"
+              alt="Customer Support"
+              className="w-full max-w-md h-auto object-cover"
             />
           </div>
-        </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
+          
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Looking to Hire Dedicated Team?
-            </h2>
+          <div className="flex flex-col gap-y-6">
+            {bottomFeatures.map((item, index) => (
+              <div key={index} className="flex items-start gap-3">
+                {/* Chevron Right Icon */}
+                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
-            </p>
-
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
+                {/* Text Content */}
+                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                  <strong className="font-semibold text-gray-900">
+                    {item.title}:
+                  </strong>{" "}
+                  {item.description}
+                </p>
               </div>
-            </div>
-
-            {/* Action Button */}
-            <div>
+            ))}
+            <div className="">
               <Link
                 href="#contact"
                 className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Hire Dedicated Developerse <ArrowRight className="w-4 h-4" />
+                Start a Conversation
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
-        </section>
-        <section>
-          <div className="text-center mb-10 mt-10">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-              Delivery Of Unrivaled Solutions Is Our Prime Objective
-            </h1>
-            <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-              We can help you digitalize your real estate business with the best real estate mobile app. We are the leading mobile app development company  that strives to fulfill your every desire through end-to-end solutions. We even have a family of qualified experts who constantly try to push their boundaries for you to reach new heights.
-            </p>
+        </div>
+        <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">Indulging in Mobile Immersive Learning/Teaching</h2>
+            <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">We possess an extremely competent and knowledgeable group of educational application designers who have produced a number of high-quality online audio as well as videos broadcasting e-learning applications for learners to use during live classes.</p>
           </div>
-
-        </section>
         <section className="py-10">
           <div className="mx-auto max-w-7xl">
             <Swiper
@@ -373,7 +335,7 @@ export default function realEstate() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center">
                     {/* Image */}
                     <div className="w-full lg:w-1/2">
                       <img
@@ -399,7 +361,7 @@ export default function realEstate() {
                             key={index}
                             className="flex gap-3 items-baseline"
                           >
-                            <ChevronRight size={16} />
+                            <ChevronRight size={15} />
                             <span>{point}</span>
                           </div>
                         ))}
@@ -411,6 +373,76 @@ export default function realEstate() {
             </Swiper>
           </div>
         </section>
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+             Looking to Hire Dedicated Team?
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <img src="/icons/email-icon.svg" alt="" />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <img src="/icons/phone-icon.svg" alt="" />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Talk <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
             // Checking if index is odd to reverse layout dynamically
@@ -419,7 +451,7 @@ export default function realEstate() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
               >
                 {/* Content Side */}
@@ -439,7 +471,7 @@ export default function realEstate() {
                         key={fIndex}
                         className="flex items-center gap-3 text-gray-900 font-semibold text-sm md:text-base"
                       >
-                        <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[3.5]" />
+                        <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -534,7 +566,9 @@ export default function realEstate() {
             Features of Wellness and Fitness App Development
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
-            The next-gen real estate app we provide will surely boost your everyday operation by the use of top features like:
+            Our wellness and fitness app successfully grabs the eyeballs of
+            health maniacs because of the valuable features we add. Making the
+            process of being fit effortless for people.
           </p>
 
           {/* Main 3x3 Grid */}
@@ -547,117 +581,15 @@ export default function realEstate() {
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Social Media & User Profile
+                Login & Profile Creation
               </h3>
             </div>
 
             {/* Card 2 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
-                src="/images/ril-icn.png"
-                alt="Push Notification"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Property List
-              </h3>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/search-h-icn.png"
-                alt="Social Sharing"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Search
-              </h3>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/filter-h-icn.png"
-                alt="Filter"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Filter
-              </h3>
-            </div>
-
-            {/* Card 5 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/categeory-icn.png"
-                alt="Category"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Categories
-              </h3>
-            </div>
-
-            {/* Card 6 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/fav-icn.png"
-                alt="Food and Calorie Tracker"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Favourite
-              </h3>
-            </div>
-
-            {/* Card 7 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/settings-h-icn.png"
-                alt="Schedules and Calendar"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Settings
-              </h3>
-            </div>
-
-            {/* Card 8 */}
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/map-h-icn.png"
-                alt="Gamification"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Map
-              </h3>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/upcoming-h-icn.png"
-                alt="Gamification"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                History
-              </h3>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/recommended-h-icn.png"
-                alt="Gamification"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Recommendation
-              </h3>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
                 src="/images/push-h-icn.png"
-                alt="Gamification"
+                alt="Push Notification"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
@@ -665,55 +597,114 @@ export default function realEstate() {
               </h3>
             </div>
 
+            {/* Card 3 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/sm-icon.png"
+                alt="Social Sharing"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Social Sharing
+              </h3>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/content-h-icn.png"
+                alt="Geolocation"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Geolocation
+              </h3>
+            </div>
+
+            {/* Card 5 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/reminders-h-icn.png"
+                alt="Reminders"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Reminders
+              </h3>
+            </div>
+
+            {/* Card 6 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/200cal.png"
+                alt="Food and Calorie Tracker"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Food and Calorie Tracker
+              </h3>
+            </div>
+
+            {/* Card 7 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/calender-icn-new.png"
+                alt="Schedules and Calendar"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Schedules and Calendar
+              </h3>
+            </div>
+
+            {/* Card 8 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/game-remote.png"
+                alt="Gamification"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Gamification
+              </h3>
+            </div>
+
             {/* Card 9 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
-                src="/images/revnues-h-icn.png"
+                src="/images/online-icon-w.png"
                 alt="Online Sessions"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Cost Calculator
+                Online Sessions
               </h3>
             </div>
+          </div>
+
+          {/* Bottom Centered Row (2 Cards) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {/* Card 10 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
-                src="/images/calender-icn-new.png"
+                src="/images/analytics-h-icn.png"
+                alt="Analytics & Reports"
+                className="w-10 h-10 object-contain mb-4"
+              />
+              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+                Analytics & Reports
+              </h3>
+            </div>
+
+            {/* Card 11 */}
+            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
+              <img
+                src="/images/chat-h-icn.png"
                 alt="Chat"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Calendar
-              </h3>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/cm-icon.png"
-                alt="Chat"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Call or Message
-              </h3>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/vtr-icon.png"
-                alt="Chat"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Virtual Tour Request
-              </h3>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
-              <img
-                src="/images/view-icon.png"
-                alt="Chat"
-                className="w-10 h-10 object-contain mb-4"
-              />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Viewing Request
+                Chat
               </h3>
             </div>
           </div>
@@ -733,12 +724,13 @@ export default function realEstate() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              So, We Guess You want to talk about your Project
+              Ready to Build a Custom Logistics App?
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
+              Partner with our logistics app development company to streamline
+              fleet management, delivery tracking, and supply chain operations.
             </p>
 
             {/* Contact Info Box */}
@@ -783,7 +775,90 @@ export default function realEstate() {
                 href="#contact"
                 className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Let’s Discuss Your Project <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
+          {/* Section Header */}
+          <div className="text-center space-y-3 mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Key Features of Logistics and Transportation App Development
+            </h2>
+            <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
+              Our logistics app solutions contain a host of features that shall
+              help you manage your activities in a more organized manner.
+            </p>
+          </div>
+        </section>
+        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+              Ready to Build a Custom Logistics App?
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+              Partner with our logistics app development company to streamline
+              fleet management, delivery tracking, and supply chain operations.
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Discuss Your Project <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -802,24 +877,30 @@ export default function realEstate() {
             {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Our Team Provides a One-Stop Solution by Building The Best Real Estate App
+                Expert Logistics App Developers with Proven Technical Expertise
               </h2>
 
               <p>
-                At iQlance, our developer family are dedicated to delivering an unrivaled solution to users. They make it possible by running in-depth research and gathering knowledge to maximize support. Plus, they work continuously to make the app customer-centric, business-oriented, and result-driven.
-
+                In our family, we have a group of highly competent developers
+                with full-stack development aptitudes. All our experts have
+                previously worked in different types of app development
+                projects, long before joining our team. With their years of
+                service experience, our App Developers have long since upgraded
+                their skills; they provide high-grade apps for clients.
               </p>
 
               <p>
-
-                We hire a real estate app developer with years of experience before joining us to benefit from their experience and new view. They work day and night to provide the customer with 100% satisfaction and cover the multiple verticals the client works in.
-
+                To us, our clients are the main priority. Whatever features they
+                require and the speed at which they want their service, our
+                developers focus on delivering well-designed custom mobile apps.
               </p>
 
               <p>
-
-                We thrive on making our company the one-stop solution for all realtors and buyers out there. Also, we are the leading real estate mobile app development company that provides you with a powerful app that helps you gain the competitive edge.
-
+                We create apps for different types of companies, be it smaller
+                ones just starting or enterprise-level corporations with
+                big-scale logistics demands. Expect noticeable business growth,
+                smoother operations, and maximized profits in the future with
+                our ad per design services.
               </p>
             </div>
           </div>
@@ -828,26 +909,39 @@ export default function realEstate() {
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How Much does It Cost to Build A Real Estate App Similar to Successful Competitors Present in The Market?
+              How Much Does It Cost to Build a Custom Logistics App?
             </h2>
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                The answer will depend on how advance you want the app to be. For example, if you want the app to contain all the complex features that the other booming industry has, we can set the price according to it.
-                <br />
-                It is essential to understand that any modification in the basic set will definitely affect the cost one way or another. However, the revenue you will earn will also be significant. So, its better to go with what the market is demanding. Then look for the technology, backend, and compatibility to support that requirement.
+                While constructing a customized logistics mobile app integrated
+                with multiple features, the question of cost does come into
+                play. Our team of{" "}
+                <span className="font-bold text-gray-900">
+                  app developers USA
+                </span>{" "}
+                also includes financial specialists. They would carefully
+                evaluate your app requirement and devise the most efficient app
+                cost structure.
+              </p>
+
+              <p>
+                There is no standard fee that we offer for our craft though. All
+                our clients get personalized costs for development depending on
+                multiple factors. These include the technologies we utilized for
+                the app&apos;s frontend and backend development, technology
+                stack, and platform compatibility.
+              </p>
+
+              <p>
+                Our team takes the time to understand your business goals,
+                operational challenges, and budget to create custom logistic app
+                development tailored to your specific requirements. Get in touch
+                with us today to explore a cost-effective solution that enhances
+                efficiency, optimizes workflows, and supports long-term growth.
               </p>
             </div>
           </div>
-          <div className="text-center">
-            <Link
-              href="#contact"
-              className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-            >
-              Get a Quotation <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
 
           {/* Banner Image */}
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
@@ -861,10 +955,13 @@ export default function realEstate() {
           {/* Success Stories Heading Section */}
           <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-              Endeavors That Make Us Proud
+              Success Stories That Showcase Our Logistics Expertise
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
+              iQlance solutions has always been honored with valuable words for
+              the efforts given on mobile app development that are efficiently
+              unique and user centric. Here are some of the best examples for
+              this.
             </p>
           </div>
         </section>
@@ -980,8 +1077,8 @@ export default function realEstate() {
                     key={index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                      ? "text-black font-semibold"
-                      : "text-gray-500 hover:text-black"
+                        ? "text-black font-semibold"
+                        : "text-gray-500 hover:text-black"
                       }`}
                   >
                     {tab.category}
@@ -1031,13 +1128,52 @@ export default function realEstate() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              We are Team of Talented, Experienced, and Certified Designers and Developers.s
+              Ready to Transform Your Transportation and Logistics Mobile Apps
+              Development
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-               Let us Build Something Extraordinary. 
+              Partner with our logistics app development company to build custom
+              logistics mobile applications that streamline operations and drive
+              growth.
             </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                >
+                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                  <span>US :</span>
+                  <a
+                    href="tel:+14697939837"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a
+                    href="tel:+16476379108"
+                    className="hover:text-[#1B4B82] transition-colors"
+                  >
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
 
             {/* Action Button */}
             <div>
@@ -1052,15 +1188,16 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black mt-5">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
-              Offshore Web, Mobile & Software Development Company
+              Your Trusted Logistics App Development Company in the USA
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App Development Company 
-              with a vast area of experience in crafting stunning and end to end encrypted 
-              technology solutions. We offer excellent expertise of the industry followed by an 
-              exactly planned approach to elevate your growth.
+              iQlance solutions is a leading Software, Web, & Mobile App
+              Development Company with a vast area of experience in crafting
+              stunning and end to end encrypted technology solutions. We offer
+              excellent expertise of the industry followed by an exactly planned
+              approach to elevate your growth.
             </p>
           </div>
         </section>
@@ -1097,12 +1234,12 @@ export default function realEstate() {
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
-              Industries We Serve
+              Industries We Serve with Custom Logistics App Development
             </h1>
             <p>
-              Our real estate app offering a feature-rich experience
-              and unmatched performance has connected us with real estate tycoons.
-              We have been with them their entire journey, and it was a beautiful experience with them.
+              Over the years, we have collaborated with multiple companies, both
+              large firms with big teams and small-scale businesses, across
+              several industries.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1134,17 +1271,16 @@ export default function realEstate() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
-              Why Choose Us?
+              Why Businesses Choose Our Logistics App Development Company
             </h1>
             <p>
-              iQlance is the dominant real estate mobile app development company that provides multiple support 
-              to users, has tech-infused offerings, agile methodology, 
-              and whatnot. We are dedicated to enhancing 
-              the experience of the buyers 
-              and real estate firms by incorporating every need and mixing it with a perfect blend:{" "}
+              iQlance Solutions specializes in developing scalable, feature-rich
+              mobile applications for different operating systems, like Android
+              and iPhone. Our experts deliver a centralized workflow for every
+              client and offer dedicated service at all times.{" "}
             </p>
           </div>
         </section>
@@ -1178,9 +1314,10 @@ export default function realEstate() {
               Client Testimonials
             </h1>
             <p>
-                  Our top priority from the beginning has always been customer satisfaction, 
-                  and it feels good when the clients 
-                  feel the same. So here are the words of some of our clients who have enjoyed working with us:
+              Our purpose as a logistics app development company, has always
+              centered around putting customer satisfaction first. Here are some
+              of the things our past clients have to say about our services,
+              directly from them.
             </p>
           </div>
         </section>
@@ -1287,8 +1424,8 @@ export default function realEstate() {
             </h1>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
-              We deal with some common questions about real estate web applications every day. 
-              If you too have questions relating to them, you can refer to it below:
+              Here you will find the answers you are looking for because we know
+              what’s in our client’s mind.
             </p>
           </div>
 
@@ -1300,8 +1437,8 @@ export default function realEstate() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-gray-300"
+                        ? "border-gray-200 shadow-md"
+                        : "border-gray-200 hover:border-gray-300"
                       }`}
                   >
                     {/* Question */}
@@ -1315,8 +1452,8 @@ export default function realEstate() {
 
                       <ChevronDown
                         className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
+                            ? "rotate-180 text-black"
+                            : "rotate-0 text-black"
                           }`}
                       />
                     </button>
@@ -1324,8 +1461,8 @@ export default function realEstate() {
                     {/* Answer */}
                     <div
                       className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
+                          ? "max-h-150 opacity-100"
+                          : "max-h-0 opacity-0"
                         }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
@@ -1364,10 +1501,11 @@ export default function realEstate() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance solution. 
-              See What process we follow for mobile app and software development. 
-              Have a look at how we are praised by our clients 
-              Start a conversation to innovate your next great idea into reality with us.
+              Have a look at the services and development process of the iQlance
+              solution. See What process we follow for mobile app and software
+              development. Have a look at how we are praised by our clients
+              Start a conversation to innovate your next great idea into reality
+              with us.
             </p>
           </div>
         </section>
@@ -1375,24 +1513,24 @@ export default function realEstate() {
           <ContactForm />
         </div>
       </div>
-      <section className="mb-5 overflow-hidden">
-      <div className="marquee">
-        <div className="marquee-content">
-          {[...partners, ...partners].map((item, index) => (
-            <div
-              key={`${item.id}-${index}`}
-              className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 flex-shrink-0"
-            >
-              <img
-                src={item.image}
-                alt={item.alt}
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-          ))}
+      <section className="mb-5">
+        <div className="">
+          <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
+            {partners.map((item) => (
+              <div
+                key={item.id}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }

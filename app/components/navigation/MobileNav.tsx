@@ -284,7 +284,7 @@ export const MobileNav = ({ isOpen, onClose, navLinks }: MobileNavProps) => {
                   setActiveSubMenu(null);
                 }}
               >
-                <span className="flex-1">{item}</span>
+                <span className="flex-1">{item.name}</span>
               </Link>
             ))}
           </div>

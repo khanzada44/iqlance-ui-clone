@@ -16,7 +16,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { offices } from "../contact-us/data";
 import ContactForm from "../../contactForm/ContactForm";
-import { partners } from "../../pages/contact-us/data";
+import {
+  partners
+} from "../../../../utils/data";
 import { submitContactForm } from "@/services/send-call-request";
 
 export default function ContactSection() {
@@ -98,7 +100,7 @@ export default function ContactSection() {
   };
   return (
     <>
-      <div className="w-[90%] md:w-[80%] mx-auto max-w-full overflow-hidden">
+      <div className="w-full max-w-[80%] mx-auto">
         {/* Top Connect Banner */}
         <section className="w-full my-8">
           <div className="bg-linear-to-r from-[#4A4E5A] via-[#636875] to-[#A0A4AE] text-white p-6 md:p-12 rounded-lg shadow-lg w-full">

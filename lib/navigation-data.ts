@@ -1,4 +1,8 @@
 import { NavLink, ServicesData } from "@/types/navigation";
+import React, { useEffect, useState } from "react";
+import { allSubCategories } from "../services/all-sub-categories";
+
+
 
 export const navLinks: NavLink[] = [
   {
@@ -24,32 +28,88 @@ export const navLinks: NavLink[] = [
     label: "Industry",
     href: "/industry/healthcare",
     dropdown: [
-      { label: "Healthcare", href: "/industry/healthcare", icon: "/icons/healthcare.svg" },
-      { label: "Logistics", href: "/industry/logistics", icon: "/icons/logistics.svg" },
-      { label: "Wellness & Fitness", href: "/industry/wellness-and-fitness", icon: "/icons/wellness-iq.png.webp" },
-      { label: "Real estate", href: "/industry/real-estate", icon: "/icons/realestate.svg" },
-      { label: "Food & Restaurant", href: "/industry/food-ordering", icon: "/icons/foodRestaurant.svg" },
-      { label: "E-commerce", href: "/industry/ecommerce", icon: "/icons/e-commerce.svg" },
-      { label: "Education", href: "/industry/elearning-app", icon: "/icons/education.svg" },
+      // { label: "Healthcare", href: "/industry/healthcare", icon: "/icons/healthcare.svg" },
+      // { label: "Logistics", href: "/industry/logistics", icon: "/icons/logistics.svg" },
+      // { label: "Wellness & Fitness", href: "/industry/wellness-and-fitness", icon: "/icons/wellness-iq.png.webp" },
+      // { label: "Real estate", href: "/industry/real-estate", icon: "/icons/realestate.svg" },
+      // { label: "Food & Restaurant", href: "/industry/food-ordering", icon: "/icons/foodRestaurant.svg" },
+      // { label: "E-commerce", href: "/industry/ecommerce", icon: "/icons/e-commerce.svg" },
+      // { label: "Education", href: "/industry/elearning-app", icon: "/icons/education.svg" },
     ],
   },
   {
     label: "Solutions",
     href: "/solutions/on-demand",
     dropdown: [
-      { label: "On Demand", href: "/solutions/on-demand", icon: "/icons/ondemand.svg" },
-      { label: "Taxi Booking", href: "/solutions/taxi", icon: "/icons/taxiBooking.svg" },
-      { label: "Restaurant", href: "/solutions/restaurant", icon: "/icons/restaurant.svg" },
-      { label: "Fitness", href: "/solutions/fitness", icon: "/icons/fitness.svg" },
-      { label: "Social Networking", href: "/solutions/social-media", icon: "/icons/socialNetworking.svg" },
-      { label: "Dating App", href: "/solutions/dating", icon: "/icons/datingapp.svg" },
-      { label: "Food Delivery App", href: "/solutions/food-delivery-app", icon: "/icons/fooddeliveryapp.svg" },
+      // { label: "On Demand", href: "/solutions/on-demand", icon: "/icons/ondemand.svg" },
+      // { label: "Taxi Booking", href: "/solutions/taxi", icon: "/icons/taxiBooking.svg" },
+      // { label: "Restaurant", href: "/solutions/restaurant", icon: "/icons/restaurant.svg" },
+      // { label: "Fitness", href: "/solutions/fitness", icon: "/icons/fitness.svg" },
+      // { label: "Social Networking", href: "/solutions/social-media", icon: "/icons/socialNetworking.svg" },
+      // { label: "Dating App", href: "/solutions/dating", icon: "/icons/datingapp.svg" },
+      // { label: "Food Delivery App", href: "/solutions/food-delivery-app", icon: "/icons/fooddeliveryapp.svg" },
     ],
   },
   { label: "Our Work", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
 
 ];
+
+export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
+  try {
+    const res = await allSubCategories();
+
+    const itemsArray = res?.response?.data || res?.data || (Array.isArray(res) ? res : []);
+
+    // Slugs defining Solutions items
+    const solutionSlugs = [
+      "on-demand",
+      "taxi-booking",
+      "restaurant",
+      "fitness",
+      "social-networking",
+      "dating-app",
+      "online-food-ordering",
+    ];
+
+    return navLinks.map((link) => {
+      if (link.label === "Solutions") {
+        const solutionsData = itemsArray.filter((item: any) =>
+          solutionSlugs.includes(item.slug)
+        );
+
+        return {
+          ...link,
+          dropdown: solutionsData.map((item: any) => ({
+            label: item.name || item.title || item.label,
+            href: `/solutions/${item.slug || ""}`,
+            icon: item.icon_url || item.icon || "/icons/default.svg",
+          })),
+        };
+      }
+
+      if (link.label === "Industry") {
+        const industryData = itemsArray.filter(
+          (item: any) => !solutionSlugs.includes(item.slug)
+        );
+
+        return {
+          ...link,
+          dropdown: industryData.map((item: any) => ({
+            label: item.name || item.title || item.label,
+            href: `/industry/${item.slug || ""}`,
+            icon: item.icon_url || item.icon || "/icons/default.svg",
+          })),
+        };
+      }
+
+      return link;
+    });
+  } catch (error) {
+    console.error("Failed to load nav links from API:", error);
+    return navLinks;
+  }
+};
 
 export const servicesData: ServicesData = {
   title: "What we can do for you",

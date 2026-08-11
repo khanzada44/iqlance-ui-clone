@@ -16,7 +16,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { offices } from "../contact-us/data";
 import ContactForm from "../../contactForm/ContactForm";
-import { partners } from "../../pages/contact-us/data";
+import {
+  partners
+} from "../../../../utils/data";
 import { submitContactForm } from "@/services/send-call-request";
 
 export default function ContactSection() {

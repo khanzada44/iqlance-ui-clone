@@ -4,15 +4,18 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { navLinks, servicesData } from '@/lib/navigation-data';
+import { navLinks as initialNavLinks, fetchDynamicNavLinks, servicesData } from '@/lib/navigation-data';
 import { useDropdown } from '@/hooks/useDropdown';
 import { useLockedBody } from '@/hooks/useLockedBody';
 import { ROUTES } from '@/lib/constants';
 import { DesktopNav } from '../navigation/DesktopNav';
 import { MobileNav } from '../navigation/MobileNav';
 import { ServicesMegaDropdown } from '../navigation/ServicesMegaDropdown';
+import { NavLink } from '@/types/navigation';
 
 export default function Navbar() {
+  const [currentNavLinks, setCurrentNavLinks] = useState<NavLink[]>(initialNavLinks);
+
   const {
     activeDropdown,
     setActiveDropdown,
@@ -30,6 +33,23 @@ export default function Navbar() {
   const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useLockedBody(mobileMenuOpen);
+
+  // Dynamic NavLinks fetcher Effect
+  useEffect(() => {
+    let isMounted = true;
+    const loadDynamicData = async () => {
+      const updatedLinks = await fetchDynamicNavLinks();
+      if (isMounted) {
+        setCurrentNavLinks(updatedLinks);
+      }
+    };
+
+    loadDynamicData();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const handleCategoryHover = useCallback(
     (category: typeof servicesData.categories[0]) => {
@@ -119,7 +139,7 @@ export default function Navbar() {
           </Link>
         </div>
         <DesktopNav
-          navLinks={navLinks}
+          navLinks={currentNavLinks}
           activeDropdown={activeDropdown}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -147,7 +167,7 @@ export default function Navbar() {
       <MobileNav
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
-        navLinks={navLinks}
+        navLinks={currentNavLinks}
       />
     </header>
   );
