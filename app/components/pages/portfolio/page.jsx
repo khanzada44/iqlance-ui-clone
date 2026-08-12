@@ -155,7 +155,46 @@ export default function Portfolio() {
 
           {/* Dynamic Portfolio Items Rendering */}
           {loading ? (
-            <div className="text-center py-16 text-gray-600 font-medium">Loading Portfolio...</div>
+            <div className="max-w-6xl mx-auto p-4 py-8 animate-pulse space-y-8">
+              {/* Top Nav Tabs Skeleton (Domain / Technology) */}
+              <div className="flex justify-center gap-8 border-b pb-3">
+                <div className="h-6 bg-gray-300 rounded w-20"></div>
+                <div className="h-6 bg-gray-200 rounded w-24"></div>
+              </div>
+
+              {/* Sub-Category Pills Skeleton */}
+              <div className="flex flex-wrap justify-center gap-3 py-2">
+                <div className="h-8 bg-gray-300 rounded-md w-16"></div>
+                <div className="h-8 bg-gray-200 rounded-md w-28"></div>
+                <div className="h-8 bg-gray-200 rounded-md w-24"></div>
+                <div className="h-8 bg-gray-200 rounded-md w-32"></div>
+                <div className="h-8 bg-gray-200 rounded-md w-20"></div>
+                <div className="h-8 bg-gray-200 rounded-md w-28"></div>
+              </div>
+
+              {/* Main Portfolio Feature Card Skeleton */}
+              <div className="bg-slate-50 border border-slate-100 rounded-2xl p-8 lg:p-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  
+                  {/* Left Side Text & Button */}
+                  <div className="space-y-6">
+                    <div className="h-8 bg-gray-300 rounded-md w-2/5"></div>
+                    <div className="space-y-3 pt-2">
+                      <div className="h-4 bg-gray-200 rounded w-full"></div>
+                      <div className="h-4 bg-gray-200 rounded w-full"></div>
+                      <div className="h-4 bg-gray-200 rounded w-4/5"></div>
+                    </div>
+                    <div className="h-12 bg-gray-300 rounded-md w-40 mt-4"></div>
+                  </div>
+
+                  {/* Right Side Phone / App Showcase Placeholder */}
+                  <div className="flex justify-center items-center">
+                    <div className="w-64 h-105 bg-gray-200 rounded-[40px] border-8 border-gray-300 shadow-inner"></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           ) : error ? (
             <div className="text-center py-16 text-red-500 font-medium">{error}</div>
           ) : (

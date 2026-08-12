@@ -173,9 +173,9 @@ export const servicesData: ServicesData = {
     {
       id: "mobile",
       name: "Mobile App Development",
-      href: "/services/mobile-app-development",
+      href: "/services-category",
       items: [
-        { name: "iOS App Development", href: "/services/ios-app-development" },
+        { name: "iOS App Development", href: "/services-details" },
         { name: "React Native Development", href: "/services/react-native-development" },
         { name: "Android App Development", href: "/services/android-app-development" },
         { name: "Flutter App Development", href: "/services/flutter-app-development" },
@@ -191,7 +191,7 @@ export const servicesData: ServicesData = {
     {
       id: "software",
       name: "Software Development",
-      href: "/services/software-development",
+      href: "/services-category",
       items: [
         { name: "Web Development", href: "/services/web-development" },
         { name: "Swift App Development", href: "/services/swift-app-development" },
@@ -204,7 +204,7 @@ export const servicesData: ServicesData = {
     {
       id: "hire",
       name: "Hire Dedicated Developers",
-      href: "/services/hire-dedicated-developers",
+      href: "/services-category",
       items: [
         { name: "Kotlin App Development", href: "/services/kotlin-app-development" },
         { name: "MVP App Development", href: "/services/mvp-app-development" },
@@ -216,7 +216,7 @@ export const servicesData: ServicesData = {
     {
       id: "ai",
       name: "AI Development",
-      href: "/services/ai-development",
+      href: "/services-category",
       items: [
         { name: "iPad App Development", href: "/services/ipad-app-development" },
         { name: "Smart Watch App Development", href: "/services/smart-watch-app-development" },
@@ -228,7 +228,7 @@ export const servicesData: ServicesData = {
     {
       id: "digital",
       name: "Digital Marketing",
-      href: "/services/digital-marketing",
+      href: "/services-category",
       items: [
         { name: "PWA Development", href: "/services/pwa-development" },
         { name: "Hybrid App Development", href: "/services/hybrid-app-development" },
@@ -240,7 +240,7 @@ export const servicesData: ServicesData = {
     {
       id: "enterprise",
       name: "Enterprise Solutions",
-      href: "/services/enterprise-solutions",
+      href: "/services-category",
       items: [
         { name: "PWA Development", href: "/services/pwa-development" },
         { name: "Hybrid App Development", href: "/services/hybrid-app-development" },

@@ -456,7 +456,7 @@ export const technologies = [
 ]
 export const stats = [
   {
-    icon: '/icons/icon-5.svg',
+    icon: '/images/icon-5.png',
     value: "8+",
     line1: "Years",
     line2: "of experience",

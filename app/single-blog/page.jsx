@@ -7,7 +7,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { ChevronRight, ArrowRight } from "lucide-react";
 // Assumed service imports
 import { getSingleBlog, blogCategories } from "@/services/blog";
-import { blogByCategory } from "../../services/blog"; 
+import { blogByCategory } from "../../services/blog";
 
 export default function SingleBlogPage() {
     const router = useRouter();
@@ -82,8 +82,50 @@ export default function SingleBlogPage() {
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center min-h-100">
-                <p className="text-gray-500 font-medium">Loading blog details...</p>
+            <div className="max-w-6xl mx-auto p-4 py-8 animate-pulse">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    {/* Main Blog Details (Left Side - 2 Columns) */}
+                    <div className="lg:col-span-2 space-y-4">
+                        {/* Title Skeleton */}
+                        <div className="h-10 bg-gray-200 rounded-md w-11/12"></div>
+                        <div className="h-10 bg-gray-200 rounded-md w-3/4"></div>
+
+                        {/* Date / Metadata Skeleton */}
+                        <div className="h-4 bg-gray-200 rounded w-1/4 my-2"></div>
+
+                        {/* Big Banner Image Skeleton */}
+                        <div className="w-full h-80 bg-gray-200 rounded-lg mt-4"></div>
+
+                        {/* Paragraph Lines Skeleton */}
+                        <div className="space-y-3 pt-4">
+                            <div className="h-4 bg-gray-200 rounded w-full"></div>
+                            <div className="h-4 bg-gray-200 rounded w-full"></div>
+                            <div className="h-4 bg-gray-200 rounded w-4/5"></div>
+                        </div>
+                    </div>
+
+                    {/* Sidebar / Get In Touch Form (Right Side - 1 Column) */}
+                    <div className="space-y-6">
+                        {/* Form Skeleton Card */}
+                        <div className="bg-gray-50 border border-gray-100 p-6 rounded-2xl space-y-6">
+                            <div className="h-6 bg-gray-200 rounded w-1/2 mb-4"></div>
+                            <div className="h-8 bg-gray-200 rounded w-full"></div>
+                            <div className="h-8 bg-gray-200 rounded w-full"></div>
+                            <div className="h-8 bg-gray-200 rounded w-full"></div>
+                            <div className="h-16 bg-gray-200 rounded w-full"></div>
+                            <div className="h-10 bg-gray-300 rounded-lg w-28"></div>
+                        </div>
+
+                        {/* Categories Box Skeleton */}
+                        <div className="bg-gray-50 border border-gray-100 p-6 rounded-2xl space-y-3">
+                            <div className="h-6 bg-gray-200 rounded w-1/3 mb-2"></div>
+                            <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+                            <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         );
     }

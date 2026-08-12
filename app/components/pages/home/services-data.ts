@@ -151,7 +151,7 @@ export const slides = [
     ],
 
     image:
-      "/images/app-development-comapny-canada.png.webp",
+      "/images/app-development-comapny-canada.png",
 
     consultation:
       "Schedule a free consultation today with Project Manager.",
@@ -209,7 +209,7 @@ export const slides = [
   ],
 
   image:
-     "/images/app-development-comapny-canada.png.webp",
+     "/images/app-development-comapny-canada.png",
 
   consultation:
     "Schedule a free consultation today with Project Manager.",
@@ -319,4 +319,42 @@ export const portfolioSlides = [
       "/images/erp1.png.webp",
   },
 
+];
+export const services = [
+  {
+    image: "/images/Services_We_Offer_1.png",
+    title: "Custom Software Development",
+    description:
+      "Our custom software development company builds scalable enterprise software, CRM systems, ERP solutions, SaaS platforms, and business automation applications tailored to your operational requirements.",
+  },
+  {
+    image: "/images/Services_We_Offer_2.png",
+    title: "AI Development",
+    description:
+      "Develop advanced AI-powered solutions, including generative AI applications, AI agents, chatbots, and automation tools that enhance customer experiences, streamline operations, and boost innovation.",
+  },
+  {
+    image: "/images/Services_We_Offer_3.png",
+    title: "Web Development",
+    description:
+      "Develop responsive, high-performing websites and web apps that strengthen your online presence, elevate user experiences, and support long-term business success across digital touchpoints.",
+  },
+  {
+    image: "/images/Services_We_Offer_4.png",
+    title: "Mobile App Development",
+    description:
+      "Create engaging iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences, drive engagement, and support your business growth with scalable, feature-rich solutions.",
+  },
+  {
+     image: "/images/Services_We_Offer_5.png",
+    title: "IT Staff Augmentation",
+    description:
+      "Expand your development capabilities with experienced IT professionals who integrate seamlessly with your existing team, helping you speed up project delivery while maintaining flexibility, transparency, and quality.",
+  },
+  {
+   image: "/images/Services_We_Offer_6.png",
+    title: "Cloud Consulting",
+    description:
+      "Optimize your cloud infrastructure with expert consulting services that boost scalability, strengthen security, reduce operational costs, and ensure reliable performance through custom cloud strategies and seamless migration.",
+  },
 ];

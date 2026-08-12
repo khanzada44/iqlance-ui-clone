@@ -50,7 +50,7 @@ export default function FloatingTalkToExpert() {
         <div>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center justify-center bg-[#134479] hover:bg-[#0d3056] text-white px-2 py-3 shadow-2xl cursor-pointer z-10 transition-all duration-200 rounded-l-md"
+            className="flex items-center justify-center bg-red-700 hover:bg-red-600 text-white px-2 py-3 shadow-2xl cursor-pointer z-10 transition-all duration-200"
             style={{ writingMode: "vertical-rl" }}
           >
             <Phone size={15} className="rotate-90 mb-2" />

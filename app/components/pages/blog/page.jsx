@@ -9,6 +9,18 @@ import { ChevronRight, ArrowRight, Paperclip } from "lucide-react";
 import { getBlogs } from "@/services/blog";
 import { blogByCategory } from "../../../../services/blog";
 import { submitContactForm } from "../../../../services/send-call-request";
+import {
+  partners,
+  bottomFeatures,
+  slides,
+  portfolioSlides,
+  technologies,
+  stats,
+  industries,
+  services,
+  faqsData,
+  testimonials,
+} from "../../../../utils/data";
 
 export default function Blog() {
   const searchParams = useSearchParams();
@@ -217,7 +229,7 @@ export default function Blog() {
                 {/* Right Form */}
                 <div className="relative">
                   <img
-                    src="https://www.iqlance.com/wp-content/uploads/2025/11/badge-sameday-resposnse.png"
+                    src="/images/badge-sameday-resposnse.png"
                     alt="Guaranteed"
                     className="absolute -top-12 right-6 w-28 z-10"
                   />
@@ -359,133 +371,140 @@ export default function Blog() {
           </section>
 
 
-        <section className="mt-12 mb-8">
-          {fetchingBlogs ? (
-            <div className="text-center py-10 text-gray-500">Loading blogs...</div>
-          ) : blogs && blogs.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogs.map((blog, index) => (
-                <div
-                  key={`${blog.slug}-${index}`}
-                  className="p-px bg-transparent hover:bg-linear-to-r hover:from-blue-300 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
-                >
-                  <Link
-                    href={`/single-blog?slug=${blog.slug}`}
-                    className="group block overflow-hidden bg-white h-full"
+          <section className="mt-12 mb-8">
+            {fetchingBlogs ? (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto p-4 py-10">
+                {[1, 2, 3].map((item) => (
+                  <div key={item} className="w-full space-y-4 animate-pulse">
+                    <div className="h-48 bg-gray-200 rounded-lg"></div>
+                    <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+                    <div className="space-y-2">
+                      <div className="h-4 bg-gray-200 rounded"></div>
+                      <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : blogs && blogs.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {blogs.map((blog, index) => (
+                  <div
+                    key={`${blog.slug}-${index}`}
+                    className="p-px bg-transparent hover:bg-linear-to-r hover:from-blue-300 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
                   >
-                    <div className="relative aspect-4/3 overflow-hidden">
-                      {blog.image_url || blog.image ? (
-                        <Image
-                          src={blog.image_url || blog.image}
-                          alt={blog.title}
-                          fill
-                          unoptimized
-                          className="object-cover transition duration-500 group-hover:scale-105"
-                        />
-                      ) : (
-                        <div className="flex h-full w-full items-center justify-center bg-gray-200">
-                          No Image
-                        </div>
-                      )}
-                    </div>
+                    <Link
+                      href={`/single-blog?slug=${blog.slug}`}
+                      className="group block overflow-hidden bg-white h-full"
+                    >
+                      <div className="relative aspect-4/3 overflow-hidden">
+                        {blog.image_url || blog.image ? (
+                          <Image
+                            src={blog.image_url || blog.image}
+                            alt={blog.title}
+                            fill
+                            unoptimized
+                            className="object-cover transition duration-500 group-hover:scale-105"
+                          />
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center bg-gray-200">
+                            No Image
+                          </div>
+                        )}
+                      </div>
 
-                    <div className="p-5">
-                      {blog.category?.name && (
-                        <span className="text-sm text-[#1F4E99] font-medium">
-                          {blog.category.name}
-                        </span>
-                      )}
+                      <div className="p-5">
+                        {blog.category?.name && (
+                          <span className="text-sm text-[#1F4E99] font-medium">
+                            {blog.category.name}
+                          </span>
+                        )}
 
-                      <h3 className="mt-3 text-xl font-semibold leading-7 text-blue-800 line-clamp-2">
-                        {blog.title}
-                      </h3>
-                    </div>
-                  </Link>
+                        <h3 className="mt-3 text-xl font-semibold leading-7 text-blue-800 line-clamp-2">
+                          {blog.title}
+                        </h3>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            ) :
+              (
+                <div className="text-center py-10 text-gray-500">
+                  No blogs available.
                 </div>
-              ))}
-            </div>
-          ) : 
-          (
-            <div className="text-center py-10 text-gray-500">
-              No blogs available.
-            </div>
-          )}
+              )}
 
-          {/* Custom Joined Group Pagination */}
-          {lastPage >= 1 && (
-            <div className="flex  mt-10 mb-6">
-              <div className="inline-flex rounded-md shadow-xs border border-blue-200 overflow-hidden bg-white">
-                
-                {/* Previous Arrow Button */}
-                {currentPage > 1 && (
+            {lastPage >= 1 && (
+              <div className="flex  mt-10 mb-6">
+                <div className="inline-flex rounded-md shadow-xs border border-blue-200 overflow-hidden bg-white">
+
+                  {/* Previous Arrow Button */}
+                  {currentPage > 1 && (
+                    <button
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      className="px-3.5 py-2 text-blue-600 border-r border-blue-200 hover:bg-gray-50 flex items-center justify-center transition cursor-pointer"
+                    >
+                      <ChevronRight className="w-4 h-4 rotate-180" />
+                    </button>
+                  )}
+
+                  {/* Page 1 */}
                   <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    className="px-3.5 py-2 text-blue-600 border-r border-blue-200 hover:bg-gray-50 flex items-center justify-center transition cursor-pointer"
-                  >
-                    <ChevronRight className="w-4 h-4 rotate-180" />
-                  </button>
-                )}
-
-                {/* Page 1 */}
-                <button
-                  onClick={() => handlePageChange(1)}
-                  className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${
-                    currentPage === 1
+                    onClick={() => handlePageChange(1)}
+                    className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${currentPage === 1
                       ? "bg-blue-950 text-white font-bold"
                       : "text-blue-600 hover:bg-gray-50"
-                  }`}
-                >
-                  1
-                </button>
+                      }`}
+                  >
+                    1
+                  </button>
 
-                {/* Page 2 (if available) */}
-                {lastPage >= 2 && (
-                  <button
-                    onClick={() => handlePageChange(2)}
-                    className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${
-                      currentPage === 2
+                  {/* Page 2 (if available) */}
+                  {lastPage >= 2 && (
+                    <button
+                      onClick={() => handlePageChange(2)}
+                      className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${currentPage === 2
                         ? "bg-blue-950 text-white font-bold"
                         : "text-blue-600 hover:bg-gray-50"
-                    }`}
-                  >
-                    2
-                  </button>
-                )}
+                        }`}
+                    >
+                      2
+                    </button>
+                  )}
 
-                {/* Ellipsis (...) */}
-                {lastPage > 3 && (
-                  <span className="px-3 py-2 text-blue-600 text-sm font-medium border-r border-blue-200 bg-white select-none">
-                    ...
-                  </span>
-                )}
+                  {/* Ellipsis (...) */}
+                  {lastPage > 3 && (
+                    <span className="px-3 py-2 text-blue-600 text-sm font-medium border-r border-blue-200 bg-white select-none">
+                      ...
+                    </span>
+                  )}
 
-                {/* Last Page Number */}
-                {lastPage > 2 && (
-                  <button
-                    onClick={() => handlePageChange(lastPage)}
-                    className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${
-                      currentPage === lastPage
+                  {/* Last Page Number */}
+                  {lastPage > 2 && (
+                    <button
+                      onClick={() => handlePageChange(lastPage)}
+                      className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${currentPage === lastPage
                         ? "bg-black text-white font-bold"
                         : "text-blue-600 hover:bg-gray-50"
-                    }`}
+                        }`}
+                    >
+                      {lastPage}
+                    </button>
+                  )}
+
+                  {/* Next Arrow Button */}
+                  <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === lastPage}
+                    className="px-3.5 py-2 text-blue-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition cursor-pointer"
                   >
-                    {lastPage}
+                    <ChevronRight className="w-4 h-4" />
                   </button>
-                )}
 
-                {/* Next Arrow Button */}
-                <button
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === lastPage}
-                  className="px-3.5 py-2 text-blue-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition cursor-pointer"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-
+                </div>
               </div>
-            </div>
-          )}
-        </section>
+            )}
+          </section>
         </div>
 
         {typeof ContactForm !== "undefined" && <ContactForm />}

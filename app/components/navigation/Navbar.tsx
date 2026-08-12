@@ -129,11 +129,11 @@ export default function Navbar() {
           </button>
           <Link href={ROUTES.HOME} className="flex items-center shrink-0">
             <Image
-              src="/images/iqlance-Logo.webp"
+              src="/images/Dev-App-04.png"
               alt="iQlance Logo"
-              width={215}
-              height={62}
-              className="h-7 w-auto sm:h-9 md:h-10"
+              width={315}
+              height={72}
+              className="h-20 w-auto sm:h-9 md:h-20"
               priority
             />
           </Link>
@@ -148,7 +148,7 @@ export default function Navbar() {
         />
         <Link
           href="/request-a-quote"
-          className="flex items-center gap-1.5 rounded-md bg-[#1f4b83] px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-[#173d6c] sm:gap-2 sm:px-4 sm:py-2 sm:text-sm lg:flex lg:px-5 lg:py-2.5"
+          className="flex items-center gap-1.5 bg-red-700 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-red-600 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm lg:flex lg:px-5 lg:py-2.5"
         >
           Enquire Now
           <ArrowRight size={16} className="hidden sm:block" />
