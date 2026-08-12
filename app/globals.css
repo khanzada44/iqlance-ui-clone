@@ -117,11 +117,11 @@
 
 .portfolio-dynamic-content .row {
   display: flex !important;
-  flex-wrap: wrap !important;
-  margin-right: -12px !important;
-  margin-left: -12px !important;
   justify-content: center !important;
-  align-items: stretch !important;
+  align-items: center !important;
+}
+.portfolio-dynamic-content .row .about_image_block{
+  width: 400px;
 }
 
 /* Column Base Reset */
@@ -130,22 +130,10 @@
   padding-left: 12px !important;
   box-sizing: border-box !important;
 }
-
-/* Responsive Column Sizing Overrides */
-@media (min-width: 992px) {
-  .portfolio-dynamic-content .col-lg-3 {
-    flex: 0 0 20% !important; /* 5 Columns Row Layout */
-    max-width: 20% !important;
-  }
-  .portfolio-dynamic-content .col-lg-4 {
-    flex: 0 0 33.333333% !important;
-    max-width: 33.333333% !important;
-  }
-  .portfolio-dynamic-content .col-lg-6 {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-  }
+.low-device-process-block {
+  display: none !important;
 }
+
 
 @media (min-width: 768px) and (max-width: 991px) {
   .portfolio-dynamic-content .col-md-4 {
@@ -200,7 +188,7 @@
 
 .portfolio-dynamic-content .app_screenshot_image_block img,
 .portfolio-dynamic-content .app_screenshot_section img {
-  border-radius: 16px;
+  /* border-radius: 16px; */
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
@@ -220,7 +208,7 @@
 .portfolio-dynamic-content .feature-card {
   background-color: #ffffff;
   border: 1px solid #f1f5f9;
-  border-radius: 16px;
+  /* border-radius: 16px; */
   padding: 1.75rem 1.5rem;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -259,7 +247,7 @@
 .portfolio-dynamic-content .timeline-step {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   padding: 1.25rem;
   flex: 1 1 160px;
   max-width: 200px;
@@ -272,7 +260,7 @@
 /* 7. Call-To-Action & Buttons */
 .portfolio-dynamic-content .cta-banner,
 .portfolio-dynamic-content div[style*="background"] {
-  border-radius: 24px;
+  /* border-radius: 24px; */
   padding: 3rem 2rem;
   margin: 4rem 0;
 }
@@ -287,7 +275,7 @@
   color: #ffffff !important;
   font-weight: 600;
   padding: 0.75rem 1.75rem;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   text-decoration: none;
   transition: background-color 0.2s ease;
   margin-top: 1rem;
@@ -296,6 +284,40 @@
 .portfolio-dynamic-content button:hover,
 .portfolio-dynamic-content a.btn:hover {
   background-color: #1e293b;
+}
+/* Custom Portfolio Dynamic Content Reset */
+.portfolio-dynamic-content img.dynamic-portfolio-img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero Section Image Grid Fix */
+.portfolio-dynamic-content .hero_image_block .portfolio-flex-row,
+.portfolio-dynamic-content .app_screenshot_image_block .portfolio-flex-row {
+  display: flex !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Screen Grids Adjustment */
+.portfolio-dynamic-content .hero_image_block [class*="col-"],
+.portfolio-dynamic-content .app_screenshot_image_block [class*="col-"] {
+  flex: 1 1 200px !important;
+  max-width: 280px !important;
+  box-sizing: border-box;
+}
+
+/* Background & Padding Handling for Section Layouts */
+.portfolio-dynamic-content .hero_section {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  padding: 3rem 1rem;
+  /* border-radius: 16px; */
+  color: #ffffff;
 }
 
 /* Mobile Responsiveness Adjustments */
@@ -313,4 +335,624 @@
     max-width: 100%;
     width: 100%;
   }
+}
+/* ==========================================================
+   PORTFOLIO DYNAMIC CONTENT - FULL STYLESHEET
+   ========================================================== */
+
+/* Base Reset & Full Width Constraint Fixes */
+.portfolio-page-wrapper {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.portfolio-dynamic-content {
+  width: 100% !important;
+  overflow-x: hidden;
+}
+
+.portfolio-dynamic-content .container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+/* ----------------------------------------------------------
+   1. HERO SECTION
+   ---------------------------------------------------------- */
+.portfolio-dynamic-content .hero_section {
+  background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%) !important;
+  padding: 4rem 0 0 0 !important;
+  color: #ffffff !important;
+  position: relative;
+  width: 100% !important;
+}
+
+.portfolio-dynamic-content .hero_section h1,
+.portfolio-dynamic-content .hero_section h2,
+.portfolio-dynamic-content .hero_section p,
+.portfolio-dynamic-content .hero_section span {
+  color: #ffffff !important;
+}
+
+.portfolio-dynamic-content .hero_bottom_div {
+  width: 100% !important;
+  margin-top: 2rem;
+}
+
+.portfolio-dynamic-content .hero_bottom_div img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* ----------------------------------------------------------
+   2. ABOUT SECTIONS
+   ---------------------------------------------------------- */
+.portfolio-dynamic-content .about_section {
+  padding: 5rem 0 !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+}
+
+/* Alternating background color for multiple about sections */
+.portfolio-dynamic-content .about_section:nth-of-type(even) {
+  background-color: #f8fafc !important;
+}
+
+.portfolio-dynamic-content .about_image_block img {
+  width: 100% !important;
+  height: auto !important;
+  margin-top:10px !important;
+}
+/* ==========================================================
+   TECHNOLOGY BLOCK CIRCULAR ICONS DESIGN
+   ========================================================== */
+
+/* Main Container */
+.technology_block {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 30px !important;
+  flex-wrap: wrap !important;
+  padding: 40px 0 !important;
+}
+
+/* Individual Tech Circle Item (Dashed Outer Ring) */
+.technology_block > div,
+.technology_block .tech_item,
+.technology_block [class*="col"] {
+  width: 220px !important;
+  height: 220px !important;
+  border-radius: 50% !important;
+  border: 1.5px dashed #2b2b36 !important; /* Outer Dashed Line */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 12px !important; /* Dashed line aur inner circle ke beech ka gap */
+  box-sizing: border-box !important;
+  background: transparent !important;
+}
+
+/* Inner Solid Circle Box */
+.technology_block > div > div,
+.technology_block .tech_item_inner,
+.technology_block .technology_box {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  background-color: #e8e8ee !important; /* Inner Light Grey Color */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 20px !important;
+  text-align: center !important;
+}
+
+/* Tech Icon Image */
+.technology_block img {
+  max-width: 60px !important;
+  max-height: 60px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin-bottom: 10px !important;
+}
+
+/* Tech Title / Label */
+.technology_block h4,
+.technology_block h5,
+.technology_block p,
+.technology_block span {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #121324 !important;
+  margin: 0 !important;
+}
+/* ----------------------------------------------------------
+   3. DEVELOPMENT PROCESS SECTION
+   ---------------------------------------------------------- */
+.portfolio-dynamic-content .developement_process_section {
+  background: #ffffff;
+  padding: 5rem 0 !important;
+  width: 100% !important;
+}
+
+.portfolio-dynamic-content .development_process_block {
+  background: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-dynamic-content .development_process_block img {
+  width: 100% !important;
+  height: auto !important;
+  /* border-radius: 8px; */
+}
+
+/* ----------------------------------------------------------
+   4. TECHNOLOGY USED SECTION
+   ---------------------------------------------------------- */
+.portfolio-dynamic-content .technlogy_used_section {
+  background-color: #ffffff !important;
+  padding: 5rem 0 !important;
+  width: 100% !important;
+}
+
+.portfolio-dynamic-content .technolgy_block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  /* border-radius: 16px; */
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.portfolio-dynamic-content .technolgy_block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-dynamic-content .technolgy_block img {
+  max-width: 80px !important;
+  height: auto !important;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+/* ----------------------------------------------------------
+   5. DISCUSS GREAT IDEA (CTA) SECTION
+   ---------------------------------------------------------- */
+.portfolio-dynamic-content .discuss_great_idea_section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  color: gray !important;
+  padding: 5rem 0 !important;
+  width: 100% !important;
+}
+
+.portfolio-dynamic-content .discuss_great_idea_section h1,
+.portfolio-dynamic-content .discuss_great_idea_section h2,
+.portfolio-dynamic-content .discuss_great_idea_section p,
+.portfolio-dynamic-content .discuss_great_idea_section a {
+  color: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   6. APP SCREENSHOTS / GALLERY SECTION
+   ---------------------------------------------------------- */
+.portfolio-dynamic-content .app_screenshot_section {
+  background-color: #f8fafc !important;
+  padding: 5rem 0 !important;
+  width: 100% !important;
+}
+
+.portfolio-dynamic-content .app_screenshot_section img {
+  /* border-radius: 12px; */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------------------------------
+   GLOBAL RESPONSIVE IMAGE RULE
+   ---------------------------------------------------------- */
+.portfolio-dynamic-content img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+/* ==========================================================
+   HERO OVERLAY & MOBILE FLOATING LAYOUT FIX
+   ========================================================== */
+
+/* 1. Hero Container Stack Configuration */
+.portfolio-dynamic-content .hero_section {
+  position: relative !important;
+  z-index: 1 !important;
+  overflow: visible !important;
+  padding-bottom: 0 !important;
+}
+
+/* 2. White Wave Divider Container (Shifted down behind mobiles) */
+.portfolio-dynamic-content .hero_bottom_div {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 2 !important; /* Mobile images se niche rakha hai */
+  line-height: 0 !important;
+  pointer-events: none;
+}
+
+.portfolio-dynamic-content .hero_bottom_div img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* 3. Mobile Screens Floating Effect (Layered on Top) */
+.portfolio-dynamic-content .hero_section .container,
+.portfolio-dynamic-content .hero_section img:not(.hero_bottom_div img),
+.portfolio-dynamic-content .hero_section [class*="screen"],
+.portfolio-dynamic-content .hero_section [class*="mockup"] {
+  position: relative !important;
+  z-index: 10 !important; /* Pure layout me sabse top layer */
+  transform: translateY(40px) !important; /* Wave ke upar overlap karane ke liye */
+}
+
+/* 4. Next Section Spacing Adjustment */
+.portfolio-dynamic-content .about_section,
+.portfolio-dynamic-content .hero_section + section {
+  position: relative !important;
+  padding-top: 80px !important; /* Mobile offset space compensate karne ke liye */
+  background-color: #ffffff !important;
+}
+/* ==========================================================
+   HERO HEADING FONT SIZE FIX
+   ========================================================== */
+
+/* Hero section ke andar ki sabhi headings ka size bada karne ke liye */
+.portfolio-dynamic-content .hero_section h1,
+.portfolio-dynamic-content .hero_section h2,
+.portfolio-dynamic-content .hero_section h3,
+.portfolio-dynamic-content .hero_section h4,
+.portfolio-dynamic-content .hero_section p {
+  font-size: 2.25rem !important; /* Size badhane ke liye (36px) */
+  font-weight: 700 !important;   /* Bold karne ke liye */
+  line-height: 1.2 !important;
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  color: #ffffff !important;
+}
+
+/* Mobile screens par responsive font size */
+@media (max-width: 768px) {
+  .portfolio-dynamic-content .hero_section h1,
+  .portfolio-dynamic-content .hero_section h2,
+  .portfolio-dynamic-content .hero_section h3,
+  .portfolio-dynamic-content .hero_section h4,
+  .portfolio-dynamic-content .hero_section p {
+    font-size: 1.5rem !important; /* (24px for mobile) */
+  }
+}
+/* ==========================================================
+   ABOUT BLOCK LAYOUT & TYPOGRAPHY STYLES
+   ========================================================== */
+
+/* Main wrapper spacing */
+.about_block {
+  padding: 60px 20px !important;
+}
+
+/* Aapka Flex Container (Direct Child) */
+.about_block > div {
+  justify-content: space-between !important;
+  align-items: center !important; /* Text aur image ko vertically center karega */
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  gap: 40px !important; /* Dono columns ke beech ka fasla */
+}
+
+/* Text Column */
+.about_block .col-md-6 {
+  flex: 1 !important;
+  max-width: 550px !important; /* Text ko zyada phailne se rokega */
+}
+
+/* 'About' Heading */
+.about_block .title_block h2 {
+  font-size: 42px !important;
+  font-weight: 800 !important;
+  color: #000000 !important;
+  margin-bottom: 8px !important;
+}
+
+/* 'The App Similar to Airbnb' Subheading */
+.about_block .title_block h3 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  margin-bottom: 25px !important;
+}
+
+/* Paragraph Content */
+.about_block .title_block p {
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: #444444 !important;
+}
+
+/* Image Column Alignment */
+.about_block .about_image_block {
+  display: flex !important;
+  justify-content: flex-end !important; /* Image ko right side push karega */
+}
+
+/* Mobile Screens ke liye Responsive Design */
+@media (max-width: 768px) {
+  .about_block > div {
+    flex-direction: column !important; /* Mobile par text upar, image niche */
+    text-align: center !important;
+  }
+  
+  .about_block .about_image_block {
+    justify-content: center !important;
+    margin-top: 40px !important;
+  }
+
+  /* Inline 422px width ko mobile par screen se bahar jane se rokne ke liye */
+  .about_block .about_image_block img {
+    width: 100% !important;
+    max-width: 422px !important; 
+  }
+}
+/* ==========================================================
+   CONTACT DETAIL BOX & BUTTON STYLING
+   ========================================================== */
+
+/* Outer Box (Border: Left Blue, Right/Top/Bottom Dark) */
+.portfolio-dynamic-content .contact_detail {
+  display: block !important;
+  width: fit-content !important;
+  text-align: center !important;
+  background: #f8fafc !important;
+  border: 1.5px solid #111111 !important;
+  border-left: 2.5px solid #2563eb !important;
+  margin: 1.5rem auto 1.5rem auto !important; /* Bottom margin adjust kiya */
+  padding: 14px 28px !important;
+}
+
+/* Paragraph inside contact detail */
+.portfolio-dynamic-content .contact_detail p {
+  margin: 0 !important;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  color: #111111 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+/* Links & Text inside box */
+.portfolio-dynamic-content .contact_detail a {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+/* Icons sizing inside box */
+.portfolio-dynamic-content .contact_detail img {
+  width: 20px !important;
+  height: 20px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+/* Request a Quote Button (more-link) */
+.portfolio-dynamic-content a.more-link {
+  display: inline-flex !important;
+  clear: both !important;
+  margin: 0 auto !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  padding: 12px 30px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-radius: 0px !important;
+  text-decoration: none !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.portfolio-dynamic-content a.more-link:hover {
+  background-color: #1e293b !important;
+}
+/* ==========================================================
+   USER JOURNEY BLOCK TIMELINE STYLING
+   ========================================================== */
+
+/* Timeline Section Wrapper */
+.user_journey_block {
+  padding: 60px 0 !important;
+  background-color: #ffffff !important;
+  position: relative !important;
+}
+
+/* Horizontal Line (Container level CSS) */
+.user_journey_block .row {
+  position: relative !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.user_journey_block .row::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 10px !important; /* Circle Ke Center se guzarne wali line */
+  left: 0 !important;
+  right: 0 !important;
+  height: 1px !important;
+  background-color: #11142d !important;
+  z-index: 1 !important;
+}
+
+/* Column adjustment */
+.user_journey_block [class*="col-"] {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* Circle Dot on the top line */
+.user_journey_block [class*="col-"]::before {
+  content: "" !important;
+  width: 20px !important;
+  height: 20px !important;
+  background-color: #e2e8f0 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 8px !important;
+  z-index: 3 !important;
+}
+
+/* Inner Dot inside Circle */
+.user_journey_block [class*="col-"]::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 8px !important;
+  width: 4px !important;
+  height: 4px !important;
+  background-color: #11142d !important;
+  border-radius: 50% !important;
+  z-index: 4 !important;
+}
+
+/* Vertical Dotted Line connecting to Card */
+.user_journey_block [class*="col-"] > div::before,
+.user_journey_block .journey_card::before {
+  content: "" !important;
+  width: 1px !important;
+  height: 25px !important;
+  border-left: 2px dotted #11142d !important;
+  margin: 0 auto 5px auto !important;
+  display: block !important;
+}
+
+/* Step Card Box */
+.user_journey_block [class*="col-"] > div,
+.user_journey_block .journey_card {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 16px 14px !important;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #f1f5f9 !important;
+  width: 100% !important;
+  min-height: 120px !important;
+  text-align: left !important;
+}
+
+/* Step Label (e.g. Step-1) */
+.user_journey_block span,
+.user_journey_block .step_num {
+  font-size: 0.8rem !important;
+  color: #64748b !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-weight: 500 !important;
+}
+
+/* Title text inside step box */
+.user_journey_block h4,
+.user_journey_block h5,
+.user_journey_block p,
+.user_journey_block .step_title {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================
+   KEY FEATURES CARDS - SIZE REDUCTION & ALIGNMENT FIX
+   ========================================================== */
+
+/* Main Card Box */
+.key_features_block {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 16px 20px !important;          /* Padding kam ki taake box compact ho jaye */
+  position: relative !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  
+  /* Size and Alignment Fixes */
+  width: 100% !important;                  
+  max-width: 220px !important;             /* Maximum size chota kar diya */
+  margin: 0 auto !important;               /* Card ko apne grid column ke bilkul CENTER me rakhega */
+  min-height: 120px !important;            /* Height kam ki hai */
+  box-sizing: border-box !important;       /* Boundary cutoff hone se rokega */
+  overflow: hidden !important;             /* Content bahar nahi nikalne dega */
+}
+
+/* Left Indicator (Dark Accent) */
+.key_features_block::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 18px !important;
+  width: 4px !important;                   /* Indicator bar slightly thinner */
+  height: 30px !important;
+  background-color: #0d1b3e !important;
+  border-top-right-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+
+/* Circular Icon Block */
+.key_features_icon_block {
+  width: 44px !important;                  /* Icon circle ka size chota kiya */
+  height: 44px !important;
+  background-color: #e2e8f0 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 12px !important;
+  margin-left: 8px !important;             /* Left border se proper gap */
+}
+
+/* Icon Sizing inside Circle */
+.key_features_icon_block img,
+.key_features_icon_block i,
+.key_features_icon_block svg {
+  width: 22px !important;
+  height: 22px !important;
+  object-fit: contain !important;
+}
+
+/* Heading Text */
+.key_features_block h5 {
+  font-size: 0.95rem !important;          /* Text size halka chota kiya */
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+  margin-left: 8px !important;
+  line-height: 1.25 !important;
 }

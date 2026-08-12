@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import parse from "html-react-parser";
-import { singlePortfolio } from "../../services/all-sub-categories"; // Aapki API call function path
+import parse, { domToReact } from "html-react-parser";
+import { singlePortfolio } from "../../services/all-sub-categories";
+import ContactForm from "../components/contactForm/ContactForm";
 
 export default function SinglePortfolioPage() {
   const searchParams = useSearchParams();
@@ -33,15 +34,43 @@ export default function SinglePortfolioPage() {
     fetchPortfolioDetails();
   }, [slug]);
 
-  // Fix HTML typos and attributes for React DOM compatibility
+  // Comprehensive DOM transformer for dynamic HTML parsing
   const parseOptions = {
     replace: (domNode) => {
       // 1. Invalid HTML Tag Typo Fix (<dv> -> <div>)
       if (domNode.type === "tag" && domNode.name === "dv") {
-        domNode.name = "div";
+        return (
+          <div className={domNode.attribs?.class || ""}>
+            {domToReact(domNode.children, parseOptions)}
+          </div>
+        );
       }
 
-      // 2. React JSX Attribute Mappings
+      // 2. Dynamic Image Transformation for CSS & Lazy Loading
+      if (domNode.type === "tag" && domNode.name === "img") {
+        const {
+          src,
+          alt,
+          class: existingClass,
+          width,
+          height,
+        } = domNode.attribs || {};
+        return (
+          <img
+            src={src}
+            alt={
+              alt && alt !== "javascript:void(0);" ? alt : "portfolio visual"
+            }
+            width={width}
+            height={height}
+            loading="lazy"
+            decoding="async"
+            className={`${existingClass || ""} portfolio-parsed-img`.trim()}
+          />
+        );
+      }
+
+      // 3. Clean JSX Attribute Mapping
       if (domNode.attribs) {
         if ("fetchpriority" in domNode.attribs) {
           domNode.attribs.fetchPriority = domNode.attribs.fetchpriority;
@@ -63,7 +92,7 @@ export default function SinglePortfolioPage() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-100">
+      <div className="flex justify-center items-center min-h-[60vh]">
         <div className="text-gray-500 font-medium animate-pulse">
           Loading portfolio details...
         </div>
@@ -80,27 +109,20 @@ export default function SinglePortfolioPage() {
   }
 
   return (
-        <main className="container mx-auto px-4 py-12 max-w-6xl">
-        {/* Portfolio Header */}
-        {/* <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-            {portfolio.title}
-            </h1>
-        </div> */}
-
-        {/* Description Section */}
-        {/* {portfolio.description && (
-            <div className="portfolio-dynamic-content mb-12 text-center max-w-3xl mx-auto">
-            {parse(portfolio.description, parseOptions)}
+    <>
+      <div className="portfolio-page-wrapper w-full overflow-hidden">
+        {/* Full Width Dynamic Content Section */}
+        <main className="w-full">
+          {portfolio.content && (
+            <div className="portfolio-dynamic-content w-full">
+              {parse(portfolio.content, parseOptions)}
             </div>
-        )} */}
-
-        {/* Main Dynamic Content Layout */}
-        {portfolio.content && (
-            <div className="portfolio-dynamic-content space-y-8">
-            {parse(portfolio.content, parseOptions)}
-            </div>
-        )}
+          )}
         </main>
+
+        {/* Bottom Contact Form Section */}
+        {ContactForm && <ContactForm />}
+      </div>
+    </>
   );
 }

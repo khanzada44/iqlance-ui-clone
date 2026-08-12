@@ -157,7 +157,7 @@ export default function Home() {
         </div>
 
         {/* STATS BAR */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 border-y border-gray-200">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8">
           <div className="text-center flex flex-col items-center justify-center">
             <div className="flex items-end gap-1">
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
