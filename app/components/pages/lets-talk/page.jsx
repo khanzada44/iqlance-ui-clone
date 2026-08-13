@@ -103,7 +103,7 @@ export default function ContactSection() {
       <div className="w-full max-w-[80%] mx-auto">
         {/* Top Connect Banner */}
         <section className="w-full my-8">
-          <div className="bg-linear-to-r from-[#4A4E5A] via-[#636875] to-[#A0A4AE] text-white p-6 md:p-12 rounded-lg shadow-lg w-full">
+          <div className="bg-linear-to-r from-red-700 via-red-600 to-red-100 text-white p-6 md:p-12 rounded-lg shadow-lg w-full">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
               Let’s Connect
             </h2>
@@ -116,7 +116,7 @@ export default function ContactSection() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 href="/contact-us"
-                className="group inline-flex items-center justify-center gap-2 bg-[#184A8B] hover:bg-[#143d74] text-white font-semibold px-6 py-3 rounded transition duration-200"
+                className="group inline-flex items-center justify-center gap-2 bg-red-500 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded transition duration-200"
               >
                 Get a Free Quote
                 <ArrowRight
@@ -127,7 +127,7 @@ export default function ContactSection() {
 
               <Link
                 href="/portfolio"
-                className="group inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#184A8B] font-semibold px-6 py-3 rounded transition duration-200"
+                className="group inline-flex items-center justify-center gap-2 bg-white hover:bg-red-50 text-red-950 font-semibold px-6 py-3 rounded transition duration-200"
               >
                 See Our Work
                 <ArrowRight
@@ -203,11 +203,11 @@ export default function ContactSection() {
 
               {/* Right Side Form Container */}
               <div className="w-full relative pt-6 pr-2 sm:pr-4">
-                <div className="relative bg-[#EFF6FF] border border-blue-100/60 p-6 md:p-8 w-full shadow-lg">
+                <div className="relative bg-[#F7F8FA] border border-blue-100/60 p-6 md:p-8 w-full shadow-lg">
                   {/* Top Right Ribbon Badge */}
                   <div className="absolute -top-6 -right-2 sm:-right-3 z-10 w-20 md:w-24 drop-shadow-md">
                     <img
-                      src="/images/badge-sameday-resposnse.png"
+                      src="/images/contact-form-logo.png"
                       alt="Same Day Response Guaranteed"
                       className="w-full h-auto object-contain"
                     />
@@ -229,7 +229,7 @@ export default function ContactSection() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -241,7 +241,7 @@ export default function ContactSection() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -253,7 +253,7 @@ export default function ContactSection() {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -264,7 +264,7 @@ export default function ContactSection() {
                         placeholder="Write here Brief about the project..."
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                       />
                     </div>
 
@@ -296,7 +296,7 @@ export default function ContactSection() {
                             sendNda: e.target.checked,
                           }))
                         }
-                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                        className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 accent-gray-600 cursor-pointer"
                       />
                       <label
                         htmlFor="nda"
@@ -310,7 +310,7 @@ export default function ContactSection() {
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="w-full sm:w-auto bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
+                        className="w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
                       >
                         Schedule a free consultation
                       </button>
@@ -334,17 +334,47 @@ export default function ContactSection() {
 
               <div className="flex flex-wrap justify-center items-center gap-6 mt-8 font-semibold">
                 <span className="flex items-center gap-2">
-                  <img src="/icons/teams.svg" alt="" className="w-5 h-5" />{" "}
+                   <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/teams.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/teams.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   iQlance
                 </span>
 
                 <span className="flex items-center gap-2">
-                  <img src="/icons/email-icon.svg" alt="" className="w-5 h-5" />{" "}
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   info@iqlance.com
                 </span>
 
                 <span className="flex items-center gap-2">
-                  <img src="/icons/calendar.svg" alt="" className="w-5 h-5" />{" "}
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/calendar.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/calendar.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   schedule meeting
                 </span>
               </div>
@@ -353,7 +383,7 @@ export default function ContactSection() {
         </section>
 
         {/* Office Cards Section */}
-        <section className="py-10 bg-[#f8f9fb] w-full">
+        <section className="py-10 bg-red-50 w-full">
           <div className="w-full px-2 sm:px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
               {offices.map((office) => (
@@ -381,7 +411,17 @@ export default function ContactSection() {
 
                   {office.phone && (
                     <div className="flex justify-center items-center gap-2 mt-8 text-xl sm:text-2xl font-semibold">
-                      <Phone size={24} />
+                      <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                       <span>{office.phone}</span>
                     </div>
                   )}

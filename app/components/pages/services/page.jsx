@@ -213,7 +213,7 @@ export default function Service() {
                     />
                 </div>
                 <section className="space-y-4 mt-10">
-                    <h1 className="text-3xl md:text-4xl font-bold text-[#1E4D8F] items-center flex justify-center">
+                    <h1 className="text-3xl md:text-4xl font-bold text-red-700 items-center flex justify-center">
                         Services
                     </h1>
 
@@ -229,7 +229,7 @@ export default function Service() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                         <Link
                             href="/contact-us"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1C4670] hover:bg-[#153658] px-6 py-2.5 text-sm font-semibold text-white transition"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-red-700 hover:bg-red-600 px-6 py-2.5 text-sm font-semibold text-white transition"
                         >
                             Inquiry Now
                             <ArrowRight size={16} />
@@ -237,7 +237,7 @@ export default function Service() {
 
                         <Link
                             href="/portfolio"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-300 bg-white hover:bg-gray-50 px-6 py-2.5 text-sm font-semibold text-gray-800 transition"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-300 bg-white hover:bg-red-50 px-6 py-2.5 text-sm font-semibold text-gray-800 transition"
                         >
                             See Our Work
                             <ArrowRight size={16} />
@@ -292,8 +292,8 @@ export default function Service() {
                                     key={tab.id}
                                     onClick={() => setActiveServiceTab(tab.id)}
                                     className={`w-[72%] flex items-center gap-4 p-4 border text-left transition duration-200 ${isActive
-                                        ? "border-black bg-white shadow-sm font-semibold"
-                                        : "border-gray-200 bg-white hover:bg-gray-50 text-gray-600"
+                                        ? "border-red-500 bg-white shadow-sm font-semibold"
+                                        : "border-red-200 bg-white hover:bg-red-50 text-gray-600"
                                         }`}
                                 >
                                     <img
@@ -330,7 +330,7 @@ export default function Service() {
                                     {currentContent.items.map((subItem, index) => (
                                         <div
                                             key={index}
-                                            className="bg-white border border-gray-100 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition duration-200 min-h-40"
+                                            className="bg-white border border-red-100 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition duration-200 min-h-40"
                                         >
                                             <img
                                                 src={subItem.icon}
@@ -348,7 +348,7 @@ export default function Service() {
                                 <div className="pt-2">
                                     <Link
                                         href="/services"
-                                        className="inline-flex items-center gap-2 bg-[#1C4670] hover:bg-[#153658] text-white font-semibold px-6 py-3 transition duration-200 text-sm md:text-base"
+                                        className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 text-sm md:text-base"
                                     >
                                         View All
                                         <ArrowRight size={18} />
@@ -358,7 +358,7 @@ export default function Service() {
                         )}
                     </div>
                 </div>
-                <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+                <section className="w-full bg-red-50 py-16 px-6 font-sans">
                     <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
                         {/* Top Icon Illustration */}
                         <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -382,14 +382,24 @@ export default function Service() {
                         </p>
 
                         {/* Contact Info Box */}
-                        <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+                        <div className="w-full max-w-2xl bg-red-50 border border-red-400 rounded-sm py-4 px-6 mb-8 shadow-xs">
                             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                                 {/* Email link */}
                                 <a
                                     href="mailto:info@iqlance.com"
-                                    className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                                    className="inline-flex items-center gap-1.5 transition-colors"
                                 >
-                                    <img src="/icons/email-icon.svg" alt="" />
+                                    <div
+                                        className="w-6 h-6 bg-red-600"
+                                        style={{
+                                            maskImage: "url(/icons/email-icon.svg)",
+                                            maskRepeat: "no-repeat",
+                                            maskSize: "contain",
+                                            WebkitMaskImage: "url(/icons/email-icon.svg)",
+                                            WebkitMaskRepeat: "no-repeat",
+                                            WebkitMaskSize: "contain",
+                                        }}
+                                    ></div>
                                     <span>info@iqlance.com</span>
                                 </a>
 
@@ -397,11 +407,21 @@ export default function Service() {
 
                                 {/* Phone links */}
                                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                                    <img src="/icons/phone-icon.svg" alt="" />
+                                    <div
+                                        className="w-6 h-6 bg-red-600"
+                                        style={{
+                                            maskImage: "url(/icons/phone-icon.svg)",
+                                            maskRepeat: "no-repeat",
+                                            maskSize: "contain",
+                                            WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                                            WebkitMaskRepeat: "no-repeat",
+                                            WebkitMaskSize: "contain",
+                                        }}
+                                    ></div>
                                     <span>US :</span>
                                     <a
                                         href="tel:+14697939837"
-                                        className="hover:text-[#1B4B82] transition-colors"
+                                        className=" transition-colors"
                                     >
                                         +1 469 793 9837
                                     </a>
@@ -409,7 +429,7 @@ export default function Service() {
                                     <span>CA :</span>
                                     <a
                                         href="tel:+16476379108"
-                                        className="hover:text-[#1B4B82] transition-colors"
+                                        className="transition-colors"
                                     >
                                         +1 647 637 9108
                                     </a>
@@ -421,7 +441,7 @@ export default function Service() {
                         <div>
                             <Link
                                 href="/lets-talk"
-                                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
                             >
                                 Let’s Talk <ArrowRight className="w-4 h-4" />
                             </Link>
@@ -582,15 +602,15 @@ export default function Service() {
                 </div>
                 <div className="w-full max-w-5xl mx-auto px-4 py-12">
                     {/* Top Tabs Header */}
-                    <div className="flex items-center gap-6 border-b border-gray-100 pb-3 mb-12 overflow-x-auto">
+                    <div className="flex items-center gap-6 border-gray-100 pb-3 mb-12 overflow-x-auto">
                         {processSteps.map((step, index) => (
                             <div key={index} className="flex items-center gap-6">
                                 <button
                                     type="button"
                                     onClick={() => setActiveStepIndex(index)}
                                     className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${activeStepIndex === index
-                                        ? "text-gray-900 border-blue-600 font-bold"
-                                        : "text-gray-400 border-transparent hover:text-gray-600"
+                                        ? "text-red-700 border-red-600 font-bold"
+                                        : "text-gray-400 border-transparent hover:text-red-600"
                                         }`}
                                 >
                                     {step.tabTitle}
@@ -612,7 +632,7 @@ export default function Service() {
                             {activeStepIndex === 0 && (
                                 <div className="">
                                     <img
-                                        src="/images/discover.webp"
+                                        src="/images/discove.jpg"
                                         alt="Discover"
                                         className="w-full h-full object-contain"
                                     />
@@ -623,7 +643,7 @@ export default function Service() {
                             {activeStepIndex === 1 && (
                                 <div className="">
                                     <img
-                                        src="/images/uiux-design.webp"
+                                        src="/images/uiux-design.jpg"
                                         alt="Design"
                                         className="w-full h-full object-contain"
                                     />
@@ -634,7 +654,7 @@ export default function Service() {
                             {activeStepIndex === 2 && (
                                 <div className="">
                                     <img
-                                        src="/images/development.webp"
+                                        src="/images/development.jpg"
                                         alt="Build"
                                         className="w-full h-full object-contain"
                                     />
@@ -645,7 +665,7 @@ export default function Service() {
                             {activeStepIndex === 3 && (
                                 <div className="">
                                     <img
-                                        src="/images/user-testing.webp"
+                                        src="/images/user-testing.jpg"
                                         alt="Deliver"
                                         className="w-full h-full object-contain"
                                     />
@@ -685,7 +705,7 @@ export default function Service() {
                         {services.map((service, index) => (
                             <div
                                 key={index}
-                                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-[#184A8B] hover:shadow-lg"
+                                className="border border-red-50 p-6 sm:p-8 transition-all duration-300 hover:border-red-500 hover:shadow-lg"
                             >
                                 <img
                                     src={service.image}
@@ -765,21 +785,21 @@ export default function Service() {
                     <div className="max-w-7xl mx-auto px-4 ">
                         {/* Tabs */}
                         <div className="flex justify-center mb-10 ">
-                            <div className="flex flex-wrap gap-8 border-b border-gray-300">
+                            <div className="flex flex-wrap gap-8 border-b border-red-300">
                                 {technologies.map((tab, index) => (
                                     <button
                                         key={index}
                                         onClick={() => setActivetechnologies(index)}
                                         className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                                            ? "text-black font-semibold"
-                                            : "text-gray-500 hover:text-black"
+                                            ? "text-red-600 font-semibold"
+                                            : "text-gray-500 hover:text-red-500"
                                             }`}
                                     >
                                         {tab.category}
 
                                         {/* Active underline */}
                                         <span
-                                            className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                                            className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
                                                 }`}
                                         />
                                     </button>
@@ -828,8 +848,8 @@ export default function Service() {
                                     <div
                                         key={index}
                                         className={`border bg-white transition-all duration-300 ${open === index
-                                            ? "border-gray-200 shadow-md"
-                                            : "border-gray-200 hover:border-gray-300"
+                                            ? "border-red-200 shadow-md"
+                                            : "border-red-50 hover:border-red-300"
                                             }`}
                                     >
                                         {/* Question */}

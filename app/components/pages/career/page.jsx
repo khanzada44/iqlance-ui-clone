@@ -35,7 +35,7 @@ export default function career() {
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl md:text-6xl font-bold text-center">
-              <span className="text-[#2F69C9]">Career</span>
+              <span className="text-red-600">Career</span>
             </h2>
 
             {/* Description */}
@@ -75,7 +75,7 @@ export default function career() {
               {/* Contact Us Link */}
               <Link
                 href="/contact"
-                className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold flex items-center justify-center gap-3 transition"
+                className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex items-center justify-center gap-3 transition"
               >
                 Contact Us
                 <ArrowRight
@@ -87,7 +87,7 @@ export default function career() {
               {/* See Our Work Link */}
               <Link
                 href="/portfolio"
-                className="group w-full sm:w-auto border border-gray-300 hover:border-[#184A8B] hover:text-[#184A8B] px-8 py-4 font-semibold flex items-center justify-center gap-3 transition"
+                className="group w-full sm:w-auto border border-gray-300 hover:border-red-500 hover:text-black px-8 py-4 font-semibold flex items-center justify-center gap-3 transition"
               >
                 See Our Work
                 <ArrowRight
@@ -113,8 +113,8 @@ export default function career() {
             </div>
           </div>
         </section>
-        <section>
-          <div className="max-w-7xl mx-auto px-4">
+        <section className="mb-10">
+          <div className="max-w-7xl mx-auto px-4 mb-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-7">
               {stats.map((item, index) => {
                 return (
@@ -147,7 +147,7 @@ export default function career() {
           </div>
         </section>
         <section>
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 mt-10">
             {/* About */}
             <div className="max-w-6xl mx-auto text-center">
               <h2 className="text-3xl md:text-5xl font-bold">About iQlance</h2>
@@ -233,20 +233,20 @@ export default function career() {
             </div>
 
             {/* Send Resume Box */}
-            <div className="bg-[#f2f7fb] py-10 px-6 mb-16 max-w-5xl mx-auto">
+            <div className="bg-red-50 py-10 px-6 mb-16 max-w-5xl mx-auto">
               <h3 className="text-2xl md:text-3xl font-extrabold text-black mb-3">
                 Send Your Resume Now
               </h3>
 
               <a
                 href="mailto:hr@iqlance.com"
-                className="text-[#38b6ff] hover:underline text-base md:text-lg font-medium inline-block mb-6"
+                className="text-red-700 hover:underline text-base md:text-lg font-medium inline-block mb-6"
               >
                 hr@iqlance.com
               </a>
 
               <div>
-                <Link className="group bg-[#164273] hover:bg-[#0f2f53] text-white font-semibold text-sm px-6 py-3 inline-flex items-center gap-2 transition-colors" href="mailto:hr@iqlance.com">
+                <Link className="group bg-red-700 hover:bg-red-600 text-white font-semibold text-sm px-6 py-3 inline-flex items-center gap-2 transition-colors" href="mailto:hr@iqlance.com">
                   <span className="flex items-center gap-2 justify-center">
                     Send Resume
                     <ArrowRight
@@ -310,7 +310,7 @@ export default function career() {
             </div>
           </div>
         </section>
-                <section className="bg-[#F4F8FC] py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
+                <section className="bg-red-50 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
           <div className="max-w-4xl mx-auto text-center">
             <img
               src="/images/letdiscuss-icon.png.webp"
@@ -326,16 +326,36 @@ export default function career() {
              Call us Today for a Free Consultation:
             </p>
 
-            <div className="mt-6 sm:mt-8 border border-gray-400 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
+            <div className="mt-6 sm:mt-8 border border-red-400 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
               <span className="font-semibold flex gap-1 items-center">
-                <img src="/icons/email-icon.svg" alt="" />
+                 <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                 info@iqlance.com
               </span>
 
               <span className="hidden md:block">or</span>
 
               <span className="flex flex-wrap gap-1 items-center justify-center">
-                <img src="/icons/phone-icon.svg" alt="" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                 US :<strong> +1 469 793 9837</strong>, CA :
                 <strong> +1 647 637 9108</strong>
               </span>
@@ -344,7 +364,7 @@ export default function career() {
             <div className="flex justify-center">
               <Link
                 href="/lets-talk"
-                className="group mt-6 sm:mt-8 bg-[#184A8B] text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-[#143B72] transition w-full sm:w-auto"
+                className="group mt-6 sm:mt-8 bg-red-700 text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-red-600 transition w-full sm:w-auto"
               >
                 Let's Discuss
                 <ArrowRight

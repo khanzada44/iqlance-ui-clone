@@ -23,7 +23,7 @@ export default function faqs() {
         </div>
 
         <section className="py-10">
-          <h1 className="flex items-center justify-center text-2xl md:text-4xl font-bold text-blue-800 leading-tight">
+          <h1 className="flex items-center justify-center text-2xl md:text-4xl font-bold text-red-700 leading-tight">
             FAQs
           </h1>
           <p className="flex items-center justify-center text-xl font-bold text-black leading-tight mt-1">
@@ -49,7 +49,7 @@ export default function faqs() {
 
             <Link
               href="/contact-us"
-              className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+              className="group inline-flex items-center gap-3 bg-red-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-600"
             >
               Contact Us
               <ArrowRight
@@ -67,7 +67,7 @@ export default function faqs() {
                 size={22}
                 className="transition-transform duration-300 group-hover:translate-x-1.5"
               />
-              </Link>
+            </Link>
           </div>
         </section>
 
@@ -153,9 +153,9 @@ export default function faqs() {
                     </span>
 
                     {open === index ? (
-                      <ChevronUp className="w-5 h-5 text-blue-600" />
+                      <ChevronUp className="w-5 h-5 text-red-700" />
                     ) : (
-                      <ChevronDown className="w-5 h-5 text-gray-600" />
+                      <ChevronDown className="w-5 h-5 text-red-600" />
                     )}
                   </button>
 
@@ -169,7 +169,7 @@ export default function faqs() {
             </div>
           </div>
         </section>
-   <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans mb-10">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -193,18 +193,24 @@ export default function faqs() {
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] py-4 px-6 mb-8 shadow-xs">
+            <div className="w-full max-w-2xl bg-red-50 border border-red-400 py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
-                  <img
-                    src="/icons/email-icon.svg"
-                    alt="Email"
-                    className="w-5 h-5 object-contain"
-                  />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -212,15 +218,21 @@ export default function faqs() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img
-                    src="/icons/phone-icon.svg"
-                    alt="Phone"
-                    className="w-5 h-5 object-contain"
-                  />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>US :</span>
                   <a
                     href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
+                    className=" transition-colors"
                   >
                     +1 469 793 9837
                   </a>
@@ -228,7 +240,7 @@ export default function faqs() {
                   <span>CA :</span>
                   <a
                     href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
+                    className=" transition-colors"
                   >
                     +1 647 637 9108
                   </a>
@@ -240,7 +252,7 @@ export default function faqs() {
             <div>
               <Link
                 href="/lets-talk"
-                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+                className="group inline-flex items-center gap-3 bg-red-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-600"
               >
                 Let’s Discuss
                 <ArrowRight

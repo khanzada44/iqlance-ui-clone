@@ -12,13 +12,15 @@ import {
   slides,
   caseStudies,
   technologies,
+  services,
+  faqsData,
+} from "../healthcare/data";
+import {
+  partners,
   stats,
   industries,
-  services,
   testimonials,
-  faqsData,
-  partners,
-} from "../healthcare/data";
+} from "../../../../utils/data";
 import ContactForm from "../../contactForm/ContactForm";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -161,11 +163,11 @@ export default function HeroQuoteSection() {
                 <p className="text-lg text-gray-700">USA's Top-Notch</p>
 
                 <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                  <span className="text-[#1F4E99]">Healthcare App</span>
+                  <span className="text-red-600">Healthcare App</span>
                   <br />
-                  <span className="text-[#1F4E99]">Development</span>
+                  <span className="text-red-700">Development</span>
                   <br />
-                  <span className="text-[#1F4E99]">Company</span>
+                  <span className="text-red-700">Company</span>
                 </h1>
 
                 <h3 className="mt-8 text-2xl font-bold leading-snug">
@@ -207,7 +209,7 @@ export default function HeroQuoteSection() {
                   {/* Request a Quote Link */}
                   <Link
                     href="/contact-us"
-                    className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer"
+                    className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer"
                   >
                     Request a Quote
                     <ArrowRight
@@ -219,7 +221,7 @@ export default function HeroQuoteSection() {
                   {/* See Our Work Link */}
                   <Link
                     href="/portfolio"
-                    className="group w-full sm:w-auto border border-gray-300 hover:border-[#184A8B] px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer text-black hover:text-[#184A8B]"
+                    className="group w-full sm:w-auto border border-red-300 hover:border-red-600 px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer text-black"
                   >
                     See Our Work
                     <ArrowRight
@@ -231,11 +233,11 @@ export default function HeroQuoteSection() {
               </div>
               {/* Right Form */}
               <div>
-                <div className="relative bg-[#EFF6FF] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
+                <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
                   {/* Top Right Ribbon Badge */}
                   <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                     <img
-                      src="/images/badge-sameday-resposnse.png"
+                      src="/images/contact-form-logo.png"
                       alt="Same Day Response Guaranteed"
                       className="w-full h-auto object-contain"
                     />
@@ -259,7 +261,7 @@ export default function HeroQuoteSection() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -271,7 +273,7 @@ export default function HeroQuoteSection() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -283,7 +285,7 @@ export default function HeroQuoteSection() {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -294,7 +296,7 @@ export default function HeroQuoteSection() {
                         placeholder="Write here Brief about the project..."
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                       />
                     </div>
 
@@ -339,8 +341,8 @@ export default function HeroQuoteSection() {
                     {statusMessage.text && (
                       <div
                         className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
-                            ? "bg-green-100 border border-green-400 text-green-800"
-                            : "bg-red-100 border border-red-400 text-red-800"
+                          ? "bg-green-100 border border-green-400 text-green-800"
+                          : "bg-red-100 border border-red-400 text-red-800"
                           }`}
                       >
                         {statusMessage.text}
@@ -350,7 +352,7 @@ export default function HeroQuoteSection() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         {loading ? (
                           <span className="flex items-center gap-2">
@@ -502,7 +504,7 @@ export default function HeroQuoteSection() {
 
             {/* CTA Box */}
 
-            <div className="mt-12 md:mt-20 bg-[#f5f9fc] px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -521,24 +523,36 @@ export default function HeroQuoteSection() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-[#184A8B] bg-white p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <img
-                      src="/icons/email-icon.svg"
-                      alt="mail-icon"
-                      className="w-5 h-5 shrink-0"
-                    />
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
                     <span className="font-medium text-sm sm:text-base">
                       info@iqlance.com
                     </span>
                   </div>
 
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <img
-                      src="/icons/phone-icon.svg"
-                      alt="phone-icon"
-                      className="w-5 h-5 shrink-0"
-                    />
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       US: +1 469 793 9837 <br className="sm:hidden" />
                       <span className="hidden sm:inline"> | </span>
@@ -549,7 +563,7 @@ export default function HeroQuoteSection() {
               </div>
 
 
-              <button className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition rounded-md cursor-pointer">
+              <button className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer">
                 Hire Dedicated Developers
                 <ArrowRight
                   size={18}
@@ -733,7 +747,7 @@ export default function HeroQuoteSection() {
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-[#f5f9fc] px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -752,24 +766,36 @@ export default function HeroQuoteSection() {
 
               {/* Contact Box */}
               <div className="flex items-center justify-center">
-                <div className="w-[50%] mt-8 border border-[#184A8B] bg-white p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <img
-                      src="/icons/email-icon.svg"
-                      alt="mail-icon"
-                      className="w-5 h-5 shrink-0"
-                    />
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
                     <span className="font-medium text-sm sm:text-base">
                       info@iqlance.com
                     </span>
                   </div>
 
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <img
-                      src="/icons/phone-icon.svg"
-                      alt="phone-icon"
-                      className="w-5 h-5 shrink-0"
-                    />
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       US: +1 469 793 9837
                       <br className="sm:hidden" />
@@ -782,7 +808,7 @@ export default function HeroQuoteSection() {
 
               <Link
                 href="/lets-talk"
-                className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
               >
                 Let&apos;s Talk
                 <ArrowRight
@@ -882,7 +908,7 @@ export default function HeroQuoteSection() {
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-[#f5f9fc] rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -899,24 +925,36 @@ export default function HeroQuoteSection() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-[#184A8B] bg-white p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <img
-                      src="/icons/email-icon.svg"
-                      alt="mail-icon"
-                      className="w-5 h-5 shrink-0"
-                    />
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
                     <span className="font-medium text-sm sm:text-base">
                       info@iqlance.com
                     </span>
                   </div>
 
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <img
-                      src="/icons/phone-icon.svg"
-                      alt="phone-icon"
-                      className="w-5 h-5 shrink-0"
-                    />
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       US: +1 469 793 9837
                       <br className="sm:hidden" />
@@ -930,7 +968,7 @@ export default function HeroQuoteSection() {
 
               <Link
                 href="/lets-talk"
-                className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
               >
                 Let&apos;s Talk
                 <ArrowRight
@@ -1020,7 +1058,7 @@ export default function HeroQuoteSection() {
             </p>
             <Link
               href="/contact"
-              className="group mt-8 bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
+              className="group mt-8 bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
             >
               Get a Quotation
               <ArrowRight
@@ -1132,7 +1170,7 @@ export default function HeroQuoteSection() {
         </section>
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="bg-[#F3F7FC]  px-8 md:px-16 py-10 md:py-14">
+            <div className="bg-red-50  px-8 md:px-16 py-10 md:py-14">
               <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                 {/* Left Content */}
                 <div className="max-w-2xl">
@@ -1152,7 +1190,7 @@ export default function HeroQuoteSection() {
                 <div className="shrink-0">
                   <Link
                     href="/portfolio"
-                    className="group mt-8 bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
+                    className="group mt-8 bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
                   >
                     See Our Work
                     <ArrowRight
@@ -1182,13 +1220,13 @@ export default function HeroQuoteSection() {
           <div className="max-w-7xl mx-auto px-4 ">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
-              <div className="flex flex-wrap gap-8 border-b border-gray-300">
+              <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveTab(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activeTab === index
-                      ? "text-black font-semibold"
+                      ? "text-red-600 font-semibold"
                       : "text-gray-500 hover:text-black"
                       }`}
                   >
@@ -1196,7 +1234,7 @@ export default function HeroQuoteSection() {
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activeTab === index ? "w-full" : "w-0"
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${activeTab === index ? "w-full" : "w-0"
                         }`}
                     />
                   </button>
@@ -1224,9 +1262,9 @@ export default function HeroQuoteSection() {
             </div>
           </div>
         </section>
-        <section className="bg-[#f5f9fc] py-12 md:py-20">
+        <section className="bg-red-50 py-12 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#f5f9fc] rounded-xl text-center px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12">
+            <div className="bg-red-50 rounded-xl text-center px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -1242,7 +1280,7 @@ export default function HeroQuoteSection() {
                 Let us Build Something Extraordinary.
               </p>
 
-              <button className="group mt-8 w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer">
+              <button className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer">
                 Hire Dedicated Developer
                 <ArrowRight
                   size={18}
@@ -1253,7 +1291,7 @@ export default function HeroQuoteSection() {
           </div>
         </section>
         <section>
-          <div className="mb-10 mt-5">
+          <div className="mb-15 mt-10">
             <h2 className="flex justify-center font-bold text-3xl">
               Offshore Web, Mobile & Software Development Company
             </h2>
@@ -1327,7 +1365,7 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-10 mt-5">
+            <h1 className="flex justify-center font-bold text-3xl mb-10 mt-10">
               Why Choose iQlance?
             </h1>
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
@@ -1341,7 +1379,7 @@ export default function HeroQuoteSection() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-[#184A8B] hover:shadow-lg"
+                  className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
                 >
                   <img
                     src={service.image}
@@ -1376,7 +1414,7 @@ export default function HeroQuoteSection() {
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
           {/* Outer Card Wrapper with Fixed Border & Accent */}
-          <div className="relative bg-white border border-gray-300 p-8 md:p-10  shadow-sm hover:border-[#1e40af] transition-all duration-300">
+          <div className="relative bg-white border border-red-100 p-8 md:p-10  shadow-sm hover:border-red-500 transition-all duration-300">
             {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
 
@@ -1455,13 +1493,13 @@ export default function HeroQuoteSection() {
             {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
-                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Previous Slide"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button
-                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-next bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Next Slide"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -1490,8 +1528,8 @@ export default function HeroQuoteSection() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-gray-300"
+                      ? "border-red-50 shadow-md"
+                      : "border-red-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

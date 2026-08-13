@@ -107,7 +107,7 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Left Side Info */}
               <div>
-                <h2 className="text-4xl font-bold text-[#184A8B]">
+                <h2 className="text-4xl font-bold text-red-600">
                   Contact Us
                 </h2>
                 <p className="mt-6 text-gray-700">
@@ -149,7 +149,7 @@ export default function ContactSection() {
                 </ul>
                  <Link
                     href="/portfolio"
-                    className=" border border-gray-300 group inline-flex items-center gap-3 bg-gray-50  px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-50 mt-10"
+                    className=" border border-red-300  group inline-flex items-center gap-3 bg-red-50  px-8 py-4 text-lg font-semibold text-black transition hover:bg-red-100 mt-10"
                   >
                     See Our Work
                     <ArrowRight
@@ -161,11 +161,11 @@ export default function ContactSection() {
 
               {/* Right Side Form */}
               <div className="relative w-full">
-                <div className="relative bg-[#EFF6FF] border border-blue-100/60 p-6 md:p-8 w-full shadow-lg">
+                <div className="relative bg-[#F7F8FA] border border-blue-100/60 p-6 md:p-8 w-[90%] shadow-lg">
                   {/* Ribbon Badge */}
                   <div className="absolute -top-6 -right-3 z-10 w-20 md:w-24 drop-shadow-md">
                     <img
-                      src="/images/badge-sameday-resposnse.png"
+                      src="/images/contact-form-logo.png"
                       alt="Same Day Response Guaranteed"
                       className="w-full h-auto object-contain"
                     />
@@ -187,7 +187,7 @@ export default function ContactSection() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                     <input
                       type="email"
@@ -196,7 +196,7 @@ export default function ContactSection() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                     <input
                       type="tel"
@@ -205,7 +205,7 @@ export default function ContactSection() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                     <textarea
                       name="message"
@@ -213,7 +213,7 @@ export default function ContactSection() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                     />
 
                     {/* Upload File */}
@@ -258,7 +258,7 @@ export default function ContactSection() {
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="w-full sm:w-auto bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
+                        className="w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
                       >
                         Schedule a free consultation
                       </button>
@@ -277,15 +277,45 @@ export default function ContactSection() {
               </p>
               <div className="flex flex-wrap justify-center items-center gap-6 mt-8 font-semibold">
                 <span className="flex items-center gap-2">
-                  <img src="/icons/teams.svg" alt="" className="w-5 h-5" />{" "}
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/teams.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/teams.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   iQlance
                 </span>
                 <span className="flex items-center gap-2">
-                  <img src="/icons/email-icon.svg" alt="" className="w-5 h-5" />{" "}
+                   <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   info@iqlance.com
                 </span>
                 <span className="flex items-center gap-2">
-                  <img src="/icons/calendar.svg" alt="" className="w-5 h-5" />{" "}
+                   <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/calendar.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/calendar.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   schedule meeting
                 </span>
               </div>
@@ -294,7 +324,7 @@ export default function ContactSection() {
         </section>
 
       
-      <section className="py-10 bg-[#f8f9fb]">
+      <section className="py-10 bg-red-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {offices.map((office) => (
@@ -322,7 +352,17 @@ export default function ContactSection() {
                 {/* Bottom aligned phone section */}
                 {office.phone && (
                   <div className="flex justify-center items-center gap-2 mt-8 text-lg md:text-xl font-semibold">
-                    <Phone size={22} />
+                     <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                     <span>{office.phone}</span>
                   </div>
                 )}
@@ -345,7 +385,7 @@ export default function ContactSection() {
           </div>
 
           {/* Testimonials Slider Wrapper */}
-          <div className="relative bg-white border border-gray-300 p-6 md:p-8 shadow-sm hover:border-[#1e40af] transition-all duration-300 mt-8">
+          <div className="relative bg-white border border-red-300 p-6 md:p-8 shadow-sm hover:border-red-600 transition-all duration-300 mt-8">
             <Swiper
               modules={[Navigation, Autoplay]}
               spaceBetween={30}
@@ -414,13 +454,13 @@ export default function ContactSection() {
             {/* Navigation Buttons */}
             <div className="flex items-center gap-2 justify-end mt-6 md:absolute md:bottom-8 md:right-8 z-20">
               <button
-                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3 transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3 transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Previous Slide"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button
-                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3 transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-next bg-red-700 hover:bg-red-600 text-white p-3 transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Next Slide"
               >
                 <ArrowRight className="w-5 h-5" />

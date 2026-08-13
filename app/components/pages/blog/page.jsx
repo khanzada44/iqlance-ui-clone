@@ -171,7 +171,7 @@ export default function Blog() {
                 {/* Left Content */}
                 <div>
                   <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                    <span className="text-[#1F4E99]">Blog</span>
+                    <span className="text-red-600">Blog</span>
                   </h1>
 
                   <p className="mt-6 text-black leading-8 text-lg">
@@ -208,7 +208,7 @@ export default function Blog() {
                   </ul>
 
                   <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                    <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                    <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
                       Contact Us
                       <ArrowRight
                         size={18}
@@ -216,7 +216,7 @@ export default function Blog() {
                       />
                     </button>
 
-                    <button className="group w-full sm:w-auto border border-gray-300 hover:border-[#184A8B] px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                    <button className="group w-full sm:w-auto border border-gray-300 hover:border-red-600 px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
                       See Our Work
                       <ArrowRight
                         size={18}
@@ -229,12 +229,12 @@ export default function Blog() {
                 {/* Right Form */}
                 <div className="relative">
                   <img
-                    src="/images/badge-sameday-resposnse.png"
+                    src="/images/contact-form-logo.png"
                     alt="Guaranteed"
                     className="absolute -top-12 right-6 w-28 z-10"
                   />
 
-                  <div className="bg-[#EEF5FF] border border-[#BFD3F6] rounded-2xl shadow-lg p-6 md:p-8">
+                  <div className="bg-[#F7F8FA]  border-[#F7F8FA] rounded-2xl shadow-lg p-6 md:p-8">
                     <h2 className="text-3xl font-bold">Request a Free Quote</h2>
                     <p className="mt-3 text-lg mb-6">
                       Guaranteed Response within One Business Day!
@@ -260,7 +260,7 @@ export default function Blog() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                         />
                       </div>
 
@@ -272,7 +272,7 @@ export default function Blog() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                         />
                       </div>
 
@@ -284,7 +284,7 @@ export default function Blog() {
                           required
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                         />
                       </div>
 
@@ -295,7 +295,7 @@ export default function Blog() {
                           placeholder="Write here Brief about the project..."
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                          className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                         />
                       </div>
 
@@ -344,7 +344,7 @@ export default function Blog() {
                         <button
                           type="submit"
                           disabled={loading}
-                          className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-50"
+                          className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-50"
                         >
                           {loading ? "Submitting..." : "Schedule a free consultation"}
                         </button>
@@ -436,13 +436,13 @@ export default function Blog() {
 
             {lastPage >= 1 && (
               <div className="flex  mt-10 mb-6">
-                <div className="inline-flex rounded-md shadow-xs border border-blue-200 overflow-hidden bg-white">
+                <div className="inline-flex rounded-md shadow-xs border border-red-200 overflow-hidden bg-white">
 
                   {/* Previous Arrow Button */}
                   {currentPage > 1 && (
                     <button
                       onClick={() => handlePageChange(currentPage - 1)}
-                      className="px-3.5 py-2 text-blue-600 border-r border-blue-200 hover:bg-gray-50 flex items-center justify-center transition cursor-pointer"
+                      className="px-3.5 py-2 text-red-600 border-r border-blue-200 hover:bg-gray-50 flex items-center justify-center transition cursor-pointer"
                     >
                       <ChevronRight className="w-4 h-4 rotate-180" />
                     </button>
@@ -451,8 +451,8 @@ export default function Blog() {
                   {/* Page 1 */}
                   <button
                     onClick={() => handlePageChange(1)}
-                    className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${currentPage === 1
-                      ? "bg-blue-950 text-white font-bold"
+                    className={`px-4 py-2 font-medium text-sm border-r border-red-200 transition cursor-pointer ${currentPage === 1
+                      ? "bg-red-600 text-white font-bold"
                       : "text-blue-600 hover:bg-gray-50"
                       }`}
                   >
@@ -463,7 +463,7 @@ export default function Blog() {
                   {lastPage >= 2 && (
                     <button
                       onClick={() => handlePageChange(2)}
-                      className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${currentPage === 2
+                      className={`px-4 py-2 font-medium text-sm border-r border-red-200 transition cursor-pointer ${currentPage === 2
                         ? "bg-blue-950 text-white font-bold"
                         : "text-blue-600 hover:bg-gray-50"
                         }`}
@@ -474,7 +474,7 @@ export default function Blog() {
 
                   {/* Ellipsis (...) */}
                   {lastPage > 3 && (
-                    <span className="px-3 py-2 text-blue-600 text-sm font-medium border-r border-blue-200 bg-white select-none">
+                    <span className="px-3 py-2 text-red-600 text-sm font-medium border-r border-blue-200 bg-white select-none">
                       ...
                     </span>
                   )}
@@ -483,7 +483,7 @@ export default function Blog() {
                   {lastPage > 2 && (
                     <button
                       onClick={() => handlePageChange(lastPage)}
-                      className={`px-4 py-2 font-medium text-sm border-r border-blue-200 transition cursor-pointer ${currentPage === lastPage
+                      className={`px-4 py-2 font-medium text-sm border-r border-red-200 transition cursor-pointer ${currentPage === lastPage
                         ? "bg-black text-white font-bold"
                         : "text-blue-600 hover:bg-gray-50"
                         }`}
@@ -496,7 +496,7 @@ export default function Blog() {
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === lastPage}
-                    className="px-3.5 py-2 text-blue-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition cursor-pointer"
+                    className="px-3.5 py-2 text-red-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition cursor-pointer"
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>

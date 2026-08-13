@@ -59,19 +59,19 @@ export default function Home() {
     "/icons/hubspot.svg",
   ];
   const img_services = [
-    { id: 1, src: "/images/Screenshot_1.png", alt: "Machine Learning" },
-    { id: 2, src: "/images/Screenshot_2.png", alt: "Mobile Development" },
-    { id: 3, src: "/images/Screenshot_3.png", alt: "Microsoft 365" },
-    { id: 4, src: "/images/Screenshot_4.png", alt: "Microsoft .NET" },
-    { id: 5, src: "/images/Screenshot_5.png", alt: "Flutter App Development" },
-    { id: 6, src: "/images/Screenshot_6.png", alt: "Artificial Intelligence" },
+    { id: 1, src: "/images/Screenshot_1.jpg", alt: "Machine Learning" },
+    { id: 2, src: "/images/Screenshot_2.jpg", alt: "Mobile Development" },
+    { id: 3, src: "/images/Screenshot_3.jpg", alt: "Microsoft 365" },
+    { id: 4, src: "/images/Screenshot_4.jpg", alt: "Microsoft .NET" },
+    { id: 5, src: "/images/Screenshot_5.jpg", alt: "Flutter App Development" },
+    { id: 6, src: "/images/Screenshot_6.jpg", alt: "Artificial Intelligence" },
     {
       id: 7,
-      src: "/images/Screenshot_7.png",
+      src: "/images/Screenshot_7.jpg",
       alt: "React Native App Development",
     },
-    { id: 8, src: "/images/Screenshot_8.png", alt: "Python Development" },
-    { id: 9, src: "/images/Screenshot_9.png", alt: "Web Development" },
+    { id: 8, src: "/images/Screenshot_8.jpg", alt: "Python Development" },
+    { id: 9, src: "/images/Screenshot_9.jpg", alt: "Web Development" },
   ];
   return (
     <>

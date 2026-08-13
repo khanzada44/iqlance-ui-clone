@@ -101,7 +101,7 @@ export default function Portfolio() {
           <div className="text-center">
             <Link
               href="/request-a-quote"
-              className="group mt-8 inline-flex w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
+              className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
             >
               Get a Free Quote
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -144,7 +144,7 @@ export default function Portfolio() {
                 key={index}
                 onClick={() => setActiveSubCategory(category)}
                 className={`px-3 py-1.5 rounded transition uppercase ${activeSubCategory.toUpperCase() === category.toUpperCase()
-                  ? 'bg-[#184A8B] text-white'
+                  ? 'bg-red-700 text-white'
                   : 'bg-transparent text-gray-800 hover:bg-gray-100'
                   }`}
               >

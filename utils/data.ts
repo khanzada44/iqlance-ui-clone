@@ -549,7 +549,7 @@ export const industries = [
 export const services = [
   {
     image:
-      "/images/data-protection-icn.png",
+      "/images/transparency-Integrity-icn.png",
     title: "Data Protection",
     description:
       "Our every app is ultimately data protected to cope with the heavy malware attack and increased cyber-crime to support new technologies entering the healthcare world.",

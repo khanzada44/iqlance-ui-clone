@@ -73,7 +73,7 @@ export default function FloatingTalkToExpert() {
             <X size={20} />
           </button>
 
-          <h3 className="text-center font-bold text-xl text-[#134479] mb-4 pb-2 border-b border-blue-200">
+          <h3 className="text-center font-bold text-xl text-red-600 mb-4 pb-2 border-b border-red-200">
             Call Us Now
           </h3>
 
@@ -102,9 +102,9 @@ export default function FloatingTalkToExpert() {
           {/* OR Divider */}
           <div className="relative my-4 text-center">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-sky-200"></div>
+              <div className="w-full border-t border-red-200"></div>
             </div>
-            <span className="relative bg-white/95 px-3 text-xs font-semibold text-sky-400 uppercase">
+            <span className="relative bg-white/95 px-3 text-xs font-semibold text-red-400 uppercase">
               OR
             </span>
           </div>
@@ -117,7 +117,7 @@ export default function FloatingTalkToExpert() {
               required
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#134479] text-sm"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[red] text-sm"
             />
 
             {/* Status Feedback Message */}
@@ -136,7 +136,7 @@ export default function FloatingTalkToExpert() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#134479] hover:bg-[#0d3056] text-white font-semibold py-3 rounded-lg transition-colors text-sm shadow-md disabled:opacity-50"
+              className="w-full bg-red-700 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition-colors text-sm shadow-md disabled:opacity-50"
             >
               {loading ? "Submitting..." : "Request a Call Back"}
             </button>

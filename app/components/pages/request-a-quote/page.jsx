@@ -54,48 +54,48 @@ export default function ContactSection() {
   };
 
   // API Integration Submit Handler
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setErrorMessage("");
-  setSuccessMessage("");
-  setIsSubmitting(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
+    setIsSubmitting(true);
 
-  // 1. Plain JavaScript Object ki jagah FormData banayein
-  const payload = new FormData();
-  payload.append("name", formData.name);
-  payload.append("email", formData.email);
-  payload.append("phone", formData.phone);
-  payload.append("message", formData.message);
-  payload.append("sendNda", String(formData.sendNda));
+    // 1. Plain JavaScript Object ki jagah FormData banayein
+    const payload = new FormData();
+    payload.append("name", formData.name);
+    payload.append("email", formData.email);
+    payload.append("phone", formData.phone);
+    payload.append("message", formData.message);
+    payload.append("sendNda", String(formData.sendNda));
 
-  // File binary append karein
-  if (formData.file) {
-    payload.append("file", formData.file);
-  }
+    // File binary append karein
+    if (formData.file) {
+      payload.append("file", formData.file);
+    }
 
-  try {
-    // 2. Dynamic FormData Pass karein
-    const result = await submitContactForm(payload);
-    
-    setSuccessMessage("Form submitted successfully!");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-      sendNda: false,
-      file: null,
-    });
-  } catch (error) {
-    const backendMessage =
-      error.response?.data?.message ||
-      error.message ||
-      "Failed to submit form.";
-    setErrorMessage(backendMessage);
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+    try {
+      // 2. Dynamic FormData Pass karein
+      const result = await submitContactForm(payload);
+
+      setSuccessMessage("Form submitted successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        sendNda: false,
+        file: null,
+      });
+    } catch (error) {
+      const backendMessage =
+        error.response?.data?.message ||
+        error.message ||
+        "Failed to submit form.";
+      setErrorMessage(backendMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <>
       <div className="w-[90%] md:w-[80%] mx-auto max-w-full overflow-hidden">
@@ -105,7 +105,7 @@ const handleSubmit = async (e) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start w-full">
               {/* Left Side Info */}
               <div className="w-full">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#184A8B] mt-10">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 mt-10">
                   Request a Quote
                 </h1>
                 <p className="mt-6 text-gray-700">
@@ -145,32 +145,32 @@ const handleSubmit = async (e) => {
                     <span>Action plan to kick start your project</span>
                   </li>
                 </ul>
-            <div className="flex flex-wrap items-center gap-4 pt-6">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
-                >
-                  Contact Us <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="flex flex-wrap items-center gap-4 pt-6">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
+                  >
+                    Contact Us <ArrowRight className="w-4 h-4" />
+                  </Link>
 
-                <Link
-                  href="/portfolio"
-                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
-                >
-                  See Our Work <ArrowRight className="w-4 h-4 text-gray-600" />
-                </Link>
-              </div>
+                  <Link
+                    href="/portfolio"
+                    className="inline-flex items-center gap-2 bg-white text-gray-800 border border-[#F7F8FA] hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  >
+                    See Our Work <ArrowRight className="w-4 h-4 text-gray-600" />
+                  </Link>
+                </div>
               </div>
 
 
 
               {/* Right Side Form Container */}
               <div className="w-full relative pt-6 pr-2 sm:pr-4">
-                <div className="relative bg-[#EFF6FF] border border-blue-100/60 p-6 md:p-8 w-full shadow-lg">
+                <div className="relative bg-[#F7F8FA] border border-blue-100/60 p-6 md:p-8 w-full shadow-lg">
                   {/* Top Right Ribbon Badge */}
                   <div className="absolute -top-6 -right-2 sm:-right-3 z-10 w-20 md:w-24 drop-shadow-md">
                     <img
-                      src="/images/badge-sameday-resposnse.png"
+                      src="/images/contact-form-logo.png"
                       alt="Same Day Response Guaranteed"
                       className="w-full h-auto object-contain"
                     />
@@ -183,117 +183,117 @@ const handleSubmit = async (e) => {
                     We Guarantee To Get Back To You Within A Business Day.
                   </p>
 
-                 <form onSubmit={handleSubmit} className="space-y-6 w-full">
-  {/* Error Message Display */}
-  {errorMessage && (
-    <div className="bg-red-50 border-l-4 border-red-500 p-3 text-red-700 text-sm">
-      {errorMessage}
-    </div>
-  )}
+                  <form onSubmit={handleSubmit} className="space-y-6 w-full">
+                    {/* Error Message Display */}
+                    {errorMessage && (
+                      <div className="bg-red-50 border-l-4 border-red-500 p-3 text-red-700 text-sm">
+                        {errorMessage}
+                      </div>
+                    )}
 
-  {/* Success Message Display */}
-  {successMessage && (
-    <div className="bg-green-50 border-l-4 border-green-500 p-3 text-green-700 text-sm">
-      {successMessage}
-    </div>
-  )}
+                    {/* Success Message Display */}
+                    {successMessage && (
+                      <div className="bg-green-50 border-l-4 border-green-500 p-3 text-green-700 text-sm">
+                        {successMessage}
+                      </div>
+                    )}
 
-  <div>
-    <input
-      type="text"
-      name="name"
-      placeholder="Name*"
-      required
-      value={formData.name}
-      onChange={handleChange}
-      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-    />
-  </div>
+                    <div>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name*"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
 
-  <div>
-    <input
-      type="email"
-      name="email"
-      placeholder="Email*"
-      required
-      value={formData.email}
-      onChange={handleChange}
-      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-    />
-  </div>
+                    <div>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email*"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
 
-  <div>
-    <input
-      type="tel"
-      name="phone"
-      placeholder="Phone*"
-      required
-      value={formData.phone}
-      onChange={handleChange}
-      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-    />
-  </div>
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone*"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
 
-  <div>
-    <textarea
-      name="message"
-      rows={3}
-      placeholder="Write here Brief about the project..."
-      value={formData.message}
-      onChange={handleChange}
-      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
-    />
-  </div>
+                    <div>
+                      <textarea
+                        name="message"
+                        rows={3}
+                        placeholder="Write here Brief about the project..."
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      />
+                    </div>
 
-  {/* File Upload */}
-  <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
-    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-      <Paperclip className="w-4 h-4 text-gray-600" />
-      <span>Upload file:</span>
-      <input
-        type="file"
-        onChange={handleFileChange}
-        className="hidden"
-      />
-    </label>
-    <span className="text-gray-500 truncate max-w-37.5 sm:max-w-50">
-      {formData.file ? formData.file.name : "No file chosen."}
-    </span>
-  </div>
+                    {/* File Upload */}
+                    <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
+                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
+                        <Paperclip className="w-4 h-4 text-gray-600" />
+                        <span>Upload file:</span>
+                        <input
+                          type="file"
+                          onChange={handleFileChange}
+                          className="hidden"
+                        />
+                      </label>
+                      <span className="text-gray-500 truncate max-w-37.5 sm:max-w-50">
+                        {formData.file ? formData.file.name : "No file chosen."}
+                      </span>
+                    </div>
 
-  {/* Checkbox */}
-  <div className="flex items-center gap-2 pt-1">
-    <input
-      type="checkbox"
-      id="nda"
-      checked={formData.sendNda}
-      onChange={(e) =>
-        setFormData((prev) => ({
-          ...prev,
-          sendNda: e.target.checked,
-        }))
-      }
-      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
-    />
-    <label
-      htmlFor="nda"
-      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
-    >
-      Please Send NDA
-    </label>
-  </div>
+                    {/* Checkbox */}
+                    <div className="flex items-center gap-2 pt-1">
+                      <input
+                        type="checkbox"
+                        id="nda"
+                        checked={formData.sendNda}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            sendNda: e.target.checked,
+                          }))
+                        }
+                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-red-600 accent-gray-600 cursor-pointer"
+                      />
+                      <label
+                        htmlFor="nda"
+                        className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
+                      >
+                        Please Send NDA
+                      </label>
+                    </div>
 
-  {/* Submit Button */}
-  <div className="pt-2">
-    <button
-      type="submit"
-      disabled={isSubmitting}
-      className="w-full sm:w-auto bg-[#1E4B82] hover:bg-[#163a66] disabled:opacity-50 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
-    >
-      {isSubmitting ? "Submitting..." : "Schedule a free consultation"}
-    </button>
-  </div>
-                </form>
+                    {/* Submit Button */}
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full sm:w-auto bg-red-700 hover:bg-red-600 disabled:opacity-50 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
+                      >
+                        {isSubmitting ? "Submitting..." : "Schedule a free consultation"}
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -310,17 +310,47 @@ const handleSubmit = async (e) => {
 
               <div className="flex flex-wrap justify-center items-center gap-6 mt-8 font-semibold">
                 <span className="flex items-center gap-2">
-                  <img src="/icons/teams.svg" alt="" className="w-5 h-5" />{" "}
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/teams.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/teams.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   iQlance
                 </span>
 
                 <span className="flex items-center gap-2">
-                  <img src="/icons/email-icon.svg" alt="" className="w-5 h-5" />{" "}
+                   <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   info@iqlance.com
                 </span>
 
                 <span className="flex items-center gap-2">
-                  <img src="/icons/calendar.svg" alt="" className="w-5 h-5" />{" "}
+                   <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/calendar.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/calendar.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   schedule meeting
                 </span>
               </div>
@@ -329,7 +359,7 @@ const handleSubmit = async (e) => {
         </section>
 
         {/* Office Cards Section */}
-        <section className="py-10 bg-[#f8f9fb] w-full">
+        <section className="py-10 bg-red-50 w-full">
           <div className="w-full px-2 sm:px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
               {offices.map((office) => (
@@ -357,7 +387,17 @@ const handleSubmit = async (e) => {
 
                   {office.phone && (
                     <div className="flex justify-center items-center gap-2 mt-8 text-xl sm:text-2xl font-semibold">
-                      <Phone size={24} />
+                       <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                       <span>{office.phone}</span>
                     </div>
                   )}
