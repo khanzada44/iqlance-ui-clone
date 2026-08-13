@@ -21,7 +21,7 @@ export const NavMobileItem = ({
     return (
       <Link
         href={link.href}
-        className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600"
+        className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-red-50"
         onClick={onClose}
       >
         {link.label}
@@ -49,7 +49,7 @@ export const NavMobileItem = ({
             <Link
               key={item.label}
               href={item.href}
-              className="flex items-center gap-3 py-2.5 text-sm text-gray-600 hover:text-blue-600"
+              className="flex items-center gap-3 py-2.5 text-sm text-gray-600 hover:text-red-500"
               onClick={onClose}
             >
               {item.icon && (

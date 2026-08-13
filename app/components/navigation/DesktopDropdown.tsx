@@ -22,7 +22,7 @@ export const DesktopDropdown = ({ items }: DesktopDropdownProps) => {
           href={item.href}
           prefetch={false} // Disable background pre-fetching overhead
           onClick={() => handleItemClick(item.id)}
-          className="group flex items-center justify-between px-4 py-2.5 text-sm font-bold text-gray-700 transition-all duration-200 hover:text-blue-600"
+          className="group flex items-center justify-between px-4 py-2.5 text-sm font-bold text-gray-700 transition-all duration-200 hover:text-red-600"
         >
           <div className="flex items-center gap-3">
             {item.icon && (
@@ -32,7 +32,7 @@ export const DesktopDropdown = ({ items }: DesktopDropdownProps) => {
           </div>
           <ArrowRight
             size={15}
-            className="opacity-0 -translate-x-2 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 text-blue-600"
+            className="opacity-0 -translate-x-2 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 text-red-600"
           />
         </Link>
       ))}

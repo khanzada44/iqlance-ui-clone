@@ -19,3 +19,8 @@ export const singlePortfolio = async (slug: string) => {
   const response = await api.get(`/single-portfolio/${slug}`);
   return response.data?.response?.data;
 };
+
+export const serviceCategories = async () => {
+  const response = await api.get("service-categories");
+  return response.data.response.data;
+};

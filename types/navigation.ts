@@ -28,25 +28,23 @@ export interface ServicesData {
   categories: ServiceCategory[];
 }
 
-// export const NAVIGATION = {
-//   DROPDOWN_DELAY: 150,
-//   MOBILE_BREAKPOINT: "xl" as const,
-//   LOGO_WIDTH: 215,
-//   LOGO_HEIGHT: 62,
-// } as const;
+export interface ServiceItem {
+  name: string;
+  href: string;
+  icon?: string;
+  icon_url?: string;
+}
 
-// export const COLORS = {
-//   PRIMARY: "#1f4b83",
-//   PRIMARY_HOVER: "#173d6c",
-// } as const;
+export interface ServiceCategory {
+  id: string;
+  name: string;
+  href: string;
+  icon?: string;
+  icon_url?: string;
+  items: ServiceItem[];
+}
 
-// export const ROUTES = {
-//   HOME: "/",
-//   CONTACT: "/contact",
-//   SERVICES: "/services",
-//   ABOUT: "/about",
-//   WORK: "/work",
-//   BLOG: "/blog",
-//   INDUSTRY: "/industry",
-//   SOLUTIONS: "/solutions",
-// } as const;
+export interface ServicesData {
+  title: string;
+  categories: ServiceCategory[];
+}

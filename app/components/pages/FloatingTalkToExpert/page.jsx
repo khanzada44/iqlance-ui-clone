@@ -53,8 +53,8 @@ export default function FloatingTalkToExpert() {
             className="flex items-center justify-center bg-red-700 hover:bg-red-600 text-white px-2 py-3 shadow-2xl cursor-pointer z-10 transition-all duration-200"
             style={{ writingMode: "vertical-rl" }}
           >
-            <Phone size={15} className="rotate-90 mb-2" />
-            <span className="font-bold text-sm">Talk to Expert</span>
+           <Phone size={15} className="rotate-90 mb-2" />
+          <span className="hidden sm:inline font-bold text-sm">Talk to Expert</span>
           </button>
         </div>
 

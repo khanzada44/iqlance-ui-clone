@@ -1,5 +1,5 @@
 import { NavLink, ServicesData } from "@/types/navigation";
-import { allSubCategories , portfolioSubCategories } from "../services/all-sub-categories";
+import { allSubCategories , portfolioSubCategories ,serviceCategories} from "../services/all-sub-categories";
 
 
 
@@ -167,87 +167,30 @@ export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
     return navLinks;
   }
 };
-export const servicesData: ServicesData = {
-  title: "What we can do for you",
-  categories: [
-    {
-      id: "mobile",
-      name: "Mobile App Development",
-      href: "/services-category",
-      items: [
-        { name: "iOS App Development", href: "/services-details" },
-        { name: "React Native Development", href: "/services/react-native-development" },
-        { name: "Android App Development", href: "/services/android-app-development" },
-        { name: "Flutter App Development", href: "/services/flutter-app-development" },
-        { name: "Cross Platform App Development", href: "/services/cross-platform-app-development" },
-        { name: "Kotlin App Development", href: "/services/kotlin-app-development" },
-        { name: "MVP App Development", href: "/services/mvp-app-development" },
-        { name: "iPad App Development", href: "/services/ipad-app-development" },
-        { name: "Smart Watch App Development", href: "/services/smart-watch-app-development" },
-        { name: "PWA Development", href: "/services/pwa-development" },
-        { name: "Hybrid App Development", href: "/services/hybrid-app-development" },
-      ],
-    },
-    {
-      id: "software",
-      name: "Software Development",
-      href: "/services-category",
-      items: [
-        { name: "Web Development", href: "/services/web-development" },
-        { name: "Swift App Development", href: "/services/swift-app-development" },
-        { name: "Cross Platform App Development", href: "/services/cross-platform-app-development" },
-        { name: "Custom Software Development", href: "/services/custom-software-development" },
-        { name: "CRM Development", href: "/services/crm-development" },
-        { name: "ERP Development", href: "/services/erp-development" },
-      ],
-    },
-    {
-      id: "hire",
-      name: "Hire Dedicated Developers",
-      href: "/services-category",
-      items: [
-        { name: "Kotlin App Development", href: "/services/kotlin-app-development" },
-        { name: "MVP App Development", href: "/services/mvp-app-development" },
-        { name: "React Development", href: "/services/react-development" },
-        { name: "Next.js Development", href: "/services/nextjs-development" },
-        { name: "Node.js Development", href: "/services/nodejs-development" },
-      ],
-    },
-    {
-      id: "ai",
-      name: "AI Development",
-      href: "/services-category",
-      items: [
-        { name: "iPad App Development", href: "/services/ipad-app-development" },
-        { name: "Smart Watch App Development", href: "/services/smart-watch-app-development" },
-        { name: "Machine Learning", href: "/services/machine-learning" },
-        { name: "AI Chatbots", href: "/services/ai-chatbots" },
-        { name: "Computer Vision", href: "/services/computer-vision" },
-      ],
-    },
-    {
-      id: "digital",
-      name: "Digital Marketing",
-      href: "/services-category",
-      items: [
-        { name: "PWA Development", href: "/services/pwa-development" },
-        { name: "Hybrid App Development", href: "/services/hybrid-app-development" },
-        { name: "SEO Services", href: "/services/seo-services" },
-        { name: "Social Media Marketing", href: "/services/social-media-marketing" },
-        { name: "Content Marketing", href: "/services/content-marketing" },
-      ],
-    },
-    {
-      id: "enterprise",
-      name: "Enterprise Solutions",
-      href: "/services-category",
-      items: [
-        { name: "PWA Development", href: "/services/pwa-development" },
-        { name: "Hybrid App Development", href: "/services/hybrid-app-development" },
-        { name: "Cloud Solutions", href: "/services/cloud-solutions" },
-        { name: "DevOps Services", href: "/services/devops-services" },
-        { name: "IT Consulting", href: "/services/it-consulting" },
-      ],
-    },
-  ],
+export const getServicesData = async (): Promise<ServicesData> => {
+  const categories = await serviceCategories();
+
+  return {
+    title: "What we can do for you",
+
+    categories: categories.map((category: any) => ({
+      id: String(category.id),
+      name: category.name,
+      href: `/services-category/${category.slug}`,
+
+      // Category icon
+      icon: category.icon,
+      icon_url: category.icon_url,
+
+      // Services
+      items: (category.services || []).map((service: any) => ({
+        name: service.title,
+        href: `/services/${service.slug}`,
+
+        // Service icon
+        icon: service.icon,
+        icon_url: service.icon_url,
+      })),
+    })),
+  };
 };

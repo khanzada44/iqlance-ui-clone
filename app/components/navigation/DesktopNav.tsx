@@ -31,7 +31,6 @@ export const DesktopNav = ({
             key={link.label}
             className="relative"
             onMouseEnter={() => {
-              console.log('Hover on:', link.label); 
               if (isServices) {
                 onServicesEnter();
               } else {
@@ -50,7 +49,7 @@ export const DesktopNav = ({
             <Link
               href={link.href}
               className={`flex items-center gap-1 text-sm font-medium transition-colors lg:text-base ${
-                isActive ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
+                isActive ? 'text-red-600' : 'text-gray-700 hover:text-red-600'
               }`}
             >
               {link.label}
