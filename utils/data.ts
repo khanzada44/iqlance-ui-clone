@@ -462,25 +462,25 @@ export const stats = [
     line2: "of experience",
   },
   {
-    icon: '/icons/icon-6.svg',
+    icon: '/images/icon-6.png',
     value: "1500+",
     line1: "Successful",
     line2: "Projects",
   },
   {
-    icon: '/icons/icon-7.svg',
+    icon: '/images/icon-7.png',
     value: "200+",
     line1: "Happy Clients",
     line2: "World Wide",
   },
   {
-    icon: '/icons/icon-8.svg',
+    icon: '/images/icon-8.png',
     value: "800K+",
     line1: "Hours",
     line2: "Invested",
   },
   {
-    icon: '/icons/icon-9.svg',
+    icon: '/images/icon-9.png',
     value: "100%",
     line1: "Best",
     line2: "Quality Delivery",
@@ -492,58 +492,58 @@ export const industries = [
     title: "Wellness & Fitness",
     bgImage:
       "/images/wellness_fitness_images.jpg",
-    icon: "/images/wellness_fitness_icon.png.webp",
+    icon: "/images/wellness_fitness_icon.png",
   },
   {
     title: "Food & Restaurant",
     bgImage:
       "/images/food_restaurant_images.jpg",
-    icon: "/images/food_restaurant_icon.png.webp",
+    icon: "/images/food_restaurant_icon.png",
   },
   {
     title: "Media & Entertainment",
     bgImage:
       "/images/streamingconceptscreensofcontent.jpg",
-    icon: "/images/media-icn.png.webp",
+    icon: "/images/media-icn.png",
   },
   {
     title: "Real Estate",
     bgImage: "/images/guide-to-real-estate.webp",
-    icon: "/images/real-easte-icn.png.webp",
+    icon: "/images/real-easte-icn.png",
   },
   {
     title: "Healthcare",
     bgImage: "/images/healthcare-apps.jpg",
-    icon: "/images/healthcare-icn.png.webp",
+    icon: "/images/healthcare-icn.png",
   },
   {
     title: "E-commerce",
     bgImage:
       "/images/upi-credit-cards-v1.png",
-    icon: "/images/reatail-icn.png.webp",
+    icon: "/images/reatail-icn.png",
   },
   {
     title: "Education",
     bgImage: "/images/60fc9ce79bf37.jpg",
-    icon: "/images/educ-icn.png.webp",
+    icon: "/images/educ-icn.png",
   },
   {
     title: "Logistics",
     bgImage:
       "/images/images.jpg",
-    icon: "/images/logistic-icon.png.webp",
+    icon: "/images/logistic-icon.png",
   },
   {
     title: "Travel & Hospitality",
     bgImage:
       "/images/travel-and-hospitality-industry-banner-1400x800-1.jpg",
-    icon: "/images/travel-icn.png.webp",
+    icon: "/images/travel-icn.png",
   },
   {
     title: "Oil & Gas",
     bgImage:
       "/images/biggest_oil_and_gas_companies.webp",
-    icon: "/images/oil-fas-icn.png.webp",
+    icon: "/images/oil-fas-icn.png",
   },
 ];
 export const services = [

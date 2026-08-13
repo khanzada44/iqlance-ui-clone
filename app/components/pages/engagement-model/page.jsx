@@ -51,12 +51,7 @@ export default function EngagementModelSection() {
       data.append("sendNda", formData.sendNda);
       if (formData.file) data.append("file", formData.file);
 
-      /* 
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        body: data,
-      });
-      */
+
     } catch (error) {
       console.error("API Error:", error);
     }
@@ -71,8 +66,8 @@ export default function EngagementModelSection() {
               {/* Left Content */}
               <div className="lg:col-span-7 text-center lg:text-left mt-8">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-                  <span className="text-[#2F67C8]">Engagement</span>{" "}
-                  <span className="text-[#13294B]">Model</span>
+                  <span className="text-red-600">Engagement</span>{" "}
+                  <span className="text-red-700">Model</span>
                 </h2>
 
                 <h3 className="mt-4 sm:mt-6 text-xl sm:text-2xl font-semibold">
@@ -112,7 +107,7 @@ export default function EngagementModelSection() {
 
                   <Link
                     href="/contact-us"
-                    className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+                    className="group inline-flex items-center gap-3 bg-red-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-600"
                   >
                     Contact Us
                     <ArrowRight
@@ -135,11 +130,11 @@ export default function EngagementModelSection() {
 
               {/* Right Form Container */}
               <div className="lg:col-span-5 relative pt-6 pr-4">
-                <div className="relative bg-[#EFF6FF] border border-blue-100/60 p-6 md:p-8 w-full shadow-lg">
+                <div className="relative bg-[#F7F8FA] border border-blue-100/60 p-6 md:p-8 w-full shadow-lg">
                   {/* Top Right Ribbon Badge */}
                   <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                     <img
-                      src="/images/badge-sameday-resposnse.png"
+                      src="/images/contact-form-logo.png"
                       alt="Same Day Response Guaranteed"
                       className="w-full h-auto object-contain"
                     />
@@ -163,7 +158,7 @@ export default function EngagementModelSection() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-400 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -175,7 +170,7 @@ export default function EngagementModelSection() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-400 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -187,7 +182,7 @@ export default function EngagementModelSection() {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-400 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -198,7 +193,7 @@ export default function EngagementModelSection() {
                         placeholder="Write here Brief about the project..."
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-400 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                       />
                     </div>
 
@@ -230,7 +225,7 @@ export default function EngagementModelSection() {
                             sendNda: e.target.checked,
                           }))
                         }
-                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                        className="w-4 h-4 border-gray-400 text-red-400 focus:ring-red-400 accent-gray-600 cursor-pointer"
                       />
                       <label
                         htmlFor="nda"
@@ -244,7 +239,7 @@ export default function EngagementModelSection() {
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
+                        className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
                       >
                         Schedule a free consultation
                       </button>
@@ -297,10 +292,10 @@ export default function EngagementModelSection() {
               <table className="w-full min-w-160 border border-gray-300 text-center">
                 <thead>
                   <tr>
-                    <th className="border border-gray-300 p-3 sm:p-6 bg-white w-40 sm:w-64">
+                    <th className="border border-red-100 bg-red-50  p-3 sm:p-6  w-40 sm:w-64">
                       <div className="flex flex-col items-center">
                         <img
-                          src="/icons/iq-logo-ct.svg"
+                          src="/images/Dev-App-04.png"
                           alt="Logo"
                           width={100}
                           height={35}
@@ -312,7 +307,7 @@ export default function EngagementModelSection() {
                       </div>
                     </th>
 
-                    <th className="border border-gray-300 bg-[#F6F7FF] p-3 sm:p-6">
+                    <th className="border border-red-100 bg-red-50 p-3 sm:p-6">
                       <div className="flex flex-col items-center">
                         <img
                           src="/blog-images/emodel-hourly-icn.png"
@@ -327,7 +322,7 @@ export default function EngagementModelSection() {
                       </div>
                     </th>
 
-                    <th className="border border-gray-300 bg-[#F6F7FF] p-3 sm:p-6">
+                    <th className="border border-red-100 bg-red-50  p-3 sm:p-6">
                       <div className="flex flex-col items-center">
                         <img
                           src="/images/fixbg-icn-em.png"
@@ -342,7 +337,7 @@ export default function EngagementModelSection() {
                       </div>
                     </th>
 
-                    <th className="border border-gray-300 bg-[#F6F7FF] p-3 sm:p-6">
+                    <th className="border border-red-100 bg-red-50  p-3 sm:p-6">
                       <div className="flex flex-col items-center">
                         <img
                           src="/images/dedicated-icn-em.png"
@@ -362,19 +357,19 @@ export default function EngagementModelSection() {
                 <tbody>
                   {comparisonData?.map((row, index) => (
                     <tr key={index}>
-                      <td className="border border-gray-300 text-left px-3 sm:px-5 py-3 sm:py-4 font-medium text-sm sm:text-base">
+                      <td className="border border-red-300 text-left px-3 sm:px-5 py-3 sm:py-4 font-medium text-sm sm:text-base">
                         {row.title}
                       </td>
 
-                      <td className="border border-gray-300 py-3 sm:py-4 text-sm sm:text-base">
+                      <td className="border border-red-300 py-3 sm:py-4 text-sm sm:text-base">
                         {row.time}
                       </td>
 
-                      <td className="border border-gray-300 py-3 sm:py-4 text-sm sm:text-base">
+                      <td className="border border-red-300 py-3 sm:py-4 text-sm sm:text-base">
                         {row.fixed}
                       </td>
 
-                      <td className="border border-gray-300 py-3 sm:py-4 text-sm sm:text-base">
+                      <td className="border border-red-300 py-3 sm:py-4 text-sm sm:text-base">
                         {row.dedicated}
                       </td>
                     </tr>
@@ -387,14 +382,14 @@ export default function EngagementModelSection() {
 
         <section className="w-full max-w-6xl mx-auto px-4 py-12 text-gray-700">
           {/* Navigation Tabs */}
-          <div className="border-b border-gray-200 mb-8">
+          <div className=" border-gray-200 mb-8">
             <nav className="flex space-x-8">
               {tabsData.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveModelTab(tab.id)}
                   className={`pb-3 text-sm font-semibold transition-all relative ${activeModelTab === tab.id
-                    ? "text-slate-800 border-b-2 border-slate-800"
+                    ? "text-red-700 border-b-2 border-red-600"
                     : "text-gray-400 hover:text-gray-600"
                     }`}
                 >
@@ -444,7 +439,7 @@ export default function EngagementModelSection() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans mb-10">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -469,7 +464,7 @@ export default function EngagementModelSection() {
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+            <div className="w-full max-w-2xl bg-red-50 border border-red-300 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
@@ -516,7 +511,7 @@ export default function EngagementModelSection() {
             <div>
               <Link
                 href="/lets-talk"
-                className="group inline-flex items-center gap-3 bg-[#1E4D8F] px-8 py-4 text-lg font-semibold text-white transition hover:bg-[#163d72]"
+                className="group inline-flex items-center gap-3 bg-red-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-600"
               >
                 Let’s Discuss
                 <ArrowRight

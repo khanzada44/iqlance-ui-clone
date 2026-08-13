@@ -6,7 +6,7 @@ export const missionData = [
       "Our mission is to strengthen the capabilities of start-ups as a global leader of future technologies. We're dedicated in providing first-rate customer service in a timely and fiscally responsible manner and use agile approach that hits bull's eye in the IT market.",
   },
   {
-    icon: "/images/ep-icn.png.webp",
+    icon: "/images/ep-icn.png",
     title: "Working with Enterprise",
     description:
       "Our mission is to help the enterprise with dynamic and unique ideas that can make distinctive, lasting and substantial enhancements to attract end-customers. iQlance makes the use of latest tools and technologies which can help the businesses to stand tall amongst competition.",
