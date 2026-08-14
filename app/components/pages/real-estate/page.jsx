@@ -16,18 +16,20 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import {
-  partners,
+  portfolioSlides,
   bottomFeatures,
   slides,
   ServiceSectionData,
-  portfolioSlides,
+} from "../real-estate/data";
+import {
+  partners,
   technologies,
   stats,
   industries,
   services,
   faqsData,
-  testimonials
-} from "../real-estate/data";
+  testimonials,
+} from "../../../../utils/data";
 import Image from "next/image";
 
 export default function realEstate() {
@@ -68,29 +70,39 @@ export default function realEstate() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-red-700 leading-tight">
                 Real Estate
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-
-                With many people shifting to bigger cities, more and more people are looking for well-furnished homes and rental spaces. As a result, there is a boom in the real estate industry. To provide the most advantage of the situation to Aggregators, Realtors, Builders, and stakeholders, we provide them with the best Real Estate App development solution. Thus, marking the digital presence in the real estate sector.
-
+                With many people shifting to bigger cities, more and more people
+                are looking for well-furnished homes and rental spaces. As a
+                result, there is a boom in the real estate industry. To provide
+                the most advantage of the situation to Aggregators, Realtors,
+                Builders, and stakeholders, we provide them with the best Real
+                Estate App development solution. Thus, marking the digital
+                presence in the real estate sector.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                As the real estate app development company, we aim at enhancing the experience of the buyers and real estate firms. We make it possible by offering them an app that supports advanced technologies like IoT, chatbots, and third-party app support.
+                As the real estate app development company, we aim at enhancing
+                the experience of the buyers and real estate firms. We make it
+                possible by offering them an app that supports advanced
+                technologies like IoT, chatbots, and third-party app support.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                In addition, we extend our real estate app development services to Virtual CTO services for carrying tech strategies successfully. Thus, ensuring our real estate partner a comprehensive development.
+                In addition, we extend our real estate app development services
+                to Virtual CTO services for carrying tech strategies
+                successfully. Thus, ensuring our real estate partner a
+                comprehensive development.
               </p>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
+                  className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
                   Contact Us <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -106,11 +118,11 @@ export default function realEstate() {
 
             {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
-              <div className="relative bg-[#EFF6FF] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
+              <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
                 {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
-                    src="/images/badge-sameday-resposnse.png"
+                    src="/images/contact-form-logo.png"
                     alt="Same Day Response Guaranteed"
                     className="w-full h-auto object-contain"
                   />
@@ -134,7 +146,7 @@ export default function realEstate() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -146,7 +158,7 @@ export default function realEstate() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -158,7 +170,7 @@ export default function realEstate() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -169,7 +181,7 @@ export default function realEstate() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                     />
                   </div>
 
@@ -215,7 +227,7 @@ export default function realEstate() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6  transition-colors shadow flex items-center justify-center cursor-pointer"
+                      className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6  transition-colors shadow flex items-center justify-center cursor-pointer"
                     >
                       Schedule a free consultation
                     </button>
@@ -232,17 +244,28 @@ export default function realEstate() {
                 Custom App Development Solutions For Your Real Estate Business
               </h2>
               <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-
-                We have a qualified and an experienced real estate app development team toronto to provide cutting-edge solutions to meet your specific real estate business requirements. Whether you are one of the top-class real estate companies, a small firm or an individual agent related to a property business, you may not overlook the significance of a good real estate web development service.
+                We have a qualified and an experienced real estate app
+                development team toronto to provide cutting-edge solutions to
+                meet your specific real estate business requirements. Whether
+                you are one of the top-class real estate companies, a small firm
+                or an individual agent related to a property business, you may
+                not overlook the significance of a good real estate web
+                development service.
               </p>
               <br />
               <p>
-                This is because; we at iQlance provide you with the best possible real estate application to get lucrative benefits. Also, our real estate app service provides brokers, aggregators, and brokers a platform that provides 24×7 support services to end-users without even attending them.
+                This is because; we at iQlance provide you with the best
+                possible real estate application to get lucrative benefits.
+                Also, our real estate app service provides brokers, aggregators,
+                and brokers a platform that provides 24×7 support services to
+                end-users without even attending them.
               </p>
               <br />
               <p>
-                Also, our team contains top app developers of different areas to power the app with cutting-edge technologies. It is built in such a way that fulfills not only present demands but also the demands of the future.
-
+                Also, our team contains top app developers of different areas to
+                power the app with cutting-edge technologies. It is built in
+                such a way that fulfills not only present demands but also the
+                demands of the future.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
@@ -258,10 +281,10 @@ export default function realEstate() {
                 </div>
               ))}
             </div>
-            <div className="text-center mb-10" >
+            <div className="text-center mb-10">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Start a Conversation <ArrowRight className="w-4 h-4" />
               </Link>
@@ -275,12 +298,12 @@ export default function realEstate() {
             />
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -295,18 +318,29 @@ export default function realEstate() {
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
+              We are team of talented, experienced, and certified designers and
+              developers. Let us build something extraordinary.
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+            <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                  className="inline-flex items-center gap-1.5 transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -314,20 +348,24 @@ export default function realEstate() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+14697939837" className=" transition-colors">
                     +1 469 793 9837
                   </a>
                   <span>,</span>
                   <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+16476379108" className=" transition-colors">
                     +1 647 637 9108
                   </a>
                 </div>
@@ -337,8 +375,8 @@ export default function realEstate() {
             {/* Action Button */}
             <div>
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/contact-us"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Hire Dedicated Developerse <ArrowRight className="w-4 h-4" />
               </Link>
@@ -351,20 +389,34 @@ export default function realEstate() {
               Delivery Of Unrivaled Solutions Is Our Prime Objective
             </h1>
             <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-              We can help you digitalize your real estate business with the best real estate mobile app. We are the leading mobile app development company  that strives to fulfill your every desire through end-to-end solutions. We even have a family of qualified experts who constantly try to push their boundaries for you to reach new heights.
+              We can help you digitalize your real estate business with the best
+              real estate mobile app. We are the leading mobile app development
+              company that strives to fulfill your every desire through
+              end-to-end solutions. We even have a family of qualified experts
+              who constantly try to push their boundaries for you to reach new
+              heights.
             </p>
           </div>
-
         </section>
         <section className="py-10">
           <div className="mx-auto max-w-7xl">
+            <style>{`
+                .portfolio-swiper .swiper-pagination-bullet {
+                  background-color: #cbd5e1 !important;
+                  opacity: 1 !important;
+                }
+                .portfolio-swiper .swiper-pagination-bullet-active {
+                  background-color: #dc2626 !important; /* Red color */
+                }
+              `}</style>
             <Swiper
+              className="portfolio-swiper pb-12"
               modules={[Pagination, Autoplay]}
               slidesPerView={1}
               spaceBetween={0}
               loop={true}
               autoplay={{
-                delay: 30000,
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               pagination={{
@@ -379,7 +431,7 @@ export default function realEstate() {
                       <img
                         src={slide.image}
                         alt={slide.title}
-                        className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
+                        className="w-full h-64 sm:h-80 md:h-96 lg:h-125 object-cover"
                       />
                     </div>
 
@@ -419,8 +471,9 @@ export default function realEstate() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
+                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -458,12 +511,13 @@ export default function realEstate() {
             );
           })}
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+
+        <section className="w-full bg-red-50 py-16 px-6 font-sans">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -482,14 +536,24 @@ export default function realEstate() {
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+            <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                  className="inline-flex items-center gap-1.5 transition-colors"
                 >
-                  <img src="/icons/email-icon.svg" alt="" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -497,20 +561,24 @@ export default function realEstate() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img src="/icons/phone-icon.svg" alt="" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+14697939837" className=" transition-colors">
                     +1 469 793 9837
                   </a>
                   <span>,</span>
                   <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+16476379108" className=" transition-colors">
                     +1 647 637 9108
                   </a>
                 </div>
@@ -520,8 +588,8 @@ export default function realEstate() {
             {/* Action Button */}
             <div>
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/contact-us"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Let’s Talk <ArrowRight className="w-4 h-4" />
               </Link>
@@ -534,7 +602,8 @@ export default function realEstate() {
             Features of Wellness and Fitness App Development
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
-            The next-gen real estate app we provide will surely boost your everyday operation by the use of top features like:
+            The next-gen real estate app we provide will surely boost your
+            everyday operation by the use of top features like:
           </p>
 
           {/* Main 3x3 Grid */}
@@ -718,12 +787,13 @@ export default function realEstate() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+
+        <section className="w-full bg-red-50 py-16 px-6 font-sans">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -742,14 +812,24 @@ export default function realEstate() {
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
+            <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                  className="inline-flex items-center gap-1.5 transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -757,20 +837,24 @@ export default function realEstate() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+14697939837" className=" transition-colors">
                     +1 469 793 9837
                   </a>
                   <span>,</span>
                   <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+16476379108" className=" transition-colors">
                     +1 647 637 9108
                   </a>
                 </div>
@@ -780,8 +864,8 @@ export default function realEstate() {
             {/* Action Button */}
             <div>
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/contact-us"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Let’s Talk <ArrowRight className="w-4 h-4" />
               </Link>
@@ -789,7 +873,7 @@ export default function realEstate() {
           </div>
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Image Side */}
             <div className="w-full h-full min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
               <img
@@ -802,24 +886,31 @@ export default function realEstate() {
             {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Our Team Provides a One-Stop Solution by Building The Best Real Estate App
+                Our Team Provides a One-Stop Solution by Building The Best Real
+                Estate App
               </h2>
 
               <p>
-                At iQlance, our developer family are dedicated to delivering an unrivaled solution to users. They make it possible by running in-depth research and gathering knowledge to maximize support. Plus, they work continuously to make the app customer-centric, business-oriented, and result-driven.
-
+                At iQlance, our developer family are dedicated to delivering an
+                unrivaled solution to users. They make it possible by running
+                in-depth research and gathering knowledge to maximize support.
+                Plus, they work continuously to make the app customer-centric,
+                business-oriented, and result-driven.
               </p>
 
               <p>
-
-                We hire a real estate app developer with years of experience before joining us to benefit from their experience and new view. They work day and night to provide the customer with 100% satisfaction and cover the multiple verticals the client works in.
-
+                We hire a real estate app developer with years of experience
+                before joining us to benefit from their experience and new view.
+                They work day and night to provide the customer with 100%
+                satisfaction and cover the multiple verticals the client works
+                in.
               </p>
 
               <p>
-
-                We thrive on making our company the one-stop solution for all realtors and buyers out there. Also, we are the leading real estate mobile app development company that provides you with a powerful app that helps you gain the competitive edge.
-
+                We thrive on making our company the one-stop solution for all
+                realtors and buyers out there. Also, we are the leading real
+                estate mobile app development company that provides you with a
+                powerful app that helps you gain the competitive edge.
               </p>
             </div>
           </div>
@@ -828,26 +919,34 @@ export default function realEstate() {
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How Much does It Cost to Build A Real Estate App Similar to Successful Competitors Present in The Market?
+              How Much does It Cost to Build A Real Estate App Similar to
+              Successful Competitors Present in The Market?
             </h2>
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                The answer will depend on how advance you want the app to be. For example, if you want the app to contain all the complex features that the other booming industry has, we can set the price according to it.
+                The answer will depend on how advance you want the app to be.
+                For example, if you want the app to contain all the complex
+                features that the other booming industry has, we can set the
+                price according to it.
                 <br />
-                It is essential to understand that any modification in the basic set will definitely affect the cost one way or another. However, the revenue you will earn will also be significant. So, its better to go with what the market is demanding. Then look for the technology, backend, and compatibility to support that requirement.
+                It is essential to understand that any modification in the basic
+                set will definitely affect the cost one way or another. However,
+                the revenue you will earn will also be significant. So, its
+                better to go with what the market is demanding. Then look for
+                the technology, backend, and compatibility to support that
+                requirement.
               </p>
             </div>
           </div>
           <div className="text-center">
             <Link
               href="#contact"
-              className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
             >
               Get a Quotation <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-
 
           {/* Banner Image */}
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
@@ -864,69 +963,95 @@ export default function realEstate() {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
+              iQlance solutions has always been honored with valuable words for
+              the efforts given on mobile app development that are efficiently
+              unique and user centric. Here are some of the best examples for
+              this.
             </p>
           </div>
         </section>
-        <section>
+        <section className="w-full">
+          {/* Custom styles to override Swiper pagination bullet colors to red */}
+          <style>{`
+        .portfolio-swiper .swiper-pagination-bullet {
+          background-color: #cbd5e1;
+          opacity: 1;
+        }
+        .portfolio-swiper .swiper-pagination-bullet-active {
+          background-color: #dc2626 !important; /* Red color */
+        }
+      `}</style>
+
           <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
+            autoplay={{ delay: 3000 }}
             loop={true}
+            className="portfolio-swiper pb-12"
           >
             {portfolioSlides.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10">
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
+                {/* Fixed height container for uniformity across slides */}
+                <div className="bg-red-50 px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-auto lg:h-155 flex flex-col justify-center">
+                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold  mb-6 sm:mb-8">
                     {slide.heading}
                   </h2>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+                    <div className="flex flex-col justify-center">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
                         {slide.title}
                       </h3>
 
-                      <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+                      <p className="text-gray-700 leading-6 sm:leading-7 mb-4 text-sm sm:text-base line-clamp-3">
                         {slide.description}
                       </p>
 
-                      <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
+                      <ul className="space-y-2 mb-4 text-sm sm:text-base">
                         {slide.features.map((feature, i) => (
-                          <li key={i}>› {feature}</li>
+                          <li key={i} className="flex items-center">
+                            <span className="mr-2 text-[#184A8B] font-bold">
+                              ›
+                            </span>{" "}
+                            {feature}
+                          </li>
                         ))}
                       </ul>
 
-                      <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
+                      <div className="flex flex-wrap gap-4 sm:gap-6 mb-6">
                         {slide.technologies.map((tech, i) => (
                           <div key={i} className="text-center">
                             <img
                               src={tech.icon}
                               alt={tech.name}
-                              className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
+                              className="w-7 h-7 sm:w-8 sm:h-8 mx-auto object-contain"
                             />
-                            <p className="text-xs sm:text-sm mt-2">
+                            <p className="text-xs sm:text-sm mt-1">
                               {tech.name}
                             </p>
                           </div>
                         ))}
                       </div>
-                      <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                        View Case Study
-                        <ArrowRight
-                          size={18}
-                          className="transition-transform duration-300 group-hover:translate-x-1"
-                        />
-                      </button>
+                      <div>
+                        <button className="group sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 py-3 font-semibold flex justify-center items-center gap-3 transition cursor-pointer ">
+                          View Case Study
+                          <ArrowRight
+                            size={18}
+                            className="transition-transform duration-300 group-hover:translate-x-1"
+                          />
+                        </button>
+                      </div>
                     </div>
 
-                    <div className="flex justify-center">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full max-w-xs sm:max-w-sm"
-                      />
+                    {/* Fixed dimensions container for slide image to ensure equal sizing */}
+                    <div className="flex justify-center items-center">
+                      <div className="">
+                        <img
+                          src={slide.image}
+                          alt={slide.title}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -936,7 +1061,7 @@ export default function realEstate() {
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}
-          <div className="bg-[#F4F8FC] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
                 Check How We turn Your Idea into Innovative Product
@@ -949,7 +1074,7 @@ export default function realEstate() {
 
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 rounded-md transition-colors shrink-0"
+              className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6  transition-colors shrink-0"
             >
               <span>See Our Work</span>
               <ArrowRight className="w-4 h-4" />
@@ -979,17 +1104,19 @@ export default function realEstate() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                      ? "text-black font-semibold"
-                      : "text-gray-500 hover:text-black"
-                      }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
+                      activetechnologies === index
+                        ? "text-red-600 font-semibold"
+                        : "text-gray-500 hover:text-red-600"
+                    }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
-                        }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${
+                        activetechnologies === index ? "w-full" : "w-0"
+                      }`}
                     />
                   </button>
                 ))}
@@ -1016,12 +1143,13 @@ export default function realEstate() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+
+        <section className="w-full bg-red-50 py-16 px-6 font-sans">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -1031,19 +1159,70 @@ export default function realEstate() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              We are Team of Talented, Experienced, and Certified Designers and Developers.s
+              We are Team of Talented, Experienced, and Certified Designers and
+              Developers.
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-               Let us Build Something Extraordinary. 
+              Let us Build Something Extraordinary.
             </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+                {/* Email link */}
+                <a
+                  href="mailto:info@iqlance.com"
+                  className="inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
+                  <span>info@iqlance.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
+                  <span>US :</span>
+                  <a href="tel:+14697939837" className=" transition-colors">
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a href="tel:+16476379108" className=" transition-colors">
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
 
             {/* Action Button */}
             <div>
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/contact-us"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Hire Dedicated Developer <ArrowRight className="w-4 h-4" />
               </Link>
@@ -1057,10 +1236,11 @@ export default function realEstate() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App Development Company 
-              with a vast area of experience in crafting stunning and end to end encrypted 
-              technology solutions. We offer excellent expertise of the industry followed by an 
-              exactly planned approach to elevate your growth.
+              iQlance solutions is a leading Software, Web, & Mobile App
+              Development Company with a vast area of experience in crafting
+              stunning and end to end encrypted technology solutions. We offer
+              excellent expertise of the industry followed by an exactly planned
+              approach to elevate your growth.
             </p>
           </div>
         </section>
@@ -1100,9 +1280,10 @@ export default function realEstate() {
               Industries We Serve
             </h1>
             <p>
-              Our real estate app offering a feature-rich experience
-              and unmatched performance has connected us with real estate tycoons.
-              We have been with them their entire journey, and it was a beautiful experience with them.
+              Our real estate app offering a feature-rich experience and
+              unmatched performance has connected us with real estate tycoons.
+              We have been with them their entire journey, and it was a
+              beautiful experience with them.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1140,11 +1321,11 @@ export default function realEstate() {
               Why Choose Us?
             </h1>
             <p>
-              iQlance is the dominant real estate mobile app development company that provides multiple support 
-              to users, has tech-infused offerings, agile methodology, 
-              and whatnot. We are dedicated to enhancing 
-              the experience of the buyers 
-              and real estate firms by incorporating every need and mixing it with a perfect blend:{" "}
+              iQlance is the dominant real estate mobile app development company
+              that provides multiple support to users, has tech-infused
+              offerings, agile methodology, and whatnot. We are dedicated to
+              enhancing the experience of the buyers and real estate firms by
+              incorporating every need and mixing it with a perfect blend:{" "}
             </p>
           </div>
         </section>
@@ -1153,7 +1334,7 @@ export default function realEstate() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-[#184A8B] hover:shadow-lg"
+                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1178,15 +1359,25 @@ export default function realEstate() {
               Client Testimonials
             </h1>
             <p>
-                  Our top priority from the beginning has always been customer satisfaction, 
-                  and it feels good when the clients 
-                  feel the same. So here are the words of some of our clients who have enjoyed working with us:
+              Our top priority from the beginning has always been customer
+              satisfaction, and it feels good when the clients feel the same. So
+              here are the words of some of our clients who have enjoyed working
+              with us:
             </p>
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
+          <style>{`
+        .portfolio-swiper .swiper-pagination-bullet {
+          background-color: #cbd5e1;
+          opacity: 1;
+        }
+        .portfolio-swiper .swiper-pagination-bullet-active {
+          background-color: #dc2626 !important; /* Red color */
+        }
+      `}</style>
           {/* Outer Card Wrapper with Fixed Border & Accent */}
-          <div className="relative bg-white border border-gray-300 p-8 md:p-10  shadow-sm hover:border-[#1e40af] transition-all duration-300">
+          <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
             {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
 
@@ -1265,13 +1456,13 @@ export default function realEstate() {
             {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
-                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Previous Slide"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button
-                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-next bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Next Slide"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -1287,8 +1478,9 @@ export default function realEstate() {
             </h1>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
-              We deal with some common questions about real estate web applications every day. 
-              If you too have questions relating to them, you can refer to it below:
+              We deal with some common questions about real estate web
+              applications every day. If you too have questions relating to
+              them, you can refer to it below:
             </p>
           </div>
 
@@ -1299,10 +1491,11 @@ export default function realEstate() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-gray-300"
-                      }`}
+                    className={`border bg-white transition-all duration-300 ${
+                      open === index
+                        ? "border-gray-200 shadow-md"
+                        : "border-gray-200 hover:border-gray-300"
+                    }`}
                   >
                     {/* Question */}
                     <button
@@ -1314,19 +1507,21 @@ export default function realEstate() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          open === index
+                            ? "rotate-180 text-black"
+                            : "rotate-0 text-black"
+                        }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
-                        }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        open === index
+                          ? "max-h-150 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">
@@ -1364,10 +1559,11 @@ export default function realEstate() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance solution. 
-              See What process we follow for mobile app and software development. 
-              Have a look at how we are praised by our clients 
-              Start a conversation to innovate your next great idea into reality with us.
+              Have a look at the services and development process of the iQlance
+              solution. See What process we follow for mobile app and software
+              development. Have a look at how we are praised by our clients
+              Start a conversation to innovate your next great idea into reality
+              with us.
             </p>
           </div>
         </section>
@@ -1376,23 +1572,23 @@ export default function realEstate() {
         </div>
       </div>
       <section className="mb-5 overflow-hidden">
-      <div className="marquee">
-        <div className="marquee-content">
-          {[...partners, ...partners].map((item, index) => (
-            <div
-              key={`${item.id}-${index}`}
-              className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
-            >
-              <img
-                src={item.image}
-                alt={item.alt}
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-          ))}
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }

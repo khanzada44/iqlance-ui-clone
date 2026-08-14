@@ -329,7 +329,7 @@ export default function Blog() {
                               sendNda: e.target.checked,
                             }))
                           }
-                          className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                          className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 accent-gray-600 cursor-pointer"
                         />
                         <label
                           htmlFor="nda"
@@ -390,7 +390,7 @@ export default function Blog() {
                 {blogs.map((blog, index) => (
                   <div
                     key={`${blog.slug}-${index}`}
-                    className="p-px bg-transparent hover:bg-linear-to-r hover:from-blue-300 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+                    className="p-px bg-transparent hover:bg-linear-to-r hover:from-red-300 hover:to-red-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
                   >
                     <Link
                       href={`/single-blog?slug=${blog.slug}`}
@@ -414,12 +414,12 @@ export default function Blog() {
 
                       <div className="p-5">
                         {blog.category?.name && (
-                          <span className="text-sm text-[#1F4E99] font-medium">
+                          <span className="text-sm text-red-600 font-medium">
                             {blog.category.name}
                           </span>
                         )}
 
-                        <h3 className="mt-3 text-xl font-semibold leading-7 text-blue-800 line-clamp-2">
+                        <h3 className="mt-3 text-xl font-semibold leading-7 text-red-800 line-clamp-2">
                           {blog.title}
                         </h3>
                       </div>

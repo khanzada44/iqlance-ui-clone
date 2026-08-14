@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect, type ChangeEvent, type FormEvent } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  type ChangeEvent,
+  type FormEvent,
+} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "../../contactForm/ContactForm";
@@ -67,7 +73,7 @@ export default function Logistic() {
     sendNda: false,
   });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -78,7 +84,7 @@ export default function Logistic() {
     }
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setLoading(true);
     setStatusMessage({ type: "", text: "" });
@@ -188,11 +194,15 @@ export default function Logistic() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
                 Transportation and <br className="hidden md:inline" />
-                Logistics App <br className="hidden md:inline" />
-                Development <br className="hidden md:inline" />
-                Company in USA
+                <p className="text-red-700">
+                  Logistics App <br className="hidden md:inline" />
+                </p>
+                <p className="text-red-800">
+                  Development <br className="hidden md:inline" />
+                </p>
+                <p className="text-red-900">Company in USA</p>
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
@@ -235,7 +245,7 @@ export default function Logistic() {
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
-                  className="group inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md cursor-pointer"
+                  className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md cursor-pointer"
                 >
                   Request a Quote
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
@@ -243,7 +253,7 @@ export default function Logistic() {
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
+                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-red-100 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
                 >
                   See Our Work
                   <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
@@ -253,11 +263,11 @@ export default function Logistic() {
 
             {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
-              <div className="relative bg-[#EFF6FF] border border-blue-100/60 rounded-2xl p-6 md:p-8 w-full shadow-lg">
+              <div className="relative bg-[#F7F8FA] border border-blue-100/60 rounded-2xl p-6 md:p-8 w-full shadow-lg">
                 {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
-                    src="/images/badge-sameday-resposnse.png"
+                    src="/images/contact-form-logo.png"
                     alt="Same Day Response Guaranteed"
                     className="w-full h-auto object-contain"
                   />
@@ -281,7 +291,7 @@ export default function Logistic() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -293,7 +303,7 @@ export default function Logistic() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -305,7 +315,7 @@ export default function Logistic() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -316,7 +326,7 @@ export default function Logistic() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                     />
                   </div>
 
@@ -360,10 +370,11 @@ export default function Logistic() {
 
                   {statusMessage.text && (
                     <div
-                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
-                        ? "bg-green-100 border border-green-400 text-green-800"
-                        : "bg-red-100 border border-red-400 text-red-800"
-                        }`}
+                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${
+                        statusMessage.type === "success"
+                          ? "bg-green-100 border border-green-400 text-green-800"
+                          : "bg-red-100 border border-red-400 text-red-800"
+                      }`}
                     >
                       {statusMessage.text}
                     </div>
@@ -372,7 +383,7 @@ export default function Logistic() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {loading ? (
                         <span className="flex items-center gap-2">
@@ -489,90 +500,97 @@ export default function Logistic() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App for Your Business?
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                Ready to Build a Custom Logistics App for Your Business?
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to create
-              scalable, feature-rich logistics mobile applications tailored to
-              your needs.
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Partner with our logistics app development company to create
+                scalable, feature-rich logistics mobile applications tailored to
+                your needs.
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <img
-                    src="/icons/email-icon.svg"
-                    alt="mail-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span>info@iqlance.com</span>
-                </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img
-                    src="/icons/phone-icon.svg"
-                    alt="phone-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-            <div>
               <Link
                 href="/contact-us"
-                className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
               >
                 Request a Free Quote
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
               </Link>
             </div>
           </div>
         </section>
+
         <section className="py-10">
           <div className="mx-auto max-w-7xl">
+            {/* Custom CSS for red pagination dots */}
+            <style>{`
+              .portfolio-swiper .swiper-pagination-bullet {
+                background-color: #cbd5e1 !important;
+                opacity: 1 !important;
+              }
+              .portfolio-swiper .swiper-pagination-bullet-active {
+                background-color: #dc2626 !important; /* Red Color */
+              }
+            `}</style>
+
             <Swiper
+              className="portfolio-swiper pb-12"
               modules={[Pagination, Autoplay]}
               slidesPerView={1}
               spaceBetween={0}
@@ -633,8 +651,9 @@ export default function Logistic() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
+                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -672,84 +691,80 @@ export default function Logistic() {
             );
           })}
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto  flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App?
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                Ready to Build a Custom Logistics App?
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to streamline
-              fleet management, delivery tracking, and supply chain operations.
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Partner with our logistics app development company to streamline
+                fleet management, delivery tracking, and supply chain
+                operations.
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                 <img
-                    src="/icons/email-icon.svg"
-                    alt="mail-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span>info@iqlance.com</span>
-                </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                   <img
-                    src="/icons/phone-icon.svg"
-                    alt="phone-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-            <div>
-            <Link
-              href="/contact-us"
-              className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-            >
-              Let’s Discuss Your Project 
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-            </Link>
-          </div>
+              <Link
+                href="/contact-us"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+              >
+                Let’s Discuss Your Project
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
@@ -765,18 +780,19 @@ export default function Logistic() {
           </div>
 
           {/* Tabs Navigation */}
-          <div className="flex justify-center border-b border-gray-200 mb-10 overflow-x-auto">
-            <div className="flex gap-8">
+          <div className="flex justify-center  mb-10 overflow-x-auto">
+            <div className="flex gap-8 border-b border-red-200">
               {featuresTabsData.map((tab) => {
                 const isActive = activeTab === tab.id;
                 return (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`pb-3 text-sm md:text-base font-semibold transition-all relative cursor-pointer whitespace-nowrap ${isActive
-                      ? "text-blue-900 border-b-2 border-blue-600 font-bold"
-                      : "text-gray-500 hover:text-gray-800"
-                      }`}
+                    className={`pb-3 text-sm md:text-base font-semibold transition-all relative cursor-pointer whitespace-nowrap ${
+                      isActive
+                        ? "text-red-900 border-b-2 border-red-600 font-bold"
+                        : "text-gray-500 hover:text-gray-800"
+                    }`}
                   >
                     {tab.label}
                   </button>
@@ -813,84 +829,78 @@ export default function Logistic() {
             ))}
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+                <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App?
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                Ready to Build a Custom Logistics App?
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to streamline
-              fleet management, delivery tracking, and supply chain operations.
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                  Partner with our logistics app development company to streamline
+                  fleet management, delivery tracking, and supply chain operations.
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <img
-                    src="/icons/email-icon.svg"
-                    alt="mail-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span>info@iqlance.com</span>
-                </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                   <img
-                    src="/icons/phone-icon.svg"
-                    alt="phone-icon"
-                    className="w-5 h-5 shrink-0"
-                  />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-           <div>
-            <Link
-              href="/contact-us"
-              className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
-            >
-              Let’s Discuss Your Project 
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-            </Link>
-          </div>
+              <Link
+                href="/contact-us"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+              >
+                Let’s Discuss Your Project
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
           </div>
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
@@ -995,82 +1005,95 @@ export default function Logistic() {
             </p>
           </div>
         </section>
-        <section >
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
-            loop={true}
-            className="w-full h-162.5 sm:h-150 [&_.swiper-slide]:h-full!"
-          >
-            {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index} className="h-full!">
-                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between overflow-hidden">
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 shrink-0">
-                    {slide.heading}
-                  </h2>
+<section className="py-10">
+          {/* Custom style for red pagination dots */}
+          <style>{`
+            .portfolio-swiper .swiper-pagination-bullet {
+              background-color: #cbd5e1 !important;
+              opacity: 1 !important;
+            }
+            .portfolio-swiper .swiper-pagination-bullet-active {
+              background-color: #dc2626 !important; /* Red Color */
+            }
+          `}</style>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center flex-1 overflow-hidden">
-                    <div className="flex flex-col justify-between h-full py-2">
-                      <div>
-                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 line-clamp-2">
-                          {slide.title}
-                        </h3>
+          <div className="mx-auto max-w-7xl">
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 300000 }}
+              loop={true}
+              className="portfolio-swiper w-full h-162.5 sm:h-150 pb-12 [&_.swiper-slide]:h-full!"
+            >
+              {portfolioSlides.map((slide, index) => (
+                <SwiperSlide key={index} className="h-full!">
+                  <div className="bg-red-50 px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between overflow-hidden">
+                    <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 shrink-0">
+                      {slide.heading}
+                    </h2>
 
-                        <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base line-clamp-3">
-                          {slide.description}
-                        </p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center flex-1 overflow-hidden">
+                      <div className="flex flex-col justify-between h-full py-2">
+                        <div>
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 line-clamp-2">
+                            {slide.title}
+                          </h3>
 
-                        <ul className="space-y-2 mb-4 text-sm sm:text-base">
-                          {slide.features.slice(0, 3).map((feature, i) => (
-                            <li key={i} className="flex items-center gap-2">
-                              <ChevronRight className="w-4 h-4 text-gray-600 shrink-0" />
-                              <span className="truncate">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                          <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base line-clamp-3">
+                            {slide.description}
+                          </p>
 
-                      <div>
-                        <div className="flex flex-wrap gap-4 sm:gap-6 mb-4 items-center">
-                          {slide.technologies.map((tech, i) => (
-                            <div key={i} className="text-center">
-                              <img
-                                src={tech.icon}
-                                alt={tech.name}
-                                className="w-6 h-6 sm:w-7 sm:h-7 mx-auto"
-                              />
-                              <p className="text-xs mt-1">{tech.name}</p>
-                            </div>
-                          ))}
+                          <ul className="space-y-2 mb-4 text-sm sm:text-base">
+                            {slide.features.slice(0, 3).map((feature, i) => (
+                              <li key={i} className="flex items-center gap-2">
+                                <ChevronRight className="w-4 h-4 text-gray-600 shrink-0" />
+                                <span className="truncate">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
 
-                        <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-6 py-3 font-semibold flex justify-center items-center gap-3 transition cursor-pointer self-start text-sm sm:text-base">
-                          View Case Study
-                          <ArrowRight
-                            size={18}
-                            className="transition-transform duration-300 group-hover:translate-x-1"
-                          />
-                        </button>
+                        <div>
+                          <div className="flex flex-wrap gap-4 sm:gap-6 mb-4 items-center">
+                            {slide.technologies.map((tech, i) => (
+                              <div key={i} className="text-center">
+                                <img
+                                  src={tech.icon}
+                                  alt={tech.name}
+                                  className="w-6 h-6 sm:w-7 sm:h-7 mx-auto"
+                                />
+                                <p className="text-xs mt-1">{tech.name}</p>
+                              </div>
+                            ))}
+                          </div>
+
+                          <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 py-3 font-semibold flex justify-center items-center gap-3 transition cursor-pointer self-start text-sm sm:text-base">
+                            View Case Study
+                            <ArrowRight
+                              size={18}
+                              className="transition-transform duration-300 group-hover:translate-x-1"
+                            />
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="hidden lg:flex justify-center items-center h-full max-h-87.5">
+                        <img
+                          src={slide.image}
+                          alt={slide.title}
+                          className="object-contain"
+                        />
                       </div>
                     </div>
-
-                    <div className="hidden lg:flex justify-center items-center h-full max-h-87.5">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full max-w-xs sm:max-w-sm max-h-full object-contain"
-                      />
-                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}
-          <div className="bg-[#F4F8FC] p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
                 Check How We turn Your Idea into Innovative Product
@@ -1081,13 +1104,13 @@ export default function Logistic() {
               </p>
             </div>
 
-           <Link
-            href="/portfolio"
-            className="group inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0 cursor-pointer"
-          >
-            <span>See Our Work</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-          </Link>
+            <Link
+              href="/portfolio"
+              className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0 cursor-pointer"
+            >
+              <span>See Our Work</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
+            </Link>
           </div>
 
           {/* Technology Stack Heading Section */}
@@ -1108,22 +1131,24 @@ export default function Logistic() {
           <div className="max-w-7xl mx-auto px-4 ">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
-              <div className="flex flex-wrap gap-8 border-b border-gray-300">
+              <div className="flex flex-wrap gap-8 border-b border-red-200">
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                      ? "text-black font-semibold"
-                      : "text-gray-500 hover:text-black"
-                      }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
+                      activetechnologies === index
+                        ? "text-black font-semibold"
+                        : "text-gray-500 hover:text-red-500"
+                    }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
-                        }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${
+                        activetechnologies === index ? "w-full" : "w-0"
+                      }`}
                     />
                   </button>
                 ))}
@@ -1150,77 +1175,76 @@ export default function Logistic() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+                      <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Transform Your Transportation and Logistics Mobile Apps
-              Development
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                Ready to Transform Your Transportation and Logistics Mobile Apps Development
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to build custom
-              logistics mobile applications that streamline operations and drive
-              growth.
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Partner with our logistics app development company to build custom logistics mobile applications that streamline operations and drive growth.
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-            <div>
               <Link
-                  href="/contact-us"
-                  className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
-                >
-                  Hire Dedicated Developer 
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-                </Link>
+                href="/contact-us"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+              >
+                Hire Dedicated Developer
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
+              </Link>
             </div>
           </div>
         </section>
@@ -1309,7 +1333,7 @@ export default function Logistic() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
               Why Businesses Choose Our Logistics App Development Company
@@ -1327,7 +1351,7 @@ export default function Logistic() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-[#184A8B] hover:shadow-lg"
+                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-500 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1361,7 +1385,7 @@ export default function Logistic() {
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
           {/* Outer Card Wrapper with Fixed Border & Accent */}
-          <div className="relative bg-white border border-gray-300 p-8 md:p-10  shadow-sm hover:border-[#1e40af] transition-all duration-300">
+          <div className="relative bg-white border border-red-100 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
             {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
 
@@ -1440,13 +1464,13 @@ export default function Logistic() {
             {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
-                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Previous Slide"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button
-                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-next bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Next Slide"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -1474,10 +1498,11 @@ export default function Logistic() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-gray-300"
-                      }`}
+                    className={`border bg-white transition-all duration-300 ${
+                      open === index
+                        ? "border-gray-200 shadow-md"
+                        : "border-gray-200 hover:border-gray-300"
+                    }`}
                   >
                     {/* Question */}
                     <button
@@ -1489,19 +1514,21 @@ export default function Logistic() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          open === index
+                            ? "rotate-180 text-black"
+                            : "rotate-0 text-black"
+                        }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
-                        }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        open === index
+                          ? "max-h-150 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">

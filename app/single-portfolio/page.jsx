@@ -92,9 +92,64 @@ export default function SinglePortfolioPage() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-[60vh]">
-        <div className="text-gray-500 font-medium animate-pulse">
-          Loading portfolio details...
+      <div className="min-h-screen bg-white p-6 animate-pulse w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Phone Loader 1 */}
+          <div className="border border-gray-100 p-6 rounded-3xl shadow-sm space-y-6">
+            <div className="space-y-2">
+              <div className="h-6 bg-gray-100 rounded-md w-3/5"></div>
+              <div className="h-4 bg-gray-100 rounded-md w-2/5"></div>
+            </div>
+            <div className="h-12 bg-gray-100 rounded-full w-full"></div>
+            <div className="h-72 bg-gray-100 rounded-2xl w-full"></div>
+            <div className="flex justify-between items-center pt-2">
+              <div className="h-4 bg-gray-100 rounded-md w-32"></div>
+              <div className="h-3 bg-gray-100 rounded-md w-12"></div>
+            </div>
+            <div className="flex gap-4 overflow-x-hidden">
+              <div className="h-28 bg-gray-100 rounded-2xl w-28 shrink-0"></div>
+              <div className="h-28 bg-gray-100 rounded-2xl w-28 shrink-0"></div>
+              <div className="h-28 bg-gray-100 rounded-2xl w-28 shrink-0"></div>
+            </div>
+          </div>
+
+          {/* Phone Loader 2 */}
+          <div className="border border-gray-100 p-6 rounded-3xl shadow-sm space-y-6">
+            <div className="space-y-2">
+              <div className="h-6 bg-gray-100 rounded-md w-3/5"></div>
+              <div className="h-4 bg-gray-100 rounded-md w-2/5"></div>
+            </div>
+            <div className="h-12 bg-gray-100 rounded-full w-full"></div>
+            <div className="h-72 bg-gray-100 rounded-2xl w-full"></div>
+            <div className="flex justify-between items-center pt-2">
+              <div className="h-4 bg-gray-100 rounded-md w-32"></div>
+              <div className="h-3 bg-gray-100 rounded-md w-12"></div>
+            </div>
+            <div className="flex gap-4 overflow-x-hidden">
+              <div className="h-28 bg-gray-100 rounded-2xl w-28 shrink-0"></div>
+              <div className="h-28 bg-gray-100 rounded-2xl w-28 shrink-0"></div>
+              <div className="h-28 bg-gray-100 rounded-2xl w-28 shrink-0"></div>
+            </div>
+          </div>
+
+          {/* Phone Loader 3 */}
+          <div className="border border-gray-100 p-6 rounded-3xl shadow-sm space-y-6">
+            <div className="space-y-2">
+              <div className="h-6 bg-gray-100 rounded-md w-3/5"></div>
+              <div className="h-4 bg-gray-100 rounded-md w-2/5"></div>
+            </div>
+            <div className="h-12 bg-gray-100 rounded-full w-full"></div>
+            <div className="h-72 bg-gray-100 rounded-2xl w-full"></div>
+            <div className="flex justify-between items-center pt-2">
+              <div className="h-4 bg-gray-100 rounded-md w-32"></div>
+              <div className="h-3 bg-gray-100 rounded-md w-12"></div>
+            </div>
+            <div className="flex gap-4 overflow-x-hidden">
+              <div className="h-28 bg-gray-100 rounded-2xl w-28 shrink-0"></div>
+              <div className="h-28 bg-gray-100 rounded-2xl w-28 shrink-0"></div>
+              <div className="h-28 bg-gray-100 rounded-2xl w-28 shrink-0"></div>
+            </div>
+          </div>
         </div>
       </div>
     );

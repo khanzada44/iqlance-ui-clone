@@ -44,13 +44,12 @@ export default function Portfolio() {
   }, []);
 
   // 2. Extract Active Category object
-  const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
+const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
 
-  // 3. Subcategories list for Sub-tabs Filter
-  const subCategoriesList = [
-    'ALL',
-    ...(currentCategoryObj?.subcategories?.map(sub => sub.name) || [])
-  ];
+  // Subcategories list for Sub-tabs Filter ('ALL' tab tabhi aayega jab subcategories hongi)
+  const subCategoriesList = currentCategoryObj?.subcategories?.length > 0
+    ? ['ALL', ...currentCategoryObj.subcategories.map(sub => sub.name)]
+    : [];
 
   // 4. Flatten all portfolios inside current active main category
   const allPortfolios = currentCategoryObj?.subcategories?.reduce((acc, subCat) => {
@@ -122,14 +121,14 @@ export default function Portfolio() {
         {/* Dynamic Category & Subcategory Filters */}
         <section className="mt-12">
           {/* Main Category Tabs */}
-          <div className="flex justify-center border-b border-gray-200 mb-8 overflow-x-auto">
+          <div className="flex justify-center mb-8 overflow-x-auto">
             {categoriesData.map((cat) => (
               <button
                 key={cat.id || cat.name}
                 onClick={() => handleTabChange(cat.name)}
                 className={`px-8 py-3 text-base font-medium transition-all whitespace-nowrap ${activeTab === cat.name
-                  ? 'border-b-2 border-[#184A8B] text-gray-900 font-semibold'
-                  : 'text-gray-500 hover:text-gray-700'
+                  ? 'border-b-2 border-red-600 text-gray-900 font-semibold'
+                  : 'text-gray-500 hover:text-red-700'
                   }`}
               >
                 {cat.name}
@@ -156,11 +155,6 @@ export default function Portfolio() {
           {/* Dynamic Portfolio Items Rendering */}
           {loading ? (
             <div className="max-w-6xl mx-auto p-4 py-8 animate-pulse space-y-8">
-              {/* Top Nav Tabs Skeleton (Domain / Technology) */}
-              <div className="flex justify-center gap-8 border-b pb-3">
-                <div className="h-6 bg-gray-300 rounded w-20"></div>
-                <div className="h-6 bg-gray-200 rounded w-24"></div>
-              </div>
 
               {/* Sub-Category Pills Skeleton */}
               <div className="flex flex-wrap justify-center gap-3 py-2">
@@ -203,7 +197,7 @@ export default function Portfolio() {
                 filteredPortfolios.map((item, idx) => (
                   <div
                     key={item.id || idx}
-                    className={`${item.bgColor || 'bg-[#F4F6F8]'
+                    className={`${item.bgColor || 'bg-red-50'
                       } p-6 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center transition-all duration-300`}
                   >
                     {/* Left Details */}
@@ -245,7 +239,7 @@ export default function Portfolio() {
                       <div className="pt-4">
                         <Link
                           href={`/single-portfolio?slug=${item.slug}`}
-                          className="group mt-8 inline-flex w-full sm:w-auto bg-[#184A8B] hover:bg-[#143b72] text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
+                          className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
                         >
                           View Case Study
                           <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />

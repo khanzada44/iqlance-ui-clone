@@ -16,18 +16,23 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import {
-  partners,
   bottomFeatures,
   slides,
   ServiceSectionData,
   portfolioSlides,
+  faqsData,
+  tabs,
+  appData,
+  caseStudies,
+} from "./data";
+import {
+  partners,
   technologies,
   stats,
   industries,
   services,
-  faqsData,
-  testimonials
-} from "./data";
+  testimonials,
+} from "../../../../utils/data";
 import Image from "next/image";
 
 export default function wellnessFitness() {
@@ -63,12 +68,12 @@ export default function wellnessFitness() {
 
   return (
     <>
-      <div className="w-[90%] sm:w-[90%] mx-auto">
+      <div className="w-[80%] mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-red-700 leading-tight">
                 Wellness & Fitness
               </h1>
 
@@ -100,18 +105,18 @@ export default function wellnessFitness() {
                 {/* Contact Us Link */}
                 <Link
                   href="/contact-us"
-                  className="group inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md cursor-pointer"
+                  className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md cursor-pointer"
                 >
-                  Contact Us 
+                  Contact Us
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
                 </Link>
 
                 {/* See Our Work Link */}
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
+                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-red-300 hover:red-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
                 >
-                  See Our Work 
+                  See Our Work
                   <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
                 </Link>
               </div>
@@ -119,11 +124,11 @@ export default function wellnessFitness() {
 
             {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
-              <div className="relative bg-[#EFF6FF] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
+              <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
                 {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
-                    src="/images/badge-sameday-resposnse.png"
+                    src="/images/contact-form-logo.png"
                     alt="Same Day Response Guaranteed"
                     className="w-full h-auto object-contain"
                   />
@@ -147,7 +152,7 @@ export default function wellnessFitness() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -159,7 +164,7 @@ export default function wellnessFitness() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -171,7 +176,7 @@ export default function wellnessFitness() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -182,7 +187,7 @@ export default function wellnessFitness() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                     />
                   </div>
 
@@ -228,7 +233,7 @@ export default function wellnessFitness() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6  transition-colors shadow flex items-center justify-center cursor-pointer"
+                      className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6  transition-colors shadow flex items-center justify-center cursor-pointer"
                     >
                       Schedule a free consultation
                     </button>
@@ -238,6 +243,7 @@ export default function wellnessFitness() {
             </div>
           </div>
         </section>
+
         <section>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
@@ -277,79 +283,83 @@ export default function wellnessFitness() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App for Your Business?
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                Ready to Build a Custom Logistics App for Your Business?
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to create
-              scalable, feature-rich logistics mobile applications tailored to
-              your needs.
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Partner with our logistics app development company to create
+                scalable, feature-rich logistics mobile applications tailored to
+                your needs.
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-            <div>
               <Link
-                  href="/request-a-quote"
-                  className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
-                >
-                  Request a Free Quote 
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-                </Link>
+                href="/request-a-quote"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+              >
+                Request a Free Quote
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
+              </Link>
             </div>
           </div>
         </section>
+
         <section className="py-10">
           <div className="mx-auto max-w-7xl">
             <Swiper
@@ -368,7 +378,6 @@ export default function wellnessFitness() {
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
                   <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
-                    {/* Image */}
                     <div className="w-full lg:w-1/2">
                       <img
                         src={slide.image}
@@ -377,7 +386,6 @@ export default function wellnessFitness() {
                       />
                     </div>
 
-                    {/* Content */}
                     <div className="w-full lg:w-1/2">
                       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
                         {slide.title}
@@ -393,7 +401,7 @@ export default function wellnessFitness() {
                             key={index}
                             className="flex gap-3 items-baseline"
                           >
-                            <ChevronRight size={10} />
+                            <ChevronRight size={18} />
                             <span>{point}</span>
                           </div>
                         ))}
@@ -405,9 +413,9 @@ export default function wellnessFitness() {
             </Swiper>
           </div>
         </section>
+
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
-            // Checking if index is odd to reverse layout dynamically
             const isEven = index % 2 === 0;
 
             return (
@@ -417,7 +425,6 @@ export default function wellnessFitness() {
                   isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
-                {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                     {item.title}
@@ -427,7 +434,6 @@ export default function wellnessFitness() {
                     {item.description}
                   </p>
 
-                  {/* Dynamic Feature List */}
                   <ul className="space-y-4 pt-2">
                     {item.features.map((feature, fIndex) => (
                       <li
@@ -441,7 +447,6 @@ export default function wellnessFitness() {
                   </ul>
                 </div>
 
-                {/* Image Side */}
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
                   <img
                     src={item.imageUrl}
@@ -453,79 +458,82 @@ export default function wellnessFitness() {
             );
           })}
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Get Started?
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                Ready to Get Started?
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Send your Requirements on
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <img src="/icons/email-icon.svg" alt="" />
-                  <span>info@iqlance.com</span>
-                </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img src="/icons/phone-icon.svg" alt="" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-            <div>
               <Link
-                  href="/lets-talk"
-                  className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
-                >
-                  Let’s Talk 
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-                </Link>
+                href="/lets-talk"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+              >
+                Let’s Talk
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
+              </Link>
             </div>
           </div>
         </section>
+
         <section className="max-w-6xl mx-auto px-4 py-16 text-center font-sans">
-          {/* Heading & Subtitle */}
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
             Features of Wellness and Fitness App Development
           </h2>
@@ -535,9 +543,7 @@ export default function wellnessFitness() {
             process of being fit effortless for people.
           </p>
 
-          {/* Main 3x3 Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
-            {/* Card 1 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/doctor-patient-profile-icn.png"
@@ -549,7 +555,6 @@ export default function wellnessFitness() {
               </h3>
             </div>
 
-            {/* Card 2 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/push-h-icn.png"
@@ -561,7 +566,6 @@ export default function wellnessFitness() {
               </h3>
             </div>
 
-            {/* Card 3 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/sm-icon.png"
@@ -573,7 +577,6 @@ export default function wellnessFitness() {
               </h3>
             </div>
 
-            {/* Card 4 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/content-h-icn.png"
@@ -585,7 +588,6 @@ export default function wellnessFitness() {
               </h3>
             </div>
 
-            {/* Card 5 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/reminders-h-icn.png"
@@ -597,7 +599,6 @@ export default function wellnessFitness() {
               </h3>
             </div>
 
-            {/* Card 6 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/200cal.png"
@@ -609,7 +610,6 @@ export default function wellnessFitness() {
               </h3>
             </div>
 
-            {/* Card 7 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/calender-icn-new.png"
@@ -621,7 +621,6 @@ export default function wellnessFitness() {
               </h3>
             </div>
 
-            {/* Card 8 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/game-remote.png"
@@ -633,7 +632,6 @@ export default function wellnessFitness() {
               </h3>
             </div>
 
-            {/* Card 9 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/online-icon-w.png"
@@ -646,9 +644,7 @@ export default function wellnessFitness() {
             </div>
           </div>
 
-          {/* Bottom Centered Row (2 Cards) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {/* Card 10 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/analytics-h-icn.png"
@@ -660,7 +656,6 @@ export default function wellnessFitness() {
               </h3>
             </div>
 
-            {/* Card 11 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/chat-h-icn.png"
@@ -673,80 +668,8 @@ export default function wellnessFitness() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App?
-            </h2>
-
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to streamline
-              fleet management, delivery tracking, and supply chain operations.
-            </p>
-
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Action Button */}
-            <div>
-             <Link
-                  href="/contact-us"
-                  className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
-                >
-                  Let’s Discuss Your Project 
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-                </Link>
-            </div>
-          </div>
-        </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
-          {/* Section Header */}
           <div className="text-center space-y-3 mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Key Features of Logistics and Transportation App Development
@@ -757,78 +680,206 @@ export default function wellnessFitness() {
             </p>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Build a Custom Logistics App?
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                Ready to Build a Custom Logistics App?
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to streamline
-              fleet management, delivery tracking, and supply chain operations.
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Partner with our logistics app development company to streamline
+                fleet management, delivery tracking, and supply chain
+                operations.
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-            <div>
               <Link
                 href="/contact-us"
-                className="group inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md cursor-pointer"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
               >
-                Let’s Discuss Your Project 
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
+                Let’s Discuss Your Project
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
               </Link>
             </div>
           </div>
         </section>
+        <section className="max-w-6xl mx-auto px-4 py-16 text-center font-sans">
+          {/* Heading & Subtitle */}
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
+            Efforts that make us proud include
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
+            Our crew of experienced food app developers has dedicated their
+            attention and effort to developing a variety of on-demand bespoke
+            applications for consumers. We are pleased to report that our
+            initiatives have received positive feedback from our consumers.
+          </p>
+
+          <div className="max-w-6xl mx-auto p-6 font-sans">
+            {/* Navigation Tabs */}
+            <div className="flex justify-center  mb-8">
+              <div className="border-b border-red-300">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`px-6 py-3 text-lg font-medium transition-colors duration-200 border-b-2 ${
+                      activeTab === tab.id
+                        ? "border-red-600 text-red-600 font-semibold"
+                        : "border-transparent text-gray-500 hover:text-red-700"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Feature Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {appData[activeTab]?.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white border border-gray-200 p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-40"
+                >
+                  <img src={item.iconPath} alt="" />
+                  {/* Custom Icon Placeholder - Yahan aap apna image/icon tag laga sakte hain */}
+
+                  <span className="text-gray-800 font-medium text-base">
+                    {item.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
+              />
+
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                So, We Guess You want to talk about your Project
+              </h2>
+
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Send your Requirements on
+              </p>
+
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                href="/lets-talk"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+              >
+                Let’s Talk
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Image Side */}
@@ -843,30 +894,24 @@ export default function wellnessFitness() {
             {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Expert Logistics App Developers with Proven Technical Expertise
+                For All Technologies, We Have Specialized and Qualified
+                Developers on Our Team
               </h2>
 
               <p>
-                In our family, we have a group of highly competent developers
-                with full-stack development aptitudes. All our experts have
-                previously worked in different types of app development
-                projects, long before joining our team. With their years of
-                service experience, our App Developers have long since upgraded
-                their skills; they provide high-grade apps for clients.
+                We’re here to assist business in finding the finest food app for
+                the specific requirements and needs. We match the capabilities
+                of our employees to business requirements. Before recruiting,
+                companies can conduct an assessment with programmers. With an
+                authorized programmer, business can begin a one-week hazardless
+                experiment.
               </p>
 
               <p>
-                To us, our clients are the main priority. Whatever features they
-                require and the speed at which they want their service, our
-                developers focus on delivering well-designed custom mobile apps.
-              </p>
-
-              <p>
-                We create apps for different types of companies, be it smaller
-                ones just starting or enterprise-level corporations with
-                big-scale logistics demands. Expect noticeable business growth,
-                smoother operations, and maximized profits in the future with
-                our ad per design services.
+                Our developers will devote their whole attention to the
+                assignment. Our staff becomes a part of the organization. You
+                receive a committed programming staff that users can manage
+                independently.
               </p>
             </div>
           </div>
@@ -875,38 +920,27 @@ export default function wellnessFitness() {
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How Much Does It Cost to Build a Custom Logistics App?
+              How much does it cost to develop a food app that is comparable to
+              popular rivals on the market?
             </h2>
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                While constructing a customized logistics mobile app integrated
-                with multiple features, the question of cost does come into
-                play. Our team of{" "}
-                <span className="font-bold text-gray-900">
-                  app developers USA
-                </span>{" "}
-                also includes financial specialists. They would carefully
-                evaluate your app requirement and devise the most efficient app
-                cost structure.
-              </p>
-
-              <p>
-                There is no standard fee that we offer for our craft though. All
-                our clients get personalized costs for development depending on
-                multiple factors. These include the technologies we utilized for
-                the app&apos;s frontend and backend development, technology
-                stack, and platform compatibility.
-              </p>
-
-              <p>
-                Our team takes the time to understand your business goals,
-                operational challenges, and budget to create custom logistic app
-                development tailored to your specific requirements. Get in touch
-                with us today to explore a cost-effective solution that enhances
-                efficiency, optimizes workflows, and supports long-term growth.
+                Our development group left zero leaf uncovered in their pursuit
+                of creating accessible apps with sophisticated functionality for
+                restaurants and customers. We are well-equipped to deal with
+                many forms of equipment and to effectively apply those to our
+                application design services.
               </p>
             </div>
+          </div>
+          <div className="flex justify-center">
+            <Link
+              href="#"
+              className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+            >
+              Get a Quotation <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
           {/* Banner Image */}
@@ -921,7 +955,7 @@ export default function wellnessFitness() {
           {/* Success Stories Heading Section */}
           <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-              Success Stories That Showcase Our Logistics Expertise
+              Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
               iQlance solutions has always been honored with valuable words for
@@ -931,75 +965,105 @@ export default function wellnessFitness() {
             </p>
           </div>
         </section>
-        <section>
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
-            loop={true}
-          >
-            {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10">
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-                    {slide.heading}
-                  </h2>
+        <section className="py-10">
+          {/* Custom style for red pagination dots */}
+          <style>{`
+            .case-study-swiper .swiper-pagination-bullet {
+              background-color: #cbd5e1 !important;
+              opacity: 1 !important;
+            }
+            .case-study-swiper .swiper-pagination-bullet-active {
+              background-color: #dc2626 !important; /* Red Color */
+            }
+          `}</style>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                        {slide.title}
-                      </h3>
+          <div className="mx-auto max-w-7xl flex justify-center">
+            <Swiper
+              className="case-study-swiper pb-12"
+              modules={[Pagination, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={0}
+              loop={true}
+              autoplay={{
+                delay: 30000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+            >
+              {caseStudies.map((item, index) => (
+                <SwiperSlide key={index} className="h-auto!">
+                  <div
+                    className="h-full px-6 py-10 flex items-center"
+                    style={{ backgroundColor: item.bgColor }}
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 w-full">
+                      {/* Left */}
+                      <div>
+                        <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
+                          {item.title}
+                        </h3>
 
-                      <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                        {slide.description}
-                      </p>
+                        <p className="text-black leading-6 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+                          {item.description}
+                        </p>
 
-                      <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                        {slide.features.map((feature, i) => (
-                          <li key={i}>› {feature}</li>
-                        ))}
-                      </ul>
+                        <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
+                          {item.features.map((feature, i) => (
+                            <li key={i} className="flex items-center gap-2 m-0">
+                              <ChevronRight size={18} />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
 
-                      <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                        {slide.technologies.map((tech, i) => (
-                          <div key={i} className="text-center">
-                            <img
-                              src={tech.icon}
-                              alt={tech.name}
-                              className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                            />
-                            <p className="text-xs sm:text-sm mt-2">
-                              {tech.name}
-                            </p>
-                          </div>
-                        ))}
+                        <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
+                          {item.technologies.map((tech, i) => (
+                            <div key={i} className="text-center">
+                              <img
+                                src={tech.image}
+                                alt={tech.name}
+                                className="w-7 h-7 sm:w-8 sm:h-8 mx-auto object-contain"
+                              />
+                              <p className="text-xs sm:text-sm mt-2">
+                                {tech.name}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+
+                        <Link
+                          href="/portfolio"
+                          className="group mt-8 bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
+                        >
+                          {item.buttonText}
+                          <ArrowRight
+                            size={18}
+                            className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                          />
+                        </Link>
                       </div>
-                      <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                        View Case Study
-                        <ArrowRight
-                          size={18}
-                          className="transition-transform duration-300 group-hover:translate-x-1"
-                        />
-                      </button>
-                    </div>
 
-                    <div className="flex justify-center">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full max-w-xs sm:max-w-sm"
-                      />
+                      {/* Right */}
+                      <div className="flex justify-center">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className=" object-contain"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </section>
+
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}
-          <div className="bg-[#F4F8FC] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-red-50  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
                 Check How We turn Your Idea into Innovative Product
@@ -1012,7 +1076,7 @@ export default function wellnessFitness() {
 
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 rounded-md transition-colors shrink-0"
+              className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
             >
               <span>See Our Work</span>
               <ArrowRight className="w-4 h-4" />
@@ -1037,22 +1101,22 @@ export default function wellnessFitness() {
           <div className="max-w-7xl mx-auto px-4 ">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
-              <div className="flex flex-wrap gap-8 border-b border-gray-300">
+              <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
                       activetechnologies === index
-                        ? "text-black font-semibold"
-                        : "text-gray-500 hover:text-black"
+                        ? "text-red-600 font-semibold"
+                        : "text-gray-500 hover:text-red-400"
                     }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${
                         activetechnologies === index ? "w-full" : "w-0"
                       }`}
                     />
@@ -1081,84 +1145,41 @@ export default function wellnessFitness() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Transform Your Transportation and Logistics Mobile Apps
-              Development
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                We are Team of Talented, Experienced, and Certified Designers
+                and Developers.
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Partner with our logistics app development company to build custom
-              logistics mobile applications that streamline operations and drive
-              growth.
-            </p>
-
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#1B4B82] fill-[#1B4B82]" />
-                  <span>info@iqlance.com</span>
-                </a>
-
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <Phone className="w-4 h-4 text-gray-800 fill-gray-800" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Action Button */}
-            <div>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Let us Build Something Extraordinary.
+              </p>
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/contact-us"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
               >
-                Hire Dedicated Developer <ArrowRight className="w-4 h-4" />
+                Hire Dedicated Developer
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
               </Link>
             </div>
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-              {" "}
-              Your Trusted Logistics App Development Company in the USA
+              Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
               iQlance solutions is a leading Software, Web, & Mobile App
@@ -1174,10 +1195,10 @@ export default function wellnessFitness() {
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
+                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
               >
                 {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
                     alt=""
@@ -1201,13 +1222,12 @@ export default function wellnessFitness() {
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-              {" "}
-              Industries We Serve with Custom Logistics App Development
+              Industries We Serve
             </h1>
             <p>
-              Over the years, we have collaborated with multiple companies, both
-              large firms with big teams and small-scale businesses, across
-              several industries.
+              We’ve worked with a variety of organization throughout the years,
+              including major corporations with enormous employees and local
+              firms in a variety of sectors.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1239,16 +1259,17 @@ export default function wellnessFitness() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
-              Why Businesses Choose Our Logistics App Development Company
+              Why should you choose us?
             </h1>
             <p>
-              iQlance Solutions specializes in developing scalable, feature-rich
-              mobile applications for different operating systems, like Android
-              and iPhone. Our experts deliver a centralized workflow for every
-              client and offer dedicated service at all times.{" "}
+              iQlance is a top-tier food application creation company that
+              creates applications for a variety of operating systems, including
+              Android and iPhone. Our professionals provide a centralized
+              process for each customer and provide personalised assistance in
+              any way.
             </p>
           </div>
         </section>
@@ -1257,7 +1278,7 @@ export default function wellnessFitness() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-[#184A8B] hover:shadow-lg"
+                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1282,16 +1303,16 @@ export default function wellnessFitness() {
               Client Testimonials
             </h1>
             <p>
-              Our purpose as a logistics app development company, has always
-              centered around putting customer satisfaction first. Here are some
-              of the things our past clients have to say about our services,
-              directly from them.
+              As a food software development business, our mission has always
+              been to prioritize client happiness. Here is what some of our
+              previous clients had to comment regarding our offerings, straight
+              from them.
             </p>
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
           {/* Outer Card Wrapper with Fixed Border & Accent */}
-          <div className="relative bg-white border border-gray-300 p-8 md:p-10  shadow-sm hover:border-[#1e40af] transition-all duration-300">
+          <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
             {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
 
@@ -1314,11 +1335,11 @@ export default function wellnessFitness() {
                     {/* Top User Info & Rating Section */}
                     <div className="flex items-center gap-4 mb-6">
                       {/* Avatar Circle */}
-                      <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
+                      <div className="w-16 h-16  border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="w-full h-full object-contain rounded-full"
+                          className="w-full h-full object-contain "
                           onError={(e) => {
                             e.target.src =
                               "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg";
@@ -1370,13 +1391,13 @@ export default function wellnessFitness() {
             {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
-                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Previous Slide"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button
-                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-next bg-red-700 hover:bg-red-600 text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Next Slide"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -1392,8 +1413,9 @@ export default function wellnessFitness() {
             </h1>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
-              Here you will find the answers you are looking for because we know
-              what’s in our client’s mind.
+              Customers frequently ask us the same questions when it comes to
+              bespoke software development for food delivery management at their
+              businesses. Here are a few that have been solved.
             </p>
           </div>
 
@@ -1406,8 +1428,8 @@ export default function wellnessFitness() {
                     key={index}
                     className={`border bg-white transition-all duration-300 ${
                       open === index
-                        ? "border-gray-200 shadow-md"
-                        : "border-gray-200 hover:border-gray-300"
+                        ? "border-red-200 shadow-md"
+                        : "border-red-100 hover:border-red-300"
                     }`}
                   >
                     {/* Question */}
@@ -1484,24 +1506,24 @@ export default function wellnessFitness() {
           <ContactForm />
         </div>
       </div>
-       <section className="mb-5">
-              <div className="">
-                <div className="flex flex-wrap md:flex-nowrap justify-center gap-4">
-                  {partners.map((item) => (
-                    <div
-                      key={item.id}
-                      className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.alt}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
+      <section className="mb-5 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            {[...partners, ...partners].map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
+              >
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
-        </section>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

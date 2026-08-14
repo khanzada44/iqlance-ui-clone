@@ -109,119 +109,119 @@ export const ServiceSectionData = [
     imageAlt: "Logistics App Development",
   },
 ];
-export const portfolioSlides = [
+export const caseStudies = [
   {
-    heading: "",
-    title: "Commercial Movers",
+    title: "Fantasy App Development",
     description:
-      "iQlance Solutions created the commercial movers app, a comprehensive business management platform to solve staffing challenges. This platform provides access to a vetted network of mobile movers and dynamic pricing models. Our technology helps moving companies expand seamlessly and efficiently across projects and regions.",
-
+      "DFS-style fantasy app that lets you play fantasy baseball in a whole new way.",
+    bgColor: "#ffd2d2",
+    image:
+      "/images/chain-supply-management.png.webp",
     features: [
-      "Access vetted mobile movers",
-      "Dynamic pricing models",
-      "Staff support tools",
-      "Staff support tools",
+      "Engaging User Experience",
+      "Real-Time Data Integration",
+      "Secure and Scalable Platform",
     ],
-
     technologies: [
+       {
+        name: "iOS",
+        image:
+          "/icons/next.svg",
+      },
+      {
+        name: "Android",
+        image:
+          "/icons/android.svg",
+      },
+      {
+        name: "MsSQL",
+        image:
+          "/icons/mssql.svg",
+      },
       {
         name: "Flutter",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/Flutter.png.webp",
+        image:
+          "/icons/flutter.svg",
       },
     ],
-
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/chain-supply-management.png.webp",
+    buttonText: "View Case Study",
+    buttonLink: "#",
   },
 
   {
-    heading: "",
-    title: "Tracking Device",
+    title: "Manufacturing App Development",
     description:
-      "The app provides a comprehensive security solution for all your devices, from student tablets to personal laptops. Its powerful combination of remote-controlled locking hardware and advanced tracking software gives you the trusted protection you need, allowing you to manage your devices with confidence from anywhere.",
-
+      "E-commerce management system is a distinguished player in film conversion, extrusion, and manufacturing. Our unwavering commitment to quality and customer satisfaction has propelled us to the forefront of innovation in the film industry.",
+    bgColor: "#e7e7ff",
+    image:
+      "/images/image_2024_08_05T07_26_10_247Z.png.webp",
     features: [
-      "Remote locking and wiping",
-      "Real-time device tracking",
-      "Protects all your devices",
-      "Advanced security you can trust",
+      "Innovation-driven Experience",
+      "Customer-Centric Approach",
+      "Efficiency through Technology",
     ],
-
     technologies: [
+      {
+        name: "iOS",
+        image:
+          "/icons/next.svg",
+      },
+      {
+        name: "Android",
+        image:
+          "/icons/android.svg",
+      },
       {
         name: "React Native",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/React.png.webp",
+        image:
+          "/icons/reactnative.svg",
       },
+      {
+        name: "Flutter",
+        image:
+          "/icons/flutter.svg",
+      },
+      {
+        name: "MsSQL",
+        image:
+          "/icons/mssql.svg",
+      },
+      
     ],
-
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2024/08/image_2024_08_05T07_26_10_247Z.png.webp",
+    buttonText: "View Case Study",
+    buttonLink: "#",
   },
+
   {
-    heading: "",
-    title: "ERP Software",
+    title: "Immigration Management Software",
     description:
-      "We built an ERP system for transportation businesses. Unlike generic software, it integrates customized modules for logistics, helping companies reduce costs and save time. Our solution creates a connected ecosystem, ensuring seamless interaction between drivers, dispatchers, and clients.",
-
+      "At iQlance this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
+    bgColor: "#c5edff",
+    image:
+      "/images/immigration-software-slider-2.png",
     features: [
-      "Manages transportation operations",
-      "Reduces time and cost",
-      "Real-time team collaboration",
-      "Ensures regulatory compliance",
+      "Easy Operational Visibility",
+      "Low Operational Costs",
+      "Accurate or Accessible Data",
+      "Full Automation",
+      "Lack of Operational Visibility",
+      "High Operational Costs",
     ],
-
     technologies: [
       {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        name: ".NET",
+        image:
+          "/icons/net.svg",
       },
       {
-        name: "microsoft-net",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "Azur",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
+        name: "MsSQL",
+        image:
+          "/icons/mssql.svg",
       },
     ],
-
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
+    buttonText: "View Case Study",
+    buttonLink: "#",
   },
-  {
-    heading: "",
-    title: "Driver Tracking App",
-    description:
-      "The truck driver tracking app is a custom solution built for drivers, and this app supports our logistics software. As a leading transportation app development company across the globe, we designed this app to simplify drivers’ and admins’ daily operations, including load management, route tracking, punch-in & out, communication, and more.  It ensures efficiency, accountability, and seamless workflows.",
-
-    features: [
-      "Efficient Workday Management",
-      "Real-time Location Tracking",
-      "Payment Automation",
-      "Profile Management",
-      "In-App Chat with Admin",
-      "Geofencing",
-    ],
-
-    technologies: [
-      {
-        name: "SQL",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "microsoft-net",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "Azur",
-        icon: "https://www.iqlance.com/wp-content/uploads/2024/07/Azure.png.webp",
-      },
-    ],
-
-    image:
-      "https://www.iqlance.com/wp-content/uploads/2024/05/erp1.png.webp",
-  },
-
 ];
 export const technologies = [
   {
@@ -772,3 +772,48 @@ export const partners = [
     alt: "ISO",
   },
 ];
+export const tabs = [
+  { id: 'customer', label: 'Customer App' },
+  { id: 'driver', label: 'Driver App' },
+  { id: 'restaurant', label: 'Restaurant App' },
+];
+
+export const appData = {
+  customer: [
+    { id: 1, title: "Login", iconPath: "/images/doctor-patient-profile-icn.png" },
+    { id: 2, title: "Search Restaurants", iconPath: "/images/search-h-icn.png" },
+    { id: 3, title: "Listing", iconPath: "/images/view-assign-job-h.png" },
+    { id: 4, title: "Restaurant Details", iconPath: "/images/rest-detail-icn.png" },
+    { id: 5, title: "Reserve a Table", iconPath: "/images/r-a-table.png" },
+    { id: 6, title: "Order Food", iconPath: "/images/food-order.png" },
+    { id: 7, title: "Menu Access", iconPath: "/images/menu-icn.png" },
+    { id: 8, title: "QR Code", iconPath: "/images/qr-code.png" },
+    { id: 9, title: "Payment", iconPath: "/images/payment-m-h-icn.png" },
+    { id: 10, title: "Favourite", iconPath: "/images/fav-icn.png" },
+    { id: 11, title: "Reviews & Rewards", iconPath: "/images/rating-h-icn.png" },
+    { id: 12, title: "Settings", iconPath: "/images/settings-h-icn.png" },
+  ],
+  driver: [
+    { id: 1, title: "Login", iconPath: "/images/doctor-patient-profile-icn.png" },
+    { id: 2, title: "Job Details", iconPath: "/images/job-h-icn.png" },
+    { id: 3, title: "Map", iconPath: "/images/view-assign-job-h.png" },
+    { id: 5, title: "Route ", iconPath: "/images/mr-h-icn.png" },
+    { id: 4, title: "Earning", iconPath: "/images/revnues-h-icn.png" },
+    { id: 6, title: "Project Management", iconPath: "/images/project-icn.png" },
+    { id: 7, title: "Payment & earning", iconPath: "/images/payment2-m-h-icn.png" },
+    { id: 8, title: "Reviews", iconPath: "/images/rating-h-icn.png" },
+    { id: 9, title: "Report ", iconPath: "/images/repoert-h-icn.png" },
+    { id: 10, title: "Logout ", iconPath: "/images/logout-icn.png" },
+  ],
+  restaurant: [
+    { id: 1, title: " Login & Profile Creation ", iconPath: "/images/doctor-patient-profile-icn.png" },
+    { id: 2, title: "Upload Menu", iconPath: "/images/menu-icn.png" },
+    { id: 3, title: "Upload Images", iconPath: "/images/upload-im-icn.png" },
+    { id: 5, title: "View Orders ", iconPath: "/images/view-assign-job-h.png" },
+    { id: 4, title: "Accept Order", iconPath: "/images/start-h-icn.png" },
+    { id: 6, title: "Order Management", iconPath: "/images/odr-icn.png" },
+    { id: 7, title: "Revenue", iconPath: "/images/revnues-h-icn.png" },
+    { id: 8, title: "Reports", iconPath: "/images/repoert-h-icn.png" },
+    { id: 9, title: "History ", iconPath: "/images/upcoming-h-icn.png" },
+  ],
+};

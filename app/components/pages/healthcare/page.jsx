@@ -1,7 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, ChevronUp, ChevronRight, Star, Paperclip } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  ChevronRight,
+  Star,
+  Paperclip,
+} from "lucide-react";
 import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { submitContactForm } from "@/services/send-call-request";
@@ -340,10 +346,11 @@ export default function HeroQuoteSection() {
 
                     {statusMessage.text && (
                       <div
-                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
-                          ? "bg-green-100 border border-green-400 text-green-800"
-                          : "bg-red-100 border border-red-400 text-red-800"
-                          }`}
+                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${
+                          statusMessage.type === "success"
+                            ? "bg-green-100 border border-green-400 text-green-800"
+                            : "bg-red-100 border border-red-400 text-red-800"
+                        }`}
                       >
                         {statusMessage.text}
                       </div>
@@ -562,7 +569,6 @@ export default function HeroQuoteSection() {
                 </div>
               </div>
 
-
               <button className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer">
                 Hire Dedicated Developers
                 <ArrowRight
@@ -588,7 +594,18 @@ export default function HeroQuoteSection() {
         </section>
         <section className="py-10">
           <div className="mx-auto max-w-7xl">
+            <style>{`
+              .portfolio-slider .swiper-pagination-bullet {
+                background-color: #cbd5e1 !important;
+                opacity: 1 !important;
+              }
+              .portfolio-slider .swiper-pagination-bullet-active {
+                background-color: #dc2626 !important; /* Red Color */
+              }
+            `}</style>
+
             <Swiper
+              className="portfolio-slider pb-12"
               modules={[Pagination, Autoplay]}
               slidesPerView={1}
               spaceBetween={0}
@@ -706,27 +723,18 @@ export default function HeroQuoteSection() {
 
               <div className="space-y-4">
                 <p className="flex items-start gap-2 text-black">
-                  <ChevronRight
-                    size={18}
-                    className="mt-1 shrink-0"
-                  />
+                  <ChevronRight size={18} className="mt-1 shrink-0" />
                   Reduced costs of treatment with enhanced perfection.
                 </p>
 
                 <p className="flex items-start gap-2 text-black">
-                  <ChevronRight
-                    size={18}
-                    className="mt-1 shrink-0 "
-                  />
+                  <ChevronRight size={18} className="mt-1 shrink-0 " />
                   Improved management of disease with continuous monitoring
                   during treatment.
                 </p>
 
                 <p className="flex items-start gap-2 text-black">
-                  <ChevronRight
-                    size={18}
-                    className="mt-1 shrink-0 ]"
-                  />
+                  <ChevronRight size={18} className="mt-1 shrink-0 ]" />
                   Advanced patient experience through connected devices and
                   proactive treatment.
                 </p>
@@ -965,7 +973,6 @@ export default function HeroQuoteSection() {
                 </div>
               </div>
 
-
               <Link
                 href="/lets-talk"
                 className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
@@ -1070,10 +1077,7 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div>
-            <img
-              src="/images/healthcare-app-built.jpg"
-              alt=""
-            />
+            <img src="/images/healthcare-app-built.jpg" alt="" />
             <h1 className="mt-5 flex justify-center font-bold text-3xl">
               Endeavors That Make Us Proud
             </h1>
@@ -1086,87 +1090,100 @@ export default function HeroQuoteSection() {
           </div>
         </section>
 
-        <section className="mb-2">
-          <Swiper
-            className="w-[90%]"
-            modules={[Pagination, Autoplay]}
-            slidesPerView={1}
-            spaceBetween={0}
-            loop={true}
-            autoplay={{
-              delay: 30000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-          >
-            {caseStudies.map((item, index) => (
-              <SwiperSlide key={index} className="h-auto!">
-                <div
-                  className=" h-full px-6 py-10 flex items-center"
-                  style={{ backgroundColor: item.bgColor }}
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center w-full">
-                    {/* Left */}
-                    <div>
-                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                        {item.title}
-                      </h3>
+        <section className="py-10">
+          {/* Custom style for red pagination dots */}
+          <style>{`
+            .case-study-swiper .swiper-pagination-bullet {
+              background-color: #cbd5e1 !important;
+              opacity: 1 !important;
+            }
+            .case-study-swiper .swiper-pagination-bullet-active {
+              background-color: #dc2626 !important; /* Red Color */
+            }
+          `}</style>
 
-                      <p className="text-black leading-6 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                        {item.description}
-                      </p>
+          <div className="mx-auto max-w-7xl flex justify-center">
+            <Swiper
+              className="case-study-swiper pb-12"
+              modules={[Pagination, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={0}
+              loop={true}
+              autoplay={{
+                delay: 30000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+            >
+              {caseStudies.map((item, index) => (
+                <SwiperSlide key={index} className="h-auto!">
+                  <div
+                    className="h-full px-6 py-10 flex items-center"
+                    style={{ backgroundColor: item.bgColor }}
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 w-full">
+                      {/* Left */}
+                      <div>
+                        <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
+                          {item.title}
+                        </h3>
 
-                      <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                        {item.features.map((feature, i) => (
-                          <li key={i} className="flex items-center gap-2 m-0">
-                            <ChevronRight size={18} />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+                        <p className="text-black leading-6 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+                          {item.description}
+                        </p>
 
-                      <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                        {item.technologies.map((tech, i) => (
-                          <div key={i} className="text-center">
-                            <img
-                              src={tech.image}
-                              alt={tech.name}
-                              className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                            />
-                            <p className="text-xs sm:text-sm mt-2">
-                              {tech.name}
-                            </p>
-                          </div>
-                        ))}
+                        <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
+                          {item.features.map((feature, i) => (
+                            <li key={i} className="flex items-center gap-2 m-0">
+                              <ChevronRight size={18} />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+
+                        <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
+                          {item.technologies.map((tech, i) => (
+                            <div key={i} className="text-center">
+                              <img
+                                src={tech.image}
+                                alt={tech.name}
+                                className="w-7 h-7 sm:w-8 sm:h-8 mx-auto object-contain"
+                              />
+                              <p className="text-xs sm:text-sm mt-2">
+                                {tech.name}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+
+                        <Link
+                          href="/portfolio"
+                          className="group mt-8 bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
+                        >
+                          {item.buttonText}
+                          <ArrowRight
+                            size={18}
+                            className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                          />
+                        </Link>
                       </div>
 
-                      <Link
-                        href="/portfolio"
-                        className="group mt-8 bg-[#184A8B] hover:bg-[#143b72] text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
-                      >
-                        {item.buttonText}
-                        <ArrowRight
-                          size={18}
-                          className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                      {/* Right */}
+                      <div className="flex justify-center">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className=" object-contain"
                         />
-                      </Link>
-                    </div>
-
-                    {/* Right */}
-                    <div className="flex justify-center">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full max-w-xs sm:max-w-sm max-h-100 object-contain"
-                      />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </section>
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4">
@@ -1225,17 +1242,19 @@ export default function HeroQuoteSection() {
                   <button
                     key={index}
                     onClick={() => setActiveTab(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activeTab === index
-                      ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-black"
-                      }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
+                      activeTab === index
+                        ? "text-red-600 font-semibold"
+                        : "text-gray-500 hover:text-black"
+                    }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${activeTab === index ? "w-full" : "w-0"
-                        }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${
+                        activeTab === index ? "w-full" : "w-0"
+                      }`}
                     />
                   </button>
                 ))}
@@ -1361,7 +1380,6 @@ export default function HeroQuoteSection() {
               </div>
             ))}
           </div>
-
         </section>
         <section>
           <div>
@@ -1527,10 +1545,11 @@ export default function HeroQuoteSection() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-50 shadow-md"
-                      : "border-red-200 hover:border-red-300"
-                      }`}
+                    className={`border bg-white transition-all duration-300 ${
+                      open === index
+                        ? "border-red-50 shadow-md"
+                        : "border-red-200 hover:border-red-300"
+                    }`}
                   >
                     {/* Question */}
                     <button
@@ -1542,19 +1561,21 @@ export default function HeroQuoteSection() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          open === index
+                            ? "rotate-180 text-black"
+                            : "rotate-0 text-black"
+                        }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
-                        }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        open === index
+                          ? "max-h-150 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">
