@@ -112,6 +112,8 @@ export const navLinks: NavLink[] = [
 export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
   try {
     const res = await allSubCategories();
+    console.log(res,'res');
+    
     const itemsArray = res?.response?.data || res?.data || (Array.isArray(res) ? res : []);
 
     const solutionSlugs = [

@@ -187,10 +187,12 @@ export default function Restaurant() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
                 Restaurant App
                 <br />
-                Development
+                <p className="text-red-700">
+                  Development
+                </p>
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
@@ -227,14 +229,14 @@ export default function Restaurant() {
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
+                  className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
                   Contact Us <ArrowRight className="w-4 h-4" />
                 </Link>
 
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work <ArrowRight className="w-4 h-4 text-black" />
                 </Link>
@@ -243,11 +245,11 @@ export default function Restaurant() {
 
             {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
-              <div className="relative bg-[#EFF6FF] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
+              <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
                 {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
-                    src="/images/badge-sameday-resposnse.png"
+                    src="/images/contact-form-logo.png"
                     alt="Same Day Response Guaranteed"
                     className="w-full h-auto object-contain"
                   />
@@ -262,11 +264,10 @@ export default function Restaurant() {
                 </p>
                 {statusMessage.text && (
                   <p
-                    className={`text-xs text-center font-semibold ${
-                      statusMessage.type === "success"
-                        ? "text-green-600"
-                        : "text-red-600"
-                    }`}
+                    className={`text-xs text-center font-semibold ${statusMessage.type === "success"
+                      ? "text-green-600"
+                      : "text-red-600"
+                      }`}
                   >
                     {statusMessage.text}
                   </p>
@@ -281,7 +282,7 @@ export default function Restaurant() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -293,7 +294,7 @@ export default function Restaurant() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -305,7 +306,7 @@ export default function Restaurant() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -316,7 +317,7 @@ export default function Restaurant() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                     />
                   </div>
 
@@ -348,7 +349,7 @@ export default function Restaurant() {
                           sendNda: e.target.checked,
                         }))
                       }
-                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                      className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 accent-gray-600 cursor-pointer"
                     />
                     <label
                       htmlFor="nda"
@@ -363,7 +364,7 @@ export default function Restaurant() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {loading ? (
                         <span className="flex items-center gap-2">
@@ -408,9 +409,8 @@ export default function Restaurant() {
               return (
                 <div
                   key={index}
-                  className={`flex flex-col lg:flex-row  gap-8 lg:gap-12 ${
-                    isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
+                  className={`flex flex-col lg:flex-row  gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                    }`}
                 >
                   {/* Content Side */}
                   <div className="w-full lg:w-1/2 space-y-6">
@@ -492,7 +492,7 @@ export default function Restaurant() {
             <div className="">
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Start a Conversation
                 <ArrowRight className="w-4 h-4" />
@@ -500,7 +500,7 @@ export default function Restaurant() {
             </div>
           </div>
         </div>
-<section className="py-10 bg-white ">
+        <section className="py-10 bg-white ">
           <div className="max-w-7xl mx-auto px-4">
             {/* Heading */}
             <h2 className="text-3xl md:text-5xl font-bold text-center">
@@ -528,12 +528,12 @@ export default function Restaurant() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -542,24 +542,34 @@ export default function Restaurant() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-               Ready to Get Started?
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+              Ready to Get Started?
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Ready to Hire Top Rated Dedicated Developers to Build your Next Great Idea? 
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+              Ready to Hire Top Rated Dedicated Developers to Build your Next Great Idea?
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+            <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                  className="inline-flex items-center gap-1.5 transition-colors"
                 >
-                  <img src="/icons/email-icon.svg" alt="" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -567,20 +577,24 @@ export default function Restaurant() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img src="/icons/phone-icon.svg" alt="" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+14697939837" className=" transition-colors">
                     +1 469 793 9837
                   </a>
                   <span>,</span>
                   <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+16476379108" className=" transition-colors">
                     +1 647 637 9108
                   </a>
                 </div>
@@ -590,8 +604,8 @@ export default function Restaurant() {
             {/* Action Button */}
             <div>
               <Link
-                href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/contact-us"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Hire Dedicated Developers <ArrowRight className="w-4 h-4" />
               </Link>
@@ -599,92 +613,92 @@ export default function Restaurant() {
           </div>
         </section>
         <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-gray-800">
-      {/* Main Heading */}
-      <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 text-center">
-        Personalized Application Development for restaurant
-      </h2>
+          {/* Main Heading */}
+          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 text-center">
+            Personalized Application Development for restaurant
+          </h2>
 
-      {/* Intro Paragraphs */}
-      <div className="space-y-4 text-center text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto mb-10">
-        <p>
-          A visual restaurant booking management software gives you the features you need to organise and manage your dinner reservations successfully and quickly. Your clients may view a graphical representation of your institution as well as the vacant seats for any given date and hour.
-        </p>
-        <p>
-          Restaurants may use this reservation control system to improve their processes and eventually maximise the potential of their dining areas. As the amount of persons who use apps and webpages to discover restaurant details has risen dramatically, restaurant owners now require a visual restaurant reservation service application.
-        </p>
-        <p>
-          With this software, users may verify restaurant reservations, book seats instantaneously. As a consequence, a restaurant booking application assists several restaurants as well as other dining establishments by seeing a rise in the amount of bookings, generally a 20–30% rise.
-        </p>
-      </div>
-
-      {/* Feature Blocks */}
-      <div className="space-y-8 max-w-3xl mx-auto">
-        
-        {/* Section 1: iOS and android support */}
-        <div>
-          <p className="text-base md:text-lg mb-4 text-center md:text-left">
-            <span className="font-bold text-black">iOS and android support:</span> Restaurant applications have been created for every popular platform.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 pl-2">
-            <div className="flex items-start gap-2">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
-              <span className="text-gray-900 font-medium">Local as well as internet based programming</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
-              <span className="text-gray-900 font-medium">Upload to the App Store and Google Play.</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
-              <span className="text-gray-900 font-medium">Integrations of website apps</span>
-            </div>
+          {/* Intro Paragraphs */}
+          <div className="space-y-4 text-center text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto mb-10">
+            <p>
+              A visual restaurant booking management software gives you the features you need to organise and manage your dinner reservations successfully and quickly. Your clients may view a graphical representation of your institution as well as the vacant seats for any given date and hour.
+            </p>
+            <p>
+              Restaurants may use this reservation control system to improve their processes and eventually maximise the potential of their dining areas. As the amount of persons who use apps and webpages to discover restaurant details has risen dramatically, restaurant owners now require a visual restaurant reservation service application.
+            </p>
+            <p>
+              With this software, users may verify restaurant reservations, book seats instantaneously. As a consequence, a restaurant booking application assists several restaurants as well as other dining establishments by seeing a rise in the amount of bookings, generally a 20–30% rise.
+            </p>
           </div>
-        </div>
 
-        {/* Section 2: Online ordering */}
-        <div>
-          <p className="text-base md:text-lg mb-4 text-center md:text-left">
-            <span className="font-bold text-black">Online ordering:</span> Take orders through the application. We design and implement bespoke online buying systems.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 pl-2">
-            <div className="flex items-start gap-2">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
-              <span className="text-gray-900 font-medium">Unique online ordering options</span>
+          {/* Feature Blocks */}
+          <div className="space-y-8 max-w-3xl mx-auto">
+
+            {/* Section 1: iOS and android support */}
+            <div>
+              <p className="text-base md:text-lg mb-4 text-center md:text-left">
+                <span className="font-bold text-black">iOS and android support:</span> Restaurant applications have been created for every popular platform.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 pl-2">
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+                  <span className="text-gray-900 font-medium">Local as well as internet based programming</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+                  <span className="text-gray-900 font-medium">Upload to the App Store and Google Play.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+                  <span className="text-gray-900 font-medium">Integrations of website apps</span>
+                </div>
+              </div>
             </div>
-            <div className="flex items-start gap-2">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
-              <span className="text-gray-900 font-medium">Ordering directly from the POS system</span>
+
+            {/* Section 2: Online ordering */}
+            <div>
+              <p className="text-base md:text-lg mb-4 text-center md:text-left">
+                <span className="font-bold text-black">Online ordering:</span> Take orders through the application. We design and implement bespoke online buying systems.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 pl-2">
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+                  <span className="text-gray-900 font-medium">Unique online ordering options</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+                  <span className="text-gray-900 font-medium">Ordering directly from the POS system</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+                  <span className="text-gray-900 font-medium">OpenTable and other services</span>
+                </div>
+              </div>
             </div>
-            <div className="flex items-start gap-2">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
-              <span className="text-gray-900 font-medium">OpenTable and other services</span>
+
+            {/* Section 3: Content manager */}
+            <div>
+              <p className="text-base md:text-lg mb-4 text-center md:text-left">
+                <span className="font-bold text-black">Content manager:</span> We create apps for which you may modify the contents via a webpage.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 pl-2">
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+                  <span className="text-gray-900 font-medium">Simply update text, images, and videos.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+                  <span className="text-gray-900 font-medium">Highlight news and activities.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+                  <span className="text-gray-900 font-medium">Keep track of your specials and menus</span>
+                </div>
+              </div>
             </div>
+
           </div>
-        </div>
-
-        {/* Section 3: Content manager */}
-        <div>
-          <p className="text-base md:text-lg mb-4 text-center md:text-left">
-            <span className="font-bold text-black">Content manager:</span> We create apps for which you may modify the contents via a webpage.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 pl-2">
-            <div className="flex items-start gap-2">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
-              <span className="text-gray-900 font-medium">Simply update text, images, and videos.</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
-              <span className="text-gray-900 font-medium">Highlight news and activities.</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
-              <span className="text-gray-900 font-medium">Keep track of your specials and menus</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
+        </section>
 
 
 
@@ -724,13 +738,13 @@ export default function Restaurant() {
           >
             {portfolioSlides.map((slide, index) => (
               <SwiperSlide key={index} className="h-auto!">
-                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between">
+                <div className="bg-red-50 px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between">
                   <div>
                     <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
                       {slide.heading}
                     </h2>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
                       <div>
                         <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
                           {slide.title}
@@ -764,7 +778,7 @@ export default function Restaurant() {
                           ))}
                         </div>
 
-                        <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                        <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
                           View Case Study
                           <ArrowRight
                             size={18}
@@ -777,7 +791,7 @@ export default function Restaurant() {
                         <img
                           src={slide.image}
                           alt={slide.title}
-                          className="w-full max-w-xs sm:max-w-sm"
+                          className=""
                         />
                       </div>
                     </div>
@@ -791,10 +805,10 @@ export default function Restaurant() {
 
 
 
-        
+
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
           {/* Top CTA Banner Box */}
-          <div className="bg-[#F4F8FC] p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
                 Check How We turn Your Idea into Innovative Product
@@ -807,7 +821,7 @@ export default function Restaurant() {
 
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
+              className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
             >
               <span>See Our Work</span>
               <ArrowRight className="w-4 h-4" />
@@ -829,24 +843,22 @@ export default function Restaurant() {
           <div className="max-w-7xl mx-auto px-4 ">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
-              <div className="flex flex-wrap gap-8 border-b border-gray-300">
+              <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
-                        ? "text-black font-semibold"
-                        : "text-gray-500 hover:text-black"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
+                      ? "text-red-600 font-semibold"
+                      : "text-gray-500 hover:text-red-500"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -873,13 +885,13 @@ export default function Restaurant() {
             </div>
           </div>
         </section>
-         <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Text Content */}
             <div className="flex flex-col ">
               <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 leading-tight">
-              Highlights
-                
+                Highlights
+
               </h2>
 
               <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
@@ -910,13 +922,12 @@ export default function Restaurant() {
             </div>
           </div>
         </section>
-
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -925,25 +936,35 @@ export default function Restaurant() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
               Looking to Hire Dedicated Team?
+
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              We are team of talented, experienced, and certified designers and
-              developers. Let us build something extraordinary.
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
+            <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
                   href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
+                  className="inline-flex items-center gap-1.5 transition-colors"
                 >
-                  <img src="/icons/email-icon.svg" alt="" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>info@iqlance.com</span>
                 </a>
 
@@ -951,20 +972,24 @@ export default function Restaurant() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img src="/icons/phone-icon.svg" alt="" />
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
                   <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+14697939837" className=" transition-colors">
                     +1 469 793 9837
                   </a>
                   <span>,</span>
                   <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
+                  <a href="tel:+16476379108" className=" transition-colors">
                     +1 647 637 9108
                   </a>
                 </div>
@@ -974,15 +999,15 @@ export default function Restaurant() {
             {/* Action Button */}
             <div>
               <Link
-                href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/contact-us"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Let’s Talk <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
-    
+
 
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
@@ -1031,7 +1056,7 @@ export default function Restaurant() {
             ))}
           </div>
         </section>
-        
+
 
         <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-black">
@@ -1047,17 +1072,16 @@ export default function Restaurant() {
         </div>
         <div className="w-full max-w-5xl mx-auto px-4 py-12">
           {/* Top Tabs Header */}
-          <div className="flex items-center gap-6 border-b border-gray-100 pb-3 mb-12 overflow-x-auto">
+          <div className="flex items-center gap-6 pb-3 mb-12 overflow-x-auto">
             {processSteps.map((step, index) => (
               <div key={index} className="flex items-center gap-6">
                 <button
                   type="button"
                   onClick={() => setActiveStepIndex(index)}
-                  className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${
-                    activeStepIndex === index
-                      ? "text-gray-900 border-blue-600 font-bold"
-                      : "text-gray-400 border-transparent hover:text-gray-600"
-                  }`}
+                  className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${activeStepIndex === index
+                    ? "text-red-700 border-red-600 font-bold"
+                    : "text-gray-400 border-transparent hover:text-gray-600"
+                    }`}
                 >
                   {step.tabTitle}
                 </button>
@@ -1078,7 +1102,7 @@ export default function Restaurant() {
               {activeStepIndex === 0 && (
                 <div className="">
                   <img
-                    src="/images/discover.webp"
+                    src="/images/discove.jpg"
                     alt="Discover"
                     className="w-full h-full object-contain"
                   />
@@ -1089,7 +1113,7 @@ export default function Restaurant() {
               {activeStepIndex === 1 && (
                 <div className="">
                   <img
-                    src="/images/uiux-design.webp"
+                    src="/images/uiux-design.jpg"
                     alt="Design"
                     className="w-full h-full object-contain"
                   />
@@ -1100,7 +1124,7 @@ export default function Restaurant() {
               {activeStepIndex === 2 && (
                 <div className="">
                   <img
-                    src="/images/development.webp"
+                    src="/images/development.jpg"
                     alt="Build"
                     className="w-full h-full object-contain"
                   />
@@ -1111,7 +1135,7 @@ export default function Restaurant() {
               {activeStepIndex === 3 && (
                 <div className="">
                   <img
-                    src="/images/user-testing.webp"
+                    src="/images/user-testing.jpg"
                     alt="Deliver"
                     className="w-full h-full object-contain"
                   />
@@ -1133,7 +1157,7 @@ export default function Restaurant() {
             </div>
           </div>
         </div>
-       
+
         <section>
           <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
@@ -1151,7 +1175,7 @@ export default function Restaurant() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-[#184A8B] hover:shadow-lg"
+                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1186,7 +1210,7 @@ export default function Restaurant() {
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
           {/* Outer Card Wrapper with Fixed Border & Accent */}
-          <div className="relative bg-white border border-gray-300 p-8 md:p-10  shadow-sm hover:border-[#1e40af] transition-all duration-300">
+          <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
             {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
 
@@ -1265,13 +1289,13 @@ export default function Restaurant() {
             {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
-                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Previous Slide"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button
-                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-next bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Next Slide"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -1299,11 +1323,10 @@ export default function Restaurant() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-gray-200 shadow-md"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-red-200 shadow-md"
+                      : "border-red-200 hover:border-red-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1315,21 +1338,19 @@ export default function Restaurant() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-black">

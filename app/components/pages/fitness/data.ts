@@ -94,50 +94,50 @@ export const fitnessFeatures = [
 export const process_Steps = [
   {
     id: 1,
-    title: "Discovery",
+    title: "Requirement Understanding",
     description:
       "We begin by understanding your business objectives, project requirements, target audience, and technical challenges. Through collaborative discussions, we identify the right technology approach and define a roadmap that supports your long-term business vision.",
     image:
-      "/icons/proces-icon-1.svg",
+      "/images/proces-icon-1.png",
   },
   {
     id: 2,
-    title: "Strategy & Planning",
+    title: "Design and Prototyping",
     description:
       "Our UI/UX designers, solution architects, and technical experts create user-focused designs, system architecture, wireframes, and project plans. Every feature is carefully planned to ensure an intuitive user experience, seamless functionality, and long-term scalability.",
     image:
-      "/icons/proces-icon-2.svg",
+      "/images/proces-icon-2.png",
   },
   {
     id: 3,
-    title: "Design",
+    title: "Development",
     description:
       "Once the solution is approved, our developers build secure, scalable, and high-performing applications using modern technologies, AI-assisted tools, and agile methodologies. Throughout development, we maintain transparency, share regular updates, and adapt quickly to evolving business needs.",
     image:
-      "/icons/proces-icon-3.svg",
+      "/images/proces-icon-3.png",
   },
   {
     id: 4,
-    title: "Launch & Ongoing Support",
+    title: "Maintenance and Upgrades",
     description:
       "Our partnership continues beyond deployment. We provide ongoing maintenance, performance monitoring, security updates, bug fixes, and feature enhancements to keep your digital solution optimized, secure, and ready to scale as your business grows.",
     image:
-      "/icons/proces-icon-4.svg",
+      "/images/proces-icon-4.png",
   },
   {
     id: 5,
-    title: "Testing & Quality Assurance",
+    title: "Deployment",
     description:
       "After successful testing, we deploy your application, software, or website to the appropriate production environment. Whether it’s a cloud platform, enterprise server, web hosting environment, or mobile app store, we ensure a secure, seamless, and well-monitored launch.",
     image:
-      "/icons/proces-icon-5.svg",
+      "/images/proces-icon-5.png",
   },
   {
     id: 6,
-    title: "Development",
+    title: "Quality Assurance",
     description:
       "Our QA team performs comprehensive testing to verify functionality, usability, security, compatibility, and performance. Multiple testing cycles, including automated and manual testing, ensure your solution works reliably across different devices, browsers, and operating environments before deployment.",
     image:
-      "/icons/proces-icon-6.svg",
+      "/images/proces-icon-6.png",
   },
 ];

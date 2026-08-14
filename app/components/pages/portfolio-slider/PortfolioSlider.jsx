@@ -101,7 +101,7 @@ export default function PortfolioSlider({ slides = [], heading }) {
                     href={`/portfolio/${slide.slug}`}
                     className="inline-block w-full sm:w-auto"
                   >
-                    <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                    <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
                       View Case Study
                       <ArrowRight
                         size={18}

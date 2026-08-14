@@ -608,9 +608,9 @@ export default function Ondemadd() {
               </SwiperSlide>
             ))}
           </Swiper> */}
-          <main className="min-h-screen py-10">
+          {/* <main className="min-h-screen py-10">
             <PortfolioSlider slides={portfolios} heading={`Solution: ${params?.slug}`} />
-          </main>
+          </main> */}
         </section>
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
           {/* Top CTA Banner Box */}
@@ -646,7 +646,18 @@ export default function Ondemadd() {
         </section>
         <section className="">
           <div className="mx-auto max-w-7xl">
+            <style>{`
+      .portfolio-swiper .swiper-pagination-bullet {
+        background-color: #cbd5e1 !important;
+        opacity: 1 !important;
+      }
+      .portfolio-swiper .swiper-pagination-bullet-active {
+        background-color: #dc2626 !important; /* Red color */
+      }
+    `}</style>
+
             <Swiper
+              className="portfolio-swiper"
               modules={[Pagination, Autoplay]}
               slidesPerView={1}
               spaceBetween={0}
@@ -667,7 +678,7 @@ export default function Ondemadd() {
                       <img
                         src={slide.image}
                         alt={slide.title}
-                        className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
+                        className="w-full h-64 sm:h-80 md:h-96 lg:h-125 object-cover"
                       />
                     </div>
 
@@ -1305,8 +1316,8 @@ export default function Ondemadd() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-gray-300"
+                      ? "border-red-200 shadow-md"
+                      : "border-red-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

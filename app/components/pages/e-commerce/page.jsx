@@ -17,20 +17,22 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import {
-  partners,
   bottomFeatures,
   slides,
   ServiceSectionData,
   portfolioSlides,
   technologies,
-  stats,
-  industries,
   services,
   faqsData,
-  testimonials,
   tabs,
   appData,
 } from "./data";
+import {
+  partners,
+  stats,
+  industries,
+  testimonials,
+} from "../../../../utils/data";
 import Image from "next/image";
 import PortfolioSlider from '../portfolio-slider/PortfolioSlider';
 
@@ -105,7 +107,7 @@ export default function foodOrdering() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
                 E-Commerce Development Company
               </h1>
 
@@ -134,14 +136,14 @@ export default function foodOrdering() {
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
+                  className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
                   Contact Us <ArrowRight className="w-4 h-4" />
                 </Link>
 
                 <Link
                   href="#portfolio"
-                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-red-100 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work <ArrowRight className="w-4 h-4 text-gray-600" />
                 </Link>
@@ -150,11 +152,11 @@ export default function foodOrdering() {
 
             {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
-              <div className="relative bg-[#EFF6FF] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
+              <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
                 {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
-                    src="/images/badge-sameday-resposnse.png"
+                    src="/images/contact-form-logo.png"
                     alt="Same Day Response Guaranteed"
                     className="w-full h-auto object-contain"
                   />
@@ -178,7 +180,7 @@ export default function foodOrdering() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -190,7 +192,7 @@ export default function foodOrdering() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -202,7 +204,7 @@ export default function foodOrdering() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -213,7 +215,7 @@ export default function foodOrdering() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                     />
                   </div>
 
@@ -245,7 +247,7 @@ export default function foodOrdering() {
                           sendNda: e.target.checked,
                         }))
                       }
-                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                      className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 accent-gray-600 cursor-pointer"
                     />
                     <label
                       htmlFor="nda"
@@ -259,7 +261,7 @@ export default function foodOrdering() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6  transition-colors shadow flex items-center justify-center cursor-pointer"
+                      className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6  transition-colors shadow flex items-center justify-center cursor-pointer"
                     >
                       Schedule a free consultation
                     </button>
@@ -319,7 +321,7 @@ export default function foodOrdering() {
             <div className="">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Start a Conversation
                 <ArrowRight className="w-4 h-4" />
@@ -343,8 +345,19 @@ export default function foodOrdering() {
           </div>
         </section>
         <section className="py-10">
+          <style>{`
+    .case-study-swiper .swiper-pagination-bullet {
+      background-color: #cbd5e1 !important;
+      opacity: 1 !important;
+    }
+    .case-study-swiper .swiper-pagination-bullet-active {
+      background-color: #dc2626 !important; /* Red Color */
+    }
+  `}</style>
+
           <div className="mx-auto max-w-7xl">
             <Swiper
+              className="case-study-swiper"
               modules={[Pagination, Autoplay]}
               slidesPerView={1}
               spaceBetween={0}
@@ -359,7 +372,7 @@ export default function foodOrdering() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
                     {/* Image */}
                     <div className="w-full lg:w-1/2">
                       <img
@@ -396,76 +409,80 @@ export default function foodOrdering() {
               ))}
             </Swiper>
           </div>
-          <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-            <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-              {/* Top Icon Illustration */}
-              <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-                <Image
-                  src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                  alt="Custom Logistics App Support"
-                  width={64}
-                  height={64}
-                  className="object-contain"
-                />
-              </div>
+        </section>
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
+              />
 
-              {/* Section Heading */}
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
                 Looking to Hire Dedicated Team?
               </h2>
 
-              {/* Subtitle Paragraph */}
-              <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-                We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                We are team of talented, experienced, and certified designers
+                and developers. Let us build something extraordinary.
               </p>
 
-              {/* Contact Info Box */}
-              <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6]  py-4 px-6 mb-8 shadow-xs">
-                <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                  {/* Email link */}
-                  <a
-                    href="mailto:info@iqlance.com"
-                    className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                  >
-                    <img src="/icons/email-icon.svg" alt="" />
-                    <span>info@iqlance.com</span>
-                  </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                  <span className="text-gray-500 font-normal">or</span>
-
-                  {/* Phone links */}
-                  <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                    <img src="/icons/phone-icon.svg" alt="" />
-                    <span>US :</span>
-                    <a
-                      href="tel:+14697939837"
-                      className="hover:text-[#1B4B82] transition-colors"
-                    >
-                      +1 469 793 9837
-                    </a>
-                    <span>,</span>
-                    <span>CA :</span>
-                    <a
-                      href="tel:+16476379108"
-                      className="hover:text-[#1B4B82] transition-colors"
-                    >
-                      +1 647 637 9108
-                    </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
                   </div>
                 </div>
               </div>
 
-              {/* Action Button */}
-              <div>
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-                >
-                  Hire Dedicated Developers <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+              <Link
+                href="/contact-us"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
+              >
+                Hire Dedicated Developers
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                />
+              </Link>
             </div>
-          </section>
+          </div>
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
@@ -474,7 +491,7 @@ export default function foodOrdering() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                className={`flex flex-col lg:flex-row  gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
               >
                 {/* Content Side */}
@@ -513,76 +530,76 @@ export default function foodOrdering() {
             );
           })}
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Get Started?
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                Ready to Get Started?
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Send your Requirements on
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6]  py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <img src="/icons/email-icon.svg" alt="" />
-                  <span>info@iqlance.com</span>
-                </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img src="/icons/phone-icon.svg" alt="" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-            <div>
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Let’s Talk <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
+
         <section className="max-w-6xl mx-auto px-4 py-16 text-center font-sans">
           {/* Heading & Subtitle */}
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
@@ -743,70 +760,69 @@ export default function foodOrdering() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              So, We Guess You want to talk about your Project
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                So, We Guess You want to talk about your Project
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Send your Requirements on
+              </p>
 
-            {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-[#EBF3FC] border border-[#3B82F6] py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
-                <a
-                  href="mailto:info@iqlance.com"
-                  className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
-                >
-                  <img src="/icons/email-icon.svg" alt="" />
-                  <span>info@iqlance.com</span>
-                </a>
+              {/* Contact Box */}
+              <div className="flex justify-center">
+                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/email-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/email-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base">
+                      info@iqlance.com
+                    </span>
+                  </div>
 
-                <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
-                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                  <img src="/icons/phone-icon.svg" alt="" />
-                  <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 469 793 9837
-                  </a>
-                  <span>,</span>
-                  <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className="hover:text-[#1B4B82] transition-colors"
-                  >
-                    +1 647 637 9108
-                  </a>
+                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
+                    <div
+                      className="w-6 h-6 bg-red-600"
+                      style={{
+                        maskImage: "url(/icons/phone-icon.svg)",
+                        maskRepeat: "no-repeat",
+                        maskSize: "contain",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                        WebkitMaskRepeat: "no-repeat",
+                        WebkitMaskSize: "contain",
+                      }}
+                    ></div>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      US: +1 469 793 9837
+                      <br className="sm:hidden" />
+                      <span className="hidden sm:inline"> | </span>
+                      CA: +1 647 637 9108
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Action Button */}
-            <div>
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/let-talk"
+                className="mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Let’s Talk <ArrowRight className="w-4 h-4" />
               </Link>
@@ -877,7 +893,7 @@ export default function foodOrdering() {
           <div className="flex justify-center">
             <Link
               href="#"
-              className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
             >
               Get a Quotation <ArrowRight className="w-4 h-4" />
             </Link>
@@ -904,73 +920,6 @@ export default function foodOrdering() {
             </p>
           </div>
         </section>
-        {/* <section>
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
-            loop={true}
-          >
-            {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10">
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-                    {slide.heading}
-                  </h2>
-
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                        {slide.title}
-                      </h3>
-
-                      <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                        {slide.description}
-                      </p>
-
-                      <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                        {slide.features.map((feature, i) => (
-                          <li key={i} className="flex items-center gap-2"><ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" /> {feature}</li>
-                        ))}
-                      </ul>
-
-                      <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                        {slide.technologies.map((tech, i) => (
-                          <div key={i} className="text-center">
-                            <img
-                              src={tech.icon}
-                              alt={tech.name}
-                              className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                            />
-                            <p className="text-xs sm:text-sm mt-2">
-                              {tech.name}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                      <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                        View Case Study
-                        <ArrowRight
-                          size={18}
-                          className="transition-transform duration-300 group-hover:translate-x-1"
-                        />
-                      </button>
-                    </div>
-
-                    <div className="flex justify-center">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full max-w-xs sm:max-w-sm"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </section> */}
-
 
         <main className="min-h-screen py-10">
           <PortfolioSlider slides={portfolios} heading={`Solution: ${params?.slug}`} />
@@ -978,7 +927,7 @@ export default function foodOrdering() {
 
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}
-          <div className="bg-[#F4F8FC]  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-red-50  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
                 Check How We turn Your Idea into Innovative Product
@@ -991,7 +940,7 @@ export default function foodOrdering() {
 
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#143a66] text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
+              className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
             >
               <span>See Our Work</span>
               <ArrowRight className="w-4 h-4" />
@@ -1016,13 +965,13 @@ export default function foodOrdering() {
           <div className="max-w-7xl mx-auto px-4 ">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
-              <div className="flex flex-wrap gap-8 border-b border-gray-300">
+              <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                      ? "text-black font-semibold"
+                      ? "text-red-600 font-semibold"
                       : "text-gray-500 hover:text-black"
                       }`}
                   >
@@ -1030,7 +979,7 @@ export default function foodOrdering() {
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
                         }`}
                     />
                   </button>
@@ -1058,34 +1007,27 @@ export default function foodOrdering() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-[#F4F9FF] py-16 px-6 font-sans">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
-            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-              <Image
-                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
-                width={64}
-                height={64}
-                className="object-contain"
+        <section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* CTA Box */}
+            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+              <img
+                src="/images/letdiscuss-icon.png.webp"
+                alt=""
+                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-            </div>
 
-            {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-              We are Team of Talented, Experienced, and Certified Designers and Developers.
-            </h2>
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                We are Team of Talented, Experienced, and Certified Designers and Developers.
+              </h2>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              Let us Build Something Extraordinary.
-            </p>
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+                Let us Build Something Extraordinary.
+              </p>
 
-            {/* Action Button */}
-            <div>
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Hire Dedicated Developer <ArrowRight className="w-4 h-4" />
               </Link>
@@ -1193,7 +1135,7 @@ export default function foodOrdering() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-[#184A8B] hover:shadow-lg"
+                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1224,7 +1166,7 @@ export default function foodOrdering() {
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
           {/* Outer Card Wrapper with Fixed Border & Accent */}
-          <div className="relative bg-white border border-gray-300 p-8 md:p-10  shadow-sm hover:border-[#1e40af] transition-all duration-300">
+          <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
             {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
 
@@ -1303,13 +1245,13 @@ export default function foodOrdering() {
             {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
-                className="custom-prev bg-[#1B4B82] hover:bg-[#133761] text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Previous Slide"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <button
-                className="custom-next bg-[#1B4B82] hover:bg-[#133761] text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
+                className="custom-next bg-red-700 hover:bg-red-600 text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
                 aria-label="Next Slide"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -1337,8 +1279,8 @@ export default function foodOrdering() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-gray-300"
+                      ? "border-red-200 shadow-md"
+                      : "border-red-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}
