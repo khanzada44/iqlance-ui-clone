@@ -5,10 +5,12 @@ import FloatingTalkToExpert from '../app/components/pages/FloatingTalkToExpert/p
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "iQlance",
+  title: "APP GRID",
   description: "Your trusted partner",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
-
 export default function RootLayout({
   children,
 }: {
