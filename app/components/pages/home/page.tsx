@@ -778,11 +778,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* =========================================================
-      HIRE TEAM CTA
-  ========================================================= */}
-
-        <section className="w-full bg-red-100 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
+        <section className="w-full bg-red-50 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
           <div className="w-full mx-auto text-center">
             <img
               src="/images/letdiscuss-icon.png.webp"
@@ -798,43 +794,45 @@ export default function Home() {
               We are team of talented, experienced, and certified designers and
               developers. Let us build something extraordinary.
             </p>
+            <div className=" flex justify-center">
+              <div className="w-[70%] mt-6 sm:mt-8 border border-red-300 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg ">
+                {/* EMAIL */}
+                <span className="font-semibold flex gap-1 items-center">
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  />
+                  info@iqlance.com
+                </span>
 
-            <div className="mt-6 sm:mt-8 border border-red-300 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
-              {/* EMAIL */}
-              <span className="font-semibold flex gap-1 items-center">
-                <div
-                  className="w-6 h-6 bg-red-600"
-                  style={{
-                    maskImage: "url(/icons/email-icon.svg)",
-                    maskRepeat: "no-repeat",
-                    maskSize: "contain",
-                    WebkitMaskImage: "url(/icons/email-icon.svg)",
-                    WebkitMaskRepeat: "no-repeat",
-                    WebkitMaskSize: "contain",
-                  }}
-                />
-                info@iqlance.com
-              </span>
+                <span className="hidden md:block">or</span>
 
-              <span className="hidden md:block">or</span>
-
-              {/* PHONE */}
-              <span className="flex flex-wrap gap-1 items-center justify-center">
-                <div
-                  className="w-6 h-6 bg-red-600"
-                  style={{
-                    maskImage: "url(/icons/phone-icon.svg)",
-                    maskRepeat: "no-repeat",
-                    maskSize: "contain",
-                    WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                    WebkitMaskRepeat: "no-repeat",
-                    WebkitMaskSize: "contain",
-                  }}
-                />
-                US :<strong>+1 469 793 9837</strong>, CA :
-                <strong>+1 647 637 9108</strong>
-              </span>
+                {/* PHONE */}
+                <span className="flex flex-wrap gap-1 items-center justify-center">
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  />
+                  US :<strong>+1 469 793 9837</strong>, CA :
+                  <strong>+1 647 637 9108</strong>
+                </span>
+              </div>
             </div>
+
 
             <div className="flex justify-center">
               <Link
@@ -1128,7 +1126,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className="w-full bg-red-200 py-16 px-6 font-sans">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -1152,7 +1150,7 @@ export default function Home() {
             </p>
 
             {/* Contact Info Box */}
-            <div className="w-full max-w-2xl bg-red-200 border border-red-300  py-4 px-6 mb-8 shadow-xs">
+            <div className="w-full max-w-2xl bg-red-50 border border-red-300  py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
@@ -1323,7 +1321,7 @@ export default function Home() {
 
         {/* WHO WE WORK WITH */}
         <section className="py-4">
-          <div className="bg-red-100 overflow-hidden">
+          <div className="bg-red-50 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               <div className="px-4 sm:px-8 md:px-14 py-8 sm:py-12 text-center lg:text-left">
                 <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black mb-4 sm:mb-8">
@@ -1354,7 +1352,7 @@ export default function Home() {
         </section>
 
         {/* FINAL DISCUSS CTA */}
-        <section className="bg-red-100 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
+        <section className="bg-red-50 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
           <div className="max-w-4xl mx-auto text-center">
             <img
               src="/images/letdiscuss-icon.png.webp"

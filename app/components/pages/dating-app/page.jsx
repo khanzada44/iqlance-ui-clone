@@ -192,11 +192,15 @@ export default function SocialMedia() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-[#1E3A8A] leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-red-700 leading-tight">
                 Dating App
                 <br />
-                Development <br />
-                Company
+                <p className="text-red-700">
+                  Development <br />
+                </p>
+                <p className="text-red-800">
+                  Company
+                </p>
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
@@ -244,7 +248,7 @@ export default function SocialMedia() {
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center gap-2 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
+                  className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-700 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
                   Contact Us <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -260,11 +264,11 @@ export default function SocialMedia() {
 
             {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
-              <div className="relative bg-[#EFF6FF] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
+              <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
                 {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
-                    src="/images/badge-sameday-resposnse.png"
+                    src="/images/contact-form-logo.png"
                     alt="Same Day Response Guaranteed"
                     className="w-full h-auto object-contain"
                   />
@@ -279,11 +283,10 @@ export default function SocialMedia() {
                 </p>
                 {statusMessage.text && (
                   <p
-                    className={`text-xs text-center font-semibold ${
-                      statusMessage.type === "success"
+                    className={`text-xs text-center font-semibold ${statusMessage.type === "success"
                         ? "text-green-600"
                         : "text-red-600"
-                    }`}
+                      }`}
                   >
                     {statusMessage.text}
                   </p>
@@ -298,7 +301,7 @@ export default function SocialMedia() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -310,7 +313,7 @@ export default function SocialMedia() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -322,7 +325,7 @@ export default function SocialMedia() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                     />
                   </div>
 
@@ -333,7 +336,7 @@ export default function SocialMedia() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-[#0284C7] outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                     />
                   </div>
 
@@ -380,7 +383,7 @@ export default function SocialMedia() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="bg-[#1E4B82] hover:bg-[#163a66] text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {loading ? (
                         <span className="flex items-center gap-2">
@@ -508,7 +511,7 @@ export default function SocialMedia() {
               <div className="pt-2">
                 <Link
                   href="/lets-talk"
-                  className="inline-flex items-center gap-2.5 bg-[#1B4B82] hover:bg-[#153a65] text-white font-semibold text-sm md:text-base px-6 py-3 transition duration-200 shadow-sm"
+                  className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-6 py-3 transition duration-200 shadow-sm"
                 >
                   Start a Conversation
                   <ArrowRight className="w-4 h-4" />
@@ -589,9 +592,8 @@ export default function SocialMedia() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -722,11 +724,10 @@ export default function SocialMedia() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`relative pb-3 text-base md:text-lg transition-colors duration-200 ${
-                      isActive
+                    className={`relative pb-3 text-base md:text-lg transition-colors duration-200 ${isActive
                         ? "text-gray-900 font-semibold"
                         : "text-gray-500 hover:text-gray-700 font-normal cursor-pointer"
-                    }`}
+                      }`}
                   >
                     {tab.label}
 
@@ -1058,19 +1059,17 @@ export default function SocialMedia() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                         ? "text-black font-semibold"
                         : "text-gray-500 hover:text-black"
-                    }`}
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-black transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1423,11 +1422,10 @@ export default function SocialMedia() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
+                    className={`border bg-white transition-all duration-300 ${open === index
                         ? "border-gray-200 shadow-md"
                         : "border-gray-200 hover:border-gray-300"
-                    }`}
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1439,21 +1437,19 @@ export default function SocialMedia() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
                             ? "rotate-180 text-black"
                             : "rotate-0 text-black"
-                        }`}
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
                           ? "max-h-150 opacity-100"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-black">
