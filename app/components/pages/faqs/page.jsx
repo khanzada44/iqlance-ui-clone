@@ -33,17 +33,17 @@ export default function faqs() {
             We have got answers!
           </p>
           <p className="flex items-center justify-center text-center text-black text-[18px] mt-2">
-            At iQlance Solution, we address every mobile initiative with a
-            unique approach. We are innovators of great ideas. To develop
-            exclusive applications for your Business. This amazing development
-            process begins by solving your doubts regarding any type of
-            confusion towards app development.
+            At Devapp Solutions, no two mobile initiatives get the same cookie-cutter treatment.
+            We're driven by ideas, and our job is turning yours into an application built exclusively
+            for your business. That process starts the moment we clear up any confusion or doubts you
+            have about app development.
+
           </p>
-          <p className="flex items-center justify-center text-center text-black  text-[18px] mt-3">
-            Your questions are as valuable as your ideas are for us! We are here
-            to consult and answer your questions regarding app and software
-            development. Get in touch with us today. Let's collaborate to make
-            your success a step forward.{" "}
+          <p className="flex items-center justify-center text-center text-black  text-[18px] mt-5">
+            Your questions matter to us just as much as your ideas do. We're here to consult,
+            answer, and guide you through anything
+            related to app and software development. Get in touch today,
+            and let's collaborate on making your success the next big step forward.{" "}
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
 
@@ -75,16 +75,16 @@ export default function faqs() {
           <div className="w-full px-5">
             {/* Heading */}
             <h2 className="text-center text-[32px] md:text-[40px] font-bold text-black">
-              Offshore Web, Mobile & Software Development Company
+              A Trusted Offshore Partner for Web, Mobile & Software Development
             </h2>
 
             {/* Description */}
             <p className="mt-6 text-center text-[18px] leading-8 text-black">
-              iQlance solutions is a leading Software, Web, & Mobile App
-              Development Company with a vast area of experience in crafting
-              stunning and end to end encrypted technology solutions. We offer
-              excellent expertise of the industry followed by an exactly planned
-              approach to elevate your growth.
+              Devapp Solutions has built a name for itself as a leading software, web,
+              and mobile app development company, with deep experience crafting technology
+              solutions that are as secure as they are impressive, backed by end-to-end encryption
+              from the ground up. We bring genuine industry expertise
+              together with a carefully planned approach, all built to elevate your business growth.
             </p>
 
             {/* Cards */}
@@ -184,12 +184,12 @@ export default function faqs() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-              Let’s Discuss with our Technical Expert to Bring your Idea into Reality.
+              Let's Bring Your Idea to Life. Talk to Our Technical Experts Today.
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on :
+              Send your requirements to:
             </p>
 
             {/* Contact Info Box */}
@@ -266,15 +266,14 @@ export default function faqs() {
         <section className="py-4 bg-white">
           <div className="w-full px-5 text-center">
             <h2 className="text-3xl md:text-[44px] font-bold text-black">
-              Have Something in Mind? Let's Talk
+              Curious How We Work? Take a Look Inside.
             </h2>
 
             <p className="mt-2 text-[18px] leading-8 text-[#333]">
-              Have a look at the services and development process of the iQlance
-              solution. See What process we follow for mobile app and software
-              development. Have a look at how we are praised by our clients.
-              Start a conversation to innovate your next great idea into reality
-              with us.
+              Take a look at what Devapp Solutions brings to the table: our services,
+              our step-by-step development process for mobile apps and software,
+              and what clients have to say after working with us. When you're ready,
+              let's start a conversation and build your next great idea into something real.
             </p>
           </div>
         </section>

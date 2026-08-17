@@ -3,9 +3,9 @@ import { useState } from "react";
 import { ArrowRight, ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { processSteps } from "../our-process/data";
+import { processSteps,faqsData } from "../our-process/data";
 import ContactForm from "../../contactForm/ContactForm";
-import { stats, partners, faqsData } from "../../../../utils/data";
+import { stats, partners } from "../../../../utils/data";
 
 export default function ourProcess() {
   const [open, setOpen] = useState(-1);
@@ -22,7 +22,7 @@ export default function ourProcess() {
           <div className="max-w-6xl mx-auto px-4">
             {/* Top Subtitle */}
             <p className="text-gray-700 text-sm md:text-base font-normal tracking-wide">
-              Process-driven Methodology, Result-driven Solutions
+              A Process Built for Results, Not Just Deadlines
             </p>
 
             {/* Main Heading */}
@@ -32,12 +32,13 @@ export default function ourProcess() {
 
             {/* Description Paragraph */}
             <p className="max-w-5xl mx-auto text-gray-700 text-sm md:text-base leading-relaxed mb-8">
-              We at iQlance Solution as a renowned app and software development
-              agency follow Process-Driven Methodology, Result-Driven Solutions. To
-              acquire expected and desired results it is necessary to follow a
-              strict and Simplified process. We ensure our client's 100%
-              satisfaction in the development of mobile and software applications.
-              To gain our results we are committed to following vigorous methods.
+              Great outcomes don't happen by chance, they happen because of a process that's been tested,
+              refined, and proven to work. As a respected app and software development agency,
+              we follow a structured, no-shortcuts approach because that's what it takes to
+              consistently deliver what our clients actually need. Every method we use is built
+              around one goal: getting you results you can measure, backed by a commitment to
+              getting the details right the first time.
+
             </p>
 
             {/* Action Buttons */}
@@ -121,16 +122,15 @@ export default function ourProcess() {
               {/* Left Content */}
               <div>
                 <h2 className="text-3xl md:text-5xl font-bold leading-tight text-black">
-                  What makes our development process stand out of the box?
+                  What Makes Our Development Process Stand Out?
                 </h2>
 
                 <p className="mt-8 text-gray-700 text-base md:text-lg leading-8">
-                  iQlancers are inventors of great ideas. To make your idea a
-                  reality we are devoted to the creation of the product that
-                  follows the favorable and easy to understand method which
-                  includes all the aspects of app development without hindering
-                  anyone's feeling. We are highly dedicated to the transparent
-                  app development process.
+                  At Devapp, ideas aren't just discussed, they're built. We're dedicated to
+                  shaping your idea into a real product through a process that's straightforward,
+                  easy to follow, and covers every angle of app development, without ever losing sight
+                  of the people behind the project.
+                  Transparency isn't just a value we mention, it's how we actually work, every step of the way.
                 </p>
 
                 <Link
@@ -160,12 +160,11 @@ export default function ourProcess() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl md:text-5xl font-bold text-center">
-              We Start Here
+              This Is Where We Start
             </h2>
 
             <p className="text-center text-gray-600 max-w-4xl mx-auto mt-4">
-              Before we convert your great idea into an amazing product, we make
-              sure to follow and outline standard process and plan.
+              Before your great idea turns into an actual product, we lay down a clear plan and stick to a process that's been proven to work.
             </p>
 
             <div className="mt-16 space-y-12">
@@ -205,21 +204,21 @@ export default function ourProcess() {
                           {step.description}
                         </p>
                       </div>
-                                        {index !== processSteps.length - 1 && (
-                    <img
-                      src={step.arrow}
-                      alt=""
-                      className={`
+                      {index !== processSteps.length - 1 && (
+                        <img
+                          src={step.arrow}
+                          alt=""
+                          className={`
                     hidden lg:block
                     absolute
                     h-24
                     ${index % 2 === 0
-                          ? "right-4 -bottom-14"
-                          : "left-4 -bottom-14"
-                        }
+                              ? "right-4 -bottom-14"
+                              : "left-4 -bottom-14"
+                            }
                   `}
-                    />
-                  )}
+                        />
+                      )}
                     </div>
                   </div>
 
@@ -374,7 +373,7 @@ export default function ourProcess() {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
-                iQlance solution. See what process we follow for mobile app and
+                Devapp solution. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

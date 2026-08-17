@@ -24,7 +24,7 @@ export const servicesData = [
     id: 1,
     title: "Hire Mobile App Developers",
     description:
-      "Hire mobile app developers in the USA to build feature-rich iOS, Android, and cross-platform apps that ensure scalable, secure, and user-friendly solutions customized to your business objectives and user expectations.",
+      "Bring on mobile app developers in the USA who know how to build iOS, Android, and cross-platform apps that don't just look good, they perform. Every solution is scalable, secure, and shaped around what your users actually expect and your business actually needs.",
     icon: "/icons/mobile-app-hire-icn.svg",
     button: "Hire Now",
   },
@@ -32,7 +32,7 @@ export const servicesData = [
     id: 2,
     title: "Hire Software Developers",
     description:
-      "Hire skilled software developers to build custom, enterprise-grade applications that streamline operations, boost efficiency, and support your long-term business growth with dependable, well-architected solutions.",
+      "Get skilled software developers on your team to build custom, enterprise-grade applications that cut through operational friction, sharpen efficiency, and set your business up for long-term growth, with solutions that are well-architected and built to last.",
     icon: "/images/wd-icn.png.webp",
     button: "Hire Now",
   },
@@ -40,49 +40,49 @@ export const servicesData = [
     id: 3,
     title: "Hire AI Developers",
     description:
-      "Leverage AI expertise to develop intelligent applications, automate workflows, implement ML solutions, improve decision-making, and elevate customer experience with advanced AI-powered systems.",
+      "Tap into real AI expertise to build smarter applications, automate the busywork out of your operations, and put machine learning solutions to work sharpening decisions, elevating customer experiences, and driving efficiency across the board.",
     icon: "/images/ai-ml-offer-Generative-ai.png",
     button: "Hire Now",
   },
   {
     id: 4,
-    title: "Hire Web Developers",
+    title: "Hire Full-Stack Developers",
     description:
-      "Build responsive, scalable, and high-performance websites and web applications tailored to your business needs using the latest web technologies and industry best practices.",
-    icon: "/icons/react-hire-icn.svg",
-    button: "Hire Now",
-  },
-  {
-    id: 5,
-    title: "Hire UI/UX Designers",
-    description:
-      "Create intuitive, visually appealing, and user-focused digital experiences with professional UI/UX designers dedicated to improving usability and customer satisfaction.",
+      "Work with full-stack developers who handle it all front-end, back-end, and everything in between delivering web applications that are robust, high-performing, and built to go the distance from first concept to final deployment.",
     icon: "/images/full-stack-developer_icon.png",
     button: "Hire Now",
   },
-  {
-    id: 6,
-    title: "Hire QA Engineers",
-    description:
-      "Ensure your applications are reliable, secure, and bug-free with experienced QA engineers providing comprehensive manual and automated testing services.",
-    icon: "/images/full-stack-developer_icon.png",
-    button: "Hire Now",
-  },
+  // {
+  //   id: 5,
+  //   title: "Hire UI/UX Designers",
+  //   description:
+  //     "Create intuitive, visually appealing, and user-focused digital experiences with professional UI/UX designers dedicated to improving usability and customer satisfaction.",
+  //   icon: "/images/full-stack-developer_icon.png",
+  //   button: "Hire Now",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Hire QA Engineers",
+  //   description:
+  //     "Ensure your applications are reliable, secure, and bug-free with experienced QA engineers providing comprehensive manual and automated testing services.",
+  //   icon: "/images/full-stack-developer_icon.png",
+  //   button: "Hire Now",
+  // },
 ];
 export const processSteps = [
   {
     id: 1,
-    title: "Requirement Understanding",
+    title: "Understanding Your Requirements",
     description:
-      "We begin by understanding your business objectives, project requirements, target audience, and technical challenges. Through collaborative discussions, we identify the right technology approach and define a roadmap that supports your long-term business vision.",
+      "We start by getting to know your business, your objectives, your project requirements, your target audience, and the technical hurdles standing in your way. Through open, collaborative conversations, we map out the right technology approach and build a roadmap that supports where you're headed, not just where you are today.",
     image:
       "/images/proces-icon-1.png",
   },
   {
     id: 2,
-    title: "Design and Prototyping",
+    title: "Design & Prototyping",
     description:
-      "Our UI/UX designers, solution architects, and technical experts create user-focused designs, system architecture, wireframes, and project plans. Every feature is carefully planned to ensure an intuitive user experience, seamless functionality, and long-term scalability.",
+      "Our UI/UX designers, solution architects, and technical experts get to work on user-focused designs, system architecture, wireframes, and a solid project plan. Every single feature is mapped out with intention. So the final product feels intuitive, functions seamlessly, and scales without breaking a sweat.",
     image:
       "/images/proces-icon-2.png",
   },
@@ -90,15 +90,15 @@ export const processSteps = [
     id: 3,
     title: "Development",
     description:
-      "Once the solution is approved, our developers build secure, scalable, and high-performing applications using modern technologies, AI-assisted tools, and agile methodologies. Throughout development, we maintain transparency, share regular updates, and adapt quickly to evolving business needs.",
+      "Once the design gets the green light, our developers roll up their sleeves and build using modern technologies, AI-assisted tools, and agile methodologies to create applications that are secure, scalable, and genuinely high-performing. We keep you in the loop the entire way, with regular updates and the flexibility to pivot the moment your business needs shift.",
     image:
       "/images/proces-icon-3.png",
   },
   {
     id: 4,
-    title: "Maintenance and Upgrades",
+    title: "Quality Assurance",
     description:
-      "Our partnership continues beyond deployment. We provide ongoing maintenance, performance monitoring, security updates, bug fixes, and feature enhancements to keep your digital solution optimized, secure, and ready to scale as your business grows.",
+      "Before anything goes live, our QA team puts it through the wringer, checking functionality, usability, security, compatibility, and performance from every angle. Multiple rounds of testing, both automated and manual, make sure your solution holds up reliably across devices, browsers, and operating environments with no surprises after launch.",
     image:
       "/images/proces-icon-4.png",
   },
@@ -106,15 +106,15 @@ export const processSteps = [
     id: 5,
     title: "Deployment",
     description:
-      "After successful testing, we deploy your application, software, or website to the appropriate production environment. Whether it’s a cloud platform, enterprise server, web hosting environment, or mobile app store, we ensure a secure, seamless, and well-monitored launch.",
+      " Once testing gives the all-clear, we take your application, software, or website live in the right production environment whether that's a cloud platform, enterprise server, web hosting setup, or mobile app store. Every launch is handled with care: secure, seamless, and closely monitored from the moment it goes live",
     image:
       "/images/proces-icon-5.png",
   },
   {
     id: 6,
-    title: "Quality Assurance",
+    title: "Maintenance & Upgrades",
     description:
-      "Our QA team performs comprehensive testing to verify functionality, usability, security, compatibility, and performance. Multiple testing cycles, including automated and manual testing, ensure your solution works reliably across different devices, browsers, and operating environments before deployment.",
+      "Launch day isn't the finish line, it's just the beginning of our partnership. We stick around to provide ongoing maintenance, performance monitoring, security updates, bug fixes, and feature enhancements, keeping your digital solution sharp, secure, and ready to grow right alongside your business.",
     image:
       "/images/proces-icon-6.png",
   },
@@ -122,7 +122,7 @@ export const processSteps = [
 export const slides = [
   {
     title: "Looking for a Development Team That Actually Gets Your Business?",
-    description1:"Hiring a development team isn't just about finding people who can write code. It's about finding professionals who genuinely understand your goals, communicate clearly at every step, and build technology that solves the real problems your business faces. Whether you're launching something brand new or upgrading a platform that's already live, our developers partner with startups, SMBs, and enterprises across the USA to build reliable digital products shaped around their market, their users, and their business goals.",
+    description1: "Hiring a development team isn't just about finding people who can write code. It's about finding professionals who genuinely understand your goals, communicate clearly at every step, and build technology that solves the real problems your business faces. Whether you're launching something brand new or upgrading a platform that's already live, our developers partner with startups, SMBs, and enterprises across the USA to build reliable digital products shaped around their market, their users, and their business goals.",
     description2:
       "",
 
@@ -143,7 +143,7 @@ export const slides = [
         title: "Whatever the project, we bring the technical expertise to take it from first sketch to full launch.",
         items: ["Proven experience across industries and technology stacks"],
       },
-      
+
     ],
 
     image:
@@ -155,79 +155,79 @@ export const slides = [
 
   // Dusri slide
   {
-  title: "Deliver Mobile App and Software Development Services Across the USA",
+    title: "Deliver Mobile App and Software Development Services Across the USA",
 
-  description1:
-    "iQlance delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs.",
+    description1:
+      "iQlance delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs.",
 
-  description2:
-    "By partnering with iQlance, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
+    description2:
+      "By partnering with iQlance, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
 
-  services: [
-    {
-      title: "Mobile App Development",
-      items: [
-        "iOS App Development",
-        "Android App Development",
-      ],
-    },
-    {
-      title: "Cross platform Development",
-      items: [
-        "React Native Development Services",
-        "Flutter App Development Services"
-      ],
-    },
-    {
-      title: "Software Development",
-      items: [
-        "Microsoft .NET, Node JS, Python, React, Laravel, Angular",
-      ],
-    },
-    {
-      title: "AI Development",
-      items: [
-        "Generative AI, Agentic AI, AI Agents, and more ",
-      ],
-    },
-    {
-      title: "Cloud Consulting",
-      items: [
-        "AWS, Microsoft Azure, Google Cloud",
-      ],
-    },
-    {
-      title: "IT Staff Augmentation",
-      items: [
-        "Hire Dedicated Developers, Software Engineers, and Development Teams"
-      ],
-    },
-  ],
+    services: [
+      {
+        title: "Mobile App Development",
+        items: [
+          "iOS App Development",
+          "Android App Development",
+        ],
+      },
+      {
+        title: "Cross platform Development",
+        items: [
+          "React Native Development Services",
+          "Flutter App Development Services"
+        ],
+      },
+      {
+        title: "Software Development",
+        items: [
+          "Microsoft .NET, Node JS, Python, React, Laravel, Angular",
+        ],
+      },
+      {
+        title: "AI Development",
+        items: [
+          "Generative AI, Agentic AI, AI Agents, and more ",
+        ],
+      },
+      {
+        title: "Cloud Consulting",
+        items: [
+          "AWS, Microsoft Azure, Google Cloud",
+        ],
+      },
+      {
+        title: "IT Staff Augmentation",
+        items: [
+          "Hire Dedicated Developers, Software Engineers, and Development Teams"
+        ],
+      },
+    ],
 
-  image:
-     "/images/app-development-comapny-canada.png",
+    image:
+      "/images/app-development-comapny-canada.png",
 
-  consultation:
-    "Schedule a free consultation today with Project Manager.",
+    consultation:
+      "Schedule a free consultation today with Project Manager.",
 
-  note: "(We sign NDA)",
+    note: "(We sign NDA)",
 
-  buttonText: "Let's Talk",
-}
+    buttonText: "Let's Talk",
+  }
 ];
 export const portfolioSlides = [
   {
-    heading: "Endeavors that Make us Proud",
+    heading: "Find the Right Fit for Your Next Project",
     title: "Supply Chain Management App",
     description:
-      "Embark on a transformative journey with the chain supply management app, an advanced application designed to modernize operations and streamline B2B transactions. Overcoming challenges of data integration and user-friendly design, this app redefines efficiency and security in B2B platforms.",
+      "Modern B2B trade moves fast and this supply chain management app was built to keep pace with it. Designed to tackle the everyday headaches of scattered data and clunky interfaces, it brings structure, speed, and security to B2B operations that used to run on spreadsheets and guesswork. The result? A platform that turns supply chain complexity into a competitive advantage.",
 
     features: [
-      "Global Chemical Procurement Hub",
-      "Diverse Industry Representation",
-      "Innovation and Experience",
+      "A Global Hub for Chemical Procurement",
+      "Built to Serve Industries Across the Board",
+      "Where Innovation Meets Real-World Experience",
     ],
-      technologies: [
+    technologies: [
       {
         name: "iOS",
         icon: "/icons/ios-icon.webp",
@@ -251,15 +251,15 @@ export const portfolioSlides = [
   },
 
   {
-    heading: "Endeavors that Make us Proud",
-    title: "Supply Chain Management App",
+    heading: "Find the Right Fit for Your Next Project",
+    title: "Manufacturing App Development",
     description:
-      "Embark on a transformative journey with the chain supply management app, an advanced application designed to modernize operations and streamline B2B transactions. Overcoming challenges of data integration and user-friendly design, this app redefines efficiency and security in B2B platforms.",
+      "With a legacy of over 40 years in film conversion, extrusion, and manufacturing, this client has stood as an industry leader. Built on a relentless commitment to quality and customer satisfaction that's kept them at the forefront of innovation in the film industry.",
 
     features: [
-      "Global Chemical Procurement Hub",
-      "Diverse Industry Representation",
-      "Innovation and Experience",
+      "Innovation-Driven Experience",
+      " Customer-Centric Approach",
+      "Efficiency Through Technology",
     ],
 
     technologies: [
@@ -289,15 +289,16 @@ export const portfolioSlides = [
       "/images/image_2024_08_05T07_26_10_247Z.png",
   },
   {
-    heading: "Endeavors that Make us Proud",
-    title: "Supply Chain Management",
+    heading: "Endeavors That Make Us Proud",
+    title: "HRMS Development Solution",
     description:
-      "Embark on a transformative journey with the chain supply management app, an advanced application designed to modernize operations and streamline B2B transactions. Overcoming challenges of data integration and user-friendly design, this app redefines efficiency and security in B2B platforms.",
+      "Meet Devapp HRMS, built by Devapp Solutions. A smarter way to run your HR department from end to end, designed to take the weight off your team's shoulders and put your workforce first.",
 
     features: [
-      "Global Chemical Procurement Hub",
-      "Diverse Industry Representation",
-      "Innovation and Experience",
+      "Post Jobs in Minutes, Not Hours",
+      "One Place to Track and Manage Every Candidate",
+      "Interviews That Run Smoother, Start to Finish",
+      "Onboarding Made Simple From Day One and Beyond",
     ],
 
     technologies: [
@@ -321,36 +322,88 @@ export const services = [
     image: "/images/Services_We_Offer_1.png",
     title: "Custom Software Development",
     description:
-      "Our custom software development company builds scalable enterprise software, CRM systems, ERP solutions, SaaS platforms, and business automation applications tailored to your operational requirements.",
+      "We design and build scalable enterprise software, CRM systems, ERP solutions, SaaS platforms, and business automation tools engineered around how your operations actually run, not a one-size-fits-all template.",
   },
   {
     image: "/images/Services_We_Offer_2.png",
     title: "AI Development",
     description:
-      "Develop advanced AI-powered solutions, including generative AI applications, AI agents, chatbots, and automation tools that enhance customer experiences, streamline operations, and boost innovation.",
+      "From generative AI applications to intelligent AI agents, chatbots, and smart automation tools, we build AI-powered solutions that sharpen customer experiences, streamline your operations, and keep you ahead of the innovation curve.",
   },
   {
     image: "/images/Services_We_Offer_3.png",
     title: "Web Development",
     description:
-      "Develop responsive, high-performing websites and web apps that strengthen your online presence, elevate user experiences, and support long-term business success across digital touchpoints.",
+      "We craft fast, responsive, high-performing websites and web applications that strengthen your digital presence, elevate the user experience, and set your business up for long-term success across every online touchpoint",
   },
   {
     image: "/images/Services_We_Offer_4.png",
     title: "Mobile App Development",
     description:
-      "Create engaging iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences, drive engagement, and support your business growth with scalable, feature-rich solutions.",
+      "We build engaging iOS, Android, and cross-platform mobile apps that deliver standout user experiences, drive real engagement, and support your business growth with scalable, feature-rich solutions built to last",
   },
   {
-     image: "/images/Services_We_Offer_5.png",
+    image: "/images/Services_We_Offer_5.png",
     title: "IT Staff Augmentation",
     description:
-      "Expand your development capabilities with experienced IT professionals who integrate seamlessly with your existing team, helping you speed up project delivery while maintaining flexibility, transparency, and quality.",
+      "Scale your development capabilities fast. Our experienced IT professionals slot seamlessly into your existing team, helping you speed up delivery without compromising on flexibility, transparency, or quality.",
   },
   {
-   image: "/images/Services_We_Offer_6.png",
+    image: "/images/Services_We_Offer_6.png",
     title: "Cloud Consulting",
     description:
-      "Optimize your cloud infrastructure with expert consulting services that boost scalability, strengthen security, reduce operational costs, and ensure reliable performance through custom cloud strategies and seamless migration.",
+      "Get more out of your cloud infrastructure with expert consulting that boosts scalability, tightens security, cuts operational costs, and ensures reliable performance backed by custom cloud strategies and smooth, hassle-free migration.",
+  },
+];
+export const testimonials = [
+  {
+    id: 1,
+    name: "Elisha",
+    image:
+      "/images/clutch-icon-1.png.webp",
+    verifiedImage:
+      "/images/clutch-icon.png.webp",
+    review:
+      "Devapp understood our product vision from day one and turned it into a polished, scalable mobile app. Communication was clear, timelines were well managed, and the final product exceeded our expectations.",
+  },
+  {
+    id: 2,
+    name: "Gregor I",
+    image:
+      "/images/google-icon.png.webp",
+    verifiedImage:
+      "/images.google-logo-new.png.webp",
+    review:
+      "We needed a reliable healthcare solution with strong security and a user-friendly experience. The Devappteam handled the development process professionally and delivered exactly what we needed",
+  },
+  {
+    id: 3,
+    name: "Stephanie A",
+    image:
+      "/images/good-firms-icon.png.webp",
+    verifiedImage:
+      "/images/good-firms-logo-new.png.webp",
+    review:
+      "“The team helped us simplify a complex food delivery concept into an intuitive platform. Their technical expertise and attention to the customer experience made a noticeable difference",
+  },
+  {
+    id: 4,
+    name: "Dubie B",
+    image:
+      "/images/good-firms-icon.png.webp",
+    verifiedImage:
+      "/images/google-logo-new.png.webp",
+    review:
+      "From MVP strategy to launch, Devapp kept us focused on the features that actually mattered. Their team helped us move quickly without cutting corners on quality",
+  },
+  {
+    id: 5,
+    name: "Chris",
+    image:
+      "/images/clutch-icon-1.png.webp",
+    verifiedImage:
+      "/images/clutch-icon.png.webp",
+    review:
+      "We were looking for a development partner who could work closely with our U.S. team. DevApp offered strong communication, flexible engagement, and the technical expertise we needed to scale our application.",
   },
 ];

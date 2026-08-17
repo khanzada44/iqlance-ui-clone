@@ -311,16 +311,16 @@ export default function ServicesCategory({ slug }) {
                   </p>
                 </>
               )}
-              {serviceData?.image && (
-                <div className="relative mt-6 h-75 w-full overflow-hidden rounded-lg">
-                  <Image
-                    src={serviceData.image}
+            {serviceData?.image && typeof serviceData.image === 'string' && serviceData.image.trim() !== '' && (
+              <div className="relative mt-6 h-75 w-full overflow-hidden rounded-lg">
+                <Image
+                    src={`/${serviceData.image}`}
                     alt={serviceData?.name || "Service"}
                     fill
                     className="object-cover"
                   />
-                </div>
-              )}
+              </div>
+            )}
 
               {/* FEATURES */}
 

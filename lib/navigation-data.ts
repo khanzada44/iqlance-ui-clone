@@ -11,7 +11,7 @@ export const navLinks: NavLink[] = [
       { label: "About Us", href: "/about", icon: "/icons/about.svg" },
       { label: "Engagement Model", href: "/engagement-model", icon: "/icons/engagement.svg" },
       { label: "FAQ", href: "/faqs", icon: "/icons/faq.svg" },
-      { label: "Why iQlance", href: "/why-iqlance", icon: "/icons/officeBuilding.svg" },
+      { label: "Why Devapp", href: "/why-devapp", icon: "/icons/officeBuilding.svg" },
       { label: "Testimonials", href: "/testimonials", icon: "/icons/testimonials.svg" },
       { label: "Contact", href: "/contact-us", icon: "/icons/contact.svg" },
       { label: "Our Process", href: "/our-process", icon: "/icons/ourProcess.svg" },

@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "../../contactForm/ContactForm";
-import { features } from "../why-iqlance/data";
+import { features } from "./data";
 import { stats, partners, faqsData } from "../../../../utils/data";
 export default function whyIqlance() {
   const [open, setOpen] = useState(-1);
@@ -21,18 +21,14 @@ export default function whyIqlance() {
 
         <div className="w-full text-center mt-14">
           <h2 className="text-3xl md:text-4xl font-bold text-red-600">
-            Why iQlance
+            Why Devapp
           </h2>
           <p className="text-base font-medium mt-1">
-            Converting your iDea into Innovative Product
+            Because a strong MVP needs more than a development team
           </p>
           <p className="mt-6 text-black text-lg leading-8">
-            We are developers of Unique concepts in the form of mobile apps that
-            help businesses to enhance their digital presence and make it more
-            efficient and engaging. Hire dedicated software and mobile app
-            developers from iQlance solutions as they are experts for innovating
-            excellence in Android, iOS and cross-platform app development
-            services.
+            At Devapp, we combine product thinking, technical expertise, and execution to help businesses turn early-stage ideas into products people can actually use. We don't believe in stuffing an MVP with every possible feature. Instead, we identify what can create the most value, build it well, and give you a foundation that can grow with your business.
+
           </p>
 
           <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -61,14 +57,13 @@ export default function whyIqlance() {
 
         <div className="w-full text-center mt-14">
           <h2 className="text-2xl md:text-3xl font-bold text-black">
-            Offshore Web, Mobile & Software Development Company
+            Turning Your Idea Into a Product People Actually Use
           </h2>
           <p className="mt-6 text-black text-sm leading-6">
-            iQlance solutions is a leading Software, Web, & Mobile App
-            Development Company with a vast area of experience in crafting
-            stunning and end to end encrypted technology solutions. We offer
-            excellent expertise of the industry followed by an exactly planned
-            approach to elevate your growth.
+            We don't just build mobile apps; we build unique concepts that help businesses
+            show up stronger online, run more efficiently, and genuinely connect with their users.
+            Our developers bring real expertise to Android, iOS, and cross-platform app
+            development, and that expertise shows in every product we ship.
           </p>
         </div>
 
@@ -103,70 +98,73 @@ export default function whyIqlance() {
         </div>
 
         <section className="w-full py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                We as Trusted Partners
+                A Development Company Businesses Actually Trust
               </h2>
 
-              <p className="text-gray-700 text-lg leading-8 mb-4">
-                <span className="font-semibold">
-                  iQlance Solution as a leading Mobile App & Software
-                  Development Company
-                </span>{" "}
-                in Canada, USA, has gained expertise in customizing and
-                innovating apps.
+              <p className="text-gray-700 text-sm leading-6 mb-4">
+                Devapp Solutions has earned its place as a leading software,
+                web, and mobile app development company,
+                with deep experience building technology solutions that are both
+                visually striking and secured end-to-end. We bring real industry expertise
+                together with a carefully planned approach, all built to push your business forward
               </p>
 
-              <p className="text-gray-700 text-lg leading-8 mb-6">
-                We carry out thru research to understand exactly what your app
-                needs. We always push ourselves to deliver extremely trendy
-                products by making use of top-notch technologies. As one of the
-                most recommended software and app development partner, we try
-                our best to deliver a swift experience of the development
-                process.
+              <p className="text-gray-700 text-sm leading-6 mb-6">
+                As a leading mobile app and software development company in the USA,
+                Devapp has spent years mastering the art of customizing and innovating
+                apps that actually work. We dig deep into research before writing a single
+                line of code, because understanding your app's real needs is where great
+                products start. We push ourselves to stay ahead of the curve, using top-tier
+                technology to deliver products that feel current, not dated. It's why businesses
+                keep recommending us as a development partner, and why we work hard to make the
+                entire process feel smooth from start to finish.
               </p>
 
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
                   <span className="text-lg font-medium text-gray-800">
-                    Security of your App idea.
+                    Your app idea stays protected, always
                   </span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
                   <span className="text-lg font-medium text-gray-800">
-                    Fluent communication
+                     Communication that's clear, not confusing  
                   </span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
                   <span className="text-lg font-medium text-gray-800">
-                    Transparent App Development
+                    A development process you can actually see into
+
                   </span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
                   <span className="text-lg font-medium text-gray-800">
-                    App Design Verification before Approval
+                    Every design gets verified before it moves forward
                   </span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
                   <span className="text-lg font-medium text-gray-800">
-                    On-Time App Delivery
+                    Delivery that happens on time, every time
+
                   </span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
                   <span className="text-lg font-medium text-gray-800">
-                    App Quality is Assured
+                    Quality that's never left to chance
                   </span>
                 </li>
               </ul>
@@ -184,32 +182,25 @@ export default function whyIqlance() {
 
         <section className="w-full py-2">
           <p className="text-center text-gray-600 text-lg mb-2">
-            Mobile app and web development solution under one roof
+              Mobile App & Web Development, All Under One Roof
           </p>
 
           <h2 className="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Top App Development Company in Canada
+            A Leading App Development Company in the USA
           </h2>
 
           <p className="w-full text-center text-gray-700 text-lg leading-7 mb-4">
-            iQlance being the quickest growing Top Toronto mobile app
-            development company, possesses the team of developers, designers,
-            Testers, Business Developers, Marketers and much more. The
-            development of our multiplatform mobile app services can be useful
-            for large enterprise to small and medium business. We strive to
-            serve our clients with the customized mobile apps, high quality
-            product and interactive UI/UX which helps to differentiate ourselves
-            with other mobile app development companies in Canada.
+            Devapp stands as one of the fastest-growing app development companies, 
+            with a full team of developers, designers, testers, business developers, 
+            and marketers all working together under one roof. Our multiplatform mobile app services 
+            scale to fit anyone, from large enterprises to small and medium businesses. 
+            We focus on delivering custom mobile apps, high-quality products, 
+            and interactive UI/UX that set us apart from other app development companies in the USA.
           </p>
 
           <p className="w-full text-center text-gray-700 text-lg leading-7 mb-6">
-            If you have an amazing idea for web or mobile app development, you
-            can rely upon us to execute your idea. Our Top app developers in
-            Canada understands the need of your mobile app and hence, develops
-            the solution that is engaging, visually appealing and user-centric.
-            Having released 200+ mobile apps on app store and play store, we
-            have inculcated hands-on experience in developing the apps for any
-            industrial domain.
+           Got an amazing idea for a web or mobile app?
+            You can count on us to bring it to life, from first concept to finished product.
           </p>
 
           <p className="text-center text-xl text-gray-800 mb-6 font-medium">
@@ -230,13 +221,11 @@ export default function whyIqlance() {
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="max-w-2xl">
               <h2 className="text-2xl md:text-3xl font-extrabold text-black leading-tight">
-                Check How We turn Your Idea into{" "}
-                <br className="hidden sm:inline" />
-                Innovative Product
+                See How We Turn Your Idea Into an Innovative Product
               </h2>
               <p className="mt-4 text-gray-700 text-base md:text-lg">
-                Our rich portfolio justifies that, we are one of the best app
-                development company in USA.
+                Our portfolio does the talking here, it's the reason businesses across 
+                the USA see us as one of the top app development companies around.
               </p>
             </div>
 
@@ -257,11 +246,12 @@ export default function whyIqlance() {
           {/* Bottom Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black">
-              10 Reasons to Choose “iQlance”
+                10 Reasons to Choose Devapp
             </h2>
             <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
-              We are on a mission to take enterprises to next level of their
-              growth with unique and customized digital solutions.
+             Growth doesn't happen by accident, it happens when the right team is behind the wheel. 
+             That's the mission we've built our entire company around, like helping businesses 
+             grow through digital solutions shaped around what makes them different.
             </p>
           </div>
         </div>
@@ -301,13 +291,12 @@ export default function whyIqlance() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-              Not Sure Which Engagement Model Is Right for Your Project? Talk to
-              Our Experts Today.
+             Ready to Get Started?
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Call us Today for a Free Consultation:
+              The best time to talk about your idea is before someone else builds it first. Call us today for a free consultation, and let's see where we can take it.
             </p>
 
             {/* Contact Info Box */}
@@ -383,16 +372,15 @@ export default function whyIqlance() {
         </section>
         <section className="py-16 bg-white w-full">
           <div className="text-center">
-            <h2 className="text-3xl md:text-[42px] font-bold text-[#1F2937]">
-              Have Something in Mind? Let's Talk
+            <h2 className="text-2xl md:text-[35px] font-bold text-[#1F2937]">
+                Still Weighing Your Options? Here's What Sets Us Apart
             </h2>
 
             <p className="mt-6 text-lg md:text-[20px] leading-8 text-[#4B5563] w-full">
-              Have a look at the services and development process of the iQlance
-              solution. See what process we follow for mobile app and software
-              development. Have a look at how we are praised by our clients.
-              Start a conversation to innovate your next great idea into reality
-              with us.
+              Take a look at what Devapp Solutions brings to the table: our services, 
+              our step-by-step process for mobile app and software development, 
+              and what clients have to say after working with us. When you're ready to move forward, 
+              reach out and let's turn your next great idea into something real.
             </p>
           </div>
         </section>

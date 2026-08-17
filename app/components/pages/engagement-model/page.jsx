@@ -5,8 +5,8 @@ import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react"; // Combined Lucide Icons
 import ContactForm from "../../contactForm/ContactForm";
 import { ArrowRight, ChevronRight, Paperclip } from "lucide-react";
-import { comparisonData, features, tabsData } from "../engagement-model/data";
-import { stats, partners, faqsData } from "../../../../utils/data";
+import { comparisonData, features, tabsData , faqsData } from "../engagement-model/data";
+import { stats, partners } from "../../../../utils/data";
 
 export default function EngagementModelSection() {
   const [activeModelTab, setActiveModelTab] = useState("hourly");
@@ -63,32 +63,28 @@ export default function EngagementModelSection() {
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
               {/* Left Content */}
               <div className="lg:col-span-7 text-center lg:text-left mt-8">
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
                   Engagement
                   <br className="hidden sm:block" />
                   Model
                 </h1>
 
                 <h3 className="mt-4 sm:mt-6 text-xl sm:text-2xl font-semibold">
-                  Process-driven Methodology, Result-driven Solutions
+                  A Process You Can Trust, Results That Speak for Themselves
                 </h3>
 
                 <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
-                  iQlance Solutions is a trusted software and app development
-                  company focused on building long-term professional
-                  relationships with our clients. Our experienced development
-                  team believes that choosing the right engagement model is
-                  essential for delivering high-quality solutions, maintaining
-                  transparency, and achieving successful project outcomes.
+                  Devapp Solutions has built its reputation on more than just great technology; 
+                  it's the long-term relationships we build with clients that set us apart. Our experienced 
+                  development team knows that the right engagement model isn't a small detail, it's 
+                  the foundation for quality delivery, real transparency, and a project that actually succeeds.
                 </p>
 
                 <p className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
-                  As an experienced mobile app and software development company,
-                  iQlance offers three flexible engagement models to meet
-                  different project requirements, budgets, and business goals.
-                  These models are all dependent on the type of solution you are
-                  looking for. Get consulted today to select your best
-                  engagement model.
+                  As a seasoned mobile app and software development company, we offer three flexible 
+                  engagement models designed to fit different project needs, budgets, and business goals 
+                  because no two projects (or businesses) are exactly alike. Not sure which one fits you? 
+                  Get in touch with our consultants today and find the right model for your next project
                 </p>
 
                 <ul className="mt-6 sm:mt-8 space-y-4 sm:space-y-5 inline-block lg:block text-left">
@@ -265,22 +261,21 @@ export default function EngagementModelSection() {
 
               <div className="text-center lg:text-left">
                 <h2 className="text-2xl sm:text-3xl md:text-[38px] font-bold text-black">
-                  What is Your Engagement Model?
+                  What's the Right Engagement Model for You?
                 </h2>
 
                 <p className="mt-4 sm:mt-5 text-sm sm:text-base md:text-[17px] leading-7 sm:leading-8 text-gray-600">
-                  As your technology partner, iQlance offers three flexible
-                  engagement models designed to meet different project
-                  requirements and business needs. Whether you have a clearly
-                  defined project scope or are still refining your idea, our
-                  team can help you choose the right engagement model.
+                  As your technology partner, we offer three flexible engagement models built to 
+                  match different project scopes and business needs, whether you've got every detail 
+                  mapped out already or you're still shaping the idea.
+                   Either way, our team can help you find the model that fits.
                 </p>
 
                 <p className="mt-5 sm:mt-6 text-sm sm:text-base md:text-[17px] leading-7 sm:leading-8 text-gray-600">
-                  Our experts are here to guide you through the process. iQlance
-                  offers a free 30-minute consultation with an experienced
-                  expert to help you clarify your product vision, development
-                  requirements, and project goals. Get in touch with us today!
+                  Not sure where to start? That's exactly what we're here for. 
+                  Devapp offers a free 20-minute consultation with an experienced expert to 
+                  help you nail down your product vision, development requirements, and project goals.
+                   Get in touch with us today. Let's figure it out together.
                 </p>
               </div>
             </div>
@@ -530,14 +525,16 @@ export default function EngagementModelSection() {
         <section>
           <div className="w-full px-5">
             <h2 className="text-4xl font-bold text-center">
-              Trusted Custom Software, Web, and Mobile App Development Services
+              A Development Partner Businesses Actually Trust
             </h2>
             <p className="w-full mx-auto mt-4 text-center text-1xl leading-8 text-black">
-              iQlance Solutions is a trusted software, web, and mobile app
-              development company with extensive experience delivering secure,
-              scalable, and customized technology solutions. Our team combines
-              technical expertise with a structured development approach to help
-              businesses build and grow successful digital products.
+              Devapp Solutions has spent years earning its reputation as a go-to name 
+              in custom software, web, and mobile app development, and it shows in the work. 
+              We build secure, scalable technology solutions shaped around what each business
+               actually needs, not a generic template. Pair that with a team that knows both
+                the technical side and the strategy side, and you get more than just a vendor: 
+                you get a partner invested in helping your digital product actually succeed.
+
             </p>
 
             <section>
@@ -589,13 +586,14 @@ export default function EngagementModelSection() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-              Not Sure Which Engagement Model Is Right for Your Project? Talk to
-              Our Experts Today.
+              Not Sure Which Engagement Model Fits Your Project? Let's Talk It Through.
+
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Call us Today for a Free Consultation:
+            <p className="text-sm md:text-base text-black max-w-4xl mb-8 leading-relaxed">
+              Choosing the right engagement model can make or break a project, and that's exactly where our experts come in. Devapp Solutions has built its name as a trusted software, web, and mobile app development company, delivering secure, scalable, custom technology solutions for years. Our team brings together technical know-how and a structured development approach, helping businesses turn great ideas into digital products that actually succeed. Talk to us today, and let's find the model that works for you.
+
             </p>
 
             {/* Contact Info Box */}
@@ -707,15 +705,14 @@ export default function EngagementModelSection() {
 
             <div className="mt-20 text-center">
               <h3 className="text-4xl font-bold">
-                Have Something in Mind? Let's Talk
+                Have Something in Mind? Let's Talk.
               </h3>
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
-                Have a look at the services and development process of the
-                iQlance solution. See what process we follow for mobile app and
-                software development. Have a look at how we are praised by our
-                clients. Start a conversation to innovate your next great idea
-                into reality with us.
+                Explore what Devapp Solutions has to offer, from our full range of services 
+                to the step-by-step process we follow for mobile app and software development. 
+                Curious what it's like working with us? See what our clients have to say. 
+                Ready when you are: let's start the conversation and turn your next great idea into something real.
               </p>
             </div>
           </div>

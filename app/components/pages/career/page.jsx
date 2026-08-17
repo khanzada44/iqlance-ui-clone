@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { offices, benefitsCol1, benefitsCol2, benefitsCol3,faqs } from "../career/data";
+import { offices, benefitsCol1, benefitsCol2, benefitsCol3, faqs } from "../career/data";
 import {
   ChevronDown,
   ChevronUp,
@@ -35,26 +35,29 @@ export default function career() {
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl md:text-6xl font-bold text-center">
-              <span className="text-red-600">Career</span>
+              <span className="text-red-600">Careers at Devapp</span>
             </h2>
 
             {/* Description */}
             <div className="max-w-6xl mx-auto mt-8 space-y-6 text-center text-gray-700 text-base md:text-xl leading-8">
               <p>
-                We at iQlance solution innovate ideas into reality with accurate
-                road mapping. We are a leading app and software development
-                company in the Canada and USA market.
+                Some companies hire people to fill seats.
+                We're not one of them. At Devapp, we look for people who actually
+                want to build things that matter, and then we give them the room,
+                the tools, and the trust to do exactly that.
+
               </p>
 
               <p>
-                We are full stack developers delivering cutting edge
-                technological products across the globe. Innovating ideas to
-                reality with the agile process is our motto.
+                You won't get lost in the shuffle here. Every Devappr works on real projects, 
+                with real clients, solving real problems, not stuck running the same five tasks on repeat 
+                for two years straight. If you're the kind of person who gets restless without a challenge, 
+                this is probably where you belong
               </p>
 
               <p>
-                We are eager to work with you! Come and join us as a iQlancer to
-                clear your path of growth by stepping on the iQlance solutions.
+                We're growing, and we're looking for people who want to grow with us, 
+                not just clock in and out. If that sounds like you, let's talk.
               </p>
             </div>
 
@@ -104,7 +107,7 @@ export default function career() {
               </h3>
 
               <p className="max-w-5xl mx-auto mt-8 text-center text-gray-700 text-base md:text-lg leading-8">
-                iQlance solutions is a leading Software, Web, & Mobile App
+                Devapp solutions is a leading Software, Web, & Mobile App
                 Development Company with a vast area of experience in crafting
                 stunning and end-to-end encrypted technology solutions. We offer
                 excellent expertise of the industry followed by an exactly
@@ -150,31 +153,27 @@ export default function career() {
           <div className="max-w-7xl mx-auto px-4 mt-10">
             {/* About */}
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-3xl md:text-5xl font-bold">About iQlance</h2>
+              <h2 className="text-3xl md:text-5xl font-bold">About Devapp</h2>
 
               <div className="mt-8 space-y-7 text-gray-700 text-base md:text-lg leading-8">
                 <p>
-                  iQlance provides expert and interactive solutions for all our
-                  businesses. Over the years our team has evolved from a
-                  one-person venture to a multi-resource organization that can
-                  provide accurate and technological solutions to diverse
-                  businesses.
+                  Every big company was small once. Ours started with just one person and an idea worth chasing,
+                   and over the years, that idea grew into something bigger: a 
+                  full team of people who genuinely care about the work they do and the businesses they help build
                 </p>
 
                 <p>
-                  iQlance employs passionate, dedicated, talented,
-                  industry-leading professionals with innovative thinking. When
-                  you join our team, you're joining an exceptional culture of
-                  creativity, continuous learning, exciting projects and a
-                  full-time commitment to results.
+                  We haven't lost that original spark along the way. If anything, 
+                  it's what still drives us. Because behind every project we take on, 
+                  there's a person on the other end with a vision, sometimes a nervous one, 
+                  sometimes an ambitious one, and always one that deserves to be taken seriously. 
+                  That's the part of the job we never stop caring about.
+
                 </p>
 
                 <p>
-                  iQlance builds strong relations with employees. Our strength
-                  is our highly skilled and motivated workforce. We look forward
-                  to having employees with talent, dedication, inspiration and
-                  sense of adventure for taking themselves and iQlance to
-                  greater heights.
+                  The people who work here are why that's possible. They're curious, they're driven, and they show up wanting to solve real problems, not just clock hours. Join us, and you won't just be handed tasks, you'll be trusted with ideas worth building well, surrounded by people who'd rather learn something new than settle for good enough.
+                  We believe the people make the company, not the other way around. So we invest in our team the same way we invest in our clients' ideas: with genuine care, real support, and a shared belief that we're all building toward something bigger together.
                 </p>
               </div>
             </div>
@@ -183,17 +182,18 @@ export default function career() {
 
             <div className="max-w-6xl mx-auto mt-20 text-center">
               <h2 className="text-3xl md:text-5xl font-bold">
-                Why Join iQlance ?
+                Why Join Devapp?
               </h2>
 
               <p className="mt-8 text-gray-700 text-base md:text-lg leading-8 max-w-5xl mx-auto">
-                iQlance provides you a global platform to work with. We believe
-                in building your career, not just offering a job. We need people
-                with creative and innovative thinking and ideal approach who can
-                bring refreshing ideas and passion for working within a team. If
-                you are looking to grow your career more and want expertise in
-                your respective field, iQlance is the right choice for you. So
-                don't wait, apply now and grow with us!
+                If you're looking for just a job, this probably isn't it. But if you're looking
+                 for a place to actually build a career, somewhere your ideas matter and your
+                  growth isn't an afterthought, that's exactly what we're offering.
+                   We're looking for people who think differently, work well with others, 
+                   and want to be challenged, not just occupied. If that sounds like you, 
+                   don't wait on it. Apply today, and let's build something worth being proud of,
+                  together.
+
               </p>
             </div>
             <div className="mt-2 pt-2">
@@ -215,20 +215,25 @@ export default function career() {
             {/* Top Description */}
             <div className="max-w-4xl mx-auto space-y-4 text-gray-700 text-sm md:text-base leading-relaxed mb-12">
               <p>
-                iQlance is a place where with a unique combination of technical
-                innovation & creative flair clubbing, we work, we enjoy, we learn,
-                we innovate and create something new and exciting every day.
+                Walk into Devapp on any given day, and you'll feel it before anyone even explains it:
+                this is a place built on the mix of technical innovation and creative energy. 
+                We work hard, sure, but we also learn, laugh, and build something new almost every
+                single day, and that combination is what makes the culture here genuinely different.
+
               </p>
               <p>
-                We are free to think new ideas, share unique ideas and allowed to
-                implement new ideas, which make iQlance truly different place from
-                others. The joy of delivering the excellent work is reflected in
-                the physical environment, we operate in.
+                Ideas aren't just welcomed here, they're expected.
+                Every Devappr has the freedom to think differently,
+                speak up, and actually see their ideas come to life,
+                and that kind of creative freedom is rare to find.
+                You can feel it the moment you step into our workspace:
+                people who are proud of what they're building, and it shows.
+
               </p>
               <p>
-                iQlance has a tradition of facilitating continuous improvement
-                through feedback sessions, surveys, and informal groups formed and
-                managed by employees themselves.
+                We also believe growth never really stops, which is why feedback isn't an afterthought here. 
+                Through regular feedback sessions, employee surveys, and informal
+                 groups run by our own team members, we keep improving, together, from the inside out.
               </p>
             </div>
 
@@ -310,7 +315,7 @@ export default function career() {
             </div>
           </div>
         </section>
-                <section className="bg-red-50 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
+        <section className="bg-red-50 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
           <div className="max-w-4xl mx-auto text-center">
             <img
               src="/images/letdiscuss-icon.png.webp"
@@ -323,39 +328,39 @@ export default function career() {
             </h2>
 
             <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg">
-             Call us Today for a Free Consultation:
+              Call us Today for a Free Consultation:
             </p>
 
             <div className="mt-6 sm:mt-8 border border-red-400 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
               <span className="font-semibold flex gap-1 items-center">
-                 <div
-                    className="w-6 h-6 bg-red-600"
-                    style={{
-                      maskImage: "url(/icons/email-icon.svg)",
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      WebkitMaskImage: "url(/icons/email-icon.svg)",
-                      WebkitMaskRepeat: "no-repeat",
-                      WebkitMaskSize: "contain",
-                    }}
-                  ></div>
+                <div
+                  className="w-6 h-6 bg-red-600"
+                  style={{
+                    maskImage: "url(/icons/email-icon.svg)",
+                    maskRepeat: "no-repeat",
+                    maskSize: "contain",
+                    WebkitMaskImage: "url(/icons/email-icon.svg)",
+                    WebkitMaskRepeat: "no-repeat",
+                    WebkitMaskSize: "contain",
+                  }}
+                ></div>
                 info@iqlance.com
               </span>
 
               <span className="hidden md:block">or</span>
 
               <span className="flex flex-wrap gap-1 items-center justify-center">
-                  <div
-                    className="w-6 h-6 bg-red-600"
-                    style={{
-                      maskImage: "url(/icons/phone-icon.svg)",
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                      WebkitMaskRepeat: "no-repeat",
-                      WebkitMaskSize: "contain",
-                    }}
-                  ></div>
+                <div
+                  className="w-6 h-6 bg-red-600"
+                  style={{
+                    maskImage: "url(/icons/phone-icon.svg)",
+                    maskRepeat: "no-repeat",
+                    maskSize: "contain",
+                    WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                    WebkitMaskRepeat: "no-repeat",
+                    WebkitMaskSize: "contain",
+                  }}
+                ></div>
                 US :<strong> +1 469 793 9837</strong>, CA :
                 <strong> +1 647 637 9108</strong>
               </span>
@@ -375,63 +380,63 @@ export default function career() {
             </div>
           </div>
         </section>
-                <section className="py-20 bg-white">
-                  <div className="w-full px-5">
-                    <h2 className="text-4xl font-bold text-center">
-                      Frequently Asked Questions
-                    </h2>
-        
-                    <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
-                      Find answers to common questions about our app and software
-                      development services and learn how we can help turn your idea into
-                      a successful digital product.
-                    </p>
-        
-                    <div className="mt-12 space-y-4">
-                      {faqs.map((faq, index) => (
-                        <div
-                          key={index}
-                          className="border border-gray-200 rounded-lg overflow-hidden"
-                        >
-                          <button
-                            onClick={() => setOpen(open === index ? -1 : index)}
-                            className="w-full flex justify-between items-center px-5 py-5 text-left"
-                          >
-                            <span className="font-semibold text-lg">
-                              {faq.question}
-                            </span>
-        
-                            {open === index ? (
-                              <ChevronUp size={22} />
-                            ) : (
-                              <ChevronDown size={22} />
-                            )}
-                          </button>
-        
-                          {open === index && (
-                            <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
-                              {faq.answer}
-                            </div>
-                          )}
-                        </div>
-                      ))}
+        <section className="py-20 bg-white">
+          <div className="w-full px-5">
+            <h2 className="text-4xl font-bold text-center">
+              Frequently Asked Questions
+            </h2>
+
+            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+              Find answers to common questions about our app and software
+              development services and learn how we can help turn your idea into
+              a successful digital product.
+            </p>
+
+            <div className="mt-12 space-y-4">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpen(open === index ? -1 : index)}
+                    className="w-full flex justify-between items-center px-5 py-5 text-left"
+                  >
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
+
+                    {open === index ? (
+                      <ChevronUp size={22} />
+                    ) : (
+                      <ChevronDown size={22} />
+                    )}
+                  </button>
+
+                  {open === index && (
+                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      {faq.answer}
                     </div>
-        
-                    <div className="mt-20 text-center">
-                      <h3 className="text-4xl font-bold">
-                        Have Something in Mind? Let's Talk
-                      </h3>
-        
-                      <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
-                        Have a look at the services and development process of the
-                        iQlance solution. See what process we follow for mobile app and
-                        software development. Have a look at how we are praised by our
-                        clients. Start a conversation to innovate your next great idea
-                        into reality with us.
-                      </p>
-                    </div>
-                  </div>
-                </section>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-20 text-center">
+              <h3 className="text-4xl font-bold">
+                Have Something in Mind? Let's Talk
+              </h3>
+
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+                Have a look at the services and development process of the
+                devapp solution. See what process we follow for mobile app and
+                software development. Have a look at how we are praised by our
+                clients. Start a conversation to innovate your next great idea
+                into reality with us.
+              </p>
+            </div>
+          </div>
+        </section>
         <div className="mb-2.5 pb-2">
           <ContactForm />
         </div>
