@@ -449,9 +449,6 @@ export const MobileNav = ({
         </div>
       </div>
 
-      {/* ==========================================
-          Service Items
-      ========================================== */}
 
       <div
         className={`fixed left-0 top-16 z-60 h-[calc(100vh-4rem)] w-full max-w-sm bg-white shadow-2xl transition-transform duration-300 ease-in-out xl:hidden ${
@@ -492,7 +489,7 @@ export const MobileNav = ({
                   <Link
                     key={`${selectedCategory.id}-${item.href}`}
                     href={item.href}
-                    className={`flex items-center gap-3 px-4 py-3 text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-blue-600 ${
+                    className={`flex items-center gap-3 px-4 py-3 text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-red-600 ${
                       activeCategory
                         ? "translate-x-0 opacity-100"
                         : "-translate-x-8 opacity-0"

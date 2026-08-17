@@ -76,10 +76,6 @@ export default function Home() {
   return (
     <>
       <div className="w-[95%] sm:w-[90%] lg:w-[80%] mx-auto">
-        {/* =========================================================
-      HERO SECTION
-  ========================================================= */}
-
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full">
           {/* LEFT CONTENT */}
           <div className="w-full lg:w-1/2 px-2 sm:px-4 py-6 sm:py-8 font-sans">
@@ -87,10 +83,11 @@ export default function Home() {
               Let's turn your ideas into digital products
             </p>
 
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-red-600 mb-3 leading-snug">
-              Leading Mobile App and <br className="hidden sm:block" />
-              <span className="text-red-700">Software Development</span> Company
-            </h1>
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+            Leading Mobile App
+            <br className="hidden sm:block" />
+            and Software Development Company
+          </h1>
 
             <p className="text-black text-sm sm:text-base md:text-lg">
               As a top software and mobile app development company in Canada and
@@ -370,12 +367,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* =========================================================
-      SWIPER 1
-  ========================================================= */}
-
-        <div className="w-full mt-10 mb-10">
+        <div className="mt-10 mb-10 w-full">
           <Swiper
+            className="portfolio-swiper"
             modules={[Pagination, Autoplay]}
             pagination={{
               clickable: true,
@@ -387,18 +381,18 @@ export default function Home() {
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start px-1">
+                <div className="grid grid-cols-1 items-start gap-8 px-1 lg:grid-cols-2 lg:gap-12">
                   {/* LEFT */}
                   <div>
                     <h2 className="mt-8 text-2xl font-bold leading-snug">
                       {slide.title}
                     </h2>
 
-                    <p className="text-black leading-6 text-xs sm:text-sm mt-3">
+                    <p className="mt-3 text-xs leading-6 text-black sm:text-sm">
                       {slide.description1}
                     </p>
 
-                    <p className="text-black leading-[revert] sm:leading-8 mb-6 sm:mb-10 mt-3 text-xs sm:text-sm">
+                    <p className="mt-3 mb-6 text-xs leading-6 text-black sm:mb-10 sm:text-sm sm:leading-8">
                       {slide.description2}
                     </p>
 
@@ -406,13 +400,13 @@ export default function Home() {
                       {slide.services.map((service, i) => (
                         <div
                           key={i}
-                          className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-1 md:gap-8 m-0"
+                          className="grid grid-cols-1 gap-1 md:grid-cols-[30%_70%] md:gap-8 m-0"
                         >
-                          <span className="text-red-700 text-1xl font-extrabold">
+                          <span className="text-xl font-extrabold text-red-700">
                             {service.title}
                           </span>
 
-                          <ul className="list-disc pl-5 text-sm space-y-2">
+                          <ul className="list-disc space-y-2 pl-5 text-sm">
                             {service.items.map((item, j) => (
                               <li key={j}>{item}</li>
                             ))}
@@ -427,29 +421,27 @@ export default function Home() {
                     <img
                       src={slide.image}
                       alt={slide.title}
-                      className="w-full max-w-xs sm:max-w-sm md:max-w-md"
+                      className="w-full max-w-xs object-contain sm:max-w-sm md:max-w-md"
                     />
 
-                    <div className="mt-6 sm:mt-8 w-full text-center lg:text-left">
-                      <h3 className="text-lg sm:text-xl font-bold text-red-700 leading-snug">
+                    <div className="mt-6 w-full text-center sm:mt-8 lg:text-left">
+                      <h3 className="text-lg font-bold leading-snug text-red-700 sm:text-xl">
                         {slide.consultation}
                       </h3>
 
-                      <p className="text-gray-600 mt-2 text-sm sm:text-base">
+                      <p className="mt-2 text-sm text-gray-600 sm:text-base">
                         (We sign NDA)
                       </p>
 
                       <Link
                         href="/lets-talk"
-                        className="inline-block w-full sm:w-auto"
+                        className="group mt-2 flex w-full items-center justify-center gap-3 bg-red-700 px-8 py-4 font-semibold text-white transition hover:bg-red-600 sm:w-fit"
                       >
-                        <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer mt-2">
-                          Let's Talk
-                          <ArrowRight
-                            size={16}
-                            className="transition-transform duration-300 group-hover:translate-x-1"
-                          />
-                        </button>
+                        Let's Talk
+                        <ArrowRight
+                          size={16}
+                          className="transition-transform duration-300 group-hover:translate-x-1"
+                        />
                       </Link>
                     </div>
                   </div>
@@ -457,11 +449,17 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+          <style>{`
+    .portfolio-swiper .swiper-pagination-bullet {
+      background-color: #cbd5e1 !important;
+      opacity: 1 !important;
+    }
 
-        {/* =========================================================
-      TRAVIS SECTION
-  ========================================================= */}
+    .portfolio-swiper .swiper-pagination-bullet-active {
+      background-color: #dc2626 !important;
+    }
+  `}</style>
+        </div>
 
         <div className="w-full px-3 sm:px-5 py-10 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
@@ -572,10 +570,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* =========================================================
-      SERVICES GRID
-  ========================================================= */}
-
         <section className="w-full px-3 sm:px-5 py-10 sm:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {services.map((service, index) => (
@@ -601,13 +595,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* =========================================================
-      SWIPER 2 - CASE STUDIES
-  ========================================================= */}
-
         <div className="w-full">
           <Swiper
             modules={[Pagination, Autoplay]}
+            className="portfolio-swiper"
             pagination={{
               clickable: true,
             }}
@@ -617,69 +608,70 @@ export default function Home() {
             loop={true}
           >
             {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index} className="h-auto!">
-                <div className="bg-red-100 px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between">
-                  <div>
-                    <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-                      {/* {slide.heading} */}
-                    </h2>
+              <SwiperSlide key={index}>
+                <div className="bg-red-100 px-4 py-8 sm:px-6 sm:py-10 md:px-12">
+                  <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2 lg:gap-10">
+                    {/* LEFT */}
+                    <div className="flex flex-col">
+                      <h2 className="mb-6 text-center text-xl font-bold sm:mb-10 sm:text-2xl md:text-4xl">
+                        {/* {slide.heading} */}
+                      </h2>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                      {/* LEFT */}
-                      <div>
-                        <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                          {slide.title}
-                        </h3>
+                      <h3 className="mb-4 text-xl font-bold sm:mb-6 sm:text-2xl md:text-4xl">
+                        {slide.title}
+                      </h3>
 
-                        <p className="text-black leading-8 text-1xl mb-10">
-                          {slide.description}
-                        </p>
+                      <p className="mb-8 text-lg leading-8 text-black sm:mb-10 sm:text-xl">
+                        {slide.description}
+                      </p>
 
-                        <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                          {slide.features.map((feature, i) => (
-                            <li key={i} className="flex gap-2">
-                              <ChevronRight
-                                size={14}
-                                className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
-                              />
+                      <ul className="mb-6 space-y-3 text-sm sm:mb-8 sm:space-y-4 sm:text-base">
+                        {slide.features.map((feature, i) => (
+                          <li key={i} className="flex gap-2">
+                            <ChevronRight
+                              size={14}
+                              className="mt-1 h-4 w-4 shrink-0 text-black md:h-5 md:w-5"
+                            />
 
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
 
-                        {/* TECHNOLOGIES */}
-                        <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                          {slide.technologies.map((tech, i) => (
-                            <div key={i} className="text-center">
-                              <img
-                                src={tech.icon}
-                                alt={tech.name}
-                                className="w-14 h-10 sm:w-8 sm:h-8 mx-auto"
-                              />
+                      {/* TECHNOLOGIES */}
+                      <div className="mb-6 flex flex-wrap gap-6 sm:mb-8 sm:gap-8">
+                        {slide.technologies.map((tech, i) => (
+                          <div key={i} className="text-center">
+                            <img
+                              src={tech.icon}
+                              alt={tech.name}
+                              className="mx-auto h-8 w-8 object-contain sm:h-9 sm:w-9"
+                            />
 
-                              <p className="text-xs sm:text-sm mt-2">
-                                {tech.name}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-
-                        <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                          View Case Study
-                          <ArrowRight
-                            size={18}
-                            className="transition-transform duration-300 group-hover:translate-x-1"
-                          />
-                        </button>
+                            <p className="mt-2 text-xs sm:text-sm">
+                              {tech.name}
+                            </p>
+                          </div>
+                        ))}
                       </div>
 
-                      {/* RIGHT */}
-                      <div className="w-full h-full">
+                      {/* BUTTON */}
+                      <button className="group flex w-full cursor-pointer items-center justify-center gap-3 bg-red-700 px-8 py-4 font-semibold text-white transition hover:bg-red-600 sm:w-fit">
+                        View Case Study
+                        <ArrowRight
+                          size={18}
+                          className="transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                      </button>
+                    </div>
+
+                    {/* RIGHT IMAGE */}
+                    <div className="w-full">
+                      <div className="h-70 w-full sm:h-95 md:h-112.5 lg:h-full lg:min-h-125">
                         <img
                           src={slide.image}
                           alt={slide.title}
-                          className="object-cover w-full h-full"
+                          className="block h-full w-full object-cover"
                         />
                       </div>
                     </div>
@@ -688,13 +680,21 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {/* SWIPER PAGINATION */}
+          <style>{`
+    .portfolio-swiper .swiper-pagination-bullet {
+      background-color: #cbd5e1 !important;
+      opacity: 1 !important;
+    }
+
+    .portfolio-swiper .swiper-pagination-bullet-active {
+      background-color: #dc2626 !important;
+    }
+  `}</style>
         </div>
 
-        {/* =========================================================
-      CHECK PRODUCT SECTION
-  ========================================================= */}
-
-        <div className="w-full bg-red-100 px-4 sm:px-6 md:px-12 py-8 sm:py-10 mt-10 mb-10">
+        <div className="w-full bg-red-50 px-4 sm:px-6 md:px-12 py-8 sm:py-10 mt-10 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 sm:gap-8 text-center lg:text-left">
             <div>
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight">
@@ -725,40 +725,34 @@ export default function Home() {
           </div>
         </div>
 
-        {/* =========================================================
-      AI HEADING
-  ========================================================= */}
-
         <div className="w-full text-center pt-2 mt-10 mb-10">
           <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight px-2">
             Driving Innovation with AI & Emerging Tech
           </h1>
         </div>
 
-        {/* =========================================================
-      AI SECTION
-  ========================================================= */}
-
-        <div className="w-full mt-10 mb-15 pt-2">
-          <div className="bg-red-100">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div>
+        <div className="mt-10 mb-15 w-full pt-2">
+          <div className="overflow-hidden bg-red-50">
+            <div className="grid grid-cols-1 items-stretch lg:grid-cols-2">
+              {/* IMAGE */}
+              <div className="h-full min-h-75 lg:min-h-125">
                 <img
                   src="/images/AI_Development_Company-2.png"
-                  alt="Travis"
-                  className="object-cover w-full h-auto"
+                  alt="AI Development Company"
+                  className="block h-full w-full object-cover"
                 />
               </div>
 
-              <div className="flex items-center p-6 sm:p-8">
+              {/* CONTENT */}
+              <div className="flex items-center p-6 sm:p-8 lg:p-10">
                 <div>
-                  <p className="text-base sm:text-lg md:text-xl leading-relaxed text-black">
+                  <p className="text-base leading-relaxed text-black sm:text-lg md:text-xl">
                     We help businesses accelerate digital transformation by
                     building intelligent, secure, and future-ready solutions
                     powered by next-generation technologies.
                   </p>
 
-                  <p className="text-gray-700 text-sm leading-7 sm:leading-9 mt-4">
+                  <p className="mt-4 text-sm leading-7 text-gray-700 sm:leading-9">
                     From artificial intelligence (AI), generative AI (GenAI),
                     agentic AI, and machine learning (ML) to cloud computing,
                     data science & analytics, and cybersecurity, our experts
@@ -766,7 +760,7 @@ export default function Home() {
                     challenges.
                   </p>
 
-                  <p className="text-gray-700 text-sm leading-7 sm:leading-9 mt-2">
+                  <p className="mt-2 text-sm leading-7 text-gray-700 sm:leading-9">
                     Backed by more than a decade of industry experience, our
                     multidisciplinary team of consultants, designers, engineers,
                     and technology specialists turns bold ideas into impactful
@@ -794,12 +788,12 @@ export default function Home() {
               We are team of talented, experienced, and certified designers and
               developers. Let us build something extraordinary.
             </p>
-            <div className=" flex justify-center">
-              <div className="w-[70%] mt-6 sm:mt-8 border border-red-300 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg ">
+            <div className="flex justify-center">
+              <div className="w-full max-w-165 md:w-[80%] mt-6 sm:mt-8 border border-red-300 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
                 {/* EMAIL */}
                 <span className="font-semibold flex gap-1 items-center">
                   <div
-                    className="w-6 h-6 bg-red-600"
+                    className="w-6 h-6 bg-red-600 shrink-0"
                     style={{
                       maskImage: "url(/icons/email-icon.svg)",
                       maskRepeat: "no-repeat",
@@ -812,12 +806,12 @@ export default function Home() {
                   info@iqlance.com
                 </span>
 
-                <span className="hidden md:block">or</span>
+                <span className="block">or</span>
 
                 {/* PHONE */}
                 <span className="flex flex-wrap gap-1 items-center justify-center">
                   <div
-                    className="w-6 h-6 bg-red-600"
+                    className="w-6 h-6 bg-red-600 shrink-0"
                     style={{
                       maskImage: "url(/icons/phone-icon.svg)",
                       maskRepeat: "no-repeat",
@@ -833,7 +827,6 @@ export default function Home() {
               </div>
             </div>
 
-
             <div className="flex justify-center">
               <Link
                 href="/lets-talk"
@@ -848,10 +841,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* =========================================================
-      HIRE DEVELOPERS
-  ========================================================= */}
 
         <div className="max-w-5xl mx-auto text-center mt-10 sm:mt-14 px-3 mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
@@ -1082,11 +1071,11 @@ export default function Home() {
         </section>
         {/* INDUSTRIES */}
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-3xl sm:text-3xl md:text-3xl font-extrabold text-gray-900">
               Why Businesses Trust Us
             </h1>
-            <p className="text-1xl text-gray-900">
+            <p className="text-xl text-gray-900">
               We help businesses of all sizes turn ideas into high-performance
               digital solutions. Our developers use cutting-edge technologies to
               deliver measurable results, on time and within budget.
@@ -1099,7 +1088,7 @@ export default function Home() {
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+                className="relative w-full sm:w-70 lg:w-45 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
                 {/* Floating Icon */}
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
@@ -1212,7 +1201,7 @@ export default function Home() {
                 href="/lets-talk"
                 className="group mt-6 sm:mt-8 bg-red-700 text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-red-600 transition w-full sm:w-auto"
               >
-                Let’s Talk
+                Let's Talk
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 group-hover:translate-x-2"

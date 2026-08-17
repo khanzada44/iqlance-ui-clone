@@ -187,7 +187,7 @@ export const getServicesData = async (): Promise<ServicesData> => {
       // Services
       items: (category.services || []).map((service: any) => ({
         name: service.title,
-        href: `/services/${service.slug}`,
+        href: `/services-details/${service.slug}`,
 
         // Service icon
         icon: service.icon,

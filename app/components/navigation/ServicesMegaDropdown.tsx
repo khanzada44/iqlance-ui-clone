@@ -21,8 +21,9 @@ export const ServicesMegaDropdown = ({
   onMouseLeave,
 }: ServicesMegaDropdownProps) => {
   return (
+<>
     <div
-      className="absolute left-0 right-0 top-full bg-white shadow-xl xl:block"
+      className="absolute left-0 right-0 top-[calc(100%-10px)] bg-white shadow-xl xl:block"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -33,9 +34,6 @@ export const ServicesMegaDropdown = ({
         </h2>
 
         <div className="flex gap-12">
-          {/* ================================
-              CATEGORIES
-          ================================= */}
           <div className="w-64 shrink-0">
             <div className="space-y-1">
               {servicesData.categories.map((category) => {
@@ -74,7 +72,7 @@ export const ServicesMegaDropdown = ({
                   {selectedCategory.items.map((item) => (
                     <Link
                       key={item.href}
-                      href={item.href}
+                      href={`${item.href}`}
                       className="group flex items-center gap-3 border-b border-gray-100 px-3 py-3 text-sm text-gray-700 transition-colors hover:bg-red-50 hover:text-red-600"
                     >
                       {/* Service Icon */}
@@ -107,5 +105,6 @@ export const ServicesMegaDropdown = ({
         </div>
       </div>
     </div>
+</>
   );
 };

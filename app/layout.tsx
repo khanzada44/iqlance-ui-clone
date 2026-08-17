@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "../app/components/navigation/Navbar";
-import Footer from "../app/components/footer/Footer";
-import FloatingTalkToExpert from '../app/components/pages/FloatingTalkToExpert/page';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,6 +8,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
 };
+
 export default function RootLayout({
   children,
 }: {
@@ -18,12 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        <main>{children}</main>
-        <FloatingTalkToExpert />
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
