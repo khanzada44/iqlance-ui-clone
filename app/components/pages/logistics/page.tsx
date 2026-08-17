@@ -194,15 +194,12 @@ export default function Logistic() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
-                Transportation and <br className="hidden md:inline" />
-                <p className="text-red-700">
-                  Logistics App <br className="hidden md:inline" />
-                </p>
-                <p className="text-red-800">
-                  Development <br className="hidden md:inline" />
-                </p>
-                <p className="text-red-900">Company in USA</p>
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                Transportation and
+                <br className="hidden sm:block" />
+                Logistics App Development
+                <br className="hidden sm:block"/>
+                Company in USA
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
@@ -829,7 +826,7 @@ export default function Logistic() {
             ))}
           </div>
         </section>
-                <section className="py-10 bg-white">
+        <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
             <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
@@ -844,8 +841,9 @@ export default function Logistic() {
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
-                  Partner with our logistics app development company to streamline
-                  fleet management, delivery tracking, and supply chain operations.
+                Partner with our logistics app development company to streamline
+                fleet management, delivery tracking, and supply chain
+                operations.
               </p>
 
               {/* Contact Box */}
@@ -1005,7 +1003,7 @@ export default function Logistic() {
             </p>
           </div>
         </section>
-<section className="py-10">
+        <section className="py-10">
           {/* Custom style for red pagination dots */}
           <style>{`
             .portfolio-swiper .swiper-pagination-bullet {
@@ -1175,7 +1173,7 @@ export default function Logistic() {
             </div>
           </div>
         </section>
-                      <section className="py-10 bg-white">
+        <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
             <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
@@ -1186,11 +1184,14 @@ export default function Logistic() {
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-                Ready to Transform Your Transportation and Logistics Mobile Apps Development
+                Ready to Transform Your Transportation and Logistics Mobile Apps
+                Development
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
-                Partner with our logistics app development company to build custom logistics mobile applications that streamline operations and drive growth.
+                Partner with our logistics app development company to build
+                custom logistics mobile applications that streamline operations
+                and drive growth.
               </p>
 
               {/* Contact Box */}

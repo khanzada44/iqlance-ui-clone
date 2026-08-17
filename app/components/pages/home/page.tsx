@@ -62,7 +62,6 @@ const cardVariants = {
 
 const redCards = [1, 3, 5, 7];
 
-
 export default function Home() {
   const icons = [
     "/icons/linkedin-icn.svg",
@@ -92,77 +91,88 @@ export default function Home() {
           {/* LEFT CONTENT */}
           <div className="w-full lg:w-1/2 px-2 sm:px-4 py-6 sm:py-8 font-sans">
             <p className="text-black text-base sm:text-lg font-medium mb-1">
-              Let's turn your ideas into digital products
+              Got a Big Idea? Let's Build It Into Something Real.
             </p>
 
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
-            Leading Mobile App
-            <br className="hidden sm:block" />
-            and Software Development Company
-          </h1>
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+              Custom Software, Web & Mobile App Development.
+              <br className="hidden sm:block" />
+              Built to Grow With You!
+            </h1>
 
             <p className="text-black text-sm sm:text-base md:text-lg">
-              As a top software and mobile app development company in Canada and
-              the USA, we build solutions that help optimize your business
-              processes.
+              Every great business starts with an idea. We help you turn yours
+              into a digital product that actually works. Our team of
+              developers, designers, and tech strategists doesn't just write
+              code. We build secure, high-performing solutions shaped around
+              your goals. Guiding you from that first conversation all the way
+              to launch, and staying with you long after.
             </p>
 
             <p className="text-black text-sm sm:text-base md:text-lg mt-4">
-              From startups to enterprises, we have delivered more than 1,500
-              projects across the globe giving us deep insight into the
-              complexities that arise and deliver results that meet your
-              expectations.
+              Here's Why Businesses Trust Us With Their Next Big Move:
             </p>
 
             {/* FEATURES */}
             <div>
               <div className="flex items-center gap-2 pt-4 md:pt-6">
                 <ChevronRight
-                  size={14}
+                  size={12}
                   className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
                 />
 
-                <p className="text-black text-sm sm:text-base md:text-lg font-medium leading-relaxed">
-                  Industry Specific Dedicated Developers
+                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
+                  Solutions built around what your business actually needs
                 </p>
               </div>
 
               <div className="flex items-center gap-2 pt-4 md:pt-6">
                 <ChevronRight
-                  size={14}
+                  size={12}
                   className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
                 />
 
-                <p className="text-black text-sm sm:text-base md:text-lg font-medium leading-relaxed">
-                  Customized App with Affordable Price
+                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
+                  A team that knows your industry, not just the tech stack
                 </p>
               </div>
 
               <div className="flex items-center gap-2 pt-4 md:pt-6">
                 <ChevronRight
-                  size={14}
+                  size={12}
                   className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
                 />
 
-                <p className="text-black text-sm sm:text-base md:text-lg font-medium leading-relaxed">
-                  Provide Risk-Free Trial for 1 Week
+                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
+                  Engagement models that flex with your project, not against it
                 </p>
               </div>
 
               <div className="flex items-center gap-2 pt-4 md:pt-6">
                 <ChevronRight
-                  size={14}
+                  size={12}
                   className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
                 />
 
-                <p className="text-black text-sm sm:text-base md:text-lg font-medium leading-relaxed">
-                  Flexible Engagement Models
+                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
+                  A process you can actually see which is clear, honest, always
+                  supported
+                </p>
+              </div>
+              <div className="flex items-center gap-2 pt-4 md:pt-6">
+                <ChevronRight
+                  size={12}
+                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
+                />
+
+                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
+                  Technology designed to scale as fast as you do
                 </p>
               </div>
 
               <div>
                 {/* Links List - Ek line mein rakhne ke liye whitespace-nowrap aur items-center */}
-                <div className="pt-6 px-1 sm:px-4">
+                {/* <div className="pt-6 px-1 sm:px-4">
                   <ul className="flex flex-wrap sm:flex-nowrap items-center gap-4 sm:gap-6 font-bold">
                     <li>
                       <Link
@@ -189,13 +199,13 @@ export default function Home() {
                       </Link>
                     </li>
                   </ul>
-                </div>
+                </div> */}
 
                 {/* Buttons Section */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-6">
                   <Link href="/contact-us" className="w-full sm:w-auto">
                     <button className="group w-full bg-red-700 hover:bg-red-600 text-white px-6 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer whitespace-nowrap">
-                      Schedule Your Free Consultation
+                      Book Your Free Consultation
                       <ArrowRight
                         size={18}
                         className="transition-transform duration-300 group-hover:translate-x-1 shrink-0"
@@ -217,40 +227,38 @@ export default function Home() {
             </div>
           </div>
 
-
-<div className="w-full lg:w-1/2 flex px-4">
-  <section className="w-full py-10 px-0">
-    <div className="w-full">
-
-      <motion.div
-        className="
+          <div className="w-full lg:w-1/2 flex px-4">
+            <section className="w-full py-10 px-0">
+              <div className="w-full">
+                <motion.div
+                  className="
           grid
           grid-cols-3
           gap-0
           w-full
           overflow-hidden
         "
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {img_services.map((item, index) => {
-          const isRed = redCards.includes(index);
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {img_services.map((item, index) => {
+                    const isRed = redCards.includes(index);
 
-          return (
-            <motion.div
-              key={item.id}
-              custom={index}
-              variants={cardVariants}
-              whileHover={{
-                scale: 1.04,
-                zIndex: 20,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "easeOut",
-              }}
-              className={`
+                    return (
+                      <motion.div
+                        key={item.id}
+                        custom={index}
+                        variants={cardVariants}
+                        whileHover={{
+                          scale: 1.04,
+                          zIndex: 20,
+                        }}
+                        transition={{
+                          duration: 0.3,
+                          ease: "easeOut",
+                        }}
+                        className={`
                 group
                 relative
                 aspect-square
@@ -260,11 +268,11 @@ export default function Home() {
                 justify-center
                 p-0
                 m-0
-                ${isRed ? "bg-gradient-to-b from-white" : "bg-white"}
+                ${isRed ? "bg-linear-to-b from-white" : "bg-white"}
               `}
-            >
-              <motion.div
-                className="
+                      >
+                        <motion.div
+                          className="
                   relative
                   w-full
                   h-full
@@ -272,32 +280,30 @@ export default function Home() {
                   items-center
                   justify-center
                 "
-                whileHover={{
-                  scale: 1.08,
-                }}
-                transition={{
-                  duration: 0.35,
-                  ease: "easeOut",
-                }}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 768px) 33vw, 16vw"
-                  className="object-cover"
-                />
-              </motion.div>
-            </motion.div>
-          );
-        })}
-      </motion.div>
-
-    </div>
-  </section>
-</div>
+                          whileHover={{
+                            scale: 1.08,
+                          }}
+                          transition={{
+                            duration: 0.35,
+                            ease: "easeOut",
+                          }}
+                        >
+                          <Image
+                            src={item.src}
+                            alt={item.alt}
+                            fill
+                            sizes="(max-width: 768px) 33vw, 16vw"
+                            className="object-cover"
+                          />
+                        </motion.div>
+                      </motion.div>
+                    );
+                  })}
+                </motion.div>
+              </div>
+            </section>
+          </div>
         </div>
-
 
         <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 mt-10 mb-10">
           {/* CLIENT RETENTION */}
@@ -402,9 +408,9 @@ export default function Home() {
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className="grid grid-cols-1 items-start gap-8 px-1 lg:grid-cols-2 lg:gap-12">
+                <div className="grid grid-cols-1 items-start gap-6 px-1 lg:grid-cols-[55%_45%] lg:gap-8">
                   {/* LEFT */}
-                  <div>
+                  <div className="w-full">
                     <h2 className="mt-8 text-2xl font-bold leading-snug">
                       {slide.title}
                     </h2>
@@ -413,7 +419,7 @@ export default function Home() {
                       {slide.description1}
                     </p>
 
-                    <p className="mt-3 mb-6 text-xs leading-6 text-black sm:mb-10 sm:text-sm sm:leading-8">
+                    <p className="mb-6 mt-3 text-xs leading-6 text-black sm:mb-10 sm:text-sm sm:leading-8">
                       {slide.description2}
                     </p>
 
@@ -421,12 +427,14 @@ export default function Home() {
                       {slide.services.map((service, i) => (
                         <div
                           key={i}
-                          className="grid grid-cols-1 gap-1 md:grid-cols-[30%_70%] md:gap-8 m-0"
+                          className="m-0 grid grid-cols-1 gap-2 md:grid-cols-[50%_50%]"
                         >
-                          <span className="text-xl font-extrabold text-red-700">
+                          {/* SERVICE TITLE */}
+                          <span className="text-sm font-extrabold text-red-700">
                             {service.title}
                           </span>
 
+                          {/* SERVICE ITEMS */}
                           <ul className="list-disc space-y-2 pl-5 text-sm">
                             {service.items.map((item, j) => (
                               <li key={j}>{item}</li>
@@ -438,32 +446,34 @@ export default function Home() {
                   </div>
 
                   {/* RIGHT */}
-                  <div className="flex flex-col items-center lg:items-start">
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="w-full max-w-xs object-contain sm:max-w-sm md:max-w-md"
-                    />
+                  <div className="w-full max-w-[85%] lg:ml-0">
+                    <div className="flex flex-col items-center lg:items-start">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full max-w-65 object-contain sm:max-w-75"
+                      />
 
-                    <div className="mt-6 w-full text-center sm:mt-8 lg:text-left">
-                      <h3 className="text-lg font-bold leading-snug text-red-700 sm:text-xl">
-                        {slide.consultation}
-                      </h3>
+                      <div className="mt-6 w-full text-center sm:mt-8 lg:text-left">
+                        <h3 className="text-lg font-bold leading-snug text-red-700 sm:text-xl">
+                          {slide.consultation}
+                        </h3>
 
-                      <p className="mt-2 text-sm text-gray-600 sm:text-base">
-                        (We sign NDA)
-                      </p>
+                        <p className="mt-2 text-sm text-gray-600 sm:text-base">
+                          (We sign NDA)
+                        </p>
 
-                      <Link
-                        href="/lets-talk"
-                        className="group mt-2 flex w-full items-center justify-center gap-3 bg-red-700 px-8 py-4 font-semibold text-white transition hover:bg-red-600 sm:w-fit"
-                      >
-                        Let's Talk
-                        <ArrowRight
-                          size={16}
-                          className="transition-transform duration-300 group-hover:translate-x-1"
-                        />
-                      </Link>
+                        <Link
+                          href="/lets-talk"
+                          className="group mt-2 flex w-full items-center justify-center gap-3 bg-red-700 px-8 py-4 font-semibold text-white transition hover:bg-red-600 sm:w-fit"
+                        >
+                          Get a Free Project Consultation
+                          <ArrowRight
+                            size={16}
+                            className="transition-transform duration-300 group-hover:translate-x-1"
+                          />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -496,8 +506,7 @@ export default function Home() {
             {/* CONTENT */}
             <div className="text-center lg:text-left">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-red-600 leading-tight">
-                Book a Free Strategy Call with Our Local US-based IT Project
-                Specialist
+                Talk to a US-Based Technology Specialist About Your Project
               </h2>
 
               <h3 className="mt-5 sm:mt-6 text-2xl sm:text-3xl font-bold">
@@ -509,8 +518,8 @@ export default function Home() {
               </p>
 
               <p className="mt-5 sm:mt-6 text-gray-700 leading-7 sm:leading-8 text-base sm:text-lg">
-                Want a custom app for your business to get 2X ROI? Share your
-                vision and technical requirements with our specialist.
+                Have an App or Software Idea? Let's Figure Out the Smartest Way to Build It. Book a free strategy call with our US-based IT specialist to walk through your idea, technical requirements, budget expectations, and the smartest path to bring your product to market.
+
               </p>
 
               <div className="mt-6 sm:mt-8 flex justify-center lg:justify-start">
@@ -535,7 +544,7 @@ export default function Home() {
                   href="/lets-talk"
                   className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer"
                 >
-                  Schedule a Free Consultation
+                   Book Your Free Strategy Call
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -577,16 +586,12 @@ export default function Home() {
           {/* SERVICES INTRO */}
           <div className="w-full mt-8 sm:mt-5 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-              Services We Offer
+              Our Full Range of Development Services
             </h2>
 
             <p className="mt-4 sm:mt-6 w-full text-sm sm:text-base md:text-lg text-black leading-5 sm:leading-9">
-              From custom software and mobile app development to AI solutions,
-              cloud consulting, and IT staff augmentation, iQlance delivers
-              technology services that help businesses innovate, improve
-              efficiency, and speed up growth. Our experts build secure,
-              scalable, and future-ready digital solutions customized to your
-              business goals and industry needs.
+              Great technology doesn't happen by accident. It's built by people who know exactly what they're doing. Whether you're launching a brand-new product, giving an outdated platform a fresh lease on life, or simply need extra hands on deck to scale your tech team, we bring the engineering muscle to push your project across the finish line.
+
             </p>
           </div>
         </div>

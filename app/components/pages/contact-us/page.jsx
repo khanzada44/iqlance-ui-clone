@@ -107,9 +107,10 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Left Side Info */}
               <div>
-                <h2 className="text-4xl font-bold text-red-600">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
                   Contact Us
-                </h2>
+                  <br className="hidden sm:block" />
+                </h1>
                 <p className="mt-6 text-gray-700">
                   Share Your Project Details on{" "}
                   <span className="font-semibold">info@iqlance.com</span>
@@ -147,16 +148,16 @@ export default function ContactSection() {
                     <span>Action plan to kick start your project</span>
                   </li>
                 </ul>
-                 <Link
-                    href="/portfolio"
-                    className=" border border-red-300  group inline-flex items-center gap-3 bg-red-50  px-8 py-4 text-lg font-semibold text-black transition hover:bg-red-100 mt-10"
-                  >
-                    See Our Work
-                    <ArrowRight
-                      size={22}
-                      className="transition-transform duration-300 group-hover:translate-x-1.5"
-                    />
-                  </Link>
+                <Link
+                  href="/portfolio"
+                  className=" border border-red-300  group inline-flex items-center gap-3 bg-gray-50  px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-100 mt-10"
+                >
+                  See Our Work
+                  <ArrowRight
+                    size={22}
+                    className="transition-transform duration-300 group-hover:translate-x-1.5"
+                  />
+                </Link>
               </div>
 
               {/* Right Side Form */}
@@ -291,7 +292,7 @@ export default function ContactSection() {
                   iQlance
                 </span>
                 <span className="flex items-center gap-2">
-                   <div
+                  <div
                     className="w-6 h-6 bg-red-600"
                     style={{
                       maskImage: "url(/icons/email-icon.svg)",
@@ -305,7 +306,7 @@ export default function ContactSection() {
                   info@iqlance.com
                 </span>
                 <span className="flex items-center gap-2">
-                   <div
+                  <div
                     className="w-6 h-6 bg-red-600"
                     style={{
                       maskImage: "url(/icons/calendar.svg)",
@@ -323,54 +324,55 @@ export default function ContactSection() {
           </div>
         </section>
 
-      
-      <section className="py-10 bg-red-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {offices.map((office) => (
-              <div
-                key={office.id}
-                className="bg-white shadow-sm hover:shadow-lg transition rounded-md p-6 md:p-10 text-center h-full flex flex-col justify-between"
-              >
-                <div>
-                  {office.title && (
-                    <h4 className="text-2xl font-bold mb-6">{office.title}</h4>
-                  )}
-                  <img
-                    src={office.image}
-                    alt={office.city}
-                    className="w-24 h-24 mx-auto object-contain"
-                  />
-                  <h3 className="text-2xl md:text-3xl font-bold mt-6">
-                    {office.city}
-                  </h3>
-                  <p className="text-gray-600 mt-3 text-sm md:text-base leading-relaxed">
-                    {office.address}
-                  </p>
-                </div>
-
-                {/* Bottom aligned phone section */}
-                {office.phone && (
-                  <div className="flex justify-center items-center gap-2 mt-8 text-lg md:text-xl font-semibold">
-                     <div
-                    className="w-6 h-6 bg-red-600"
-                    style={{
-                      maskImage: "url(/icons/phone-icon.svg)",
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                      WebkitMaskRepeat: "no-repeat",
-                      WebkitMaskSize: "contain",
-                    }}
-                  ></div>
-                    <span>{office.phone}</span>
+        <section className="py-10 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {offices.map((office) => (
+                <div
+                  key={office.id}
+                  className="bg-white shadow-sm hover:shadow-lg transition rounded-md p-6 md:p-10 text-center h-full flex flex-col justify-between"
+                >
+                  <div>
+                    {office.title && (
+                      <h4 className="text-2xl font-bold mb-6">
+                        {office.title}
+                      </h4>
+                    )}
+                    <img
+                      src={office.image}
+                      alt={office.city}
+                      className="w-24 h-24 mx-auto object-contain"
+                    />
+                    <h3 className="text-2xl md:text-3xl font-bold mt-6">
+                      {office.city}
+                    </h3>
+                    <p className="text-gray-600 mt-3 text-sm md:text-base leading-relaxed">
+                      {office.address}
+                    </p>
                   </div>
-                )}
-              </div>
-            ))}
+
+                  {/* Bottom aligned phone section */}
+                  {office.phone && (
+                    <div className="flex justify-center items-center gap-2 mt-8 text-lg md:text-xl font-semibold">
+                      <div
+                        className="w-6 h-6 bg-red-600"
+                        style={{
+                          maskImage: "url(/icons/phone-icon.svg)",
+                          maskRepeat: "no-repeat",
+                          maskSize: "contain",
+                          WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                          WebkitMaskRepeat: "no-repeat",
+                          WebkitMaskSize: "contain",
+                        }}
+                      ></div>
+                      <span>{office.phone}</span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* Testimonials */}
         <section className="py-10 bg-white">

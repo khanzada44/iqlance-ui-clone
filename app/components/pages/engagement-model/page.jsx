@@ -50,8 +50,6 @@ export default function EngagementModelSection() {
       data.append("message", formData.message);
       data.append("sendNda", formData.sendNda);
       if (formData.file) data.append("file", formData.file);
-
-
     } catch (error) {
       console.error("API Error:", error);
     }
@@ -65,10 +63,11 @@ export default function EngagementModelSection() {
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
               {/* Left Content */}
               <div className="lg:col-span-7 text-center lg:text-left mt-8">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-                  <span className="text-red-600">Engagement</span>{" "}
-                  <span className="text-red-700">Model</span>
-                </h2>
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                  Engagement
+                  <br className="hidden sm:block" />
+                  Model
+                </h1>
 
                 <h3 className="mt-4 sm:mt-6 text-xl sm:text-2xl font-semibold">
                   Process-driven Methodology, Result-driven Solutions
@@ -104,7 +103,6 @@ export default function EngagementModelSection() {
                 </ul>
 
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-8 sm:mt-10 items-center lg:items-start">
-
                   <Link
                     href="/contact-us"
                     className="group inline-flex items-center gap-3 bg-red-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-600"
@@ -388,10 +386,11 @@ export default function EngagementModelSection() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveModelTab(tab.id)}
-                  className={`pb-3 text-sm font-semibold transition-all relative ${activeModelTab === tab.id
-                    ? "text-red-700 border-b-2 border-red-600"
-                    : "text-gray-400 hover:text-gray-600"
-                    }`}
+                  className={`pb-3 text-sm font-semibold transition-all relative ${
+                    activeModelTab === tab.id
+                      ? "text-red-700 border-b-2 border-red-600"
+                      : "text-gray-400 hover:text-gray-600"
+                  }`}
                 >
                   {tab.navLabel}
                 </button>
@@ -471,7 +470,7 @@ export default function EngagementModelSection() {
                   href="mailto:info@iqlance.com"
                   className="inline-flex items-center gap-1.5  transition-colors"
                 >
-                   <div
+                  <div
                     className="w-6 h-6 bg-red-600"
                     style={{
                       maskImage: "url(/icons/email-icon.svg)",
@@ -501,18 +500,12 @@ export default function EngagementModelSection() {
                     }}
                   ></div>
                   <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className=" transition-colors"
-                  >
+                  <a href="tel:+14697939837" className=" transition-colors">
                     +1 469 793 9837
                   </a>
                   <span>,</span>
                   <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className=" transition-colors"
-                  >
+                  <a href="tel:+16476379108" className=" transition-colors">
                     +1 647 637 9108
                   </a>
                 </div>
@@ -631,7 +624,7 @@ export default function EngagementModelSection() {
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                 <div
+                  <div
                     className="w-6 h-6 bg-red-600"
                     style={{
                       maskImage: "url(/icons/phone-icon.svg)",
@@ -643,18 +636,12 @@ export default function EngagementModelSection() {
                     }}
                   ></div>
                   <span>US :</span>
-                  <a
-                    href="tel:+14697939837"
-                    className=" transition-colors"
-                  >
+                  <a href="tel:+14697939837" className=" transition-colors">
                     +1 469 793 9837
                   </a>
                   <span>,</span>
                   <span>CA :</span>
-                  <a
-                    href="tel:+16476379108"
-                    className=" transition-colors"
-                  >
+                  <a href="tel:+16476379108" className=" transition-colors">
                     +1 647 637 9108
                   </a>
                 </div>

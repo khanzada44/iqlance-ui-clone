@@ -121,33 +121,29 @@ export const processSteps = [
 ];
 export const slides = [
   {
-    title: "Deliver Mobile App and Software Development Services Across the USA",
-    description1:
-      "iQlance delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs.",
+    title: "Looking for a Development Team That Actually Gets Your Business?",
+    description1:"Hiring a development team isn't just about finding people who can write code. It's about finding professionals who genuinely understand your goals, communicate clearly at every step, and build technology that solves the real problems your business faces. Whether you're launching something brand new or upgrading a platform that's already live, our developers partner with startups, SMBs, and enterprises across the USA to build reliable digital products shaped around their market, their users, and their business goals.",
     description2:
-      "By partnering with iQlance, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today’s competitive app marketplace.",
+      "",
 
     services: [
       {
-        title: "Mobile App Development",
-        items: ["iOS App Development", "Android App Development"],
+        title: "Need a mobile app",
+        items: ["Dedicated developers who stay aligned with your project goals"],
       },
       {
-        title: "Website Development",
-        items: ["React, Angular, WordPress, and more"],
+        title: "A web platform",
+        items: ["Clear, consistent communication throughout the entire process"],
       },
       {
-        title: "Software Development",
-        items: [".NET, Java, PHP, Node.js, and more"],
+        title: "A SaaS product, AI solution, or dedicated development support?",
+        items: ["Flexible hiring models built around what you actually need"],
       },
       {
-        title: "Cloud Consulting",
-        items: ["Unity, Cocos 2D, Virtual Reality"],
+        title: "Whatever the project, we bring the technical expertise to take it from first sketch to full launch.",
+        items: ["Proven experience across industries and technology stacks"],
       },
-      {
-        title: "AI Development",
-        items: ["OpenAI, Azure AI, Generative AI, AI Agents"],
-      },
+      
     ],
 
     image:
