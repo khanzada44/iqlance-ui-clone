@@ -24,33 +24,45 @@ import {
 } from "../../../../utils/data";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 const containerVariants = {
-  hidden: {},
+  hidden: {
+    rotate: 0,
+  },
+
   visible: {
+    rotate: 360,
+
     transition: {
+      duration: 1.8,
+      ease: [0.42, 0, 0.58, 1],
       staggerChildren: 0.12,
     },
   },
-};
+} as any;
 
 const cardVariants = {
   hidden: {
     opacity: 0,
-    scale: 0.8,
-    rotate: -4,
-    filter: "blur(8px)",
+    scale: 0.3,
+    rotate: -180,
   },
 
   visible: {
     opacity: 1,
     scale: 1,
     rotate: 0,
-    filter: "blur(0px)",
+
     transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
+      type: "spring",
+      stiffness: 90,
+      damping: 15,
+      mass: 0.8,
     },
   } as any,
 };
+
+const redCards = [1, 3, 5, 7];
+
+
 export default function Home() {
   const icons = [
     "/icons/linkedin-icn.svg",
@@ -205,78 +217,87 @@ export default function Home() {
             </div>
           </div>
 
-          {/* =========================================================
-        IMAGE GRID
-    ========================================================= */}
 
-          <div className="w-full lg:w-1/2 flex px-4">
-            <section className="w-full py-10 px-0">
-              <div className="w-full">
-                <motion.div
-                  className="grid grid-cols-3 gap-0 overflow-hidden w-full"
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {img_services.map((item, index) => {
-                    const redCards = [1, 3, 5, 7];
+<div className="w-full lg:w-1/2 flex px-4">
+  <section className="w-full py-10 px-0">
+    <div className="w-full">
 
-                    const isRed = redCards.includes(index);
+      <motion.div
+        className="
+          grid
+          grid-cols-3
+          gap-0
+          w-full
+          overflow-hidden
+        "
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {img_services.map((item, index) => {
+          const isRed = redCards.includes(index);
 
-                    return (
-                      <motion.div
-                        key={item.id}
-                        variants={cardVariants}
-                        whileHover={{
-                          scale: 1.04,
-                          zIndex: 10,
-                          transition: {
-                            duration: 0.25,
-                          },
-                        }}
-                        className={`
-                    group
-                    relative
-                    aspect-square
-                    overflow-hidden
-                    flex
-                    items-center
-                    justify-center
-                    border
-                    border-white
-                    ${isRed ? "bg-linear-to-b from-white" : "bg-white"}
-                  `}
-                      >
-                        <motion.div
-                          className="relative w-[75%] h-[75%]"
-                          whileHover={{
-                            scale: 1.08,
-                          }}
-                          transition={{
-                            duration: 0.4,
-                            ease: "easeOut",
-                          }}
-                        >
-                          <Image
-                            src={item.src}
-                            alt={item.alt}
-                            fill
-                            sizes="(max-width: 768px) 33vw, 16vw"
-                            className="object-contain"
-                          />
-                        </motion.div>
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
-              </div>
-            </section>
-          </div>
+          return (
+            <motion.div
+              key={item.id}
+              custom={index}
+              variants={cardVariants}
+              whileHover={{
+                scale: 1.04,
+                zIndex: 20,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
+              }}
+              className={`
+                group
+                relative
+                aspect-square
+                overflow-hidden
+                flex
+                items-center
+                justify-center
+                p-0
+                m-0
+                ${isRed ? "bg-gradient-to-b from-white" : "bg-white"}
+              `}
+            >
+              <motion.div
+                className="
+                  relative
+                  w-full
+                  h-full
+                  flex
+                  items-center
+                  justify-center
+                "
+                whileHover={{
+                  scale: 1.08,
+                }}
+                transition={{
+                  duration: 0.35,
+                  ease: "easeOut",
+                }}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 768px) 33vw, 16vw"
+                  className="object-cover"
+                />
+              </motion.div>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+
+    </div>
+  </section>
+</div>
         </div>
 
-        {/* =========================================================
-      STATS BAR
-  ========================================================= */}
 
         <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 mt-10 mb-10">
           {/* CLIENT RETENTION */}
