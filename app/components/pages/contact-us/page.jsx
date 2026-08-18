@@ -100,7 +100,7 @@ export default function ContactSection() {
   };
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         {/* Main Contact Section */}
         <section className="py-6 bg-white">
           <div className="max-w-7xl mx-auto px-4 w-full">
@@ -113,7 +113,7 @@ export default function ContactSection() {
                 </h1>
                 <p className="mt-6 text-gray-700">
                   Share Your Project Details on{" "}
-                  <span className="font-semibold">info@iqlance.com</span>
+                  <span className="font-semibold">info@DevAppGrid.com</span>
                 </p>
 
                 <div className="mt-6">
@@ -150,7 +150,7 @@ export default function ContactSection() {
                 </ul>
                 <Link
                   href="/portfolio"
-                  className=" border border-red-300  group inline-flex items-center gap-3 bg-gray-50  px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-100 mt-10"
+                  className=" border border-red-300  group inline-flex items-center gap-3 bg-gray-50  px-8 py-4 text-lg font-semibold text-black transition mt-10 hover:border-red-600"
                 >
                   See Our Work
                   <ArrowRight
@@ -273,7 +273,7 @@ export default function ContactSection() {
             <div className="mt-20 text-center">
               <h2 className="text-4xl font-bold">Our Office</h2>
               <p className="max-w-5xl mx-auto mt-6 text-gray-600 leading-8">
-                To better serve our clients, iQlance Solutions has opened
+                To better serve our clients, Devapp Solutions has opened
                 locations throughout the world.
               </p>
               <div className="flex flex-wrap justify-center items-center gap-6 mt-8 font-semibold">
@@ -289,7 +289,7 @@ export default function ContactSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  iQlance
+                  Devapp
                 </span>
                 <span className="flex items-center gap-2">
                   <div
@@ -303,7 +303,7 @@ export default function ContactSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  info@iqlance.com
+                  info@DevAppGrid.com
                 </span>
                 <span className="flex items-center gap-2">
                   <div

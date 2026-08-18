@@ -120,7 +120,7 @@ export default function foodOrdering() {
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-900">
-                Keeping this is mind, our iQlance, known as a leading eCommerce app developer
+                Keeping this is mind, our Devapp, known as a leading eCommerce app developer
                 has offered an improved end-to-end functionality. We always remain ready to deliver
                 you with the best possible eCommerce development solutions and help you to integrate your
                 business with mobiles with the help of innovative eCommerce mobile app USA.
@@ -286,7 +286,7 @@ export default function foodOrdering() {
               <br />
               <p>
                 Leading companies have worked with us to bring their trademarks and firms to the
-                smartphone market, and iQlance is a well-known name in online eCommerce services. We’ve
+                smartphone market, and Devapp is a well-known name in online eCommerce services. We’ve
                 worked on service applications, B2B and B2C eCommerce apps,
                 and corporate apps to assist companies to enhance their operations and productivity.
               </p>
@@ -445,7 +445,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -564,7 +564,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -794,7 +794,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -914,7 +914,7 @@ export default function foodOrdering() {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for the efforts given
+              Devapp solutions has always been honored with valuable words for the efforts given
               on mobile app development that are efficiently unique and user centric.
               Here are some of the best examples for this.
             </p>
@@ -1040,7 +1040,7 @@ export default function foodOrdering() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App Development Company with a
+              Devapp solutions is a leading Software, Web, & Mobile App Development Company with a
               vast area of experience in crafting stunning and end to end encrypted technology solutions.
               We offer excellent expertise of the industry
               followed by an exactly planned approach to elevate your growth.
@@ -1124,7 +1124,7 @@ export default function foodOrdering() {
             <p>
 
 
-              iQlance is a leading Mobile App Development Company USA  has to offer that develops applications for different operating systems. Our specialists develop a consolidated procedure for every business as well as deliver customized guidance at regular instances.
+              Devapp is a leading Mobile App Development Company USA  has to offer that develops applications for different operating systems. Our specialists develop a consolidated procedure for every business as well as deliver customized guidance at regular instances.
 
 
             </p>
@@ -1343,7 +1343,7 @@ export default function foodOrdering() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

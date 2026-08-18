@@ -246,7 +246,7 @@ export default function Navbar() {
           >
             <Image
               src="/images/Dev-App-04.png"
-              alt="iQlance Logo"
+              alt="Devapp Logo"
               width={315}
               height={72}
               className="h-20 w-auto sm:h-9 md:h-20"

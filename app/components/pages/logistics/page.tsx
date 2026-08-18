@@ -203,7 +203,7 @@ export default function Logistic() {
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                At iQlance, our developers are equipped to build usable,
+                At Devapp, our developers are equipped to build usable,
                 mobile-intuitive apps for brands. As a trusted logistics app
                 development company in the USA, we understand that logistics is
                 a crucial part of any company&apos;s work process. Our team
@@ -435,7 +435,7 @@ export default function Logistic() {
                 these challenges using proven logistics app development tips.
               </p>
               <p>
-                iQlance leverages its leadership in providing logistic app
+                Devapp leverages its leadership in providing logistic app
                 development solutions either on-premise or in the cloud to
                 customers across varieties of industries. We know how
                 challenging it is to manage logistics when it comes to
@@ -533,7 +533,7 @@ export default function Logistic() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -725,7 +725,7 @@ export default function Logistic() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -862,7 +862,7 @@ export default function Logistic() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -996,7 +996,7 @@ export default function Logistic() {
               Success Stories That Showcase Our Logistics Expertise
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for
+              Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1210,7 +1210,7 @@ export default function Logistic() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -1256,7 +1256,7 @@ export default function Logistic() {
               Your Trusted Logistics App Development Company in the USA
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App
+              Devapp solutions is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end to end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -1340,7 +1340,7 @@ export default function Logistic() {
               Why Businesses Choose Our Logistics App Development Company
             </h1>
             <p>
-              iQlance Solutions specializes in developing scalable, feature-rich
+              Devapp Solutions specializes in developing scalable, feature-rich
               mobile applications for different operating systems, like Android
               and iPhone. Our experts deliver a centralized workflow for every
               client and offer dedicated service at all times.{" "}
@@ -1567,7 +1567,7 @@ export default function Logistic() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

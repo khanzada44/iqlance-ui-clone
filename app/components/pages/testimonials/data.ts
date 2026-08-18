@@ -5,7 +5,7 @@ export const testimonialsData = [
     name: "Elisha ",
     source: "Google",
     review:
-      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
+      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to Devapp’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
     verifiedLogo: "/images/clutch-icon.png.webp",
   },
   {
@@ -14,7 +14,7 @@ export const testimonialsData = [
     name: "Dubie B ",
     source: "Clutch",
     review:
-      "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
+      "Devapp was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
     verifiedLogo: "/images/good-firms-logo-new.png.webp",
   },
   {
@@ -23,7 +23,7 @@ export const testimonialsData = [
     name: "Mukhebi",
     source: "GoodFirms",
     review:
-      "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
+      "Devapp’s mobile app received positive feedback from people that interacted with it in the development stage. Devapp communicated quickly, frequently, and over several different platforms.",
     verifiedLogo: "/images/clutch-icon.png.webp",
   },
   {
@@ -32,7 +32,7 @@ export const testimonialsData = [
     name: "Brandon",
     source: "Google",
     review:
-      "I hired iQlance to building an eCommerce application and website. They were just an absolute pleasure to work with. I had a lot of doubts about my project but I'm so glad I found them. The entire team is friendly, very knowledgeable, diligent and very easy to communicate.",
+      "I hired Devapp to building an eCommerce application and website. They were just an absolute pleasure to work with. I had a lot of doubts about my project but I'm so glad I found them. The entire team is friendly, very knowledgeable, diligent and very easy to communicate.",
     verifiedLogo: "/images/good-firms-logo-new.png.webp",
   },
   {
@@ -41,7 +41,7 @@ export const testimonialsData = [
     name: "Client",
     source: "GoodFirms",
     review:
-      "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner",
+      "Devapp is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner",
     verifiedLogo: "/images/google-logo-new.png.webp",
   },
   {
@@ -68,7 +68,7 @@ export const testimonialsData = [
     name: "TryButtender",
     source: "Clutch",
     review:
-      "iQlance delivered such strong professionalism and responsive communications that they earned a second project as well as recommendations for additional partnerships. The significant time difference was barely recognizable because they always responded quickly.",
+      "Devapp delivered such strong professionalism and responsive communications that they earned a second project as well as recommendations for additional partnerships. The significant time difference was barely recognizable because they always responded quickly.",
     verifiedLogo: "/images/clutch-icon.png.webp",
   },
 ];
@@ -79,7 +79,7 @@ export const testimonials2Data = [
     name: "Elisha ",
     source: "Google",
     review:
-      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
+      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to Devapp’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
     verifiedLogo: "/images/clutch-icon.png.webp",
   },
   {
@@ -88,7 +88,7 @@ export const testimonials2Data = [
     name: "Dubie B ",
     source: "Clutch",
     review:
-      "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
+      "Devapp was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
     verifiedLogo: "/images/good-firms-logo-new.png.webp",
   },
   {
@@ -97,7 +97,7 @@ export const testimonials2Data = [
     name: "Mukhebi",
     source: "GoodFirms",
     review:
-      "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
+      "Devapp’s mobile app received positive feedback from people that interacted with it in the development stage. Devapp communicated quickly, frequently, and over several different platforms.",
     verifiedLogo: "/images/clutch-icon.png.webp",
   },
   {
@@ -106,7 +106,7 @@ export const testimonials2Data = [
     name: "Brandon",
     source: "Google",
     review:
-      "I hired iQlance to building an eCommerce application and website. They were just an absolute pleasure to work with. I had a lot of doubts about my project but I'm so glad I found them. The entire team is friendly, very knowledgeable, diligent and very easy to communicate.",
+      "I hired Devapp to building an eCommerce application and website. They were just an absolute pleasure to work with. I had a lot of doubts about my project but I'm so glad I found them. The entire team is friendly, very knowledgeable, diligent and very easy to communicate.",
     verifiedLogo: "/images/good-firms-logo-new.png.webp",
   },
   {
@@ -115,7 +115,7 @@ export const testimonials2Data = [
     name: "Client",
     source: "GoodFirms",
     review:
-      "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner",
+      "Devapp is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner",
     verifiedLogo: "/images/google-logo-new.png.webp",
   },
   {

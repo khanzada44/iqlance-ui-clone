@@ -1,5 +1,5 @@
 import Careers from "../../components/pages/career/page";
 
-export default function Iqlance() {
+export default function Devapp() {
   return <Careers />;
 }

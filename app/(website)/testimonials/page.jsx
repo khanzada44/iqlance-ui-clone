@@ -1,5 +1,5 @@
 import Testimonials from "../../components/pages/testimonials/page";
 
-export default function Iqlance() {
+export default function Devapp() {
   return <Testimonials />;
 }

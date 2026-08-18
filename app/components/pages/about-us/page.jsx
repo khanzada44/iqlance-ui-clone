@@ -12,7 +12,7 @@ export default function About() {
 
   return (
     <>
-      <div className="w-[80%] mx-auto">
+      <div className="w-[80%] max-w-7xl mx-auto">
         <div className="mt-6 pt-2">
           <img
             src="/images/about-header.png"
@@ -25,7 +25,7 @@ export default function About() {
           <div className="w-full px-6 text-center">
             {/* Heading */}
             <h2 className="text-4xl md:text-6xl font-bold text-red-600">
-              About iQlance
+              About Devapp
             </h2>
 
             {/* Sub Heading */}
@@ -35,7 +35,7 @@ export default function About() {
 
             {/* Paragraph 1 */}
             <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
-              iQlance Solutions is a leading software and mobile app development
+              Devapp Solutions is a leading software and mobile app development
               company serving clients in the USA. Our team of dedicated
               developers is always eager to innovate customized solutions based
               on your business needs.
@@ -83,7 +83,7 @@ export default function About() {
               Trusted Custom Software, Web Mobile App Development Services
             </h2>
             <p className="w-full mx-auto mt-4 text-center text-1sxl leading-8 text-black">
-              iQlance solutions is a leading Software, Web, & Mobile App
+              Devapp solutions is a leading Software, Web, & Mobile App
               Development Company with a extensive experience in crafting
               stunning and secure, end-to-end technology solutions. We offer
               excellent expertise of the industry followed by an well-planned
@@ -134,7 +134,7 @@ export default function About() {
                 </h2>
 
                 <p className="mt-4 text-[17px] leading-9 text-black]">
-                  At iQlance, we believe successful digital products are built
+                  At Devapp, we believe successful digital products are built
                   through collaboration, strategic planning, and technical
                   expertise. We work closely with our clients to understand
                   their goals and challenges and deliver scalable, user-focused
@@ -149,14 +149,14 @@ export default function About() {
                 </p>
 
                 <p className="mt-1 text-[17px] leading-9 ">
-                  Since 2014, iQlance Solutions has delivered more than 1,500
+                  Since 2014, Devapp Solutions has delivered more than 1,500
                   digital products, including software and mobile applications
                   such as Doggy Dates, Bidda, Stable Hub, and Ukitchen. We are
                   proud to have worked with 250+ satisfied clients worldwide.
                 </p>
                 <Link
                   href="/contact-us"
-                  className="group inline-flex items-center gap-3 bg-red-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-600"
+                  className="group inline-flex items-center gap-3 bg-red-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-600 mt-10"
                 >
                   Get in touch
                   <ArrowRight
@@ -216,7 +216,7 @@ export default function About() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-red-100 py-16 px-6 font-sans mb-10">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -245,7 +245,7 @@ export default function About() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                    <div
@@ -259,7 +259,7 @@ export default function About() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -327,11 +327,11 @@ export default function About() {
         <section className="bg-white">
           <div className="w-full px-5">
             <h2 className="text-center text-4xl font-bold text-black">
-              About iQlance
+              About Devapp
             </h2>
             <div className="w-full mx-auto mt-8 space-y-8">
               <p className="text-center text-[17px] leading-8 text-black">
-                iQlance came into the existence with the aspirations to develop
+                Devapp came into the existence with the aspirations to develop
                 customize creative mobile apps that can cater the requirements
                 of clients in a cost-effective manner. The company was started
                 by two zealous engineers who always wanted to bring the change
@@ -344,7 +344,7 @@ export default function About() {
               </p>
 
               <p className="text-center text-[17px] leading-8 text-[#333]">
-                Today, iQlance is a trusted software and mobile app development
+                Today, Devapp is a trusted software and mobile app development
                 company serving businesses across the USA, with expertise in
                 delivering scalable digital solutions for startups, growing
                 businesses, and enterprises. We believe in adopting the latest
@@ -358,8 +358,8 @@ export default function About() {
             </div>
             <div className="mt-12">
               <img
-                src="/images/about-us-iqlance.jpg"
-                alt="About iQlance"
+                src="/images/about-us-Devapp.jpg"
+                alt="About Devapp"
                 width={1200}
                 height={500}
                 className="w-full h-65 md:h-105 object-cover"
@@ -396,7 +396,7 @@ export default function About() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -410,7 +410,7 @@ export default function About() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -509,7 +509,7 @@ export default function About() {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
-                iQlance solution. See what process we follow for mobile app and
+                Devapp solution. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

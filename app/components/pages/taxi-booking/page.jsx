@@ -220,7 +220,7 @@ export default function Taxi() {
               <p className="text-base md:text-lg leading-relaxed text-black">
                 Planning on creating a completely unique app solution for your
                 company to increase your progress in the digital market? Take
-                the help of our experts at iQlance for this endeavour; we
+                the help of our experts at Devapp for this endeavour; we
                 complete each step of app design and development, from the
                 origin to deployment, to ensure top-notch performance.
               </p>
@@ -430,7 +430,7 @@ export default function Taxi() {
                 Top On-Demand Solutions Company
               </h2>
               <p className="text-sm md:text-base text-black max-w-6xl mx-auto leading-relaxed">
-                We, at iQlance, build ever-evolving on-demand app solutions in
+                We, at Devapp, build ever-evolving on-demand app solutions in
                 order to promote the next generation-level services for business
                 growth. Have an amazing experience of scalable and solely
                 integrated solutions along with custom front-end and back-end
@@ -636,7 +636,7 @@ export default function Taxi() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -650,7 +650,7 @@ export default function Taxi() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -704,7 +704,7 @@ export default function Taxi() {
               The Cutting-Edge Technology We Use
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              At iQlance Solutions, we don’t chase basic functionality; we
+              At Devapp Solutions, we don’t chase basic functionality; we
               engineer apps with performance, scalability, and security at the
               core. As a leading name in taxi booking mobile app development, we
               leverage modern frameworks, robust backends, and cloud-powered
@@ -904,7 +904,7 @@ export default function Taxi() {
               Endeavors that Make us Proud
             </h2>
             <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
-              iQlance solutions has always been honored with valuable words for
+              Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1096,7 +1096,7 @@ export default function Taxi() {
 
               {/* Paragraph 1 */}
               <p className="text-sm lg:text-base leading-relaxed text-gray-700">
-                Our team at iQlance takes proper care of both passengers and taxi
+                Our team at Devapp takes proper care of both passengers and taxi
                 companies requirements, because of which we’ve consistently gained a
                 good reputation as leading USA mobile app developers
               </p>
@@ -1145,7 +1145,7 @@ export default function Taxi() {
                       <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                         {/* Email link */}
                         <a
-                          href="mailto:info@iqlance.com"
+                          href="mailto:info@DevAppGrid.com"
                           className="inline-flex items-center gap-1.5 transition-colors"
                         >
                           <div
@@ -1159,7 +1159,7 @@ export default function Taxi() {
                               WebkitMaskSize: "contain",
                             }}
                           ></div>
-                          <span>info@iqlance.com</span>
+                          <span>info@DevAppGrid.com</span>
                         </a>
         
                         <span className="text-gray-500 font-normal">or</span>
@@ -1210,7 +1210,7 @@ export default function Taxi() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance is a leading Software Development Company currently
+              Devapp is a leading Software Development Company currently
               available in the market, with over 7 years of experience under the
               belt. Over the years, our team members have honed their skills,
               handling over 1,500 projects of different types and companies,
@@ -1355,7 +1355,7 @@ export default function Taxi() {
         <section>
           <div className="text-center max-w-5xl mx-auto space-y-4 mt-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why Choose iQlance?
+              Why Choose Devapp?
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
               From development to testing, design to deployment, and everything
@@ -1582,7 +1582,7 @@ export default function Taxi() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

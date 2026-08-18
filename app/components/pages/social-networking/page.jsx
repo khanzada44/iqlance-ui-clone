@@ -197,7 +197,7 @@ export default function SocialMedia() {
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                We at iQlance deliver you appropriate and innovative enterprise
+                We at Devapp deliver you appropriate and innovative enterprise
                 level of social media app solutions to suffice your important
                 business requirements. Our team associated with social media app
                 development USA can customize the present-age business solution
@@ -404,7 +404,7 @@ export default function SocialMedia() {
                 Get Ahead In Your Business With Social Networking Applications
               </h2>
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                We, at iQlance, build ever-evolving on-demand app solutions in
+                We, at Devapp, build ever-evolving on-demand app solutions in
                 order to promote the next generation-level services for business
                 growth. Have an amazing experience of scalable and solely
                 integrated solutions along with custom front-end and back-end
@@ -459,7 +459,7 @@ export default function SocialMedia() {
               Features of Social Networking App Development
             </h2>
             <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
-              iQlance solutions has always been honored with valuable words for
+              Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -513,7 +513,7 @@ export default function SocialMedia() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -527,7 +527,7 @@ export default function SocialMedia() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -579,7 +579,7 @@ export default function SocialMedia() {
 
             <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto">
               <p>
-                Our team at iQlance Mobile App Development Company USA has
+                Our team at Devapp Mobile App Development Company USA has
                 worked on different levels and types of projects for companies
                 over the years. We focus on designing and creating high-quality
                 functional and scalable social networking mobile-based app
@@ -611,7 +611,7 @@ export default function SocialMedia() {
               Endeavors That Make Us Proud
             </h3>
             <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-3xl mx-auto">
-              iQlance solutions has always been honored with valuable words for
+              Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -809,7 +809,7 @@ export default function SocialMedia() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -823,7 +823,7 @@ export default function SocialMedia() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -873,7 +873,7 @@ export default function SocialMedia() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance is a leading Software Development Company currently
+              Devapp is a leading Software Development Company currently
               available in the market, with over 7 years of experience under the
               belt. Over the years, our team members have honed their skills,
               handling over 1,500 projects of different types and companies,
@@ -917,7 +917,7 @@ export default function SocialMedia() {
         <section>
           <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why Choose iQlance?
+              Why Choose Devapp?
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
               From development to testing, design to deployment, and everything
@@ -1144,7 +1144,7 @@ export default function SocialMedia() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

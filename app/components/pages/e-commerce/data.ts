@@ -45,7 +45,7 @@ export const slides = [
     image: "/images/eCommerce-left-2.jpg",
     title: "Display of Personalized Suggestions",
     description:
-      "Our iQlance eCommerce solution provider knows very well that success of any eCommerce store depends solely on buying behavior of individual users. For this-",
+      "Our Devapp eCommerce solution provider knows very well that success of any eCommerce store depends solely on buying behavior of individual users. For this-",
     points: [
       "Usage of recommendation engine to analyze your users’ behavior to display personalized recommendations",
       "To retain customers, engage them and increase cross-selling activities",
@@ -185,7 +185,7 @@ export const portfolioSlides = [
     heading: "",
     title: "Immigration Management Software",
     description:
-      " At iQlance this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
+      " At Devapp this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
 
     features: [
       "Easy Operational Visibility",
@@ -220,57 +220,57 @@ export const technologies = [
       {
         name: "iOS",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/ios-icn-tab.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ios-icn-tab.svg",
       },
       {
         name: "Android",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/android.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/android.svg",
       },
       {
         name: "React Native",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/reactnative.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/reactnative.svg",
       },
       {
         name: "Flutter",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/flutter.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/flutter.svg",
       },
       {
         name: "Augmented Reality",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/icn-80/ar-icn.png.webp",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/icn-80/ar-icn.png.webp",
       },
       {
         name: "Swift",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/swift.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/swift.svg",
       },
       {
         name: "Kotlin",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/kokin-icn-tab.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/kokin-icn-tab.svg",
       },
       {
         name: "Objective C",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/object-c-icn-tab.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/object-c-icn-tab.svg",
       },
       {
         name: "Cross Platform",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/crossplatform-icn-tab.png.webp",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/crossplatform-icn-tab.png.webp",
       },
       {
         name: "Ibecon",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/ib-icn-tab.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ib-icn-tab.svg",
       },
       {
         name: "Xamarin",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/xamarin-icn-tab.png.webp",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/xamarin-icn-tab.png.webp",
       },
     ],
   },
@@ -280,37 +280,37 @@ export const technologies = [
       {
         name: "Angular",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/angular-icon.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/angular-icon.svg",
       },
       {
         name: "React",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/reactnative.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/reactnative.svg",
       },
       {
         name: "Blockchain",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/blockchain.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/blockchain.svg",
       },
       {
         name: "Sass",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/sass.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/sass.svg",
       },
       {
         name: "jQuery",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/jquery.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/jquery.svg",
       },
       {
         name: "HTML 5",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/html-5.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/html-5.svg",
       },
       {
         name: "CSS3",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/css3.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/css3.svg",
       },
     ],
   },
@@ -320,27 +320,27 @@ export const technologies = [
       {
         name: "MySQL",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/mysql-logo.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mysql-logo.svg",
       },
       {
         name: "MsSQL",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/mssql.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mssql.svg",
       },
       {
         name: "Azure",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/azure.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/azure.svg",
       },
       {
         name: "Firebase",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/firebase.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/firebase.svg",
       },
       {
         name: "MongoDB",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/mongodb.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mongodb.svg",
       },
     ],
   },
@@ -350,32 +350,32 @@ export const technologies = [
       {
         name: "PHP",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/php-logo.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/php-logo.svg",
       },
       {
         name: ".NET",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/.net.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/.net.svg",
       },
       {
         name: "Laravel",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/laravel.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/laravel.svg",
       },
       {
         name: "Node .JS",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/nodejs.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/nodejs.svg",
       },
       {
         name: "Rails",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/ruby_on_rails-icon.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ruby_on_rails-icon.svg",
       },
       {
         name: "Python",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/python.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/python.svg",
       },
     ],
   },
@@ -385,27 +385,27 @@ export const technologies = [
       {
         name: "Drupal",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/drupal.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/drupal.svg",
       },
       {
         name: "Joomla",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/Joomla.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/Joomla.svg",
       },
       {
         name: "WordPress",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/wordpress.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/wordpress.svg",
       },
       {
         name: "Magento",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/magento.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/magento.svg",
       },
       {
         name: "Shopify",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/shopify.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/shopify.svg",
       },
     ],
   },
@@ -416,73 +416,73 @@ export const technologies = [
       {
         name: "AWS",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/amazon-web-services.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/amazon-web-services.svg",
       },
       {
         name: "Google Cloud",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/google-cloud.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/google-cloud.svg",
       },
       {
         name: "Git",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/git.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/git.svg",
       },
       {
         name: "Gradle",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/gradle.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/gradle.svg",
       },
       {
         name: "Selenium",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/selenium.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/selenium.svg",
       },
       {
         name: "Jenkins",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/jenkins.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/jenkins.svg",
       },
       {
         name: "Docker",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/docker.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/docker.svg",
       },
       {
         name: "Kubernetes",
         image:
-          "https://www.iqlance.com/wp-content/themes/iqlance/img/tab/kubernetes.svg",
+          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/kubernetes.svg",
       },
     ],
   },
 ]
 export const stats = [
   {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-5.svg',
+    icon: 'https://www.Devapp.com/wp-content/uploads/2024/10/icon-5.svg',
     value: "8+",
     line1: "Years",
     line2: "of experience",
   },
   {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-6.svg',
+    icon: 'https://www.Devapp.com/wp-content/uploads/2024/10/icon-6.svg',
     value: "1500+",
     line1: "Successful",
     line2: "Projects",
   },
   {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-7.svg',
+    icon: 'https://www.Devapp.com/wp-content/uploads/2024/10/icon-7.svg',
     value: "200+",
     line1: "Happy Clients",
     line2: "World Wide",
   },
   {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-8.svg',
+    icon: 'https://www.Devapp.com/wp-content/uploads/2024/10/icon-8.svg',
     value: "800K+",
     line1: "Hours",
     line2: "Invested",
   },
   {
-    icon: 'https://www.iqlance.com/wp-content/uploads/2024/10/icon-9.svg',
+    icon: 'https://www.Devapp.com/wp-content/uploads/2024/10/icon-9.svg',
     value: "100%",
     line1: "Best",
     line2: "Quality Delivery",
@@ -494,58 +494,58 @@ export const industries = [
     title: "Wellness & Fitness",
     bgImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo6Ck6XR5R_CadBULJne89UeaBx8YkRoHOA-WS_QBNjckXeGnIHGo7rSs&s=10",
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/wellness_fitness_icon.png.webp",
+    icon: "https://www.Devapp.com/wp-content/uploads/2024/10/wellness_fitness_icon.png.webp",
   },
   {
     title: "Food & Restaurant",
     bgImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi0UdHpkOXsdu3Jr-EX5GT3ZkVmT47dqheoZZJ35xd9TYF8sAU7kAvYQc&s=10",
-    icon: "https://www.iqlance.com/wp-content/uploads/2024/10/food_restaurant_icon.png.webp",
+    icon: "https://www.Devapp.com/wp-content/uploads/2024/10/food_restaurant_icon.png.webp",
   },
   {
     title: "Media & Entertainment",
     bgImage:
       "https://omdia.tech.informa.com/-/media/tech/omdia/omdia-website-enhancement-oct-2023/streaming-concept-screens-of-content.jpg?rev=0d8ea073e28247c3be47eaacff5d83e8",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/media-icn.png.webp",
+    icon: "https://www.Devapp.com/wp-content/themes/Devapp/img/media-icn.png.webp",
   },
   {
     title: "Real Estate",
     bgImage: "https://www.krahejarealty.com/img/blog/guide-to-real-estate.webp",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/real-easte-icn.png.webp",
+    icon: "https://www.Devapp.com/wp-content/themes/Devapp/img/real-easte-icn.png.webp",
   },
   {
     title: "Healthcare",
     bgImage: "https://borgenproject.org/wp-content/uploads/healthcare-apps.jpg",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/healthcare-icn.png.webp",
+    icon: "https://www.Devapp.com/wp-content/themes/Devapp/img/healthcare-icn.png.webp",
   },
   {
     title: "E-commerce",
     bgImage:
       "https://ebz-static.s3.ap-south-1.amazonaws.com/easebuzz-static/upi-credit-cards-v1.png",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/reatail-icn.png.webp",
+    icon: "https://www.Devapp.com/wp-content/themes/Devapp/img/reatail-icn.png.webp",
   },
   {
     title: "Education",
     bgImage: "https://i.dawn.com/primary/2021/07/60fc9ce79bf37.jpg",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/educ-icn.png.webp",
+    icon: "https://www.Devapp.com/wp-content/themes/Devapp/img/educ-icn.png.webp",
   },
   {
     title: "Logistics",
     bgImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKprMTl4jtUCa011p-LGbUBuinjnpY3SOMA68uiQ8wUQ&s=10",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/logistic-icon.png.webp",
+    icon: "https://www.Devapp.com/wp-content/themes/Devapp/img/logistic-icon.png.webp",
   },
   {
     title: "Travel & Hospitality",
     bgImage:
       "https://foundever.com/wp-content/uploads/2023/01/travel-and-hospitality-industry-banner-1400x800-1.jpg",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/travel-icn.png.webp",
+    icon: "https://www.Devapp.com/wp-content/themes/Devapp/img/travel-icn.png.webp",
   },
   {
     title: "Oil & Gas",
     bgImage:
       "https://eco-cdn.iqpc.com/eco/images/channel_content/images/biggest_oil_and_gas_companies.webp",
-    icon: "https://www.iqlance.com/wp-content/themes/iqlance/img/oil-fas-icn.png.webp",
+    icon: "https://www.Devapp.com/wp-content/themes/Devapp/img/oil-fas-icn.png.webp",
   },
 ];
 export const services = [
@@ -561,14 +561,14 @@ export const services = [
       "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "At iQlance, people don’t believe in immobility. We stay on top of fresh ideas and innovations, remove superfluous alternatives, and constantly boost our expertise.",
+      "At Devapp, people don’t believe in immobility. We stay on top of fresh ideas and innovations, remove superfluous alternatives, and constantly boost our expertise.",
   },
   {
     image:
       "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
-      "Contact our Mobile App Development Company USA , iQlance, at any moment. For all of our clients, we are constantly present to handle problems and supply support solutions.",
+      "Contact our Mobile App Development Company USA , Devapp, at any moment. For all of our clients, we are constantly present to handle problems and supply support solutions.",
   },
   {
     image:
@@ -614,29 +614,29 @@ export const testimonials = [
     id: 1,
     name: "Elisha",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
     review:
-      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
+      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to Devapp’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
   },
   {
     id: 2,
     name: "Gregor I",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/google-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/google-icon.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/google-logo-new.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/google-logo-new.png.webp",
     review:
-      "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
+      "Devapp is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
   },
   {
     id: 3,
     name: "Stephanie A",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
     review:
       "Their developers were skilled, and they helped us to integrate development with UI design were necessary. They were able to respond with high flexibility to the development model we requested. They did an excellent job. Their mobile app developer and UI designers are very expert. We can hire them again for future apps development…Thanks",
   },
@@ -644,21 +644,21 @@ export const testimonials = [
     id: 4,
     name: "Dubie B",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
     review:
-      "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
+      "Devapp was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
   },
   {
     id: 5,
     name: "Chris",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
     review:
-      "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
+      "Devapp’s mobile app received positive feedback from people that interacted with it in the development stage. Devapp communicated quickly, frequently, and over several different platforms.",
   },
 ];
 export const faqsData = [
@@ -701,50 +701,50 @@ export const partners = [
   {
     id: 1,
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/clutch-update.jpg.webp",
+      "https://www.Devapp.com/wp-content/uploads/2024/10/clutch-update.jpg.webp",
     alt: "Clutch",
   },
   {
     id: 2,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/goodfirm-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/goodfirm-logo.png.webp",
     alt: "GoodFirms",
   },
   {
     id: 3,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/g-rating-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/g-rating-logo.png.webp",
     alt: "GESIA",
   },
   {
     id: 4,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/gesia-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/gesia-logo.png.webp",
     alt: "Google",
   },
 
   {
     id: 5,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/iso-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/iso-logo.png.webp",
     alt: "ISO",
   },
   {
     id: 6,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/nasscom-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/nasscom-logo.png.webp",
     alt: "ISO",
   },
   {
     id: 7,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/itfirm-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/itfirm-logo.png.webp",
     alt: "ISO",
   },
   {
     id: 8,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/ypca-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/ypca-logo.png.webp",
     alt: "ISO",
   },
 ];

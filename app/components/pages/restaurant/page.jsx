@@ -556,7 +556,7 @@ export default function Restaurant() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -570,7 +570,7 @@ export default function Restaurant() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -722,7 +722,7 @@ export default function Restaurant() {
               Endeavors that Make us Proud
             </h2>
             <p className="text-black text-sm md:text-base max-w-7xl mx-auto">
-              iQlance solutions has always been honored with valuable words for
+              Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -951,7 +951,7 @@ export default function Restaurant() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -965,7 +965,7 @@ export default function Restaurant() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -1016,7 +1016,7 @@ export default function Restaurant() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance is a leading Software Development Company currently
+              Devapp is a leading Software Development Company currently
               available in the market, with over 7 years of experience under the
               belt. Over the years, our team members have honed their skills,
               handling over 1,500 projects of different types and companies,
@@ -1161,7 +1161,7 @@ export default function Restaurant() {
         <section>
           <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why Choose iQlance?
+              Why Choose Devapp?
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
               From development to testing, design to deployment, and everything
@@ -1388,7 +1388,7 @@ export default function Restaurant() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

@@ -44,7 +44,7 @@ export const processSteps = [
     number: "05.",
     title: "Design",
     description:
-      "As per our initial research work, we at iQlance perform a thorough analysis and prepare the necessary documents. In this way, we prepare an interactive design, while make sure to keep our clients connected with their visitors or customers with interactivity.",
+      "As per our initial research work, we at Devapp perform a thorough analysis and prepare the necessary documents. In this way, we prepare an interactive design, while make sure to keep our clients connected with their visitors or customers with interactivity.",
     icon: "/images/2-process-icn-.png",
     bg: "bg-[#F3F8EF]",
     arrow: "/icons/arrow-light-green-left.svg",

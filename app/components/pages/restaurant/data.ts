@@ -6,7 +6,7 @@ export const ServiceSectionData = [
       `We are well familiar that mobile app ordering has become a key element for almost 
       every restaurant owner and food lovers both, as it leads to drastic 
       improvement in sales and the highest possible customer engagement level.
-      Considering this fact, our developers at iQlance have come with innovative restaurant
+      Considering this fact, our developers at Devapp have come with innovative restaurant
       app development solutions operable easily on Android, iOS and iPhone backend, while remain packed with tons of useful 
       features directed towards significant growth in the overall revenue of your entire business.`,
     features: [

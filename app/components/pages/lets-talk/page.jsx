@@ -153,7 +153,7 @@ export default function ContactSection() {
               <div className="w-full">
                 <p className="mt-6 text-gray-700">
                   Share Your Project Details on{" "}
-                  <span className="font-semibold">info@iqlance.com</span>
+                  <span className="font-semibold">info@DevAppGrid.com</span>
                 </p>
 
                 <div className="mt-6">
@@ -325,7 +325,7 @@ export default function ContactSection() {
               <h2 className="text-4xl font-bold">Our Office</h2>
 
               <p className="max-w-5xl mx-auto mt-6 text-gray-600 leading-8">
-                To better serve our clients, iQlance Solutions has opened
+                To better serve our clients, Devapp Solutions has opened
                 locations throughout the world. Our diversified geographic
                 presence allows us to provide superior services on a global
                 scale, from USA, Toronto, Canada, London, New York, and
@@ -345,7 +345,7 @@ export default function ContactSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  iQlance
+                  Devapp
                 </span>
 
                 <span className="flex items-center gap-2">
@@ -360,7 +360,7 @@ export default function ContactSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  info@iqlance.com
+                  info@DevAppGrid.com
                 </span>
 
                 <span className="flex items-center gap-2">
@@ -439,7 +439,7 @@ export default function ContactSection() {
             </h2>
 
             <p className="mt-8 text-gray-700 text-base md:text-xl leading-8 md:leading-10 max-w-5xl mx-auto">
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See what process we follow for mobile app and software
               development. Have a look at how we are praised by our clients.
               Start a conversation to innovate your next great idea into reality

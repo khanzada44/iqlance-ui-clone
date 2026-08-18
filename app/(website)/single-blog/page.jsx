@@ -147,7 +147,7 @@ export default function SingleBlogPage() {
   const imageUrl = blog.image
     ? blog.image.startsWith("http")
       ? blog.image
-      : `https://www.iqlance.com/wp-content/uploads/2026/06/${blog.image}`
+      : `https://www.Devapp.com/wp-content/uploads/2026/06/${blog.image}`
     : null;
 
   return (
@@ -368,7 +368,7 @@ export default function SingleBlogPage() {
             </div>
 
             <p className="text-gray-600 leading-relaxed text-base">
-              I’m Krunal Vyas, IT Consultant at iQlance Solutions. Is one of the
+              I’m Krunal Vyas, IT Consultant at Devapp Solutions. Is one of the
               name of website and Mobile app Development, I’ve helped more than
               250+ Clients to build meaningful mobile apps and website. Call me
               today for FREE CONSULTATIONS:

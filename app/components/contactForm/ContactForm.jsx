@@ -126,7 +126,7 @@ export default function ContactForm() {
                   Email
                 </h4>
                 <p className="mt-1 font-bold text-gray-900 text-base break-all">
-                  info@iqlance.com
+                  info@DevAppGrid.com
                 </p>
               </div>
 
@@ -165,7 +165,7 @@ export default function ContactForm() {
                     }}></div>
                   Teams
                 <p className="mt-1 font-bold text-gray-900 text-base">
-                  iQlance Solutions
+                  Devapp Solutions
                 </p>
               </div>
 

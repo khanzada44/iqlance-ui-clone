@@ -234,7 +234,7 @@ export default function Ondemadd() {
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Planning on creating a completely unique app solution for your company to increase your progress in the digital market? Take the help of our experts at iQlance for this endeavour; we complete each step of app design and development, from the origin to deployment, to ensure top-notch performance.
+                Planning on creating a completely unique app solution for your company to increase your progress in the digital market? Take the help of our experts at Devapp for this endeavour; we complete each step of app design and development, from the origin to deployment, to ensure top-notch performance.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
@@ -431,7 +431,7 @@ export default function Ondemadd() {
                 Top On-Demand Solutions Company
               </h2>
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                We, at iQlance, build ever-evolving on-demand app solutions in order to promote the next
+                We, at Devapp, build ever-evolving on-demand app solutions in order to promote the next
                 generation-level services for business growth. Have an amazing experience of scalable
                 and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced
                 admin dashboard and powerful analytics panel for both Android as well as iOS.
@@ -534,7 +534,7 @@ export default function Ondemadd() {
               Endeavors that Make us Proud
             </h2>
             <p className="text-black text-sm md:text-base max-w-3xl mx-auto">
-              iQlance solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
+              Devapp solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
             </p>
           </div>
         </section>
@@ -793,7 +793,7 @@ export default function Ondemadd() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -807,7 +807,7 @@ export default function Ondemadd() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -902,7 +902,7 @@ export default function Ondemadd() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance is a leading Software Development Company currently available in the market, with over 7 years of experience under the belt.
+              Devapp is a leading Software Development Company currently available in the market, with over 7 years of experience under the belt.
               Over the years, our team members have honed their skills, handling over 1,500 projects of
               different types and companies,
               offering flexible solutions and comprehensive benefits to all.
@@ -969,7 +969,7 @@ export default function Ondemadd() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -983,7 +983,7 @@ export default function Ondemadd() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -1155,7 +1155,7 @@ export default function Ondemadd() {
         </section>
         <section>
           <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">Why Choose iQlance?</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">Why Choose Devapp?</h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
               From development to testing, design to deployment, and everything in between, we are the best on-demand app development company  that offers a vast range of scalable solutions.
             </p>
@@ -1380,7 +1380,7 @@ export default function Ondemadd() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

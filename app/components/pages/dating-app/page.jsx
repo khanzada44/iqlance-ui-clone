@@ -421,13 +421,13 @@ export default function SocialMedia() {
         <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
           {/* Main Heading */}
           <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
-            Why iQlance for Custom Dating App Development in USA
+            Why Devapp for Custom Dating App Development in USA
           </h2>
 
           {/* Paragraph Content */}
           <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto mb-10">
             <p>
-              As a leading mobile app development company in the USA, iQlance
+              As a leading mobile app development company in the USA, Devapp
               Solutions understands every story is unique, so your app should be
               too. Our seasoned development team develops dating app solutions
               that are custom-built to match your business model, user behavior,
@@ -676,7 +676,7 @@ export default function SocialMedia() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -810,7 +810,7 @@ export default function SocialMedia() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -952,7 +952,7 @@ export default function SocialMedia() {
                 Endeavors That Make Us Proud
               </h2>
               <p className="text-sm md:text-base text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                iQlance solutions has always been honored with valuable words
+                Devapp solutions has always been honored with valuable words
                 for the efforts given on mobile app development that are
                 efficiently unique and user centric. Here are some of the best
                 examples for this.
@@ -1158,7 +1158,7 @@ export default function SocialMedia() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -1205,7 +1205,7 @@ export default function SocialMedia() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance is a leading Software Development Company currently
+              Devapp is a leading Software Development Company currently
               available in the market, with over 7 years of experience under the
               belt. Over the years, our team members have honed their skills,
               handling over 1,500 projects of different types and companies,
@@ -1289,7 +1289,7 @@ export default function SocialMedia() {
         <section>
           <div className="text-center max-w-4xl mx-auto space-y-4 mt-10">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why Choose iQlance?
+              Why Choose Devapp?
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
               From development to testing, design to deployment, and everything
@@ -1519,7 +1519,7 @@ export default function SocialMedia() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

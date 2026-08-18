@@ -201,7 +201,7 @@ export default function fitness() {
                 With people increasingly turning attention to the intrinsic
                 quality of life, the need for fitness solutions has shot up
                 exponentially. Many fitness app development services around the
-                country are now competing to catch up with iQlance Solutions USA
+                country are now competing to catch up with Devapp Solutions USA
                 since it sets the standard for innovation, customization, and
                 technological integration. It’s important to note that all of
                 our apps are focused on helping the user find fitness and
@@ -514,7 +514,7 @@ export default function fitness() {
               Key Features of Our Health & Fitness App Development Services
             </h2>
             <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
-              At iQlance Solutions USA, we pride ourselves on offering an extensive range of features that empower fitness enthusiasts to take control of their health and wellness journey. Our fitness apps are designed to deliver exceptional user experiences, helping users stay motivated, track progress, and achieve their fitness goals. Below are the standout features of our fitness app development:
+              At Devapp Solutions USA, we pride ourselves on offering an extensive range of features that empower fitness enthusiasts to take control of their health and wellness journey. Our fitness apps are designed to deliver exceptional user experiences, helping users stay motivated, track progress, and achieve their fitness goals. Below are the standout features of our fitness app development:
             </p>
           </div>
         </section>
@@ -576,7 +576,7 @@ export default function fitness() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -590,7 +590,7 @@ export default function fitness() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -641,7 +641,7 @@ export default function fitness() {
             </h2>
             <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto">
               <p>
-                The fitness and wellness market is thriving, with millions of users downloading fitness apps annually. However, with so many options available, it can be hard to stand out. At iQlance USA, we specialize in creating tailored fitness app solutions that deliver value, innovation, and a superior user experience.
+                The fitness and wellness market is thriving, with millions of users downloading fitness apps annually. However, with so many options available, it can be hard to stand out. At Devapp USA, we specialize in creating tailored fitness app solutions that deliver value, innovation, and a superior user experience.
               </p>
               <p>
                 Whether you're looking for a white-label fitness app, a fully branded app, or a custom solution, our team of experts will work closely with you to deliver a product that meets your exact specifications. We take pride in developing apps that are scientifically accurate, intuitive to use, and designed for long-term success.
@@ -670,7 +670,7 @@ export default function fitness() {
               Endeavors That Make Us Proud
             </h3>
             <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-3xl mx-auto">
-              iQlance solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
+              Devapp solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
             </p>
           </div>
 
@@ -788,7 +788,7 @@ export default function fitness() {
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
               By using this advanced technology stack, we create apps that deliver an intuitive, seamless experience for users while ensuring long-term
-              scalability and security for your business. At iQlance USA,
+              scalability and security for your business. At Devapp USA,
               we use the latest technology and frameworks to create fast, scalable, and secure fitness apps. Here’s a look at the technology we use:
             </p>
           </div>
@@ -901,7 +901,7 @@ export default function fitness() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -915,7 +915,7 @@ export default function fitness() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -1076,7 +1076,7 @@ export default function fitness() {
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
 
-            At iQlance Solutions USA, we strive to build fitness apps that are not only
+            At Devapp Solutions USA, we strive to build fitness apps that are not only
             cutting-edge but also user-friendly
             and impactful. Here’s why we stand out from the competition:
           </p>
@@ -1299,7 +1299,7 @@ export default function fitness() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

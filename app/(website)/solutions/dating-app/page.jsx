@@ -1,6 +1,6 @@
 import Dating from "../../../components/pages/dating-app/page";
 
 
-export default function Iqlance() {
+export default function Devapp() {
   return <Dating />;
 }

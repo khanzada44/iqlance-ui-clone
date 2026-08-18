@@ -6,11 +6,11 @@ import Image from "next/image";
 import ContactForm from "../../contactForm/ContactForm";
 import { features } from "./data";
 import { stats, partners, faqsData } from "../../../../utils/data";
-export default function whyIqlance() {
+export default function whyDevapp() {
   const [open, setOpen] = useState(-1);
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-full  max-w-7xl mx-auto">
         <div className="mt-2 pt-2">
           <img
             src="/images/why-us-header-banner.png"
@@ -304,7 +304,7 @@ export default function whyIqlance() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5  transition-colors"
                 >
                   <div
@@ -318,7 +318,7 @@ export default function whyIqlance() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -433,7 +433,7 @@ export default function whyIqlance() {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
-                iQlance solution. See what process we follow for mobile app and
+                Devapp solution. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

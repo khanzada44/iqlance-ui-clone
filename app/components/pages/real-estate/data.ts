@@ -44,7 +44,7 @@ export const slides = [
       "/images/realeaste-left-2.jpg",
     title: "Assistance in Buy/Sell of Property",
     description:
-      "Our real estate app helps you in accomplishing your every possible need while you go to buy or sell your property. Thus, our team at iQlance delivers you unrivaled solutions to fulfill almost need of our clients. These are-",
+      "Our real estate app helps you in accomplishing your every possible need while you go to buy or sell your property. Thus, our team at Devapp delivers you unrivaled solutions to fulfill almost need of our clients. These are-",
           points: [
       "Display of any property based on interest of customers",
       "Virtual tour, photo and video galleries",
@@ -85,7 +85,7 @@ export const slides = [
 export const ServiceSectionData = [
   {
     title:
-      "Advantages of Building Real Estate Mobile Applications with iQlance",
+      "Advantages of Building Real Estate Mobile Applications with Devapp",
     description:
       " Award winning strategies to deliver comprehensive mobile app development solutions, along with marketing and optimization of apps successfully. Let us look on some important aspects, which set us apart from our competitor groups.",
     features: [
@@ -192,7 +192,7 @@ export const portfolioSlides = [
     heading: "",
     title: "Immigration Management Software",
     description:
-      " At iQlance this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
+      " At Devapp this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
 
     features: [
       "Easy Operational Visibility",

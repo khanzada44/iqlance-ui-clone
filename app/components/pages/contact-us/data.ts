@@ -54,29 +54,29 @@ export const testimonials = [
     id: 1,
     name: "Elisha",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
     review:
-      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
+      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to Devapp’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
   },
   {
     id: 2,
     name: "Gregor I",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/google-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/google-icon.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/google-logo-new.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/google-logo-new.png.webp",
     review:
-      "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
+      "Devapp is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
   },
   {
     id: 3,
     name: "Stephanie A",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
     review:
       "Their developers were skilled, and they helped us to integrate development with UI design were necessary. They were able to respond with high flexibility to the development model we requested. They did an excellent job. Their mobile app developer and UI designers are very expert. We can hire them again for future apps development…Thanks",
   },
@@ -84,20 +84,20 @@ export const testimonials = [
     id: 4,
     name: "Dubie B",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
     review:
-      "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
+      "Devapp was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
   },
   {
     id: 5,
     name: "Chris",
     image:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
     verifiedImage:
-      "https://www.iqlance.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
+      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
     review:
-      "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
+      "Devapp’s mobile app received positive feedback from people that interacted with it in the development stage. Devapp communicated quickly, frequently, and over several different platforms.",
   },
 ];

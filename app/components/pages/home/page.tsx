@@ -15,13 +15,9 @@ import {
   portfolioSlides,
   slides,
   services,
-  testimonials
+  testimonials,
 } from "../home/services-data";
-import {
-  partners,
-  stats,
-  industries,
-} from "../../../../utils/data";
+import { partners, stats, industries } from "../../../../utils/data";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 const containerVariants = {
   hidden: {
@@ -86,7 +82,7 @@ export default function Home() {
   ];
   return (
     <>
-      <div className="w-[95%] sm:w-[90%] lg:w-[80%] mx-auto">
+      <div className="w-[95%] sm:w-[90%] lg:w-[80%] max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full">
           {/* LEFT CONTENT */}
           <div className="w-full lg:w-1/2 px-2 sm:px-4 py-6 sm:py-8 font-sans">
@@ -202,7 +198,7 @@ export default function Home() {
                 </div> */}
 
                 {/* Buttons Section */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-6">
+                <div className=" flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-6">
                   <Link href="/contact-us" className="w-full sm:w-auto">
                     <button className="group w-full bg-red-700 hover:bg-red-600 text-white px-6 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer whitespace-nowrap">
                       Book Your Free Consultation
@@ -227,7 +223,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 flex px-4">
+          <div className="w-full lg:w-1/2 flex px-4 ">
             <section className="w-full py-10 px-0">
               <div className="w-full">
                 <motion.div
@@ -305,7 +301,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 mt-10 mb-10">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 mt-10 mb-10">
           {/* CLIENT RETENTION */}
           <div className="text-center flex flex-col items-center justify-center">
             <div className="flex items-end gap-1">
@@ -394,7 +390,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 mb-10 w-full">
+        <div className="mt-10 mb-10 w-full max-w-7xl mx-auto">
           <Swiper
             className="portfolio-swiper"
             modules={[Pagination, Autoplay]}
@@ -492,7 +488,7 @@ export default function Home() {
   `}</style>
         </div>
 
-        <div className="w-full px-3 sm:px-5 py-10 sm:py-12">
+        <div className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
             {/* IMAGE */}
             <div className="flex justify-center">
@@ -518,8 +514,11 @@ export default function Home() {
               </p>
 
               <p className="mt-5 sm:mt-6 text-gray-700 leading-7 sm:leading-8 text-base sm:text-lg">
-                Have an App or Software Idea? Let's Figure Out the Smartest Way to Build It. Book a free strategy call with our US-based IT specialist to walk through your idea, technical requirements, budget expectations, and the smartest path to bring your product to market.
-
+                Have an App or Software Idea? Let's Figure Out the Smartest Way
+                to Build It. Book a free strategy call with our US-based IT
+                specialist to walk through your idea, technical requirements,
+                budget expectations, and the smartest path to bring your product
+                to market.
               </p>
 
               <div className="mt-6 sm:mt-8 flex justify-center lg:justify-start">
@@ -544,7 +543,7 @@ export default function Home() {
                   href="/lets-talk"
                   className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer"
                 >
-                   Book Your Free Strategy Call
+                  Book Your Free Strategy Call
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -590,13 +589,17 @@ export default function Home() {
             </h2>
 
             <p className="mt-4 sm:mt-6 w-full text-sm sm:text-base md:text-lg text-black leading-5 sm:leading-9">
-              Great technology doesn't happen by accident. It's built by people who know exactly what they're doing. Whether you're launching a brand-new product, giving an outdated platform a fresh lease on life, or simply need extra hands on deck to scale your tech team, we bring the engineering muscle to push your project across the finish line.
-
+              Great technology doesn't happen by accident. It's built by people
+              who know exactly what they're doing. Whether you're launching a
+              brand-new product, giving an outdated platform a fresh lease on
+              life, or simply need extra hands on deck to scale your tech team,
+              we bring the engineering muscle to push your project across the
+              finish line.
             </p>
           </div>
         </div>
 
-        <section className="w-full px-3 sm:px-5 py-10 sm:py-12">
+        <section className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {services.map((service, index) => (
               <div
@@ -621,7 +624,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="w-full">
+        <div className="w-full max-w-7xl mx-auto">
           <Swiper
             modules={[Pagination, Autoplay]}
             className="portfolio-swiper"
@@ -630,15 +633,17 @@ export default function Home() {
             }}
             autoplay={{
               delay: 300000,
+              disableOnInteraction: false,
             }}
             loop={true}
+            autoHeight={false}
           >
             {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-red-100 px-4 py-8 sm:px-6 sm:py-10 md:px-12">
-                  <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2 lg:gap-10">
+              <SwiperSlide key={index} className="h-auto!">
+                <div className="flex h-full w-full bg-red-100 px-4 py-8 sm:px-6 sm:py-10 md:px-12">
+                  <div className="grid w-full grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
                     {/* LEFT */}
-                    <div className="flex flex-col">
+                    <div className="flex min-w-0 flex-col">
                       <h2 className="mb-6 text-center text-xl font-bold sm:mb-10 sm:text-2xl md:text-4xl">
                         {/* {slide.heading} */}
                       </h2>
@@ -647,31 +652,35 @@ export default function Home() {
                         {slide.title}
                       </h3>
 
-                      <p className="mb-8 text-lg leading-8 text-black sm:mb-10 sm:text-xl">
+                      <p className="mb-8 text-base leading-7 text-black sm:mb-10 sm:text-lg sm:leading-8 md:text-xl">
                         {slide.description}
                       </p>
 
+                      {/* FEATURES */}
                       <ul className="mb-6 space-y-3 text-sm sm:mb-8 sm:space-y-4 sm:text-base">
                         {slide.features.map((feature, i) => (
-                          <li key={i} className="flex gap-2">
+                          <li key={i} className="flex items-start gap-2">
                             <ChevronRight
                               size={14}
-                              className="mt-1 h-4 w-4 shrink-0 text-black md:h-5 md:w-5"
+                              className="mt-1 h-4 w-4 shrink-0 md:h-5 md:w-5"
                             />
 
-                            <span>{feature}</span>
+                            <span className="leading-6">{feature}</span>
                           </li>
                         ))}
                       </ul>
 
                       {/* TECHNOLOGIES */}
-                      <div className="mb-6 flex flex-wrap gap-6 sm:mb-8 sm:gap-8">
+                      <div className="mb-6 flex flex-wrap gap-5 sm:mb-8 sm:gap-8">
                         {slide.technologies.map((tech, i) => (
-                          <div key={i} className="text-center">
+                          <div
+                            key={i}
+                            className="flex flex-col items-center text-center"
+                          >
                             <img
                               src={tech.icon}
                               alt={tech.name}
-                              className="mx-auto h-8 w-8 object-contain sm:h-9 sm:w-9"
+                              className="h-8 w-8 object-contain sm:h-9 sm:w-9"
                             />
 
                             <p className="mt-2 text-xs sm:text-sm">
@@ -682,7 +691,10 @@ export default function Home() {
                       </div>
 
                       {/* BUTTON */}
-                      <button className="group flex w-full cursor-pointer items-center justify-center gap-3 bg-red-700 px-8 py-4 font-semibold text-white transition hover:bg-red-600 sm:w-fit">
+                      <button
+                        type="button"
+                        className="group flex w-full items-center justify-center gap-3 bg-red-700 px-8 py-4 font-semibold text-white transition hover:bg-red-600 sm:w-fit"
+                      >
                         View Case Study
                         <ArrowRight
                           size={18}
@@ -691,13 +703,13 @@ export default function Home() {
                       </button>
                     </div>
 
-                    {/* RIGHT IMAGE */}
-                    <div className="w-full">
-                      <div className="h-70 w-full sm:h-95 md:h-112.5 lg:h-full lg:min-h-125">
+                    {/* RIGHT */}
+                    <div className="flex w-full items-center justify-center">
+                      <div className="flex w-full items-center justify-center">
                         <img
                           src={slide.image}
                           alt={slide.title}
-                          className="block h-full w-full object-cover"
+                          className="max-h-125 w-full object-contain lg:max-h-135"
                         />
                       </div>
                     </div>
@@ -707,8 +719,20 @@ export default function Home() {
             ))}
           </Swiper>
 
-          {/* SWIPER PAGINATION */}
           <style>{`
+    .portfolio-swiper .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .portfolio-swiper .swiper-slide {
+      height: auto !important;
+      display: flex;
+    }
+
+    .portfolio-swiper .swiper-slide > div {
+      width: 100%;
+    }
+
     .portfolio-swiper .swiper-pagination-bullet {
       background-color: #cbd5e1 !important;
       opacity: 1 !important;
@@ -720,18 +744,19 @@ export default function Home() {
   `}</style>
         </div>
 
-        <div className="w-full bg-red-50 px-4 sm:px-6 md:px-12 py-8 sm:py-10 mt-10 mb-10">
+        <div className="w-full bg-red-50 px-4 sm:px-6 md:px-12 py-8 sm:py-10 mt-10 mb-10 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 sm:gap-8 text-center lg:text-left">
             <div>
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight">
-                    See How We Turn Your Idea 
+                See How We Turn Your Idea
                 <br className="hidden sm:block" />
                 Into an Innovative Product
               </h2>
 
               <p className="mt-4 sm:mt-5 text-black text-base sm:text-lg leading-6 max-w-xl mx-auto lg:mx-0">
-                Our portfolio speaks for itself, it's the reason businesses across the USA trust us 
-                as one of the leading software and app development companies in the industry.
+                Our portfolio speaks for itself, it's the reason businesses
+                across the USA trust us as one of the leading software and app
+                development companies in the industry.
               </p>
             </div>
 
@@ -752,11 +777,11 @@ export default function Home() {
 
         <div className="w-full text-center pt-2 mt-10 mb-10">
           <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight px-2">
-            The Future Runs on AI, We Help You Build It 
+            The Future Runs on AI, We Help You Build It
           </h1>
         </div>
 
-        <div className="mt-10 mb-15 w-full pt-2">
+        <div className="mt-10 mb-15 w-full pt-2 max-w-7xl mx-auto">
           <div className="overflow-hidden bg-red-50">
             <div className="grid grid-cols-1 items-stretch lg:grid-cols-2">
               {/* IMAGE */}
@@ -772,40 +797,52 @@ export default function Home() {
               <div className="flex items-center p-6 sm:p-8 lg:p-10">
                 <div>
                   <p className="text-base leading-relaxed text-black sm:text-lg md:text-xl">
-                    The businesses winning right now aren't just adapting to change;e, they're building with it. That's where we come in. We help companies harness the full power of AI, generative AI, agentic AI, machine learning, cloud computing, data science & analytics, and cybersecurity to solve problems that used to feel unsolvable and turn them into growth opportunities instead.
-                    Over a decade in this industry has taught us one thing: great technology is never built by one person. It takes consultants, designers, engineers, and specialists working as one team, and that's exactly what we bring to every idea you hand us, no matter how ambitious.
+                    The businesses winning right now aren't just adapting to
+                    change;e, they're building with it. That's where we come in.
+                    We help companies harness the full power of AI, generative
+                    AI, agentic AI, machine learning, cloud computing, data
+                    science & analytics, and cybersecurity to solve problems
+                    that used to feel unsolvable and turn them into growth
+                    opportunities instead. Over a decade in this industry has
+                    taught us one thing: great technology is never built by one
+                    person. It takes consultants, designers, engineers, and
+                    specialists working as one team, and that's exactly what we
+                    bring to every idea you hand us, no matter how ambitious.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <section className="w-full bg-red-50 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
-          <div className="w-full mx-auto text-center">
+        <section className="max-w-7xl mx-auto w-full overflow-x-hidden bg-red-50 px-4 py-10 pt-2 sm:px-6 sm:py-12 md:px-12">
+          <div className="mx-auto mt-10 mb-10 w-full max-w-4xl px-2 text-center sm:mt-14">
+            {/* ICON */}
             <img
               src="/images/letdiscuss-icon.png.webp"
               alt="Hire Team"
-              className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 object-contain"
+              className="mx-auto mb-4 h-12 w-12 object-contain sm:mb-6 sm:h-16 sm:w-16"
             />
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+            {/* HEADING */}
+            <h2 className="text-2xl font-bold text-black sm:text-3xl md:text-4xl">
               Ready to Build Something Extraordinary?
             </h2>
 
-            <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg">
-              Behind every great product is a team that knows how to bring it to life, 
-              and that's exactly who you'll get here. 
-              Our designers and developers aren't just experienced, they're certified, 
-              driven, and genuinely obsessed with getting the details right. 
-
+            {/* DESCRIPTION */}
+            <p className="mx-auto mt-4 max-w-3xl text-base text-gray-700 sm:mt-5 sm:text-lg">
+              Behind every great product is a team that knows how to bring it to
+              life, and that's exactly who you'll get here. Our designers and
+              developers aren't just experienced, they're certified, driven, and
+              genuinely obsessed with getting the details right.
             </p>
+
+            {/* CONTACT BOX */}
             <div className="flex justify-center">
-              <div className="w-full max-w-185 md:w-[90%] mt-6 sm:mt-8 border border-red-300 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
+              <div className="mt-6 flex w-full max-w-3xl flex-col items-center justify-center gap-3 border border-red-300 px-4 py-4 text-sm sm:mt-8 sm:px-6 sm:py-5 sm:text-base md:flex-row md:text-lg">
                 {/* EMAIL */}
-                <span className="font-semibold flex gap-1 items-center">
+                <span className="flex items-center gap-1 font-semibold">
                   <div
-                    className="w-6 h-6 bg-red-600 shrink-0"
+                    className="h-6 w-6 shrink-0 bg-red-600"
                     style={{
                       maskImage: "url(/icons/email-icon.svg)",
                       maskRepeat: "no-repeat",
@@ -815,15 +852,15 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  info@iqlance.com
+                  info@DevAppGrid.com
                 </span>
 
                 <span className="block">or</span>
 
                 {/* PHONE */}
-                <span className="flex flex-wrap gap-1 items-center justify-center">
+                <span className="flex flex-wrap items-center justify-center gap-1">
                   <div
-                    className="w-6 h-6 bg-red-600 shrink-0"
+                    className="h-6 w-6 shrink-0 bg-red-600"
                     style={{
                       maskImage: "url(/icons/phone-icon.svg)",
                       maskRepeat: "no-repeat",
@@ -833,16 +870,17 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  US :<strong>+1 469 793 9837</strong>, CA :
+                  US : <strong>+1 469 793 9837</strong>, CA :
                   <strong>+1 647 637 9108</strong>
                 </span>
               </div>
             </div>
 
+            {/* BUTTON */}
             <div className="flex justify-center">
               <Link
                 href="/lets-talk"
-                className="group mt-6 sm:mt-8 bg-red-700 text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-red-600 transition w-full sm:w-auto"
+                className="group mt-6 flex w-full items-center justify-center gap-3 bg-red-700 px-6 py-3 font-semibold text-white transition hover:bg-red-600 sm:mt-8 sm:w-auto"
               >
                 Let's Discuss
                 <ArrowRight
@@ -856,17 +894,17 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto text-center mt-10 sm:mt-14 px-3 mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
-              Hire Mobile App & Software Developers
+            Hire Mobile App & Software Developers
           </h2>
 
           <p className="mt-4 sm:mt-6 text-gray-700 text-sm sm:text-base md:text-lg leading-7 sm:leading-8">
-           Whether you need one extra pair of hands or a full dedicated team, 
-           we've got developers ready to hit the ground running. Our team doesn't 
-           just work alongside yours, they fit right into your existing processes like 
-           they've always been there. From mobile apps and custom software to AI-powered 
-           solutions and enterprise platforms, our experts build applications that are reliable, 
-           scalable, and built to perform, shaped entirely around your business goals.
-
+            Whether you need one extra pair of hands or a full dedicated team,
+            we've got developers ready to hit the ground running. Our team
+            doesn't just work alongside yours, they fit right into your existing
+            processes like they've always been there. From mobile apps and
+            custom software to AI-powered solutions and enterprise platforms,
+            our experts build applications that are reliable, scalable, and
+            built to perform, shaped entirely around your business goals.
           </p>
         </div>
 
@@ -927,15 +965,15 @@ export default function Home() {
         {/* APPROACH HEADER */}
         <div className="px-3 mt-10">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mt-10">
-              Our Design & Development Approach
+            Our Design & Development Approach
           </h1>
           <p className="max-w-5xl mx-auto text-center text-black mt-5 sm:mt-6 leading-5 sm:leading-8 text-sm sm:text-base font-semibold">
-            Every great digital product starts long before a single line of code is written. 
-            It starts with a clear strategy. Whether you're building a mobile app, custom software, 
-            web application, or AI-powered solution, we follow a proven process built to reduce risk, 
-            keep delivery on track, and make sure the end result actually serves your business goals, 
-            not just your original brief.
-
+            Every great digital product starts long before a single line of code
+            is written. It starts with a clear strategy. Whether you're building
+            a mobile app, custom software, web application, or AI-powered
+            solution, we follow a proven process built to reduce risk, keep
+            delivery on track, and make sure the end result actually serves your
+            business goals, not just your original brief.
           </p>
         </div>
 
@@ -983,7 +1021,7 @@ export default function Home() {
         <section>
           <div className="flex justify-center">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-             What Our Clients Say
+              What Our Clients Say
             </h1>
           </div>
         </section>
@@ -1089,9 +1127,10 @@ export default function Home() {
               Why Businesses Trust Us
             </h1>
             <p className="text-xl text-gray-900">
-              From startups to established enterprises, we help businesses turn their ideas 
-              into digital solutions that actually perform. Our developers work with cutting-edge 
-              technology to deliver results you can measure on time, and without blowing the budget
+              From startups to established enterprises, we help businesses turn
+              their ideas into digital solutions that actually perform. Our
+              developers work with cutting-edge technology to deliver results
+              you can measure on time, and without blowing the budget
             </p>
           </div>
         </section>
@@ -1156,7 +1195,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 hover:text-red-600  transition-colors"
                 >
                   <div
@@ -1170,7 +1209,7 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-900 font-normal">or</span>
@@ -1230,10 +1269,11 @@ export default function Home() {
             </h2>
 
             <p className="max-w-6xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base">
-              At Devapp, we don't believe in one-size-fits-all every industry has its own challenges, 
-              and our solutions are built to match. Backed by deep, hands-on experience across sectors, 
-              we deliver high-quality web applications, mobile apps, 
-              and custom software built around what your industry actually needs.
+              At Devapp, we don't believe in one-size-fits-all every industry
+              has its own challenges, and our solutions are built to match.
+              Backed by deep, hands-on experience across sectors, we deliver
+              high-quality web applications, mobile apps, and custom software
+              built around what your industry actually needs.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1275,7 +1315,9 @@ export default function Home() {
               </h2>
 
               <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-7 sm:leading-8 mt-4 sm:mt-6">
-                Got the next great idea? Let's make it real. Hire top-rated, dedicated developers ready to bring your vision to life risk-free, with a 7-day trial to prove it.
+                Got the next great idea? Let's make it real. Hire top-rated,
+                dedicated developers ready to bring your vision to life
+                risk-free, with a 7-day trial to prove it.
               </p>
 
               <div className="flex justify-center lg:justify-start mt-8">
@@ -1298,9 +1340,9 @@ export default function Home() {
               </h2>
 
               <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-7 sm:leading-8 mt-4 sm:mt-6">
-                Our portfolio speaks for itself because businesses 
-                across the USA trust us as one of the leading software and app 
-                development companies in the industry.
+                Our portfolio speaks for itself because businesses across the
+                USA trust us as one of the leading software and app development
+                companies in the industry.
               </p>
 
               <div className="flex justify-center lg:justify-start">
@@ -1329,9 +1371,13 @@ export default function Home() {
                 </h2>
 
                 <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 max-w-lg mx-auto lg:mx-0">
-                  We're proud to stand alongside some of the best in the business, including Fortune 500 companies. Our clients put their trust in us, and we deliver innovation that turns into real, measurable success. From local startups to global enterprises, 
-                  we've helped build digital solutions that make an impact across the world.
-                </p> 
+                  We're proud to stand alongside some of the best in the
+                  business, including Fortune 500 companies. Our clients put
+                  their trust in us, and we deliver innovation that turns into
+                  real, measurable success. From local startups to global
+                  enterprises, we've helped build digital solutions that make an
+                  impact across the world.
+                </p>
               </div>
 
               <div className="flex justify-center lg:justify-end">
@@ -1359,9 +1405,10 @@ export default function Home() {
             </h2>
 
             <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg">
-              Sit down with one of our technical experts and let's turn your idea into reality, 
-              no pressure, just a real 
-              conversation about what you need. Share your requirements, and we'll take it from there.
+              Sit down with one of our technical experts and let's turn your
+              idea into reality, no pressure, just a real conversation about
+              what you need. Share your requirements, and we'll take it from
+              there.
             </p>
 
             <div className="mt-6 sm:mt-8 border border-red-300 px-4 sm:px-6 py-4 sm:py-5 flex flex-col md:flex-row justify-center items-center gap-3 text-sm sm:text-base md:text-lg">
@@ -1377,7 +1424,7 @@ export default function Home() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                info@iqlance.com
+                info@DevAppGrid.com
               </span>
 
               <span className="hidden md:block">or</span>
@@ -1470,13 +1517,14 @@ export default function Home() {
         {/* CONTACT */}
         <div className="mt-2 px-3">
           <h1 className="flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight text-center">
-              Have Something in Mind? Let's Talk.
+            Have Something in Mind? Let's Talk.
           </h1>
           <p className="flex items-center justify-center text-center mt-3 sm:mt-4 text-sm sm:text-base">
-            Take a look at what Devapp Solutions brings to the table our services, 
-            our development process, and the proven approach we follow for mobile app and 
-            software development. See what our clients have to say about working with us. Then, 
-            let's start a conversation and turn your next great idea into reality together.
+            Take a look at what Devapp Solutions brings to the table our
+            services, our development process, and the proven approach we follow
+            for mobile app and software development. See what our clients have
+            to say about working with us. Then, let's start a conversation and
+            turn your next great idea into reality together.
           </p>
         </div>
 

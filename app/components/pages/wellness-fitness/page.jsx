@@ -80,7 +80,7 @@ export default function wellnessFitness() {
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
                 Recently it is seen that the wellness and fitness industry are
                 in need of technology revolution, which is why business leaders
-                are inclining towards mobility solutions. iQlance acknowledges
+                are inclining towards mobility solutions. Devapp acknowledges
                 this requirement, thus providing you with a team of experts
                 experienced at crafting the best digital solution for you.
               </p>
@@ -252,7 +252,7 @@ export default function wellnessFitness() {
                 And Fitness App Development Solutions
               </h2>
               <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Our team at iQlance always strives hard to provide you with the
+                Our team at Devapp always strives hard to provide you with the
                 best possible fitness solutions. For this, we have delivered a
                 variety of innovative wellness and fitness app development
                 solutions and allowed fitness enthusiasts to get their
@@ -320,7 +320,7 @@ export default function wellnessFitness() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -493,7 +493,7 @@ export default function wellnessFitness() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -717,7 +717,7 @@ export default function wellnessFitness() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -840,7 +840,7 @@ export default function wellnessFitness() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -958,7 +958,7 @@ export default function wellnessFitness() {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for
+              Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1182,7 +1182,7 @@ export default function wellnessFitness() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App
+              Devapp solutions is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end to end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -1265,7 +1265,7 @@ export default function wellnessFitness() {
               Why should you choose us?
             </h1>
             <p>
-              iQlance is a top-tier food application creation company that
+              Devapp is a top-tier food application creation company that
               creates applications for a variety of operating systems, including
               Android and iPhone. Our professionals provide a centralized
               process for each customer and provide personalised assistance in
@@ -1494,7 +1494,7 @@ export default function wellnessFitness() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

@@ -393,6 +393,9 @@ mark.has-inline-color {
   height: auto !important;
   display: block;
 }
+.leftLinpage{
+  margin: 0px !important;
+}
 
 /* ----------------------------------------------------------
    2. ABOUT SECTIONS

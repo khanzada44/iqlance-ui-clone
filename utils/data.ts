@@ -12,7 +12,7 @@ export const bottomFeatures = [
   {
     title: "Secure payment",
     description:
-      "We at iQlance Mobile App Development Company USA. are particular about security, ensuring encrypted, malware, and firewall protection for all our solutions. Protect your personal data well with our support.",
+      "We at Devapp Mobile App Development Company USA. are particular about security, ensuring encrypted, malware, and firewall protection for all our solutions. Protect your personal data well with our support.",
   },
   {
     title: "Attractive UI + Unbeatable Performance",
@@ -31,7 +31,7 @@ export const slides = [
     image:"/images/on-demand-left-1.jpg",
     title: "Comprehensive App for Fitness Enthusiasts",
     description:
-      "We at iQlance offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
+      "We at Devapp offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
     points: [
       "Getting regular fitness sessions guided by experts of the fitness sector",
       "Schedule the fitness regime and get the necessary alerts",
@@ -46,7 +46,7 @@ export const slides = [
       "/images/on-demand-left-2.jpg",
     title: "Tracking of Calorie Intake Regularly",
     description:
-      "Our iQlance team is well aware that besides physical exercise, diet of a person has a prime role in achieving fitness goals, whether to get toned muscles and abs, loose extra body fat, increase muscular strength or anything else. Hence, we have developed nutrition app to allow our clients finding healthy food options or getting the necessary consultation solutions from experienced dieticians located in almost any part of the world.",
+      "Our Devapp team is well aware that besides physical exercise, diet of a person has a prime role in achieving fitness goals, whether to get toned muscles and abs, loose extra body fat, increase muscular strength or anything else. Hence, we have developed nutrition app to allow our clients finding healthy food options or getting the necessary consultation solutions from experienced dieticians located in almost any part of the world.",
     points: [
       "Check your calorie intake and compare it with burned calories",
       "Recommendations from an experienced nutritionist to follow an appropriate weight loss/muscle building diet plan",
@@ -86,7 +86,7 @@ export const ServiceSectionData = [
     title:
       "Experience The Quickest Application Development With Us!",
     description:
-      "The customers who believe in receiving the app development services  on the go. We, at iQlance, build ever-evolving on-demand app solutions in order to promote the next generation services for the business growth. Have an amazing experience of scalable and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced admin dashboard and powerful analytics panel for both android as well as iOS. <br/><br/>Our unparalleled set of solutions helps the businesses to acquire new customers along with the pervasive solutions that can be deployed for any business. We believe your business on mobile should be easy and convenient for the customers. The demand of on-demand mobile app development  has created a great buzz in the market." ,
+      "The customers who believe in receiving the app development services  on the go. We, at Devapp, build ever-evolving on-demand app solutions in order to promote the next generation services for the business growth. Have an amazing experience of scalable and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced admin dashboard and powerful analytics panel for both android as well as iOS. <br/><br/>Our unparalleled set of solutions helps the businesses to acquire new customers along with the pervasive solutions that can be deployed for any business. We believe your business on mobile should be easy and convenient for the customers. The demand of on-demand mobile app development  has created a great buzz in the market." ,
     features: [
       
     ],
@@ -183,7 +183,7 @@ export const portfolioSlides = [
     heading: "",
     title: "Immigration Management Software",
     description:
-      " At iQlance this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
+      " At Devapp this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
 
     features: [
       "Easy Operational Visibility",
@@ -559,7 +559,7 @@ export const services = [
       "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "iQlance focuses on the rapid delivery of projects with a seamless connection between all clients. Also, ensuring solid documentation for extensive support and training.",
+      "Devapp focuses on the rapid delivery of projects with a seamless connection between all clients. Also, ensuring solid documentation for extensive support and training.",
   },
   {
     image:
@@ -613,7 +613,7 @@ export const testimonials = [
     verifiedImage:
       "/images/clutch-icon.png.webp",
     review:
-      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to iQlance’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
+      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to Devapp’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
   },
   {
     id: 2,
@@ -623,7 +623,7 @@ export const testimonials = [
     verifiedImage:
       "/images.google-logo-new.png.webp",
     review:
-      "iQlance is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
+      "Devapp is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
   },
   {
     id: 3,
@@ -643,7 +643,7 @@ export const testimonials = [
     verifiedImage:
       "/images/good-firms-logo-new.png.webp",
     review:
-      "iQlance was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
+      "Devapp was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
   },
   {
     id: 5,
@@ -653,7 +653,7 @@ export const testimonials = [
     verifiedImage:
       "/images/clutch-icon.png.webp",
     review:
-      "iQlance’s mobile app received positive feedback from people that interacted with it in the development stage. iQlance communicated quickly, frequently, and over several different platforms.",
+      "Devapp’s mobile app received positive feedback from people that interacted with it in the development stage. Devapp communicated quickly, frequently, and over several different platforms.",
   },
 ];
 export const faqsData = [
@@ -706,7 +706,7 @@ export const faqsData = [
   {
     question: "Is post-launch app maintenance always available?",
     answer:
-      "At iQlance, we have support professionals who focus entirely on post-launch support for companies. Contact the support team whenever.",
+      "At Devapp, we have support professionals who focus entirely on post-launch support for companies. Contact the support team whenever.",
   },
 ];
 export const partners = [

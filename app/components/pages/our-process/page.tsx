@@ -11,7 +11,7 @@ export default function ourProcess() {
   const [open, setOpen] = useState(-1);
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <div className="mt-10">
           <img
             src="/images/our-process-header.png"
@@ -74,7 +74,7 @@ export default function ourProcess() {
                 Offshore Web, Mobile & Software Development Company
               </h3>
               <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                iQlance solutions is a leading Software, Web, & Mobile App
+                Devapp solutions is a leading Software, Web, & Mobile App
                 Development Company with a vast area of experience in crafting
                 stunning and end to end encrypted technology solutions. We offer
                 excellent expertise of the industry followed by an exactly planned
@@ -258,7 +258,7 @@ export default function ourProcess() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
                   <div
@@ -272,7 +272,7 @@ export default function ourProcess() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>

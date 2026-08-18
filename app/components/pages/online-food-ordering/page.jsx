@@ -203,7 +203,7 @@ export default function fitness() {
 
               <p className="text-base md:text-lg leading-relaxed text-black">
                 Looking to launch a high-performing food ordering platform in
-                the USA? iQlance Solutions is recognized as the best food
+                the USA? Devapp Solutions is recognized as the best food
                 delivery app development company, delivering scalable,
                 cloud-ready, and feature-rich digital solutions. We build custom
                 food delivery ecosystems designed to streamline ordering,
@@ -223,7 +223,7 @@ export default function fitness() {
               <p className="text-base md:text-lg leading-relaxed text-black">
                 From intuitive UI/UX design to robust backend development and
                 DevOps deployment, we focus on performance, security, and
-                scalability. Partner with iQlance Solutions to transform your
+                scalability. Partner with Devapp Solutions to transform your
                 food delivery idea into a reliable, revenue-generating digital
                 platform.
               </p>
@@ -421,7 +421,7 @@ export default function fitness() {
                 Top On-Demand Solutions Company
               </h2>
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                We, at iQlance, build ever-evolving on-demand app solutions in
+                We, at Devapp, build ever-evolving on-demand app solutions in
                 order to promote the next generation-level services for business
                 growth. Have an amazing experience of scalable and solely
                 integrated solutions along with custom front-end and back-end
@@ -563,7 +563,7 @@ export default function fitness() {
               Endeavors that Make us Proud
             </h2>
             <p className="text-black text-sm md:text-base max-w-3xl mx-auto">
-              iQlance solutions has always been honored with valuable words for
+              Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -857,7 +857,7 @@ export default function fitness() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -871,7 +871,7 @@ export default function fitness() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -1037,7 +1037,7 @@ export default function fitness() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance is a leading Software Development Company currently
+              Devapp is a leading Software Development Company currently
               available in the market, with over 7 years of experience under the
               belt. Over the years, our team members have honed their skills,
               handling over 1,500 projects of different types and companies,
@@ -1073,7 +1073,7 @@ export default function fitness() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -1087,7 +1087,7 @@ export default function fitness() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -1398,7 +1398,7 @@ export default function fitness() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

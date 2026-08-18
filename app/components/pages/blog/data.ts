@@ -506,7 +506,7 @@ export const blogs = [
 
             <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md">
                 <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/letdiscuss-icon.png.webp"
+                src="https://www.Devapp.com/wp-content/themes/Devapp/img/letdiscuss-icon.png.webp"
                 alt="App Development"
                 class="h-12 w-12 object-contain"
                 />
@@ -524,17 +524,17 @@ export const blogs = [
             <div class="mt-6 flex items-center justify-center gap-2 text-center lg:text-left">
 
                 <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/email-icon.svg"
+                src="https://www.Devapp.com/wp-content/themes/Devapp/img/email-icon.svg"
                 alt="phone-icon"
                 class="h-5 w-5 shrink-0"
                 />
 
                 <span class="text-sm font-medium leading-6 sm:text-base">
-                info@iqlance.com
+                info@DevAppGrid.com
                 </span>
                     or
                 <img
-                src="https://www.iqlance.com/wp-content/themes/iqlance/img/phone-icon.svg"
+                src="https://www.Devapp.com/wp-content/themes/Devapp/img/phone-icon.svg"
                 alt="phone-icon"
                 class="h-5 w-5 shrink-0"
                 />
@@ -640,8 +640,8 @@ export const blogs = [
       },
       {
         heading:
-          "Choose iQlance as a Trusted Mobile App Development Company for US-based Businesses",
-        text: "iQlance is an experienced <strong>mobile app development company USA</strong> serving clients across the country, including businesses looking for app development services in Dallas, Austin, and beyond. Here's what sets iQlance apart for US B2B clients",
+          "Choose Devapp as a Trusted Mobile App Development Company for US-based Businesses",
+        text: "Devapp is an experienced <strong>mobile app development company USA</strong> serving clients across the country, including businesses looking for app development services in Dallas, Austin, and beyond. Here's what sets Devapp apart for US B2B clients",
         description: `
         
         `,
@@ -650,17 +650,17 @@ export const blogs = [
         heading: "",
         text: " <strong>(1) 1,500+ Projects Delivered</strong>",
         description: `
-        iQlance has delivered over 1,500 apps and digital products across industries, giving their teams a depth of pattern recognition that junior agencies simply can't match. When your project hits an unexpected technical challenge, experience matters.
+        Devapp has delivered over 1,500 apps and digital products across industries, giving their teams a depth of pattern recognition that junior agencies simply can't match. When your project hits an unexpected technical challenge, experience matters.
         `,
       },
       {
         heading: "",
         text: " <strong>(2) USA-Focused Delivery Model</strong>",
         description: `
-        Unlike purely offshore agencies, iQlance operates 
+        Unlike purely offshore agencies, Devapp operates 
         with a US-aligned delivery model, with client-facing communication, 
         project management, and escalation support tuned to US business hours, 
-        expectations, and regulatory requirements. Businesses seeking a app development Austin will find iQlance's engagement model built for the US market.
+        expectations, and regulatory requirements. Businesses seeking a app development Austin will find Devapp's engagement model built for the US market.
         `,
       },
       {
@@ -668,7 +668,7 @@ export const blogs = [
         text: " <strong>(3) AI-Powered App Development Expertise</strong>",
         description: `
        From recommendation engines to generative AI features, 
-       iQlance's team includes AI/ML specialists who have delivered production AI systems, 
+       Devapp's team includes AI/ML specialists who have delivered production AI systems, 
        not just demos. This matters increasingly as AI becomes a standard expectation in 
        competitive apps.
         `,
@@ -677,7 +677,7 @@ export const blogs = [
         heading: "",
         text: " <strong>(4) Transparent Pricing</strong>",
         description: `
-       iQlance provides detailed cost breakdowns by phase, by feature, 
+       Devapp provides detailed cost breakdowns by phase, by feature, 
        and by team composition before any contract is signed. There are no surprise 
        invoices or scope 
        creep conversations you weren't prepared for.
@@ -688,7 +688,7 @@ export const blogs = [
         text: " <strong>(5) Dedicated Teams</strong>",
         description: `
             Unlike project platforms that rotate developers across accounts, 
-            iQlance provides dedicated teams of developers who know your codebase, 
+            Devapp provides dedicated teams of developers who know your codebase, 
             your product goals, 
             and your business context from Day 1 through post-launch.
         `,
@@ -697,7 +697,7 @@ export const blogs = [
         heading: "",
         text: " <strong>(6) End-to-End Mobile App Development Services</strong>",
         description: `
-            iQlance covers the full development lifecycle: product strategy, 
+            Devapp covers the full development lifecycle: product strategy, 
             UI/UX design, native and cross-platform development, QA, App Store submission, 
             and ongoing maintenance. You get a single accountable partner.
         `,
@@ -727,15 +727,15 @@ export const blogs = [
       },
       {
         heading: "",
-        text: " <strong>(4) Is iQlance locally registered in the USA? </strong>",
+        text: " <strong>(4) Is Devapp locally registered in the USA? </strong>",
         description: `
-            Yes, iQlance is a locally registered company in the USA, with its headquarters in Dallas.
+            Yes, Devapp is a locally registered company in the USA, with its headquarters in Dallas.
              Hence, we allow in-person meetings for local companies. 
         `,
       },
       {
         heading: "",
-        text: " <strong>(5) Does iQlance sign an NDA? </strong>",
+        text: " <strong>(5) Does Devapp sign an NDA? </strong>",
         description: `
            Yes, we sign an NDA before discussing your ideas to ensure the confidentiality of sensitive data of your business. 
         `,
@@ -827,50 +827,50 @@ export const partners = [
   {
     id: 1,
     image:
-      "https://www.iqlance.com/wp-content/uploads/2024/10/clutch-update.jpg.webp",
+      "https://www.Devapp.com/wp-content/uploads/2024/10/clutch-update.jpg.webp",
     alt: "Clutch",
   },
   {
     id: 2,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/goodfirm-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/goodfirm-logo.png.webp",
     alt: "GoodFirms",
   },
   {
     id: 3,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/g-rating-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/g-rating-logo.png.webp",
     alt: "GESIA",
   },
   {
     id: 4,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/gesia-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/gesia-logo.png.webp",
     alt: "Google",
   },
 
   {
     id: 5,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/iso-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/iso-logo.png.webp",
     alt: "ISO",
   },
   {
     id: 6,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/nasscom-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/nasscom-logo.png.webp",
     alt: "ISO",
   },
   {
     id: 7,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/itfirm-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/itfirm-logo.png.webp",
     alt: "ISO",
   },
   {
     id: 8,
     image:
-      "https://www.iqlance.com/wp-content/themes/iqlance/img/ypca-logo.png.webp",
+      "https://www.Devapp.com/wp-content/themes/Devapp/img/ypca-logo.png.webp",
     alt: "ISO",
   },
 ];

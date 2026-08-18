@@ -24,7 +24,7 @@ export default function career() {
   const [open, setOpen] = useState(0);
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <div>
           <img
             src="/images/career-header.png"
@@ -199,7 +199,7 @@ export default function career() {
             <div className="mt-2 pt-2">
               <img
                 src="/images/why-iq-join-photo.jpg"
-                alt="Why Join iQlance"
+                alt="Why Join Devapp"
                 className="w-full aspect-16/10 lg:aspect-4/3 object-cover"
               />
             </div>
@@ -244,14 +244,14 @@ export default function career() {
               </h3>
 
               <a
-                href="mailto:hr@iqlance.com"
+                href="mailto:hr@Devapp.com"
                 className="text-red-700 hover:underline text-base md:text-lg font-medium inline-block mb-6"
               >
-                hr@iqlance.com
+                hr@Devapp.com
               </a>
 
               <div>
-                <Link className="group bg-red-700 hover:bg-red-600 text-white font-semibold text-sm px-6 py-3 inline-flex items-center gap-2 transition-colors" href="mailto:hr@iqlance.com">
+                <Link className="group bg-red-700 hover:bg-red-600 text-white font-semibold text-sm px-6 py-3 inline-flex items-center gap-2 transition-colors" href="mailto:hr@Devapp.com">
                   <span className="flex items-center gap-2 justify-center">
                     Send Resume
                     <ArrowRight
@@ -264,10 +264,10 @@ export default function career() {
               </div>
             </div>
 
-            {/* Life at iQlance Section */}
+            {/* Life at Devapp Section */}
             <div className="max-w-5xl mx-auto text-left">
               <h3 className="text-2xl md:text-3xl font-extrabold text-black text-center mb-10">
-                Life at iQlance
+                Life at Devapp
               </h3>
 
               {/* 3-Column List */}
@@ -344,7 +344,7 @@ export default function career() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                info@iqlance.com
+                info@DevAppGrid.com
               </span>
 
               <span className="hidden md:block">or</span>

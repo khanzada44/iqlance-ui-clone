@@ -218,11 +218,11 @@ export default function Service() {
                     </h1>
 
                     <p className="text-gray-700 text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
-                        iQlance develops web, mobile apps, softwares that help businesses for better operational efficiency and engagement. Hire certified mobile app developers from iQlance who are experienced enough for delivering excellence in Android, iOS and cross-platform app development services.
+                        Devapp develops web, mobile apps, softwares that help businesses for better operational efficiency and engagement. Hire certified mobile app developers from Devapp who are experienced enough for delivering excellence in Android, iOS and cross-platform app development services.
                     </p>
 
                     <p className="text-gray-700 text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
-                        iQlance is a expert and professional web and mobile software development company. The iQlance team consists of trained and qualified software developers, UI/UX designers, and software testers. The entire iQlance team works in synchronization with each other, to transform your software development dream into reality.
+                        Devapp is a expert and professional web and mobile software development company. The Devapp team consists of trained and qualified software developers, UI/UX designers, and software testers. The entire Devapp team works in synchronization with each other, to transform your software development dream into reality.
                     </p>
 
                     {/* Buttons */}
@@ -245,10 +245,10 @@ export default function Service() {
                     </div>
                 </section>
 
-                {/* Get The iQlance Section */}
+                {/* Get The Devapp Section */}
                 <section className="mt-16 space-y-4">
                     <h2 className="text-2xl md:text-3xl font-bold text-black flex justify-center">
-                        Get The iQlance
+                        Get The Devapp
                     </h2>
 
                     <p className="text-gray-800 font-medium text-sm md:text-base flex justify-center">
@@ -261,11 +261,11 @@ export default function Service() {
 
                     <div className="space-y-4 pt-2 text-gray-700 text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-center">
                         <p>
-                            At iQlance, we build engaging digital experiences. With our full suite of skills and services, we connect your brand with customers in unique ways, open new business opportunities and growth through extensible solutions. Over the years of rich experience, iQlance, as an IT solutions company has designed, developed and promoted outstanding expertise.
+                            At Devapp, we build engaging digital experiences. With our full suite of skills and services, we connect your brand with customers in unique ways, open new business opportunities and growth through extensible solutions. Over the years of rich experience, Devapp, as an IT solutions company has designed, developed and promoted outstanding expertise.
                         </p>
 
                         <p>
-                            In today's digital era, this is the right time to build a strong online web presence with elegant, interactive, modernized and responsive solutions for the end-users. At iQlance, we care and understand your unique requirements for your business; from mobile app development services, web development, digital marketing, and game app development solutions to trending technologies for all industries.
+                            In today's digital era, this is the right time to build a strong online web presence with elegant, interactive, modernized and responsive solutions for the end-users. At Devapp, we care and understand your unique requirements for your business; from mobile app development services, web development, digital marketing, and game app development solutions to trending technologies for all industries.
                         </p>
 
                         <p>
@@ -277,8 +277,8 @@ export default function Service() {
                 {/* Bottom Image Banner */}
                 <div className="mt-12 w-full">
                     <img
-                        src="/images/get-iqlance-service.jpg"
-                        alt="iQlance Services Teamwork"
+                        src="/images/get-Devapp-service.jpg"
+                        alt="Devapp Services Teamwork"
                         className="w-full h-auto object-cover shadow-sm"
                     />
                 </div>
@@ -386,7 +386,7 @@ export default function Service() {
                             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                                 {/* Email link */}
                                 <a
-                                    href="mailto:info@iqlance.com"
+                                    href="mailto:info@DevAppGrid.com"
                                     className="inline-flex items-center gap-1.5 transition-colors"
                                 >
                                     <div
@@ -400,7 +400,7 @@ export default function Service() {
                                             WebkitMaskSize: "contain",
                                         }}
                                     ></div>
-                                    <span>info@iqlance.com</span>
+                                    <span>info@DevAppGrid.com</span>
                                 </a>
 
                                 <span className="text-gray-500 font-normal">or</span>
@@ -691,7 +691,7 @@ export default function Service() {
                 <section>
                     <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
                         <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-                            Why Choose iQlance?
+                            Why Choose Devapp?
                         </h1>
                         <p className="text-black text-sm md:text-base leading-relaxed">
                             From development to testing, design to deployment, and everything
@@ -731,7 +731,7 @@ export default function Service() {
                             Offshore Web, Mobile & Software Development Company
                         </h1>
                         <p>
-                            iQlance is a leading Software Development Company currently
+                            Devapp is a leading Software Development Company currently
                             available in the market, with over 7 years of experience under the
                             belt. Over the years, our team members have honed their skills,
                             handling over 1,500 projects of different types and companies,
@@ -912,7 +912,7 @@ export default function Service() {
                             Have Something in Mind? Let's Talk
                         </h1>
                         <p>
-                            Have a look at the services and development process of the iQlance
+                            Have a look at the services and development process of the Devapp
                             solution. See What process we follow for mobile app and software
                             development. Have a look at how we are praised by our clients
                             Start a conversation to innovate your next great idea into reality

@@ -175,11 +175,11 @@ export default function Blog() {
                   </h1>
 
                   <p className="mt-6 text-black leading-8 text-lg">
-                    iQlance - A Reliable and Professional Mobile App & Software
+                    Devapp - A Reliable and Professional Mobile App & Software
                     Development Company
                   </p>
                   <p className="mt-6 text-black leading-8 text-lg">
-                    iQlance offers robust software development services that
+                    Devapp offers robust software development services that
                     really make a difference to businesses and brands worldwide.
                     We are a leading mobile app development company in Canada.
                     Right from the time we started till today, we have
@@ -188,11 +188,11 @@ export default function Blog() {
                     businesses from diverse industry verticals.
                   </p>
                   <p className="mt-6 text-black leading-8 text-lg">
-                    With iQlance, a brand will always get something that is
-                    tailored to suit their business requirements. At iQlance, we
+                    With Devapp, a brand will always get something that is
+                    tailored to suit their business requirements. At Devapp, we
                     understand that every business is unique and has
                     requirements different from others. Hire dedicated
-                    developers from iQlance and see a visible change in your
+                    developers from Devapp and see a visible change in your
                     business.
                   </p>
 

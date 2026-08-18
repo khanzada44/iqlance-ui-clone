@@ -158,10 +158,10 @@ export const slides = [
     title: "Deliver Mobile App and Software Development Services Across the USA",
 
     description1:
-      "iQlance delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs.",
+      "Devapp delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs.",
 
     description2:
-      "By partnering with iQlance, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
+      "By partnering with Devapp, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
 
     services: [
       {
@@ -319,37 +319,37 @@ export const portfolioSlides = [
 ];
 export const services = [
   {
-    image: "/images/Services_We_Offer_1.png",
+    image: "/images/Services_We_Offer_11.jpg",
     title: "Custom Software Development",
     description:
       "We design and build scalable enterprise software, CRM systems, ERP solutions, SaaS platforms, and business automation tools engineered around how your operations actually run, not a one-size-fits-all template.",
   },
   {
-    image: "/images/Services_We_Offer_2.png",
+    image: "/images/Services_We_Offer_2.jpg",
     title: "AI Development",
     description:
       "From generative AI applications to intelligent AI agents, chatbots, and smart automation tools, we build AI-powered solutions that sharpen customer experiences, streamline your operations, and keep you ahead of the innovation curve.",
   },
   {
-    image: "/images/Services_We_Offer_3.png",
+    image: "/images/Services_We_Offer_3.jpg",
     title: "Web Development",
     description:
       "We craft fast, responsive, high-performing websites and web applications that strengthen your digital presence, elevate the user experience, and set your business up for long-term success across every online touchpoint",
   },
   {
-    image: "/images/Services_We_Offer_4.png",
+    image: "/images/Services_We_Offer_4.jpg",
     title: "Mobile App Development",
     description:
       "We build engaging iOS, Android, and cross-platform mobile apps that deliver standout user experiences, drive real engagement, and support your business growth with scalable, feature-rich solutions built to last",
   },
   {
-    image: "/images/Services_We_Offer_5.png",
+    image: "/images/Services_We_Offer_5.jpg",
     title: "IT Staff Augmentation",
     description:
       "Scale your development capabilities fast. Our experienced IT professionals slot seamlessly into your existing team, helping you speed up delivery without compromising on flexibility, transparency, or quality.",
   },
   {
-    image: "/images/Services_We_Offer_6.png",
+    image: "/images/Services_We_Offer_6.jpg",
     title: "Cloud Consulting",
     description:
       "Get more out of your cloud infrastructure with expert consulting that boosts scalability, tightens security, cuts operational costs, and ensures reliable performance backed by custom cloud strategies and smooth, hassle-free migration.",
@@ -372,7 +372,7 @@ export const testimonials = [
     image:
       "/images/google-icon.png.webp",
     verifiedImage:
-      "/images.google-logo-new.png.webp",
+      "/images/google-logo-new.png.webp",
     review:
       "We needed a reliable healthcare solution with strong security and a user-friendly experience. The Devappteam handled the development process professionally and delivered exactly what we needed",
   },

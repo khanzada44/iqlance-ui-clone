@@ -76,7 +76,7 @@ export const footerColumns = [
 ];
 
 export const footerDescription =
-  'iQlance is a trusted mobile app and software development company based in Dallas | Software Dallas | Houston | Software Houston | Austin | Software Austin | Texas | Software Texas | New York | Software New York | USA | Toronto | Global Solution';
+  'Devapp is a trusted mobile app and software development company based in Dallas | Software Dallas | Houston | Software Houston | Austin | Software Austin | Texas | Software Texas | New York | Software New York | USA | Toronto | Global Solution';
 
 export const socialLinks = [
   { icon: 'FaLinkedinIn', href: '#', label: 'LinkedIn' },

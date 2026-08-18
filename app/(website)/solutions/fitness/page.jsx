@@ -1,6 +1,6 @@
 import Fitness from "../../../components/pages/fitness/page";
 
 
-export default function Iqlance() {
+export default function Devapp() {
   return <Fitness />;
 }

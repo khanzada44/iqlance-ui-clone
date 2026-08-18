@@ -79,14 +79,14 @@ export default function foodOrdering() {
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
                 To deliver flawless & fastest food & restaurant app development
-                services, iQlance is your answer. If you want to earn a huge
+                services, Devapp is your answer. If you want to earn a huge
                 profit in your restaurant business, you are on the right
                 platform now. Our experts are here to assist you with various
                 ways to get profit from Food application development.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                iQlance is your way to add you in quest for restaurant
+                Devapp is your way to add you in quest for restaurant
                 creativity. So, our in-house developer team strives hard to make
                 the process of choosing and delivering foods from selected
                 restaurants to your place without facing any technical issue.
@@ -265,7 +265,7 @@ export default function foodOrdering() {
                 Your Restaurants
               </h2>
               <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-                iQlance is a renowned Toronto app development company to develop
+                Devapp is a renowned Toronto app development company to develop
                 a variety of top quality web and mobile solutions to benefit
                 your restaurant business. Since our first-step in the industry,
                 we succeeded to hold full-scale of development team for
@@ -280,7 +280,7 @@ export default function foodOrdering() {
                 mobile applications to obtain huge returns on investment?
                 Alternatively, if you are the one searching for a quality app to
                 understand your specific business requirements, your search will
-                definitely end here. iQlance has everything you need, as we
+                definitely end here. Devapp has everything you need, as we
                 understand your important business requirements and work pattern
                 for strategizing a mobile app directed towards earning you
                 highest possible returns on your investments.
@@ -360,7 +360,7 @@ export default function foodOrdering() {
                 dining or takeaway solutions to increase the consumer base. The
                 smartphone program can assist users in accomplishing this
                 without difficulty. Clients in a variety of sectors benefit from
-                iQlance’s expertise in offering food delivery app development
+                Devapp’s expertise in offering food delivery app development
                 services on property. There are few important aspects of
                 developing on-demand meal delivery software to help businesses
                 succeed.
@@ -439,7 +439,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -626,7 +626,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -777,7 +777,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@iqlance.com
+                      info@DevAppGrid.com
                     </span>
                   </div>
 
@@ -895,7 +895,7 @@ export default function foodOrdering() {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for
+              Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1113,7 +1113,7 @@ export default function foodOrdering() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App
+              Devapp solutions is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end to end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -1196,7 +1196,7 @@ export default function foodOrdering() {
               Why should you choose us?
             </h1>
             <p>
-              iQlance is a top-tier food application creation company that
+              Devapp is a top-tier food application creation company that
               creates applications for a variety of operating systems, including
               Android and iPhone. Our professionals provide a centralized
               process for each customer and provide personalised assistance in
@@ -1425,7 +1425,7 @@ export default function foodOrdering() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality

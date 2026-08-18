@@ -11,7 +11,7 @@ export default function testimonials() {
   const [open, setOpen] = useState(-1);
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <div className="mt-10">
           <img
             src="/images/client-header.jpg"
@@ -26,12 +26,12 @@ export default function testimonials() {
             </h2>
             <p className="max-w-6xl mx-auto mt-8 text-center text-gray-800 text-base sm:text-lg leading-8">
               Few words as the reward of our unique product development process
-              and services given by our valuable clients. Team iQlance solutions
+              and services given by our valuable clients. Team Devapp solutions
               feel pride and appreciated when given reviews and rates as per
               their hardwork.
             </p>
             <p className="max-w-6xl mx-auto mt-8 text-center text-gray-800 text-base sm:text-lg leading-8">
-              iQlance solution has always believed that every emerging is the
+              Devapp solution has always believed that every emerging is the
               client is not only a solution seeker but is our inspiration to
               face challenges and find an amazing solution that can take the
               purpose of development to the next elevating step.
@@ -66,7 +66,7 @@ export default function testimonials() {
             </h3>
 
             <p className="max-w-6xl mx-auto mt-1 text-center text-gray-700 text-base sm:text-lg leading-8">
-              iQlance solutions is a leading Software, Web, & Mobile App
+              Devapp solutions is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end-to-end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -193,7 +193,7 @@ export default function testimonials() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
                   <div
@@ -207,7 +207,7 @@ export default function testimonials() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -334,7 +334,7 @@ export default function testimonials() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
                   <div
@@ -348,7 +348,7 @@ export default function testimonials() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -449,7 +449,7 @@ export default function testimonials() {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
-                iQlance solution. See what process we follow for mobile app and
+                Devapp solution. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

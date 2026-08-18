@@ -254,7 +254,7 @@ export default function realEstate() {
               </p>
               <br />
               <p>
-                This is because; we at iQlance provide you with the best
+                This is because; we at Devapp provide you with the best
                 possible real estate application to get lucrative benefits.
                 Also, our real estate app service provides brokers, aggregators,
                 and brokers a platform that provides 24×7 support services to
@@ -327,7 +327,7 @@ export default function realEstate() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -341,7 +341,7 @@ export default function realEstate() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -540,7 +540,7 @@ export default function realEstate() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -554,7 +554,7 @@ export default function realEstate() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -816,7 +816,7 @@ export default function realEstate() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -830,7 +830,7 @@ export default function realEstate() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -891,7 +891,7 @@ export default function realEstate() {
               </h2>
 
               <p>
-                At iQlance, our developer family are dedicated to delivering an
+                At Devapp, our developer family are dedicated to delivering an
                 unrivaled solution to users. They make it possible by running
                 in-depth research and gathering knowledge to maximize support.
                 Plus, they work continuously to make the app customer-centric,
@@ -963,7 +963,7 @@ export default function realEstate() {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              iQlance solutions has always been honored with valuable words for
+              Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1173,7 +1173,7 @@ export default function realEstate() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@iqlance.com"
+                  href="mailto:info@DevAppGrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -1187,7 +1187,7 @@ export default function realEstate() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@iqlance.com</span>
+                  <span>info@DevAppGrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -1236,7 +1236,7 @@ export default function realEstate() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              iQlance solutions is a leading Software, Web, & Mobile App
+              Devapp solutions is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end to end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -1321,7 +1321,7 @@ export default function realEstate() {
               Why Choose Us?
             </h1>
             <p>
-              iQlance is the dominant real estate mobile app development company
+              Devapp is the dominant real estate mobile app development company
               that provides multiple support to users, has tech-infused
               offerings, agile methodology, and whatnot. We are dedicated to
               enhancing the experience of the buyers and real estate firms by
@@ -1559,7 +1559,7 @@ export default function realEstate() {
               Have Something in Mind? Let's Talk
             </h1>
             <p>
-              Have a look at the services and development process of the iQlance
+              Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
