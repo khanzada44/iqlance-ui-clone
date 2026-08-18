@@ -226,34 +226,61 @@ export default function ServicesCategory({ slug }) {
 
   if (serviceLoading) {
     return (
-      <div className="flex min-h-125 items-center justify-center">
-        <div className="flex items-center gap-3">
-          <svg
-            className="h-6 w-6 animate-spin text-red-600"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            />
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            />
-          </svg>
+      <div className="mx-auto max-w-6xl px-4 py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        {/* Left Side: Content & Stats Skeleton */}
+        <div className="lg:col-span-7 space-y-6 animate-pulse">
+          {/* Main Title Skeleton */}
+          <div className="h-10 bg-gray-200 rounded-md w-3/4"></div>
 
-          <span className="text-sm font-medium text-gray-600">
-            Loading service...
-          </span>
+          {/* Subtitle / Description Lines */}
+          <div className="space-y-3">
+            <div className="h-4 bg-gray-200 rounded w-full"></div>
+            <div className="h-4 bg-gray-200 rounded w-11/12"></div>
+            <div className="h-4 bg-gray-200 rounded w-4/5"></div>
+            <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+          </div>
+
+          {/* Large Content Box / Image placeholder */}
+          <div className="h-64 bg-gray-200 rounded-xl w-full mt-6"></div>
+
+          {/* Stats / Bullet points skeleton */}
+          <div className="space-y-2 pt-4">
+            <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+            <div className="h-4 bg-gray-200 rounded w-2/5"></div>
+            <div className="h-4 bg-gray-200 rounded w-1/3"></div>
+          </div>
         </div>
+
+        {/* Right Side: Request a Quote Form Skeleton */}
+        <div className="lg:col-span-5 bg-gray-50 border border-gray-100 p-6 rounded-2xl shadow-sm animate-pulse space-y-4">
+          {/* Form Title */}
+          <div className="space-y-2">
+            <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+            <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+          </div>
+
+          {/* Input fields skeletons */}
+          <div className="space-y-4 pt-2">
+            <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
+            <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
+            <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
+            <div className="h-24 bg-gray-200 rounded-lg w-full"></div>
+          </div>
+
+          {/* File upload & checkbox placeholder */}
+          <div className="space-y-3 pt-2">
+            <div className="h-4 bg-gray-200 rounded w-1/3"></div>
+            <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+          </div>
+
+          {/* Submit Button Skeleton */}
+          <div className="h-12 bg-gray-300 rounded-lg w-full mt-4"></div>
+        </div>
+
       </div>
+    </div>
     );
   }
   if (serviceError && !serviceData) {

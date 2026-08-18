@@ -1,16 +1,14 @@
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { ServicesData, ServiceCategory } from "@/types/navigation";
-import {
-  navLinks as initialNavLinks,
-  fetchDynamicNavLinks,
-} from "@/lib/navigation-data";
+
 interface ServicesMegaDropdownProps {
   servicesData: ServicesData;
   selectedCategory: ServiceCategory | null;
   onCategoryHover: (category: ServiceCategory) => void;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
+  onLinkClick: () => void;
 }
 
 export const ServicesMegaDropdown = ({
@@ -19,9 +17,9 @@ export const ServicesMegaDropdown = ({
   onCategoryHover,
   onMouseEnter,
   onMouseLeave,
+  onLinkClick,
 }: ServicesMegaDropdownProps) => {
   return (
-<>
     <div
       className="absolute left-0 right-0 top-[calc(100%-10px)] bg-white shadow-xl xl:block"
       onMouseEnter={onMouseEnter}
@@ -52,13 +50,16 @@ export const ServicesMegaDropdown = ({
                     {/* Category Link */}
                     <Link
                       href={category.href}
+                      onClick={onLinkClick}
                       className="flex-1 text-sm font-bold"
                     >
                       {category.name}
                     </Link>
 
                     {/* Arrow */}
-                    {isActive && <ChevronDown className="h-4 w-4 -rotate-90" />}
+                    {isActive && (
+                      <ChevronDown className="h-4 w-4 -rotate-90" />
+                    )}
                   </div>
                 );
               })}
@@ -73,12 +74,13 @@ export const ServicesMegaDropdown = ({
                     <Link
                       key={item.href}
                       href={`${item.href}`}
+                      onClick={onLinkClick}
                       className="group flex items-center gap-3 border-b border-gray-100 px-3 py-3 text-sm text-gray-700 transition-colors hover:bg-red-50 hover:text-red-600"
                     >
                       {/* Service Icon */}
                       {item.icon_url && (
                         <img
-                          src={item.icon_url} 
+                          src={item.icon_url}
                           alt={item.name}
                           className="h-8 w-8 shrink-0 object-contain"
                         />
@@ -105,6 +107,5 @@ export const ServicesMegaDropdown = ({
         </div>
       </div>
     </div>
-</>
   );
 };
