@@ -18,17 +18,15 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { submitContactForm } from "@/services/send-call-request";
 import {
   partners,
-  bottomFeatures,
   slides,
   portfolioSlides,
   technologies,
   stats,
   industries,
-  services,
   faqsData,
   testimonials,
 } from "../../../../utils/data";
-import { ServiceSectionData, fitnessFeatures, process_Steps } from "../fitness/data"
+import { ServiceSectionData, fitnessFeatures, process_Steps, bottomFeatures,services } from "../fitness/data"
 import Image from "next/image";
 
 export default function fitness() {
@@ -187,36 +185,28 @@ export default function fitness() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
-                Fitness App <br />
-                <p className="text-red-700">
-                  Development <br />
-                </p>
-                <p className="text-red-800">
-                  Company in USA
-                </p>
-              </h1>
 
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                Fitness App Development
+                <br className="hidden sm:block" />
+                Company in the USA
+              </h1>
               <p className="text-base md:text-lg leading-relaxed text-black">
-                With people increasingly turning attention to the intrinsic
-                quality of life, the need for fitness solutions has shot up
-                exponentially. Many fitness app development services around the
-                country are now competing to catch up with Devapp Solutions USA
-                since it sets the standard for innovation, customization, and
-                technological integration. It’s important to note that all of
-                our apps are focused on helping the user find fitness and
-                wellness in their busy lives.
+                We create high-performance fitness apps that help brands, gyms, trainers,
+                wellness companies, and startups deliver personalized digital fitness
+                experiences. As a professional{" "}
+                <span className="font-semibold">fitness app development company in the USA</span>,
+                we combine intuitive UX, scalable technology, and intelligent features to
+                build apps that keep users motivated and businesses growing.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                We are also aware that your success centers on the usability of
-                your applications and hence we are here to provide you with
-                premier development services. Our team of PMP-certified project
-                managers is located in the USA, so we can arrange a face-to-face
-                meeting, which will contribute to better understanding of your
-                project and build trustful relations. It is time to bring your
-                visions into real life, with individual approaches throughout
-                the process.
+                From custom workout planning and activity tracking to nutrition management,
+                AI-powered recommendations, wearable connectivity, and progress analytics,
+                we develop fitness solutions around your audience and business model.
+                Whether you need an iOS fitness app, Android solution, or cross-platform
+                product, our team turns your concept into a secure, engaging, and
+                market-ready experience.
               </p>
 
               <ul className="mt-8 space-y-5 text-lg">
@@ -460,12 +450,12 @@ export default function fitness() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
-                Smart Options for Custom Fitness App Development Services
+                Essential Features for a Future-Ready Fitness App
               </h2>
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                Our fitness app development services come with a variety of smart options designed
-                to meet the needs of a wide range of users.
-                Here are some key features that set our fitness app solutions apart:
+                Modern fitness users expect convenience, personalization, and measurable progress
+                from the apps they use. We incorporate the features that make your
+                product useful, engaging, and competitive in the U.S. fitness market.
               </p>
               <br />
             </div>
@@ -511,7 +501,7 @@ export default function fitness() {
           {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
-              Key Features of Our Health & Fitness App Development Services
+              Why Choose Us for Fitness App Development?
             </h2>
             <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
               At Devapp Solutions USA, we pride ourselves on offering an extensive range of features that empower fitness enthusiasts to take control of their health and wellness journey. Our fitness apps are designed to deliver exceptional user experiences, helping users stay motivated, track progress, and achieve their fitness goals. Below are the standout features of our fitness app development:
@@ -633,47 +623,52 @@ export default function fitness() {
           </div>
         </section>
         <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
-
           {/* Block 1 */}
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
-              Custom Fitness Mobile App Development Solutions for Every Client
+              Tailored Fitness App Development for Every Business
             </h2>
-            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto">
+
+            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto">
               <p>
-                The fitness and wellness market is thriving, with millions of users downloading fitness apps annually. However, with so many options available, it can be hard to stand out. At Devapp USA, we specialize in creating tailored fitness app solutions that deliver value, innovation, and a superior user experience.
+                The health and wellness app space is booming, with millions of
+                downloads happening every single month, but that also means standing
+                out takes more than just a good idea. At Devapp USA, we build custom
+                fitness app solutions engineered for real differentiation: sharper UX,
+                smarter features, and stronger user retention.
               </p>
+
               <p>
-                Whether you're looking for a white-label fitness app, a fully branded app, or a custom solution, our team of experts will work closely with you to deliver a product that meets your exact specifications. We take pride in developing apps that are scientifically accurate, intuitive to use, and designed for long-term success.
+                From white-label fitness apps to fully custom builds, our development
+                team works hand-in-hand with you to bring your exact vision to life,
+                accurately, scalably, and built to perform for the long haul.
               </p>
             </div>
           </div>
 
           {/* Block 2 */}
-          <div className="mb-12">
+          <div>
             <h3 className="text-xl md:text-2xl font-extrabold text-black mb-6">
-              Our USA-Based Approach
+              A USA-Based Team You Can Actually Meet
             </h3>
-            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto">
+
+            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto">
               <p>
-                Unlike other development companies that outsource their work, we are locally based in the USA and take a hands-on approach. By meeting face-to-face with our clients, we ensure that we fully understand your vision. This collaborative method helps us tailor our fitness app development process to your specific business model and target audience.
+                While many app development companies outsource behind the scenes,
+                Devapp keeps everything in-house and based right here in the USA. We
+                meet with clients directly, which means your vision doesn't get lost
+                in translation; it gets built exactly the way you imagined it, aligned
+                with your business goals and target users.
               </p>
+
               <p>
-                Our PMP-certified project managers are available to answer any questions you may have, ensuring the development process is transparent, efficient, and tailored to your needs. We take pride in our ability to turn your ideas into a high-performing app that not only meets but exceeds your expectations.
+                Every project is guided by PMP-certified project managers, so you
+                always know where things stand. Expect full transparency, fast
+                turnarounds, and a development partner genuinely invested in exceeding
+                not just meeting your expectations.
               </p>
             </div>
           </div>
-
-          {/* Block 3 */}
-          <div>
-            <h3 className="text-xl md:text-2xl font-extrabold text-black mb-4">
-              Endeavors That Make Us Proud
-            </h3>
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-3xl mx-auto">
-              Devapp solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
-            </p>
-          </div>
-
         </section>
         <section>
           <style>{`
@@ -784,12 +779,15 @@ export default function fitness() {
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-5xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Unlock Your Fitness Vision with Secure and Scalable Tech Stack
+              Built on a Secure, Scalable Tech Foundation
             </h2>
+
             <p className="text-black text-sm md:text-base leading-relaxed">
-              By using this advanced technology stack, we create apps that deliver an intuitive, seamless experience for users while ensuring long-term
-              scalability and security for your business. At Devapp USA,
-              we use the latest technology and frameworks to create fast, scalable, and secure fitness apps. Here’s a look at the technology we use:
+              A great fitness app isn't just about design, it's about what's running
+              underneath it. We build on modern, battle-tested frameworks that ensure
+              your app performs fast, scales as your user base grows, and keeps
+              sensitive health data locked down tight. Here's the technology stack
+              that powers it:
             </p>
           </div>
         </section>
@@ -853,27 +851,33 @@ export default function fitness() {
               />
             </div>
 
-            {/* Right Side: Content Container */}
             <div className="flex flex-col space-y-4 text-gray-800">
-              {/* Main Heading */}
               <h2 className="text-2xl lg:text-3xl font-extrabold text-black leading-snug">
-                Track, Analyze, and Improve with Our Fitness Apps
+                Turn Your Fitness Vision Into a High-Impact Digital Product
               </h2>
 
-              {/* Paragraph 1 */}
               <p className="text-sm lg:text-base leading-relaxed text-gray-700">
-                Our fitness apps offer a range of standout features designed to help users achieve their fitness goals efficiently. Whether it’s tracking calories burned during workouts or offering detailed analytics on user performance, our Fitness Trainer App Development solutions ensure that users can surpass the limitations of traditional fitness routines.
+                Technology is transforming how people train, track progress, and stay
+                committed to healthier lifestyles. We help fitness brands, startups, gyms,
+                wellness companies, and personal trainers turn their ideas into intuitive
+                digital experiences built around the way modern users actually exercise.
               </p>
 
-              {/* Paragraph 2 */}
               <p className="text-sm lg:text-base leading-relaxed text-gray-700">
-                The app tracks movements, activities, and even provides a summary chart after each workout, helping users stay informed and motivated.
+                From personalized workout platforms and coaching apps to nutrition
+                trackers and wearable-connected solutions, our{" "}
+                <span className="font-semibold text-black">
+                  fitness app development services
+                </span>{" "}
+                combine thoughtful UX, reliable engineering, and scalable architecture.
+                Every product is designed to make fitness more accessible for users while
+                creating meaningful growth opportunities for your business.
               </p>
             </div>
 
           </div>
         </section>
-                <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -963,80 +967,104 @@ export default function fitness() {
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
-              Our Proven Fitness App Development Process: Concept to Launch
+              Our Fitness App Development Approach
             </h1>
             <p>
-              Our app development process is designed to deliver the best possible product on time and within budget. Being a Best Mobile Application
-              Developing Organization, we provide Mobile apps development services that are specialized for your firm’s demands. Partnering with our
-              specialists will astound you.Here’s how we work:
+              A successful fitness product needs more than a collection of features. It needs a clear strategy, seamless user journeys, and technology capable of supporting your product as it grows.
             </p>
           </div>
         </section>
-     
-                <section className="mt-20">
-                  <div className="max-w-7xl mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-                      {process_Steps.map((step) => (
-                        <div
-                          key={step.id}
-                          className="group relative border border-gray-100 rounded-3xl sm:rounded-[30px] bg-white pt-16 sm:pt-20 pb-6 sm:pb-8 px-5 sm:px-8 hover:shadow-xl transition-all duration-300 mb-10"
-                        >
-                          {/* Floating Icon */}
-                          <div className="absolute -top-8 sm:-top-10 right-5 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24  border-2 border-gray-300  rounded-2xl flex items-center justify-center transition-all duration-300">
-                            <img
-                              src={step.image}
-                              alt={step.title}
-                              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 object-contain"
-                            />
-                          </div>
-        
-                          <div className="flex items-start gap-3 sm:gap-5">
-                            {/* Number Box */}
-                            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-red-50 group-hover:bg-red-600 rounded-tr-2xl rounded-br-2xl flex items-center justify-center shrink-0 transition-all duration-300">
-                              <span className=" group-hover:text-white text-xl sm:text-2xl font-bold">
-                                {step.id}
-                              </span>
-                            </div>
-        
-                            {/* Title */}
-                            <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold leading-tight text-black transition-colors duration-300">
-                              {step.title}
-                            </h3>
-                          </div>
-        
-                          {/* Description */}
-                          <p className="mt-5 sm:mt-8 text-sm sm:text-base text-[#555] leading-7 sm:leading-8 font-semibold transition-colors duration-300">
-                            {step.description}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </section>
-        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
 
+        <section className="mt-20">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+              {process_Steps.map((step) => (
+                <div
+                  key={step.id}
+                  className="group relative border border-gray-100 rounded-3xl sm:rounded-[30px] bg-white pt-16 sm:pt-20 pb-6 sm:pb-8 px-5 sm:px-8 hover:shadow-xl transition-all duration-300 mb-10"
+                >
+                  {/* Floating Icon */}
+                  <div className="absolute -top-8 sm:-top-10 right-5 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24  border-2 border-gray-300  rounded-2xl flex items-center justify-center transition-all duration-300">
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 object-contain"
+                    />
+                  </div>
+
+                  <div className="flex items-start gap-3 sm:gap-5">
+                    {/* Number Box */}
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-red-50 group-hover:bg-red-600 rounded-tr-2xl rounded-br-2xl flex items-center justify-center shrink-0 transition-all duration-300">
+                      <span className=" group-hover:text-white text-xl sm:text-2xl font-bold">
+                        {step.id}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold leading-tight text-black transition-colors duration-300">
+                      {step.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="mt-5 sm:mt-8 text-sm sm:text-base text-[#555] leading-7 sm:leading-8 font-semibold transition-colors duration-300">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
           {/* Block 1 */}
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
-              In-Person Collaboration for Better Results
+              From Product Idea to Something People Build Habits Around
             </h2>
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto">
-              What sets us apart is our commitment to in-person collaboration. By being locally available in the USA, we can meet with you face-to-face to discuss your needs, goals, and any challenges you may face. Our PMP-certified project managers ensure a smooth and transparent process, keeping you informed at every stage of development.
+
+            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto">
+              A strong fitness product doesn't happen by stacking features until the
+              screen looks busy. It starts with understanding{" "}
+              <span className="font-semibold text-black">
+                why someone would open the app tomorrow
+              </span>
+              . We map the user journey before development begins, identify the moments
+              where engagement can drop, and design experiences that make the next
+              action feel obvious.
+            </p>
+
+            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto mt-4">
+              Your business goals stay at the center too whether that means
+              subscriptions, digital coaching, memberships, premium programs, or a new
+              fitness marketplace.
             </p>
           </div>
 
           {/* Block 2 */}
-          <div className="mt-10 mb-10">
+          <div className="mt-10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
-              Offshore Web, Mobile & Software Development Company
+              What Makes a Fitness App More Than Just Another App?
             </h2>
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto">
-              We as leading app and <span className="font-bold text-black">software development company USA</span> have delivered a range of innovative and unique solutions across the globe making clients happy. We have one of the top-notch offshore web, mobile and software development companies across the globe.
+
+            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto">
+              The difference isn't another dashboard or another workout library. It's
+              what happens between the first download and the hundredth workout. We
+              design experiences around the moments that matter, helping users discover
+              the right workout, understand their performance, stay accountable, and
+              see enough progress to keep going.
+            </p>
+
+            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto mt-4">
+              Your product can bring coaching, community, movement tracking, nutrition,
+              challenges, and personal goals into one connected experience. The result
+              is a fitness platform built around{" "}
+              <span className="font-semibold text-black">
+                habit, motivation, and measurable progress
+              </span>{" "}
+              rather than a simple collection of features.
             </p>
           </div>
-
         </section>
-
         <section>
           <div className="flex flex-wrap justify-center gap-7 mb-10">
             {stats.map((item, index) => (
@@ -1071,8 +1099,8 @@ export default function fitness() {
         </section>
 
         <div className="text-center max-w-4xl mx-auto space-y-4 mt-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-            Why Choose Our Fitness App Development Company?
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-extrabold text-black">
+            Why Partner With Us for Fitness App Development?
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
 

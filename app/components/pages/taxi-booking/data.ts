@@ -1,108 +1,108 @@
 export const bottomFeatures = [
   {
-    title: "App for business niche",
+    title: "Make Booking Effortless",
     description:
-      "We understand the value of personalized solutions, and offer such a dedication in our app development efforts. We consider the demands of customers in niche markets and research all market trends to plan an intuitive and user-friendly on-demand app design.",
+      "Let riders request a trip in seconds, select pickup and destination points, choose available ride options, view estimated fares, and receive booking updates without unnecessary steps.",
   },
   {
-    title: "Instant access",
+    title: "Keep Riders and Drivers Connected",
     description:
-      "Our experienced On Demand App Developers are always available for support, both during and after the development process. Additionally, get useful cutting-edge technologies, methodologies, tools, and more at your disposal for quicker access.",
+      "Real-time GPS, trip status, driver details, and automated notifications keep both sides informed throughout the journey. Less uncertainty means a smoother experience before, during, and after every ride.",
   },
   {
-    title: "Secure payment",
+    title: "Simplify Digital Payments",
     description:
-      "We at Devapp Mobile App Development Company USA. are particular about security, ensuring encrypted, malware, and firewall protection for all our solutions. Protect your personal data well with our support.",
+      "Give customers convenient ways to pay while making fare collection easier to manage. Support cards, digital wallets, cash, and other payment methods based on your business requirements.",
   },
   {
-    title: "Attractive UI + Unbeatable Performance",
+    title: "Put Fleet Operations in One Place",
     description:
-      "From the design of the app to the functionality, we prioritize the UI and UX layouts of the app highly and guarantee speedy service. Our developers utilize the best and latest techniques, tools, and programs to optimize app performance for long-term usage.",
+      "Give administrators a centralized view of drivers, rides, customers, payments, service areas, and performance. Better visibility helps your team make faster operational decisions.",
   },
   {
-    title: "Branding",
+    title: "Create a Brand Riders Remember",
     description:
-      "An app acts as the face of the brand for many customers; better quality designs and top-grade features appeal to them. Our on-Demand App Developers prioritize this during the building process and promotion and ensure a notable standing in the market.",
+      "Your app is part of the customer experience, not just a booking tool. A polished interface, consistent branding, reliable performance, and thoughtful user journeys can help turn first-time riders into repeat customers.",
   },
 ];
 export const TaxiServices = [
   { 
     id: 1, 
-    title: 'Car pooling App', 
+    title: 'Taxi Booking App Development', 
     icon: '/icons/car.svg',
     description: 'Provide affordable rides and reduce traffic congestion with feature-rich carpooling app development solutions built for seamless commuter sharing.'
   },
   { 
     id: 2, 
-    title: 'On-demand Autos', 
+    title: 'Ride-Hailing App Developmen', 
     icon: '/icons/limousine.svg',
     description: 'Empower local rickshaw and auto fleets with quick on-demand dispatch, live GPS tracking, and instant fare calculation systems.'
   },
   { 
     id: 3, 
-    title: 'Ships & Cruises', 
+    title: 'Passenger App Development', 
     icon: '/icons/cruise.svg',
     description: 'We are expanding commute facilities beyond roads; we also design apps for ships and cruises by offering seamless booking experiences, passenger management, and luxury add-ons as part of our complete taxi booking app development solution.'
   },
   { 
     id: 4, 
-    title: 'Ride-sharing App', 
+    title: 'Driver App Development', 
     icon: '/icons/share-ride.svg',
     description: 'Connect riders and drivers effortlessly with real-time route optimization, secure digital payments, and instant ride-matching features.'
   },
   { 
     id: 5, 
-    title: 'Car rental Services', 
+    title: 'Fleet Management Software', 
     icon: '/icons/car-rent.svg',
     description: 'Streamline self-drive and chauffeur rental services with automated booking calendars, document verification, and flexible pricing plans.'
   },
   { 
     id: 6, 
-    title: 'Towing Service Providers', 
+    title: 'On-Demand Transportation Apps', 
     icon: '/icons/car-service.svg',
     description: 'Deliver instant roadside emergency assistance by connecting stranded drivers with nearest breakdown towing service providers.'
   },
   { 
     id: 7, 
-    title: 'On-demand Bikes', 
+    title: 'Taxi Dispatch System Development', 
     icon: '/icons/motorbike.svg',
     description: 'Enable fast and economical urban mobility with custom bike taxi software featuring real-time navigation and quick booking controls.'
   },
   { 
     id: 8, 
-    title: 'Airport Pickup and Drop-off App', 
+    title: 'Real-Time GPS & Driver Tracking', 
     icon: '/icons/travel.svg',
     description: 'Ensure hassle-free airport transfers with flight schedule integration, pre-scheduled bookings, and dedicated luggage option choices.'
   },
   { 
     id: 9, 
-    title: 'Taxi Dispatch Software', 
+    title: 'Digital Payment Integration', 
     icon: '/icons/reservation.svg',
     description: 'Automate driver assignments, track trip histories, and optimize dispatcher workflows with powerful cloud-based dispatch systems.'
   },
   { 
     id: 10, 
-    title: 'Taxi Fleet Management Software', 
+    title: 'Car Rental App Development', 
     icon: '/icons/fleet-management.svg',
     description: 'Gain full control over vehicle maintenance, fuel monitoring, driver performance metrics, and real-time fleet analytics.'
   },
   { 
     id: 11, 
-    title: 'On-Demand Limos', 
+    title: 'Airport Transportation Apps', 
     icon: '/icons/limousine.svg',
     description: 'Offer premium luxury rides with VIP booking portals, custom hourly packages, and personalized chauffeur services.'
   },
   { 
     id: 12, 
-    title: 'Corporate Taxi And School Transportation App', 
+    title: 'Multi-Service Mobility Platforms', 
     icon: '/icons/taxi.svg',
     description: 'Provide safe corporate commute management and real-time student tracking for educational institutions with automated safety alerts.'
   },
 ];
 export const tabs = [
-  { id: 'customer', label: 'Customer App' },
+  { id: 'customer', label: 'Passenger App' },
   { id: 'driver', label: 'Driver App' },
-  { id: 'restaurant', label: 'Admin Panel' },
+  { id: 'restaurant', label: 'Admin Dashboard' },
 ];
 export const appData = {
   customer: [
@@ -146,31 +146,28 @@ export const appData = {
 
 export const ServiceSectionData = [
   {
-    title:
-      "Taxi App Solutions for Other Business",
+    title: "Taxi App Solutions That Fit More Than One Business Model",
     description:
-      "The customers who believe in receiving the app development services  on the go. We, at Devapp, build ever-evolving on-demand app solutions in order to promote the next generation services for the business growth. Have an amazing experience of scalable and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced admin dashboard and powerful analytics panel for both android as well as iOS. <br/><br/>Our unparalleled set of solutions helps the businesses to acquire new customers along with the pervasive solutions that can be deployed for any business. We believe your business on mobile should be easy and convenient for the customers. The demand of on-demand mobile app development  has created a great buzz in the market." ,
-    features: [
-      
-    ],
+      "Transportation businesses don't all operate the same way. A local cab company, corporate transportation provider, chauffeur service, or on-demand mobility business may require very different workflows and customer experiences.<br/><br/>Our taxi app development solutions can be adapted to the way your business operates while keeping the rider experience at the center. We consider your service model, customer expectations, fleet structure, and operational needs before shaping the right functionality.<br/><br/>From booking and dispatch to driver coordination, live tracking, payments, and trip management, we can create a tailored application that supports your specific transportation requirements and gives your business room to expand.",
+    features: [],
     imageUrl: "/images/texti-app-right.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "Taxi App Solutions",
   },
 ];
 export const sliderData = [
-  {
+    {
     id: 1,
-    icon: "/images/gps.png", // Apni image path add karein
+    icon: "/images/gps.png",
     title: "Real-Time GPS Tracking",
     description:
-      "We implement real-time GPS tracking using Google Maps APIs and location-based services. Drivers benefit from accurate navigation, while passengers gain safety and transparency with live ride updates.",
+      "Give riders and drivers better visibility throughout every trip with live location tracking. GPS-powered navigation helps drivers follow efficient routes, while passengers can monitor their ride location and receive timely updates for a more informed, dependable experience.",
   },
   {
     id: 2,
     icon: "/images/ML-Strategy-Consulting.png",
-    title: " Machine Learning ",
+    title: "Virtual Assistants",
     description:
-      "Using ML algorithms with Python and TensorFlow, we build systems that continuously learn from ride history, user behavior, and traffic data. This enables smarter driver-passenger matching, predictive scheduling, and higher customer retention.",
+      "Make your taxi platform easier to use with intelligent virtual assistants. AI-powered support can handle common booking questions, provide timely responses, and help passengers get the information they need without adding pressure to your support team.",
   },
   {
     id: 3,
@@ -223,14 +220,14 @@ export const portfolioSlides = [
 
   {
     heading: "",
-    title: "Ride Sharing Driver App Development",
+    title: "Ride-Sharing Driver App Development",
     description:
-      "Ride Sharing App is the trusted partner of parents and guardians, ensuring children’s safe transportation across multiple cities in Canada.",
+      "A dedicated driver application created to simplify ride management and help transportation providers coordinate trips more effectively. The solution gives drivers a clearer view of their schedules, active rides, and essential trip information from one convenient interface.",
 
     features: [
-      "Child safety is our top priority",
-      "Convenient scheduling",
-      "Reliable service",
+      "Driver-friendly scheduling",
+      "Simple trip management",
+      "Reliable ride coordination",
     ],
 
     technologies: [

@@ -1,143 +1,213 @@
 export const ServiceSectionData = [
   {
-    title:
-      "Experience The Quickest Application Development With Us!",
+    title: "Get More From Your Fitness App With Custom Development",
     description:
-      "The customers who believe in receiving the app development services  on the go. We, at Devapp, build ever-evolving on-demand app solutions in order to promote the next generation services for the business growth. Have an amazing experience of scalable and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced admin dashboard and powerful analytics panel for both android as well as iOS. <br/><br/>Our unparalleled set of solutions helps the businesses to acquire new customers along with the pervasive solutions that can be deployed for any business. We believe your business on mobile should be easy and convenient for the customers. The demand of on-demand mobile app development  has created a great buzz in the market." ,
-    features: [
-      
-    ],
+      "A successful fitness app needs to do more than display workout routines. It should understand user goals, simplify fitness tracking, create consistent engagement, and give people a reason to return.<br/><br/>Our <strong>custom fitness app development services</strong> are designed around these expectations. We develop personalized experiences where users can discover workouts, monitor activity, track progress, manage nutrition, connect with trainers, and stay motivated from one convenient platform.<br/><br/>For fitness businesses, our solutions can support subscriptions, memberships, trainer-led programs, challenges, in-app purchases, and other revenue models. For startups, we create scalable MVPs that can evolve as your user base and product requirements grow.",
+    features: [],
     imageUrl: "/images/fitness-sec-right.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "Fitness App Development",
   },
-  
+];
+export const bottomFeatures = [
+  {
+    title: "Personalized Workout Plans",
+    description:
+      "Create customized training experiences based on fitness levels, goals, preferences, and user activity.",
+  },
+  {
+    title: "Activity & Performance Tracking",
+    description:
+      "Let users monitor workouts, steps, calories, distance, performance, and other meaningful fitness metrics in one place.",
+  },
+  {
+    title: "Nutrition & Diet Tracking",
+    description:
+      "Support healthier routines with meal logging, calorie tracking, nutrition goals, and personalized dietary insights.",
+  },
+  {
+    title: "AI-Powered Fitness Experiences",
+    description:
+      "Use AI to deliver smarter workout recommendations, adaptive routines, personalized guidance, and more relevant user experiences.",
+  },
+  {
+    title: "Wearable Device Integration",
+    description:
+      "Connect your app with popular fitness trackers and health ecosystems to bring real-time activity and performance data into the experience.",
+  },
+  {
+    title: "Progress Analytics",
+    description:
+      "Turn fitness data into easy-to-understand dashboards that help users see improvements and stay committed to their goals.",
+  },
+  {
+    title: "Social & Community Features",
+    description:
+      "Build motivation through challenges, achievements, leaderboards, sharing, communities, and trainer-user interactions.",
+  },
+  {
+    title: "Secure User & Payment Management",
+    description:
+      "Provide reliable account management, subscriptions, memberships, and secure in-app payment experiences.",
+  },
 ];
 export const fitnessFeatures = [
   {
     id: 1,
-    icon: "/images/doctor-patient-profile-icn.png", // Apne icons ka path yahan dein
-    title: "1. Personalized Workout Routines",
+    icon: "/images/doctor-patient-profile-icn.png",
+    title: "1. Strategy Built Around Your Fitness Business",
     description:
-      "Each user is unique, and so are their fitness goals. Our apps offer tailored workout plans based on individual preferences, fitness levels, and objectives, whether it's weight loss, muscle building, or overall fitness. The workouts are adjusted based on the user's progress, making sure that they're always challenging but achievable.",
+      "We start by understanding your target audience, business objectives, competitors, monetization model, and product vision. This allows us to create a fitness app strategy that supports both user needs and commercial goals.",
   },
   {
     id: 2,
     icon: "/images/push-h-icn.png",
-    title: "2. Live Workout Sessions",
+    title: "2. UX Designed for Daily Engagement",
     description:
-      "To add a personal touch, our apps allow live streaming of workout sessions with certified trainers. Users can follow along in real-time or revisit the recorded sessions later. This feature fosters engagement and brings the energy of a live workout class to the user's mobile device.",
+      "Fitness apps compete for users' attention every day. Our UI/UX approach focuses on simple navigation, clear progress visibility, frictionless interactions, and motivating experiences that encourage users to keep coming back.",
   },
   {
     id: 3,
     icon: "/images/sm-icon.png",
-    title: "3. AI-Powered Virtual Trainer",
+    title: "3. Scalable Technology",
     description:
-      "Using cutting-edge artificial intelligence, our apps integrate AI-driven virtual trainers that provide real-time feedback on form, technique, and workout intensity. This ensures users get the benefits of a personal trainer without the high costs, making fitness more accessible.",
+      "Whether you're launching an MVP or building a large fitness platform, we develop a flexible technical foundation that can support new users, features, integrations, and business expansion as your product grows.",
   },
   {
     id: 4,
     icon: "/images/map-h-icn.png",
-    title: "4. Calorie and Activity Tracking",
+    title: "4. iOS & Android Development",
     description:
-      "Our fitness app tracks calories burned, steps taken, heart rate, and other vital metrics. The app integrates seamlessly with wearables like Fitbit, Apple Watch, and Google Fit, allowing users to monitor their fitness journey more effectively.",
+      "Reach users across the U.S. with high-quality iOS and Android fitness app development tailored to the platforms your audience uses. We focus on consistent functionality, responsive performance, and platform-specific experiences.",
   },
   {
     id: 5,
     icon: "/images/reminders-h-icn.png",
-    title: "5. Nutrition and Diet Plans",
+    title: "5. Smart Integrations",
     description:
-      "A well-balanced diet is crucial to achieving fitness goals. Our apps come with customized meal plans, designed by nutrition experts, which cater to specific dietary preferences and goals. Whether users need a low-carb, keto, or vegan diet, the app provides meal plans and recipes tailored to individual needs.",
+      "From wearable devices and health platforms to payment systems, analytics tools, and third-party APIs, we connect the technologies your fitness ecosystem needs to deliver a seamless experience.",
   },
   {
     id: 6,
     icon: "/images/200cal.png",
-    title: "6. Social Sharing and Leaderboards",
+    title: "6. Built for Retention & Growth",
     description:
-      "Fitness is more fun with friends! Our apps include social features that let users share their progress, join group challenges, and appear on leaderboards. The competitive element helps users stay motivated and engage more with their fitness journey.",
+      "We don't simply build features; we build experiences designed to create value. Personalized recommendations, progress tracking, challenges, notifications, and community functionality can help turn first-time users into long-term customers.",
   },
   {
     id: 7,
     icon: "/images/calender-icn-new.png",
-    title: "7. In-App Fitness Community",
+    title: "7. Community-Driven Engagement",
     description:
-      "To foster engagement, the app includes an in-app community where users can connect, ask questions, share their progress, and participate in challenges. This not only creates a sense of belonging but also encourages users to stay committed to their goals.",
+      "Users can connect with like-minded members, share progress updates, join fitness challenges, and encourage each other. This peer accountability turns individual workouts into a shared journey and helps keep users engaged.",
   },
   {
     id: 8,
     icon: "/images/game-remote.png",
-    title: "8. Workout Analytics and Reporting",
+    title: "8. Smart Performance Analytics",
     description:
-      "Users can view detailed reports on their workout performance over time. These analytics dashboards show metrics like workout duration, intensity, progress towards goals, and trends, helping users optimize their routines and stay on track.",
+      "Intuitive analytics dashboards can show workout intensity, session duration, goal completion, and long-term trends. Clear reporting helps users understand their progress, identify patterns, and make better decisions about their routines.",
   },
   {
     id: 9,
     icon: "/images/online-icon-w.png",
-    title: "9. Push Notifications and Reminders",
+    title: "9. Timely Reminders & Alerts",
     description:
-      "Staying consistent is key to success in fitness. The app sends push notifications to remind users about upcoming workouts, hydration, and meals, ensuring they stay on track with their fitness plans.",
+      "Smart notifications help users stay consistent by reminding them about workouts, hydration, meals, and other activities at useful times without overwhelming them with unnecessary alerts.",
   },
   {
     id: 10,
     icon: "/images/analytics-h-icn.png",
-    title: "10. Gamification",
+    title: "10. Gamified Progress Tracking",
     description:
-      "By incorporating gamification features like badges, rewards, and levels, users stay engaged with the app. Each milestone achieved comes with rewards, making the fitness journey enjoyable and motivating.",
+      "Achievement badges, levels, rewards, and milestone tracking can make fitness goals more engaging. Gamification gives users additional motivation to complete workouts and maintain long-term habits.",
   },
   {
     id: 11,
     icon: "/images/chat-h-icn.png",
-    title: "11. Offline Mode",
+    title: "11. Uninterrupted Offline Access",
     description:
-      "Our apps come with an offline mode, enabling users to access workouts, meal plans, and tracking features even when they don't have an internet connection. This ensures that fitness routines are never interrupted, even when users are on the go.",
+      "Users can access selected workout plans, meal logs, and tracking tools even without an active internet connection. Offline functionality helps keep fitness routines available in gyms, remote locations, or other areas with limited connectivity.",
   },
 ];
 export const process_Steps = [
   {
     id: 1,
-    title: "Requirement Understanding",
+    title: "Product Strategy",
     description:
-      "We begin by understanding your business objectives, project requirements, target audience, and technical challenges. Through collaborative discussions, we identify the right technology approach and define a roadmap that supports your long-term business vision.",
-    image:
-      "/images/proces-icon-1.png",
+      "We translate your business goals, audience needs, and app concept into a practical product roadmap with clear priorities.",
+    image: "/images/proces-icon-1.png",
   },
   {
     id: 2,
-    title: "Design and Prototyping",
+    title: "UX & Interface Design",
     description:
-      "Our UI/UX designers, solution architects, and technical experts create user-focused designs, system architecture, wireframes, and project plans. Every feature is carefully planned to ensure an intuitive user experience, seamless functionality, and long-term scalability.",
-    image:
-      "/images/proces-icon-2.png",
+      "We create clean, intuitive experiences that make onboarding, workout tracking, progress monitoring, and daily interactions effortless.",
+    image: "/images/proces-icon-2.png",
   },
   {
     id: 3,
-    title: "Development",
+    title: "Custom App Development",
     description:
-      "Once the solution is approved, our developers build secure, scalable, and high-performing applications using modern technologies, AI-assisted tools, and agile methodologies. Throughout development, we maintain transparency, share regular updates, and adapt quickly to evolving business needs.",
-    image:
-      "/images/proces-icon-3.png",
+      "Our team builds tailored fitness applications around your workflows, features, integrations, and monetization strategy rather than forcing your idea into a generic template.",
+    image: "/images/proces-icon-3.png",
   },
   {
     id: 4,
-    title: "Maintenance and Upgrades",
+    title: "Smart Fitness Technology",
     description:
-      "Our partnership continues beyond deployment. We provide ongoing maintenance, performance monitoring, security updates, bug fixes, and feature enhancements to keep your digital solution optimized, secure, and ready to scale as your business grows.",
-    image:
-      "/images/proces-icon-4.png",
+      "From AI-driven recommendations to activity analytics and wearable connectivity, we integrate technology that adds real value to the user experience.",
+    image: "/images/proces-icon-4.png",
   },
   {
     id: 5,
-    title: "Deployment",
+    title: "Testing & Optimization",
     description:
-      "After successful testing, we deploy your application, software, or website to the appropriate production environment. Whether it’s a cloud platform, enterprise server, web hosting environment, or mobile app store, we ensure a secure, seamless, and well-monitored launch.",
-    image:
-      "/images/proces-icon-5.png",
+      "Every core experience is tested across devices and real-world scenarios to ensure dependable performance, usability, and consistency.",
+    image: "/images/proces-icon-5.png",
   },
   {
     id: 6,
-    title: "Quality Assurance",
+    title: "Continuous Growth",
     description:
-      "Our QA team performs comprehensive testing to verify functionality, usability, security, compatibility, and performance. Multiple testing cycles, including automated and manual testing, ensure your solution works reliably across different devices, browsers, and operating environments before deployment.",
-    image:
-      "/images/proces-icon-6.png",
+      "After launch, we help you improve your product through analytics, feature enhancements, performance optimization, and ongoing technical support.",
+    image: "/images/proces-icon-6.png",
+  },
+];
+export const services = [
+  {
+    image: "/images/transparency-Integrity-icn.png",
+    title: "Deep Fitness Product Understanding",
+    description:
+      "We understand that fitness applications need to encourage consistency, simplify tracking, and provide users with visible progress. Our product decisions are shaped around real-world fitness behaviors, user goals, and the needs of your business.",
+  },
+  {
+    image: "/images/custom-dp-icn.png",
+    title: "User-Centered UI/UX",
+    description:
+      "From the first tap to completing a workout, every interaction should feel natural. We design intuitive interfaces that reduce friction and keep important fitness information, workout plans, progress, and goals easy to understand.",
+  },
+  {
+    image: "/images/easy-commution-icn.png",
+    title: "Scalable Development",
+    description:
+      "Whether you're starting with an MVP or building an enterprise-grade fitness platform, we create a flexible technical foundation that can support growing users, new features, third-party integrations, and evolving business requirements.",
+  },
+  {
+    image: "/images/dedicated-teams.png",
+    title: "Modern Technology Stack",
+    description:
+      "We leverage modern mobile, cloud, API, analytics, AI, and wearable technologies to create fitness products that deliver reliable performance and are ready to adapt to a rapidly evolving digital market.",
+  },
+  {
+    image: "/images/on-time-icn.png",
+    title: "Transparent Collaboration",
+    description:
+      "You stay involved throughout the development process. Regular communication, clear milestones, progress updates, and collaborative decision-making help keep the project aligned with your product vision and business goals.",
+  },
+  {
+    image: "/images/quality-first-icn.png",
+    title: "Long-Term Product Support",
+    description:
+      "Our relationship doesn't have to end when your fitness app goes live. We can continue improving functionality, resolving technical challenges, optimizing performance, and helping your product adapt to changing user expectations.",
   },
 ];

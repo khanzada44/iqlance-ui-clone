@@ -1,28 +1,32 @@
 export const datingSolutions = [
   {
-    title: "General Dating App",
+    title: "General Dating Apps",
     description:
-      "We offer modern dating apps with swipe functionality, geolocation, and chatting features that attract users. Our dating app development services are custom to provide a seamless experience, user retention, and scalable success across all demographics.",
+      "We build modern dating platforms with features such as swipe-based discovery, geolocation, profile preferences, real-time messaging, and personalized matching. Each application is tailored to your audience and business model to create a smooth experience, encourage engagement, and support long-term growth.",
   },
+
   {
-    title: "LGBTQ+ Dating App",
+    title: "LGBTQ+ Dating Apps",
     description:
-      "As a leading dating app development company, we have experience in building safe and welcoming platforms for LGBTQ+ communities (lesbian, gay, bisexual, transgender, and queer) with features like advanced filters, safety reporting, confidential and secure chat, etc.",
+      "We develop inclusive dating platforms designed around privacy, safety, and meaningful connections for LGBTQ+ communities. Features can include flexible profile options, advanced discovery filters, safety reporting, privacy controls, and secure messaging to create a welcoming user experience.",
   },
+
   {
-    title: "Interest-based Dating App",
+    title: "Interest-Based Dating Apps",
     description:
-      "Common interests encourage meaningful relationships; hence, as a leading dating mobile app development company, we develop interest-based dating apps based on common fitness goals, travel diaries, music preferences, and hobbies.",
+      "We create interest-based dating platforms that help people discover compatible matches through shared passions, hobbies, fitness goals, travel interests, music preferences, and lifestyle choices. The experience is designed to make compatibility easier to discover and meaningful conversations more natural.",
   },
+
   {
-    title: "Religion-based Dating App",
+    title: "Religion-Based Dating Apps",
     description:
-      "If you are looking for religion-based (Christian, Jewish, Muslim, Hindu, or other spiritual communities) dating app solutions to connect with ideal matches, then Devapp Solutions will be the right choice for you, having proven experience in the same.",
+      "We build faith-centered dating apps that help people connect through shared beliefs, values, and traditions. From religion-specific profiles and faith-based matching to privacy controls and meaningful communication, we create respectful platforms designed for genuine, values-driven relationships.",
   },
+
   {
-    title: "Senior Citizen Dating App",
+    title: "Senior Citizen Dating Apps",
     description:
-      "As a leading custom dating app development company, we offer an ideal platform for senior citizens to find compatible partners. We ensure that the apps are rich in features with easy navigation and a smoother dating experience.",
+      "We develop user-friendly dating apps designed for mature adults seeking meaningful companionship and lasting relationships. With simple navigation, verified profiles, age-based preferences, secure messaging, and safety-focused features, we make online dating more comfortable, accessible, and trustworthy for senior users.",
   },
 ];
 export const slides = [

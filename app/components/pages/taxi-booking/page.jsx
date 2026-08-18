@@ -71,36 +71,36 @@ export default function Taxi() {
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
   // Data Array (Component ke bahar ya andar define karein)
-  const processSteps = [
-    {
-      stepLabel: "STEP 1",
-      tabTitle: "1. Discover",
-      heading: "Discover",
-      description:
-        "We conduct full-scale research and gather insights on market trends, customer satisfaction points, and competitors first to plan a success-worthy app design.",
-    },
-    {
-      stepLabel: "STEP 2",
-      tabTitle: "2. Design",
-      heading: "Design",
-      description:
-        "Our designers develop an interactive and iterative app infrastructure, with a simple UI/UX, user-friendly navigations, and more.",
-    },
-    {
-      stepLabel: "STEP 3",
-      tabTitle: "3. Build",
-      heading: "Build",
-      description:
-        "Next, trained developers at our Top On-Demand App Development company use the planned technology stack and coding skills to complete the app-building process, adding features and configurations.",
-    },
-    {
-      stepLabel: "STEP 4",
-      tabTitle: "4. Deliver",
-      heading: "Deliver",
-      description:
-        "After multiple testing batches, the app is finally ready to deploy, across iOS or Android platforms, or both- we focus on after-launch support as well.",
-    },
-  ];
+const processSteps = [
+  {
+    stepLabel: "STEP 1",
+    tabTitle: "1. Discover",
+    heading: "Discover",
+    description:
+      "We begin by understanding your transportation model, target riders, driver requirements, competitors, and operational challenges. This stage gives us the insight needed to define the right features and user journeys before design begins.",
+  },
+  {
+    stepLabel: "STEP 2",
+    tabTitle: "2. Design",
+    heading: "Design",
+    description:
+      "Next, we turn the requirements into an intuitive experience for passengers, drivers, and administrators. Our designers map the key interactions and create interfaces that make booking, navigation, trip management, and other essential actions easy to understand.",
+  },
+  {
+    stepLabel: "STEP 3",
+    tabTitle: "3. Build",
+    heading: "Build",
+    description:
+      "Once the experience is finalized, our developers bring it to life using the appropriate technologies and integrations. We develop the core functionality, connect APIs and third-party services, and build the infrastructure needed to support real-time transportation operations.",
+  },
+  {
+    stepLabel: "STEP 4",
+    tabTitle: "4. Deliver",
+    heading: "Deliver",
+    description:
+      "Before launch, we thoroughly test the application across its key workflows, devices, and integrations. After everything is validated, we prepare the product for deployment and can continue supporting improvements as your transportation business evolves.",
+  },
+];
 
   const currentStep = processSteps[activeStepIndex] || processSteps[0];
   // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
@@ -201,44 +201,46 @@ export default function Taxi() {
 
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
-                Taxi Booking App <br />
-                <p className="text-red-700">
-                  Development <br />
-                </p>
-                <p className="text-red-800">
-                  Company USA
-
-                </p>
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                Taxi Booking App
+                <br className="hidden sm:block" />
+                Development Company USA
               </h1>
 
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                Build a Ride-Hailing Experience People Want to Use
+              </h2>
+
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Planning on creating a completely unique app solution for your
-                company to increase your progress in the digital market? Take
-                the help of our experts at Devapp for this endeavour; we
-                complete each step of app design and development, from the
-                origin to deployment, to ensure top-notch performance.
+                Launching a taxi or ride-hailing business today means competing on more
+                than fares. Riders expect quick bookings, accurate pickup information,
+                flexible payment options, and a smooth experience from the moment they
+                request a ride to the moment they arrive.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                All of our on-Demand App Developers have the necessary resources
-                and skills to create mobile intuitive solutions with the best
-                features. With years of practice in handling various projects
-                and an intensive knowledge of new cutting-edge technologies and
-                market trends, the team would prepare innovative features and
-                scalable app infrastructure.
+                We build custom taxi booking apps that bring passengers, drivers, and
+                operators onto one connected platform. From real-time ride requests and GPS
+                tracking to driver onboarding, fare management, digital payments, and trip
+                history, every part of the experience is designed around how modern
+                transportation businesses operate.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Expect high growth for your brand with customizable app
-                solutions; impress your customers and improve your brand
-                reputation with our high-quality apps.
+                Whether you're launching a new mobility startup or digitizing an
+                established taxi business, we turn your requirements into a reliable,
+                user-focused application built for the US market.
               </p>
+
+              <ul className="space-y-2 text-base md:text-lg font-medium text-gray-900">
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 shrink-0" /> User-Centered Development</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 shrink-0" /> Modern Mobility Technology</li>
+              </ul>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
@@ -246,7 +248,7 @@ export default function Taxi() {
                   href="/contact-us"
                   className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
-                  Contact Us
+                  Request a Free Quote
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -427,15 +429,28 @@ export default function Taxi() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
-                Top On-Demand Solutions Company
+                Give Your Transportation Business More Control and Your Riders a Better Experience
               </h2>
               <p className="text-sm md:text-base text-black max-w-6xl mx-auto leading-relaxed">
-                We, at Devapp, build ever-evolving on-demand app solutions in
-                order to promote the next generation-level services for business
-                growth. Have an amazing experience of scalable and solely
-                integrated solutions along with custom front-end and back-end
-                UI/UX. We assure advanced admin dashboard and powerful analytics
-                panel for both Android as well as iOS.
+                A successful ride-booking business depends on several moving parts working
+                together. Riders need an effortless way to book. Drivers need clear trip
+                information and reliable navigation. Operators need visibility into rides,
+                payments, users, and fleet activity.
+              </p>
+
+              <p className="text-sm md:text-base text-black max-w-6xl mx-auto leading-relaxed">
+                Our taxi app development services bring these experiences into one cohesive
+                ecosystem. We design and develop passenger apps, driver apps, and admin
+                dashboards that communicate in real time, giving every user the tools they
+                need without creating unnecessary complexity.
+              </p>
+
+              <p className="text-sm md:text-base text-black max-w-6xl mx-auto leading-relaxed">
+                From product planning and UI/UX design to API integration, development,
+                testing, deployment, and ongoing improvements, our team can manage the
+                complete development lifecycle. Your platform can also be tailored to
+                support your pricing model, service area, fleet size, payment preferences,
+                and operational workflow.
               </p>
               <br />
             </div>
@@ -484,13 +499,12 @@ export default function Taxi() {
           {/* Header */}
           <div className="text-center mb-12 max-w-6xl mx-auto">
             <h2 className="text-5xl md:text-4xl font-bold text-slate-900 mb-4">
-              Taxi Booking App Development Services We Provide
+              Taxi App Development Services for Modern Mobility Businesses
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              We offer next-gen mobility solutions with our end-to-end taxi
-              booking app development services. Our seasoned app developers
-              build scalable, user-friendly, and future-ready platforms for
-              start-ups to enterprise-grade businesses.
+              Whether you're building a local cab service, launching a ride-hailing startup,
+              or expanding an existing transportation operation, we provide the
+              technology needed to support your business from booking to dispatch.
             </p>
           </div>
 
@@ -550,13 +564,12 @@ export default function Taxi() {
         </section>
         <div className="text-center max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-            Our Taxi App Development Solutions
+            One Platform. Multiple Ways to Move Your Business Forward.
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            We offer next-gen mobility solutions with our end-to-end taxi
-            booking app development services. Our seasoned app developers build
-            scalable, user-friendly, and future-ready platforms for start-ups to
-            enterprise-grade businesses.
+            Every transportation company has a different operating model. A local taxi fleet may need dispatch and driver management, while a ride-hailing startup may prioritize real-time matching, flexible pricing, and customer acquisition.
+            We create custom mobility solutions around those differences. Your platform can connect riders with nearby drivers, automate dispatch, manage trips and payments, and give administrators the visibility they need to run day-to-day operations.
+
           </p>
         </div>
 
@@ -623,12 +636,12 @@ export default function Taxi() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-              Ready to Get Started?
+              Have a Ride-Hailing Idea? Let's Put It in Motion.
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
+              Tell us what you want to build, who you want to serve, and how you plan to operate. We'll help turn your transportation concept into a product ready for the real world.
             </p>
 
             {/* Contact Info Box */}
@@ -693,7 +706,7 @@ export default function Taxi() {
                 href="/lets-talk"
                 className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Start Your Project  <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -701,15 +714,25 @@ export default function Taxi() {
         <section>
           <div className="text-center max-w-6xl mx-auto mt-10">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              The Cutting-Edge Technology We Use
+              Technology Built for Real-Time Transportation
+
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              At Devapp Solutions, we don’t chase basic functionality; we
-              engineer apps with performance, scalability, and security at the
-              core. As a leading name in taxi booking mobile app development, we
-              leverage modern frameworks, robust backends, and cloud-powered
-              infrastructure to build high-performing platforms for the U.S.
-              market.
+              A taxi application has no room for slow updates or unreliable connections.
+              Ride requests, driver locations, trip status, navigation, notifications,
+              and payments all need to work together with speed and accuracy.
+            </p>
+
+            <p className="text-slate-600 text-base leading-relaxed">
+              We select the technology stack around your platform's requirements, using
+              modern mobile frameworks, backend architecture, APIs, databases, cloud
+              infrastructure, mapping services, and payment integrations to create a
+              dependable foundation for your transportation business.
+            </p>
+
+            <p className="text-slate-600 text-base leading-relaxed">
+              The result is technology designed to support the experience riders expect
+              today while giving your platform room to evolve as your business grows.
             </p>
           </div>
         </section>
@@ -767,30 +790,6 @@ export default function Taxi() {
             </Swiper>
           </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <section>
           {ServiceSectionData.map((item, index) => {
             // Checking if index is odd to reverse layout dynamically
@@ -841,73 +840,84 @@ export default function Taxi() {
         <section className="py-12 px-4 max-w-6xl mx-auto font-sans">
           {/* Main Heading */}
           <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-10 text-left">
-            Major Impact Of Our Taxi App Development Services On Businesses
+            What Better Taxi Technology Can Do for Your Business
           </h2>
 
-          {/* Grid Layout (2 Columns) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-
             {/* Item 1 */}
             <div className="flex items-start gap-3">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">
+                &#8250;
+              </span>
               <p className="text-gray-900 text-base md:text-lg font-medium leading-relaxed">
-                50% quarterly increase in the number of ride orders
+                50% faster response times for incoming ride requests
               </p>
             </div>
 
             {/* Item 2 */}
             <div className="flex items-start gap-3">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">
+                &#8250;
+              </span>
               <p className="text-gray-900 text-base md:text-lg font-medium leading-relaxed">
-                80% quarterly increase in customers’ positive reviews
+                30% shorter pickup cycles through better driver coordination
               </p>
             </div>
 
             {/* Item 3 */}
             <div className="flex items-start gap-3">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">
+                &#8250;
+              </span>
               <p className="text-gray-900 text-base md:text-lg font-medium leading-relaxed">
-                30% quarterly decrease in ride-pickup time
+                35% lower operational expenses through streamlined workflows
               </p>
             </div>
 
             {/* Item 4 */}
             <div className="flex items-start gap-3">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">
+                &#8250;
+              </span>
               <p className="text-gray-900 text-base md:text-lg font-medium leading-relaxed">
-                40% increase in total business revenue
+                60% higher customer engagement with a more convenient digital experience
               </p>
             </div>
 
             {/* Item 5 */}
             <div className="flex items-start gap-3">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">
+                &#8250;
+              </span>
               <p className="text-gray-900 text-base md:text-lg font-medium leading-relaxed">
-                33% decrease in overall operations expenses
+                40% growth in recurring revenue through improved customer retention
               </p>
             </div>
 
             {/* Item 6 */}
             <div className="flex items-start gap-3">
-              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">&#8250;</span>
+              <span className="text-gray-400 font-semibold text-lg leading-snug shrink-0">
+                &#8250;
+              </span>
               <p className="text-gray-900 text-base md:text-lg font-medium leading-relaxed">
-                81% increase in customer retention
+                8% increase in customer satisfaction through faster, more reliable
+                service
               </p>
             </div>
-
           </div>
         </section>
+        {/* Endeavors Section */}
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
-          {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-3xl md:text-3xl font-bold text-black">
-              Endeavors that Make us Proud
+              Endeavors That Make Us Proud
             </h2>
-            <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
-              Devapp solutions has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
+
+            <p className="text-black text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
+              The best way to demonstrate our capabilities is through the products we
+              help bring to life. Explore one of our transportation projects to see
+              how thoughtful product design, practical functionality, and the right
+              technology can come together to solve real-world mobility challenges.
             </p>
           </div>
         </section>
@@ -925,7 +935,7 @@ export default function Taxi() {
             className="portfolio-swiper"
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
+            autoplay={{ delay: 3000 }}
             loop={true}
           >
             {portfolioSlides.map((slide, index) => (
@@ -992,16 +1002,16 @@ export default function Taxi() {
             ))}
           </Swiper>
         </section>
-        <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
+        <section className="mt-10">
           {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
-                Check How We turn Your Idea into Innovative Product
+                See How We Can Turn Your Idea Into a Real Product
               </h2>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                Our rich portfolio justifies that we are one of the best
-                logistics app development companies in the USA.
+                Have a taxi, ride-hailing, or transportation concept you want to bring to market? Explore our work and see how we transform mobility ideas into functional digital products.
+
               </p>
             </div>
 
@@ -1009,7 +1019,7 @@ export default function Taxi() {
               href="/portfolio"
               className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
             >
-              <span>See Our Work</span>
+              <span>View Our Work </span>
               <ArrowRight
                 size={18}
                 className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -1087,7 +1097,6 @@ export default function Taxi() {
               />
             </div>
 
-            {/* Right Side: Content Container */}
             <div className="flex flex-col space-y-4 text-gray-800">
               {/* Main Heading */}
               <h2 className="text-2xl lg:text-3xl font-extrabold text-black leading-snug">
@@ -1096,111 +1105,115 @@ export default function Taxi() {
 
               {/* Paragraph 1 */}
               <p className="text-sm lg:text-base leading-relaxed text-gray-700">
-                Our team at Devapp takes proper care of both passengers and taxi
-                companies requirements, because of which we’ve consistently gained a
-                good reputation as leading USA mobile app developers
+                Modern transportation businesses need technology that can keep up with
+                fast bookings, changing customer expectations, and real-time operations.
+                We develop taxi applications that connect passengers, drivers, and
+                administrators through one coordinated digital experience.
               </p>
 
               {/* Paragraph 2 */}
               <p className="text-sm lg:text-base leading-relaxed text-gray-700">
-                Our app comes with personalized options with advanced customization
-                features and integration based on specific business needs. These
-                include, Passenger Apps, Driver Apps, Admin Apps and Dispatch Apps
-                and so on. In this way, we deliver results that grow your business.
+                From booking and driver matching to live trip updates and payment
+                processing, we focus on the functionality that keeps every ride moving
+                smoothly. Our team combines product strategy, intuitive interface design,
+                and reliable engineering to create taxi solutions suited to your business
+                model.
               </p>
 
               {/* Paragraph 3 */}
               <p className="text-sm lg:text-base leading-relaxed text-gray-700">
-                Transform your cab or taxi service into a winning business enterprise.
+                Whether you're building a new ride-hailing service or modernizing an
+                existing taxi operation, we help transform your requirements into a
+                practical, market-ready application.
               </p>
             </div>
 
           </div>
         </section>
-                <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
-                  <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-                    {/* Top Icon Illustration */}
-                    <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
-                      <Image
-                        src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
-                        alt="Custom Logistics App Support"
-                        width={64}
-                        height={64}
-                        className="object-contain"
-                      />
-                    </div>
-        
-                    {/* Section Heading */}
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-                      Looking to Hire Dedicated Team?
-                    </h2>
-        
-                    {/* Subtitle Paragraph */}
-                    <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-                      We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
-                    </p>
-        
-                    {/* Contact Info Box */}
-                    <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-                      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                        {/* Email link */}
-                        <a
-                          href="mailto:info@DevAppGrid.com"
-                          className="inline-flex items-center gap-1.5 transition-colors"
-                        >
-                          <div
-                            className="w-6 h-6 bg-red-600"
-                            style={{
-                              maskImage: "url(/icons/email-icon.svg)",
-                              maskRepeat: "no-repeat",
-                              maskSize: "contain",
-                              WebkitMaskImage: "url(/icons/email-icon.svg)",
-                              WebkitMaskRepeat: "no-repeat",
-                              WebkitMaskSize: "contain",
-                            }}
-                          ></div>
-                          <span>info@DevAppGrid.com</span>
-                        </a>
-        
-                        <span className="text-gray-500 font-normal">or</span>
-        
-                        {/* Phone links */}
-                        <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                          <div
-                            className="w-6 h-6 bg-red-600"
-                            style={{
-                              maskImage: "url(/icons/phone-icon.svg)",
-                              maskRepeat: "no-repeat",
-                              maskSize: "contain",
-                              WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                              WebkitMaskRepeat: "no-repeat",
-                              WebkitMaskSize: "contain",
-                            }}
-                          ></div>
-                          <span>US :</span>
-                          <a href="tel:+14697939837" className=" transition-colors">
-                            +1 469 793 9837
-                          </a>
-                          <span>,</span>
-                          <span>CA :</span>
-                          <a href="tel:+16476379108" className=" transition-colors">
-                            +1 647 637 9108
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-        
-                    {/* Action Button */}
-                    <div>
-                      <Link
-                        href="/contact-us"
-                        className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-                      >
-                        Let’s Talk <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </section>
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            {/* Top Icon Illustration */}
+            <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
+              <Image
+                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
+                alt="Custom Logistics App Support"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Section Heading */}
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+              Looking to Hire Dedicated Team?
+            </h2>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
+            </p>
+
+            {/* Contact Info Box */}
+            <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+                {/* Email link */}
+                <a
+                  href="mailto:info@DevAppGrid.com"
+                  className="inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/email-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/email-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
+                  <span>info@DevAppGrid.com</span>
+                </a>
+
+                <span className="text-gray-500 font-normal">or</span>
+
+                {/* Phone links */}
+                <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+                  <div
+                    className="w-6 h-6 bg-red-600"
+                    style={{
+                      maskImage: "url(/icons/phone-icon.svg)",
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskSize: "contain",
+                    }}
+                  ></div>
+                  <span>US :</span>
+                  <a href="tel:+14697939837" className=" transition-colors">
+                    +1 469 793 9837
+                  </a>
+                  <span>,</span>
+                  <span>CA :</span>
+                  <a href="tel:+16476379108" className=" transition-colors">
+                    +1 647 637 9108
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div>
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Let’s Talk <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
 
 
         <section>
@@ -1254,14 +1267,10 @@ export default function Taxi() {
 
         <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-            The Process We Follow For Web Design and Development
+            The Process We Follow for Taxi App Development
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
-            Our team of App Developers Toronto have worked on different types of
-            on-demand app development projects, with satisfactory results. We
-            provide dedicated attention and care throughout the development
-            journey, using top-notch techniques. Here, we shall tailor our
-            development plan as per your needs.
+            A successful taxi application starts with understanding the business behind the technology. Our development process moves through clearly defined stages, allowing us to validate the idea, shape the experience, build the product, and prepare it for launch.
           </p>
         </div>
         <div className="w-full max-w-5xl mx-auto px-4 py-12">

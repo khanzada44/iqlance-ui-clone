@@ -1,21 +1,44 @@
 export const ServiceSectionData = [
   {
-    title:
-      "Restaurant Application Development Of A New Generation",
+    title: "Restaurant Apps Built for the Way People Dine Now",
     description:
-      `We are well familiar that mobile app ordering has become a key element for almost 
-      every restaurant owner and food lovers both, as it leads to drastic 
-      improvement in sales and the highest possible customer engagement level.
-      Considering this fact, our developers at Devapp have come with innovative restaurant
-      app development solutions operable easily on Android, iOS and iPhone backend, while remain packed with tons of useful 
-      features directed towards significant growth in the overall revenue of your entire business.`,
-    features: [
-      
-    ],
+      `A great restaurant app shouldn't feel like another digital menu. It should make choosing easier, ordering faster, and coming back more rewarding.<br/><br/>Our restaurant app development solutions bring customer-facing experiences and behind-the-scenes operations together in one connected platform. Customers can discover dishes, customize orders, reserve tables, choose pickup or delivery, and pay without unnecessary friction.<br/><br/>Meanwhile, your team gets the tools to manage orders, menus, reservations, customer activity, promotions, and more—giving you greater visibility without adding another complicated system to your operation.<br/><br/><strong>The result? A digital experience that works for your customers and earns its place in your business.</strong>`,
+    features: [],
     imageUrl: "/images/restaurant-app-right.jpg",
-    imageAlt: "restaurant App Development",
+    imageAlt: "Restaurant App Development",
   },
- 
+];
+export const bottomFeatures = [
+  {
+    title: "Digital Ordering",
+    description:
+      "Let customers browse, customize, and place orders whenever they’re ready without waiting for a server or navigating a complicated process.",
+  },
+  {
+    title: "Smart Table Reservations",
+    description:
+      "Make table booking simple for customers while giving your team a clearer view of reservations, availability, and upcoming demand.",
+  },
+  {
+    title: "Pickup & Delivery",
+    description:
+      "Give customers the freedom to choose how they receive their food, with streamlined ordering flows for pickup, takeout, and delivery.",
+  },
+  {
+    title: "Frictionless Payments",
+    description:
+      "Make checkout quick and convenient with secure payment options that fit your customers and your restaurant’s business model.",
+  },
+  {
+    title: "Loyalty & Rewards",
+    description:
+      "Give customers a reason to come back. Build loyalty experiences around repeat orders, rewards, exclusive offers, and personalized promotions.",
+  },
+  {
+    title: "Real-Time Order Updates",
+    description:
+      "Keep customers informed from order confirmation to preparation and pickup or delivery, reducing uncertainty and unnecessary support requests.",
+  },
 ];
 export const healthcareFeatures = [
   {

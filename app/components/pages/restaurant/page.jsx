@@ -18,7 +18,6 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { submitContactForm } from "@/services/send-call-request";
 import {
   partners,
-  bottomFeatures,
   slides,
   portfolioSlides,
   technologies,
@@ -28,7 +27,7 @@ import {
   faqsData,
   testimonials,
 } from "../../../../utils/data";
-import { ServiceSectionData, healthcareFeatures } from "../restaurant/data";
+import { ServiceSectionData, healthcareFeatures, bottomFeatures } from "../restaurant/data";
 import Image from "next/image";
 
 export default function Restaurant() {
@@ -58,31 +57,30 @@ export default function Restaurant() {
       tabTitle: "1. Discover",
       heading: "Discover",
       description:
-        "We conduct full-scale research and gather insights on market trends, customer satisfaction points, and competitors first to plan a success-worthy app design.",
+        "Start With the Business, Not the Code. We dig into your restaurant concept, target audience, menu, ordering model, locations, and day-to-day operations. We also look at where customers face friction and where your team can benefit from automation. These insights shape the features, integrations, and user journeys your app actually needs.",
     },
     {
       stepLabel: "STEP 2",
       tabTitle: "2. Design",
       heading: "Design",
       description:
-        "Our designers develop an interactive and iterative app infrastructure, with a simple UI/UX, user-friendly navigations, and more.",
+        "Turn Every Tap Into a Better Dining Experience. Our UX team maps the customer journey from menu discovery to checkout, reservation, pickup, or delivery. We create intuitive interfaces that make browsing dishes, customizing orders, booking tables, applying offers, and completing payments feel natural across every screen.",
     },
     {
       stepLabel: "STEP 3",
       tabTitle: "3. Build",
       heading: "Build",
       description:
-        "Next, trained developers at our Top On-Demand App Development company use the planned technology stack and coding skills to complete the app-building process, adding features and configurations.",
+        "Bring the Experience to Life. With the product blueprint in place, our developers build the app using technologies suited to your business and growth plans. We connect the essential systems behind your restaurant including payment gateways, POS platforms, ordering systems, maps, notifications, and third-party services to create one connected digital experience.",
     },
     {
       stepLabel: "STEP 4",
       tabTitle: "4. Deliver",
       heading: "Deliver",
       description:
-        "After multiple testing batches, the app is finally ready to deploy, across iOS or Android platforms, or both- we focus on after-launch support as well.",
+        "Launch With Confidence. Keep Growing. Before your app reaches customers, we test the experiences that matter most, from placing an order and processing a payment to managing reservations and receiving real-time updates. Once everything is ready, we take your app toward launch with a solid foundation for ongoing improvements, new features, and business growth.",
     },
   ];
-
   const currentStep = processSteps[activeStepIndex] || processSteps[0];
   // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
   // Form State
@@ -182,56 +180,41 @@ export default function Restaurant() {
 
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
                 Restaurant App
-                <br />
-                <p className="text-red-700">
-                  Development
-                </p>
+                <br className="hidden sm:block" />
+                Development
               </h1>
-
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Many conventional retailers have moved to digitalization with
-                the introduction of on-demand options. Technology advancements,
-                particularly mobile evolution, have dramatically changed the
-                eatery and café sector. Owners as well as businesspeople are now
-                realizing the need of developing a restaurant smartphone
-                application, webpage, and technology to help them grow their
-                brand. Furthermore, as the number of eatery and hotel visitors
-                and foodies grows, so does the requirement for controlling their
-                clients and culinary employees.
+                Your customers are already deciding where to eat, what to order, and when
+                to book all from their phones. A restaurant app gives your brand a direct
+                way to be part of those decisions.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Offering your customers with a virtual selection, online meal
-                ordering, virtual checkout, and other features through an app is
-                a latest craze that restaurants are embracing. The food app
-                developers here shall provide the greatest technology and
-                technology solution for eateries to maximize profits and attract
-                more consumers.
+                We build custom restaurant apps that turn everyday dining interactions into
+                convenient digital experiences. From browsing a menu and reserving a table
+                to placing an order, making a payment, or tracking a delivery, we connect
+                the moments that matter in one easy-to-use platform.
               </p>
-              <ul className="mt-8 space-y-5 text-lg">
-                <li className="flex items-center gap-1 mb-2">
-                  <ChevronRight size={14} />
-                  Best Delivery App Development
-                </li>
-                <li className="flex items-center gap-1 mb-2">
-                  <ChevronRight size={14} />
-                  Mobile App Solution for Food Stores
-                </li>
-              </ul>
+
+              <p className="text-base md:text-lg leading-relaxed text-black">
+                Whether you're running a single restaurant, a growing food brand, or a
+                multi-location operation, we build around your workflow, your customers,
+                and the way you want your business to grow.
+              </p>
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
                   className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
-                  Contact Us <ArrowRight className="w-4 h-4" />
+                  Request a Free Quote  <ArrowRight className="w-4 h-4" />
                 </Link>
 
                 <Link
@@ -451,14 +434,11 @@ export default function Restaurant() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
-                Digital Solutions for The Restaurant App Industry
+                Digital Solutions That Keep Your Restaurant Moving
               </h2>
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                Our taxi application solutions thus include a host of innovative
-                features to satisfy passengers, drivers, administrations and
-                dispatchers. Other than this, based on our uber taxi-app
-                development expertise, we have succeeded to provide a variety of
-                innovative apps to the taxi traveling industry.
+                From the first menu view to the final payment,
+                every interaction can become an opportunity to improve the customer experience.
               </p>
               <br />
             </div>
@@ -615,19 +595,32 @@ export default function Restaurant() {
         <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-gray-800">
           {/* Main Heading */}
           <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 text-center">
-            Personalized Application Development for restaurant
+            Restaurant App Development That Fits Your Brand
           </h2>
 
           {/* Intro Paragraphs */}
           <div className="space-y-4 text-center text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto mb-10">
             <p>
-              A visual restaurant booking management software gives you the features you need to organise and manage your dinner reservations successfully and quickly. Your clients may view a graphical representation of your institution as well as the vacant seats for any given date and hour.
+              Your restaurant isn't a template and your app shouldn't be one either.
+              We create custom restaurant applications around your menu structure,
+              service model, customer journey, and operational requirements.
             </p>
+
             <p>
-              Restaurants may use this reservation control system to improve their processes and eventually maximise the potential of their dining areas. As the amount of persons who use apps and webpages to discover restaurant details has risen dramatically, restaurant owners now require a visual restaurant reservation service application.
+              Whether you need a focused ordering app or a complete digital ecosystem
+              connecting customers, restaurants, delivery teams, and administrators,
+              we can build the functionality around your business.
             </p>
+
             <p>
-              With this software, users may verify restaurant reservations, book seats instantaneously. As a consequence, a restaurant booking application assists several restaurants as well as other dining establishments by seeing a rise in the amount of bookings, generally a 20–30% rise.
+              From third-party integrations and payment gateways to loyalty programs,
+              push notifications, POS connectivity, and analytics, your application
+              can be equipped with the technology needed to support your current
+              operation and future expansion.
+            </p>
+
+            <p className="font-bold text-black">
+              One brand. One digital experience. Built around the way you serve.
             </p>
           </div>
 
@@ -699,22 +692,6 @@ export default function Restaurant() {
 
           </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <section className="w-full max-w-6xl mx-auto py-5 md:py-16">
           {/* Section Header */}
           <div className="text-center space-y-3">
@@ -888,24 +865,24 @@ export default function Restaurant() {
         <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Text Content */}
-            <div className="flex flex-col ">
+            <div className="flex flex-col">
               <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 leading-tight">
-                Highlights
-
+                Have a Restaurant App Idea?
               </h2>
 
               <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
-                <p>
-                  We perfectly connect your business with your customers We will
-                  help you find out how to supply the rightest as per user
-                  demands, which is sure to make them wonder that how did they
-                  survive without your app all these days. We develop to meet
-                  macro-level and micro-level delivery requirements of users
-                  across all industries.
+                <p className="font-semibold text-gray-900">
+                  Let's turn the concept into something your customers can actually use.
                 </p>
+
                 <p>
-                  Ready to take a comprehensive consultation for your next
-                  on-demand app?
+                  Tell us what you're building, what your customers need, and where you
+                  want your restaurant business to go. We'll help shape the technology
+                  around it.
+                </p>
+
+                <p className="font-semibold text-gray-900">
+                  Start Your Project
                 </p>
               </div>
             </div>
@@ -1058,16 +1035,15 @@ export default function Restaurant() {
         </section>
 
 
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-black">
-            The Process We Follow For Web Design and Development
+        <div className="text-center max-w-4xl mx-auto space-y-4 mt-7">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
+            The Process Behind a Restaurant App Built to Perform
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
-            Our team of App Developers Toronto have worked on different types of
-            on-demand app development projects, with satisfactory results. We
-            provide dedicated attention and care throughout the development
-            journey, using top-notch techniques. Here, we shall tailor our
-            development plan as per your needs.
+            A successful restaurant app starts with more than a list of features. 
+            We look at how your customers discover your menu, place orders, book tables, 
+            pay, and come back then turn those real-world interactions into a digital 
+            experience that works for both your guests and your team.
           </p>
         </div>
         <div className="w-full max-w-5xl mx-auto px-4 py-12">

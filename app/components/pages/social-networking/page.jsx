@@ -18,19 +18,17 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { submitContactForm } from "@/services/send-call-request";
 import {
   partners,
-  bottomFeatures,
   slides,
   ServiceSectionData,
   portfolioSlides,
   technologies,
   stats,
   industries,
-  services,
   faqsData,
   testimonials,
 } from "../../../../utils/data";
 
-import { healthcareFeatures } from "./data";
+import { healthcareFeatures, bottomFeatures, services } from "./data";
 import Image from "next/image";
 
 export default function SocialMedia() {
@@ -189,37 +187,37 @@ export default function SocialMedia() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
-                Social Networking <br />
-                <p className="text-red-700">
-                  App Development
-                </p>
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                Build a Social Networking App
+                <br className="hidden sm:block" />
+                That Keeps Users Coming Back
               </h1>
+              Build a Dating App People Actually Fall For
+
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                We at Devapp deliver you appropriate and innovative enterprise
-                level of social media app solutions to suffice your important
-                business requirements. Our team associated with social media app
-                development USA can customize the present-age business solution
-                in the same way, as you are willing to get it on your Android or
-                iOS backend.
+                At Devapp, we design and build enterprise-grade social networking
+                applications for ambitious brands that want to create meaningful digital
+                communities. Our USA-based development team creates scalable solutions
+                tailored to your business requirements, with support for both Android and
+                iOS platforms.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Until now, our social media app development solutions have
-                offered plenty of benefits to users, such as social interaction,
-                running of targeted ads based on real-time results, sharing
-                valuable information, seeking information, and much more.
+                Our social media applications are built around real user engagement, making
+                it easy for people to connect, share content, discover relevant information,
+                interact with communities, and stay active on your platform. We can also
+                integrate targeted advertising, personalized discovery, real-time
+                interactions, notifications, and data-driven features to support long-term
+                growth.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                We create corporate platforms to take engagement level of
-                customers, employees, partners and staff members to the highest
-                possible level. Until now, our social media app development
-                solutions have offered plenty of benefits to users, such as
-                social interaction, running of targeted ads based on real-time
-                results, sharing valuable information, seeking information and
-                many more.
+                Beyond consumer-focused platforms, we develop corporate social applications
+                that help businesses strengthen communication between customers, employees,
+                partners, and internal teams. From secure information sharing to real-time
+                collaboration and community engagement, we build connected digital
+                experiences around the way your organization operates.
               </p>
 
               {/* Action Buttons */}
@@ -401,15 +399,13 @@ export default function SocialMedia() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
-                Get Ahead In Your Business With Social Networking Applications
+                Social Networking Apps Engineered to Grow Your Business
               </h2>
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                We, at Devapp, build ever-evolving on-demand app solutions in
-                order to promote the next generation-level services for business
-                growth. Have an amazing experience of scalable and solely
-                integrated solutions along with custom front-end and back-end
-                UI/UX. We assure advanced admin dashboard and powerful analytics
-                panel for both Android as well as iOS.
+                Our certified developers at Devapp, a trusted mobile app development company in the USA,
+                build powerful, purpose-driven social media solutions for businesses of every size.
+                Backed by deep software integration, cross-platform compatibility,
+                and flawless performance, every app we deliver sets a new standard for user experience.
               </p>
               <br />
             </div>
@@ -574,33 +570,33 @@ export default function SocialMedia() {
           {/* Main Heading & Content Block */}
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
-              Custom App Development for Social Networking
+              Custom App Development for Fitness Businesses
             </h2>
 
-            <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto">
+            <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto">
               <p>
-                Our team at Devapp Mobile App Development Company USA has
-                worked on different levels and types of projects for companies
-                over the years. We focus on designing and creating high-quality
-                functional and scalable social networking mobile-based app
-                solutions for startups and enterprises alike.
+                Your fitness app should reflect the way your business works, not force
+                your business into a generic template. Our{" "}
+                <span className="font-semibold text-black">
+                  custom fitness app development services
+                </span>{" "}
+                transform your concept into a digital product designed around your
+                audience, goals, and revenue model.
               </p>
 
               <p>
-                Given the high interest of consumers on social media platforms
-                and instant communication, the demand for such app solutions is
-                high. For this, we focus on curating our research on the
-                customer needs, market trends, and the overall digital lifestyle
-                to create technologically robust and user-friendly apps. With
-                our personalized solutions, companies can expect increased
-                customer engagement rates while providing customers with a
-                protected experience, always.
+                Whether you're launching a fitness startup, expanding a gym or wellness
+                brand, or taking personal training into the digital space, we build
+                experiences that bring workouts, coaching, tracking, nutrition, and
+                engagement together in one place.
               </p>
 
               <p>
-                Ensuring direct communication and interconnected community is
-                our main goal, and our Best social media app developers manage
-                to bring it to life via our solutions.
+                From the first user journey to the technology powering the platform,
+                every part of your application is planned to make fitness easier to
+                access and your business easier to scale. We combine intuitive UI/UX,
+                powerful functionality, and modern mobile technology to create fitness
+                products built for real-world use.
               </p>
             </div>
           </div>
@@ -610,11 +606,13 @@ export default function SocialMedia() {
             <h3 className="text-xl md:text-2xl font-extrabold text-black mb-4">
               Endeavors That Make Us Proud
             </h3>
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-3xl mx-auto">
-              Devapp solutions has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
+
+            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto">
+              Our fitness app development work is focused on creating practical,
+              engaging, and user-centered digital experiences. From workout platforms
+              and coaching solutions to nutrition tracking and connected fitness
+              products, we build applications designed to deliver meaningful value to
+              users and support long-term business growth.
             </p>
           </div>
         </section>
@@ -724,7 +722,7 @@ export default function SocialMedia() {
           </div>
         </section>
 
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+        <div className="text-center max-w-6xl mx-auto space-y-4 mt-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Technologies We Use
           </h2>
@@ -915,9 +913,9 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+          <div className="text-center max-w-6xl mx-auto space-y-4 mt-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why Choose Devapp?
+              Why Choose Us for Fitness App Development?
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
               From development to testing, design to deployment, and everything

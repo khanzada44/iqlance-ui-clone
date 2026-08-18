@@ -61,28 +61,28 @@ export default function Ondemadd() {
       tabTitle: "1. Discover",
       heading: "Discover",
       description:
-        "We conduct full-scale research and gather insights on market trends, customer satisfaction points, and competitors first to plan a success-worthy app design.",
+        "We begin by understanding your transportation model, target riders, driver requirements, competitors, and operational challenges. This stage gives us the insight needed to define the right features and user journeys before design begins.",
     },
     {
       stepLabel: "STEP 2",
       tabTitle: "2. Design",
       heading: "Design",
       description:
-        "Our designers develop an interactive and iterative app infrastructure, with a simple UI/UX, user-friendly navigations, and more.",
+        "Next, we turn the requirements into an intuitive experience for passengers, drivers, and administrators. Our designers map the key interactions and create interfaces that make booking, navigation, trip management, and other essential actions easy to understand.",
     },
     {
       stepLabel: "STEP 3",
       tabTitle: "3. Build",
       heading: "Build",
       description:
-        "Next, trained developers at our Top On-Demand App Development company use the planned technology stack and coding skills to complete the app-building process, adding features and configurations.",
+        "Once the experience is finalized, our developers bring it to life using the appropriate technologies and integrations. We develop the core functionality, connect APIs and third-party services, and build the infrastructure needed to support real-time transportation operations.",
     },
     {
       stepLabel: "STEP 4",
       tabTitle: "4. Deliver",
       heading: "Deliver",
       description:
-        "After multiple testing batches, the app is finally ready to deploy, across iOS or Android platforms, or both- we focus on after-launch support as well.",
+        "Before launch, we thoroughly test the application across its key workflows, devices, and integrations. After everything is validated, we prepare the product for deployment and can continue supporting improvements as your transportation business evolves.",
     },
   ];
 
@@ -218,35 +218,36 @@ export default function Ondemadd() {
 
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
-                On Demand <br />
-                <p className="text-red-700">
-                  Application <br />
-                </p>
-                <p className="text-red-700">
-                  Development
-                </p>
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                On Demand
+                <br className="hidden sm:block" />
+                Application Development
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Planning on creating a completely unique app solution for your company to increase your progress in the digital market? Take the help of our experts at Devapp for this endeavour; we complete each step of app design and development, from the origin to deployment, to ensure top-notch performance.
+                We create reliable and scalable on-demand applications that help
+                businesses connect with customers, manage daily operations, and deliver
+                services more efficiently. Our development process focuses on building
+                secure, easy-to-use, and high-performing applications that can grow with
+                your business.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-
-
-                All of our on-Demand App Developers have the necessary resources and skills to create mobile intuitive solutions with the best features. With years of practice in handling various projects and an intensive knowledge of new cutting-edge technologies and market trends, the team would prepare innovative features and scalable app infrastructure.
+                From the initial concept to design, development, testing, and launch, our
+                team manages every stage of the project. We use modern technologies to
+                create smooth digital experiences for both customers and service
+                providers.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-
-                Expect high growth for your brand with customizable app solutions; impress your customers and improve your brand reputation with our high-quality apps.
-
+                Whether you need a delivery platform, booking application, marketplace, or
+                custom business solution, we develop applications according to your goals,
+                target audience, and operational requirements.
               </p>
 
               {/* Action Buttons */}
@@ -431,10 +432,16 @@ export default function Ondemadd() {
                 Top On-Demand Solutions Company
               </h2>
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                We, at Devapp, build ever-evolving on-demand app solutions in order to promote the next
-                generation-level services for business growth. Have an amazing experience of scalable
-                and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced
-                admin dashboard and powerful analytics panel for both Android as well as iOS.
+                As an experienced on-demand app development company, we help startups and
+                established businesses turn their ideas into practical digital products.
+                Our solutions are designed to simplify processes, improve customer
+                engagement, and support long-term business growth.
+              </p>
+
+              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
+                We combine thoughtful UI/UX design, powerful technology, and
+                industry-focused strategies to deliver applications that are simple to use
+                and effective in real-world situations.
               </p>
               <br />
             </div>
@@ -539,78 +546,6 @@ export default function Ondemadd() {
           </div>
         </section>
         <section>
-          {/* <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
-            loop={true}
-          >
-            {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index} className="h-auto!">
-                <div className="bg-[#F2F1FF] px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between">
-                  <div>
-                    <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-                      {slide.heading}
-                    </h2>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                      <div>
-                        <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                          {slide.title}
-                        </h3>
-
-                        <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                          {slide.description}
-                        </p>
-
-                        <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                          {slide.features.map((feature, i) => (
-                            <li key={i} className="flex items-center gap-2">
-                              <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" /> {feature}
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                          {slide.technologies.map((tech, i) => (
-                            <div key={i} className="text-center">
-                              <img
-                                src={tech.icon}
-                                alt={tech.name}
-                                className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                              />
-                              <p className="text-xs sm:text-sm mt-2">
-                                {tech.name}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-
-                        <button className="group w-full sm:w-auto bg-[#184A8B] hover:bg-[#143d74] text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                          View Case Study
-                          <ArrowRight
-                            size={18}
-                            className="transition-transform duration-300 group-hover:translate-x-1"
-                          />
-                        </button>
-                      </div>
-
-                      <div className="flex justify-center">
-                        <img
-                          src={slide.image}
-                          alt={slide.title}
-                          className="w-full max-w-xs sm:max-w-sm"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper> */}
-          {/* <main className="min-h-screen py-10">
-            <PortfolioSlider slides={portfolios} heading={`Solution: ${params?.slug}`} />
-          </main> */}
         </section>
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
           {/* Top CTA Banner Box */}
@@ -715,7 +650,8 @@ export default function Ondemadd() {
             Technologies We Use
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
-            Capabilities and tools aside, you can expect top-notch technologies in use at our best on-demand app development company; we use them generously for an intuitive and customised app generation.
+            The right technology stack gives your real estate app the foundation it needs to perform today and scale tomorrow. We select modern tools and frameworks based on your product requirements, target platforms, integrations, and long-term business goals.
+
           </p>
         </div>
         <section className="py-16">
@@ -1034,11 +970,11 @@ export default function Ondemadd() {
 
         <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-            The Process We Follow For Web Design and Development
+            Our Process for Real Estate App Design & Development
+
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
-            Our team of App Developers Toronto have worked on different types of on-demand app development projects, with satisfactory results. We provide dedicated attention and care throughout the development journey, using top-notch techniques. Here, we shall tailor our development plan as per your needs.
-
+            A strong real estate app starts with more than a feature list. Our development process combines market understanding, user research, product strategy, design, and technology to turn your concept into a practical digital product.
           </p>
         </div>
         <div className="w-full max-w-5xl mx-auto px-4 py-12">
@@ -1121,23 +1057,30 @@ export default function Ondemadd() {
 
             {/* Left Text Content */}
             <div className="flex flex-col ">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 leading-tight">
-                Fast &amp; Efficient Access To Services
+            <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                Faster Property Discovery. Better User Experiences.
               </h2>
 
-              <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
-                <p>
-                  We perfectly connect your business with your customers We will
-                  help you find out how to supply the rightest as per user demands,
-                  which is sure to make them wonder that how did they survive without
-                  your app all these days. We develop to meet macro-level and
-                  micro-level delivery requirements of users across all industries.
-                </p>
-                <p>
-                  Ready to take a comprehensive consultation for your next on-demand
-                  app?
-                </p>
-              </div>
+              <p>
+                Your customers shouldn’t have to jump through hoops to find the right
+                property. We create intuitive real estate apps that connect users with
+                relevant listings, useful property information, and the people they need
+                without unnecessary friction.
+              </p>
+
+              <p>
+                From the first search to the final enquiry, every interaction is designed
+                to feel clear and convenient. Whether users are browsing homes, comparing
+                properties, contacting agents, or scheduling a viewing, your app keeps the
+                entire journey within reach.
+              </p>
+
+              <p className="font-semibold text-gray-900">
+                Ready to build a real estate app your customers will come back to? Let’s
+                talk.
+              </p>
+            </div>
             </div>
 
             {/* Right Side 3D Image Banner */}

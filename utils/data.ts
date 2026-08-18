@@ -83,26 +83,20 @@ export const slides = [
 ];
 export const ServiceSectionData = [
   {
-    title:
-      "Experience The Quickest Application Development With Us!",
+    title: "Experience the Quickest Application Development With Us!",
     description:
-      "The customers who believe in receiving the app development services  on the go. We, at Devapp, build ever-evolving on-demand app solutions in order to promote the next generation services for the business growth. Have an amazing experience of scalable and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced admin dashboard and powerful analytics panel for both android as well as iOS. <br/><br/>Our unparalleled set of solutions helps the businesses to acquire new customers along with the pervasive solutions that can be deployed for any business. We believe your business on mobile should be easy and convenient for the customers. The demand of on-demand mobile app development  has created a great buzz in the market." ,
-    features: [
-      
-    ],
+      "Our development team follows an organized and efficient approach to deliver applications within a suitable timeframe without compromising quality. We begin by understanding your business model, users, and key requirements before creating a clear development plan.<br/><br/>During the project, our designers and developers work closely with you to ensure that every feature supports your business objectives. From wireframes and prototypes to coding, testing, and deployment, we maintain a transparent workflow throughout the process.<br/><br/>With our technical expertise and flexible development methods, you can launch a dependable application that offers a smooth experience across different devices and platforms.",
+    features: [],
     imageUrl: "/images/quickest-application-right.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "On-Demand App Development",
   },
   {
-    title:
-      " On-Demand Solutions for Other Businesses ",
+    title: "On-Demand Solutions for Other Businesses",
     description:
-      " Our App Developers Toronto cater to different types of businesses for their on-demand app demands. Whether your speciality lies in food delivery, stock delivery, or on-demand video services, our developers are trained to create different app models efficiently. We offer the same level of dedication and work quality to each customer, startup or enterprise-level. Our work covers all steps from researching to preparation, from completing the design to adding the elements, from launching the app to after-launch maintenance. Our client business can expect the best-of-the-best help from us, always.",
-    features: [
-     
-    ],
+      "On-demand technology is helping businesses provide faster, more convenient, and personalized services to their customers. We build customized applications for companies that want to automate service requests, improve communication, and manage operations from one central platform.<br/><br/>Our solutions can include customer applications, service-provider panels, admin dashboards, real-time tracking, secure payments, notifications, and analytics. Each feature is planned according to your industry and business requirements.<br/><br/>Whether you operate in logistics, home services, healthcare, food delivery, retail, or another sector, we can create a solution that supports your complete service process.",
+    features: [],
     imageUrl: "/images/on-demand-solution-left.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "On-Demand Business Solutions",
   },
 ];
 export const portfolioSlides = [

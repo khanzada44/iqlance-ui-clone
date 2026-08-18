@@ -192,36 +192,34 @@ export default function SocialMedia() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-700 leading-tight">
-                Dating App
-                <br />
-                <p className="text-red-700">
-                  Development <br />
-                </p>
-                <p className="text-red-800">Company</p>
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                Build a Dating App People
+                <br className="hidden sm:block" />
+                Actually Fall For
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                We offer secure, scalable, and user-centric dating app
-                development services. What’s your purpose for building a dating
-                app? Whether it is for casual meetings or serious relationships,
-                or it could be anything, you name it. We will turn your idea
-                into a digital platform using cutting-edge technology.
+                We build secure, scalable, and genuinely engaging dating applications
+                designed around real human connection. Whether your goal is casual matching,
+                serious relationships, or a completely unique dating experience, our team
+                transforms your idea into a polished digital platform powered by modern
+                technology.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                We have experienced developers who bring their expertise in
-                dating mobile app development, combining intuitive design with
-                scalable backend architecture. We support end-to-end software
-                development services with high-tech security and quality coding.
+                Our experienced developers combine intuitive UI/UX design with reliable
+                backend architecture to create dating platforms that are easy to use and
+                built to scale. From initial product planning and design to development,
+                testing, deployment, and ongoing improvements, we provide complete
+                end-to-end dating app development services.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Having a proven track record of building secure and
-                high-performing apps, iQlancs Solutions ensures every feature is
-                user-centric and scalable. Let’s build a dating app that not
-                only encourages lasting relationships but also delivers on
-                technical and digital promises.
+                With a strong focus on security, performance, and thoughtful functionality,
+                we make sure every feature serves a clear purpose. Whether you're launching a
+                new dating startup or expanding an existing platform, Devapp helps you build
+                an application designed to encourage meaningful connections while supporting
+                long-term growth.
               </p>
               <ul className="mt-8 space-y-5 text-lg">
                 <li className="flex items-center gap-1 mb-2">
@@ -281,11 +279,10 @@ export default function SocialMedia() {
                 </p>
                 {statusMessage.text && (
                   <p
-                    className={`text-xs text-center font-semibold ${
-                      statusMessage.type === "success"
+                    className={`text-xs text-center font-semibold ${statusMessage.type === "success"
                         ? "text-green-600"
                         : "text-red-600"
-                    }`}
+                      }`}
                   >
                     {statusMessage.text}
                   </p>
@@ -421,40 +418,33 @@ export default function SocialMedia() {
         <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
           {/* Main Heading */}
           <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
-            Why Devapp for Custom Dating App Development in USA
+            Why Devapp for Custom Dating App Development in the USA
           </h2>
 
-          {/* Paragraph Content */}
           <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto mb-10">
             <p>
-              As a leading mobile app development company in the USA, Devapp
-              Solutions understands every story is unique, so your app should be
-              too. Our seasoned development team develops dating app solutions
-              that are custom-built to match your business model, user behavior,
-              and growth goals. We ensure high-tech security and quality testing
-              right from UI/UX design to the deployment of the app.
+              Every dating app has a different purpose, audience, and business model.
+              At Devapp, we build custom dating applications around your specific goals,
+              user behavior, and growth strategy. From UI/UX design and development to
+              testing and deployment, we focus on creating a secure, polished, and
+              reliable experience across both Android and iOS.
             </p>
 
             <p>
-              We follow an agile approach to ensure transparency. We also ensure
-              providing advanced features like AI-powered matchmaking
-              algorithms, location-based date notifications, voice/video chat
-              along with text messages, profile verification, easy document
-              sharing (photos, video, or any documents), etc., to increase trust
-              and engagement. If you want to build a dating app from scratch or
-              want to scale up your existing app, our experienced team ensures
-              you are provided with a solution that performs flawlessly on both
-              platforms, i.e., Android and iOS. We focus on clean design,
-              AI-powered features, and scalability for the competitive USA
-              market.
+              Our agile development approach keeps the process transparent while giving
+              your platform the flexibility to evolve. We can integrate advanced
+              capabilities such as AI-powered matchmaking, location-based discovery,
+              real-time notifications, voice and video chat, text messaging, profile
+              verification, and secure media sharing to create a more engaging and
+              trustworthy experience.
             </p>
 
             <p>
-              Our experienced dating app developers are committed to
-              transforming your concept into a widely used app across the globe.
-              We ensure fast delivery without compromising the quality of code
-              and the quality assurance process. Hence, we don't just build
-              apps; we create a platform people accept and trust to use.
+              Whether you're launching a dating startup from scratch or scaling an
+              existing platform, our team focuses on clean architecture, thoughtful
+              design, strong security, and scalable technology. We prioritize efficient
+              development without cutting corners on code quality or testing, helping you
+              create a dating platform that users can trust and keep coming back to.
             </p>
           </div>
 
@@ -601,9 +591,8 @@ export default function SocialMedia() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -738,11 +727,10 @@ export default function SocialMedia() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`relative pb-3 text-base md:text-lg transition-colors duration-200 ${
-                      isActive
+                    className={`relative pb-3 text-base md:text-lg transition-colors duration-200 ${isActive
                         ? "text-red-600 font-semibold"
                         : "text-gray-500 hover:text-red-700 font-normal cursor-pointer"
-                    }`}
+                      }`}
                   >
                     {tab.label}
 
@@ -1083,19 +1071,17 @@ export default function SocialMedia() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                         ? "text-red-600 font-semibold"
                         : "text-gray-500 hover:text-red-400"
-                    }`}
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1451,11 +1437,10 @@ export default function SocialMedia() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
+                    className={`border bg-white transition-all duration-300 ${open === index
                         ? "border-red-200 shadow-md"
                         : "border-red-200 hover:border-red-400"
-                    }`}
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1467,21 +1452,19 @@ export default function SocialMedia() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
                             ? "rotate-180 text-black"
                             : "rotate-0 text-black"
-                        }`}
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
                           ? "max-h-150 opacity-100"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-black">
