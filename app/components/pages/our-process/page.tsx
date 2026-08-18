@@ -166,11 +166,8 @@ export default function ourProcess() {
               clear plan and stick to a process that's been proven to work.
             </p>
 
-            <section>
+            <section className="mt-20">
               <div className="mx-auto w-[94%] max-w-250">
-                <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 items-center mb-10 flex justify-center">
-                  How it Works
-                </h2>
                 <div>
                   <div className="relative mx-auto w-full max-w-240 px-2 sm:px-4 lg:px-0 m-0 leftLinpage">
                     <div className="mt-5 flex sm:mt-6">
@@ -178,7 +175,7 @@ export default function ourProcess() {
                         {/* ICON */}
                         <div className="flex shrink-0 items-center justify-center">
                           <img
-                            src="/images/How_it_Works_1.png"
+                            src="/images/process-nda-1.png"
                             alt=""
                             className="w-8 sm:w-9 lg:w-10"
                           />
@@ -192,14 +189,12 @@ export default function ourProcess() {
                         {/* CONTENT */}
                         <div className="min-w-0 flex-1 pr-2 sm:pr-4 lg:pr-6">
                           <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
-                            Share Your Requirements
+                            Sign NDA
                           </h3>
 
                           <p className="mt-1.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]">
-                            Tell us about your idea, business goals, target
-                            audience, and project requirements. Our business
-                            analyst will connect with you to understand the
-                            scope and define the key objectives.
+                            Your privacy matters to us, full stop. Before any details are shared, our team signs a Non-Disclosure Agreement, giving
+                            you the assurance that your information stays exactly where it belongs: between us and you.
                           </p>
                         </div>
                       </div>
@@ -269,18 +264,16 @@ export default function ourProcess() {
                         {/* CONTENT */}
                         <div className="min-w-0 flex-1">
                           <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
-                            Receive Your Proposal
+                            Brainstorming & Discussion
                           </h3>
                           <p className="">
                             {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]"> */}
-                            Based on your requirements, we have prepared a
-                            detailed proposal covering the recommended solution,
-                            project scope, estimated cost, development plan, and
-                            timeline. Once approved, we move into execution.
+                            This is where ideas start taking shape. We sit down with you and dig into open, honest conversation, pulling out ideas that are both creative and genuinely workable. Our team leans on real brainstorming techniques, not just for generating ideas, but for
+                            building the kind of collaboration and problem-solving that makes those ideas actually stick.
                           </p>
                         </div>
                         <img
-                          src="/images/How_it_Works_2.png"
+                          src="/images/brain-process-2.png"
                           alt=""
                           className="w-10"
                         />
@@ -295,7 +288,7 @@ export default function ourProcess() {
                         {/* ICON */}
                         <div className="flex shrink-0 items-center justify-center">
                           <img
-                            src="/images/How_it_Works_1.png"
+                            src="/images/scope-nda-3.png"
                             alt=""
                             className="w-8 sm:w-9 lg:w-10"
                           />
@@ -309,14 +302,12 @@ export default function ourProcess() {
                         {/* CONTENT */}
                         <div className="min-w-0 flex-1 pr-2 sm:pr-4 lg:pr-6">
                           <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
-                            Share Your Requirements
+                            Scope Defined & Agreement
                           </h3>
 
                           <p className="mt-1.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]">
-                            Tell us about your idea, business goals, target
-                            audience, and project requirements. Our business
-                            analyst will connect with you to understand the
-                            scope and define the key objectives.
+                            Before development begins, we put everything in writing: what we're building, what needs to happen to get there, and when. That means clear deliverables, realistic timelines, and transparent costs,
+                            all documented upfront so there's no guesswork and no surprises down the road for either side.
                           </p>
                         </div>
                       </div>
@@ -385,18 +376,16 @@ export default function ourProcess() {
                         {/* CONTENT */}
                         <div className="min-w-0 flex-1">
                           <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
-                            Receive Your Proposal
+                            Project Kickoff & Team Introduction
                           </h3>
                           <p className="">
                             {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]"> */}
-                            Based on your requirements, we have prepared a
-                            detailed proposal covering the recommended solution,
-                            project scope, estimated cost, development plan, and
-                            timeline. Once approved, we move into execution.
+                            Once the agreement is set, it's time. We build a realistic project timeline right from day one and introduce you to the actual people working on your build, not just names on an invoice. From there, you'll get regular updates and full visibility into what's happening at every stage, so you always know exactly where things stand.
+
                           </p>
                         </div>
                         <img
-                          src="/images/How_it_Works_2.png"
+                          src="/images/project-kick-process-4.png"
                           alt=""
                           className="w-10"
                         />
@@ -411,7 +400,7 @@ export default function ourProcess() {
                         {/* ICON */}
                         <div className="flex shrink-0 items-center justify-center">
                           <img
-                            src="/images/How_it_Works_1.png"
+                            src="/images/2-process-icn-.png"
                             alt=""
                             className="w-8 sm:w-9 lg:w-10"
                           />
@@ -425,14 +414,14 @@ export default function ourProcess() {
                         {/* CONTENT */}
                         <div className="min-w-0 flex-1 pr-2 sm:pr-4 lg:pr-6">
                           <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
-                            Share Your Requirements
+                            Design
                           </h3>
 
                           <p className="mt-1.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]">
-                            Tell us about your idea, business goals, target
-                            audience, and project requirements. Our business
-                            analyst will connect with you to understand the
-                            scope and define the key objectives.
+                            As per our initial research work, we at iQlance perform a thorough analysis and
+                            prepare the necessary documents. In this way, we prepare an interactive design,
+                            while make sure to
+                            keep our clients connected with their visitors or customers with interactivity.
                           </p>
                         </div>
                       </div>
@@ -501,18 +490,16 @@ export default function ourProcess() {
                         {/* CONTENT */}
                         <div className="min-w-0 flex-1">
                           <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
-                            Receive Your Proposal
+                            Development
                           </h3>
                           <p className="">
-                            {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]"> */}
-                            Based on your requirements, we have prepared a
-                            detailed proposal covering the recommended solution,
-                            project scope, estimated cost, development plan, and
-                            timeline. Once approved, we move into execution.
+                            This is where the real building happens.
+                            Our team turns concepts into working code, applying deep technical
+                            knowledge to create solutions engineered specifically around your company's goals, not a generic build that could belong to anyone
                           </p>
                         </div>
                         <img
-                          src="/images/How_it_Works_2.png"
+                          src="/images/development-kick-process-6.png"
                           alt=""
                           className="w-10"
                         />
@@ -527,7 +514,7 @@ export default function ourProcess() {
                         {/* ICON */}
                         <div className="flex shrink-0 items-center justify-center">
                           <img
-                            src="/images/How_it_Works_1.png"
+                            src="/images/quality-assurance-process-7.png"
                             alt=""
                             className="w-8 sm:w-9 lg:w-10"
                           />
@@ -541,14 +528,11 @@ export default function ourProcess() {
                         {/* CONTENT */}
                         <div className="min-w-0 flex-1 pr-2 sm:pr-4 lg:pr-6">
                           <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
-                            Share Your Requirements
+                            Quality Assurance
                           </h3>
 
                           <p className="mt-1.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]">
-                            Tell us about your idea, business goals, target
-                            audience, and project requirements. Our business
-                            analyst will connect with you to understand the
-                            scope and define the key objectives.
+                            We don't wait until the end to check our work, testing happens at multiple stages throughout design and development. Backed by strong technical expertise, we run your solution through a range of environments and scenarios, catching issues early and making sure everything holds up before it ever reaches you.
                           </p>
                         </div>
                       </div>
@@ -617,18 +601,19 @@ export default function ourProcess() {
                         {/* CONTENT */}
                         <div className="min-w-0 flex-1">
                           <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
-                            Receive Your Proposal
+                            Launch
                           </h3>
                           <p className="">
                             {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]"> */}
-                            Based on your requirements, we have prepared a
-                            detailed proposal covering the recommended solution,
-                            project scope, estimated cost, development plan, and
-                            timeline. Once approved, we move into execution.
+                            This is the moment everything's been building toward.
+                            We launch your product with one goal in mind: making sure it
+                            meets every requirement you set, functions exactly as it should,
+                            and passes through quality assurance with flying colors.
+
                           </p>
                         </div>
                         <img
-                          src="/images/How_it_Works_2.png"
+                          src="/images/5-process-icn-.png"
                           alt=""
                           className="w-10"
                         />

@@ -1,28 +1,26 @@
 export const bottomFeatures = [
   {
-    title: "App for your Business niche:",
+    title: "Built for Your Business Niche",
     description:
-      "Our squad of specialists develops software programs for corporate partners that are personalized to their unique demands. We analyze business patterns, and user preferences to develop a personalized app design targeted to a particular niche.",
+      "Our specialists build software tailored to your exact business model, using real data on customer behavior and buying patterns to shape an app strategy suited to your specific market.",
   },
+
   {
-    title: "Instant access:",
+    title: "Instant, Frictionless Access",
     description:
-      "We provide distinctive options to create your online company a great success by using creative concepts and clear code.",
+      "We give your online store a genuine edge with fresh, creative UI concepts and clean, reliable code that keeps users engaged.",
   },
+
   {
-    title: "Secured payment",
+    title: "Secure Payment Infrastructure",
     description:
-      "Our eCommerce web solutions, which have been around for a long time, ensure that your eCommerce site is as secure as possible. Our upgraded technology and innovations enable your online marketplace to become safer, accessible and easily expandable to new features whenever you choose.",
+      "Our eCommerce web development solutions are built on security that's been proven over time, keeping your storefront protected while staying flexible enough to scale with new features as your business grows.",
   },
+
   {
-    title: "Attractive UI + Unbeatable Performance:",
+    title: "High-Performance UI/UX",
     description:
-      "We give support in the construction of elevated smartphone software with unique styles. Our App Developers Toronto apply innovative methodologies, procedures, software, and materials to produce a custom layout that is intuitive, manageable, and works perfectly.",
-  },
-  {
-    title: "Branding:",
-    description:
-      "To harness the potential of engaging clients, companies must interact with them regularly via mobile eCommerce. Besides keeping customers engaged in the business, smartphone shopping is useful for providing customers with offers, rebates, and vouchers quickly.",
+      "Our developers apply proven design methodologies and modern tools to create layouts that are intuitive, easy to manage, and built to perform flawlessly under real-world traffic.",
   },
 ];
 export const slides = [
@@ -43,68 +41,67 @@ export const slides = [
   {
     id: 2,
     image: "/images/eCommerce-left-2.jpg",
-    title: "Display of Personalized Suggestions",
+    title: "Smart, Personalized Product Recommendations",
     description:
-      "Our Devapp eCommerce solution provider knows very well that success of any eCommerce store depends solely on buying behavior of individual users. For this-",
+      "At Devapp, we know that eCommerce success comes down to one thing: understanding how individual users actually shop. That's why personalization sits at the center of everything we build.",
     points: [
-      "Usage of recommendation engine to analyze your users’ behavior to display personalized recommendations",
-      "To retain customers, engage them and increase cross-selling activities",
-      "To analyze buying behavior and preferences of users",
+      "AI-powered recommendation engines that analyze user behavior to surface relevant, personalized suggestions",
+      "Features that keep customers engaged and drive higher cross-selling opportunities",
+      "Deep analysis of buying behavior and user preferences to continuously refine the experience",
     ],
   },
+
   {
     id: 3,
     image: "/images/eCommerce-left-3.jpg",
-    title: "Ease Your User’s Login and Signup via Social Media",
+    title: "Mobile App Solutions Built for Modern Retail",
     description:
-      "Our eCommerce app development services include social media integration of eCommerce stores. This helps you to ease both login and signup procedures. In addition, social media allows your users to share their buying experience on Facebook, Twitter and other popular social media and thereby, help you in gaining a good recognition.",
+      "Competition in online retail keeps intensifying and a well-designed store paired with a highly optimized app is quickly becoming the baseline for any eCommerce business that wants to compete, let alone lead.",
     points: [
-      "Placement of share plugins on your product page in Facebook/Twitter",
-      "Onsite sharing of user-generated social contents",
-      "Facility of social sign-in and usage of social comment systems",
-      "Display of any trending product on behalf of clients",
+      "Mobile-optimized commerce apps help you build a large base of loyal customers and long-term brand loyalty",
+      "Faster load times than a standard website, keeping shoppers engaged instead of bouncing",
+      "Continuous improvements in the usability of every mobile solution we build",
     ],
   },
+
   {
     id: 4,
     image: "/images/eCommerce-left-4.jpg",
-    title: "One-Stop Shopping Facility",
+    title: "Make Property Discovery Easier With the Right Mobile Experience",
     description:
-      "eCommerce solution comes with a wealth of capabilities designed to help you launch a powerful online web store in a very short time. As a leading eCommerce solution provider company, we bundle our managed services with eCommerce websites to provide one-stop-shopping experience",
+      "A powerful real estate app can put your entire property business in your customers' pockets. From discovering listings to connecting with agents, the right mobile solution creates a faster, more convenient journey while giving your business more opportunities to engage and convert.",
     points: [
-      "Product catalog building and features listing",
-      "Product reviews for making purchase decisions",
-      "Product search with QR codes to each reach the desired item",
-      "Cart development",
+      "Build intuitive property search experiences that help users find what fits their needs faster",
+      "Bring listings, location-based search, property details, and agent communication into one seamless app",
+      "Turn user interest into meaningful leads with personalized experiences and smart engagement features",
     ],
   },
 ];
 export const ServiceSectionData = [
   {
-    title:
-      "Advantages to Get an e-Commerce Mobile App Solutions for Retail Stores",
+    title: "Mobile App Solutions Built for Modern Retail",
     description:
-      "Today, with the consistent increase in competition in the online shopping industry, well-designed online store in combination with a highly optimized app are obviously the basic assets for any successful e-commerce business.",
+      "Competition in online retail keeps intensifying and a well-designed store paired with a highly optimized app is quickly becoming the baseline for any eCommerce business that wants to compete, let alone lead.",
     features: [
-      "Mobile operated eCommerce apps help you to get a large number of loyal audiences and brand loyalty",
-      "Loading of contents at faster rate with apps than via any website",
-      "Brings improvement in usability of various mobile solutions",
+      "Mobile-optimized commerce apps help you build a large base of loyal customers and long-term brand loyalty",
+      "Faster load times than a standard website, keeping shoppers engaged instead of bouncing",
+      "Continuous improvements in the usability of every mobile solution we build",
     ],
     imageUrl: "/images/retail-stores-right.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "eCommerce Mobile App Solutions",
   },
+
   {
-    title:
-      "",
+    title: "Make Property Discovery Easier With the Right Mobile Experience",
     description:
-      "Mobile app solutions play a significant role to setup a strong connection in between customers and online stores.",
+      "A powerful real estate app can put your entire property business in your customers' pockets. From discovering listings to connecting with agents, the right mobile solution creates a faster, more convenient journey while giving your business more opportunities to engage and convert.",
     features: [
-      "Mobile apps are responsible to drive the highest possible user engagement",
-      "Significant growth in the tendency of app usage and eCommerce market associated with mobile apps development",
-      "Formulation of an effective and an advanced marketing/promotion strategy",
+      "Build intuitive property search experiences that help users find what fits their needs faster",
+      "Bring listings, location-based search, property details, and agent communication into one seamless app",
+      "Turn user interest into meaningful leads with personalized experiences and smart engagement features",
     ],
     imageUrl: "/images/retail-stores-left.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "Real Estate Mobile App",
   },
 ];
 export const portfolioSlides = [
@@ -220,57 +217,57 @@ export const technologies = [
       {
         name: "iOS",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ios-icn-tab.svg",
+          "/icons/next.svg",
       },
       {
         name: "Android",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/android.svg",
+          "/icons/android.svg",
       },
       {
         name: "React Native",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/reactnative.svg",
+          "/icons/reactnative.svg",
       },
       {
         name: "Flutter",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/flutter.svg",
+          "/icons/flutter.svg",
       },
       {
         name: "Augmented Reality",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/icn-80/ar-icn.png.webp",
+          "/images/ar-icn.png.webp",
       },
       {
         name: "Swift",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/swift.svg",
+          "/icons/swift.svg",
       },
       {
         name: "Kotlin",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/kokin-icn-tab.svg",
+          "/icons/kokin-icn-tab.svg",
       },
       {
         name: "Objective C",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/object-c-icn-tab.svg",
+          "/icons/object-c-icn-tab.svg",
       },
       {
         name: "Cross Platform",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/crossplatform-icn-tab.png.webp",
+          "/images/crossplatform-icn-tab.png.webp",
       },
       {
         name: "Ibecon",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ib-icn-tab.svg",
+          "/icons/ib-icn-tab.svg",
       },
       {
         name: "Xamarin",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/xamarin-icn-tab.png.webp",
+          "/images/xamarin-icn-tab.png.webp",
       },
     ],
   },
@@ -280,37 +277,37 @@ export const technologies = [
       {
         name: "Angular",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/angular-icon.svg",
+          "/icons/angular-icon.svg",
       },
       {
         name: "React",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/reactnative.svg",
+          "/icons/reactnative.svg",
       },
       {
         name: "Blockchain",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/blockchain.svg",
+          "/icons/blockchain.svg",
       },
       {
         name: "Sass",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/sass.svg",
+          "/icons/sass.svg",
       },
       {
         name: "jQuery",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/jquery.svg",
+          "/icons/jquery.svg",
       },
       {
         name: "HTML 5",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/html-5.svg",
+          "/icons/html-5.svg",
       },
       {
         name: "CSS3",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/css3.svg",
+          "/icons/css3.svg",
       },
     ],
   },
@@ -320,27 +317,27 @@ export const technologies = [
       {
         name: "MySQL",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mysql-logo.svg",
+          "/icons/mysql-logo.svg",
       },
       {
         name: "MsSQL",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mssql.svg",
+          "/icons/mssql.svg",
       },
       {
         name: "Azure",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/azure.svg",
+          "/icons/azure.svg",
       },
       {
         name: "Firebase",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/firebase.svg",
+          "/icons/firebase.svg",
       },
       {
         name: "MongoDB",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mongodb.svg",
+          "/icons/mongodb.svg",
       },
     ],
   },
@@ -350,32 +347,32 @@ export const technologies = [
       {
         name: "PHP",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/php-logo.svg",
+          "/icons/php-logo.svg",
       },
       {
         name: ".NET",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/.net.svg",
+          "/icons/net.svg",
       },
       {
         name: "Laravel",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/laravel.svg",
+          "/icons/laravel.svg",
       },
       {
         name: "Node .JS",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/nodejs.svg",
+          "/icons/nodejs.svg",
       },
       {
         name: "Rails",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ruby_on_rails-icon.svg",
+          "/icons/ruby_on_rails-icon.svg",
       },
       {
         name: "Python",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/python.svg",
+          "/icons/python.svg",
       },
     ],
   },
@@ -385,27 +382,27 @@ export const technologies = [
       {
         name: "Drupal",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/drupal.svg",
+          "/icons/drupal.svg",
       },
       {
         name: "Joomla",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/Joomla.svg",
+          "/icons/Joomla.svg",
       },
       {
         name: "WordPress",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/wordpress.svg",
+          "/icons/wordpress.svg",
       },
       {
         name: "Magento",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/magento.svg",
+          "/icons/magento.svg",
       },
       {
         name: "Shopify",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/shopify.svg",
+          "/icons/shopify.svg",
       },
     ],
   },
@@ -416,42 +413,42 @@ export const technologies = [
       {
         name: "AWS",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/amazon-web-services.svg",
+          "/icons/amazon-web-services.svg",
       },
       {
         name: "Google Cloud",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/google-cloud.svg",
+          "/icons/google-cloud.svg",
       },
       {
         name: "Git",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/git.svg",
+          "/icons/git.svg",
       },
       {
         name: "Gradle",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/gradle.svg",
+          "/icons/gradle.svg",
       },
       {
         name: "Selenium",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/selenium.svg",
+          "/icons/selenium.svg",
       },
       {
         name: "Jenkins",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/jenkins.svg",
+          "/icons/jenkins.svg",
       },
       {
         name: "Docker",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/docker.svg",
+          "/icons/docker.svg",
       },
       {
         name: "Kubernetes",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/kubernetes.svg",
+          "/icons/kubernetes.svg",
       },
     ],
   },
@@ -487,7 +484,7 @@ export const stats = [
     line1: "Best",
     line2: "Quality Delivery",
   },
-]; 
+];
 
 export const industries = [
   {
@@ -579,7 +576,7 @@ export const services = [
   },
   {
     image:
-     "/images/on-time-icn.png",
+      "/images/on-time-icn.png",
     title: "On – Time Delivery",
     description:
       "Perhaps one of our major talents is time planning; our group of members appropriately organizes, apply a powerful cloud solution, analyze, and publish the app within timeframes.",

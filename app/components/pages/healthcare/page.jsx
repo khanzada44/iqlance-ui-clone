@@ -170,40 +170,34 @@ export default function HeroQuoteSection() {
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
                   Healthcare App
                   <br className="hidden sm:block" />
-                  Development Company
+                  Development Company USA
                 </h1>
                 <h3 className="mt-8 text-2xl font-bold leading-snug">
-                  Adoption of Healthcare Apps to move forward towards better
-                  decision making!
+                  Digital Solutions Built Around Modern Healthcare
+
                 </h3>
 
                 <p className="mt-6 text-gray-700 leading-8 text-lg">
-                  The healthcare industry is experiencing a massive digital
-                  shift, with mobile apps that improve patient care,
-                  diagnostics, and real-time communication. We are a leading
-                  healthcare app development company, offering exceptional
-                  mobile app solutions designed especially for the global
-                  healthcare industry. We have proven healthcare industry
-                  knowledge with advanced technologies to create secure apps as
-                  per HIPAA, HL7, FDA, GDPR, and HITECH guidelines that are
-                  scalable and user-friendly.
+                  Healthcare is becoming more connected, mobile, and patient-driven. We help hospitals,
+                  clinics, medical practices, and health-tech companies turn this shift into practical
+                  digital products that simplify care and improve everyday healthcare experiences.
+                  Our healthcare app development services cover everything from patient-facing
+                  apps and telehealth platforms to clinical workflows and connected health solutions.
+                  We combine healthcare expertise, intuitive UX,
+                  and modern technology to build products around real-world needs, not generic templates.
                 </p>
 
                 <ul className="mt-8 space-y-5 text-lg">
-                  <li className="flex items-center gap-3 mb-2">
-                    <ChevronRight size={14} />
-                    45 minutes of free consultation
+                  <li className="flex items-center gap-1 mb-2">
+                    <ChevronRight size={17} />
+                    45-Minute Free Consultation
                   </li>
                   <li className="flex items-center gap-1 mb-2">
-                    <ChevronRight size={14} />A strict non-disclosure policy
+                    <ChevronRight size={17} />Confidential From Day One
                   </li>
                   <li className="flex items-center gap-1 mb-2">
-                    <ChevronRight size={14} />
-                    Detailed Feature List Document
-                  </li>
-                  <li className="flex items-center gap-1 mb-2">
-                    <ChevronRight size={14} />
-                    Action plan to kick start your project
+                    <ChevronRight size={17} />
+                    Detailed Feature Blueprint
                   </li>
                 </ul>
 
@@ -342,11 +336,10 @@ export default function HeroQuoteSection() {
 
                     {statusMessage.text && (
                       <div
-                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${
-                          statusMessage.type === "success"
-                            ? "bg-green-100 border border-green-400 text-green-800"
-                            : "bg-red-100 border border-red-400 text-red-800"
-                        }`}
+                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                          ? "bg-green-100 border border-green-400 text-green-800"
+                          : "bg-red-100 border border-red-400 text-red-800"
+                          }`}
                       >
                         {statusMessage.text}
                       </div>
@@ -396,40 +389,38 @@ export default function HeroQuoteSection() {
           <div className="max-w-6xl mx-auto px-4">
             {/* Top Heading */}
             <h2 className="md:text-5xl text-center leading-tight text-3xl font-bold text-[29px] ">
-              Healthcare Mobile App Development Company for Modern Healthcare
-              Solutions
+              Healthcare Mobile App Development Company for Modern Healthcare Solutions
+
             </h2>
 
             {/* Top Content */}
             <div className="mt-8 space-y-6 text-center md:text-lg leading-8 ">
               <p className="m-0 text-[20px] font-normal  text-black">
-                We develop healthcare apps that help overcome the gap between
-                the patients and the doctors and establish a seamless
-                transition. It lays down a smooth path to get advanced care and
-                better outcomes.
+                Make healthcare more connected, accessible, and responsive with a mobile solution
+                built around the people who use it. We develop healthcare applications that bring patients,
+                physicians, care teams, and medical information closer together
+                helping reduce communication gaps and create a more coordinated care experience.
               </p>
               <p className="m-0">
-                Our healthcare app development services include the end-to-end
-                process, including designing and developing mobile applications
-                for hospitals, clinics, and medtech companies. We specialize in
-                building custom solutions for appointment scheduling,
-                telemedicine, patient monitoring, and EHR systems. As a trusted
-                healthcare app development company, we develop secure, scalable,
-                and high-performing mobile solutions. Our expert team has
-                hands-on experience over seamless integration with existing
-                systems, including HL7 data exchange, HIPAA guidelines, GDPR
-                law, and other global standards.
+                Our healthcare app development services cover the complete product lifecycle,
+                from strategy and UI/UX design to development, integration, testing, deployment,
+                and ongoing support. We build custom solutions for hospitals, clinics, medical
+                practices, and medtech companies, including appointment scheduling, telemedicine,
+                remote patient monitoring, EHR platforms, and patient engagement applications.
+
               </p>
               <br />
               <p className="m-0">
                 {" "}
-                From lowered operation costs to enhanced patient engagement, we
-                have a lot of things to offer. We are a world-changing{" "}
+                Security and interoperability remain central to every healthcare product we develop.
+                Our team can integrate applications with existing healthcare ecosystems and support
+                standards such as HL7 and FHIR, while
+                designing with applicable privacy and security requirements such as HIPAA and GDPR in mind.
               </p>
-              <a href="">healthcare app development company </a>
-              that makes use of cutting-edge technology to provide a simplified
-              solution. Plus, we are fully equipped to take your healthcare
-              projects to the sky with:
+              <p>
+                The result is more than a mobile application. It's a digital healthcare solution designed to streamline operations, improve access to information,
+                strengthen patient engagement, and create a foundation for smarter healthcare delivery.
+              </p>
             </div>
 
             {/* Image */}
@@ -443,28 +434,29 @@ export default function HeroQuoteSection() {
 
             {/* Bottom Heading */}
             <h2 className="mt-14 text-2xl md:text-2xl font-bold text-center leading-tight">
-              Cloud-based Healthcare Mobile App Development Services for
-              Scalable and Secure Operations
+              Cloud Healthcare App Development Services for Connected, Future-Ready Care
             </h2>
 
             {/* Bottom Content */}
             <div className="mt-8 space-y-6 text-center text-black text-base md:text-lg leading-8">
               <p className="m-0 text-black ">
-                A cloud-based healthcare solution is necessary for a digital
-                medical environment, as it offers real-time access to patient
-                data, seamless collaboration between internal teams, lower
-                infrastructure costs, and better scalability. The cloud-based
-                solution ensures secure data storage, faster decision-making,
-                efficiency & accuracy in each operation, and improved outcomes.
+                Healthcare teams need instant access to information without being tied to a
+                specific location or infrastructure. Our cloud healthcare app development
+                services help bring patient data, clinical workflows, and care teams into a connected
+                digital environment making information easier to access, share, and manage.
               </p>
 
               <p className="m-0 text-black ">
-                As a leading healthcare app development services provider across
-                the globe, we have hands-on experience in building custom
-                cloud-based healthcare apps, including EHR, EMR, telemedicine,
-                and more. Moreover, we are fully equipped to build a
-                high-quality app that improves diagnosis, patient fitness, and
-                medical data interoperability within a pre-decided timeframe.
+                We build custom cloud-powered solutions for EHR, EMR, telemedicine,
+                remote patient monitoring, and healthcare data management, tailored to the way
+                your organization operates. Cloud architecture allows your application to support
+                growing data volumes, expanding teams,
+                and evolving healthcare services without requiring constant infrastructure changes
+              </p>
+              <p className="m-0 text-black ">
+                From centralized information and cross-team collaboration to secure data
+                management and system interoperability, we engineer healthcare applications that help organizations
+                work smarter while creating a more connected experience for patients and providers
               </p>
             </div>
           </div>
@@ -476,8 +468,7 @@ export default function HeroQuoteSection() {
               {/* Left */}
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold leading-tight">
-                  Let's Take A Deep Dive Into The Extraordinary Features Of The
-                  Healthcare App Development Done By Us
+                  Explore the Standout Features of Our Healthcare App Development Solutions
                 </h2>
 
                 <ul className="mt-8 space-y-6">
@@ -526,7 +517,7 @@ export default function HeroQuoteSection() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -580,12 +571,11 @@ export default function HeroQuoteSection() {
             Our Healthcare App Development Solutions
           </h1>
           <p className="text-[20px] text-center">
-            The healthcare system of our country is the most under-served sector
-            in technology. Thus, despite how advanced the treatment and recovery
-            process has gone, its benefits are not sweeping down to the ultimate
-            patients. This is why our medical app development company strive to
-            improve the quality of the patients and healthcare leaders through
-            different aspects of our app.
+            Healthcare deserves technology that improves the experience on both sides of care.
+            We build digital healthcare solutions that help providers replace fragmented
+            processes with connected workflows, easier information access, and more efficient
+            patient services. Our goal is to help healthcare organizations use mobility
+            and automation to make everyday care more organized, responsive, and patient-focused.
           </p>
         </section>
         <section className="py-10">
@@ -642,7 +632,7 @@ export default function HeroQuoteSection() {
                             key={index}
                             className="flex gap-3 items-baseline"
                           >
-                            <ChevronRight size={16} />
+                            <ChevronRight size={22} />
                             <span>{point}</span>
                           </div>
                         ))}
@@ -657,13 +647,13 @@ export default function HeroQuoteSection() {
         <section>
           <div className="max-w-4xl mx-auto px-4 py-10">
             <h1 className="text-center leading-tight font-bold text-[30px] mb-2.5">
-              Advantages of adopting healthcare app solutions
+              Advantages of Adopting Healthcare App Solutions
             </h1>
             <p className="text-center text-gray-600 text-base max-w-3xl mx-auto mb-8">
-              Undoubtedly, the IoT has transformed the way of working in almost
-              all the industries! Also, it has redefined how apps, devices and
-              people interact and connect with each other for delivering
-              healthcare solutions.
+              Healthcare apps are reshaping the way patients, physicians, and care teams connect,
+              communicate, and manage care. By bringing essential healthcare services, patient information,
+              and digital communication into one connected environment,
+              mobile solutions can help providers deliver faster, more coordinated, and patient-focused care.
             </p>
 
             <div className="flex flex-col lg:flex-row gap-6 text-gray-700">
@@ -671,16 +661,19 @@ export default function HeroQuoteSection() {
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0 " />
                   <span>
-                    Advanced treatment and accurate diagnosis in a short term
-                    than ever.
+                    Faster Diagnosis & Treatment,
+                    Give healthcare professionals quicker access to relevant patient information, helping them make
+                    informed decisions and begin appropriate treatment without unnecessary delays.
                   </span>
                 </p>
 
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0" />
                   <span>
-                    Improvised engagement between doctors and patient to make
-                    sure the optimized recovery.
+                    Better Doctor-Patient Engagement,
+                    Create convenient digital touchpoints between patients and healthcare providers,
+                    making communication easier
+                    and helping patients stay more involved throughout their treatment journey.
                   </span>
                 </p>
               </div>
@@ -689,16 +682,19 @@ export default function HeroQuoteSection() {
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0" />
                   <span>
-                    Real-time support within the hospitals to reduce the errors
-                    and perfection can be attained.
+                    Real-Time Support for Care Teams,
+                    Enable healthcare professionals to access and share critical information when it matters most, helping streamline hospital workflows, reduce communication gaps, and minimize avoidable errors.
+
                   </span>
                 </p>
 
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0" />
                   <span>
-                    Constant patient care to have active involvement for
-                    real-time monitoring of the disease.
+                    Continuous Health Monitoring,
+                    Keep care connected beyond the hospital with tools that support
+                    ongoing patient monitoring. Real-time health information can
+                    help providers recognize important changes earlier and respond more proactively
                   </span>
                 </p>
               </div>
@@ -709,30 +705,36 @@ export default function HeroQuoteSection() {
           <div className="flex flex-col-reverse lg:flex-row gap-10 mt-10">
             {/* Left Content */}
             <div className="w-full lg:w-1/2">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Benefits of Healthcare Mobility Solutions</h1>
               <p className="text-black leading-7 mb-8">
-                The healthcare mobility solutions tend to offer new tools and
-                efficiencies to make the integrated healthcare system work with
-                a view of ensuring better treatment to the patients. These are
-                the gateway to multiple opportunities towards wellness,
-                automated workflows, and process excellence.
+                Healthcare mobility solutions connect patients, providers, and critical health data in ways
+                that make care more accessible and operations more efficient. By bringing digital tools,
+                real-time information, and automated workflows together, these solutions help healthcare
+                organizations
+                improve service delivery while creating a more connected patient experience.
               </p>
 
               <div className="space-y-4">
                 <p className="flex items-start gap-2 text-black">
                   <ChevronRight size={18} className="mt-1 shrink-0" />
-                  Reduced costs of treatment with enhanced perfection.
+                  Lower Healthcare Costs, Automated processes and streamlined workflows can reduce administrative overhead,
+                  minimize inefficiencies,
+                  and help healthcare providers deliver services more effectively.
                 </p>
 
                 <p className="flex items-start gap-2 text-black">
                   <ChevronRight size={18} className="mt-1 shrink-0 " />
-                  Improved management of disease with continuous monitoring
-                  during treatment.
+                  Smarter Disease Management,
+                  Continuous access to relevant patient information enables healthcare teams to monitor conditions more closely, identify changes sooner, and make better-informed care decisions.
                 </p>
 
                 <p className="flex items-start gap-2 text-black">
                   <ChevronRight size={18} className="mt-1 shrink-0 ]" />
-                  Advanced patient experience through connected devices and
-                  proactive treatment.
+                  More Connected Patient Care,
+                  Mobile and connected healthcare experiences make it easier for patients to
+                  communicate with providers, access health information, and receive timely
+                  support throughout their care journey.
+
                 </p>
               </div>
             </div>
@@ -770,7 +772,7 @@ export default function HeroQuoteSection() {
 
               {/* Contact Box */}
               <div className="flex items-center justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -929,7 +931,7 @@ export default function HeroQuoteSection() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -999,32 +1001,29 @@ export default function HeroQuoteSection() {
               {/* Right Content */}
               <div>
                 <h2 className="text-3xl lg:text-[32px] font-bold text-[#111827] leading-tight">
-                  Our Healthcare App Developers are Dedicated to Providing a
-                  Seamless Experience
+                  Our Healthcare App Developers are Dedicated to Providing a Seamless Experience
                 </h2>
 
                 <p className="mt-8 text-[17px] leading-6 text-black">
-                  We have a dedicated team of healthcare app developers, Dallas
-                  who work day and night to impact the healthcare sector
-                  positively through building communication and accessibility.
-                  We strive to achieve it by making security and
-                  user-friendliness our highest priority. Also, we use only
-                  proven and refined process that helps client amplify their
-                  result and set them apart from the competition.
+                  Our team of healthcare app developers works around the clock to bring a positive
+                  change to the healthcare industry by strengthening communication and improving accessibility.
+                  Security and ease of use remain our top priorities, and we rely on a tested, well-refined
+                  development
+                  approach that helps clients elevate their outcomes and stand out from competitors.
                 </p>
 
                 <p className="mt-8 text-[17px] leading-6 text-black">
-                  Plus, our highly skilled engineers master the area of
-                  interface design, troubleshooting, and improving functionality
-                  for a flawless experience. Further, we support our app with AI
-                  and other integrations to bring an innovative aspect to the
-                  health sector.
+                  Beyond that, our expert engineers specialize in interface design, bug fixing, and enhancing
+                  overall functionality to deliver a smooth user experience. We also integrate AI and other
+                  advanced technologies into our apps to introduce a fresh,
+                  innovative dimension to the healthcare space
                 </p>
 
                 <p className="mt-8 text-[17px] leading-6 text-black">
-                  Our main motto is not letting the patient feel they are alone.
-                  They are fully supported by a group of best doctors ready to
-                  serve during emergency hours.
+                  Our core belief is that no patient should feel alone in their journey.
+                  That's why they receive constant support from a team of top-rated doctors available
+                  around the clock, even during emergencies.
+
                 </p>
               </div>
             </div>
@@ -1033,31 +1032,28 @@ export default function HeroQuoteSection() {
         <section className="py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-5 text-center">
             <h2 className="text-3xl md:text-3xl lg:text-[30px] font-bold leading-tight text-[#111827]">
-              How Much It will Cost You to Build a Healthcare App Like Other
-              Successful Healthcare App Available in the Industry?
+              How Much Will It Cost You to Build a Healthcare App Like Other Successful Healthcare Apps Available in the Industry?
             </h2>
 
             <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6">
-              Getting proper healthcare services nowadays has become the most
-              expensive task in the world. Thus, the demand for digitalization
-              of healthcare solutions is much on demand. We the best Mobile App
-              development company USA with our highly skilled engineers help
-              develop robust digital health applications. It enables patients
-              maintain a connection with their physicians and get remote
-              consultation anytime & anywhere.
+              Quality healthcare has become one of the most costly needs worldwide today. As a result,
+              the push toward digital healthcare solutions keeps growing. As a leading Mobile App development
+              company in the USA, our experienced developers build strong, reliable digital health platforms.
+              This allows patients to stay connected with their doctors
+              and access consultations remotely, at any time and from anywhere.
             </p>
 
             <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6">
-              However, to provide the patients with a comprehensive solution,
-              the app must contain all the areas they might need help. These
-              include medication management, doctor consultation, telehealth
-              service, remote monitoring, system check-up, and whatnot.
+              That said, to truly serve patients well, the app needs to cover every area
+              they may require assistance including medication tracking, doctor consultations,
+              telehealth features, remote patient monitoring, health check-ups, and more.
             </p>
 
             <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6">
-              So, the cost of developing a medical app compatible with iOS and
-              Android will depend on the services you choose. Also, the added
-              features and functionality will determine the price.
+              Ultimately, the cost of building a healthcare app for iOS
+              and Android depends on which services you opt for.
+              The final price also hinges on the specific features
+              and capabilities you want included.
             </p>
             <Link
               href="/contact"
@@ -1071,9 +1067,10 @@ export default function HeroQuoteSection() {
             </Link>
           </div>
         </section>
-        <section>
-          <div>
+        <section >
+          <div >
             <img src="/images/healthcare-app-built.jpg" alt="" />
+            <div className="mt-10">
             <h1 className="mt-5 flex justify-center font-bold text-3xl">
               Endeavors That Make Us Proud
             </h1>
@@ -1083,6 +1080,8 @@ export default function HeroQuoteSection() {
               unique and user centric. Here are some of the best examples for
               this.
             </p>
+            </div>
+
           </div>
         </section>
 
@@ -1116,8 +1115,8 @@ export default function HeroQuoteSection() {
               {caseStudies.map((item, index) => (
                 <SwiperSlide key={index} className="h-auto!">
                   <div
-                    className="h-full px-6 py-10 flex items-center"
-                    style={{ backgroundColor: item.bgColor }}
+                    className="bg-red-50 h-full px-6 py-10 flex items-center"
+                    
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 w-full">
                       {/* Left */}
@@ -1221,7 +1220,7 @@ export default function HeroQuoteSection() {
             <h3 className="flex justify-center font-bold text-3xl">
               Technology Stack
             </h3>
-            <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6">
+            <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 items-center">
               We only adopt the latest and cutting-edge technology that ensure
               redefining the process of healthcare for the better. So, if you
               want a glimpse of what these state-of-the-art technologies are,
@@ -1238,19 +1237,17 @@ export default function HeroQuoteSection() {
                   <button
                     key={index}
                     onClick={() => setActiveTab(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activeTab === index
-                        ? "text-red-600 font-semibold"
-                        : "text-gray-500 hover:text-black"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activeTab === index
+                      ? "text-red-600 font-semibold"
+                      : "text-gray-500 hover:text-black"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${
-                        activeTab === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${activeTab === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1541,11 +1538,10 @@ export default function HeroQuoteSection() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-red-50 shadow-md"
-                        : "border-red-200 hover:border-red-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-red-50 shadow-md"
+                      : "border-red-200 hover:border-red-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1557,21 +1553,19 @@ export default function HeroQuoteSection() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">

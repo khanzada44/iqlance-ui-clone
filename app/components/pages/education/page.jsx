@@ -70,33 +70,45 @@ export default function elearning() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
-                E-Learning Development Company
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                Top-Tier E-Learning
+                <br className="hidden sm:block" />
+                Development Company in the USA
               </h1>
 
-              {/* Image content added below */}
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Our education application development solutions provide a pool of
-                opportunities to the entire education industry. Our{" "}
-                <span className="font-semibold text-gray-900">
-                  education app development
-                </span>{" "}
-                helps both students and institutes by providing a gamut of learning
-                activities in a compact manner with the help of our app.
+                At <span className="font-semibold text-gray-900">Devapp</span>, we create
+                custom <span className="font-semibold text-gray-900">e-learning and
+                  education applications</span> that make learning more accessible,
+                engaging, and adaptable. From schools and universities to training
+                organizations and businesses, we develop digital learning solutions that
+                bring courses, resources, assessments, and collaboration into one
+                convenient platform.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                We have a qualified and an experienced team of many veteran app developers
-                to apply their years of experience and huge expertise for designing of
-                innovative educational apps and thereby, fulfill customized requirements of
-                your educational institute.
+                Our experienced education app developers combine modern technology with
+                thoughtful learning experiences to build solutions around your
+                institution's specific goals. Whether you're launching an online learning
+                platform, upgrading an existing LMS, or creating a specialized training
+                application, we help turn your vision into a scalable digital product.
               </p>
 
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 pt-2">
+                Take Learning Beyond the Classroom
+              </h2>
+
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                It's time to tear down geographical and temporal obstacles to information
-                dissemination. We develop e-learning applications that encourage youngsters
-                to enjoy learning.
+                Remove the limitations of location, schedules, and traditional learning
+                methods with an education platform designed for today's connected
+                learners. Give students and professionals the flexibility to access
+                educational content, complete lessons, track progress, and continue
+                learning wherever they are.
               </p>
+
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 pt-2">
+                Create a Scalable Education App
+              </h2>
 
               <ul className="space-y-3 pt-2 text-base md:text-lg font-medium text-gray-800">
                 <li className="flex items-center gap-2">
@@ -264,18 +276,33 @@ export default function elearning() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Get a Gamut Of Learning Activities Compactly With Our Education App Development
+                Transform Learning With Our E-Learning Development Solutions
               </h2>
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-                In today’s economy, innovation plays a crucial influence in how firms grow and fail. Companies are increasingly opting for online marketing over conventional marketing. There’s a lot of demand to evolve, that’s why traditional marketing channels like print and television are being squeezed out in favour of facebook. Consequently, eLearning is displacing conventional means of learning as well as staff training.
+
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-gray-600">
+                Digital education is changing how students learn and how organizations
+                train their teams. E-learning platforms make it easier to deliver updated
+                content, standardize training, and keep learners connected without relying
+                on printed materials or fixed classroom schedules.
               </p>
+
               <br />
-              <p>
-                Despite its inaccurate reputation as a pricey and complex teaching technique, eLearning has evolved as the most popular way for organization to educate their staff. When compared to older techniques, eLearning facilitates the procedure of keeping updates.
+
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-gray-600">
+                With a customized{" "}
+                <span className="font-semibold text-gray-900">
+                  LMS development solution
+                </span>
+                , administrators can update courses, replace outdated resources,
+                introduce new lessons, and distribute important learning materials
+                without rebuilding an entire training program.
               </p>
+
               <br />
-              <p>
-                So, rather than trying to redo the whole text and incur extra printing expenses, our LMS systems allow you modify your documents and instructions by just attaching new lessons to current manual documents and notifying the modifications to the employees.
+
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-gray-600">
+                Learners get access to current content, while institutions and businesses
+                gain a more flexible and manageable way to deliver education at scale.
               </p>
             </div>
           </div>
@@ -317,8 +344,9 @@ export default function elearning() {
           </div>
         </div>
         <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">Indulging in Mobile Immersive Learning/Teaching</h2>
-          <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">We possess an extremely competent and knowledgeable group of educational application designers who have produced a number of high-quality online audio as well as videos broadcasting e-learning applications for learners to use during live classes.</p>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">Immersive Mobile Learning & Teaching</h2>
+          <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">We create mobile learning experiences that make education more interactive, accessible, and engaging. Our education app developers build platforms that support live classes, on-demand audio, video lessons, and digital learning resources, giving students and educators the flexibility to learn and teach from anywhere.
+</p>
         </div>
         <section className="py-10">
           <style>{`
@@ -389,7 +417,7 @@ export default function elearning() {
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -406,7 +434,7 @@ export default function elearning() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[70%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -522,7 +550,7 @@ export default function elearning() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -731,99 +759,17 @@ export default function elearning() {
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-                Ready to Build a Custom Logistics App?
+                Have a Real Estate App Idea in Mind?
+
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
-                Partner with our logistics app development company to streamline
-                fleet management, delivery tracking, and supply chain operations.
+               Share your requirements with our team, and let’s turn your property-tech concept into a product users can actually rely on.
               </p>
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@DevAppGrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      US: +1 469 793 9837
-                      <br className="sm:hidden" />
-                      <span className="hidden sm:inline"> | </span>
-                      CA: +1 647 637 9108
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <Link
-                href="/contact-us"
-                className="mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-              >
-                Let’s Discuss Your Project <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
-          {/* Section Header */}
-          <div className="text-center space-y-3 mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Key Features of Logistics and Transportation App Development
-            </h2>
-            <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
-              Our logistics app solutions contain a host of features that shall
-              help you manage your activities in a more organized manner.
-            </p>
-          </div>
-        </section>
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            {/* CTA Box */}
-            <div className="mt-5 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
-              <img
-                src="/images/letdiscuss-icon.png.webp"
-                alt=""
-                className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
-              />
-
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-                Ready to Build a Custom Logistics App?
-              </h2>
-
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
-                Partner with our logistics app development company to streamline
-                fleet management, delivery tracking, and supply chain operations.
-              </p>
-
-              {/* Contact Box */}
-              <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -885,34 +831,33 @@ export default function elearning() {
             </div>
 
             {/* Right Content Side */}
-            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Expert Logistics App Developers with Proven Technical Expertise
-              </h2>
+          <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              Experienced Developers for Real Estate Apps That Mean Business
+            </h2>
 
-              <p>
-                In our family, we have a group of highly competent developers
-                with full-stack development aptitudes. All our experts have
-                previously worked in different types of app development
-                projects, long before joining our team. With their years of
-                service experience, our App Developers have long since upgraded
-                their skills; they provide high-grade apps for clients.
-              </p>
+            <p>
+              Real estate platforms come with their own set of challenges, from
+              handling large property databases and location-based searches to creating
+              smooth experiences for multiple types of users. Our experienced
+              developers understand these requirements and build applications with
+              both the business and the end user in mind.
+            </p>
 
-              <p>
-                To us, our clients are the main priority. Whatever features they
-                require and the speed at which they want their service, our
-                developers focus on delivering well-designed custom mobile apps.
-              </p>
+            <p>
+              We work with modern technologies to develop property marketplaces, real
+              estate listing apps, agent platforms, and custom solutions tailored to
+              specific business models. Every part of the product, from the user
+              interface to the underlying architecture, is planned to support
+              performance, security, and future growth.
+            </p>
 
-              <p>
-                We create apps for different types of companies, be it smaller
-                ones just starting or enterprise-level corporations with
-                big-scale logistics demands. Expect noticeable business growth,
-                smoother operations, and maximized profits in the future with
-                our ad per design services.
-              </p>
-            </div>
+            <p>
+              Whether you’re launching your first property app or improving an existing
+              platform, we bring the technical expertise and product-focused approach
+              needed to turn your requirements into a reliable digital experience.
+            </p>
+          </div>
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
@@ -963,106 +908,33 @@ export default function elearning() {
           </div>
 
           {/* Success Stories Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-              Success Stories That Showcase Our Logistics Expertise
-            </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              Devapp solutions has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
-            </p>
-          </div>
-        </section>
-        <section className="w-full">
-          {/* Custom styles to override Swiper pagination bullet colors to red */}
-          <style>{`
-        .portfolio-swiper .swiper-pagination-bullet {
-          background-color: #cbd5e1;
-          opacity: 1;
-        }
-        .portfolio-swiper .swiper-pagination-bullet-active {
-          background-color: #dc2626 !important; /* Red color */
-        }
-      `}</style>
+        <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+            How Much Does It Cost to Develop a education App?
+          </h2>
 
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000 }}
-            loop={true}
-            className="portfolio-swiper pb-12"
-          >
-            {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index}>
-                {/* Fixed height container for uniformity across slides */}
-                <div className="bg-red-50 px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-auto lg:h-155 flex flex-col justify-center">
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-bold  mb-6 sm:mb-8">
-                    {slide.heading}
-                  </h2>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            There’s no fixed price for building a education app because every
+            project comes with different goals, features, and technical requirements.
+            A basic property listing app will naturally require a different
+            investment than a full marketplace with advanced search, maps, agent
+            dashboards, messaging, payments, and other complex functionality.
+          </p>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                    <div className="flex flex-col justify-center">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
-                        {slide.title}
-                      </h3>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            The final development cost can also vary depending on your choice of
+            platform, design requirements, third-party integrations, backend
+            infrastructure, and the level of customization your product needs.
+            Defining these requirements early helps you prioritize the features that
+            matter most to your users and business.
+          </p>
 
-                      <p className="text-gray-700 leading-6 sm:leading-7 mb-4 text-sm sm:text-base line-clamp-3">
-                        {slide.description}
-                      </p>
-
-                      <ul className="space-y-2 mb-4 text-sm sm:text-base">
-                        {slide.features.map((feature, i) => (
-                          <li key={i} className="flex items-center">
-                            <span className="mr-2 text-[#184A8B] font-bold">
-                              ›
-                            </span>{" "}
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="flex flex-wrap gap-4 sm:gap-6 mb-6">
-                        {slide.technologies.map((tech, i) => (
-                          <div key={i} className="text-center">
-                            <img
-                              src={tech.icon}
-                              alt={tech.name}
-                              className="w-7 h-7 sm:w-8 sm:h-8 mx-auto object-contain"
-                            />
-                            <p className="text-xs sm:text-sm mt-1">
-                              {tech.name}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                      <div>
-                        <button className="group sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 py-3 font-semibold flex justify-center items-center gap-3 transition cursor-pointer ">
-                          View Case Study
-                          <ArrowRight
-                            size={18}
-                            className="transition-transform duration-300 group-hover:translate-x-1"
-                          />
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Fixed dimensions container for slide image to ensure equal sizing */}
-                    <div className="flex justify-center items-center">
-                      <div className="">
-                        <img
-                          src={slide.image}
-                          alt={slide.title}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            Want to know what your real estate app could cost? Tell us what you’re
+            planning to build, and our experts will help you determine the right
+            development scope and budget for your project.
+          </p>
+        </div>
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}
@@ -1167,7 +1039,7 @@ export default function elearning() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[70%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -1543,7 +1415,7 @@ export default function elearning() {
           <ContactForm />
         </div>
       </div>
-        <section className="mb-5 overflow-hidden">
+      <section className="mb-5 overflow-hidden">
         <div className="marquee">
           <div className="marquee-content">
             {[...partners, ...partners].map((item, index) => (

@@ -24,13 +24,13 @@ import {
   tabs,
   appData,
   caseStudies,
+  services
 } from "./data";
 import {
   partners,
   technologies,
   stats,
   industries,
-  services,
   testimonials,
 } from "../../../../utils/data";
 import Image from "next/image";
@@ -78,26 +78,24 @@ export default function wellnessFitness() {
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Recently it is seen that the wellness and fitness industry are
-                in need of technology revolution, which is why business leaders
-                are inclining towards mobility solutions. Devapp acknowledges
-                this requirement, thus providing you with a team of experts
-                experienced at crafting the best digital solution for you.
+                The wellness and fitness industry is undergoing a major digital shift,
+                and forward-thinking business leaders are increasingly turning to mobile solutions
+                to stay ahead. At Devapp, we recognize this shift and bring a
+                team of seasoned experts ready to craft the perfect digital solution for your brand.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                The fitness app we develop will ensure your business will reach
-                heights by offering you many opportunities. It is not only you
-                who will benefit but also the target audience by low-stress
-                level, high productivity, lower healthcare cost, etc.
+                Our fitness app development services are built to help your business
+                unlock new growth opportunities, think broader audience reach, reduced
+                stress levels for users, higher productivity, and lower healthcare costs,
+                among other benefits.
+
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Being the best Health and fitness app development company, we
-                make sure our comprehensive fitness app contains every feature a
-                fitness enthusiast will require to maintain a good shape, like
-                forming diet plans, connecting with fitness gurus, scheduling
-                workouts, etc.
+                As a leading health and fitness app development company, we ensure every fitness
+                app we build is loaded with the features today's fitness enthusiasts actually need from custom
+                diet planning to connecting with fitness experts and scheduling workouts with ease.
               </p>
 
               {/* Action Buttons */}
@@ -248,24 +246,24 @@ export default function wellnessFitness() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Fetch Gym Trainers And Nutritionists Easily With Our Wellness
-                And Fitness App Development Solutions
+                Connect Gym Trainers and Nutritionists with Clients Instantly Through
+                Custom Fitness App Development
               </h2>
+
               <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Our team at Devapp always strives hard to provide you with the
-                best possible fitness solutions. For this, we have delivered a
-                variety of innovative wellness and fitness app development
-                solutions and allowed fitness enthusiasts to get their
-                fitness-related queries resolved within less possible span of
-                time.
+                At Devapp, we&apos;re committed to delivering the most effective fitness
+                solutions in the industry. That&apos;s why we&apos;ve built a diverse
+                portfolio of innovative wellness and fitness app development solutions,
+                helping fitness enthusiasts get their questions answered in record time.
               </p>
+
               <br />
-              <p>
-                We assist gym trainers, dieticians/nutritionists, yoga trainer,
-                aerobic/zumba trainers and similar other experts to integrate
-                their web and mobile applications, so that athletes or fitness
-                freaks easily fetch their services in time. We do this by
-                providing:
+
+              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                We help gym trainers, dietitians, nutritionists, yoga instructors, and
+                aerobics/Zumba coaches bring their services onto web and mobile platforms
+                so athletes and fitness enthusiasts can access what they need, exactly
+                when they need it. Here&apos;s how we make it happen:
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
@@ -306,7 +304,7 @@ export default function wellnessFitness() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -421,9 +419,8 @@ export default function wellnessFitness() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 <div className="w-full lg:w-1/2 space-y-6">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
@@ -479,7 +476,7 @@ export default function wellnessFitness() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -535,12 +532,10 @@ export default function wellnessFitness() {
 
         <section className="max-w-6xl mx-auto px-4 py-16 text-center font-sans">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
-            Features of Wellness and Fitness App Development
+            Features That Power Our Wellness and Fitness App Development
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our wellness and fitness app successfully grabs the eyeballs of
-            health maniacs because of the valuable features we add. Making the
-            process of being fit effortless for people.
+            Our wellness and fitness apps are designed to capture the attention of health-conscious users through valuable, purposeful features that make staying fit effortless.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
@@ -562,7 +557,7 @@ export default function wellnessFitness() {
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Push Notification
+                Push Notifications
               </h3>
             </div>
 
@@ -617,7 +612,7 @@ export default function wellnessFitness() {
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
-                Schedules and Calendar
+                Schedule and Calendar
               </h3>
             </div>
 
@@ -669,7 +664,7 @@ export default function wellnessFitness() {
           </div>
         </section>
 
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <section >
           <div className="text-center space-y-3 mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Key Features of Logistics and Transportation App Development
@@ -681,10 +676,10 @@ export default function wellnessFitness() {
           </div>
         </section>
 
-        <section className="py-10 bg-white">
+        <section >
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-5 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -703,7 +698,7 @@ export default function wellnessFitness() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -776,11 +771,10 @@ export default function wellnessFitness() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`px-6 py-3 text-lg font-medium transition-colors duration-200 border-b-2 ${
-                      activeTab === tab.id
-                        ? "border-red-600 text-red-600 font-semibold"
-                        : "border-transparent text-gray-500 hover:text-red-700"
-                    }`}
+                    className={`px-6 py-3 text-lg font-medium transition-colors duration-200 border-b-2 ${activeTab === tab.id
+                      ? "border-red-600 text-red-600 font-semibold"
+                      : "border-transparent text-gray-500 hover:text-red-700"
+                      }`}
                   >
                     {tab.label}
                   </button>
@@ -806,10 +800,10 @@ export default function wellnessFitness() {
             </div>
           </div>
         </section>
-        <section className="py-10 bg-white">
+        <section >
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-5 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -826,7 +820,7 @@ export default function wellnessFitness() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -894,24 +888,29 @@ export default function wellnessFitness() {
             {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                For All Technologies, We Have Specialized and Qualified
-                Developers on Our Team
+                Our Skilled Developers, Committed to Delivering Peak Performance
               </h2>
 
               <p>
-                We’re here to assist business in finding the finest food app for
-                the specific requirements and needs. We match the capabilities
-                of our employees to business requirements. Before recruiting,
-                companies can conduct an assessment with programmers. With an
-                authorized programmer, business can begin a one-week hazardless
-                experiment.
+                At Devapp, our team of digital specialists lives and breathes wellness and
+                fitness solutions. Our fitness app developers are fitness enthusiasts
+                themselves, which means they truly understand what end users need. They
+                bring a clear vision to every build, incorporating a diverse range of
+                fitness solutions, including yoga apps, workout apps, and gym management
+                apps.
               </p>
 
               <p>
-                Our developers will devote their whole attention to the
-                assignment. Our staff becomes a part of the organization. You
-                receive a committed programming staff that users can manage
-                independently.
+                Beyond that, our team works continuously to strengthen app visibility and
+                drive business growth. Alongside offering a wide range of app development
+                services, our experienced developers ensure every app runs smoothly and
+                accurately, making it easier than ever for dietitians, personal trainers,
+                and nutritionists to serve their clients effectively.
+              </p>
+
+              <p>
+                At the core, our wellness and fitness apps are built to support dietary
+                planning, bodybuilding, weight management, and smart schedule management.
               </p>
             </div>
           </div>
@@ -920,17 +919,31 @@ export default function wellnessFitness() {
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How much does it cost to develop a food app that is comparable to
-              popular rivals on the market?
+              How Much Does It Cost to Build a Wellness and Fitness App Like the
+              Industry&apos;s Best?
             </h2>
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                Our development group left zero leaf uncovered in their pursuit
-                of creating accessible apps with sophisticated functionality for
-                restaurants and customers. We are well-equipped to deal with
-                many forms of equipment and to effectively apply those to our
-                application design services.
+                The market is full of successful fitness apps, and their success largely
+                comes down to one thing: the range of features they offer to enhance the
+                user experience. Because of this, your total development cost will depend
+                on your app&apos;s complexity and the specific features you choose to
+                include.
+              </p>
+
+              <p>
+                As a leading health app development company, we start by thoroughly
+                evaluating current market demand and identifying the features best suited
+                to meet it. From there, we integrate every feature strategically,
+                ensuring your app stays ahead of the competition.
+              </p>
+
+              <p>
+                There&apos;s no fixed, one-size-fits-all price; costs vary based on the
+                technology used, development timeline, and the depth of research
+                involved. Want a full cost breakdown for your custom wellness and fitness
+                app? Get in touch with our team today.
               </p>
             </div>
           </div>
@@ -1106,19 +1119,17 @@ export default function wellnessFitness() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
-                        ? "text-red-600 font-semibold"
-                        : "text-gray-500 hover:text-red-400"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
+                      ? "text-red-600 font-semibold"
+                      : "text-gray-500 hover:text-red-400"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1156,12 +1167,13 @@ export default function wellnessFitness() {
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-                We are Team of Talented, Experienced, and Certified Designers
-                and Developers.
+                Certified Experts. Proven Experience. Exceptional Digital Solutions.
+
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
-                Let us Build Something Extraordinary.
+                Our skilled designers and developers bring the expertise, creativity, and technical precision needed to turn ambitious ideas into powerful digital products.
+
               </p>
               <Link
                 href="/contact-us"
@@ -1262,14 +1274,10 @@ export default function wellnessFitness() {
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
-              Why should you choose us?
+              Why Choose Us?
             </h1>
             <p>
-              Devapp is a top-tier food application creation company that
-              creates applications for a variety of operating systems, including
-              Android and iPhone. Our professionals provide a centralized
-              process for each customer and provide personalised assistance in
-              any way.
+              As one of the most trusted mobile app development companies in the USA, we help businesses build apps that truly dominate the market. Here's how we set every client up for success:
             </p>
           </div>
         </section>
@@ -1426,11 +1434,10 @@ export default function wellnessFitness() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-red-200 shadow-md"
-                        : "border-red-100 hover:border-red-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-red-200 shadow-md"
+                      : "border-red-100 hover:border-red-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1442,21 +1449,19 @@ export default function wellnessFitness() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">

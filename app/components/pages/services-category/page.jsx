@@ -332,6 +332,21 @@ export default function ServicesCategory({ slug }) {
                   dramatically changed the eatery and café sector.
                 </p>
               )}
+              {serviceData?.content ? (
+                <div
+                  className="mt-6 text-base leading-7 text-black md:text-lg md:leading-8"
+                  dangerouslySetInnerHTML={{
+                    __html: serviceData.content,
+                  }}
+                />
+              ) : (
+                <p className="mt-6 text-base leading-7 text-black md:text-lg md:leading-8">
+                  Many conventional retailers have moved to digitalization
+                  with the introduction of on-demand options. Technology
+                  advancements, particularly mobile evolution, have
+                  dramatically changed the eatery and café sector.
+                </p>
+              )}
             </div>
 
 

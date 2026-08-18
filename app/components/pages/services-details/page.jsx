@@ -294,14 +294,6 @@ export default function ServicesCategory({ slug }) {
         <section className="mx-auto w-full max-w-7xl px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
             <div className="space-y-6 lg:col-span-7">
-              <h1 className="text-3xl font-bold leading-tight text-red-600 md:text-5xl">
-                {serviceData?.name || serviceData?.title || "Services Details"}
-              </h1>
-
-              {/* URL SLUG */}
-
-              <p className="text-sm text-gray-400">Slug: {slug}</p>
-
               {/* API DESCRIPTION */}
 
               {serviceData?.description && (
@@ -309,6 +301,14 @@ export default function ServicesCategory({ slug }) {
                   className="text-base leading-relaxed text-black md:text-lg"
                   dangerouslySetInnerHTML={{
                     __html: serviceData.description,
+                  }}
+                />
+              )}
+              {serviceData?.content_1 && (
+                <div
+                  className="text-base leading-relaxed text-black md:text-lg"
+                  dangerouslySetInnerHTML={{
+                    __html: serviceData.content_1,
                   }}
                 />
               )}
@@ -331,50 +331,9 @@ export default function ServicesCategory({ slug }) {
                   </p>
                 </>
               )}
-              {serviceData?.image &&
-                typeof serviceData.image === "string" &&
-                serviceData.image.trim() !== "" && (
-                  <div className="relative mt-6 h-75 w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={`/${serviceData.image}`}
-                      alt={serviceData?.name || "Service"}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
 
               {/* FEATURES */}
 
-              {Array.isArray(serviceData?.features) && (
-                <ul className="mt-8 space-y-5 text-lg">
-                  {serviceData.features.map((item, index) => (
-                    <li key={index} className="mb-2 flex items-center gap-1">
-                      <ChevronRight size={14} />
-
-                      {typeof item === "string"
-                        ? item
-                        : item?.name || item?.title || ""}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              {/* DEFAULT FEATURES */}
-
-              {!Array.isArray(serviceData?.features) && (
-                <ul className="mt-8 space-y-5 text-lg">
-                  <li className="mb-2 flex items-center gap-1">
-                    <ChevronRight size={14} />
-                    Best Delivery App Development
-                  </li>
-
-                  <li className="mb-2 flex items-center gap-1">
-                    <ChevronRight size={14} />
-                    Mobile App Solution for Food Stores
-                  </li>
-                </ul>
-              )}
 
               {/* ACTION BUTTONS */}
 

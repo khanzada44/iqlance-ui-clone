@@ -70,32 +70,25 @@ export default function realEstate() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-700 leading-tight">
-                Real Estate
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                Real Estate App Development
+                <br className="hidden sm:block" />
+                That Turns Browsers Into Buyers
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                With many people shifting to bigger cities, more and more people
-                are looking for well-furnished homes and rental spaces. As a
-                result, there is a boom in the real estate industry. To provide
-                the most advantage of the situation to Aggregators, Realtors,
-                Builders, and stakeholders, we provide them with the best Real
-                Estate App development solution. Thus, marking the digital
-                presence in the real estate sector.
+                The way people search for their next home has changed for good. Today's buyers don't wait for open houses; they scroll, swipe, and shortlist properties from their phones before they ever step through a front door. As a trusted real estate app development company, we help brokerages, agents, and PropTech startups meet that shift head-on with mobile and web platforms built to convert interest into closed deals.
+
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                As the real estate app development company, we aim at enhancing
-                the experience of the buyers and real estate firms. We make it
-                possible by offering them an app that supports advanced
-                technologies like IoT, chatbots, and third-party app support.
+                From MLS and IDX integration to AI-driven property recommendations and immersive virtual tours, we build custom real estate apps that keep you ahead of an industry moving faster than ever. Whether you're a solo agent looking to modernize your listings or an enterprise brokerage overhauling legacy systems, our team delivers real estate software development backed by real technical depth not just a pretty interface.
+
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                In addition, we extend our real estate app development services
-                to Virtual CTO services for carrying tech strategies
-                successfully. Thus, ensuring our real estate partner a
-                comprehensive development.
+                We also offer Virtual CTO support alongside our development services, so you get strategic technology guidance from day one not just code delivered on a deadline.
+
               </p>
 
               {/* Action Buttons */}
@@ -241,31 +234,24 @@ export default function realEstate() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Custom App Development Solutions For Your Real Estate Business
+                Custom Real Estate App Development Built Around Your Business
               </h2>
+
               <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                We have a qualified and an experienced real estate app
-                development team toronto to provide cutting-edge solutions to
-                meet your specific real estate business requirements. Whether
-                you are one of the top-class real estate companies, a small firm
-                or an individual agent related to a property business, you may
-                not overlook the significance of a good real estate web
-                development service.
+                No two real estate businesses look the same so your app shouldn&apos;t
+                either. Our real estate app developers start with deep research into your
+                specific market, your customers, and your competitors before writing a
+                single line of code. Whether you run a boutique brokerage, manage a
+                portfolio of rental properties, or operate one of the country&apos;s top
+                real estate firms, a well-engineered real estate app development service
+                isn&apos;t optional anymore; it&apos;s the difference between growing your
+                business and losing leads to competitors who got there first.
               </p>
+
               <br />
-              <p>
-                This is because; we at Devapp provide you with the best
-                possible real estate application to get lucrative benefits.
-                Also, our real estate app service provides brokers, aggregators,
-                and brokers a platform that provides 24×7 support services to
-                end-users without even attending them.
-              </p>
-              <br />
-              <p>
-                Also, our team contains top app developers of different areas to
-                power the app with cutting-edge technologies. It is built in
-                such a way that fulfills not only present demands but also the
-                demands of the future.
+
+              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Here&apos;s what makes our approach different:
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
@@ -471,9 +457,8 @@ export default function realEstate() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -886,31 +871,30 @@ export default function realEstate() {
             {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Our Team Provides a One-Stop Solution by Building The Best Real
-                Estate App
+                We Turn Real Estate Ideas Into Apps People Actually Use
               </h2>
 
               <p>
-                At Devapp, our developer family are dedicated to delivering an
-                unrivaled solution to users. They make it possible by running
-                in-depth research and gathering knowledge to maximize support.
-                Plus, they work continuously to make the app customer-centric,
-                business-oriented, and result-driven.
+                A great real estate app does more than display property listings. It helps
+                buyers discover the right property, gives agents better ways to reach
+                prospects, and turns complicated property searches into simple digital
+                experiences. That&apos;s where our real estate app development expertise
+                comes in.
               </p>
 
               <p>
-                We hire a real estate app developer with years of experience
-                before joining us to benefit from their experience and new view.
-                They work day and night to provide the customer with 100%
-                satisfaction and cover the multiple verticals the client works
-                in.
+                Our developers, designers, and strategists work together to build property
+                apps around real user behavior and real business goals. From advanced
+                property search and interactive maps to user profiles, property listings,
+                lead management, and secure communication, we bring every essential piece
+                together under one roof.
               </p>
 
               <p>
-                We thrive on making our company the one-stop solution for all
-                realtors and buyers out there. Also, we are the leading real
-                estate mobile app development company that provides you with a
-                powerful app that helps you gain the competitive edge.
+                Whether you&apos;re launching a property marketplace, building a platform
+                for real estate agents, or taking an existing idea mobile, we create
+                scalable real estate solutions designed to compete, convert, and grow with
+                your business.
               </p>
             </div>
           </div>
@@ -919,23 +903,31 @@ export default function realEstate() {
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How Much does It Cost to Build A Real Estate App Similar to
-              Successful Competitors Present in The Market?
+              How Much Does It Cost to Build a Real Estate App?
             </h2>
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                The answer will depend on how advance you want the app to be.
-                For example, if you want the app to contain all the complex
-                features that the other booming industry has, we can set the
-                price according to it.
-                <br />
-                It is essential to understand that any modification in the basic
-                set will definitely affect the cost one way or another. However,
-                the revenue you will earn will also be significant. So, its
-                better to go with what the market is demanding. Then look for
-                the technology, backend, and compatibility to support that
-                requirement.
+                There&apos;s no one-size-fits-all price for real estate app development.
+                The investment depends on what you want your app to accomplish, from a
+                straightforward property listing platform to a feature-rich marketplace
+                with advanced search, maps, user accounts, chat, payments, and property
+                management tools.
+              </p>
+
+              <p>
+                The more functionality you add, the more development time, technology,
+                and infrastructure your app may require. That&apos;s why we start with
+                what matters most: your target audience, business model, core features,
+                and the experience you want to deliver. This helps you invest in the
+                features that create real value instead of paying for unnecessary
+                complexity.
+              </p>
+
+              <p>
+                Ready to turn your real estate app idea into a market-ready product?
+                Share your requirements with our development team, and we&apos;ll help
+                you define the right features, technology, and budget for your project.
               </p>
             </div>
           </div>
@@ -1104,19 +1096,17 @@ export default function realEstate() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                         ? "text-red-600 font-semibold"
                         : "text-gray-500 hover:text-red-600"
-                    }`}
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1491,11 +1481,10 @@ export default function realEstate() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
+                    className={`border bg-white transition-all duration-300 ${open === index
                         ? "border-gray-200 shadow-md"
                         : "border-gray-200 hover:border-gray-300"
-                    }`}
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1507,21 +1496,19 @@ export default function realEstate() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
                             ? "rotate-180 text-black"
                             : "rotate-0 text-black"
-                        }`}
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
                           ? "max-h-150 opacity-100"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">

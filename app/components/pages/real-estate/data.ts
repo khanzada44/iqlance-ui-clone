@@ -1,26 +1,32 @@
 export const bottomFeatures = [
   {
-    title: "  App for your Business niche:",
-    description:"  We develop an app that is perfect for your business by a careful investigation into the operation of your business and designing the best solution."},
-  {
-    title: " Instant access:",
+    title: "Built for Your Niche, Not a Template:",
     description:
-      " We develop an app that is perfect for your business by a careful investigation into the operation of your business and designing the best solution.",
+      "We dig into how your business actually operates whether that's residential sales, commercial leasing, or property management and build features around your real workflow, not a generic checklist.",
   },
+
   {
-    title: " Secured payment ",
+    title: "Fast, Frictionless Access for Users:",
     description:
-      " With multiple internet benefits, there also comes some threat like malware who can steal your bank details. But not with us. We ensure secured payment through cards, online platforms, and wallets.",
+      "Every app we build is designed around real buyer behavior, so agents, renters, and homeowners can find what they need without hunting for it.",
   },
+
   {
-    title: "  Attractive UI + Unbeatable Performance:  ",
+    title: "Bank-Level Payment Security:",
     description:
-      "As UI or UX is the first thing that builds a user’s experience, we make sure it to be of top-notch quality. Thus, ensuring a loyal customer base and a better future.",
+      "Real estate transactions involve serious money, which makes them a prime target for fraud. We integrate secure payment gateways across cards, digital wallets, and other trusted platforms to keep every transaction protected.",
   },
+
   {
-    title: "   Branding:  ",
+    title: "UI/UX That Keeps Users Coming Back:",
     description:
-      " We ensure the app’s branding by adding valuable sections to the app like user feedback, reviews, and rating options. Thus, while the user gets the benefit of the service, you benefit from their review.",
+      "First impressions decide whether a user stays or bounces. Our design team builds interfaces that feel intuitive from the first tap, turning one-time visitors into repeat users.",
+  },
+
+  {
+    title: "Built-In Trust Through Reviews and Ratings:",
+    description:
+      "We bake in feedback and rating features that let your users vouch for your platform strengthening your brand while giving buyers the confidence to act.",
   },
 ];
 export const slides = [
@@ -84,32 +90,38 @@ export const slides = [
 ];
 export const ServiceSectionData = [
   {
-    title:
-      "Advantages of Building Real Estate Mobile Applications with Devapp",
+    title: "One Platform, Every Real Estate Need Covered",
+
     description:
-      " Award winning strategies to deliver comprehensive mobile app development solutions, along with marketing and optimization of apps successfully. Let us look on some important aspects, which set us apart from our competitor groups.",
+      "Our mission is simple: build real estate technology that actually solves problems, not just checks boxes. As a full-service mobile app development company, we deliver end-to-end solutions backed by a team that never stops refining what's possible in PropTech.",
+
     features: [
-      " Give preference to customer-centric approaches",
-      " Possess the highest possible domain expertise to deliver you the advanced mobility solution",
-      "Proficiency to deliver the work on-time",
-      "Adopted agile methodology to develop apps and offer you at the most cost-effective rate",
+      "Smart property listings tailored to each user's search behavior and interests",
+      "Immersive virtual tours with high-quality photo and video galleries",
+      "Advanced 3D rendering technology for realistic property previews",
+      "Location-based search with precision filtering",
+      "A growing suite of features designed to make every real estate transaction smoother",
     ],
+
     imageUrl: "/images/building-app-re.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "Real Estate App Development",
   },
+
   {
-    title:
-      "",
+    title: "Why US Real Estate Businesses Choose Devapp",
+
     description:
-      "Our quality and reliable real estate applications have proffered tons of benefits to the entire real estate industry with the aim to give customers with unmatched flexibility related to searching of required properties in an efficient way.",
+      "We bring proven, results-driven strategies to every real estate app we build covering development, marketing, and post-launch optimization. Here's what sets us apart in a crowded PropTech market:",
+
     features: [
-      "Skilled workforce, innovation and latest infrastructure are our major strengths",
-      "Manage various complicated projects efficiently",
-      "Amplify your business contemporarily",
-      "As a real estate owner or an agency, you will deliver convenient services to customers",
+      "A customer-first development philosophy that shapes every product decision we make",
+      "Deep domain expertise across residential, commercial, and rental real estate technology",
+      "A track record of on-time delivery, project after project",
+      "An Agile development process that keeps your budget in check without cutting corners on quality",
     ],
+
     imageUrl: "/images/advantages-photo-re.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "Real Estate App Development",
   },
 ];
 export const portfolioSlides = [

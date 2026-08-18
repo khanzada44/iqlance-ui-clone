@@ -1,96 +1,99 @@
 export const slides = [
   {
     id: 1,
-    image:"/images/logistics-slider-1.jpg",
-    title: "Vigorous Administration",
+    image: "/images/logistics-slider-1.jpg",
+    title: "Automated Trip Logging for Total Visibility",
     description:
-      "Administration of the pharmacology made robust and incredible. The healthcare app development done by us is also helpful to the manufacturers as well as agencies of the pharmaceutical industry.",
+      "Every driver's hours on the road are logged automatically, giving you an accurate, real-time record of time spent on each delivery run.",
     points: [
-      "Prescription assistance offered personalized",
-      "All the records get optimized",
+      "Minimizes wasted mileage through AI-powered fleet route optimization",
+      "Hands-free automatic mileage capture",
+      "Bank-level account security (Two-Factor/Multi-Factor authentication)",
+      "Cross-platform accessibility",
+      "Fast retrieval of high-volume documentation",
     ],
   },
   {
     id: 2,
     image:
       "/images/logistics-slider-2.jpg",
-    title: "Hospital Agility Improved",
+    title: "Smart Driving Features Built for Modern Fleets",
     description:
-      "The apps offer well organized workflow of the clinic with advanced hospital mobility. We let the healthcare industry go smart with the simplified processes and managed inventories with the help of our incredible healthcare mobility solutions. ",
+      "We get it, nothing disrupts a driver's focus like a phone call mid-route. That's exactly why equipping drivers with instant access to trip-critical information matters so much.",
     points: [
-      "Medical records made electronic",
-      "Health records product specs determination made electronic",
-      "The support system for clinical decisions",
-      "Communication systems as well as the picture archiving systems",
-      "Systems for laboratory information",
+      "Integrated GPS navigation",
+      "Real-time push notifications",
+      "Live route and trip monitoring",
+      "Driver activity alerts",
+      "Automated delivery status updates",
     ],
   },
   {
     id: 3,
-    image:"/images/logistics-slider-3.jpg",
-    title: "Compliance of Doctor",
+    image: "/images/logistics-slider-3.jpg",
+    title: "Break Language Barriers with Multi-Language Support",
     description:
-      "The custom mobility consulting helps improving the doctor’s productivity in almost every way. Integrate our healthcare application and make sure the doctors of the clinic offer better and personalized solutions to the patients.",
+      "Language should never stand in the way of great service. Recognizing that platform users come from diverse backgrounds, our solution lets every user navigate and operate the app in the language they're most comfortable with.",
     points: [
-      "Mobile application with increased patient engagement.",
-      "Monitoring the treatment became more accurate.",
-      "Security of the data communication made highest than ever.",
-      "Proficient management of the diseases.",
+      "Full multi-language interface support",
+      "Built-in real-time translation engine",
+      "Broad coverage of regional and global languages",
+      "Bridges communication gaps between customers and delivery personnel",
+      "Fully customizable language preferences",
     ],
   },
-  {
-    id: 4,
-    image:"/images/logistics-slider-4.jpg",
-    title: "Enhanced Patient Engagement",
-    description:
-      "The ehealth app development USA  redefines the patient engagement as it offers mobile care management. As the communication between patient and doctor increases, the diagnosis of the diseases becomes specific. Make use of this functional application to let the patients monitor the disease and get guidance by the experts whenever required.",
-    points: [
-      "Patient engagement whenever and wherever required.",
-      "Activity supervision made simple.",
-      "Categories wise Listing of vehicles",
-      "Analysis of the prescription became easier",
-      "Monitoring systems for patients",
-    ],
-  },
+ {
+  id: 4,
+  image: "/images/logistics-slider-4.jpg",
+  title: "Stay Connected with Real-Time Driver Communication",
+  description:
+    "Managing a large fleet means staying in constant contact with drivers on the move because even a small communication delay can throw off the entire delivery timeline.",
+  points: [
+    "Multi-channel chat support (text, voice notes, and more)",
+    "24/7 dedicated customer support desk",
+    "Live driver location and delivery progress tracking",
+    "Unlimited messaging with no restrictions",
+  ],
+},
 ];
-// export interface ServiceSectionData {
-//   title: string;
-//   description: string;
-//   features: string[];
-//   imageUrl: string
-//   imageAlt: string;
-// }
 
 export const ServiceSectionData = [
-  {
-    title:
-      "Transform Your Operations with Our Logistics App Development Services",
-    description:
-      " At Devapp, we understand that streamlined model is vital for logistic industry to gain competitive advantage. So, we offer logistic app development that can help to improve efficiency and gain advantage over competitors",
-    features: [
-      "Saves you time and money",
-      "Helps in optimizing the resources",
-      "Expands your logistic networks",
-      "Scalability and Flexibility",
-      "Great expertise for your business",
-    ],
-    imageUrl: "/images/logistics-challeng2.jpg",
-    imageAlt: "Logistics App Development",
-  },
-  {
-    title:
-      "Smart Logistics APP Development Solutions to Optimize Your Operations",
-    description:
-      "Outsourcing logistic solution has always been a smart move for the businesses that is looking to improve processes, increase efficiency, mitigate risks and save time and money! The biggest benefit of logistic mobile apps is, it provides",
-    features: [
-      "Real time freight rates",
-      "Increased customer service",
-      "Freight data analytics",
-      "Eliminates multiple WMS and TMS systems",
-    ],
-    imageUrl: "/images/why-choose-us-cl.jpg",
-    imageAlt: "Logistics App Development",
-  },
+{
+  title: "Elevate Your Business with Custom Logistics App Development",
+
+  description:
+    "At Devapp, we understand that staying ahead in today's competitive logistics market means having the right technology in place. Our team builds logistics app solutions that give your business a real edge, helping you streamline operations and outperform the competition.",
+
+  features: [
+    "Saves you valuable time and money",
+    "Optimizes resource allocation",
+    "Expands your logistics network reach",
+    "Built for scalability and flexibility",
+    "Backed by industry-leading expertise for your business",
+  ],
+
+  imageUrl: "/images/logistics-challeng2.jpg",
+
+  imageAlt: "Logistics App Development",
+},
+{
+  title:
+    "Smart Logistics App Development Solutions to Optimize Your Operations",
+
+  description:
+    "Our custom-built logistics app solutions are designed to solve the everyday challenges businesses face, helping you cut costs, boost efficiency, integrate seamlessly with existing systems, and save time across every stage of your operations.",
+
+  features: [
+    "Faster delivery turnaround times",
+    "Improved customer satisfaction rates",
+    "Data-driven freight analytics",
+    "Seamless integration with RFID and TMS platforms",
+  ],
+
+  imageUrl: "/images/why-choose-us-cl.jpg",
+
+  imageAlt: "Logistics App Development",
+},
 ];
 
 export const featuresTabsData = [
@@ -142,7 +145,7 @@ export const featuresTabsData = [
     id: "admin",
     label: "Admin Features",
     features: [
-     { id: "1", title: " Sign up & Login ", icon: "/images/doctor-patient-profile-icn.png" },
+      { id: "1", title: " Sign up & Login ", icon: "/images/doctor-patient-profile-icn.png" },
       { id: "2", title: "Dashboard", icon: "/images/dashboard-h-icn.png" },
       { id: "3", title: " Create Driver & Carrier Profile ", icon: "/images/vdriver-h-icn.png" },
       { id: "4", title: " View Registered Drivers ", icon: "/images/vdriver-h-icn.png" },
@@ -162,114 +165,82 @@ export const portfolioSlides = [
     heading: "",
     title: "Commercial Movers",
     description:
-      "Devapp Solutions created the commercial movers app, a comprehensive business management platform to solve staffing challenges. This platform provides access to a vetted network of mobile movers and dynamic pricing models. Our technology helps moving companies expand seamlessly and efficiently across projects and regions.",
+      "Our asset tracking software delivers enterprise-grade security for your fleet, equipment, and high-value cargo. With remote locking capabilities, seamless hardware integration, and real-time visibility, you stay in control of your assets from anywhere, anytime.",
 
     features: [
-      "Access vetted mobile movers",
-      "Dynamic pricing models",
-      "Staff support tools",
-      "Staff support tools",
+      "Remote lock/unlock functionality",
+      "Real-time GPS asset tracking",
+      "End-to-end equipment protection",
+      "Advanced security protocols you can trust",
     ],
 
     technologies: [
       {
         name: "Flutter",
-        icon: "https://www.Devapp.com/wp-content/uploads/2024/08/Flutter.png.webp",
+        icon: "/images/Flutter.png.webp",
       },
     ],
 
     image:
-      "https://www.Devapp.com/wp-content/uploads/2024/08/chain-supply-management.png.webp",
+      "/images/Moving-Force-Feature.png",
   },
 
   {
     heading: "",
-    title: "Tracking Device",
+    title: "Custom ERP Software for Transportation Businesses",
     description:
-      "The app provides a comprehensive security solution for all your devices, from student tablets to personal laptops. Its powerful combination of remote-controlled locking hardware and advanced tracking software gives you the trusted protection you need, allowing you to manage your devices with confidence from anywhere.",
+      "Purpose-built for the transportation and logistics industry, our ERP software consolidates fragmented systems into a single, unified platform. It streamlines transportation management, reduces operational costs, and improves turnaround time while enabling seamless interaction between drivers, dispatchers, and delivery events.",
 
     features: [
-      "Remote locking and wiping",
-      "Real-time device tracking",
-      "Protects all your devices",
-      "Advanced security you can trust",
+      "Centralizes transportation operations",
+      "Reduces costs and improves efficiency",
+      "Enables real-time team collaboration",
+      "Ensures full regulatory compliance",
     ],
 
     technologies: [
       {
         name: "React Native",
-        icon: "https://www.Devapp.com/wp-content/uploads/2024/08/React.png.webp",
+        icon: "/images/React.png.webp",
       },
     ],
 
     image:
-      "https://www.Devapp.com/wp-content/uploads/2024/08/image_2024_08_05T07_26_10_247Z.png.webp",
+      "/images/LocShark-feature.png",
   },
+
   {
     heading: "",
-    title: "ERP Software",
+    title: "Driver Tracking App Development",
     description:
-      "We built an ERP system for transportation businesses. Unlike generic software, it integrates customized modules for logistics, helping companies reduce costs and save time. Our solution creates a connected ecosystem, ensuring seamless interaction between drivers, dispatchers, and clients.",
+      "Our custom driver tracking app is engineered specifically for drivers and the logistics companies that support them. Built to simplify increasingly complex transportation workflows worldwide, it supports drivers with intuitive daily operations, smart route navigation, seamless in-app communication, and precise, automated reporting.",
 
     features: [
-      "Manages transportation operations",
-      "Reduces time and cost",
-      "Real-time team collaboration",
-      "Ensures regulatory compliance",
+      "Streamlined workday and task management",
+      "Real-time location and delivery tracking",
+      "Automated payment processing",
+      "Simplified driver profile management",
+      "Accurate, in-app compliance reporting",
     ],
 
     technologies: [
       {
-        name: "SQL",
-        icon: "https://www.Devapp.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
         name: "microsoft-net",
-        icon: "https://www.Devapp.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
+        icon: "/images/Microsoft-Dot-Net-1.png",
       },
       {
-        name: "Azur",
-        icon: "https://www.Devapp.com/wp-content/uploads/2024/07/Azure.png.webp",
+        name: "SQL",
+        icon: "/icons/microsoft-sql-icn.webp",
+      },
+      {
+        name: "Azure",
+        icon: "/images/Azure.png.webp",
       },
     ],
 
     image:
-      "https://www.Devapp.com/wp-content/uploads/2024/05/erp1.png.webp",
+      "/images/ERP-feature.png",
   },
-  {
-    heading: "",
-    title: "Driver Tracking App",
-    description:
-      "The truck driver tracking app is a custom solution built for drivers, and this app supports our logistics software. As a leading transportation app development company across the globe, we designed this app to simplify drivers’ and admins’ daily operations, including load management, route tracking, punch-in & out, communication, and more.  It ensures efficiency, accountability, and seamless workflows.",
-
-    features: [
-      "Efficient Workday Management",
-      "Real-time Location Tracking",
-      "Payment Automation",
-      "Profile Management",
-      "In-App Chat with Admin",
-      "Geofencing",
-    ],
-
-    technologies: [
-      {
-        name: "SQL",
-        icon: "https://www.Devapp.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "microsoft-net",
-        icon: "https://www.Devapp.com/wp-content/uploads/2024/08/microsoft-sql-icn.png.webp",
-      },
-      {
-        name: "Azur",
-        icon: "https://www.Devapp.com/wp-content/uploads/2024/07/Azure.png.webp",
-      },
-    ],
-
-    image:
-      "https://www.Devapp.com/wp-content/uploads/2024/05/erp1.png.webp",
-  },
-
 ];
 export const technologies = [
   {
@@ -546,7 +517,7 @@ export const stats = [
     line1: "Best",
     line2: "Quality Delivery",
   },
-];  
+];
 
 export const industries = [
   {
@@ -609,112 +580,59 @@ export const industries = [
 ];
 export const services = [
   {
-    image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/icn-80/data-protection-icn.png",
-    title: "Data Protection",
+    image: "/images/transparency-Integrity-icn.png",
+    title: "Bank-Grade Data Protection",
     description:
-      "Our every app is ultimately data protected to cope with the heavy malware attack and increased cyber-crime to support new technologies entering the healthcare world.",
+      "Your data deserves more than good enough. We build every application on airtight, industry-compliant security frameworks that shield your business and your customers from today's evolving cyber threats.",
   },
+
   {
-    image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/custom-dp-icn.png",
-    title: " Agile Development ",
+    image: "/images/custom-dp-icn.png",
+    title: "Agile by Design",
     description:
-      "Devapp focuses on the rapid delivery of projects with a seamless connection between all clients. Also, ensuring solid documentation for extensive support and training.",
+      "Speed without sacrifice. Our Agile-driven workflow means faster launches, tighter collaboration, and complete visibility into your project every milestone, every step of the way.",
   },
+
   {
-    image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/icn-80/easy-commution-icn.png",
-    title: "Easy Communication",
+    image: "/images/easy-commution-icn.png",
+    title: "Communication That Never Drops the Ball",
     description:
-      "We make sure to develop an app that is realistic, scalable, plausible, and communicative, bringing only positive results. As a result, it will meet all expectations of providers and patients.",
+      "No black boxes, no guesswork. From kickoff to delivery, you'll always know exactly where your project stands and we'll pivot fast when your needs evolve.",
   },
+
   {
-    image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/dedicated-teams.png",
-    title: "Dedicated Development Team",
+    image: "/images/dedicated-teams.png",
+    title: "A Team That's Fully Invested in Your Success",
     description:
-      "Our talented professionals ensure a flawless experience to everyone who use the app. Because a lasting experience always creates a greater impact.",
+      "Skip the generic outsourcing experience. Your project is handled by a dedicated squad of logistics app specialists who treat your vision like their own from start to finish.",
   },
+
   {
-    image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/on-time-icn.png",
-    title: "On – Time Delivery",
+    image: "/images/on-time-icn.png",
+    title: "Deadlines That Actually Hold",
     description:
-      "100% support available to every client with the assurance of timely delivery every time so you can complete your project on time. Also, meeting superior quality standards.",
+      "In logistics, timing is everything and we get that. Count on us to deliver exactly when we say we will, with no delays and no excuses.",
   },
+
   {
-    image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/quality-first-icn.png",
-    title: "Quality – First Approach",
+    image: "/images/quality-first-icn.png",
+    title: "Obsessed with Getting It Right",
     description:
-      "Our professionals also make sure to run the idea in the market to analyze the demand to build a quality app experience. This saves your time & resources also provides success assurance.",
+      "We don't ship good enough. Every app goes through rigorous testing and quality checks so what you launch is flawless, reliable, and built to impress.",
   },
+
   {
-    image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/cost-effective-icn.png",
-    title: "Cost Effective Development Model",
+    image: "/images/cost-effective-icn.png",
+    title: "Enterprise Power, Startup-Friendly Pricing",
     description:
-      "Tailor-made plan to provide the maximum benefit to you at an affordable cost. It is sure to fit every small and big need with full scalability of technology resources without spending extra pennies.",
+      "Get world-class logistics app development without the enterprise-sized invoice. Our development model is built to stretch your budget further without cutting corners.",
   },
+
   {
-    image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/letdiscuss-icon.png.webp",
-    title: "Technical Support",
+    image: "/images/letdiscuss-icon.png.webp",
+    title: "Support That Doesn't Stop at Launch",
     description:
-      "The apps are set to abide by every rule set by health standards and regulations. Plus, in case of the app experiences any bug issue, there is a whole team of certified engineers for comprehensive technical support.",
-  },
-];
-export const testimonials = [
-  {
-    id: 1,
-    name: "Elisha",
-    image:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
-    verifiedImage:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
-    review:
-      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to Devapp’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
-  },
-  {
-    id: 2,
-    name: "Gregor I",
-    image:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/google-icon.png.webp",
-    verifiedImage:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/google-logo-new.png.webp",
-    review:
-      "Devapp is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
-  },
-  {
-    id: 3,
-    name: "Stephanie A",
-    image:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
-    verifiedImage:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
-    review:
-      "Their developers were skilled, and they helped us to integrate development with UI design were necessary. They were able to respond with high flexibility to the development model we requested. They did an excellent job. Their mobile app developer and UI designers are very expert. We can hire them again for future apps development…Thanks",
-  },
-  {
-    id: 4,
-    name: "Dubie B",
-    image:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-icon.png.webp",
-    verifiedImage:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/good-firms-logo-new.png.webp",
-    review:
-      "Devapp was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
-  },
-  {
-    id: 5,
-    name: "Chris",
-    image:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon-1.png.webp",
-    verifiedImage:
-      "https://www.Devapp.com/wp-content/uploads/2022/04/clutch-icon.png.webp",
-    review:
-      "Devapp’s mobile app received positive feedback from people that interacted with it in the development stage. Devapp communicated quickly, frequently, and over several different platforms.",
+      "Launch day is just the beginning. Our team stays in your corner long after go-live, ready to troubleshoot, optimize, and keep your app performing at its best.",
   },
 ];
 export const faqsData = [
@@ -730,10 +648,10 @@ export const faqsData = [
     answer:
       "",
     points: [
-        "Asset management",
-        "Supply chain management",
-        "Transportation management systems",
-        "Warehouse management systems",
+      "Asset management",
+      "Supply chain management",
+      "Transportation management systems",
+      "Warehouse management systems",
     ],
   },
   {
@@ -819,5 +737,78 @@ export const partners = [
     image:
       "https://www.Devapp.com/wp-content/themes/Devapp/img/ypca-logo.png.webp",
     alt: "ISO",
+  },
+];
+export const testimonials = [
+  {
+    id: 1,
+    name: "Bank-Grade Data Protection",
+    image: "/images/clutch-icon-1.png.webp",
+    verifiedImage: "/images/clutch-icon.png.webp",
+    review:
+      "Your data deserves more than good enough. We build every application on airtight, industry-compliant security frameworks that shield your business and your customers from today's evolving cyber threats.",
+  },
+
+  {
+    id: 2,
+    name: "Agile by Design",
+    image: "/images/google-icon.png.webp",
+    verifiedImage: "/images/google-logo-new.png.webp",
+    review:
+      "Speed without sacrifice. Our Agile-driven workflow means faster launches, tighter collaboration, and complete visibility into your project every milestone, every step of the way.",
+  },
+
+  {
+    id: 3,
+    name: "Communication That Never Drops the Ball",
+    image: "/images/good-firms-icon.png.webp",
+    verifiedImage: "/images/good-firms-logo-new.png.webp",
+    review:
+      "No black boxes, no guesswork. From kickoff to delivery, you'll always know exactly where your project stands and we'll pivot fast when your needs evolve.",
+  },
+
+  {
+    id: 4,
+    name: "A Team That's Fully Invested in Your Success",
+    image: "/images/good-firms-icon.png.webp",
+    verifiedImage: "/images/good-firms-logo-new.png.webp",
+    review:
+      "Skip the generic outsourcing experience. Your project is handled by a dedicated squad of logistics app specialists who treat your vision like their own from start to finish.",
+  },
+
+  {
+    id: 5,
+    name: "Deadlines That Actually Hold",
+    image: "/images/clutch-icon-1.png.webp",
+    verifiedImage: "/images/clutch-icon.png.webp",
+    review:
+      "In logistics, timing is everything and we get that. Count on us to deliver exactly when we say we will, with no delays and no excuses.",
+  },
+
+  {
+    id: 6,
+    name: "Obsessed with Getting It Right",
+    image: "/images/clutch-icon-1.png.webp",
+    verifiedImage: "/images/clutch-icon.png.webp",
+    review:
+      "We don't ship good enough. Every app goes through rigorous testing and quality checks so what you launch is flawless, reliable, and built to impress.",
+  },
+
+  {
+    id: 7,
+    name: "Enterprise Power, Startup-Friendly Pricing",
+    image: "/images/google-icon.png.webp",
+    verifiedImage: "/images/google-logo-new.png.webp",
+    review:
+      "Get world-class logistics app development without the enterprise-sized invoice. Our development model is built to stretch your budget further without cutting corners.",
+  },
+
+  {
+    id: 8,
+    name: "Support That Doesn't Stop at Launch",
+    image: "/images/good-firms-icon.png.webp",
+    verifiedImage: "/images/good-firms-logo-new.png.webp",
+    review:
+      "Launch day is just the beginning. Our team stays in your corner long after go-live, ready to troubleshoot, optimize, and keep your app performing at its best.",
   },
 ];

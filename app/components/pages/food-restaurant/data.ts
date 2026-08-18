@@ -1,115 +1,114 @@
 export const bottomFeatures = [
   {
-    title: " App for your Business niche: ",
-    description:"Our group of professionals creates application initiatives for everyone that is tailored to their specific requirements. We research industry developments and client interests to create a bespoke app design catered to a specific target."},
-  {
-    title: " Instant access:",
+    title: "Built for Your Business Niche",
     description:
-      "With our assistance, customers may have immediate accessibility to a range of services, products. Customers may reach out to our qualified and skilled app developers at any moment.",
+      "Our team designs every app around your specific requirements, backed by real research into industry trends and customer expectations not a one-size-fits-all template.",
   },
+
   {
-    title: " Secured payment ",
+    title: "Instant, Frictionless Access",
     description:
-      " The food service software accepts a variety of payment methods, including credit/debit cards, incorporated transaction eWallets, as well as cash on delivery. We make sure to apply the most up-to-date security updates to keep users’ information secure. Before completing the last transaction, customers may use the discounts and rewards function.",
+      "Customers get immediate access to your full range of services and products, with our skilled developers on call to support them at every step.",
   },
+
   {
-    title: "  Attractive UI + Unbeatable Performance: ",
+    title: "Secure, Flexible Payments",
     description:
-      " We provide assistance in the development of high-quality mobile applications with distinctive graphics. Our designers use cutting-edge techniques, algorithms, programmes, and equipment to build a user interface that is simple to navigate and run smoothly.",
+      "Our food service platforms support credit/debit cards, integrated e-wallets, and cash on delivery all backed by up-to-date security protocols. Customers can also use built-in rewards and discount features before checkout.",
   },
+
   {
-    title: "   Branding",
+    title: "Polished UI, Unmatched Performance",
     description:
-      " Without a question, we are living in the era of digital media . We have a lot of opportunities for company growth using social media. We promote our offerings on social media . To entice customers, use paid promos accessible on various social media sites..",
+      "We build high-quality mobile apps with standout visual design, using modern techniques and tools to create interfaces that are simple to navigate and run flawlessly.",
   },
 ];
 export const slides = [
   {
     id: 1,
-    image:"/images/food-ordering-left-1.jpg",
-    title: "Native Restaurant Applications",
+    image: "/images/food-ordering-left-1.jpg",
+    title: "Native iOS & Android Apps Built for Restaurants Like Yours",
     description:
-      "As a reputed restaurant application development team USA , we have a huge experience to deliver and develop customized mobile apps for restaurants and that too on their dominant native platforms, such as iOS and Android.",
+      "As one of the most trusted restaurant app development teams in the USA, we bring deep, proven experience delivering fully customized mobile apps for restaurants built natively for the platforms your customers already use, iOS and Android.",
     points: [
-      "Consultation, branding, project management, design, testing, development, implementation and launching of apps",
-      "Apps will contain a perfect blend of innovative technology and uniqueness",
-      "Apps that make your food business app to stand out from your competitors in the industry",
-      "Starting from simple eCommerce mobile app to unique ordering app, we have expertise to serve you by delivering the best results.",
-      "For restaurants with several locations, finding neighbouring eateries is a must.",
+      "Full-cycle support: consultation, branding, project management, design, testing, development, implementation, and app launch",
+      "Apps built on a foundation of genuinely innovative technology and standout design",
+      "Solutions engineered to help your food business break away from the competition",
+      "From simple eCommerce-style ordering apps to fully custom platforms, we have the range and expertise to deliver outstanding results either way",
+      "For multi-location restaurants, helping nearby diners discover you is absolutely essential and it's exactly what we build for",
     ],
   },
+
   {
     id: 2,
-    image:
-      "/images/food-ordering-left-2.jpg",
-    title: "Elegant Mobile App to Acquire Food Orders",
+    image: "/images/food-ordering-left-2.jpg",
+    title: "A Polished App Experience That Wins Repeat Orders",
     description:
-      "We have a qualified team to perform Online-food ordering app development for the progress of your business and thereby, let you to achieve customer satisfaction by ensuring delivery of food without any waiting list.",
+      "Our team specializes in building online food ordering apps engineered to grow your business and keep customers coming back by making every order effortless from the very first tap.",
     points: [
-      "To place order of food at the doorstep with only one tap or based on address search",
-      "Simple and easy product and menu options to find various food items",
-      "Real time notifications about changes in the status of placed orders",
-      "Single checkouts as well as order history to assure about easy ordering of foods",
-      "Guests may insert or remove items from the list, as well as pick the primary elements themselves.",
+      "One-tap ordering based on the customer's delivery address",
+      "Simple, intuitive menu navigation to find exactly what they're craving",
+      "Real-time order status updates, from confirmation to delivery",
     ],
   },
+
   {
     id: 3,
-    image:"/images/food-ordering-left-3.jpg",
-    title: "Sound Menu Management",
+    image: "/images/food-ordering-left-3.jpg",
+    title: "Smart Menu Management",
     description:
-      "We know that each restaurant or food business has different types of menu preparation. Considering this fact, our apps focus on such bespoke requirements in the most effective manner. Our app thus creates attractive menu to entice your prospects. Key features are-",
+      "Every restaurant has its own menu structure, pricing model, and operational needs. Our food delivery solutions give restaurant owners the flexibility to manage menus in real time while creating a more engaging ordering experience for customers.",
     points: [
-      "To create the necessary updates and push them as live within only a few seconds",
-      "To include, remove or edit menu items, subgroups and modifiers, while adjust workflow-related operations during any time",
-      "Options to collect information about availability of specific menu items",
-      "Menu analytics and creation of detailed reports on product mix for available menus",
-      "Gamification elements include a structure of rewards, tasks, and championships in which customers may gain in-app cash to spend for items.",
+      "Instant Menu Updates — Add, remove, edit, or reorganize dishes and modifiers in seconds",
+      "Flexible Menu Controls — Manage categories, subcategories, add-ons, and item variations from one place",
+      "Item Availability Tracking — Quickly update customers when dishes are available, sold out, or temporarily unavailable",
+      "Menu Performance Insights — Analyze popular items, product combinations, and menu performance through detailed reports",
+      "Customer Rewards — Introduce points, challenges, rewards, and promotional incentives that encourage repeat orders",
     ],
   },
+
   {
     id: 4,
-    image:"/images/food-ordering-left-4.jpg",
-    title: "Smooth Inventory Management",
-     description:
-      "Inventory management is of huge significance for any diner. Keeping this fact in mind, we include many exceptional features in the backend; while simultaneously include latest tools to operate it. ",
+    image: "/images/food-ordering-left-4.jpg",
+    title: "Streamlined Inventory Management",
+    description:
+      "Stay ahead of stock levels and kitchen requirements with tools designed to make restaurant inventory easier to monitor and control. Our solutions help businesses reduce waste, track costs, and keep daily operations organized.",
     points: [
-      "Monitoring of available stock",
-      "Management of available recipes and related costs",
-      "Centralized management of any restaurant/food center’s kitchen",
-      "Table booking for the customer who prefer advance reservation",
-      "Producing an augmented reality sample of the hotel’s atmosphere to let consumers imagine a cheerful gathering or an intimate meal",
+      "Real-Time Stock Monitoring — Keep track of ingredients and available inventory as orders come in",
+      "Recipe & Cost Management — Manage recipes, ingredient usage, and associated costs for better control over margins",
+      "Centralized Kitchen Operations — Coordinate inventory and kitchen activity across restaurants, branches, or food outlets",
+      "Table Reservation Management — Allows customers to reserve tables in advance while keeping bookings organized",
+      "Immersive Restaurant Previews — Use interactive or AR-powered experiences to give customers a visual feel for the restaurant before they arrive",
     ],
   },
 ];
 export const ServiceSectionData = [
   {
-    title:
-      "Advantages to Install/Acquire Restaurant Business App",
+    title: "Why Investing in a Restaurant App Pays Off",
     description:
-      "Installation or acquisition of good restaurant app development  benefits you to increase the returns on your investments in business in many ways.",
+      "Building or investing in a restaurant app development solution does more than modernize your operations; it directly improves your return on investment, and it does so in more ways than most owners expect.",
     features: [
-      "Acts as an important tool to create brand awareness",
-      "Creates a direct marketing/promotion channel in between your customers and your brand",
-      "Saves the valuable time of your customers by providing them a variety of options, such as as payment via different types cards, easy placing of orders and many more",
-      "Featuring shorter and better efficient units, they assist to increase server productivity while also contributing to vacant counter space.",
-      "We will provide NFC and EMV capabilities, which means they will take transaction methods like Apple Pay.",
+      "Becomes a genuine brand-awareness engine, not just an ordering tool",
+      "Opens a direct marketing and promotion channel straight to your customers",
+      "Saves your customers valuable time with flexible options, multiple payment methods, fast and easy order placement, and more",
+      "Speeds up service and boosts staff efficiency, freeing up counter space in the process",
+      "Comes equipped with NFC and EMV support, so customers can pay with methods like Apple Pay",
     ],
     imageUrl: "/images/advantages-food-app.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "Restaurant App Development",
   },
+
   {
-    title:
-      "",
+    title: "",
     description:
-      "Therefore, our Devapp team succeeded to offer flamboyant app solutions for a wide range of restaurant and food business industries.",
+      "Because of all this, the Devapp team has built a reputation for delivering standout app solutions across the restaurant and food business space.",
     features: [
-      "Allows you to stay connected with your customers on a round-the-clock basis",
-      "Third-party CRM integration in combination with backend apps",
-      "Great platform to promote your business and boost your customer relationships",
+      "Keeps you connected with your customers around the clock",
+      "Supports third-party CRM integration alongside your backend systems",
+      "Gives you a powerful platform to promote your brand and deepen customer relationships",
     ],
     imageUrl: "/images/advantages-food-app-right.jpg",
-    imageAlt: "Logistics App Development",
+    imageAlt: "Restaurant App Development",
   },
 ];
 export const portfolioSlides = [
@@ -225,57 +224,57 @@ export const technologies = [
       {
         name: "iOS",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ios-icn-tab.svg",
+          "/icons/next.svg",
       },
       {
         name: "Android",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/android.svg",
+          "/icons/android.svg",
       },
       {
         name: "React Native",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/reactnative.svg",
+          "/icons/reactnative.svg",
       },
       {
         name: "Flutter",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/flutter.svg",
+          "/icons/flutter.svg",
       },
       {
         name: "Augmented Reality",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/icn-80/ar-icn.png.webp",
+          "/images/ar-icn.png.webp",
       },
       {
         name: "Swift",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/swift.svg",
+          "/icons/swift.svg",
       },
       {
         name: "Kotlin",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/kokin-icn-tab.svg",
+          "/icons/kokin-icn-tab.svg",
       },
       {
         name: "Objective C",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/object-c-icn-tab.svg",
+          "/icons/object-c-icn-tab.svg",
       },
       {
         name: "Cross Platform",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/crossplatform-icn-tab.png.webp",
+          "/images/crossplatform-icn-tab.png.webp",
       },
       {
         name: "Ibecon",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ib-icn-tab.svg",
+          "/icons/ib-icn-tab.svg",
       },
       {
         name: "Xamarin",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/xamarin-icn-tab.png.webp",
+          "/images/xamarin-icn-tab.png.webp",
       },
     ],
   },
@@ -285,37 +284,37 @@ export const technologies = [
       {
         name: "Angular",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/angular-icon.svg",
+          "/icons/angular-icon.svg",
       },
       {
         name: "React",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/reactnative.svg",
+          "/icons/reactnative.svg",
       },
       {
         name: "Blockchain",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/blockchain.svg",
+          "/icons/blockchain.svg",
       },
       {
         name: "Sass",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/sass.svg",
+          "/icons/sass.svg",
       },
       {
         name: "jQuery",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/jquery.svg",
+          "/icons/jquery.svg",
       },
       {
         name: "HTML 5",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/html-5.svg",
+          "/icons/html-5.svg",
       },
       {
         name: "CSS3",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/css3.svg",
+          "/icons/css3.svg",
       },
     ],
   },
@@ -325,27 +324,27 @@ export const technologies = [
       {
         name: "MySQL",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mysql-logo.svg",
+          "/icons/mysql-logo.svg",
       },
       {
         name: "MsSQL",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mssql.svg",
+          "/icons/mssql.svg",
       },
       {
         name: "Azure",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/azure.svg",
+          "/icons/azure.svg",
       },
       {
         name: "Firebase",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/firebase.svg",
+          "/icons/firebase.svg",
       },
       {
         name: "MongoDB",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mongodb.svg",
+          "/icons/mongodb.svg",
       },
     ],
   },
@@ -355,32 +354,32 @@ export const technologies = [
       {
         name: "PHP",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/php-logo.svg",
+          "/icons/php-logo.svg",
       },
       {
         name: ".NET",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/.net.svg",
+          "/icons/net.svg",
       },
       {
         name: "Laravel",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/laravel.svg",
+          "/icons/laravel.svg",
       },
       {
         name: "Node .JS",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/nodejs.svg",
+          "/icons/nodejs.svg",
       },
       {
         name: "Rails",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ruby_on_rails-icon.svg",
+          "/icons/ruby_on_rails-icon.svg",
       },
       {
         name: "Python",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/python.svg",
+          "/icons/python.svg",
       },
     ],
   },
@@ -390,27 +389,27 @@ export const technologies = [
       {
         name: "Drupal",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/drupal.svg",
+          "/icons/drupal.svg",
       },
       {
         name: "Joomla",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/Joomla.svg",
+          "/icons/Joomla.svg",
       },
       {
         name: "WordPress",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/wordpress.svg",
+          "/icons/wordpress.svg",
       },
       {
         name: "Magento",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/magento.svg",
+          "/icons/magento.svg",
       },
       {
         name: "Shopify",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/shopify.svg",
+          "/icons/shopify.svg",
       },
     ],
   },
@@ -421,42 +420,42 @@ export const technologies = [
       {
         name: "AWS",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/amazon-web-services.svg",
+          "/icons/amazon-web-services.svg",
       },
       {
         name: "Google Cloud",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/google-cloud.svg",
+          "/icons/google-cloud.svg",
       },
       {
         name: "Git",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/git.svg",
+          "/icons/git.svg",
       },
       {
         name: "Gradle",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/gradle.svg",
+          "/icons/gradle.svg",
       },
       {
         name: "Selenium",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/selenium.svg",
+          "/icons/selenium.svg",
       },
       {
         name: "Jenkins",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/jenkins.svg",
+          "/icons/jenkins.svg",
       },
       {
         name: "Docker",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/docker.svg",
+          "/icons/docker.svg",
       },
       {
         name: "Kubernetes",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/kubernetes.svg",
+          "/icons/kubernetes.svg",
       },
     ],
   },

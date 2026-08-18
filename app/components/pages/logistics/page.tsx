@@ -24,16 +24,16 @@ import {
   ServiceSectionData,
   featuresTabsData,
   portfolioSlides,
+  slides,
+  testimonials,
+  services
 } from "../logistics/data";
 import {
   partners,
-  slides,
   technologies,
   stats,
   industries,
-  services,
   faqsData,
-  testimonials,
 } from "../../../../utils/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -157,33 +157,34 @@ export default function Logistic() {
 
   // Section 1 Bullet Points
   const topBulletPoints = [
-    "45 minutes of free consultation",
-    "A strict non-disclosure policy",
-    "Detailed Feature List Document",
-    "Action plan to kick start your project",
+    "On-demand transportation and courier apps",
+    "Fleet management and route optimization apps",
+    "Warehouse and inventory tracking apps",
+    "Real-time shipment tracking and delivery apps",
+    "Freight and cargo management apps",
   ];
 
   // Section 2 Feature Items
   const bottomFeatures = [
     {
-      title: "App for your Business niche:",
+      title: "Real-time tracking and route optimization:",
       description:
-        "Our team of experts create app projects for business clients based on their needs. We study market trends and customer interest points to plan a custom app design fit for niche audiences.",
+        "Reduce delays and fuel costs with real-time vehicle tracking and intelligent route optimization.",
     },
     {
-      title: "Secured payment:",
+      title: "Seamless system integration:",
       description:
-        "Worry less about the unauthorized access to your private data or malware wiping out your system. We utilize the best online security details and work with secure encrypted protocols.",
+        "Connect your logistics app with existing fleet and warehouse management systems for smooth and efficient operations.",
     },
     {
-      title: "Instant access:",
+      title: "Automated dispatch and scheduling:",
       description:
-        "Gain instant access to a variety of features, tools, and resources with our help. Not to mention, get in contact with our experienced and licensed app development experts at any time.",
+        "Improve operational efficiency with automated dispatching, scheduling, and task management.",
     },
     {
-      title: "Attractive UI + Unbeatable Performance:",
+      title: "Secure and scalable architecture:",
       description:
-        "We help in the creation of high-quality responsive apps with memorable designs. Our developers utilize advanced techniques, codes, programs, and tools to create an easily navigable UI with fast-loading speed.",
+        "Build a secure and scalable logistics solution that can adapt and grow alongside your business needs.",
     },
   ];
 
@@ -195,34 +196,26 @@ export default function Logistic() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
-                Transportation and
+                Logistics App
                 <br className="hidden sm:block" />
-                Logistics App Development
-                <br className="hidden sm:block"/>
-                Company in USA
+                Development Company
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                At Devapp, our developers are equipped to build usable,
-                mobile-intuitive apps for brands. As a trusted logistics app
-                development company in the USA, we understand that logistics is
-                a crucial part of any company&apos;s work process. Our team
-                members understand this priority and focus on creating secure,
-                interactive, and responsive app management solutions.
+                Whether it's building an all-in-one logistics management platform or a
+                specialized transportation solution, our team of experienced developers is
+                ready to bring your project to life. We craft custom apps designed to
+                simplify logistics operations and make transportation management more efficient than ever.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                With custom app development for logistics, you can prepare a
-                streamlined app version for your business, fit with all the
-                necessary features that would smoothen the entire work process,
-                right in the palm of your hands.
+                By combining the latest technologies with proven development practices,
+                we deliver logistics apps that
+                streamline processes and improve everyday operations for businesses like yours.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Our team of certified developers apply their deep understanding
-                of business logistics requirements, their experience, and
-                polished app development skills to bring forward high-quality
-                and feature-rich custom applications.
+                Our logistics app development services include:
               </p>
 
               {/* Bullet points */}
@@ -367,11 +360,10 @@ export default function Logistic() {
 
                   {statusMessage.text && (
                     <div
-                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${
-                        statusMessage.type === "success"
-                          ? "bg-green-100 border border-green-400 text-green-800"
-                          : "bg-red-100 border border-red-400 text-red-800"
-                      }`}
+                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                        ? "bg-green-100 border border-green-400 text-green-800"
+                        : "bg-red-100 border border-red-400 text-red-800"
+                        }`}
                     >
                       {statusMessage.text}
                     </div>
@@ -419,43 +411,31 @@ export default function Logistic() {
 
         <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16 border-t border-gray-100">
           {/* Top Heading */}
-          <div className="text-center max-w-4xl mx-auto mb-8">
+          <div className="text-center max-w-6xl mx-auto mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
-              Custom Logistics App Development Services for Transportation
+              Transportation and Logistics App Development Company for Western
               Businesses
             </h2>
 
             <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
               <p>
-                In this competitive environment, there is always pressure to
-                deliver goods fast; hence companies are using alternative
-                transport modes and smarter routes to achieve their goals. So to
-                pace up with the market, companies are deploying robust
-                transport logistics IT solutions as one of the means to address
-                these challenges using proven logistics app development tips.
+                For companies across the West, we develop custom software solutions built
+                for the transportation and logistics industry. Our apps are designed to
+                make operations run more smoothly, improve overall efficiency, and cut
+                down on delays across the supply chain, all while giving businesses
+                better visibility and control over their logistics processes.
               </p>
+
               <p>
-                Devapp leverages its leadership in providing logistic app
-                development solutions either on-premise or in the cloud to
-                customers across varieties of industries. We know how
-                challenging it is to manage logistics when it comes to
-                transportation, so to overcome that, we specialize in developing
-                logistic solutions which can be tailor-made for every retailer’s
-                business needs. We follow an enterprise mobility strategy which
-                can provide improved management capabilities and can increase
-                the sales of perfect orders.
-              </p>
-              <p>
-                We help the transportation firms to meet the emerging technology
-                needs for higher efficiency. We have rich domain expertise and
-                significant experience in deploying reliable IT solutions that
-                can help to reduce risk and open up more opportunities for them.
+                We take the time to understand what makes each company unique, tailoring
+                our approach so that every app we build reflects the specific goals and
+                operational needs of the business we&apos;re working with.
               </p>
             </div>
           </div>
 
           {/* Middle Banner Image */}
-          <div className="w-full my-12 overflow-hidden rounded-md">
+          <div className="w-full my-12 overflow-hidden">
             <Image
               src="/images/logistics-fullwidth.jpg" // Put your image in /public/images/
               alt="Transportation and Logistics Modes"
@@ -473,12 +453,14 @@ export default function Logistic() {
                 Logistics App Development Solutions for Modern Transportation
                 Challenges
               </h2>
+
               <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Developing user-friendly apps for businesses in various
-                industries for management of the logistics, like vehicular
-                management, trip planning, risk reports, GPS location routing,
-                and on-demand delivery. Use our services and solutions to combat
-                the common Challenges in Logistics App Development.
+                Developing user-friendly apps for businesses in the transportation and
+                logistics sector is what we specialize in. From concept through
+                deployment, we manage the complete process, taking care of every stage so
+                businesses can concentrate on running their operations while we handle
+                the technical side of building an effective logistics management
+                solution.
               </p>
             </div>
 
@@ -519,7 +501,7 @@ export default function Logistic() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -648,9 +630,8 @@ export default function Logistic() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -711,7 +692,7 @@ export default function Logistic() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -771,8 +752,8 @@ export default function Logistic() {
               Key Features of Logistics and Transportation App Development
             </h2>
             <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
-              Our logistics app solutions contain a host of features that shall
-              help you manage your activities in a more organized manner.
+              Our logistics app solutions come packed with powerful features that
+              help you manage every aspect of your operations in a streamlined, organized way.
             </p>
           </div>
 
@@ -785,11 +766,10 @@ export default function Logistic() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`pb-3 text-sm md:text-base font-semibold transition-all relative cursor-pointer whitespace-nowrap ${
-                      isActive
-                        ? "text-red-900 border-b-2 border-red-600 font-bold"
-                        : "text-gray-500 hover:text-gray-800"
-                    }`}
+                    className={`pb-3 text-sm md:text-base font-semibold transition-all relative cursor-pointer whitespace-nowrap ${isActive
+                      ? "text-red-900 border-b-2 border-red-600 font-bold"
+                      : "text-gray-500 hover:text-gray-800"
+                      }`}
                   >
                     {tab.label}
                   </button>
@@ -848,7 +828,7 @@ export default function Logistic() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -915,30 +895,28 @@ export default function Logistic() {
             {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Expert Logistics App Developers with Proven Technical Expertise
+                Trusted Logistics App Development Company with Proven Technical Expertise
               </h2>
 
               <p>
-                In our family, we have a group of highly competent developers
-                with full-stack development aptitudes. All our experts have
-                previously worked in different types of app development
-                projects, long before joining our team. With their years of
-                service experience, our App Developers have long since upgraded
-                their skills; they provide high-grade apps for clients.
+                Our team brings extensive, hands-on experience across a broad spectrum of
+                technologies, positioning us as a reliable logistics app development
+                partner for businesses of every size.
               </p>
 
               <p>
-                To us, our clients are the main priority. Whatever features they
-                require and the speed at which they want their service, our
-                developers focus on delivering well-designed custom mobile apps.
+                We follow a client-first development process, taking the time to fully
+                understand your business objectives before a single line of code is
+                written. This ensures every logistics software solution we deliver is
+                custom-built around your operational needs, never a one-size-fits-all
+                template.
               </p>
 
               <p>
-                We create apps for different types of companies, be it smaller
-                ones just starting or enterprise-level corporations with
-                big-scale logistics demands. Expect noticeable business growth,
-                smoother operations, and maximized profits in the future with
-                our ad per design services.
+                Innovation drives everything we do. Our developers stay at the forefront of
+                emerging technologies, refining our development methodologies and adapting
+                to shifting industry standards to deliver future-ready logistics app
+                solutions that keep your business competitive.
               </p>
             </div>
           </div>
@@ -952,31 +930,19 @@ export default function Logistic() {
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                While constructing a customized logistics mobile app integrated
-                with multiple features, the question of cost does come into
-                play. Our team of{" "}
-                <span className="font-bold text-gray-900">
-                  app developers USA
-                </span>{" "}
-                also includes financial specialists. They would carefully
-                evaluate your app requirement and devise the most efficient app
-                cost structure.
+                The cost to develop a logistics app depends on multiple factors: the
+                features you require, your preferred technology stack, third-party
+                integrations, and overall project scope. For an accurate, tailored
+                estimate, schedule a free consultation with our logistics app development
+                experts.
               </p>
 
               <p>
-                There is no standard fee that we offer for our craft though. All
-                our clients get personalized costs for development depending on
-                multiple factors. These include the technologies we utilized for
-                the app&apos;s frontend and backend development, technology
-                stack, and platform compatibility.
-              </p>
-
-              <p>
-                Our team takes the time to understand your business goals,
-                operational challenges, and budget to create custom logistic app
-                development tailored to your specific requirements. Get in touch
-                with us today to explore a cost-effective solution that enhances
-                efficiency, optimizes workflows, and supports long-term growth.
+                There&apos;s no fixed price for logistics app development; every project
+                is scoped around your business&apos;s unique operational demands,
+                scalability requirements, and long-term growth goals. Our transparent
+                pricing model ensures you invest only in the features that drive real
+                value for your business.
               </p>
             </div>
           </div>
@@ -991,15 +957,14 @@ export default function Logistic() {
           </div>
 
           {/* Success Stories Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
+          <div className="text-center max-w-5xl mx-auto space-y-3 pt-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-              Success Stories That Showcase Our Logistics Expertise
+              Explore Our Logistics App Development Success Stories
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              Devapp solutions has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
+              Our portfolio reflects our commitment to delivering high-performance
+              logistics software solutions.
+              Take a look at some of the projects that showcase our expertise in action.
             </p>
           </div>
         </section>
@@ -1058,7 +1023,7 @@ export default function Logistic() {
                                 <img
                                   src={tech.icon}
                                   alt={tech.name}
-                                  className="w-6 h-6 sm:w-7 sm:h-7 mx-auto"
+                                  className="h-6 sm:w-7 sm:h-7 mx-auto"
                                 />
                                 <p className="text-xs mt-1">{tech.name}</p>
                               </div>
@@ -1079,7 +1044,7 @@ export default function Logistic() {
                         <img
                           src={slide.image}
                           alt={slide.title}
-                          className="object-contain"
+                          className="object-contain w-[70%]"
                         />
                       </div>
                     </div>
@@ -1114,14 +1079,10 @@ export default function Logistic() {
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-4xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Technology Stack for Custom Logistics App Development
+              Power Your Logistics Business with Next-Gen Mobile App Development
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              Our team of developers leave stones unturned in their quest to
-              create usable apps with advanced features for companies, drivers,
-              and consumers. We are equipped to handle different types of
-              technology, and justly utilize them for our app development
-              solutions.
+              Team up with a logistics app development company that turns complex transportation challenges into scalable, results-driven mobile solutions built to move your business forward.
             </p>
           </div>
         </section>
@@ -1134,19 +1095,17 @@ export default function Logistic() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
-                        ? "text-black font-semibold"
-                        : "text-gray-500 hover:text-red-500"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
+                      ? "text-black font-semibold"
+                      : "text-gray-500 hover:text-red-500"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1176,7 +1135,7 @@ export default function Logistic() {
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -1196,7 +1155,7 @@ export default function Logistic() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -1253,14 +1212,14 @@ export default function Logistic() {
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
-              Your Trusted Logistics App Development Company in the USA
+              America's Go-To Partner for Logistics App Innovation
             </h1>
             <p>
-              Devapp solutions is a leading Software, Web, & Mobile App
-              Development Company with a vast area of experience in crafting
-              stunning and end to end encrypted technology solutions. We offer
-              excellent expertise of the industry followed by an exactly planned
-              approach to elevate your growth.
+              Devapp Solutions isn't just another software development company;
+              we're a full-stack technology partner specializing in web, mobile,
+              and logistics-driven app development for businesses across the globe.
+              Our team blends deep technical expertise with real industry insight to engineer
+              solutions that don't just work they scale, adapt, and win.
             </p>
           </div>
         </section>
@@ -1374,13 +1333,10 @@ export default function Logistic() {
         <section>
           <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
-              Client Testimonials
+              What Sets Our Logistics App Development Apart
             </h1>
             <p>
-              Our purpose as a logistics app development company, has always
-              centered around putting customer satisfaction first. Here are some
-              of the things our past clients have to say about our services,
-              directly from them.
+              At Devapp Solutions, we don't build apps, we build competitive advantages. From the first strategy call to post-launch support, every step of our process is engineered around one goal: helping your logistics business outperform.
             </p>
           </div>
         </section>
@@ -1499,11 +1455,10 @@ export default function Logistic() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-gray-200 shadow-md"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-gray-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1515,21 +1470,19 @@ export default function Logistic() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">

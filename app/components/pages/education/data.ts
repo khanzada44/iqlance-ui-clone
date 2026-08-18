@@ -1,28 +1,23 @@
 export const bottomFeatures = [
   {
-    title: "App for your Business niche",
+    title: "Built Around Your Education Niche",
     description:
-      "We conduct an industry investigation. We ensure that your app should be interesting to the targeted audience in order to be successful. We constantly keep an eye on the competition. We'll see what performs, whatever doesn't, and what kind of response we get.",
+      "We start by understanding your institution, learners, teaching model, and market. Our team researches your industry and competitors to identify opportunities that can make your e-learning platform more relevant, engaging, and differentiated.",
   },
   {
-    title: "Instant access",
+    title: "Instant Access to Learning",
     description:
-      "This type of e-learning is flexible and takes into consideration the studying methods and interests of pupils. Teachers may quickly build a vibrant and interesting learning session by combining pictures, slideshows, audio clips, YouTube clips, and assessments.",
+      "Give students and educators quick access to dynamic learning content from virtually anywhere. Your platform can bring lessons to life with videos, presentations, audio, images, interactive materials, and other digital resources that support different learning styles.",
   },
   {
-    title: "Secured payment",
+    title: "Secure & Convenient Payments",
     description:
-      "Paying is simple, and learning is simple. The online payment option included in eLearning app construction helps families to deposit school payments with ease, keep track of received and overdue payments, and get reminders for delinquent costs.",
+      "Make tuition, course, and subscription payments easier for families and learners. Our e-learning solutions can support secure online payments, payment tracking, due-date reminders, and transaction management for a more convenient financial experience.",
   },
   {
-    title: "Attractive UI + Unbeatable Performance",
+    title: "Engaging UI & Reliable Performance",
     description:
-      "We provide unique education websites with simple information monitoring systems and a simple design for students. We developed schooling platforms for everybody and made sure they were simple to maintain with the most up-to-date information.",
-  },
-  {
-    title: "Branding",
-    description:
-      "The stronger the caliber of your software, the more likely it is that its clients will stick with it. After offering great client contentment, develop your brand's status in the industry. Because your growth is our priority.",
+      "We design education platforms with simplicity at the core. Clean navigation, accessible content, responsive interfaces, and efficient performance make it easier for students and administrators to use the platform while keeping educational information organized and up to date.",
   },
 ];
 export const slides = [
@@ -40,19 +35,19 @@ export const slides = [
       "Systems for laboratory information",
     ],
   },
-  {
-    id: 2,
-    image: "/images/eLearning-left-2.jpg",
-    title: "App Features for Teachers",
-    description:
-      "Gone those days, when imparting education takes place by only chalk, black board and chalk. At Devapp, we always strive hard to embrace top quality and innovative teaching models for teachers. We aim to bring a huge excitement in the process of imparting knowledge and education through mobile app. It includes-",
-    points: [
-      "Creating a profile of teacher feeding in all the necessary details",
-      "Booking classrooms to make sure the availability at specific time",
-      "Digital attendance facility which makes processing and accessing easy",
-      "Student report generation to assess their performance",
-    ],
-  },
+{
+  id: 2,
+  image: "/images/eLearning-left-2.jpg",
+  title: "Digital E-Library",
+  description:
+    "Give learners instant access to a centralized collection of educational resources. An e-library can organize e-books, study materials, recorded lessons, reference content, and multimedia resources in one easy-to-navigate platform.",
+  points: [
+    "E-books and digital study materials",
+    "Recorded lessons and educational videos",
+    "Reference content for quick and convenient learning",
+    "Multimedia resources to support different learning styles",
+  ],
+},
   {
     id: 3,
     image: "/images/eLearning-left-3.jpg",
@@ -231,57 +226,57 @@ export const technologies = [
       {
         name: "iOS",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ios-icn-tab.svg",
+          "/icons/next.svg",
       },
       {
         name: "Android",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/android.svg",
+          "/icons/android.svg",
       },
       {
         name: "React Native",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/reactnative.svg",
+          "/icons/reactnative.svg",
       },
       {
         name: "Flutter",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/flutter.svg",
+          "/icons/flutter.svg",
       },
       {
         name: "Augmented Reality",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/icn-80/ar-icn.png.webp",
+          "/images/ar-icn.png.webp",
       },
       {
         name: "Swift",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/swift.svg",
+          "/icons/swift.svg",
       },
       {
         name: "Kotlin",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/kokin-icn-tab.svg",
+          "/icons/kokin-icn-tab.svg",
       },
       {
         name: "Objective C",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/object-c-icn-tab.svg",
+          "/icons/object-c-icn-tab.svg",
       },
       {
         name: "Cross Platform",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/crossplatform-icn-tab.png.webp",
+          "/images/crossplatform-icn-tab.png.webp",
       },
       {
         name: "Ibecon",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ib-icn-tab.svg",
+          "/icons/ib-icn-tab.svg",
       },
       {
         name: "Xamarin",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/xamarin-icn-tab.png.webp",
+          "/images/xamarin-icn-tab.png.webp",
       },
     ],
   },
@@ -291,37 +286,37 @@ export const technologies = [
       {
         name: "Angular",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/angular-icon.svg",
+          "/icons/angular-icon.svg",
       },
       {
         name: "React",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/reactnative.svg",
+          "/icons/reactnative.svg",
       },
       {
         name: "Blockchain",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/blockchain.svg",
+          "/icons/blockchain.svg",
       },
       {
         name: "Sass",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/sass.svg",
+          "/icons/sass.svg",
       },
       {
         name: "jQuery",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/jquery.svg",
+          "/icons/jquery.svg",
       },
       {
         name: "HTML 5",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/html-5.svg",
+          "/icons/html-5.svg",
       },
       {
         name: "CSS3",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/css3.svg",
+          "/icons/css3.svg",
       },
     ],
   },
@@ -331,27 +326,27 @@ export const technologies = [
       {
         name: "MySQL",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mysql-logo.svg",
+          "/icons/mysql-logo.svg",
       },
       {
         name: "MsSQL",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mssql.svg",
+          "/icons/mssql.svg",
       },
       {
         name: "Azure",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/azure.svg",
+          "/icons/azure.svg",
       },
       {
         name: "Firebase",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/firebase.svg",
+          "/icons/firebase.svg",
       },
       {
         name: "MongoDB",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/mongodb.svg",
+          "/icons/mongodb.svg",
       },
     ],
   },
@@ -361,32 +356,32 @@ export const technologies = [
       {
         name: "PHP",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/php-logo.svg",
+          "/icons/php-logo.svg",
       },
       {
         name: ".NET",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/.net.svg",
+          "/icons/net.svg",
       },
       {
         name: "Laravel",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/laravel.svg",
+          "/icons/laravel.svg",
       },
       {
         name: "Node .JS",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/nodejs.svg",
+          "/icons/nodejs.svg",
       },
       {
         name: "Rails",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/ruby_on_rails-icon.svg",
+          "/icons/ruby_on_rails-icon.svg",
       },
       {
         name: "Python",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/python.svg",
+          "/icons/python.svg",
       },
     ],
   },
@@ -396,27 +391,27 @@ export const technologies = [
       {
         name: "Drupal",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/drupal.svg",
+          "/icons/drupal.svg",
       },
       {
         name: "Joomla",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/Joomla.svg",
+          "/icons/Joomla.svg",
       },
       {
         name: "WordPress",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/wordpress.svg",
+          "/icons/wordpress.svg",
       },
       {
         name: "Magento",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/magento.svg",
+          "/icons/magento.svg",
       },
       {
         name: "Shopify",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/shopify.svg",
+          "/icons/shopify.svg",
       },
     ],
   },
@@ -427,42 +422,42 @@ export const technologies = [
       {
         name: "AWS",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/amazon-web-services.svg",
+          "/icons/amazon-web-services.svg",
       },
       {
         name: "Google Cloud",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/google-cloud.svg",
+          "/icons/google-cloud.svg",
       },
       {
         name: "Git",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/git.svg",
+          "/icons/git.svg",
       },
       {
         name: "Gradle",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/gradle.svg",
+          "/icons/gradle.svg",
       },
       {
         name: "Selenium",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/selenium.svg",
+          "/icons/selenium.svg",
       },
       {
         name: "Jenkins",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/jenkins.svg",
+          "/icons/jenkins.svg",
       },
       {
         name: "Docker",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/docker.svg",
+          "/icons/docker.svg",
       },
       {
         name: "Kubernetes",
         image:
-          "https://www.Devapp.com/wp-content/themes/Devapp/img/tab/kubernetes.svg",
+          "/icons/kubernetes.svg",
       },
     ],
   },
@@ -562,59 +557,59 @@ export const industries = [
 export const services = [
   {
     image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/icn-80/data-protection-icn.png",
+      "/images/data-protection-icn.png",
     title: "Data Protection",
     description:
-      "Our every app is ultimately data protected to cope with the heavy malware attack and increased cyber-crime to support new technologies entering the healthcare world.",
+      "From virus prevention to information confidentiality, we ensure that only you get accessibility of important economic and private information. We place a strong priority on cybersecurity. We ensure that no third party other than you can access your information.",
   },
   {
     image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/custom-dp-icn.png",
+      "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "Devapp focuses on the rapid delivery of projects with a seamless connection between all clients. Also, ensuring solid documentation for extensive support and training.",
+      "At Devapp, we don’t believe in stagnation. To put it another way, we stay up with current developments and technology, eliminate duplicate alternatives, and continually enhance our abilities and application development ideas.",
   },
   {
     image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/icn-80/easy-commution-icn.png",
+      "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
-      "We make sure to develop an app that is realistic, scalable, plausible, and communicative, bringing only positive results. As a result, it will meet all expectations of providers and patients.",
+      "At any moment, contact our team at the Devapp app development business for a food app. For all of our clients, we are always accessible to answer questions and offer emergency solutions.",
   },
   {
     image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/dedicated-teams.png",
+      "/images/dedicated-teams.png",
     title: "Dedicated Development Team",
     description:
-      "Our talented professionals ensure a flawless experience to everyone who use the app. Because a lasting experience always creates a greater impact.",
+      "We put our customers first, so customers can anticipate customized and fast assistance with the whole digital project from beginning to end.",
   },
   {
     image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/on-time-icn.png",
+     "/images/on-time-icn.png",
     title: "On – Time Delivery",
     description:
-      "100% support available to every client with the assurance of timely delivery every time so you can complete your project on time. Also, meeting superior quality standards.",
+      "One of our biggest assets is scheduled planning; our team members correctly prepare, employ a solid software system, evaluate, and deploy the application on schedule.",
   },
   {
     image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/quality-first-icn.png",
+      "/images/quality-first-icn.png",
     title: "Quality – First Approach",
     description:
-      "Our professionals also make sure to run the idea in the market to analyze the demand to build a quality app experience. This saves your time & resources also provides success assurance.",
+      "Our Application Designers build handy and straightforward applications with much effective functionality, a fast connectivity, and a top-notch design using verified modern tools and methods.",
   },
   {
     image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/cost-effective-icn.png",
+      "/images/cost-effective-icn.png",
     title: "Cost Effective Development Model",
     description:
-      "Tailor-made plan to provide the maximum benefit to you at an affordable cost. It is sure to fit every small and big need with full scalability of technology resources without spending extra pennies.",
+      "We examine our clients’ needs, avoid utilizing unnecessary technology, and provide cost estimate suggestions after thorough consideration.",
   },
   {
     image:
-      "https://www.Devapp.com/wp-content/themes/Devapp/img/letdiscuss-icon.png.webp",
+      "/images/letdiscuss-icon.webp",
     title: "Technical Support",
     description:
-      "The apps are set to abide by every rule set by health standards and regulations. Plus, in case of the app experiences any bug issue, there is a whole team of certified engineers for comprehensive technical support.",
+      "Our staff has qualified experts that have worked on a variety of app development projects. We are ready to assist with app concerns such as problem fixing.",
   },
 ];
 export const testimonials = [

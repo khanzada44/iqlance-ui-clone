@@ -73,48 +73,48 @@ export default function foodOrdering() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
-                Food & Restaurant
+
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                Restaurant App Development
+                <br className="hidden sm:block" />
+                Built to Fill Every Table and Every Order
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                To deliver flawless & fastest food & restaurant app development
-                services, Devapp is your answer. If you want to earn a huge
-                profit in your restaurant business, you are on the right
-                platform now. Our experts are here to assist you with various
-                ways to get profit from Food application development.
+                Fast, flawless food delivery isn&apos;t a nice-to-have anymore; it&apos;s
+                the baseline customers expect. As a leading restaurant app development
+                company, Devapp helps restaurant owners and food businesses turn that
+                expectation into a growth engine. If you&apos;re serious about scaling your
+                food business, you&apos;re in the right place. Our team knows exactly how to
+                help your food delivery app development project deliver real returns.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                Devapp is your way to add you in quest for restaurant
-                creativity. So, our in-house developer team strives hard to make
-                the process of choosing and delivering foods from selected
-                restaurants to your place without facing any technical issue.
+                We&apos;re the partner restaurants turn to when they&apos;re ready to go
+                digital. Our in-house developers focus on one thing: making food ordering
+                and delivery effortless for your customers and your kitchen alike. No
+                glitches, no friction, just a smooth path from craving to doorstep.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                If you have a startup or any well-established food & restaurant
-                business, having a user-friendly app is really helpful to take
-                your business to the new heights. Here are some other benefits
-                of having this app:
+                Whether you&apos;re a food startup finding your footing or an established
+                restaurant brand ready to modernize, a well-built app isn&apos;t just
+                convenient, it&apos;s a competitive necessity. Here&apos;s what the right app
+                can do for your business:
               </p>
 
               <ul className="mt-8 space-y-5 text-lg">
                 <li className="flex items-center gap-1 mb-2">
                   <ChevronRight size={14} />
-                  Stand out from crowd in the industry
+                  Set your brand apart in an increasingly crowded market
                 </li>
                 <li className="flex items-center gap-1 mb-2">
                   <ChevronRight size={14} />
-                  Perfect blend of advanced technology
+                  Combine your culinary strengths with the technology customers now expect
                 </li>
                 <li className="flex items-center gap-1 mb-2">
                   <ChevronRight size={14} />
-                  Important to create brand awareness
-                </li>
-                <li className="flex items-center gap-1 mb-2">
-                  <ChevronRight size={14} />
-                  Direct channel between your customers and brand
+                  Build lasting brand recognition in a space where visibility drives revenue
                 </li>
               </ul>
 
@@ -258,55 +258,50 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-8xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Offering You Full-Scale Restaurant App Development Solutions for
-                Your Restaurants
+                End-to-End Restaurant App Development, Built to Scale With You
               </h2>
+
               <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-                Devapp is a renowned Toronto app development company to develop
-                a variety of top quality web and mobile solutions to benefit
-                your restaurant business. Since our first-step in the industry,
-                we succeeded to hold full-scale of development team for
-                Restaurant app development and design solutions. Until now, we
-                worked with many restaurant owners and food business ventures,
-                including startups to convert their traditional offline
-                businesses into an innovative online approach.
+                Devapp has spent years earning its place as a trusted{" "}
+                <strong>restaurant app development company</strong>, working with
+                restaurant owners and food businesses of every size, including startups
+                moving their entire operation online for the first time.
               </p>
+
               <br />
-              <p>
-                Do you own any restaurant business and want to develop good
-                mobile applications to obtain huge returns on investment?
-                Alternatively, if you are the one searching for a quality app to
-                understand your specific business requirements, your search will
-                definitely end here. Devapp has everything you need, as we
-                understand your important business requirements and work pattern
-                for strategizing a mobile app directed towards earning you
-                highest possible returns on your investments.
+
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                Own a restaurant and want an app engineered for real ROI? Or still
+                searching for a development partner who actually understands your
+                business? Either way, your search stops here. We take the time to learn
+                how your restaurant runs before we write a single line of code because an
+                app built around your actual business is the only kind worth having.
               </p>
+
               <br />
-              <p>
-                Combining countless establishments and numbers of consumers in
-                one system to digitalize the food purchase and takeout service.
-                We’re redefining millions of people’s eating experiences all
-                over the world by offering them the convenience of choosing food
-                online and having it delivered right to their doorway. We’re
-                available for all of your stakeholders, no matter how many there
-                are. Our restaurant smartphone application services are designed
-                to make the procedure of choosing and delivering meals from
-                restaurant and at residence more convenient while simplifying
-                complicated backend operations.
+
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                Today&apos;s diners expect the convenience of ordering food from anywhere
+                and having it delivered to their door and we help restaurants of every
+                size deliver exactly that. Our{" "}
+                <strong>food ordering app development</strong> solutions are built to
+                simplify operations on both ends: a seamless ordering experience for
+                customers and streamlined backend management for you.
               </p>
+
               <br />
-              <p>
-                Our on-demand online food supply development application squad
-                consists of over 400+ business professionals that are well
-                familiar with the dining sector’s inner workings and
-                technological requirements. We’re ready to join you in your
-                quest for restaurant creativity.
+
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                Our on-demand food delivery development team is 400+ professionals strong,
+                all deeply familiar with how the restaurant industry actually works from
+                kitchen operations to the technology that powers modern dining. We&apos;re
+                ready to bring that expertise to your project.
               </p>
             </div>
+
             <div className="text-center">
               <Link
                 href="#contact"
@@ -330,42 +325,41 @@ export default function foodOrdering() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10 mt-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Businesses May Profit from Food Application Development in a
-                Variety of Ways
+                How Restaurants Are Turning Food Apps Into Real Revenue
               </h2>
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-                Things flipped in an instant when the Covid-19 catastrophe
-                occurred. Customers prefer to avoid becoming infected. As a
-                result, digital food service applications have grown in
-                popularity. Customers may purchase meals from the convenience of
-                their own houses and have it transported to their front door.
-                And that’s fantastic. If someone runs a food supply service, the
-                company might desire to consider building a powerful service
-                application such as GrubHub.
+
+              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
+                Consumer habits shifted permanently once digital ordering became the
+                norm and that shift hasn&apos;t reversed. Customers now expect to order
+                meals from their couch and have them delivered straight to their door.
+                If you&apos;re running a food supply or delivery business, building a
+                platform in the spirit of category leaders like DoorDash or Uber Eats
+                isn&apos;t a stretch goal anymore, it&apos;s table stakes.
               </p>
+
               <br />
-              <p>
-                A meal delivery app may be quite beneficial to any company. From
-                persuading the application users to place their initial meal
-                order to taking advantage of promotional offers, we’ve got users
-                covered. Customers are generally intrigued and make purchases.
-                To get remarkable outcomes, adopt a bespoke app that allows
-                businesses to quickly focus the correct audience.
+
+              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
+                A well-built food delivery app pays for itself many times over by
+                converting first-time visitors into paying customers to drive repeat
+                orders through smart promotions. The businesses that get the best
+                results are the ones that invest in a custom-built platform designed to
+                reach the right audience quickly, rather than settling for a generic
+                template.
               </p>
+
               <br />
-              <p>
-                Reach out to the particular audience, and the company will reap
-                several rewards. It is essential to develop smartphone software
-                that helps to attract the billions of individuals who want
-                dining or takeaway solutions to increase the consumer base. The
-                smartphone program can assist users in accomplishing this
-                without difficulty. Clients in a variety of sectors benefit from
-                Devapp’s expertise in offering food delivery app development
-                services on property. There are few important aspects of
-                developing on-demand meal delivery software to help businesses
-                succeed.
+
+              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
+                Reaching your specific audience is where the real payoff happens.
+                Building an app that appeals to the millions of people looking for
+                dining or takeout options helps you grow your customer base without
+                added friction on your end. The app does the heavy lifting. Devapp
+                brings deep, hands-on expertise in food delivery app development to
+                clients across the industry, and we&apos;ve distilled it into a
+                development approach built around the essentials that actually drive
+                results.
               </p>
-              <br />
             </div>
           </div>
         </section>
@@ -407,7 +401,7 @@ export default function foodOrdering() {
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -425,7 +419,7 @@ export default function foodOrdering() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[70%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -551,9 +545,8 @@ export default function foodOrdering() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -612,7 +605,7 @@ export default function foodOrdering() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[70%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -668,13 +661,13 @@ export default function foodOrdering() {
         <section className="max-w-6xl mx-auto px-4 py-16 text-center font-sans">
           {/* Heading & Subtitle */}
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
-            Efforts that make us proud include
+            Results That Speak for Themselves
+
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our crew of experienced food app developers has dedicated their
-            attention and effort to developing a variety of on-demand bespoke
-            applications for consumers. We are pleased to report that our
-            initiatives have received positive feedback from our consumers.
+          <p className="text-gray-600 text-sm sm:text-base max-w-5xl mx-auto mb-12 leading-relaxed">
+            Our team of experienced food app developers has poured serious effort into building
+            a range of on-demand, custom-built applications, and the proof is in the response:
+            real, positive feedback from real customers.
           </p>
 
           <div className="max-w-6xl mx-auto p-6 font-sans">
@@ -685,11 +678,10 @@ export default function foodOrdering() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`px-6 py-3 text-lg font-medium transition-colors duration-200 border-b-2 ${
-                      activeTab === tab.id
-                        ? "border-red-600 text-red-600 font-semibold"
-                        : "border-transparent text-gray-500 hover:text-red-700"
-                    }`}
+                    className={`px-6 py-3 text-lg font-medium transition-colors duration-200 border-b-2 ${activeTab === tab.id
+                      ? "border-red-600 text-red-600 font-semibold"
+                      : "border-transparent text-gray-500 hover:text-red-700"
+                      }`}
                   >
                     {tab.label}
                   </button>
@@ -763,7 +755,7 @@ export default function foodOrdering() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[70%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -827,28 +819,23 @@ export default function foodOrdering() {
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                For All Technologies, We Have Specialized and Qualified
-                Developers on Our Team
+                Specialized, Qualified Developers Ready for Any Technology Stack
               </h2>
 
               <p>
-                We’re here to assist business in finding the finest food app for
-                the specific requirements and needs. We match the capabilities
-                of our employees to business requirements. Before recruiting,
-                companies can conduct an assessment with programmers. With an
-                authorized programmer, business can begin a one-week hazardless
-                experiment.
+                We help businesses find the ideal food app developer for their exact
+                needs. Our process matches our team&apos;s technical capabilities directly
+                to your business requirements, and before hiring, companies can even run a
+                trial assessment with the programmer. Once you&apos;ve approved the right
+                fit, you can kick off a one-week, risk-free trial period.
               </p>
 
               <p>
-                Our developers will devote their whole attention to the
-                assignment. Our staff becomes a part of the organization. You
-                receive a committed programming staff that users can manage
-                independently.
+                Our developers give your project their full, undivided attention. They
+                effectively become part of your team, giving you a dedicated development
+                resource you can rely on throughout the entire build.
               </p>
             </div>
           </div>
@@ -857,23 +844,41 @@ export default function foodOrdering() {
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How much does it cost to develop a food app that is comparable to
-              popular rivals on the market?
+              How Much Does It Cost to Build a Food Delivery App?
             </h2>
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                Our development group left zero leaf uncovered in their pursuit
-                of creating accessible apps with sophisticated functionality for
-                restaurants and customers. We are well-equipped to deal with
-                many forms of equipment and to effectively apply those to our
-                application design services.
+                The cost of developing a custom food delivery app depends on what you
+                want to build—not simply how many features you want to include. A basic
+                ordering platform will require a very different investment than a
+                full-scale solution with restaurant management, real-time delivery
+                tracking, multiple payment options, and advanced analytics.
+              </p>
+
+              <p>
+                At Devapp, we assess your business model, target audience, required
+                features, UI/UX complexity, backend architecture, integrations, and
+                technology stack before estimating the development cost. This allows us
+                to create a pricing plan based on your actual requirements rather than
+                forcing your project into a fixed package.
+              </p>
+
+              <p>
+                We also consider your budget, launch goals, scalability requirements, and
+                future expansion plans to recommend the most practical development
+                approach.
+              </p>
+
+              <p>
+                Have a food delivery idea in mind? Talk to our experts for a tailored
+                cost estimate and development roadmap.
               </p>
             </div>
           </div>
           <div className="flex justify-center">
             <Link
-              href="#"
+              href="/request-a-quote"
               className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
             >
               Get a Quotation <ArrowRight className="w-4 h-4" />
@@ -1036,19 +1041,17 @@ export default function foodOrdering() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
-                      activetechnologies === index
-                        ? "text-red-600 font-semibold"
-                        : "text-gray-500 hover:text-red-400"
-                    }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
+                      ? "text-red-600 font-semibold"
+                      : "text-gray-500 hover:text-red-400"
+                      }`}
                   >
                     {tab.category}
 
                     {/* Active underline */}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${
-                        activetechnologies === index ? "w-full" : "w-0"
-                      }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
+                        }`}
                     />
                   </button>
                 ))}
@@ -1357,11 +1360,10 @@ export default function foodOrdering() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${
-                      open === index
-                        ? "border-red-200 shadow-md"
-                        : "border-red-200 hover:border-red-300"
-                    }`}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-red-200 shadow-md"
+                      : "border-red-200 hover:border-red-300"
+                      }`}
                   >
                     {/* Question */}
                     <button
@@ -1373,21 +1375,19 @@ export default function foodOrdering() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">

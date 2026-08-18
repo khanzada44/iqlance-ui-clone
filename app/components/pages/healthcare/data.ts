@@ -94,27 +94,32 @@ export const healthcareBenefits = [
   {
     title: "App for your Business niche",
     description:
-      "Our highly qualified healthcare app developers first analyze the requirement of the particular niche market through an in-depth search. Then come up with the best solution by perfectly blending all the needs together.",
+      "Healthcare technology needs to balance convenience with accuracy, privacy, and reliability. We build mobile healthcare experiences around the specific needs of providers, patients, and healthcare businesses combining intuitive design with dependable functionality to make digital care more accessible and efficient.",
   },
   {
-    title: "Instant Access",
+    title: "Built Around Your Healthcare Niche",
     description:
-      "The ehealth app development vancouver redefines the patient engagement through mobile care management. By making use of this functional application patients can monitor their disease instantly and get guidance by the experts whenever required.",
+      "Every healthcare business operates differently. We begin by understanding your specialty, workflows, users, and operational challenges, then shape the application around those requirements instead of forcing your organization into a generic solution.",
   },
   {
-    title: "Attractive UI + Unbeatable Performance",
+    title: "Care When Patients Need It",
     description:
-      "We let the healthcare industry go smart with the simplified processes and advanced codes programs and tools for a smooth performance.",
+      "Put essential healthcare services closer to patients through convenient mobile access. Depending on the solution, users can review health information, monitor relevant conditions, connect with care professionals, and receive timely guidance without unnecessary friction.",
   },
   {
-    title: "Secured Payment",
+    title: "Intuitive Design, Reliable Performance",
     description:
-      " Our professionals understand the importance of privacy in healthcare sectors. Thus, make sure only authorized personal can assess the app as it contains secured encrypted protocols.",
+      " Healthcare applications should feel simple even when the technology behind them is complex. We create clean interfaces and responsive experiences while using modern development practices to support smooth performance across supported devices.",
   },
   {
-    title: "Branding",
+    title: "Protected Payments & Sensitive Data",
     description:
-      "Administration of the pharmacology made robust and incredible. The healthcare app development done by us is also helpful to the manufacturers as well as agencies of the pharmaceutical industry thus providing better chance at branding.",
+      "Privacy is fundamental to healthcare technology. We implement appropriate security measures around sensitive information and payment workflows, including encryption, authentication, and access controls designed to help ensure information is available only to authorized users.",
+  },
+  {
+    title: "Healthcare Branding & Business Growth",
+    description:
+      "Your digital product can be more than a utility; it can strengthen your presence in the healthcare market. We create branded experiences for healthcare providers, pharmaceutical organizations, medical businesses, and related companies that reinforce their identity while supporting meaningful digital engagement.",
   },
 ];
 export const slides = [
@@ -134,15 +139,15 @@ export const slides = [
     id: 2,
     image:
       "/images/healthcare-left-1.jpg",
-    title: "Hospital Agility Improved",
+    title: "Smarter Hospital Operations",
     description:
-      "The apps offer well organized workflow of the clinic with advanced hospital mobility. We let the healthcare industry go smart with the simplified processes and managed inventories with the help of our incredible healthcare mobility solutions. ",
+      "Bring greater structure to clinical and administrative workflows with healthcare mobility solutions designed around real hospital needs. From managing patient information to connecting care teams, our applications help organizations reduce manual processes, improve coordination, and make critical information available when it matters.",
     points: [
-      "Medical records made electronic",
-      "Health records product specs determination made electronic",
-      "The support system for clinical decisions",
-      "Communication systems as well as the picture archiving systems",
-      "Systems for laboratory information",
+      "Electronic Medical Records, Move patient records into secure digital environments for easier access, organization, and management.",
+      "Electronic Health Information, Centralize essential health data so authorized professionals can access relevant patient information throughout the care journey.",
+      "Clinical Decision Support, Provide care teams with timely digital information and tools that can support more informed clinical decisions.",
+      "Healthcare Communication Systems, Improve coordination between physicians, nurses, departments, and patients through connected communication channels.",
+      "Medical Imaging & Records, Support the digital handling, storage, and accessibility of medical images and related patient information across authorized teams.",
     ],
   },
   {
@@ -629,56 +634,56 @@ export const services = [
       "/images/data-protection-icn.png",
     title: "Data Protection",
     description:
-      "Our every app is ultimately data protected to cope with the heavy malware attack and increased cyber-crime to support new technologies entering the healthcare world.",
+      "Every app we build comes with strong data protection to defend against growing malware threats and rising cybercrime, keeping pace with new technology entering the healthcare space.",
   },
   {
     image:
       "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "Devapp focuses on the rapid delivery of projects with a seamless connection between all clients. Also, ensuring solid documentation for extensive support and training.",
+      "Devapp prioritizes fast, efficient project delivery while maintaining strong client relationships throughout. We also make sure thorough documentation is in place for ongoing support and training",
   },
   {
     image:
       "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
-      "We make sure to develop an app that is realistic, scalable, plausible, and communicative, bringing only positive results. As a result, it will meet all expectations of providers and patients.",
+      "We keep clients updated at every stage scalable, flexible, and cost-friendly, bringing all positive outcomes. We're always in sync with client needs at every step of the process.",
   },
   {
     image:
       "/images/dedicated-teams.png",
-    title: "Dedicated Development Team",
+    title: "Dedicated Development Teams",
     description:
-      "Our talented professionals ensure a flawless experience to everyone who use the app. Because a lasting experience always creates a greater impact.",
+      "Our talented professionals bring hands-on experience to every project, ensuring each client receives a smooth and reliable journey from start to finish.",
   },
   {
     image:
       "/images/on-time-icn.png",
-    title: "On – Time Delivery",
+    title: "On-Time Delivery",
     description:
-      "100% support available to every client with the assurance of timely delivery every time so you can complete your project on time. Also, meeting superior quality standards.",
+      "Our commitment to on-time project delivery is unmatched. We ensure your project is finished on schedule, giving you full confidence in a smooth and dependable process.",
   },
   {
     image:
       "/images/quality-first-icn.png",
-    title: "Quality – First Approach",
+    title: "Quality-First Approach",
     description:
-      "Our professionals also make sure to run the idea in the market to analyze the demand to build a quality app experience. This saves your time & resources also provides success assurance.",
+      "Our team stays focused on delivering top-notch results, ensuring the final product fits perfectly within the market and meets every requirement flawlessly.",
   },
   {
     image:
       "/images/cost-effective-icn.png",
-    title: "Cost Effective Development Model",
+    title: "Cost-Effective Development Mode",
     description:
-      "Tailor-made plan to provide the maximum benefit to you at an affordable cost. It is sure to fit every small and big need with full scalability of technology resources without spending extra pennies.",
+      "Choose to work with us and get the best value for your money top-quality solutions delivered at rates that won't strain your budget, without compromising on excellence.",
   },
   {
     image:
       "/images/letdiscuss-icon.png.webp",
     title: "Technical Support",
     description:
-      "The apps are set to abide by every rule set by health standards and regulations. Plus, in case of the app experiences any bug issue, there is a whole team of certified engineers for comprehensive technical support.",
+      "Our team is available round the clock to address any questions or issues, ensuring your business runs smoothly with continuous, reliable technical assistance.",
   },
 ];
 export const testimonials = [

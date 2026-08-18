@@ -107,29 +107,28 @@ export default function foodOrdering() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
-                E-Commerce Development Company
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                E-Commerce
+                <br className="hidden sm:block" />
+                Development Company
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-900">
-                The E-Commerce industry is growing rapidly and shifting gradually towards the world of Smartphone devices.
-                Since, a large number of people today prefer browsing eCommerce stores by using their
-                mobile devices and operating apps, instead of visiting any website physically.
-                Because of this, eCommerce app development helps to search products present in
-                the store and at the same time, to make payment easily with it.
+                Shopping has moved off the shelf and onto the screen and it&apos;s not
+                slowing down. More consumers than ever are browsing and buying directly from
+                their phones instead of visiting a physical store, which makes{" "}
+                <strong>eCommerce app development</strong> less of an upgrade and more of a
+                survival requirement. A strong app doesn&apos;t just let customers find your
+                products, it makes checkout so effortless they never think twice about coming
+                back.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-900">
-                Keeping this is mind, our Devapp, known as a leading eCommerce app developer
-                has offered an improved end-to-end functionality. We always remain ready to deliver
-                you with the best possible eCommerce development solutions and help you to integrate your
-                business with mobiles with the help of innovative eCommerce mobile app USA.
-              </p>
-
-              <p className="text-base md:text-lg leading-relaxed text-gray-900">
-                Our apps come with almost every possible efficient marketing strategy to deliver you an
-                engaging digital
-                experience for your clients to maintain the best possible standards in eCommerce.
+                That&apos;s exactly the gap Devapp was built to close. As a leading{" "}
+                <strong>eCommerce app development company</strong>, we stay laser-focused on
+                performance and functionality, delivering mobile commerce solutions that
+                help your business stay competitive and help your customers shop without
+                friction, wherever they are.
               </p>
 
               {/* Action Buttons */}
@@ -272,27 +271,31 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Creative eCommerce App Development Services
-              </h2>
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-                Mobile E-Commerce application development is an important task for businesses, with developers
-                focusing on it to improve interactions between companies and their consumers. In addition, by always just a “touch” apart,
-                mobile eCommerce apps are well-known for getting to understand their consumers faster. Company owners may engage clients at any moment and from any
-                location with an eCommerce mobile app.
-              </p>
-              <br />
-              <p>
-                Leading companies have worked with us to bring their trademarks and firms to the
-                smartphone market, and Devapp is a well-known name in online eCommerce services. We’ve
-                worked on service applications, B2B and B2C eCommerce apps,
-                and corporate apps to assist companies to enhance their operations and productivity.
-              </p>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              Creative eCommerce App Development Services
+            </h2>
 
-            </div>
+            <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+              Mobile commerce isn&apos;t optional anymore; it&apos;s the primary way
+              businesses connect with customers today. Beyond convenience, a
+              well-built <strong>eCommerce mobile app</strong> puts your business a
+              single tap away from every customer, giving you direct insight into how
+              they browse, compare, and buy.
+            </p>
+
+            <br />
+
+            <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+              We&apos;ve helped established brands bring their names into the mobile
+              marketplace with confidence. As a trusted name in{" "}
+              <strong>eCommerce app development</strong>, our portfolio spans
+              service-based applications, B2B and B2C eCommerce platforms, and
+              corporate apps designed to sharpen operations and drive productivity.
+            </p>
           </div>
+        </div>
         </section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
           <div className="flex justify-center lg:justify-end">
@@ -333,13 +336,11 @@ export default function foodOrdering() {
           <div>
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Let’s Take a Deep Dive into The Extraordinary Features of The e-Commerce App Development Done by us
-
+                Explore the Standout Features Behind Our eCommerce App Development
               </h2>
               <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-
-                Before focusing on Mobile E-Commerce Application Development, businesses and developers must plan out what they need to add to the app. The right features can help manage the challenges of e-commerce app development better, and our solutions focus on this securely.
-
+                Before diving into mobile eCommerce app development, businesses and developers need a clear picture of what the app actually requires. The right feature set is what separates a store that converts 
+                from one that loses customers at checkout and it's exactly where our solutions focus first.
               </p>
             </div>
           </div>
@@ -431,7 +432,7 @@ export default function foodOrdering() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[70%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -550,7 +551,7 @@ export default function foodOrdering() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[70%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -763,7 +764,7 @@ export default function foodOrdering() {
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -780,7 +781,7 @@ export default function foodOrdering() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[50%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -842,68 +843,77 @@ export default function foodOrdering() {
             </div>
 
             {/* Right Content Side */}
-            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Qualified and Trained Programmers, for Various Technologies, Make Up Our Team
-              </h2>
+          <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              Skilled Developers. Modern Technology. One Team Built Around Your Vision.
+            </h2>
 
-              <p>
-                We’ll put together a squad and handle their incorporation,
-                inspiration, and supervision, while customers maintain leadership and influence
-                throughout the project’s general development. Our IT professionals have a clear
-                knowledge of the market- they can concentrate swiftly incorporating into the production
-                procedure, no matter how specialised it is.
-              </p>
-              <p>
-                All our members have a collaborative mentality and a nice demeanour,
-                which makes it easy for them to work with other teams. Our App Developers Toronto
-                have long ago improved
-                their abilities and now supply clients with high-quality apps.
-              </p>
-              <p>
-                We assign a professional project administrator to oversee the everyday operations and processes, among other tasks. As a result, you’ll
-                have extra time to concentrate on the development’s key components.
-              </p>
-            </div>
+            <p>
+              Building a successful real estate app takes more than putting property
+              listings on a screen. It requires thoughtful UX, reliable technology, and
+              a development team that understands how buyers, sellers, renters, and
+              agents interact with property platforms. Our experienced developers bring
+              these elements together to create applications that are intuitive,
+              scalable, and built for real-world use.
+            </p>
+
+            <p>
+              Our team works across modern technologies and development frameworks to
+              turn complex requirements into smooth digital experiences. Whether you’re
+              building a property marketplace, an agent-focused platform, or a custom
+              real estate solution, we focus on creating functionality that works
+              seamlessly behind the scenes and feels effortless to your users.
+            </p>
+          </div>
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              How Much will It Take to Develop an eCommerce App?
+              How Much Does It Cost to Develop a Real Estate App?
             </h2>
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
               <p>
-                Over time, the notion of e-commerce must have expanded its feathers and become a part of our everyday life. In reality, after WhatsApp or Instagram, eCommerce apps are indeed the next highest popular system to connect with individuals or participate in conversations today.
+                The cost of developing a real estate app depends on what you want it to
+                do. A basic property listing app requires a very different development
+                approach from a full-scale marketplace with advanced search,
+                location-based discovery, agent dashboards, chat, payments, and property
+                management features.
               </p>
+
               <p>
-
-                According to one study by experts, the approximate eCommerce App Development cost for basic apps falls between $38,000 to $91,000. The price of moderate apps ranges from $55,000 to $131,000, while complicated software may cost $91,550 or more.
-
+                Your choice of platforms, integrations, design complexity, backend
+                infrastructure, and custom functionality can all influence the final
+                investment. That’s why we first understand your business model, target
+                users, and must-have features before defining the development scope.
               </p>
+
               <p>
-
-                So, based on the company’s average price of $30, here is an approximate estimate of how much it takes to construct an app: A simple application will set you back approximately $30,000, a moderate quality application would set you back $50,000+, and a difficult application will set you back around $75,000+.
-
+                Have a real estate app idea in mind? Share your requirements with our
+                team, and we’ll help you map out the right features, technology,
+                timeline, and budget.
               </p>
             </div>
           </div>
+
+          {/* CTA */}
           <div className="flex justify-center">
             <Link
               href="#"
               className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
             >
-              Get a Quotation <ArrowRight className="w-4 h-4" />
+              Get a Quotation
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
           {/* Banner Image */}
-          <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
+          <div className="w-full h-64 sm:h-80 md:h-96 overflow-hidden shadow-sm">
             <img
               src="/images/healthcare-app-built.jpg"
-              alt="Cost Calculation & Financial Planning"
+              alt="Real Estate App Development Cost"
               className="w-full h-full object-cover"
             />
           </div>
@@ -913,17 +923,14 @@ export default function foodOrdering() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
               Endeavors That Make Us Proud
             </h2>
+
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              Devapp solutions has always been honored with valuable words for the efforts given
-              on mobile app development that are efficiently unique and user centric.
-              Here are some of the best examples for this.
+              Devapp solutions has always been honored with valuable words for the
+              efforts given on mobile app development that are efficiently unique and
+              user centric. Here are some of the best examples for this.
             </p>
           </div>
         </section>
-
-        <main className="min-h-screen py-10">
-          <PortfolioSlider slides={portfolios} heading={`Solution: ${params?.slug}`} />
-        </main>
 
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}
