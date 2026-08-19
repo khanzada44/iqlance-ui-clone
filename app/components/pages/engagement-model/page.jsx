@@ -5,8 +5,8 @@ import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react"; // Combined Lucide Icons
 import ContactForm from "../../contactForm/ContactForm";
 import { ArrowRight, ChevronRight, Paperclip } from "lucide-react";
-import { comparisonData, features, tabsData , faqsData } from "../engagement-model/data";
-import { stats, partners } from "../../../../utils/data";
+import { comparisonData, features, tabsData } from "../engagement-model/data";
+import { stats, partners,faqsData } from "../../../../utils/data";
 
 export default function EngagementModelSection() {
   const [activeModelTab, setActiveModelTab] = useState("hourly");
@@ -64,9 +64,7 @@ export default function EngagementModelSection() {
               {/* Left Content */}
               <div className="lg:col-span-7 text-center lg:text-left mt-8">
                 <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
-                  Engagement
-                  <br className="hidden sm:block" />
-                  Model
+                  Engagement Model                  
                 </h1>
 
                 <h3 className="mt-4 sm:mt-6 text-xl sm:text-2xl font-semibold">

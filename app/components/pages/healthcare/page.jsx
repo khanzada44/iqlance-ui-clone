@@ -248,138 +248,138 @@ export default function HeroQuoteSection() {
                   </p>
 
                   {/* Form Inputs */}
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name*"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email*"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone*"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <textarea
+                      name="message"
+                      rows={3}
+                      placeholder="Write here Brief about the project..."
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                    />
+                  </div>
+
+                  {/* File Upload */}
+                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
+                      <Paperclip className="w-4 h-4 text-black" />
+                      <span>Upload file:</span>
                       <input
-                        type="text"
-                        name="name"
-                        placeholder="Name*"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        type="file"
+                        onChange={handleFileChange}
+                        className="hidden"
                       />
-                    </div>
+                    </label>
+                    <span className="text-gray-500 truncate max-w-45">
+                      {formData.file ? formData.file.name : "No file chosen."}
+                    </span>
+                  </div>
 
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email*"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
+                  {/* Checkbox */}
+                  <div className="flex items-center gap-2 pt-1">
+                    <input
+                      type="checkbox"
+                      id="nda"
+                      checked={formData.sendNda}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          sendNda: e.target.checked,
+                        }))
+                      }
+                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                    />
+                    <label
+                      htmlFor="nda"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
+                    >
+                      Please Send NDA
+                    </label>
+                  </div>
 
-                    <div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone*"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
+                  {statusMessage.text && (
+                    <div
+                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                        ? "bg-green-100 border border-green-400 text-green-800"
+                        : "bg-red-100 border border-red-400 text-red-800"
+                        }`}
+                    >
+                      {statusMessage.text}
                     </div>
-
-                    <div>
-                      <textarea
-                        name="message"
-                        rows={3}
-                        placeholder="Write here Brief about the project..."
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
-                      />
-                    </div>
-
-                    {/* File Upload */}
-                    <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
-                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
-                        <Paperclip className="w-4 h-4 text-black" />
-                        <span>Upload file:</span>
-                        <input
-                          type="file"
-                          onChange={handleFileChange}
-                          className="hidden"
-                        />
-                      </label>
-                      <span className="text-gray-500 truncate max-w-45">
-                        {formData.file ? formData.file.name : "No file chosen."}
-                      </span>
-                    </div>
-
-                    {/* Checkbox */}
-                    <div className="flex items-center gap-2 pt-1">
-                      <input
-                        type="checkbox"
-                        id="nda"
-                        checked={formData.sendNda}
-                        onChange={(e) =>
-                          setFormData((prev) => ({
-                            ...prev,
-                            sendNda: e.target.checked,
-                          }))
-                        }
-                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
-                      />
-                      <label
-                        htmlFor="nda"
-                        className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
-                      >
-                        Please Send NDA
-                      </label>
-                    </div>
-
-                    {statusMessage.text && (
-                      <div
-                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
-                          ? "bg-green-100 border border-green-400 text-green-800"
-                          : "bg-red-100 border border-red-400 text-red-800"
-                          }`}
-                      >
-                        {statusMessage.text}
-                      </div>
-                    )}
-                    <div className="pt-2">
-                      <button
-                        type="submit"
-                        disabled={loading}
-                        className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
-                      >
-                        {loading ? (
-                          <span className="flex items-center gap-2">
-                            <svg
-                              className="animate-spin h-4 w-4 text-white"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                            >
-                              <circle
-                                className="opacity-25"
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="currentColor"
-                                strokeWidth="4"
-                              ></circle>
-                              <path
-                                className="opacity-75"
-                                fill="currentColor"
-                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                              ></path>
-                            </svg>
-                            Sending...
-                          </span>
-                        ) : (
-                          "Schedule a free consultation"
-                        )}
-                      </button>
-                    </div>
-                  </form>
+                  )}
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {loading ? (
+                        <span className="flex items-center gap-2">
+                          <svg
+                            className="animate-spin h-4 w-4 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        "Schedule a free consultation"
+                      )}
+                    </button>
+                  </div>
+                </form>
                 </div>
               </div>
             </div>
@@ -1071,15 +1071,15 @@ export default function HeroQuoteSection() {
           <div >
             <img src="/images/healthcare-app-built.jpg" alt="" />
             <div className="mt-10">
-            <h1 className="mt-5 flex justify-center font-bold text-3xl">
-              Endeavors That Make Us Proud
-            </h1>
-            <p className="text-center text-black text-lg max-w-1xl mx-auto p-4">
-              Devapp solutions has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
-            </p>
+              <h1 className="mt-5 flex justify-center font-bold text-3xl">
+                Endeavors That Make Us Proud
+              </h1>
+              <p className="text-center text-black text-lg max-w-1xl mx-auto p-4">
+                Devapp solutions has always been honored with valuable words for
+                the efforts given on mobile app development that are efficiently
+                unique and user centric. Here are some of the best examples for
+                this.
+              </p>
             </div>
 
           </div>
@@ -1105,7 +1105,7 @@ export default function HeroQuoteSection() {
               spaceBetween={0}
               loop={true}
               autoplay={{
-                delay: 30000,
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               pagination={{
@@ -1116,7 +1116,7 @@ export default function HeroQuoteSection() {
                 <SwiperSlide key={index} className="h-auto!">
                   <div
                     className="bg-red-50 h-full px-6 py-10 flex items-center"
-                    
+
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 w-full">
                       {/* Left */}

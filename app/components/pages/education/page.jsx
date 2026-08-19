@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef,useState } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -15,6 +15,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { submitContactForm } from "@/services/send-call-request";
 import {
   bottomFeatures,
   slides,
@@ -33,19 +34,29 @@ import {
 import Image from "next/image";
 
 export default function elearning() {
+
   const [activeTab, setActiveTab] = useState("driver");
-  const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
-  // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
-  // Form State
+  const [activetechnologies, setActivetechnologies] = useState(0);
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
+
+  // ADD THIS LINE: formData state yahan add karein
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
+    service: "",
+    service_category: "",
     file: null,
     sendNda: false,
   });
+
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+
+  const [blogs, setBlogs] = useState([]);
+  const fileInputRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -58,9 +69,66 @@ export default function elearning() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    setLoading(true);
+    setStatusMessage({ type: "", text: "" });
+
+    try {
+      const payload = new FormData();
+      payload.append("name", formData.name || "");
+      payload.append("email", formData.email || "");
+      payload.append("phone", formData.phone || "");
+      payload.append("message", formData.message || "");
+      payload.append("is_nda", formData.sendNda ? "1" : "0");
+      payload.append("service", formData.service || "");
+      payload.append("service_category", formData.service_category || "");
+
+      // File ko tabhi payload me append karein jab ye valid File instance ho
+      if (formData.file && formData.file instanceof File) {
+        payload.append("file", formData.file);
+      }
+
+      await submitContactForm(payload);
+
+      setStatusMessage({
+        type: "success",
+        text: "Your message has been sent successfully!",
+      });
+
+      // Reset Form State
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        service: "",
+        service_category: "",
+        file: null,
+        sendNda: false,
+      });
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error("API Error Response:", error?.response?.data);
+
+      // Backend Error response handling
+      let errorMsg = "Failed to send message. Please try again later.";
+      if (error?.response?.data?.errors?.file) {
+        errorMsg = error.response.data.errors.file.join(" ");
+      } else if (error?.response?.data?.message) {
+        errorMsg = error.response.data.message;
+      }
+
+      setStatusMessage({
+        type: "error",
+        text: errorMsg,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -221,9 +289,9 @@ export default function elearning() {
                   </div>
 
                   {/* File Upload */}
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         type="file"
@@ -248,23 +316,59 @@ export default function elearning() {
                           sendNda: e.target.checked,
                         }))
                       }
-                      className="w-4 h-4  text-red-600 border-red-300 focus:border-red-600focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
                     >
                       Please Send NDA
                     </label>
                   </div>
 
-                  {/* Submit Button */}
+                  {statusMessage.text && (
+                    <div
+                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                        ? "bg-green-100 border border-green-400 text-green-800"
+                        : "bg-red-100 border border-red-400 text-red-800"
+                        }`}
+                    >
+                      {statusMessage.text}
+                    </div>
+                  )}
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6  transition-colors shadow flex items-center justify-center cursor-pointer"
+                      disabled={loading}
+                      className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Schedule a free consultation
+                      {loading ? (
+                        <span className="flex items-center gap-2">
+                          <svg
+                            className="animate-spin h-4 w-4 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        "Schedule a free consultation"
+                      )}
                     </button>
                   </div>
                 </form>
@@ -346,7 +450,7 @@ export default function elearning() {
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">Immersive Mobile Learning & Teaching</h2>
           <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">We create mobile learning experiences that make education more interactive, accessible, and engaging. Our education app developers build platforms that support live classes, on-demand audio, video lessons, and digital learning resources, giving students and educators the flexibility to learn and teach from anywhere.
-</p>
+          </p>
         </div>
         <section className="py-10">
           <style>{`
@@ -367,7 +471,7 @@ export default function elearning() {
               spaceBetween={0}
               loop={true}
               autoplay={{
-                delay: 30000,
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               pagination={{
@@ -764,7 +868,7 @@ export default function elearning() {
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
-               Share your requirements with our team, and let’s turn your property-tech concept into a product users can actually rely on.
+                Share your requirements with our team, and let’s turn your property-tech concept into a product users can actually rely on.
               </p>
 
               {/* Contact Box */}
@@ -831,33 +935,33 @@ export default function elearning() {
             </div>
 
             {/* Right Content Side */}
-          <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-              Experienced Developers for Real Estate Apps That Mean Business
-            </h2>
+            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                Experienced Developers for Real Estate Apps That Mean Business
+              </h2>
 
-            <p>
-              Real estate platforms come with their own set of challenges, from
-              handling large property databases and location-based searches to creating
-              smooth experiences for multiple types of users. Our experienced
-              developers understand these requirements and build applications with
-              both the business and the end user in mind.
-            </p>
+              <p>
+                Real estate platforms come with their own set of challenges, from
+                handling large property databases and location-based searches to creating
+                smooth experiences for multiple types of users. Our experienced
+                developers understand these requirements and build applications with
+                both the business and the end user in mind.
+              </p>
 
-            <p>
-              We work with modern technologies to develop property marketplaces, real
-              estate listing apps, agent platforms, and custom solutions tailored to
-              specific business models. Every part of the product, from the user
-              interface to the underlying architecture, is planned to support
-              performance, security, and future growth.
-            </p>
+              <p>
+                We work with modern technologies to develop property marketplaces, real
+                estate listing apps, agent platforms, and custom solutions tailored to
+                specific business models. Every part of the product, from the user
+                interface to the underlying architecture, is planned to support
+                performance, security, and future growth.
+              </p>
 
-            <p>
-              Whether you’re launching your first property app or improving an existing
-              platform, we bring the technical expertise and product-focused approach
-              needed to turn your requirements into a reliable digital experience.
-            </p>
-          </div>
+              <p>
+                Whether you’re launching your first property app or improving an existing
+                platform, we bring the technical expertise and product-focused approach
+                needed to turn your requirements into a reliable digital experience.
+              </p>
+            </div>
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
@@ -908,33 +1012,33 @@ export default function elearning() {
           </div>
 
           {/* Success Stories Heading Section */}
-        <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-            How Much Does It Cost to Develop a education App?
-          </h2>
+          <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+              How Much Does It Cost to Develop a education App?
+            </h2>
 
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            There’s no fixed price for building a education app because every
-            project comes with different goals, features, and technical requirements.
-            A basic property listing app will naturally require a different
-            investment than a full marketplace with advanced search, maps, agent
-            dashboards, messaging, payments, and other complex functionality.
-          </p>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              There’s no fixed price for building a education app because every
+              project comes with different goals, features, and technical requirements.
+              A basic property listing app will naturally require a different
+              investment than a full marketplace with advanced search, maps, agent
+              dashboards, messaging, payments, and other complex functionality.
+            </p>
 
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            The final development cost can also vary depending on your choice of
-            platform, design requirements, third-party integrations, backend
-            infrastructure, and the level of customization your product needs.
-            Defining these requirements early helps you prioritize the features that
-            matter most to your users and business.
-          </p>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              The final development cost can also vary depending on your choice of
+              platform, design requirements, third-party integrations, backend
+              infrastructure, and the level of customization your product needs.
+              Defining these requirements early helps you prioritize the features that
+              matter most to your users and business.
+            </p>
 
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Want to know what your real estate app could cost? Tell us what you’re
-            planning to build, and our experts will help you determine the right
-            development scope and budget for your project.
-          </p>
-        </div>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              Want to know what your real estate app could cost? Tell us what you’re
+              planning to build, and our experts will help you determine the right
+              development scope and budget for your project.
+            </p>
+          </div>
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           {/* Top CTA Banner Box */}

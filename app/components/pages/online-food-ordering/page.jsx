@@ -542,7 +542,7 @@ export default function fitness() {
           <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
+            autoplay={{ delay: 3000 }}
             loop={true}
           >
             {portfolioSlides.map((slide, index) => (

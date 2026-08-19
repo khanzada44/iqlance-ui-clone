@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import ContactForm from "../../contactForm/ContactForm";
-import { faqsData } from "../faqs/data";
+// import { faqsData } from "../faqs/data";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { stats, partners } from "../../../../utils/data";
+import { stats, partners ,faqsData } from "../../../../utils/data";
 import Link from "next/link";
 import Image from "next/image";
 

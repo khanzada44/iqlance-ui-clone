@@ -4,7 +4,7 @@ export const footerNavigation = [
   { label: 'Industry', href: '/industry' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Our Work', href: '/work' },
-  { label: 'Blog', href: '/blog' },
+  // { label: 'Blog', href: '/blog' },
 ];
 
 export const footerColumns = [

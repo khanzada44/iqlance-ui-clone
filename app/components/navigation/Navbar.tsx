@@ -264,23 +264,25 @@ export default function Navbar() {
         />
 
         {/* CTA Button */}
-        <Link
-          href="/request-a-quote"
-          className="flex items-center gap-1.5 bg-red-700 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-red-600 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm lg:flex lg:px-5 lg:py-2.5"
-        >
-          Enquire Now
-          <ArrowRight size={16} className="hidden sm:block" />
+        
+        <Link href="/request-a-quote">
+          <button className="flex items-center gap-1.5 bg-red-700 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-red-600 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm lg:flex lg:px-5 lg:py-2.5 group w-full justify-center cursor-pointer whitespace-nowrap">
+            Enquire Now
+            <ArrowRight
+              size={18}
+              className="transition-transform duration-300 group-hover:translate-x-1 shrink-0"
+            />
+          </button>
         </Link>
       </div>
 
       {/* Services Mega Dropdown — hamesha DOM mein rehta hai, sirf class se animate hota hai */}
       {servicesData.categories.length > 0 && selectedCategory && (
         <div
-          className={`absolute left-0 top-full z-50 w-full pt-1 transition-all duration-300 ease-out ${
-            isDropdownVisible
+          className={`absolute left-0 top-full z-50 w-full pt-1 transition-all duration-300 ease-out ${isDropdownVisible
               ? "opacity-100 translate-y-0 pointer-events-auto"
               : "opacity-0 -translate-y-2 pointer-events-none"
-          }`}
+            }`}
         >
           <ServicesMegaDropdown
             servicesData={servicesData}

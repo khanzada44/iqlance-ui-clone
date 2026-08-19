@@ -984,7 +984,7 @@ export default function Logistic() {
             <Swiper
               modules={[Pagination, Autoplay]}
               pagination={{ clickable: true }}
-              autoplay={{ delay: 300000 }}
+              autoplay={{ delay: 3000 }}
               loop={true}
               className="portfolio-swiper w-full h-162.5 sm:h-150 pb-12 [&_.swiper-slide]:h-full!"
             >

@@ -277,7 +277,7 @@ export default function Service() {
                 {/* Bottom Image Banner */}
                 <div className="mt-12 w-full">
                     <img
-                        src="/images/get-Devapp-service.jpg"
+                        src="/images/get-iqlance-service.jpg"
                         alt="Devapp Services Teamwork"
                         className="w-full h-auto object-cover shadow-sm"
                     />

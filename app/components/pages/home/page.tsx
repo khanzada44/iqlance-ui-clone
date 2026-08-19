@@ -398,7 +398,7 @@ export default function Home() {
               clickable: true,
             }}
             autoplay={{
-              delay: 300000,
+              delay: 3000,
             }}
             loop={true}
           >
@@ -489,13 +489,13 @@ export default function Home() {
         </div>
 
         <div className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 ">
             {/* IMAGE */}
             <div className="flex justify-center">
               <img
-                src="/images/travis_h.png"
+                src="/images/travis_h.jpg"
                 alt="Travis H"
-                className="w-48 sm:w-64 md:w-72 lg:w-85 object-contain"
+                className=" object-cover"
               />
             </div>
 
@@ -632,7 +632,7 @@ export default function Home() {
               clickable: true,
             }}
             autoplay={{
-              delay: 300000,
+              delay: 3000,
               disableOnInteraction: false,
             }}
             loop={true}
@@ -689,18 +689,16 @@ export default function Home() {
                           </div>
                         ))}
                       </div>
-
-                      {/* BUTTON */}
-                      <button
-                        type="button"
+                      <Link
+                        href="/portfolio"
                         className="group flex w-full items-center justify-center gap-3 bg-red-700 px-8 py-4 font-semibold text-white transition hover:bg-red-600 sm:w-fit"
                       >
                         View Case Study
                         <ArrowRight
                           size={18}
-                          className="transition-transform duration-300 group-hover:translate-x-1"
+                          className="transition-transform duration-300 group-hover:translate-x-2"
                         />
-                      </button>
+                      </Link>
                     </div>
 
                     {/* RIGHT */}
@@ -1345,7 +1343,7 @@ export default function Home() {
                 companies in the industry.
               </p>
 
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex justify-center lg:justify-start mt-8">
                 <Link
                   href="/lets-talk"
                   className="group mt-6 sm:mt-8 bg-red-700 text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-red-600 transition w-full sm:w-auto"
@@ -1462,7 +1460,7 @@ export default function Home() {
         </section>
 
         {/* BLOGS */}
-        <div className="px-3 mt-10">
+        {/* <div className="px-3 mt-10">
           <h1 className="flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight text-center">
             Insights and News
           </h1>
@@ -1470,9 +1468,9 @@ export default function Home() {
             Stay updated with the current trends, latest tools and technologies,
             and industrial concepts to get an in-depth idea of your project.
           </p>
-        </div>
+        </div> */}
 
-        <section className="py-10 sm:py-20 bg-white">
+        {/* <section className="py-10 sm:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-3 sm:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {blogs.map((blog, index) => (
@@ -1512,7 +1510,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CONTACT */}
         <div className="mt-2 px-3">

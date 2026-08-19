@@ -52,7 +52,7 @@ export default function testimonials() {
               {/* See Our Work Link */}
               <Link
                 href="/portfolio"
-                className="group w-full sm:w-auto border border-red-600 hover:border-red-800 hover:text-red-600 text-black font-semibold px-8 py-4  transition flex items-center justify-center gap-3"
+                className="group w-full sm:w-auto border border-red-200 hover:border-red-800 text-black font-semibold px-8 py-4  transition flex items-center justify-center gap-3"
               >
                 See Our Work
                 <ArrowRight

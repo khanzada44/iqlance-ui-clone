@@ -66,8 +66,8 @@ export default function career() {
               {careerLinks.map((item) => (
                 <Link
                   key={item}
-                  href="#"
-                  className="flex items-center gap-3 text-xl font-semibold hover:text-[#2F69C9] transition"
+                  href="/services"
+                  className="flex items-center gap-3 text-xl font-semibold transition"
                 >
                   <ChevronRight size={18} />
                   {item}

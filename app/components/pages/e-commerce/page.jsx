@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, params } from "react";
+import { useRef ,useState, useEffect, params } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -11,6 +11,7 @@ import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
+import { submitContactForm } from "@/services/send-call-request";
 import { portfolioSubCategories } from "../../../../services/all-sub-categories"
 import "swiper/css";
 import "swiper/css/navigation";
@@ -41,15 +42,24 @@ export default function foodOrdering() {
   const [open, setOpen] = useState(-1);
   const [activeTab, setActiveTab] = useState("customer");
   const [portfolios, setPortfolios] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
+
+  // ADD THIS LINE: formData state yahan add karein
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
+    service: "",
+    service_category: "",
     file: null,
     sendNda: false,
   });
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+
+  const [blogs, setBlogs] = useState([]);
+  const fileInputRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,43 +72,67 @@ export default function foodOrdering() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-  };
-  useEffect(() => {
-    const fetchPortfolioData = async () => {
-      try {
-        setLoading(true);
-        const selectedId = localStorage.getItem('selectedCategoryId');
+    setLoading(true);
+    setStatusMessage({ type: "", text: "" });
 
-        const res = await portfolioSubCategories(selectedId);
+    try {
+      const payload = new FormData();
+      payload.append("name", formData.name || "");
+      payload.append("email", formData.email || "");
+      payload.append("phone", formData.phone || "");
+      payload.append("message", formData.message || "");
+      payload.append("is_nda", formData.sendNda ? "1" : "0");
+      payload.append("service", formData.service || "");
+      payload.append("service_category", formData.service_category || "");
 
-        // Exact API structure mapping: res.response.data ya res.data.response.data
-        const rawList = res?.response?.data || res?.data?.response?.data || [];
-
-        // Single map function to clean objects for PortfolioSlider
-        const formattedData = rawList.map((item, index) => ({
-          id: item.slug || index,
-          title: item.title,
-          slug: item.slug,
-          description: item.description,
-          image: item.image_url || item.image,
-          heading: "",
-          features: item.features || [],
-          technologies: item.technologies || [],
-        }));
-
-        setPortfolios(formattedData);
-      } catch (error) {
-        console.error('Error fetching portfolios:', error);
-      } finally {
-        setLoading(false);
+      // File ko tabhi payload me append karein jab ye valid File instance ho
+      if (formData.file && formData.file instanceof File) {
+        payload.append("file", formData.file);
       }
-    };
 
-    fetchPortfolioData();
-  }, [params?.slug]);
+      await submitContactForm(payload);
+
+      setStatusMessage({
+        type: "success",
+        text: "Your message has been sent successfully!",
+      });
+
+      // Reset Form State
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        service: "",
+        service_category: "",
+        file: null,
+        sendNda: false,
+      });
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error("API Error Response:", error?.response?.data);
+
+      // Backend Error response handling
+      let errorMsg = "Failed to send message. Please try again later.";
+      if (error?.response?.data?.errors?.file) {
+        errorMsg = error.response.data.errors.file.join(" ");
+      } else if (error?.response?.data?.message) {
+        errorMsg = error.response.data.message;
+      }
+
+      setStatusMessage({
+        type: "error",
+        text: errorMsg,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -219,9 +253,9 @@ export default function foodOrdering() {
                   </div>
 
                   {/* File Upload */}
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         type="file"
@@ -246,23 +280,59 @@ export default function foodOrdering() {
                           sendNda: e.target.checked,
                         }))
                       }
-                      className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 accent-gray-600 cursor-pointer"
+                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
                     >
                       Please Send NDA
                     </label>
                   </div>
 
-                  {/* Submit Button */}
+                  {statusMessage.text && (
+                    <div
+                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                        ? "bg-green-100 border border-green-400 text-green-800"
+                        : "bg-red-100 border border-red-400 text-red-800"
+                        }`}
+                    >
+                      {statusMessage.text}
+                    </div>
+                  )}
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6  transition-colors shadow flex items-center justify-center cursor-pointer"
+                      disabled={loading}
+                      className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Schedule a free consultation
+                      {loading ? (
+                        <span className="flex items-center gap-2">
+                          <svg
+                            className="animate-spin h-4 w-4 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        "Schedule a free consultation"
+                      )}
                     </button>
                   </div>
                 </form>
@@ -364,7 +434,7 @@ export default function foodOrdering() {
               spaceBetween={0}
               loop={true}
               autoplay={{
-                delay: 30000,
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               pagination={{

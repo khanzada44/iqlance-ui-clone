@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -8,6 +8,7 @@ import {
   Paperclip,
 } from "lucide-react";
 import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
+import { submitContactForm } from "@/services/send-call-request";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
@@ -36,33 +37,168 @@ export default function realEstate() {
   const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
-  // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
-  // Form State
+  const fileInputRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
+    service: "",
+    service_category: "",
     file: null,
     sendNda: false,
   });
 
+  const [loading, setLoading] = useState(false);
+
+  const [statusMessage, setStatusMessage] = useState({
+    type: "",
+    text: "",
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
+
 
   const handleFileChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
+    const file = e.target.files?.[0] || null;
+
+    setFormData((prev) => ({
+      ...prev,
+      file,
+    }));
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log("FORM SUBMITTED");
+    console.log("FORM DATA:", formData);
+
+    setLoading(true);
+
+    setStatusMessage({
+      type: "",
+      text: "",
+    });
+
+    try {
+      // --------------------------------
+      // CREATE FORMDATA
+      // --------------------------------
+
+      const payload = new FormData();
+
+      payload.append("name", formData.name.trim());
+      payload.append("email", formData.email.trim());
+      payload.append("phone", formData.phone.trim());
+      payload.append("message", formData.message.trim());
+
+      payload.append(
+        "is_nda",
+        formData.sendNda ? "1" : "0"
+      );
+
+      payload.append(
+        "service",
+        formData.service || ""
+      );
+
+      payload.append(
+        "service_category",
+        formData.service_category || ""
+      );
+
+      // --------------------------------
+      // FILE
+      // --------------------------------
+
+      if (formData.file instanceof File) {
+        payload.append("file", formData.file);
+      }
+
+      // --------------------------------
+      // DEBUG PAYLOAD
+      // --------------------------------
+
+      console.log("FORM PAYLOAD:");
+
+      for (const [key, value] of payload.entries()) {
+        console.log(key, value);
+      }
+
+      // --------------------------------
+      // API CALL
+      // --------------------------------
+
+      const response = await submitContactForm(payload);
+
+      console.log("API SUCCESS:", response);
+
+      // --------------------------------
+      // SUCCESS MESSAGE
+      // --------------------------------
+
+      setStatusMessage({
+        type: "success",
+        text: "Your message has been sent successfully!",
+      });
+
+      // --------------------------------
+      // RESET FORM
+      // --------------------------------
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        service: "",
+        service_category: "",
+        file: null,
+        sendNda: false,
+      });
+
+      // Clear file input
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error("API ERROR:", error);
+      console.error(
+        "API RESPONSE:",
+        error?.response?.data
+      );
+
+      let errorMessage =
+        "Failed to send message. Please try again later.";
+
+      if (error?.response?.data?.errors?.file) {
+        errorMessage =
+          error.response.data.errors.file.join(" ");
+      } else if (error?.response?.data?.message) {
+        errorMessage =
+          error.response.data.message;
+      } else if (error?.message) {
+        errorMessage = error.message;
+      }
+
+      setStatusMessage({
+        type: "error",
+        text: errorMessage,
+      });
+    } finally {
+      setLoading(false);
     }
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Submitted:", formData);
-  };
-
   return (
     <>
       <div className="w-full max-w-7xl mx-auto">
@@ -128,8 +264,6 @@ export default function realEstate() {
                 <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
-
-                {/* Form Inputs */}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <input
@@ -179,9 +313,9 @@ export default function realEstate() {
                   </div>
 
                   {/* File Upload */}
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         type="file"
@@ -210,19 +344,55 @@ export default function realEstate() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
                     >
                       Please Send NDA
                     </label>
                   </div>
 
-                  {/* Submit Button */}
+                  {statusMessage.text && (
+                    <div
+                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                        ? "bg-green-100 border border-green-400 text-green-800"
+                        : "bg-red-100 border border-red-400 text-red-800"
+                        }`}
+                    >
+                      {statusMessage.text}
+                    </div>
+                  )}
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6  transition-colors shadow flex items-center justify-center cursor-pointer"
+                      disabled={loading}
+                      className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Schedule a free consultation
+                      {loading ? (
+                        <span className="flex items-center gap-2">
+                          <svg
+                            className="animate-spin h-4 w-4 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        "Schedule a free consultation"
+                      )}
                     </button>
                   </div>
                 </form>
@@ -1097,8 +1267,8 @@ export default function realEstate() {
                     key={index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                        ? "text-red-600 font-semibold"
-                        : "text-gray-500 hover:text-red-600"
+                      ? "text-red-600 font-semibold"
+                      : "text-gray-500 hover:text-red-600"
                       }`}
                   >
                     {tab.category}
@@ -1482,8 +1652,8 @@ export default function realEstate() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                        ? "border-gray-200 shadow-md"
-                        : "border-gray-200 hover:border-gray-300"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-gray-300"
                       }`}
                   >
                     {/* Question */}
@@ -1497,8 +1667,8 @@ export default function realEstate() {
 
                       <ChevronDown
                         className={`w-5 h-5 transition-transform duration-300 ${open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
                           }`}
                       />
                     </button>
@@ -1506,8 +1676,8 @@ export default function realEstate() {
                     {/* Answer */}
                     <div
                       className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
                         }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">

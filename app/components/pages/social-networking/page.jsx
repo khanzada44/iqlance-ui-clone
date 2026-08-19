@@ -616,88 +616,71 @@ export default function SocialMedia() {
             </p>
           </div>
         </section>
-        <section>
-          <style>{`
-            .portfolio-swiper .swiper-pagination-bullet {
-              background-color: #cbd5e1 !important;
-              opacity: 1 !important;
-            }
-            .portfolio-swiper .swiper-pagination-bullet-active {
-              background-color: #dc2626 !important; /* Red color */
-            }
-          `}</style>
-          <Swiper
-            className="portfolio-swiper"
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
-            loop={true}
-          >
-            {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index} className="h-auto!">
-                <div className="bg-red-50 px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between">
-                  <div>
-                    <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
-                      {slide.heading}
-                    </h2>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                      <div>
-                        <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-                          {slide.title}
-                        </h3>
-
-                        <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
-                          {slide.description}
-                        </p>
-
-                        <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
-                          {slide.features.map((feature, i) => (
-                            <li key={i} className="flex items-center gap-2">
-                              <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[3.5]" />{" "}
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
-                          {slide.technologies.map((tech, i) => (
-                            <div key={i} className="text-center">
-                              <img
-                                src={tech.icon}
-                                alt={tech.name}
-                                className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
-                              />
-                              <p className="text-xs sm:text-sm mt-2">
-                                {tech.name}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-
-                        <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
-                          View Case Study
-                          <ArrowRight
-                            size={20}
-                            className="transition-transform duration-300 group-hover:translate-x-1"
-                          />
-                        </button>
-                      </div>
-
-                      <div className="flex justify-center">
+          <section className="py-10">
+            <div className="mx-auto max-w-7xl">
+              <Swiper
+                className="portfolio-swiper"
+                modules={[Pagination, Autoplay]}
+                slidesPerView={1}
+                spaceBetween={0}
+                loop={true}
+                autoplay={{
+                  delay: 30000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+              >
+                {slides.map((slide) => (
+                  <SwiperSlide key={slide.id}>
+                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                      <div className="w-full lg:w-1/2">
                         <img
                           src={slide.image}
                           alt={slide.title}
-                          className=""
+                          className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
                         />
                       </div>
+
+                      <div className="w-full lg:w-1/2">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
+                          {slide.title}
+                        </h2>
+
+                        <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                          {slide.description}
+                        </p>
+
+                        <div className="space-y-3 lg:space-y-4">
+                          {slide.points.map((point, index) => (
+                            <div
+                              key={index}
+                              className="flex gap-3 items-baseline"
+                            >
+                              <ChevronRight size={18} />
+                              <span>{point}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </section>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+
+            <style>{`
+              .portfolio-swiper .swiper-pagination-bullet {
+                background-color: #cbd5e1 !important;
+                opacity: 1 !important;
+              }
+
+              .portfolio-swiper .swiper-pagination-bullet-active {
+                background-color: #dc2626 !important;
+              }
+            `}</style>
+          </section>
 
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
           {/* Top CTA Banner Box */}

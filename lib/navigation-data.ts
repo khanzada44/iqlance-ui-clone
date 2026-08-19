@@ -50,7 +50,7 @@ export const navLinks: NavLink[] = [
     ],
   },
   { label: "Our Work", href: "/portfolio" },
-  { label: "Blog", href: "/blog" },
+  // { label: "Blog", href: "/blog" },
 
 ];
 

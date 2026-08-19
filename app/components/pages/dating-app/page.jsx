@@ -187,7 +187,7 @@ export default function SocialMedia() {
 
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
@@ -280,8 +280,8 @@ export default function SocialMedia() {
                 {statusMessage.text && (
                   <p
                     className={`text-xs text-center font-semibold ${statusMessage.type === "success"
-                        ? "text-green-600"
-                        : "text-red-600"
+                      ? "text-green-600"
+                      : "text-red-600"
                       }`}
                   >
                     {statusMessage.text}
@@ -536,7 +536,7 @@ export default function SocialMedia() {
               loop={true}
               className="portfolio-slider"
               autoplay={{
-                delay: 30000,
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               pagination={{
@@ -711,9 +711,9 @@ export default function SocialMedia() {
               Essential Features for a Modern Dating App
             </h2>
             <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
-             Great dating apps make it easy to discover people, express interest, start conversations,
-            and build meaningful connections. We combine the essential functionality users expect with carefully selected features that
-            support engagement, trust, personalization, and long-term platform growth.
+              Great dating apps make it easy to discover people, express interest, start conversations,
+              and build meaningful connections. We combine the essential functionality users expect with carefully selected features that
+              support engagement, trust, personalization, and long-term platform growth.
             </p>
           </div>
         </section>
@@ -728,8 +728,8 @@ export default function SocialMedia() {
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`relative pb-3 text-base md:text-lg transition-colors duration-200 ${isActive
-                        ? "text-red-600 font-semibold"
-                        : "text-gray-500 hover:text-red-700 font-normal cursor-pointer"
+                      ? "text-red-600 font-semibold"
+                      : "text-gray-500 hover:text-red-700 font-normal cursor-pointer"
                       }`}
                   >
                     {tab.label}
@@ -850,75 +850,75 @@ export default function SocialMedia() {
             </div>
 
             <div className="space-y-4 text-left">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-black">
-              Hire Top Dating App Developers in the USA
-            </h2>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-black">
+                Hire Top Dating App Developers in the USA
+              </h2>
 
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-              As a leading dating app development company in the USA, we bring
-              top-tier talent and years of hands-on experience to every project,
-              delivering cutting-edge dating app solutions built to perform. We
-              specialize in crafting modern, feature-rich dating apps that stand out
-              in a crowded market and stay true to your brand&apos;s vision.
-            </p>
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                As a leading dating app development company in the USA, we bring
+                top-tier talent and years of hands-on experience to every project,
+                delivering cutting-edge dating app solutions built to perform. We
+                specialize in crafting modern, feature-rich dating apps that stand out
+                in a crowded market and stay true to your brand&apos;s vision.
+              </p>
 
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-              Our experienced developers study user behavior and industry trends before
-              a single line of code gets written. We combine strong functionality with
-              fresh innovation to create seamless, intuitive, and genuinely engaging
-              experiences for every user.
-            </p>
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                Our experienced developers study user behavior and industry trends before
+                a single line of code gets written. We combine strong functionality with
+                fresh innovation to create seamless, intuitive, and genuinely engaging
+                experiences for every user.
+              </p>
 
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-              Partner with the best custom dating app developers in the USA and get a
-              secure, scalable platform built around your users. Whether you&apos;re
-              starting from scratch or scaling an existing app, we deliver tailored
-              solutions designed to improve performance, strengthen user engagement,
-              and help your dating platform compete effectively in the market.
-            </p>
-          </div>
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                Partner with the best custom dating app developers in the USA and get a
+                secure, scalable platform built around your users. Whether you&apos;re
+                starting from scratch or scaling an existing app, we deliver tailored
+                solutions designed to improve performance, strengthen user engagement,
+                and help your dating platform compete effectively in the market.
+              </p>
+            </div>
           </div>
 
           <div className="text-center max-w-6xl mx-auto space-y-6">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-black">
-            Cost To Hire a Custom Dating App Development Company
-          </h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-black">
+              Cost To Hire a Custom Dating App Development Company
+            </h2>
 
-          <div className="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed">
-            <p>
-              Dating app development costs vary based on several factors, including
-              app complexity, feature set, platform choice (Android, iOS, or both),
-              and your chosen tech stack. Adding AI or AR integration will increase
-              the investment. Custom UI/UX design, backend scalability, and advanced
-              privacy and security measures can also add to the cost, as these
-              require deeper engineering effort.
-            </p>
+            <div className="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed">
+              <p>
+                Dating app development costs vary based on several factors, including
+                app complexity, feature set, platform choice (Android, iOS, or both),
+                and your chosen tech stack. Adding AI or AR integration will increase
+                the investment. Custom UI/UX design, backend scalability, and advanced
+                privacy and security measures can also add to the cost, as these
+                require deeper engineering effort.
+              </p>
 
-            <p>
-              We offer flexible engagement models built for startups, mid-sized
-              businesses, and enterprise clients alike. Our pricing is transparent,
-              competitive, and value-driven, so you can choose the model that fits
-              your business needs and development requirements.
-            </p>
+              <p>
+                We offer flexible engagement models built for startups, mid-sized
+                businesses, and enterprise clients alike. Our pricing is transparent,
+                competitive, and value-driven, so you can choose the model that fits
+                your business needs and development requirements.
+              </p>
 
-            <p>
-              Our custom dating app development solutions are designed around your
-              specific business goals. We&apos;re committed to delivering a secure,
-              high-performing, and user-friendly dating platform on budget, without
-              ever compromising on quality.
-            </p>
+              <p>
+                Our custom dating app development solutions are designed around your
+                specific business goals. We&apos;re committed to delivering a secure,
+                high-performing, and user-friendly dating platform on budget, without
+                ever compromising on quality.
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="pt-2">
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              >
+                Get a Quote <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
-
-          {/* CTA Button */}
-          <div className="pt-2">
-            <Link
-              href="/lets-talk"
-              className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
-            >
-              Get a Quote <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
 
           {/* Bottom Section: Wide Image Banner + Bottom Text */}
           <div className="space-y-8 text-center">
@@ -957,7 +957,7 @@ export default function SocialMedia() {
           <Swiper
             modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 300000 }}
+            autoplay={{ delay: 3000 }}
             className="portfolio-slider"
             loop={true}
           >
@@ -1067,8 +1067,8 @@ export default function SocialMedia() {
                     key={index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                        ? "text-red-600 font-semibold"
-                        : "text-gray-500 hover:text-red-400"
+                      ? "text-red-600 font-semibold"
+                      : "text-gray-500 hover:text-red-400"
                       }`}
                   >
                     {tab.category}
@@ -1270,15 +1270,15 @@ export default function SocialMedia() {
         <section>
           <div className="text-center max-w-6xl mx-auto space-y-4 mt-10">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-             Why Choose Us for Dating App Development
+              Why Choose Us for Dating App Development
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
-             Building a dating app takes more than matching algorithms and messaging features. 
-             It requires a deep understanding of human behavior, privacy, trust, engagement, 
-             and the moments that turn a simple match into a meaningful connection. We combine 
-             product strategy, thoughtful UX, modern technology, and scalable engineering to create 
-             dating platforms that are 
-             designed to attract users, earn their trust, and keep them coming back.
+              Building a dating app takes more than matching algorithms and messaging features.
+              It requires a deep understanding of human behavior, privacy, trust, engagement,
+              and the moments that turn a simple match into a meaningful connection. We combine
+              product strategy, thoughtful UX, modern technology, and scalable engineering to create
+              dating platforms that are
+              designed to attract users, earn their trust, and keep them coming back.
             </p>
           </div>
         </section>
@@ -1436,8 +1436,8 @@ export default function SocialMedia() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                        ? "border-red-200 shadow-md"
-                        : "border-red-200 hover:border-red-400"
+                      ? "border-red-200 shadow-md"
+                      : "border-red-200 hover:border-red-400"
                       }`}
                   >
                     {/* Question */}
@@ -1451,8 +1451,8 @@ export default function SocialMedia() {
 
                       <ChevronDown
                         className={`w-5 h-5 transition-transform duration-300 ${open === index
-                            ? "rotate-180 text-black"
-                            : "rotate-0 text-black"
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
                           }`}
                       />
                     </button>
@@ -1460,8 +1460,8 @@ export default function SocialMedia() {
                     {/* Answer */}
                     <div
                       className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                          ? "max-h-150 opacity-100"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
                         }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">

@@ -4,8 +4,8 @@ import Image from "next/image"; // Next.js Image Component
 import Link from "next/link";
 import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react"; // Combined Lucide Icons
 import ContactForm from "../../contactForm/ContactForm";
-import { missionData, faqs } from "../about-us/data";
-import { stats, partners } from "../../../../utils/data";
+import { missionData } from "../about-us/data";
+import { stats, partners,faqsData } from "../../../../utils/data";
 
 export default function About() {
   const [open, setOpen] = useState(0);
@@ -358,7 +358,7 @@ export default function About() {
             </div>
             <div className="mt-12">
               <img
-                src="/images/about-us-Devapp.jpg"
+                src="/images/about-us-iqlance.jpg"
                 alt="About Devapp"
                 width={1200}
                 height={500}
@@ -473,7 +473,7 @@ export default function About() {
             </p>
 
             <div className="mt-12 space-y-4">
-              {faqs.map((faq, index) => (
+              {faqsData.map((faq, index) => (
                 <div
                   key={index}
                   className="border border-gray-200 rounded-lg overflow-hidden"
