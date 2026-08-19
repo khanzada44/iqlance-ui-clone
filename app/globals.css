@@ -962,3 +962,561 @@ mark.has-inline-color {
   margin-left: 8px !important;
   line-height: 1.25 !important;
 }
+.processline5{
+  display: none;
+}
+.processline1{
+  display: none;
+}
+.processline2{
+  display: none;
+}
+.processline4{
+  display: none;
+}
+.processline3{
+  display: none;
+}
+.justify-content-center {
+  margin-top: 48px !important;
+}
+
+/* ================= TOP TECH BOX ================= */
+.col-md-12 .mt-iq-20 {
+  width: 90% !important;
+}
+.mt-iq-20 .col-md-6{
+  width: 600px !important;
+}
+.col-md-12  .mt-iq-20 .top-tech-box{
+   width: 600px !important;
+}
+.col-md-12 .top-tech-box{
+    box-sizing: border-box;
+    padding: 0px 12px;
+    margin: 40px 0px 0px;
+    flex: 0 0 auto;
+    width: 725px;
+}
+.top-tech-box {
+  height: 90% !important;
+  width: 100% !important;
+  min-height: 508px;
+  position: relative;
+  background: #fff;
+  border: 2px solid #f0f0f0 !important;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.top-tech-box:hover {
+  border-color: #ff0000 !important;
+  transform: translateY(-5px);
+}
+
+.top-tech-box img {
+  max-width: 80px;
+  height: auto;
+}
+
+.top-tech-box h3 {
+  font-size: 26px;
+  line-height: 34px;
+}
+
+.top-tech-box p {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+
+/* ================= PROCESS BOX ================= */
+
+.processbox {
+  padding: 30px 0 !important;
+  position: relative;
+  background: #fff;
+  border: 1px solid #eeeeee;
+  border-radius: 15px;
+  min-height: 388px;
+  height: auto !important;
+  transition: all 0.3s ease;
+}
+
+.processbox:hover {
+  border-color: #ff0000;
+  transform: translateY(-5px);
+}
+
+.processheading {
+  padding: 20px !important;
+  display: flex;
+  align-items: center;
+}
+
+.processheading span {
+  flex-shrink: 0;
+  margin-right: 15px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.processbox p {
+  padding: 14px 20px !important;
+  margin: 0 !important;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+
+/* ================= CATEGORY LIST ================= */
+
+.folio-categoery ul li {
+  position: relative;
+  padding-left: 30px !important;
+  margin-bottom: 24px !important;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.folio-categoery ul li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  font-size: 28px;
+  color: #000;
+}
+
+
+/* ================= ICON ================= */
+
+.processbox .processheading span {
+  background: #fef2f2 !important;
+  border: 1px solid #d1d5db !important;
+  color: #111827 !important;
+  transition: .3s ease;
+}
+
+.processbox:hover .processheading span {
+  background: #dc2626 !important;
+  color: #fff !important;
+}
+
+.process-icon img {
+  border: 1px solid red !important;
+}
+
+
+/* ================= LARGE TABLET ================= */
+
+@media(max-width: 1024px){
+
+  .top-tech-box {
+    padding: 30px;
+    min-height: 350px;
+  }
+
+  .top-tech-box h3 {
+    font-size: 23px;
+  }
+
+  .top-tech-box p,
+  .processbox p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .processbox {
+    min-height: auto;
+  }
+
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width: 768px){
+
+  .justify-content-center {
+    margin-top: 30px !important;
+  }
+
+
+  .top-tech-box {
+    padding: 25px;
+    min-height: auto;
+  }
+
+
+  .top-tech-box img {
+    width: 65px;
+  }
+
+
+  .top-tech-box h3 {
+    font-size: 21px;
+    line-height: 28px;
+  }
+
+
+  .top-tech-box p {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+
+  .processheading {
+    padding: 15px !important;
+  }
+
+
+  .processheading span {
+    height: 45px;
+    width: 45px;
+  }
+
+
+  .processbox p {
+    padding: 10px 15px !important;
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+
+  .folio-categoery ul li {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 18px !important;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 576px){
+
+  .container-sm {
+    margin-top: 10px !important;
+  }
+
+
+  .top-tech-box {
+    padding: 20px;
+  }
+
+
+  .top-tech-box img {
+    width: 55px;
+  }
+
+
+  .top-tech-box h3 {
+    font-size: 19px;
+    line-height: 26px;
+  }
+
+
+  .top-tech-box p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+
+  .processbox {
+    padding: 15px 0 !important;
+    border-radius: 12px;
+  }
+
+
+  .processheading {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+
+  .processheading span {
+    height: 40px;
+    width: 40px;
+    margin-right: 8px;
+  }
+
+
+  .processbox p {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px !important;
+  }
+
+
+  .process-icon img {
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+}
+/* ================= DEVELOPMENT PROCESS SECTION ================= */
+
+.development-process-section {
+  padding: 60px 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.development-process-section .container-sm {
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 15px;
+  margin: auto;
+}
+
+
+.development-process-section .heading-text {
+  max-width: 900px;
+  margin: auto;
+}
+
+
+.development-process-section .heading-text h2 {
+  font-size: 36px;
+  line-height: 45px;
+  margin-bottom: 15px;
+}
+
+
+.development-process-section .heading-text p {
+  font-size: 20px;
+  line-height: 32px;
+  padding: 0 !important;
+}
+
+
+/* Cards */
+
+.development-process-section .iq-flex {
+  display: flex;
+  margin-bottom: 30px !important;
+}
+
+
+.development-process-section .processbox {
+  width: 100%;
+  min-height: 420px;
+  height: auto !important;
+  padding: 30px 0 !important;
+  border: 1px solid #eeeeee;
+  border-radius: 15px;
+  background: #fff;
+  position: relative;
+  transition: .3s ease;
+}
+
+
+.development-process-section .processbox:hover {
+  border-color: red;
+  transform: translateY(-5px);
+}
+
+
+/* Heading */
+
+.development-process-section .processheading {
+  display: flex;
+  align-items: center;
+  padding: 20px !important;
+}
+
+
+.development-process-section .processheading span {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  border-radius: 0 12px 12px 0;
+}
+
+
+.development-process-section .processheading h5 {
+  font-size: 22px;
+  line-height: 34px;
+  margin: 0;
+}
+
+
+/* Icon */
+
+.development-process-section .process-icon img {
+  width: 90px !important;
+  height: 90px !important;
+  padding: 15px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 15px;
+}
+
+
+/* Text */
+
+.development-process-section .processbox p {
+  padding: 15px 20px !important;
+  margin: 0 !important;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+
+/* Connector Lines */
+
+.development-process-section .line-grey {
+  max-width: 100%;
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:991px){
+
+  .development-process-section {
+    padding:40px 0 !important;
+  }
+
+
+  .development-process-section .heading-text h2 {
+    font-size:30px;
+    line-height:38px;
+  }
+
+
+  .development-process-section .heading-text p {
+    font-size:18px;
+    line-height:28px;
+  }
+
+
+  .development-process-section .processbox {
+    min-height:auto;
+  }
+
+
+  .development-process-section .processbox p {
+    font-size:18px;
+    line-height:28px;
+  }
+
+
+  .processline1,
+  .processline2,
+  .processline3,
+  .processline4,
+  .processline5 {
+    display:none;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:576px){
+
+
+  .development-process-section {
+    padding:30px 0 !important;
+  }
+
+
+  .development-process-section .heading-text h2 {
+    font-size:24px;
+    line-height:32px;
+  }
+
+
+  .development-process-section .heading-text p {
+    font-size:16px;
+    line-height:25px;
+  }
+
+
+  .development-process-section .iq-flex {
+    margin-bottom:20px !important;
+  }
+
+
+  .development-process-section .processbox {
+    padding:20px 0 !important;
+    border-radius:12px;
+  }
+
+
+  .development-process-section .processheading {
+    padding:15px !important;
+    align-items:flex-start;
+  }
+
+
+  .development-process-section .processheading span {
+    width:40px;
+    height:40px;
+    font-size:20px;
+  }
+
+
+  .development-process-section .processheading h5 {
+    font-size:18px;
+    line-height:26px;
+  }
+
+
+  .development-process-section .process-icon img {
+    width:65px !important;
+    height:65px !important;
+    padding:10px;
+  }
+
+
+  .development-process-section .processbox p {
+    font-size:16px;
+    line-height:24px;
+    padding:10px 15px !important;
+  }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:375px){
+
+  .row.mt-iq-40 {
+    display: block !important;
+  }
+
+  .row.mt-iq-40 > .col-md-6 {
+    width: 100% !important;
+  }
+
+}
+@media(max-width: 767px){
+
+  .row.mt-iq-40 {
+    display: block !important;
+  }
+
+  .row.mt-iq-40 > .col-md-6 {
+    width: 100% !important;
+  }
+
+}
+.row .text-center{
+  font-size: 20px;
+}

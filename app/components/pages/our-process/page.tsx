@@ -6,6 +6,7 @@ import Image from "next/image";
 import { processSteps, faqsData } from "../our-process/data";
 import ContactForm from "../../contactForm/ContactForm";
 import { stats, partners } from "../../../../utils/data";
+import { div } from "framer-motion/client";
 
 export default function ourProcess() {
   const [open, setOpen] = useState(-1);

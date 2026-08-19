@@ -290,12 +290,13 @@ export default function ServicesCategory({ slug }) {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-[80%]">
-        <section className="mx-auto w-full max-w-7xl px-6 py-12 md:py-16">
-          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
+      <div className="mx-auto w-full overflow-hidden">
+        <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+          <div className="grid grid-cols-1 items-start gap-6 sm:gap-8 lg:grid-cols-12">
             <div className="space-y-6 lg:col-span-7">
               {/* API DESCRIPTION */}
 
+              {/* DESCRIPTION */}
               {serviceData?.description && (
                 <div
                   className="text-base leading-relaxed text-black md:text-lg"
@@ -304,9 +305,30 @@ export default function ServicesCategory({ slug }) {
                   }}
                 />
               )}
+
+              {/* BUTTONS */}
+              <div className="flex flex-wrap items-center gap-4 pt-6">
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center gap-2 bg-red-700 px-6 py-3 font-semibold text-white shadow-md transition duration-200 hover:bg-red-600"
+                >
+                  Contact Us
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-2 border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-800 shadow-sm transition duration-200 hover:border-gray-400"
+                >
+                  See Our Work
+                  <ArrowRight className="h-4 w-4 text-black" />
+                </Link>
+              </div>
+
+              {/* FEATURES LIST */}
               {serviceData?.content_1 && (
                 <div
-                  className="text-base leading-relaxed text-black md:text-lg"
+                  className="text-base leading-relaxed text-black md:text-lg mt-8"
                   dangerouslySetInnerHTML={{
                     __html: serviceData.content_1,
                   }}
@@ -331,29 +353,6 @@ export default function ServicesCategory({ slug }) {
                   </p>
                 </>
               )}
-
-              {/* FEATURES */}
-
-
-              {/* ACTION BUTTONS */}
-
-              <div className="flex flex-wrap items-center gap-4 pt-6">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 bg-red-700 px-6 py-3 font-semibold text-white shadow-md transition duration-200 hover:bg-red-600"
-                >
-                  Contact Us
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-
-                <Link
-                  href="/portfolio"
-                  className="inline-flex items-center gap-2 border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-800 shadow-sm transition duration-200 hover:border-gray-400"
-                >
-                  See Our Work
-                  <ArrowRight className="h-4 w-4 text-black" />
-                </Link>
-              </div>
             </div>
 
             <div className="relative pt-6 pr-4 lg:col-span-5">
@@ -528,6 +527,107 @@ export default function ServicesCategory({ slug }) {
               </div>
             </div>
           </div>
+                  <section className="py-10 sm:py-16">
+          <div className="max-w-7xl mx-auto px-3 sm:px-5">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center">
+              Industries We Serve
+            </h2>
+
+            <p className="max-w-6xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base">
+              At Devapp, we don't believe in one-size-fits-all every industry
+              has its own challenges, and our solutions are built to match.
+              Backed by deep, hands-on experience across sectors, we deliver
+              high-quality web applications, mobile apps, and custom software
+              built around what your industry actually needs.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
+              {industries.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
+                >
+                  <img
+                    src={item.bgImage}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
+                      <img
+                        src={item.icon}
+                        alt=""
+                        className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 text-white font-bold text-sm sm:text-lg md:text-xl text-center w-full px-2">
+                    {item.title}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white ">
+          <div className="w-full px-5">
+            <h2 className="text-4xl font-bold text-center">
+              Frequently Asked Questions
+            </h2>
+
+            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+              Find answers to common questions about our app and software
+              development services and learn how we can help turn your idea into
+              a successful digital product.
+            </p>
+
+            <div className="mt-12 space-y-4 ">
+              {faqsData.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpen(open === index ? -1 : index)}
+                    className="w-full flex justify-between items-center px-5 py-5 text-left"
+                  >
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
+
+                    {open === index ? (
+                      <ChevronUp size={22} />
+                    ) : (
+                      <ChevronDown size={22} />
+                    )}
+                  </button>
+
+                  {open === index && (
+                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-20 text-center">
+              <h3 className="text-4xl font-bold">
+                Have Something in Mind? Let's Talk
+              </h3>
+
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+                Have a look at the services and development process of the
+                Devapp solution. See what process we follow for mobile app and
+                software development. Have a look at how we are praised by our
+                clients. Start a conversation to innovate your next great idea
+                into reality with us.
+              </p>
+            </div>
+          </div>
+        </section>
         </section>
 
         <div className="mb-2.5 pb-2">

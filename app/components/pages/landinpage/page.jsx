@@ -315,14 +315,9 @@ export default function LandingPage() {
             </div>
 
             {/* RIGHT SIDE FORM */}
-            <div className="relative w-full max-w-107.5 sm:w-[80%] lg:w-[42%] lg:max-w-100 xl:w-[40%] xl:max-w-105">
+            <div className="relative w-full max-w-127.5 sm:w-[80%] lg:w-[42%] lg:max-w-100 xl:w-[40%] xl:max-w-105">
               {/* BADGE */}
               <div className="absolute -right-1 -top-8 z-10 sm:-right-2 sm:-top-9">
-                {/* <img
-                  src="/images/Group-46.png"
-                  alt="Same Day Response"
-                  className="h-16 w-auto object-contain sm:h-18 lg:h-19.5"
-                /> */}
                 <img
                   src="/images/contact-form-logo.png"
                   alt="Same Day Response"
@@ -331,7 +326,7 @@ export default function LandingPage() {
               </div>
 
               {/* FORM BOX */}
-              <div className="rounded-[9px] bg-[#fff0f1] px-6 py-6 shadow-xl sm:px-7 sm:py-7">
+              <div className="rounded-[9px] bg-[#fff0f1] px-8 py-8 shadow-xl sm:px-7 sm:py-7">
                 {/* FORM TITLE */}
                 <h2 className="text-[19px] font-bold text-black sm:text-[20px] lg:text-[21px]">
                   Got a Project in Mind?
