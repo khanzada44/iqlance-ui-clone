@@ -1,5 +1,5 @@
 "use client";
-import { useRef ,useState, useEffect, params } from "react";
+import { useRef, useState, useEffect, params } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -168,17 +168,19 @@ export default function foodOrdering() {
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
+                  href="/contact-us"
+                  className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
-                  Contact Us <ArrowRight className="w-4 h-4" />
+                  Contact Us
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
 
                 <Link
-                  href="#portfolio"
-                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-red-100 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  href="/portfolio"
+                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-red-100 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
-                  See Our Work <ArrowRight className="w-4 h-4 text-gray-600" />
+                  See Our Work
+                  <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -341,31 +343,31 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-              Creative eCommerce App Development Services
-            </h2>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+                Creative eCommerce App Development Services
+              </h2>
 
-            <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-              Mobile commerce isn&apos;t optional anymore; it&apos;s the primary way
-              businesses connect with customers today. Beyond convenience, a
-              well-built <strong>eCommerce mobile app</strong> puts your business a
-              single tap away from every customer, giving you direct insight into how
-              they browse, compare, and buy.
-            </p>
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                Mobile commerce isn&apos;t optional anymore; it&apos;s the primary way
+                businesses connect with customers today. Beyond convenience, a
+                well-built <strong>eCommerce mobile app</strong> puts your business a
+                single tap away from every customer, giving you direct insight into how
+                they browse, compare, and buy.
+              </p>
 
-            <br />
+              <br />
 
-            <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-              We&apos;ve helped established brands bring their names into the mobile
-              marketplace with confidence. As a trusted name in{" "}
-              <strong>eCommerce app development</strong>, our portfolio spans
-              service-based applications, B2B and B2C eCommerce platforms, and
-              corporate apps designed to sharpen operations and drive productivity.
-            </p>
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+                We&apos;ve helped established brands bring their names into the mobile
+                marketplace with confidence. As a trusted name in{" "}
+                <strong>eCommerce app development</strong>, our portfolio spans
+                service-based applications, B2B and B2C eCommerce platforms, and
+                corporate apps designed to sharpen operations and drive productivity.
+              </p>
+            </div>
           </div>
-        </div>
         </section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
           <div className="flex justify-center lg:justify-end">
@@ -393,11 +395,11 @@ export default function foodOrdering() {
             ))}
             <div className="">
               <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/contact-us"
+                className="group inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Start a Conversation
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -409,7 +411,7 @@ export default function foodOrdering() {
                 Explore the Standout Features Behind Our eCommerce App Development
               </h2>
               <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-                Before diving into mobile eCommerce app development, businesses and developers need a clear picture of what the app actually requires. The right feature set is what separates a store that converts 
+                Before diving into mobile eCommerce app development, businesses and developers need a clear picture of what the app actually requires. The right feature set is what separates a store that converts
                 from one that loses customers at checkout and it's exactly where our solutions focus first.
               </p>
             </div>
@@ -662,10 +664,11 @@ export default function foodOrdering() {
               </div>
 
               <Link
-                href="#contact"
-                className="mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/lets-talk"
+                className="group mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Let’s Talk
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -891,11 +894,13 @@ export default function foodOrdering() {
                 </div>
               </div>
 
+
               <Link
-                href="/let-talk"
-                className="mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/lets-talk"
+                className="group mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Let’s Talk
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -913,28 +918,28 @@ export default function foodOrdering() {
             </div>
 
             {/* Right Content Side */}
-          <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-              Skilled Developers. Modern Technology. One Team Built Around Your Vision.
-            </h2>
+            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                Skilled Developers. Modern Technology. One Team Built Around Your Vision.
+              </h2>
 
-            <p>
-              Building a successful real estate app takes more than putting property
-              listings on a screen. It requires thoughtful UX, reliable technology, and
-              a development team that understands how buyers, sellers, renters, and
-              agents interact with property platforms. Our experienced developers bring
-              these elements together to create applications that are intuitive,
-              scalable, and built for real-world use.
-            </p>
+              <p>
+                Building a successful real estate app takes more than putting property
+                listings on a screen. It requires thoughtful UX, reliable technology, and
+                a development team that understands how buyers, sellers, renters, and
+                agents interact with property platforms. Our experienced developers bring
+                these elements together to create applications that are intuitive,
+                scalable, and built for real-world use.
+              </p>
 
-            <p>
-              Our team works across modern technologies and development frameworks to
-              turn complex requirements into smooth digital experiences. Whether you’re
-              building a property marketplace, an agent-focused platform, or a custom
-              real estate solution, we focus on creating functionality that works
-              seamlessly behind the scenes and feels effortless to your users.
-            </p>
-          </div>
+              <p>
+                Our team works across modern technologies and development frameworks to
+                turn complex requirements into smooth digital experiences. Whether you’re
+                building a property marketplace, an agent-focused platform, or a custom
+                real estate solution, we focus on creating functionality that works
+                seamlessly behind the scenes and feels effortless to your users.
+              </p>
+            </div>
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
@@ -971,11 +976,11 @@ export default function foodOrdering() {
           {/* CTA */}
           <div className="flex justify-center">
             <Link
-              href="#"
-              className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              href="/request-a-quote"
+              className="group inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
             >
               Get a Quotation
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -1015,13 +1020,13 @@ export default function foodOrdering() {
               </p>
             </div>
 
-            <a
-              href="#portfolio"
-              className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
+            <Link
+              href="/portfolio"
+              className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
             >
               <span>See Our Work</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
 
           {/* Technology Stack Heading Section */}
@@ -1103,10 +1108,11 @@ export default function foodOrdering() {
               </p>
 
               <Link
-                href="#contact"
-                className="mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                href="/contact-us"
+                className="group mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Hire Dedicated Developer <ArrowRight className="w-4 h-4" />
+                Hire Dedicated Developer
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>

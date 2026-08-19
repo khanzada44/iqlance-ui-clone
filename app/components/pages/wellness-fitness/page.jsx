@@ -1,5 +1,5 @@
 "use client";
-import { useRef,useState ,useEffect} from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -1052,10 +1052,11 @@ export default function wellnessFitness() {
           </div>
           <div className="flex justify-center">
             <Link
-              href="#"
-              className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+              href="/request-a-quote"
+              className="group inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
             >
-              Get a Quotation <ArrowRight className="w-4 h-4" />
+              Get a Quotation
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -1190,13 +1191,13 @@ export default function wellnessFitness() {
               </p>
             </div>
 
-            <a
-              href="#portfolio"
-              className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
+            <Link
+              href="/portfolio"
+              className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
             >
               <span>See Our Work</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
 
           {/* Technology Stack Heading Section */}

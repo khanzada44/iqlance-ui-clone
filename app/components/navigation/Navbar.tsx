@@ -25,7 +25,6 @@ export default function Navbar() {
   const [currentNavLinks, setCurrentNavLinks] =
     useState<NavLink[]>(initialNavLinks);
 
-  // Dynamic services data
   const [servicesData, setServicesData] = useState<ServicesData>({
     title: "What we can do for you",
     categories: [],
@@ -49,10 +48,6 @@ export default function Navbar() {
 
   useLockedBody(mobileMenuOpen);
 
-  // =========================================================
-  // Dynamic Navigation Links
-  // =========================================================
-
   useEffect(() => {
     let isMounted = true;
 
@@ -74,10 +69,6 @@ export default function Navbar() {
       isMounted = false;
     };
   }, []);
-
-  // =========================================================
-  // Dynamic Services Categories
-  // =========================================================
 
   useEffect(() => {
     let isMounted = true;
@@ -106,25 +97,15 @@ export default function Navbar() {
     };
   }, []);
 
-  // =========================================================
-  // Category Hover
-  // =========================================================
-
   const handleCategoryHover = useCallback((category: ServiceCategory) => {
     setSelectedCategory(category);
   }, []);
 
-  // =========================================================
-  // Mobile Menu
-  // =========================================================
 
   const toggleMobileMenu = useCallback(() => {
     setMobileMenuOpen((prev) => !prev);
   }, []);
 
-  // =========================================================
-  // Services Mouse Enter
-  // =========================================================
 
   const handleServicesMouseEnter = useCallback(() => {
     if (servicesTimeoutRef.current) {
@@ -141,10 +122,6 @@ export default function Navbar() {
     }
   }, [setActiveDropdown, servicesData.categories]);
 
-  // =========================================================
-  // Services Mouse Leave
-  // =========================================================
-
   const handleServicesMouseLeave = useCallback(() => {
     if (servicesTimeoutRef.current) {
       clearTimeout(servicesTimeoutRef.current);
@@ -158,9 +135,6 @@ export default function Navbar() {
     }, 150);
   }, [setActiveDropdown]);
 
-  // =========================================================
-  // Services Link Click (click hote hi turant close, smoothly fade out)
-  // =========================================================
 
   const handleServicesLinkClick = useCallback(() => {
     if (servicesTimeoutRef.current) {
@@ -171,9 +145,6 @@ export default function Navbar() {
     setActiveDropdown(null);
   }, [setActiveDropdown]);
 
-  // =========================================================
-  // Mega Menu Mouse Enter
-  // =========================================================
 
   const handleMegaMenuEnter = useCallback(() => {
     if (servicesTimeoutRef.current) {
@@ -184,9 +155,6 @@ export default function Navbar() {
     setIsServicesHovered(true);
   }, []);
 
-  // =========================================================
-  // Mega Menu Mouse Leave
-  // =========================================================
 
   const handleMegaMenuLeave = useCallback(() => {
     if (servicesTimeoutRef.current) {
@@ -201,10 +169,6 @@ export default function Navbar() {
     }, 150);
   }, [setActiveDropdown]);
 
-  // =========================================================
-  // Cleanup Timeout
-  // =========================================================
-
   useEffect(() => {
     return () => {
       if (servicesTimeoutRef.current) {
@@ -214,9 +178,6 @@ export default function Navbar() {
     };
   }, []);
 
-  // =========================================================
-  // Render
-  // =========================================================
 
   const isDropdownVisible =
     isServicesHovered &&
@@ -225,9 +186,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full lg:max-w-[80%] mx-auto bg-white">
-      {/* Navigation Container */}
       <div className="mx-auto flex h-17 w-full items-center justify-between px-4">
-        {/* Mobile Toggle & Logo */}
         <div className="flex items-center gap-2">
           <button
             onClick={toggleMobileMenu}
@@ -252,8 +211,6 @@ export default function Navbar() {
             />
           </Link>
         </div>
-
-        {/* Desktop Navigation Links */}
         <DesktopNav
           navLinks={currentNavLinks}
           activeDropdown={activeDropdown}
@@ -262,8 +219,6 @@ export default function Navbar() {
           onServicesEnter={handleServicesMouseEnter}
           onServicesLeave={handleServicesMouseLeave}
         />
-
-        {/* CTA Button */}
         
         <Link href="/request-a-quote">
           <button className="flex items-center gap-1.5 bg-red-700 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-red-600 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm lg:flex lg:px-5 lg:py-2.5 group w-full justify-center cursor-pointer whitespace-nowrap">
@@ -275,8 +230,6 @@ export default function Navbar() {
           </button>
         </Link>
       </div>
-
-      {/* Services Mega Dropdown — hamesha DOM mein rehta hai, sirf class se animate hota hai */}
       {servicesData.categories.length > 0 && selectedCategory && (
         <div
           className={`absolute left-0 top-full z-50 w-full pt-1 transition-all duration-300 ease-out ${isDropdownVisible
