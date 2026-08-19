@@ -18,19 +18,19 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { submitContactForm } from "@/services/send-call-request";
 import {
   partners,
-  bottomFeatures,
   slides,
   portfolioSlides,
   technologies,
   stats,
   industries,
-  services,
   faqsData,
   testimonials,
 } from "../../../../utils/data";
 import {
   ServiceSectionData,
   foodDeliverySlides,
+  bottomFeatures,
+  services
 } from "./data";
 import Image from "next/image";
 
@@ -59,30 +59,30 @@ export default function fitness() {
     {
       stepLabel: "STEP 1",
       tabTitle: "1. Discover",
-      heading: "Discover",
+      heading: "Understand the Business Before Building the App.",
       description:
-        "We conduct full-scale research and gather insights on market trends, customer satisfaction points, and competitors first to plan a success-worthy app design.",
+        "We start by understanding your food delivery model, target customers, restaurant partners, delivery operations, service areas, and revenue goals. We identify where users drop off, where restaurant workflows slow down, and where delivery operations can be improved. These insights help define the features, integrations, and user journeys your platform actually needs.",
     },
     {
       stepLabel: "STEP 2",
       tabTitle: "2. Design",
-      heading: "Design",
+      heading: "Make Every Order Feel Simple From Start to Finish.",
       description:
-        "Our designers develop an interactive and iterative app infrastructure, with a simple UI/UX, user-friendly navigations, and more.",
+        "Our UX team maps the complete ordering journey from finding nearby restaurants and exploring menus to customizing dishes, applying offers, checking out, and tracking deliveries. We create intuitive interfaces that make food discovery, secure payments, order updates, and delivery tracking feel effortless across every screen.",
     },
     {
       stepLabel: "STEP 3",
       tabTitle: "3. Build",
-      heading: "Build",
+      heading: "Turn the Ordering Journey Into a Connected Platform.",
       description:
-        "Next, trained developers at our Top On-Demand App Development company use the planned technology stack and coding skills to complete the app-building process, adding features and configurations.",
+        "Once the product experience is defined, our developers bring it to life with technology selected around your business and growth plans. We integrate the essential systems behind a modern food delivery app, including payment gateways, restaurant management systems, maps, GPS tracking, push notifications, order management, and third-party services to keep customers, restaurants, and drivers connected.",
     },
     {
       stepLabel: "STEP 4",
       tabTitle: "4. Deliver",
-      heading: "Deliver",
+      heading: "Launch Ready. Designed to Keep Moving.",
       description:
-        "After multiple testing batches, the app is finally ready to deploy, across iOS or Android platforms, or both- we focus on after-launch support as well.",
+        "Before launch, we test every critical part of the ordering experience, from restaurant discovery and cart management to payment processing, order confirmation, driver assignment, and real-time delivery tracking. Once everything is ready, we help take your app to market with a strong foundation for expanding restaurant partners, delivery coverage, features, and future growth.",
     },
   ];
 
@@ -190,55 +190,28 @@ export default function fitness() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold text-red-600 leading-tight">
-                Food Delivery App <br />
-                <p className="text-red-700">
-                  Development <br />
-                </p>
-                <p className="text-red-800">
-                  Company in the USA
-
-                </p>
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                Food Delivery App Development
+                <br className="hidden sm:block" />
+                Company in the USA
               </h1>
-
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Looking to launch a high-performing food ordering platform in
-                the USA? Devapp Solutions is recognized as the best food
-                delivery app development company, delivering scalable,
-                cloud-ready, and feature-rich digital solutions. We build custom
-                food delivery ecosystems designed to streamline ordering,
-                payments, dispatch, and customer engagement, all powered by
-                modern architecture and secure integrations.
+                Ready to launch a food ordering platform that actually holds up under
+                pressure? Devapp has earned its place among the top food delivery app
+                developers in the USA by shipping scalable, cloud-ready platforms packed
+                with the features modern users expect. We build complete delivery
+                ecosystems covering ordering, payments, dispatch, and customer engagement,
+                all running on modern architecture with secure, reliable integrations.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                As a trusted online food delivery app development company, we
-                engineer end-to-end applications for restaurants, aggregators,
-                and cloud kitchens. Our team leverages advanced tech stacks, API
-                integrations, real-time tracking modules, and AI-driven
-                analytics to create seamless user experiences across iOS,
-                Android, and web platforms.
+                From independent restaurants to multi-location aggregators and cloud
+                kitchens, our engineering team builds applications suited to how each
+                business actually operates. We combine advanced tech stacks, real-time
+                tracking, and AI-driven analytics to create a smooth, consistent experience
+                across iOS, Android, and web, no matter which platform your customers land
+                on.
               </p>
-
-              <p className="text-base md:text-lg leading-relaxed text-black">
-                From intuitive UI/UX design to robust backend development and
-                DevOps deployment, we focus on performance, security, and
-                scalability. Partner with Devapp Solutions to transform your
-                food delivery idea into a reliable, revenue-generating digital
-                platform.
-              </p>
-
-              <ul className="mt-8 space-y-5 text-lg">
-                <li className="flex items-center gap-1 mb-2">
-                  <ChevronRight size={16} />
-                  Custom food delivery app development
-                </li>
-                <li className="flex items-center gap-1 mb-2">
-                  <ChevronRight size={16} />
-                  Food delivery app modernization
-                </li>
-              </ul>
-
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
@@ -418,15 +391,10 @@ export default function fitness() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
-                Top On-Demand Solutions Company
+                Food Delivery Solutions Designed Around Results
               </h2>
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
-                We, at Devapp, build ever-evolving on-demand app solutions in
-                order to promote the next generation-level services for business
-                growth. Have an amazing experience of scalable and solely
-                integrated solutions along with custom front-end and back-end
-                UI/UX. We assure advanced admin dashboard and powerful analytics
-                panel for both Android as well as iOS.
+                We don't build generic apps, we build platforms shaped around how your business actually makes money.
               </p>
               <br />
             </div>
@@ -667,15 +635,11 @@ export default function fitness() {
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-6xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Agile App Development Process to Build High-Performing Apps
+              The Process Behind a Food Delivery App Built to Perform
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              We follow a structured agile methodology to deliver scalable and
-              secure food delivery platforms. Our iterative approach ensures
-              faster releases, transparent collaboration, and continuous
-              optimization. This proven process helps us stand among trusted
-              food delivery app development companies, delivering reliable
-              digital solutions across the U.S.
+              A successful food delivery app is more than a digital menu with a checkout button. We look at how customers discover restaurants, explore dishes, customize meals, place orders, track deliveries, and return for their next meal. Then, we turn those everyday interactions into a fast,
+              convenient experience that works for customers, restaurants, and delivery partners alike.
             </p>
           </div>
         </section>
@@ -1133,23 +1097,30 @@ export default function fitness() {
         <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Text Content */}
-            <div className="flex flex-col ">
+            <div className="flex flex-col">
               <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 leading-tight">
-                Fast &amp; Efficient Access To Services
+                Advanced Technologies for Food Business Growth
               </h2>
 
               <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+                <h3 className="text-lg md:text-xl font-bold text-black">
+                  Turn Food Delivery Technology Into a Competitive Advantage
+                </h3>
+
                 <p>
-                  We perfectly connect your business with your customers We will
-                  help you find out how to supply the rightest as per user
-                  demands, which is sure to make them wonder that how did they
-                  survive without your app all these days. We develop to meet
-                  macro-level and micro-level delivery requirements of users
-                  across all industries.
+                  At Devapp, we use modern technologies to help food businesses operate
+                  smarter, serve customers faster, and scale with confidence. From
+                  AI-powered insights and cloud infrastructure to real-time delivery
+                  tracking and secure payment solutions, we connect every part of your
+                  digital ecosystem.
                 </p>
+
                 <p>
-                  Ready to take a comprehensive consultation for your next
-                  on-demand app?
+                  Our API-first architecture and scalable technology stack make it easier
+                  to automate workflows, improve operational visibility, personalize
+                  customer experiences, and make data-backed decisions. The result is a
+                  food delivery platform built to reduce inefficiencies, control costs,
+                  and support sustainable business growth.
                 </p>
               </div>
             </div>
@@ -1169,14 +1140,12 @@ export default function fitness() {
         <section>
           <div className="text-center max-w-6xl mx-auto space-y-4 mt-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why We’re the Go-To Food Delivery App Development Partner for
-              Growing Food Businesses
+              Why Growing Food Businesses Choose Devapp
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              As the best food delivery app development company, we deliver
-              scalable, secure, and performance-driven solutions tailored for
-              U.S. businesses. We combine technical expertise, certified talent,
-              and modern frameworks to ensure measurable digital growth.
+              At Devapp, we build food delivery platforms that combine reliable technology, thoughtful user experiences, and business-focused strategy.
+              Our solutions are designed to help U.S. food businesses simplify operations,
+              connect with customers, and create a strong foundation for long-term growth.
             </p>
           </div>
         </section>

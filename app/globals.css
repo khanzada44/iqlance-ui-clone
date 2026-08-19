@@ -1007,6 +1007,7 @@ mark.has-inline-color {
   border: 2px solid #f0f0f0 !important;
   border-radius: 0;
   transition: all 0.3s ease;
+  background: none !important;
 }
 
 .top-tech-box:hover {
@@ -1519,4 +1520,14 @@ mark.has-inline-color {
 }
 .row .text-center{
   font-size: 20px;
+}
+.dotnet-box {
+  border: 1px solid #e7e4e4 !important;
+  transition: all 0.3s ease;
+  background:none !important;
+}
+
+.dotnet-box:hover {
+  border-color: red !important;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.15);
 }

@@ -359,7 +359,7 @@ export default function ContactSection() {
         </section>
 
         {/* Office Cards Section */}
-        <section className="py-10 bg-red-50 w-full">
+        <section className="py-10 bg-gray-50 w-full">
           <div className="w-full px-2 sm:px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
               {offices.map((office) => (

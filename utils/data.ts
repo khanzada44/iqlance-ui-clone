@@ -652,55 +652,94 @@ export const testimonials = [
 ];
 export const faqsData = [
   {
-    question: " How is a logistics app development firm helpful to a business?",
+    question: "What mobile app development services does Devapp offer?",
     answer:
-      " An app development company for Logistics  can develop diverse management systems for transportation, fleet, and warehouse. Therefore, firms can improve their business operations because of benefits like package tracking, automated routine process types, and others. All ultimately boost user experience.",
-    points: [
-    ],
+      "Devapp provides end-to-end mobile app development services, including iOS, Android, Flutter, React Native, hybrid, Apple Watch, healthcare, food delivery, e-learning, MVP, and cross-platform development. Our services also cover UI/UX design, API integration, testing, deployment, migration, and ongoing support.",
+    points: [],
   },
   {
-    question: " What types of logistics app are available?",
+    question: "How much does it cost to develop a mobile app?",
     answer:
-      "",
-    points: [
-        "Asset management",
-        "Supply chain management",
-        "Transportation management systems",
-        "Warehouse management systems",
-    ],
+      "The cost depends on your app's features, complexity, platforms, integrations, design requirements, technology stack, and timeline. Devapp evaluates your requirements first and provides a customized estimate based on your actual project scope.",
+    points: [],
   },
   {
-    question: " How to develop logistics app?",
+    question: "How long does it take to build a mobile app?",
     answer:
-      " Firstly, prepare a foundational overview of your idea, with defined requirements. Research the consumer base and other apps in the niche market and analyse how they would affect your company and operations. Then, consult with a reliable logistics app development company for help with the development process.",
-    points: [
-
-    ],
+      "Timelines vary depending on the product and feature set. A focused MVP can often be launched within 6–8 weeks, while complex healthcare, food delivery, marketplace, or enterprise applications may require a longer development cycle.",
+    points: [],
   },
   {
-    question: "Is a Logistics app really that important to develop?",
+    question: "Can Devapp build apps for both iOS and Android?",
     answer:
-      "Yes, logistics custom app development services are important to focus on for companies. This is because it helps balance the work performance and enhance business activities equality. The logistics tracking apps update their functions frequently, which also help companies.",
+      "Yes. Devapp develops applications for iOS and Android using both native technologies and cross-platform frameworks such as Flutter and React Native. We recommend the approach that best fits your performance, budget, and scalability goals.",
+    points: [],
   },
   {
-    question: "How does logistics app development revolutionize the business industry?",
+    question: "Why should I choose Flutter or React Native?",
     answer:
-      "With logistics app development, companies and their clients notice a new manner of handling and monitoring transportation. They gain complete control over important details and functions, like shipment process, cargo management and information.",
+      "Both frameworks allow businesses to develop applications for multiple platforms using a shared codebase. Devapp helps you determine which technology is better suited to your features, integrations, performance requirements, budget, and long-term product roadmap.",
+    points: [],
   },
   {
-    question: "Which technology should I use for logistics app development?",
+    question: "Does Devapp provide custom UI/UX design?",
     answer:
-      "The developers would utilize the most compatible technology stacks, based on your project needs. For example, if you want to build an iOS app, they would use Swift. But, if you have an Android app in mind, they would utilize Kotlin programming.",
+      "Yes. Our UI/UX process includes user flows, wireframes, prototypes, visual design, and responsive interfaces. We create experiences around your brand and users, with a focus on intuitive navigation and engagement.",
+    points: [],
   },
   {
-    question: "Is it possible to add a feature after app deployment?",
+    question: "Can Devapp develop healthcare mobile applications?",
     answer:
-      "Our app development company  for logistics does focus on providing customized features after launch. Discuss further with our developers during your project’s planning period.",
+      "Yes. We build healthcare solutions including telemedicine apps, appointment booking platforms, patient monitoring systems, EHR/EMR applications, and healthcare management platforms. Depending on the project, we can also address requirements related to HIPAA, HL7, GDPR, HITECH, and other applicable standards.",
+    points: [],
   },
   {
-    question: "Is post-launch app maintenance always available?",
+    question: "Can you build a food delivery or grocery delivery app?",
     answer:
-      "At Devapp, we have support professionals who focus entirely on post-launch support for companies. Contact the support team whenever.",
+      "Absolutely. Devapp develops customized food delivery, restaurant, grocery, and marketplace platforms with features such as online ordering, secure payments, inventory management, real-time tracking, automated dispatch, delivery scheduling, notifications, and analytics.",
+    points: [],
+  },
+  {
+    question: "Does Devapp offer MVP development services?",
+    answer:
+      "Yes. Our MVP development services help startups and businesses validate ideas before committing to a full-scale product. We identify essential features, design and develop the MVP, test it, launch it, and help use early feedback to shape future development.",
+    points: [],
+  },
+  {
+    question: "Can Devapp migrate an existing app to React Native or Flutter?",
+    answer:
+      "Yes. We assess your existing application, architecture, integrations, and functionality before creating a migration strategy. Our goal is to modernize your product while maintaining critical functionality and minimizing disruption.",
+    points: [],
+  },
+  {
+    question: "Does Devapp handle API and third-party integrations?",
+    answer:
+      "Yes. We integrate applications with REST APIs, payment gateways, maps, Firebase, social platforms, cloud services, authentication systems, databases, and other third-party technologies required for your product.",
+    points: [],
+  },
+  {
+    question: "Does Devapp develop Apple Watch applications?",
+    answer:
+      "Yes. Devapp creates custom Apple Watch applications and extensions for industries and use cases such as fitness, healthcare, food ordering, productivity, and connected experiences. We also provide testing, upgrades, security, and maintenance.",
+    points: [],
+  },
+  {
+    question: "What support does Devapp provide after app launch?",
+    answer:
+      "Our services continue after deployment with bug fixing, maintenance, performance optimization, security updates, platform compatibility updates, monitoring, and feature enhancements to keep your application reliable and up to date.",
+    points: [],
+  },
+  {
+    question: "Can I hire dedicated developers from Devapp?",
+    answer:
+      "Yes. Devapp offers flexible engagement models, including dedicated developers, dedicated teams, staff augmentation, hourly hiring, and project-based development. You can choose the model that best matches your scope, budget, and timeline.",
+    points: [],
+  },
+  {
+    question: "Why should U.S. businesses choose Devapp?",
+    answer:
+      "Devapp combines experienced developers, transparent communication, flexible engagement models, U.S. time-zone collaboration, scalable technology, and long-term support. We focus on understanding your business objectives, not just your technical requirements, to build applications designed for sustainable growth.",
+    points: [],
   },
 ];
 export const partners = [

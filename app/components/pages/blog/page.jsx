@@ -175,37 +175,25 @@ export default function Blog() {
                   </h1>
 
                   <p className="mt-6 text-black leading-8 text-lg">
-                    Devapp - A Reliable and Professional Mobile App & Software
-                    Development Company
+                    Curious about what goes into building a great digital product?
                   </p>
-                  <p className="mt-6 text-black leading-8 text-lg">
-                    Devapp offers robust software development services that
-                    really make a difference to businesses and brands worldwide.
-                    We are a leading mobile app development company in Canada.
-                    Right from the time we started till today, we have
-                    successfully completed several projects - mobile app
-                    development, web development, and e-commerce development for
-                    businesses from diverse industry verticals.
-                  </p>
-                  <p className="mt-6 text-black leading-8 text-lg">
-                    With Devapp, a brand will always get something that is
-                    tailored to suit their business requirements. At Devapp, we
-                    understand that every business is unique and has
-                    requirements different from others. Hire dedicated
-                    developers from Devapp and see a visible change in your
-                    business.
-                  </p>
+                    <p className="mt-6 text-black leading-8 text-lg">
+                      We share practical lessons, ideas, and insights from the world of software
+                      and app development, without all the technical jargon.
+                    </p>
 
-                  <ul className="mt-8 space-y-5 text-lg text-black">
-                    <li className="flex items-center gap-1 mb-2 font-semibold">
-                      <ChevronRight size={14} />
-                      Software Development News
-                    </li>
-                    <li className="flex items-center gap-1 mb-2 text-black font-semibold">
-                      <ChevronRight size={14} />
-                      Mobile App Development News
-                    </li>
-                  </ul>
+                    <p className="mt-6 text-black leading-8 text-lg">
+                      From choosing the right technology and improving app performance to creating
+                      better user experiences and planning new features, our articles cover the
+                      questions businesses often face when building or growing a digital product.
+                    </p>
+
+                    <p className="mt-6 text-black leading-8 text-lg">
+                      Whether you&apos;re starting an app from scratch, upgrading an existing
+                      platform, or simply exploring what&apos;s possible with technology,
+                      you&apos;ll find useful advice and real-world perspectives to help you make
+                      better decisions.
+                    </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 mt-10">
                     <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
@@ -362,10 +350,8 @@ export default function Blog() {
                 Our Blog
               </h1>
               <p className="mt-2 space-y-6 text-center md:text-lg leading-7">
-                Have a software and mobile app development project in mind? Here
-                are some of the blogs that will offer valuable insights when you
-                are planning to hire a software and mobile app development
-                company for your dream project.
+               Get practical ideas, expert perspectives, and useful tips on software, apps, and digital products. Explore our latest articles to make smarter decisions for your next project.
+
               </p>
             </div>
           </section>

@@ -89,26 +89,32 @@ export const slides = [
 ];
 export const ServiceSectionData = [
   {
-    title:
-      "Experience The Quickest Application Development With Us!",
+    title: "AI, AR & Immersive Dating Experiences",
     description:
-      "The customers who believe in receiving the app development services  on the go. We, at Devapp, build ever-evolving on-demand app solutions in order to promote the next generation services for the business growth. Have an amazing experience of scalable and solely integrated solutions along with custom front-end and back-end UI/UX. We assure advanced admin dashboard and powerful analytics panel for both android as well as iOS. <br/><br/>Our unparalleled set of solutions helps the businesses to acquire new customers along with the pervasive solutions that can be deployed for any business. We believe your business on mobile should be easy and convenient for the customers. The demand of on-demand mobile app development  has created a great buzz in the market." ,
+      "Bring next-generation technology into the way people meet and connect. Our dating app development services can incorporate AI-driven matchmaking, augmented reality, virtual experiences, and intelligent personalization to create a dating platform that feels more relevant, interactive, and future-ready.",
     features: [
-      
+      "AI-assisted matchmaking based on compatibility signals",
+      "Personalized recommendations that improve with user behavior",
+      "AR-powered experiences and interactive profile features",
+      "Virtual spaces designed for memorable digital dates",
+      "Intelligent conversation, language, and preference analysis",
     ],
     imageUrl: "/images/Build-An-Advanced-Dating-App-Leveraging-AI.png",
-    imageAlt: "Logistics App Development",
+    imageAlt: "AI, AR and immersive dating app development",
   },
   {
-    title:
-      " On-Demand Solutions for Other Businesses ",
+    title: "Secure & Scalable Dating App Development",
     description:
-      " Our App Developers Toronto cater to different types of businesses for their on-demand app demands. Whether your speciality lies in food delivery, stock delivery, or on-demand video services, our developers are trained to create different app models efficiently. We offer the same level of dedication and work quality to each customer, startup or enterprise-level. Our work covers all steps from researching to preparation, from completing the design to adding the elements, from launching the app to after-launch maintenance. Our client business can expect the best-of-the-best help from us, always.",
+      "Trust is fundamental to any successful dating platform. We build security into the product from the ground up, protecting user accounts, conversations, personal information, and transactions while creating an infrastructure capable of supporting rapid growth.",
     features: [
-     
+      "Encrypt sensitive conversations and user information",
+      "Add identity verification and secure account protection",
+      "Support multi-factor authentication and access controls",
+      "Design with applicable privacy requirements such as GDPR and CCPA in mind",
+      "Build cloud infrastructure that can scale with your growing community",
     ],
     imageUrl: "/images/Build-Dating-App-development.png",
-    imageAlt: "Logistics App Development",
+    imageAlt: "Secure and scalable dating app development",
   },
 ];
 export const tabs = [
@@ -148,3 +154,65 @@ export const appData = {
     { id: 9, title: "Manage Offers & Promos", iconPath: "/images/upcoming-h-icn.png" },
   ],
 };
+export const services = [
+  {
+    image: "/images/transparency-Integrity-icn.png",
+    title: "Dating Products Built Around Real Users",
+    description:
+      "We design dating apps around how people actually discover, evaluate, match, and communicate with potential partners. Every interaction is thoughtfully planned to support a natural and meaningful dating journey.",
+  },
+  {
+    image: "/images/custom-dp-icn.png",
+    title: "Matchmaking With More Intelligence",
+    description:
+      "From preference-based discovery to AI-assisted recommendations, we create intelligent matching experiences that go beyond basic filters and help users discover more relevant and compatible connections.",
+  },
+  {
+    image: "/images/easy-commution-icn.png",
+    title: "UX That Makes Dating Feel Natural",
+    description:
+      "Dating should never feel like completing a form. We create intuitive user journeys that make profiles easy to explore, matches simple to understand, and conversations easy to start across every device.",
+  },
+  {
+    image: "/images/dedicated-teams.png",
+    title: "Trust Designed Into the Experience",
+    description:
+      "We integrate verification, reporting, blocking, privacy controls, moderation, and secure communication features throughout the platform to help users feel safer and more confident while interacting.",
+  },
+  {
+    image: "/images/on-time-icn.png",
+    title: "Built for Meaningful Engagement",
+    description:
+      "We focus on engagement that serves a purpose. Personalized discovery, thoughtful notifications, interactive profiles, and conversation-driven features can encourage users to return without relying on repetitive engagement tactics.",
+  },
+  {
+    image: "/images/quality-first-icn.png",
+    title: "Flexible Monetization Opportunities",
+    description:
+      "Whether your business model is subscription-based, freemium, pay-per-feature, or a combination of revenue streams, we can structure your dating platform around monetization opportunities that deliver value without disrupting the user experience.",
+  },
+  {
+    image: "/images/cost-effective-icn.png",
+    title: "Ready for Niche Dating Markets",
+    description:
+      "We develop customized dating experiences for niche audiences, including faith-based communities, LGBTQ+ dating, senior dating, professional dating, and interest-focused platforms tailored to specific user expectations.",
+  },
+  {
+    image: "/images/letdiscuss-icon.png.webp",
+    title: "Technology That Can Grow With You",
+    description:
+      "Your first launch is only the beginning. We architect dating platforms with future expansion in mind, supporting larger communities, advanced matching capabilities, new features, and evolving business requirements.",
+  },
+  {
+    image: "/images/transparency-Integrity-icn.png",
+    title: "Data-Informed Product Decisions",
+    description:
+      "User behavior can reveal what attracts attention, where users lose interest, and which experiences drive meaningful interactions. We use these insights to identify opportunities for continuous product improvement.",
+  },
+  {
+    image: "/images/dedicated-teams.png",
+    title: "From Concept to Long-Term Growth",
+    description:
+      "From product discovery and UX design to development, testing, launch, and post-launch enhancements, we provide the expertise needed to take your dating app from an initial concept to a competitive, scalable product.",
+  },
+];
