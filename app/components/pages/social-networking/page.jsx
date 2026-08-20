@@ -224,16 +224,18 @@ export default function SocialMedia() {
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
+                  className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
-                  Contact Us <ArrowRight className="w-4 h-4" />
+                  Contact Us
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
 
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-red-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-red-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
-                  See Our Work <ArrowRight className="w-4 h-4 text-black" />
+                  See Our Work
+                  <ArrowRight className="w-4 h-4 text-black transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -439,10 +441,10 @@ export default function SocialMedia() {
             <div className="">
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Start a Conversation
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -558,9 +560,10 @@ export default function SocialMedia() {
             <div>
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Let’s Talk
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -616,61 +619,61 @@ export default function SocialMedia() {
             </p>
           </div>
         </section>
-          <section className="py-10">
-            <div className="mx-auto max-w-7xl">
-              <Swiper
-                className="portfolio-swiper"
-                modules={[Pagination, Autoplay]}
-                slidesPerView={1}
-                spaceBetween={0}
-                loop={true}
-                autoplay={{
-                  delay: 30000,
-                  disableOnInteraction: false,
-                }}
-                pagination={{
-                  clickable: true,
-                }}
-              >
-                {slides.map((slide) => (
-                  <SwiperSlide key={slide.id}>
-                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
-                      <div className="w-full lg:w-1/2">
-                        <img
-                          src={slide.image}
-                          alt={slide.title}
-                          className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
-                        />
-                      </div>
+        <section className="py-10">
+          <div className="mx-auto max-w-7xl">
+            <Swiper
+              className="portfolio-swiper"
+              modules={[Pagination, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={0}
+              loop={true}
+              autoplay={{
+                delay: 30000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+            >
+              {slides.map((slide) => (
+                <SwiperSlide key={slide.id}>
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                    <div className="w-full lg:w-1/2">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
+                      />
+                    </div>
 
-                      <div className="w-full lg:w-1/2">
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
-                          {slide.title}
-                        </h2>
+                    <div className="w-full lg:w-1/2">
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
+                        {slide.title}
+                      </h2>
 
-                        <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
-                          {slide.description}
-                        </p>
+                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                        {slide.description}
+                      </p>
 
-                        <div className="space-y-3 lg:space-y-4">
-                          {slide.points.map((point, index) => (
-                            <div
-                              key={index}
-                              className="flex gap-3 items-baseline"
-                            >
-                              <ChevronRight size={18} />
-                              <span>{point}</span>
-                            </div>
-                          ))}
-                        </div>
+                      <div className="space-y-3 lg:space-y-4">
+                        {slide.points.map((point, index) => (
+                          <div
+                            key={index}
+                            className="flex gap-3 items-baseline"
+                          >
+                            <ChevronRight size={18} />
+                            <span>{point}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
-            <style>{`
+          <style>{`
               .portfolio-swiper .swiper-pagination-bullet {
                 background-color: #cbd5e1 !important;
                 opacity: 1 !important;
@@ -680,7 +683,7 @@ export default function SocialMedia() {
                 background-color: #dc2626 !important;
               }
             `}</style>
-          </section>
+        </section>
 
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
           {/* Top CTA Banner Box */}
@@ -839,9 +842,10 @@ export default function SocialMedia() {
             <div>
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Let’s Talk
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>

@@ -254,16 +254,18 @@ export default function Ondemadd() {
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
+                  className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 shadow-md"
                 >
-                  Contact Us <ArrowRight className="w-4 h-4" />
+                  Contact Us
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
 
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-red-100 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-red-100 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
-                  See Our Work <ArrowRight className="w-4 h-4 text-black" />
+                  See Our Work
+                  <ArrowRight className="w-4 h-4 text-black transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -477,10 +479,10 @@ export default function Ondemadd() {
             <div className="">
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
                 Start a Conversation
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -562,10 +564,10 @@ export default function Ondemadd() {
 
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
+              className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
             >
               <span>See Our Work</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -664,7 +666,7 @@ export default function Ondemadd() {
                     key={index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                      ? "text-black font-semibold"
+                      ? "text-red-600 font-semibold"
                       : "text-gray-500 hover:text-red-500"
                       }`}
                   >
@@ -784,9 +786,10 @@ export default function Ondemadd() {
             <div>
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Let’s Talk
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -960,9 +963,10 @@ export default function Ondemadd() {
             <div>
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
+                className="group inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
               >
-                Let’s Talk <ArrowRight className="w-4 h-4" />
+                Let’s Talk
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -1057,30 +1061,30 @@ export default function Ondemadd() {
 
             {/* Left Text Content */}
             <div className="flex flex-col ">
-            <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Faster Property Discovery. Better User Experiences.
-              </h2>
+              <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                  Faster Property Discovery. Better User Experiences.
+                </h2>
 
-              <p>
-                Your customers shouldn’t have to jump through hoops to find the right
-                property. We create intuitive real estate apps that connect users with
-                relevant listings, useful property information, and the people they need
-                without unnecessary friction.
-              </p>
+                <p>
+                  Your customers shouldn’t have to jump through hoops to find the right
+                  property. We create intuitive real estate apps that connect users with
+                  relevant listings, useful property information, and the people they need
+                  without unnecessary friction.
+                </p>
 
-              <p>
-                From the first search to the final enquiry, every interaction is designed
-                to feel clear and convenient. Whether users are browsing homes, comparing
-                properties, contacting agents, or scheduling a viewing, your app keeps the
-                entire journey within reach.
-              </p>
+                <p>
+                  From the first search to the final enquiry, every interaction is designed
+                  to feel clear and convenient. Whether users are browsing homes, comparing
+                  properties, contacting agents, or scheduling a viewing, your app keeps the
+                  entire journey within reach.
+                </p>
 
-              <p className="font-semibold text-gray-900">
-                Ready to build a real estate app your customers will come back to? Let’s
-                talk.
-              </p>
-            </div>
+                <p className="font-semibold text-gray-900">
+                  Ready to build a real estate app your customers will come back to? Let’s
+                  talk.
+                </p>
+              </div>
             </div>
 
             {/* Right Side 3D Image Banner */}
