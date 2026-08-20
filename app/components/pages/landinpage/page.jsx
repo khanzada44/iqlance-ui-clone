@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, ArrowRight } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 import {
   ArrowLeft,
   ChevronRight,
@@ -28,10 +29,9 @@ import { submitContactForm } from "../../../../services/send-call-request";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { getBlogs } from "@/services/blog";
 
 export default function LandingPage() {
-  const [activeTab, setActiveTab] = useState("driver");
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({
     type: "",
@@ -43,9 +43,6 @@ export default function LandingPage() {
 
   const fileInputRef = useRef(null);
 
-  // =========================
-  // FORM STATE
-  // =========================
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -57,9 +54,7 @@ export default function LandingPage() {
     sendNda: false,
   });
 
-  // =========================
-  // HANDLE INPUT CHANGE
-  // =========================
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
@@ -69,9 +64,7 @@ export default function LandingPage() {
     }));
   };
 
-  // =========================
-  // HANDLE FILE
-  // =========================
+
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({
@@ -81,9 +74,7 @@ export default function LandingPage() {
     }
   };
 
-  // =========================
-  // SUBMIT FORM
-  // =========================
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -109,7 +100,7 @@ export default function LandingPage() {
       }
 
       await submitContactForm(payload);
-
+      router.push("/thank-you");
       // SUCCESS
       setStatusMessage({
         type: "success",
@@ -175,11 +166,14 @@ export default function LandingPage() {
           <div className=" mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
             {/* LOGO */}
             <div className="flex items-center">
-              <img
-                src="/images/Dev-App-04.png"
-                alt="Dev App Grid"
-                className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
-              />
+              <Link href="/">
+                <img
+                  src="/images/Dev-App-04.png"
+                  alt="Dev App Grid"
+                  className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
+                />
+              </Link>
+
             </div>
 
             {/* RIGHT HEADER */}
@@ -225,7 +219,27 @@ export default function LandingPage() {
 
         <section className="relative overflow-hidden bg-linear-to-r from-[#e72828] via-[#a60000] to-[#080000]">
           <div className="mx-auto flex w-[94%] flex-col items-center gap-12 py-10 sm:w-[92%] sm:py-12 lg:min-h-125 lg:w-[90%] lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-12 xl:w-[88%]">
-            <div className="w-full text-white sm:w-[90%] lg:w-[52%] xl:w-[54%]">
+            <style jsx>{`
+  .content-slide-in-left {
+    opacity: 0;
+    animation: contentSlideInLeft 1.5s cubic-bezier(0.22, 1, 0.36, 1)
+      forwards;
+  }
+
+  @keyframes contentSlideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-70px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+              `}</style>
+
+            <div className="content-slide-in-left w-full text-white sm:w-[90%] lg:w-[52%] xl:w-[54%]">
               {/* SMALL TITLE */}
               <p className="mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px]">
                 Let&apos;s Turn Your Idea Into a Market-Ready Product
@@ -261,12 +275,12 @@ export default function LandingPage() {
               <ul className="mt-5 space-y-3 text-[12px] leading-6 sm:text-[13px] lg:text-[18px]">
                 <li className="flex items-center gap-2">
                   <span>•</span>
-                  <span>45-minute free consultation </span>
+                  <span>45-minute free consultation</span>
                 </li>
 
                 <li className="flex items-center gap-2">
                   <span>•</span>
-                  <span>Strict NDA and IP confidentiality </span>
+                  <span>Strict NDA and IP confidentiality</span>
                 </li>
 
                 <li className="flex items-center gap-2">
@@ -278,13 +292,15 @@ export default function LandingPage() {
                   <span>•</span>
                   <span>Customized technology and development roadmap</span>
                 </li>
+
                 <li className="flex items-center gap-2">
                   <span>•</span>
-                  <span>Clear timeline and budget estimate </span>
+                  <span>Clear timeline and budget estimate</span>
                 </li>
+
                 <li className="flex items-center gap-2">
                   <span>•</span>
-                  <span>Action plan to move your project forward </span>
+                  <span>Action plan to move your project forward</span>
                 </li>
               </ul>
 
@@ -314,8 +330,24 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* RIGHT SIDE FORM */}
-            <div className="relative w-full max-w-127.5 sm:w-[80%] lg:w-[42%] lg:max-w-100 xl:w-[40%] xl:max-w-105">
+            <style jsx>{`
+                  .form-slide-in-right {
+                    animation: slideInRight 3.5s cubic-bezier(0.32, 2, 0.46, 2) forwards;
+                  }
+
+                  @keyframes slideInRight {
+                    from {
+                      opacity: 0;
+                      transform: translateX(80px);
+                    }
+
+                    to {
+                      opacity: 1;
+                      transform: translateX(0);
+                    }
+                  }
+                `}</style>
+            <div className="relative w-full max-w-127.5 sm:w-[80%] lg:w-[60%] form-slide-in-right">
               {/* BADGE */}
               <div className="absolute -right-1 -top-8 z-10 sm:-right-2 sm:-top-9">
                 <img
@@ -338,7 +370,8 @@ export default function LandingPage() {
                 </p>
 
                 {/* FORM */}
-                <form onSubmit={handleSubmit} className="mt-5 space-y-4">
+
+                <form onSubmit={handleSubmit} className="mt-5 space-y-4 ">
                   {/* NAME */}
                   <div>
                     <input
@@ -427,11 +460,10 @@ export default function LandingPage() {
                   {/* STATUS MESSAGE */}
                   {statusMessage.text && (
                     <div
-                      className={`rounded px-3 py-2 text-[10px] sm:text-[11px] ${
-                        statusMessage.type === "success"
-                          ? "bg-green-50 text-green-600"
-                          : "bg-red-50 text-red-600"
-                      }`}
+                      className={`rounded px-3 py-2 text-[10px] sm:text-[11px] ${statusMessage.type === "success"
+                        ? "bg-green-50 text-green-600"
+                        : "bg-red-50 text-red-600"
+                        }`}
                     >
                       {statusMessage.text}
                     </div>
@@ -441,11 +473,10 @@ export default function LandingPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`h-9 rounded-[3px] px-5 text-[10px] font-semibold text-white transition sm:h-9.5 sm:px-6 sm:text-[11px] focus:outline-none focus:ring-0 ${
-                      loading
-                        ? "cursor-not-allowed bg-red-600"
-                        : "bg-red-600 hover:bg-red-700"
-                    }`}
+                    className={`h-9 rounded-[3px] px-5 text-[10px] font-semibold text-white transition sm:h-9.5 sm:px-6 sm:text-[11px] focus:outline-none focus:ring-0 ${loading
+                      ? "cursor-not-allowed bg-red-600"
+                      : "bg-red-600 hover:bg-red-700"
+                      }`}
                   >
                     {loading ? "Sending..." : "Schedule a free consultation"}
                   </button>
@@ -945,11 +976,10 @@ export default function LandingPage() {
               {faqsData.map((faq, index) => (
                 <div
                   key={index}
-                  className={`border bg-white transition-all duration-300 ${
-                    open === index
-                      ? "border-red-50 shadow-md"
-                      : "border-gray-200 hover:border-red-300"
-                  }`}
+                  className={`border bg-white transition-all duration-300 ${open === index
+                    ? "border-red-50 shadow-md"
+                    : "border-gray-200 hover:border-red-300"
+                    }`}
                 >
                   {/* Question */}
                   <button
@@ -961,21 +991,19 @@ export default function LandingPage() {
                     </span>
 
                     <ChevronDown
-                      className={`w-5 h-5 transition-transform duration-300 ${
-                        open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                      }`}
+                      className={`w-5 h-5 transition-transform duration-300 ${open === index
+                        ? "rotate-180 text-black"
+                        : "rotate-0 text-black"
+                        }`}
                     />
                   </button>
 
                   {/* Answer */}
                   <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                      ? "max-h-150 opacity-100"
+                      : "max-h-0 opacity-0"
+                      }`}
                   >
                     <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                       <p className="text-[17px] leading-8 text-gray-600">
@@ -1178,11 +1206,10 @@ export default function LandingPage() {
                     {/* STATUS MESSAGE */}
                     {statusMessage.text && (
                       <div
-                        className={`rounded px-3 py-2 text-[11px] ${
-                          statusMessage.type === "success"
-                            ? "bg-green-50 text-green-600"
-                            : "bg-red-50 text-red-600"
-                        }`}
+                        className={`rounded px-3 py-2 text-[11px] ${statusMessage.type === "success"
+                          ? "bg-green-50 text-green-600"
+                          : "bg-red-50 text-red-600"
+                          }`}
                       >
                         {statusMessage.text}
                       </div>
@@ -1193,11 +1220,10 @@ export default function LandingPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${
-                          loading
-                            ? "cursor-not-allowed opacity-60"
-                            : "hover:bg-[#d9141c]"
-                        } rounded-full`}
+                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${loading
+                          ? "cursor-not-allowed opacity-60"
+                          : "hover:bg-[#d9141c]"
+                          } rounded-full`}
                       >
                         {loading ? "Sending..." : "Get A Free Quote"}
                       </button>

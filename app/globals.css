@@ -982,9 +982,7 @@ mark.has-inline-color {
 }
 
 /* ================= TOP TECH BOX ================= */
-.col-md-12 .mt-iq-20 {
-  width: 90% !important;
-}
+
 .mt-iq-20 .col-md-6{
   width: 600px !important;
 }
@@ -997,6 +995,9 @@ mark.has-inline-color {
     margin: 40px 0px 0px;
     flex: 0 0 auto;
     width: 725px;
+}
+.mt-iq-20 {
+  flex-wrap: nowrap;
 }
 .top-tech-box {
   height: 90% !important;
@@ -1114,7 +1115,12 @@ mark.has-inline-color {
 
 
 /* ================= LARGE TABLET ================= */
-
+.plr-iq-40{
+  display: none;
+}
+.col-12{
+  z-index: 0 !important;
+}
 @media(max-width: 1024px){
 
   .top-tech-box {
@@ -1266,7 +1272,7 @@ mark.has-inline-color {
 .development-process-section {
   padding: 60px 0 !important;
   position: relative;
-  z-index: 1;
+  z-index: 1 !important;
 }
 
 .development-process-section .container-sm {
