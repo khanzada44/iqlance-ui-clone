@@ -29,7 +29,7 @@ export default function NotFound() {
         <div className="mt-8">
           <Link
             href="/"
-            className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-[0_4px_20px_rgba(220,38,38,0.3)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+            className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3.5 shadow-[0_4px_20px_rgba(220,38,38,0.3)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
           >
             BACK TO HOME
           </Link>
