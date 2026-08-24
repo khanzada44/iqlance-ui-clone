@@ -165,11 +165,11 @@ export default function SinglePortfolioPage() {
 
   return (
     <>
-      <div className="portfolio-page-wrapper w-full overflow-hidden">
+      <div className="w-full">
         {/* Full Width Dynamic Content Section */}
         <main className="w-full">
           {portfolio.content && (
-            <div className="portfolio-dynamic-content w-full">
+            <div className="portfolio-dynamic">
               {parse(portfolio.content, parseOptions)}
             </div>
           )}
