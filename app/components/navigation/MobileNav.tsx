@@ -357,7 +357,7 @@ export const MobileNav = ({
                       onClick={() =>
                         handleCategoryClick(category)
                       }
-                      className={`flex w-full items-center justify-between px-4 py-3 text-left text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-blue-600 ${
+                      className={`flex w-full items-center justify-between px-4 py-3 text-left text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-red-600 ${
                         activeSubMenu
                           ? "translate-x-0 opacity-100"
                           : "-translate-x-8 opacity-0"
@@ -390,7 +390,7 @@ export const MobileNav = ({
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`flex items-center gap-3 px-4 py-3 text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-blue-600 ${
+                    className={`flex items-center gap-3 px-4 py-3 text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-red-600 ${
                       activeSubMenu
                         ? "translate-x-0 opacity-100"
                         : "-translate-x-8 opacity-0"
