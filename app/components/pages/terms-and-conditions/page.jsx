@@ -510,7 +510,7 @@ export default function TermsAndConditions() {
         </div>
 
         {/* FOOTER / CTA */}
-        <div className="relative z-10 mx-auto max-w-7xl bg-black px-4 pt-24 pb-12 text-center">
+        <div className="relative z-10  bg-black text-center">
 
           {/* LOGO */}
           <div className="flex items-center justify-center gap-1">

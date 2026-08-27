@@ -177,86 +177,104 @@ export default function PrivacyPolicy() {
 
           </div>
         </div>
-                            <div className="mx-auto max-w-7xl px-4 text-center relative z-10 pt-24 pb-12 bg-black">
-                      {/* Logo Section */}
-                      <div className="flex justify-center items-center gap-1">
-                        <img
-                          src="/images/Dev-App-04.png"
-                          alt="Dev App Grid"
-                          className="w-44 sm:w-48"
-                        />
-                      </div>
-                      <div className="flex flex-col sm:flex-row items-center justify-around py-6 my-6 gap-4">
-                        <div className="text-left sm:text-left">
-                          <span className="text-[14px] text-gray-300 font-medium">
-                            Always Connect With Us!
-                          </span>
-                          <div className="flex items-center gap-3 text-gray-400 mt-3">
-                            <a
-                              href="#"
-                              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
-                            >
-                              <FaFacebookF size={14} />
-                            </a>
-                            <a
-                              href="#"
-                              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
-                            >
-                              <FaInstagram size={14} />
-                            </a>
-                            <a
-                              href="#"
-                              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
-                            >
-                              <FaLinkedinIn size={14} />
-                            </a>
-                          </div>
-                        </div>
-        
-                        {/* Direct Phone */}
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center shrink-0">
-                            <Phone size={17} />
-                          </div>
-                          <div className="text-left">
-                            <p className="text-[15px] sm:text-[16px] font-bold text-white leading-tight">
-                              +1 (844) 673 6849
-                            </p>
-                            <p className="text-[11px] text-red-500 font-semibold tracking-wide uppercase mt-0.5">
-                              Call Us Today!
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="py-8">
-                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-                          Let's work together!
-                        </h2>
-                        <div>
-                          <Link
-                            href="/request-a-quote"
-                            className="inline-block bg-red-600 hover:bg-red-700 text-white font-medium text-[15px] px-10 py-4 rounded-full shadow-lg transition-colors"
-                          >
-                            Get A Free Quote
-                          </Link>
-                        </div>
-                        <div className="flex items-center gap-6 text-sm justify-end">
-                          <Link
-                            href="/terms-and-conditions"
-                            className="text-gray-600 hover:text-red-600 transition-colors underline underline-offset-4"
-                          >
-                            Terms & Conditions
-                          </Link>
-        
-                          <Link
-                            href="/privacy-policy"
-                            className="text-gray-600 hover:text-red-600 transition-colors underline underline-offset-4"
-                          >
-                            Privacy Policy
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
+     <div className="relative z-10  bg-black text-center">
+
+          {/* LOGO */}
+          <div className="flex items-center justify-center gap-1">
+            <img
+              src="/images/Dev-App-04.png"
+              alt="Dev App Grid"
+              className="w-44 sm:w-48"
+            />
+          </div>
+
+          <div className="my-6 flex flex-col items-center justify-around gap-4 py-6 sm:flex-row">
+
+            {/* SOCIAL */}
+            <div className="text-left">
+              <span className="text-[14px] font-medium text-gray-300">
+                Always Connect With Us!
+              </span>
+
+              <div className="mt-3 flex items-center gap-3 text-gray-400">
+
+                <a
+                  href="#"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-800 transition-colors hover:border-red-500 hover:text-red-500 sm:h-10 sm:w-10"
+                >
+                  <FaFacebookF size={14} />
+                </a>
+
+                <a
+                  href="#"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-800 transition-colors hover:border-red-500 hover:text-red-500 sm:h-10 sm:w-10"
+                >
+                  <FaInstagram size={14} />
+                </a>
+
+                <a
+                  href="#"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-800 transition-colors hover:border-red-500 hover:text-red-500 sm:h-10 sm:w-10"
+                >
+                  <FaLinkedinIn size={14} />
+                </a>
+
+              </div>
+            </div>
+
+            {/* PHONE */}
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-600/20 text-red-500 sm:h-11 sm:w-11">
+                <Phone size={17} />
+              </div>
+
+              <div className="text-left">
+                <p className="text-[15px] font-bold leading-tight text-white sm:text-[16px]">
+                  +1 (844) 673 6849
+                </p>
+
+                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-red-500">
+                  Call Us Today!
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* CTA */}
+          <div className="py-8">
+
+            <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+              Let&apos;s work together!
+            </h2>
+
+            <Link
+              href="/request-a-quote"
+              className="inline-block rounded-full bg-red-600 px-10 py-4 text-[15px] font-medium text-white shadow-lg transition-colors hover:bg-red-700"
+            >
+              Get A Free Quote
+            </Link>
+
+            {/* LEGAL LINKS */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
+
+              <Link
+                href="/terms-and-conditions"
+                className="text-gray-400 underline underline-offset-4 transition-colors hover:text-red-500"
+              >
+                Terms & Conditions
+              </Link>
+
+              <Link
+                href="/privacy-policy"
+                className="text-gray-400 underline underline-offset-4 transition-colors hover:text-red-500"
+              >
+                Privacy Policy
+              </Link>
+
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
