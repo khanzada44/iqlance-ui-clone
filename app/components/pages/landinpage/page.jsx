@@ -1088,12 +1088,10 @@ export default function LandingPage() {
         </section>
 
         <section className="font-sans overflow-hidden relative">
-          {/* Background split: card ke naye (barhe hue) size ke hisaab se adjust kiya gaya */}
           <div className="absolute top-0 left-0 right-0 h-48 sm:h-56 bg-white pointer-events-none z-0"></div>
           <div className="absolute top-48 sm:top-56 left-0 right-0 bottom-0 bg-black pointer-events-none z-0"></div>
 
-          <div className="relative bg-transparent pt-10 sm:pt-12 pb-20 sm:pb-24 px-4 sm:px-8">
-            {/* Form Card Container - white/black boundary ko cross karega */}
+          <div className="relative bg-transparent sm:pt-12 sm:pb-24 sm:px-8">
             <div className="mx-auto max-w-260 relative z-20 mb-16">
               <div className="absolute -top-4 -left-4 w-40 h-40 border-t-8 border-l-8 border-red-600 pointer-events-none z-0"></div>
               <div className="absolute -bottom-4 -right-4 w-40 h-40 border-b-8 border-r-8 border-red-600 pointer-events-none z-0"></div>
@@ -1230,8 +1228,7 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="mx-auto max-w-7xl px-4 text-center relative z-10 pt-24 pb-12">
-              {/* Logo Section */}
+            <div className="mx-auto max-w-7xl px-4 text-center relative z-10 pt-10 pb-12">
               <div className="flex justify-center items-center gap-1">
                 <img
                   src="/images/Dev-App-04.png"
@@ -1293,7 +1290,7 @@ export default function LandingPage() {
                     Get A Free Quote
                   </Link>
                 </div>
-                <div className="flex items-center gap-6 text-sm justify-end">
+                <div className="flex items-center gap-6 text-sm justify-center mt-10">
                   <Link
                     href="/terms-and-conditions"
                     className="text-gray-600 hover:text-red-600 transition-colors underline underline-offset-4"
