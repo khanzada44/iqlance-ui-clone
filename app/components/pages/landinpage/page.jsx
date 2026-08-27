@@ -54,7 +54,6 @@ export default function LandingPage() {
     sendNda: false,
   });
 
-
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
@@ -64,7 +63,6 @@ export default function LandingPage() {
     }));
   };
 
-
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({
@@ -73,7 +71,6 @@ export default function LandingPage() {
       }));
     }
   };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -162,8 +159,8 @@ export default function LandingPage() {
   return (
     <>
       <main className="w-full bg-white ">
-        <header className="w-full border-t border-gray-800 bg-white">
-          <div className=" mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
+        <header className="sticky top-0 z-50 w-full border-t border-gray-800 bg-white">
+          <div className="mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
             {/* LOGO */}
             <div className="flex items-center">
               <Link href="/">
@@ -173,20 +170,13 @@ export default function LandingPage() {
                   className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
                 />
               </Link>
-
             </div>
 
             {/* RIGHT HEADER */}
             <div className="flex items-center gap-3 sm:gap-5 lg:gap-8">
               {/* PHONE */}
               <div className="flex items-center gap-2">
-                <div
-                  className="
-                  flex h-7.5 w-7.5
-                  shrink-0 items-center justify-center
-                  rounded-full bg-red-100
-                "
-                >
+                <div className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-red-100">
                   <Phone size={15} className="text-red-500" />
                 </div>
 
@@ -220,24 +210,24 @@ export default function LandingPage() {
         <section className="relative overflow-hidden bg-linear-to-r from-[#e72828] via-[#a60000] to-[#080000]">
           <div className="mx-auto flex w-[94%] flex-col items-center gap-12 py-10 sm:w-[92%] sm:py-12 lg:min-h-125 lg:w-[90%] lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-12 xl:w-[88%]">
             <style jsx>{`
-  .content-slide-in-left {
-    opacity: 0;
-    animation: contentSlideInLeft 1.5s cubic-bezier(0.22, 1, 0.36, 1)
-      forwards;
-  }
+              .content-slide-in-left {
+                opacity: 0;
+                animation: contentSlideInLeft 1.5s
+                  cubic-bezier(0.22, 1, 0.36, 1) forwards;
+              }
 
-  @keyframes contentSlideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-70px);
-    }
+              @keyframes contentSlideInLeft {
+                from {
+                  opacity: 0;
+                  transform: translateX(-70px);
+                }
 
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-              `}</style>
+                to {
+                  opacity: 1;
+                  transform: translateX(0);
+                }
+              }
+            `}</style>
 
             <div className="content-slide-in-left w-full text-white sm:w-[90%] lg:w-[52%] xl:w-[54%]">
               {/* SMALL TITLE */}
@@ -331,22 +321,23 @@ export default function LandingPage() {
             </div>
 
             <style jsx>{`
-                  .form-slide-in-right {
-                    animation: slideInRight 3.5s cubic-bezier(0.32, 2, 0.46, 2) forwards;
-                  }
+              .form-slide-in-right {
+                animation: slideInRight 3.5s cubic-bezier(0.32, 2, 0.46, 2)
+                  forwards;
+              }
 
-                  @keyframes slideInRight {
-                    from {
-                      opacity: 0;
-                      transform: translateX(80px);
-                    }
+              @keyframes slideInRight {
+                from {
+                  opacity: 0;
+                  transform: translateX(80px);
+                }
 
-                    to {
-                      opacity: 1;
-                      transform: translateX(0);
-                    }
-                  }
-                `}</style>
+                to {
+                  opacity: 1;
+                  transform: translateX(0);
+                }
+              }
+            `}</style>
             <div className="relative w-full max-w-127.5 sm:w-[80%] lg:w-[60%] form-slide-in-right">
               {/* BADGE */}
               <div className="absolute -right-1 -top-8 z-10 sm:-right-2 sm:-top-9">
@@ -460,10 +451,11 @@ export default function LandingPage() {
                   {/* STATUS MESSAGE */}
                   {statusMessage.text && (
                     <div
-                      className={`rounded px-3 py-2 text-[10px] sm:text-[11px] ${statusMessage.type === "success"
-                        ? "bg-green-50 text-green-600"
-                        : "bg-red-50 text-red-600"
-                        }`}
+                      className={`rounded px-3 py-2 text-[10px] sm:text-[11px] ${
+                        statusMessage.type === "success"
+                          ? "bg-green-50 text-green-600"
+                          : "bg-red-50 text-red-600"
+                      }`}
                     >
                       {statusMessage.text}
                     </div>
@@ -473,10 +465,11 @@ export default function LandingPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`h-9 rounded-[3px] px-5 text-[10px] font-semibold text-white transition sm:h-9.5 sm:px-6 sm:text-[11px] focus:outline-none focus:ring-0 ${loading
-                      ? "cursor-not-allowed bg-red-600"
-                      : "bg-red-600 hover:bg-red-700"
-                      }`}
+                    className={`h-9 rounded-[3px] px-5 text-[10px] font-semibold text-white transition sm:h-9.5 sm:px-6 sm:text-[11px] focus:outline-none focus:ring-0 ${
+                      loading
+                        ? "cursor-not-allowed bg-red-600"
+                        : "bg-red-600 hover:bg-red-700"
+                    }`}
                   >
                     {loading ? "Sending..." : "Schedule a free consultation"}
                   </button>
@@ -976,10 +969,11 @@ export default function LandingPage() {
               {faqsData.map((faq, index) => (
                 <div
                   key={index}
-                  className={`border bg-white transition-all duration-300 ${open === index
-                    ? "border-red-50 shadow-md"
-                    : "border-gray-200 hover:border-red-300"
-                    }`}
+                  className={`border bg-white transition-all duration-300 ${
+                    open === index
+                      ? "border-red-50 shadow-md"
+                      : "border-gray-200 hover:border-red-300"
+                  }`}
                 >
                   {/* Question */}
                   <button
@@ -991,19 +985,21 @@ export default function LandingPage() {
                     </span>
 
                     <ChevronDown
-                      className={`w-5 h-5 transition-transform duration-300 ${open === index
-                        ? "rotate-180 text-black"
-                        : "rotate-0 text-black"
-                        }`}
+                      className={`w-5 h-5 transition-transform duration-300 ${
+                        open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                      }`}
                     />
                   </button>
 
                   {/* Answer */}
                   <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                      ? "max-h-150 opacity-100"
-                      : "max-h-0 opacity-0"
-                      }`}
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
                   >
                     <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                       <p className="text-[17px] leading-8 text-gray-600">
@@ -1206,10 +1202,11 @@ export default function LandingPage() {
                     {/* STATUS MESSAGE */}
                     {statusMessage.text && (
                       <div
-                        className={`rounded px-3 py-2 text-[11px] ${statusMessage.type === "success"
-                          ? "bg-green-50 text-green-600"
-                          : "bg-red-50 text-red-600"
-                          }`}
+                        className={`rounded px-3 py-2 text-[11px] ${
+                          statusMessage.type === "success"
+                            ? "bg-green-50 text-green-600"
+                            : "bg-red-50 text-red-600"
+                        }`}
                       >
                         {statusMessage.text}
                       </div>
@@ -1220,10 +1217,11 @@ export default function LandingPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${loading
-                          ? "cursor-not-allowed opacity-60"
-                          : "hover:bg-[#d9141c]"
-                          } rounded-full`}
+                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${
+                          loading
+                            ? "cursor-not-allowed opacity-60"
+                            : "hover:bg-[#d9141c]"
+                        } rounded-full`}
                       >
                         {loading ? "Sending..." : "Get A Free Quote"}
                       </button>
@@ -1293,6 +1291,21 @@ export default function LandingPage() {
                     className="inline-block bg-red-600 hover:bg-red-700 text-white font-medium text-[15px] px-10 py-4 rounded-full shadow-lg transition-colors"
                   >
                     Get A Free Quote
+                  </Link>
+                </div>
+                <div className="flex items-center gap-6 text-sm justify-end">
+                  <Link
+                    href="/terms-and-conditions"
+                    className="text-gray-600 hover:text-red-600 transition-colors underline underline-offset-4"
+                  >
+                    Terms & Conditions
+                  </Link>
+
+                  <Link
+                    href="/privacy-policy"
+                    className="text-gray-600 hover:text-red-600 transition-colors underline underline-offset-4"
+                  >
+                    Privacy Policy
                   </Link>
                 </div>
               </div>

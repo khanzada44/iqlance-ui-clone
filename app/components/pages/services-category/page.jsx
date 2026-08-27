@@ -310,11 +310,11 @@ export default function ServicesCategory({ slug }) {
             <div className="min-w-0 lg:col-span-7">
 
               {/* CATEGORY NAME */}
-              <h1 className="text-3xl font-bold leading-tight text-red-600 md:text-5xl">
+              {/* <h1 className="text-3xl font-bold leading-tight text-red-600 md:text-5xl">
                 {serviceData?.name ||
                   serviceData?.title ||
                   "Services Category"}
-              </h1>
+              </h1> */}
 
               {/* CATEGORY DESCRIPTION */}
               {serviceData?.description ? (
