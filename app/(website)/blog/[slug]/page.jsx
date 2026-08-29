@@ -115,7 +115,14 @@
 //           </div>
 //         </aside>
 //       </div>
-
 //     </div>
 //   );
 // }
+
+export default async function BlogDetailPage() {
+    return(
+        <>
+        <div>Hello</div>
+        </>
+    )
+}
