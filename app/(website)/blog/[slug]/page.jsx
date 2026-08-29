@@ -2,10 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import {
-  blogs,
-  getBlogBySlug,
-} from "../../components/pages/blog/data";
+import { blogs,getBlogBySlug,} from "../../../components/pages/blog/data";
 
 export default async function BlogDetailPage({ params }) {
   const { slug } = await params;
