@@ -1586,9 +1586,7 @@ mark.has-inline-color {
     grid-template-columns: 1fr !important;
   }
 
-  .lg\\:col-span-7, .lg\\:col-span-5 {
-    grid-column: span 1 !important;
-  }
+
 
   h1 {
     font-size: 32px !important;
@@ -1677,18 +1675,6 @@ mark.has-inline-color {
   .grid {
     grid-template-columns: 1fr !important;
     gap: 15px !important;
-  }
-
-  .lg\\:grid-cols-12 {
-    grid-template-columns: 1fr !important;
-  }
-
-  .lg\\:col-span-7, .lg\\:col-span-5 {
-    grid-column: span 1 !important;
-  }
-
-  .lg\\:gap-14 {
-    gap: 20px !important;
   }
 
   /* Typography */
@@ -1883,10 +1869,6 @@ mark.has-inline-color {
     grid-template-columns: 1fr !important;
   }
 
-  .lg\\:grid-cols-12 {
-    grid-template-columns: 1fr !important;
-  }
-
   .items-start {
     align-items: stretch !important;
   }
@@ -2023,14 +2005,8 @@ mark.has-inline-color {
     gap: 20px !important;
   }
 
-  .lg\:grid-cols-12 {
-    grid-template-columns: 1fr !important;
-  }
 
-  .lg\:col-span-7,
-  .lg\:col-span-5 {
-    grid-column: span 1 !important;
-  }
+
 
   /* Row */
   .row {
