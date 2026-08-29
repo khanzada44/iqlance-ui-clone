@@ -277,12 +277,12 @@ export default function ServicesCategory({ slug }) {
       <div className="flex min-h-125 items-center justify-center px-5">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-red-600">
-            Unable to load service
+            Network Error
           </h2>
 
           <p className="mt-3 text-gray-600">{serviceError}</p>
 
-          <p className="mt-2 text-sm text-gray-400">Slug: {slug}</p>
+          <p className="mt-2 text-sm text-gray-400">{slug}</p>
         </div>
       </div>
     );
@@ -290,7 +290,7 @@ export default function ServicesCategory({ slug }) {
 
   return (
     <>
-      <div className="mx-auto w-full overflow-hidden">
+      <div className="mx-auto w-full">
         <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
           <div className="grid grid-cols-1 items-start gap-6 sm:gap-8 lg:grid-cols-12">
             <div className="space-y-6 lg:col-span-7">
@@ -527,7 +527,7 @@ export default function ServicesCategory({ slug }) {
               </div>
             </div>
           </div>
-                  <section className="py-10 sm:py-16">
+          <section className="py-10 sm:py-16">
           <div className="max-w-7xl mx-auto px-3 sm:px-5">
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center">
               Industries We Serve
@@ -571,8 +571,8 @@ export default function ServicesCategory({ slug }) {
           </div>
         </section>
 
-        <section className="py-20 bg-white ">
-          <div className="w-full px-5">
+          <section className="py-20 bg-white">
+            <div className="w-full px-0 sm:px-5">
             <h2 className="text-4xl font-bold text-center">
               Frequently Asked Questions
             </h2>
@@ -583,7 +583,7 @@ export default function ServicesCategory({ slug }) {
               a successful digital product.
             </p>
 
-            <div className="mt-12 space-y-4 ">
+            <div className="mt-12 space-y-4 px-0 sm:px-0">
               {faqsData.map((faq, index) => (
                 <div
                   key={index}

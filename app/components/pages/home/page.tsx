@@ -82,7 +82,7 @@ export default function Home() {
   ];
   return (
     <>
-      <div className="w-[95%] sm:w-[90%] lg:w-[80%] max-w-7xl mx-auto">
+      <div className="w-[95%] sm:w-full lg:w-[80%] max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full">
           {/* LEFT CONTENT */}
           <div className="w-full lg:w-1/2 px-2 sm:px-4 py-6 sm:py-8 font-sans">
