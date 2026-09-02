@@ -276,9 +276,7 @@ export default function ServicesCategory({ slug }) {
     return (
       <div className="flex min-h-125 items-center justify-center px-5">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-red-600">
-            Network Error
-          </h2>
+          <h2 className="text-2xl font-bold text-red-600">Network Error</h2>
 
           <p className="mt-3 text-gray-600">{serviceError}</p>
 
@@ -290,16 +288,15 @@ export default function ServicesCategory({ slug }) {
 
   return (
     <>
-      <div className="mx-auto w-full">
-        <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
-          <div className="grid grid-cols-1 items-start gap-6 sm:gap-8 lg:grid-cols-12">
-            <div className="space-y-6 lg:col-span-7">
-              {/* API DESCRIPTION */}
-
-              {/* DESCRIPTION */}
+      <div className="w-full max-w-7xl mx-auto">
+        <section className="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-16 lg:px-8">
+          {/* TOP: DESCRIPTION + FORM */}
+          <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-start">
+            {/* LEFT - ONLY HERO CONTENT */}
+            <div className="w-full lg:flex-1 lg:min-w-0">
               {serviceData?.description && (
                 <div
-                  className="text-base leading-relaxed text-black md:text-lg"
+                  className="portfolio-dynamic-content w-full text-base leading-relaxed text-black md:text-lg"
                   dangerouslySetInnerHTML={{
                     __html: serviceData.description,
                   }}
@@ -324,41 +321,12 @@ export default function ServicesCategory({ slug }) {
                   <ArrowRight className="h-4 w-4 text-black" />
                 </Link>
               </div>
-
-              {/* FEATURES LIST */}
-              {serviceData?.content_1 && (
-                <div
-                  className="text-base leading-relaxed text-black md:text-lg mt-8"
-                  dangerouslySetInnerHTML={{
-                    __html: serviceData.content_1,
-                  }}
-                />
-              )}
-
-              {/* FALLBACK DESCRIPTION */}
-
-              {!serviceData?.description && (
-                <>
-                  <p className="text-base leading-relaxed text-black md:text-lg">
-                    Many conventional retailers have moved to digitalization
-                    with the introduction of on-demand options. Technology
-                    advancements, particularly mobile evolution, have
-                    dramatically changed the eatery and café sector.
-                  </p>
-
-                  <p className="text-base leading-relaxed text-black md:text-lg">
-                    Technology solutions help businesses grow their brand,
-                    manage customers, and improve their overall digital
-                    experience.
-                  </p>
-                </>
-              )}
             </div>
 
-            <div className="relative pt-6 pr-4 lg:col-span-5">
+            {/* RIGHT - FORM */}
+            <div className="relative w-full shrink-0 pt-2 lg:w-105 lg:max-w-105">
               <div className="relative w-full border border-blue-100/60 bg-[#F7F8FA] p-6 shadow-lg md:p-8">
                 {/* BADGE */}
-
                 <div className="absolute -right-3 -top-6 z-10 w-24 drop-shadow-md md:w-28">
                   <img
                     src="/images/contact-form-logo.png"
@@ -367,8 +335,6 @@ export default function ServicesCategory({ slug }) {
                   />
                 </div>
 
-                {/* FORM HEADING */}
-
                 <h2 className="mb-1 text-xl font-extrabold text-black md:text-2xl">
                   Request a Free Quote
                 </h2>
@@ -376,8 +342,6 @@ export default function ServicesCategory({ slug }) {
                 <p className="mb-8 text-xs font-medium text-black md:text-sm">
                   Guaranteed Response within One Business Day!
                 </p>
-
-                {/* STATUS */}
 
                 {statusMessage.text && (
                   <p
@@ -391,11 +355,7 @@ export default function ServicesCategory({ slug }) {
                   </p>
                 )}
 
-                {/* FORM */}
-
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* NAME */}
-
                   <input
                     type="text"
                     name="name"
@@ -403,10 +363,8 @@ export default function ServicesCategory({ slug }) {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none transition-colors placeholder:text-gray-400 focus:border-red-600"
+                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-red-600"
                   />
-
-                  {/* EMAIL */}
 
                   <input
                     type="email"
@@ -415,10 +373,8 @@ export default function ServicesCategory({ slug }) {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none transition-colors placeholder:text-gray-400 focus:border-red-600"
+                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-red-600"
                   />
-
-                  {/* PHONE */}
 
                   <input
                     type="tel"
@@ -427,10 +383,8 @@ export default function ServicesCategory({ slug }) {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none transition-colors placeholder:text-gray-400 focus:border-red-600"
+                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-red-600"
                   />
-
-                  {/* MESSAGE */}
 
                   <textarea
                     name="message"
@@ -438,15 +392,13 @@ export default function ServicesCategory({ slug }) {
                     placeholder="Write here Brief about the project..."
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full resize-y border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none transition-colors placeholder:text-gray-400 focus:border-red-600"
+                    className="w-full resize-y border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-red-600"
                   />
 
                   {/* FILE */}
-
                   <div className="flex items-center gap-2 pt-1 text-xs text-black md:text-sm">
                     <label className="flex cursor-pointer items-center gap-1.5 font-medium">
                       <Paperclip className="h-4 w-4 text-black" />
-
                       <span>Upload file:</span>
 
                       <input
@@ -463,7 +415,6 @@ export default function ServicesCategory({ slug }) {
                   </div>
 
                   {/* NDA */}
-
                   <div className="flex items-center gap-2 pt-1">
                     <input
                       type="checkbox"
@@ -487,47 +438,35 @@ export default function ServicesCategory({ slug }) {
                   </div>
 
                   {/* SUBMIT */}
-
                   <div className="pt-2">
                     <button
                       type="submit"
                       disabled={loading}
-                      className="flex cursor-pointer items-center justify-center bg-red-600 px-6 py-3 text-xs font-bold text-white shadow transition-colors hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60 md:text-sm"
+                      className="flex w-full cursor-pointer items-center justify-center bg-red-600 px-6 py-3 text-xs font-bold text-white shadow transition-colors hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60 md:text-sm"
                     >
-                      {loading ? (
-                        <span className="flex items-center gap-2">
-                          <svg
-                            className="h-4 w-4 animate-spin text-white"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            />
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            />
-                          </svg>
-                          Sending...
-                        </span>
-                      ) : (
-                        "Schedule a free consultation"
-                      )}
+                      {loading ? "Sending..." : "Schedule a free consultation"}
                     </button>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-          <section className="py-10 sm:py-16">
+
+          {/* BELOW CONTENT - FULL WIDTH */}
+          {serviceData?.content_1 && (
+            <div
+              className="mt-10 w-full"
+              dangerouslySetInnerHTML={{
+                __html: serviceData.content_1
+                  .replace(/\sstyle="[^"]*"/gi, "")
+                  .replace(/\sstyle='[^']*'/gi, ""),
+              }}
+            />
+          )}
+        </section>
+
+        {/* INDUSTRIES SECTION */}
+        <section className="py-10 sm:py-16">
           <div className="max-w-7xl mx-auto px-3 sm:px-5">
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center">
               Industries We Serve
@@ -571,8 +510,9 @@ export default function ServicesCategory({ slug }) {
           </div>
         </section>
 
-          <section className="py-20 bg-white">
-            <div className="w-full px-0 sm:px-5">
+        {/* FAQ SECTION */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-5">
             <h2 className="text-4xl font-bold text-center">
               Frequently Asked Questions
             </h2>
@@ -583,7 +523,7 @@ export default function ServicesCategory({ slug }) {
               a successful digital product.
             </p>
 
-            <div className="mt-12 space-y-4 px-0 sm:px-0">
+            <div className="mt-12 space-y-4">
               {faqsData.map((faq, index) => (
                 <div
                   key={index}
@@ -628,12 +568,9 @@ export default function ServicesCategory({ slug }) {
             </div>
           </div>
         </section>
-        </section>
-
-        <div className="mb-2.5 pb-2">
-          <ContactForm />
-        </div>
+        <ContactForm />
       </div>
+
       <section className="mb-5 overflow-hidden">
         <div className="marquee">
           <div className="marquee-content">
