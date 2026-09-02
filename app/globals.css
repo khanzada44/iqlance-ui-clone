@@ -1242,3 +1242,342 @@ p.pt-20.text-center.mt-iq-20 {
 .mt-iq-80{
   margin-top: 40px;
 }
+/* General container alignment without breaking inner grids */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Safe utility classes for spacing */
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.mt-iq-20 {
+  margin-top: 20px !important;
+}
+
+/* Specific section row styling for Hybrid App Development blocks */
+.container > .row:not(.justify-content-center) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Left column text styling specifically for main content sections */
+.container > .row > .col-lg-6:first-child {
+  flex: 1;
+  min-width: 300px;
+}
+
+.container > .row > .col-lg-6 h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.container > .row > .col-lg-6 p {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Right column image styling */
+.container > .row > .col-lg-6.text-end-res {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.container > .row > .col-lg-6 img.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 991px) {
+  .container > .row:not(.justify-content-center) {
+    flex-direction: column;
+  }
+  
+  .container > .row > .col-lg-6.text-end-res {
+    justify-content: center;
+    width: 100%;
+  }
+}
+/* Hybrid Reverse Section Layout for Desktop */
+.row.iq-md-revrse {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Ensure columns share space evenly */
+.row.iq-md-revrse > .col-lg-6 {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Mobile Responsive: Reverse order so image appears on top of text on small screens */
+@media (max-width: 991px) {
+  .row.iq-md-revrse {
+    flex-direction: column-reverse; /* Image upar, text niche */
+  }
+}
+
+/* Main section row layout */
+.mtb-iq-80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Align the left highlight boxes grid and right text side by side */
+.mt-iq-40 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Individual Highlight Box styling matching the reference look */
+.keyhigkight-box {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 25px 15px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.keyhigkight-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* Icon spacing inside the boxes */
+.keyhigkight-box img {
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+/* Number text styling (e.g., 7+, 1500+) */
+.keyhigkight-box .numberText,
+.keyhigkight-box h3, 
+.keyhigkight-box div:has(.numberText) {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+/* Paragraph label text inside boxes */
+.keyhigkight-box p {
+  font-size: 0.9rem;
+  color: #555555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Right side content text styling */
+.col-12.col-lg-6 p {
+  font-size: 1rem;
+  color: #444444;
+  line-height: 1.7;
+}
+
+/* Spacing utility classes */
+.mt-iq-20 {
+  margin-top: 20px !important;
+}
+
+/* Responsive adjustments for mobile/tablets */
+@media (max-width: 991px) {
+  .mt-iq-40 {
+    flex-direction: column;
+  }
+  
+  .rs-pt-80 {
+    margin-top: 40px;
+  }
+}
+/* Section Layout and Alignment */
+.container.mt-iq-80 {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* Column Spacing and Padding */
+.col-lg-6, .col-md-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Typography & Spacing to match reference image */
+h2.mt-iq-20 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+p.mt-iq-20 {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 0;
+}
+
+/* Image Styling */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Desktop Flex Order & Grid Adjustments */
+@media (min-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .order-lg-1 {
+    order: 1;
+  }
+  .order-lg-2 {
+    order: 2;
+  }
+}
+
+/* Mobile & Tablet Adjustments */
+@media (max-width: 991.98px) {
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .rs-mm-20 {
+    margin-bottom: 30px;
+  }
+  h2.mt-iq-20 {
+    font-size: 2rem;
+  }
+}
+/* Main Layout & Cards */
+.mt-iq-40 {
+  margin-top: 40px;
+}
+
+.inhouse-box {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.inhouse-box:hover {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+/* Card Headers with light gradient backgrounds */
+.emodel-header{
+  width: 100%;
+  height: 50%;
+  padding: 25px 20px;
+  background: linear-gradient(135deg, rgba(240, 244, 255, 0.8) 0%, rgba(255, 255, 255, 1) 100%);
+  border-bottom: 1px solid #eaeaea;
+}
+.fixedb-header, 
+.dedicated-header {
+  padding: 25px 20px;
+  background: linear-gradient(135deg, rgba(240, 244, 255, 0.8) 0%, rgba(255, 255, 255, 1) 100%);
+  border-bottom: 1px solid #eaeaea;
+}
+
+.inhouse-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.inhouse-heading img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.emodel-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+/* Content List Area */
+.fixedb-brd {
+  padding: 20px 25px;
+}
+
+.onhouse-flex-g {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fixedb-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #f0f0f0;
+  padding-bottom: 12px;
+}
+
+.fixedb-content:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.small-txt-grey {
+  font-size: 0.9rem;
+  color: #777777;
+  font-weight: 500;
+}
+
+.fixedb-txt {
+  font-size: 0.95rem;
+  color: #222222;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Responsive spacing for smaller screens */
+@media (max-width: 991.98px) {
+  .mt-iq-sm, .mt-30md {
+    margin-top: 30px;
+  }
+}
