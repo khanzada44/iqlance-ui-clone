@@ -118,11 +118,81 @@
 //     </div>
 //   );
 // }
+import Link from "next/link";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 
-export default async function BlogDetailPage() {
-    return(
-        <>
-        <div>Hello</div>
-        </>
-    )
+import {
+  blogs,
+  getBlogBySlug,
+} from "../../../components/pages/blog/data";
+
+export async function generateStaticParams() {
+  return blogs.map((blog) => ({
+    slug: blog.slug,
+  }));
+}
+
+export default async function BlogDetailPage({ params }) {
+  const { slug } = await params;
+
+  const blog = getBlogBySlug(slug);
+
+  if (!blog) {
+    notFound();
+  }
+
+  return (
+    <div className="w-[90%] max-w-7xl mx-auto py-16">
+      <h1 className="text-4xl font-bold text-[#1E4F91]">
+        {blog.title}
+      </h1>
+
+      <div className="mt-5">
+        <span>{blog.author}</span>
+        <span className="mx-2">Posted</span>
+        <span>{blog.date}</span>
+      </div>
+
+      <div className="relative w-full h-137.5 mt-8">
+        <Image
+          src={blog.image}
+          alt={blog.title}
+          fill
+          priority
+          className="object-cover"
+        />
+      </div>
+
+      <div className="mt-12">
+        {blog.content?.map((section, index) => (
+          <div key={index} className="mb-8">
+            {section.heading && (
+              <h2 className="text-3xl font-bold text-[#1E4F91] mb-4">
+                {section.heading}
+              </h2>
+            )}
+
+            {section.text && (
+              <div
+                className="text-lg leading-7 text-black"
+                dangerouslySetInnerHTML={{
+                  __html: section.text,
+                }}
+              />
+            )}
+
+            {section.description && (
+              <div
+                className="text-sm leading-6 text-black mt-3"
+                dangerouslySetInnerHTML={{
+                  __html: section.description,
+                }}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
