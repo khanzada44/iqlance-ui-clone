@@ -534,7 +534,7 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  US : +1 469 793 9837
+                  US : +1 866 978 8570
                 </button>
               </div>
 
@@ -868,8 +868,8 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  US : <strong>+1 469 793 9837</strong>, CA :
-                  <strong>+1 647 637 9108</strong>
+                  US : <strong>+1 866 978 8570</strong>,  
+                  <strong>  </strong>
                 </span>
               </div>
             </div>
@@ -1230,15 +1230,15 @@ export default function Home() {
                     href="tel:+14697939837"
                     className="hover:text-red-600 transition-colors"
                   >
-                    +1 469 793 9837
+                    +1 866 978 8570
                   </a>
                   <span>,</span>
-                  <span>CA :</span>
+                  <span> </span>
                   <a
                     href="tel:+16476379108"
                     className="hover:text-red-600 transition-colors"
                   >
-                    +1 647 637 9108
+                      
                   </a>
                 </div>
               </div>
@@ -1439,8 +1439,8 @@ export default function Home() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                US :<strong> +1 469 793 9837</strong>, CA :
-                <strong> +1 647 637 9108</strong>
+                US :<strong> +1 866 978 8570</strong>,  
+                <strong>   </strong>
               </span>
             </div>
 

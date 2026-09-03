@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "newbrand.coretechdigitals.com",
+        hostname: "devappgrid.dev-staging.live",
         pathname: "/**",
       },
     ],

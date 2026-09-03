@@ -45,8 +45,7 @@ export default function FloatingTalkToExpert() {
 
   return (
     <>
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50">
-        {/* 1. Side Trigger Button */}
+      {/* <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50">
         <div>
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -58,13 +57,12 @@ export default function FloatingTalkToExpert() {
           </button>
         </div>
 
-        {/* 2. Slide-in Drawer Card */}
         <div
           className={`fixed right-0 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md border border-gray-200 shadow-2xl p-6 w-80 text-gray-800 transition-transform duration-300 ease-in-out rounded-l-xl ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* Close Button */}
+
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 p-1"
@@ -77,29 +75,28 @@ export default function FloatingTalkToExpert() {
             Call Us Now
           </h3>
 
-          {/* Contact Numbers */}
           <div className="space-y-3 mb-5 text-base font-semibold text-gray-700">
             <div className="flex items-center gap-3">
               <span className="text-lg">🇺🇸</span>
               <a href="tel:+14697939837" className="hover:underline">
-                +1 469 793 9837
+                +1 866 978 8570
               </a>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-lg">🇺🇸</span>
               <a href="tel:+19174778991" className="hover:underline">
-                +1 917 477 8991
+                  
               </a>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-lg">🇨🇦</span>
               <a href="tel:+16476379108" className="hover:underline">
-                +1 647 637 9108
+                  
               </a>
             </div>
           </div>
 
-          {/* OR Divider */}
+
           <div className="relative my-4 text-center">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-red-200"></div>
@@ -109,7 +106,6 @@ export default function FloatingTalkToExpert() {
             </span>
           </div>
 
-          {/* Callback Request Form - Single Field */}
           <form onSubmit={handleSubmit} className="space-y-3">
             <input
               type="tel"
@@ -120,7 +116,6 @@ export default function FloatingTalkToExpert() {
               className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[red] text-sm"
             />
 
-            {/* Status Feedback Message */}
             {statusMessage.text && (
               <p
                 className={`text-xs text-center font-semibold ${
@@ -142,7 +137,7 @@ export default function FloatingTalkToExpert() {
             </button>
           </form>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

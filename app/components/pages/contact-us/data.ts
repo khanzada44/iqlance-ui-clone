@@ -4,7 +4,7 @@ export const offices = [
     title: "Headquarter",
     city: "Texas, USA",
     address: "17250 Dallas Pkwy Dallas, TX 75248, USA",
-    phone: "+1 469 793 9837",
+    phone: "+1 866 978 8570",
     image: "/images/texas_usa_office_iq.png",
   },
   {
@@ -12,7 +12,7 @@ export const offices = [
     title: "",
     city: "New York, USA",
     address: "349 5th Ave, New York, NY 10016, USA",
-    phone: "+1 917 477 8991",
+    phone: "  ",
     image: "/images/newyork-office-icn.png",
   },
   {
@@ -20,7 +20,7 @@ export const offices = [
     title: "Branch",
     city: "Toronto, Canada",
     address: "502-10 Markbrook Lane, Etobicoke, M9V5E3",
-    phone: "+1 647 637 9108",
+    phone: "  ",
     image: "/images/canada-office-icn.png",
   },
   {

@@ -182,7 +182,7 @@ export default function LandingPage() {
 
                 <div className="hidden leading-tight sm:block">
                   <p className="text-[12px] font-semibold text-gray-800 lg:text-[13px]">
-                    +1 (844) 673 6849
+                    +1 (866) 978-8570
                   </p>
 
                   <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
@@ -250,7 +250,7 @@ export default function LandingPage() {
               <p className="mb-5 text-[12px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px]">
                 Talk To Experts:
                 <br />
-                USA: +1 (469) 793-9837
+                USA: +1 (866) 978-8570
               </p>
 
               {/* DESCRIPTION */}
@@ -578,7 +578,7 @@ export default function LandingPage() {
 
                 <p className="mt-2 text-[10px] font-semibold text-black sm:text-[13px] flex items-center">
                   <img src="/icons/phone.svg" alt="" />
-                  +1 469 793 9837
+                  +1 866 978 8570
                 </p>
               </div>
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
@@ -602,10 +602,10 @@ export default function LandingPage() {
                   M9V5E3
                 </p>
 
-                <p className="mt-2 text-[10px] font-semibold text-black sm:text-[13px] flex items-center">
+                {/* <p className="mt-2 text-[10px] font-semibold text-black sm:text-[13px] flex items-center">
                   <img src="/icons/phone.svg" alt="" />
-                  +1 647 637 9108
-                </p>
+                    
+                </p> */}
               </div>
 
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
@@ -624,8 +624,8 @@ export default function LandingPage() {
                 </p>
 
                 <p className="text-[10px] font-semibold text-black sm:text-[13px] flex items-center mt-10">
-                  <img src="/icons/phone.svg" alt="" />
-                  +1 917 477 8991
+                  {/* <img src="/icons/phone.svg" alt="" /> */}
+                    
                 </p>
               </div>
 
@@ -1063,7 +1063,7 @@ export default function LandingPage() {
                       CALL US ANYTIME
                     </p>
                     <p className="text-[15px] font-bold text-white tracking-wide">
-                      (800) 551-2090
+                      +1 (866) 978-8570
                     </p>
                   </div>
                 </div>
@@ -1078,7 +1078,7 @@ export default function LandingPage() {
                       TALK TO US NOW
                     </p>
                     <p className="text-[14px] font-bold text-white truncate">
-                      hello@appforgestudio.com
+                      info@DevAppGrid.com
                     </p>
                   </div>
                 </div>
@@ -1270,7 +1270,7 @@ export default function LandingPage() {
                   </div>
                   <div className="text-left">
                     <p className="text-[15px] sm:text-[16px] font-bold text-white leading-tight">
-                      +1 (844) 673 6849
+                      +1 (866) 978-8570
                     </p>
                     <p className="text-[11px] text-red-500 font-semibold tracking-wide uppercase mt-0.5">
                       Call Us Today!

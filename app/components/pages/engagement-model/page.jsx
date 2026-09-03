@@ -494,12 +494,12 @@ export default function EngagementModelSection() {
                   ></div>
                   <span>US :</span>
                   <a href="tel:+14697939837" className=" transition-colors">
-                    +1 469 793 9837
+                    +1 866 978 8570
                   </a>
                   <span>,</span>
-                  <span>CA :</span>
+                  <span> </span>
                   <a href="tel:+16476379108" className=" transition-colors">
-                    +1 647 637 9108
+                      
                   </a>
                 </div>
               </div>
@@ -633,12 +633,12 @@ export default function EngagementModelSection() {
                   ></div>
                   <span>US :</span>
                   <a href="tel:+14697939837" className=" transition-colors">
-                    +1 469 793 9837
+                    +1 866 978 8570
                   </a>
                   <span>,</span>
-                  <span>CA :</span>
+                  <span> </span>
                   <a href="tel:+16476379108" className=" transition-colors">
-                    +1 647 637 9108
+                      
                   </a>
                 </div>
               </div>

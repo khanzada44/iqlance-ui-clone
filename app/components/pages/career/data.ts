@@ -39,7 +39,7 @@ export const faqs = [
   {
     question: "How Can I Contact You ?",
     answer:
-      "For swift assistance, reach out to us directly at +1 469 793 9837 or via email at info@DevAppGrid.com. Alternatively, complete the form, and we'll promptly connect with you. Feel free to contact our Helpdesk using the provided number on our website. We're here to assist you efficiently!",
+      "For swift assistance, reach out to us directly at +1 866 978 8570 or via email at info@DevAppGrid.com. Alternatively, complete the form, and we'll promptly connect with you. Feel free to contact our Helpdesk using the provided number on our website. We're here to assist you efficiently!",
   },
   {
     question: "How many hours do you work daily?",

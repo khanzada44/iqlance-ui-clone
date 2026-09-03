@@ -47,7 +47,7 @@ export default function TermsAndConditions() {
 
               <div className="hidden leading-tight sm:block">
                 <p className="text-[13px] font-bold text-gray-900">
-                  +1 (844) 673 6849
+                  +1 (866) 978-8570
                 </p>
 
                 <p className="text-[10px] font-semibold uppercase tracking-wider text-red-600">
@@ -496,7 +496,7 @@ export default function TermsAndConditions() {
 
                 <div>
                   <p className="text-sm font-bold text-gray-900">
-                    +1 (844) 673 6849
+                    +1 (866) 978-8570
                   </p>
 
                   <p className="text-xs text-red-600">
@@ -563,7 +563,7 @@ export default function TermsAndConditions() {
 
               <div className="text-left">
                 <p className="text-[15px] font-bold leading-tight text-white sm:text-[16px]">
-                  +1 (844) 673 6849
+                  +1 (866) 978-8570
                 </p>
 
                 <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-red-500">

@@ -108,7 +108,7 @@ export default function ContactForm() {
                   Dallas, USA
                 </h4>
                 <p className="mt-1 font-bold text-gray-900 text-base">
-                  +1 469 793 9837
+                  +1 866 978 8570
                 </p>
               </div>
 
@@ -148,7 +148,7 @@ export default function ContactForm() {
                   New York, USA
                 </h4>
                 <p className="mt-1 font-bold text-gray-900 text-base">
-                  +1 917 477 8991
+                    
                 </p>
               </div>
 
@@ -187,7 +187,7 @@ export default function ContactForm() {
                   Canada
                 </h4>
                 <p className="mt-1 font-bold text-gray-900 text-base">
-                  +1 647 637 9108
+                    
                 </p>
               </div>
             </div>

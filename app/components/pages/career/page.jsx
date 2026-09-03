@@ -361,8 +361,8 @@ export default function career() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                US :<strong> +1 469 793 9837</strong>, CA :
-                <strong> +1 647 637 9108</strong>
+                US :<strong> +1 866 978 8570</strong>,  
+                <strong>   </strong>
               </span>
             </div>
 

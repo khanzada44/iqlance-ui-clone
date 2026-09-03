@@ -540,7 +540,7 @@ export const blogs = [
                 />
 
                 <span class="text-sm font-medium leading-6 sm:text-base">
-                US: +1 469 793 9837 
+                US: +1 866 978 8570 
                 </span>
 
             </div>
