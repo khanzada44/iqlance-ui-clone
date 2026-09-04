@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import DisableRightClick from "../app/components/DisableRightClick/DisableRightClick";
+// import DisableRightClick from "../app/components/DisableRightClick/DisableRightClick";
 
 export const metadata: Metadata = {
   title: "APP GRID",
@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <DisableRightClick>
+        {/* <DisableRightClick> */}
           {children}
-        </DisableRightClick>
+        {/* </DisableRightClick> */}
       </body>
     </html>
   );
