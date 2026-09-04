@@ -18,7 +18,6 @@ export const footerColumns = [
       { label: 'Engagement Model', href: '/engagement-model' },
       { label: 'Portfolio', href: '/portfolio' },
       { label: 'Blog', href: '/blog' },
-      { label: 'Sitemap', href: '/sitemap' },
     ],
   },
   {

@@ -601,11 +601,6 @@ export default function LandingPage() {
                   <br />
                   M9V5E3
                 </p>
-
-                {/* <p className="mt-2 text-[10px] font-semibold text-black sm:text-[13px] flex items-center">
-                  <img src="/icons/phone.svg" alt="" />
-                    
-                </p> */}
               </div>
 
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
