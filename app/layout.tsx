@@ -20,6 +20,7 @@ export default function RootLayout({
       <body>
         {/* <DisableRightClick> */}
           {children}
+          
         {/* </DisableRightClick> */}
       </body>
     </html>
