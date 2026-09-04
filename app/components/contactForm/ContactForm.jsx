@@ -255,7 +255,7 @@ export default function ContactForm() {
 
           <div className="mt-8 flex items-end justify-between relative z-10">
             <a
-              href="/documents/iQlance-company-profile.pdf"
+              href="/documents/DEV-PDF-FILES.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-[#B91C1C] hover:bg-[#991B1B] text-white px-5 py-3 text-sm font-semibold transition flex items-center gap-2 shrink-0 cursor-pointer"
