@@ -25,10 +25,10 @@ export const serviceCategories = async () => {
   return response.data.response.data;
 };
 export const serviceCategorieSlug = async (slug:string) => {
-  const response = await api.get(`service-category-by-slug/${slug}`);
+  const response = await api.get(`/service-category-by-slug/${slug}`);
   return response.data.response.data;
 };
 export const serviceCategorieBySlug = async (slug:string) => {
-  const response = await api.get(`service-by-slug/${slug}`);
+  const response = await api.get(`/service-by-slug/${slug}`);
   return response.data.response.data;
 };
