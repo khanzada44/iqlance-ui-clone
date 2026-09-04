@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.iqlance.com",
+        hostname: "www.devappgrid.com",
       },
       {
         protocol: "https",
