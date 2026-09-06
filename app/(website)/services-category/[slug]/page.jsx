@@ -13,7 +13,6 @@ export async function generateStaticParams() {
       if (!href) return null;
 
       const slug = href.split("/").filter(Boolean).pop();
-
       if (!slug) return null;
 
       return { slug };
