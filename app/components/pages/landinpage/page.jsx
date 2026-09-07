@@ -178,7 +178,7 @@ useEffect(() => {
   return (
     <>
       <main className="w-full bg-white ">
-        <header className="sticky top-0 z-50 w-full border-t border-gray-800 bg-white">
+        <header className="sticky top-0 z-50 w-full  border-gray-800 bg-white">
           <div className="mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
             {/* LOGO */}
             <div className="flex items-center">

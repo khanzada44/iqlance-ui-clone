@@ -535,10 +535,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      US: +1 866 978 8570
-                      <br className="sm:hidden" />
-                      <span className="hidden sm:inline"> | </span>
-                      CA:   
+                      USA: +1 (866) 978-8570      
                     </span>
                   </div>
                 </div>
@@ -654,10 +651,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      US: +1 866 978 8570
-                      <br className="sm:hidden" />
-                      <span className="hidden sm:inline"> | </span>
-                      CA:   
+                      USA: +1 (866) 978-8570      
                     </span>
                   </div>
                 </div>
@@ -834,10 +828,10 @@ export default function foodOrdering() {
             </div>
           </div>
         </section>
-        <section className="py-10 bg-white">
+        <section className="">
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="md:mt-5 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -885,10 +879,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      US: +1 866 978 8570
-                      <br className="sm:hidden" />
-                      <span className="hidden sm:inline"> | </span>
-                      CA:   
+                      USA: +1 (866) 978-8570
                     </span>
                   </div>
                 </div>

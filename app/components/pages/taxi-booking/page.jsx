@@ -636,7 +636,7 @@ const processSteps = [
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-              Have a Ride-Hailing Idea? Let's Put It in Motion.
+              Have a Ride-Hailing Idea? Let's Put It in Motion
             </h2>
 
             {/* Subtitle Paragraph */}
@@ -681,20 +681,12 @@ const processSteps = [
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
+                  <span>USA :</span>
                   <a
-                    href="tel:+14697939837"
+                    href="tel:+1866978-8570"
                     className="transition-colors"
                   >
-                    +1 866 978 8570
-                  </a>
-                  <span>,</span>
-                  <span> </span>
-                  <a
-                    href="tel:+16476379108"
-                    className="transition-colors"
-                  >
-                      
+                    +1 (866) 978-8570
                   </a>
                 </div>
               </div>
@@ -1190,14 +1182,9 @@ const processSteps = [
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
-                  <a href="tel:+14697939837" className=" transition-colors">
-                    +1 866 978 8570
-                  </a>
-                  <span>,</span>
-                  <span> </span>
-                  <a href="tel:+16476379108" className=" transition-colors">
-                      
+                  <span>USA :</span>
+                  <a href="tel:+1866978-8570" className=" transition-colors">
+                    +1 (866) 978-8570
                   </a>
                 </div>
               </div>

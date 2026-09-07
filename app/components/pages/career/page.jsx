@@ -361,8 +361,7 @@ export default function career() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                US :<strong> +1 866 978 8570</strong>,  
-                <strong>   </strong>
+                USA :<strong> +1 (866) 978-8570</strong>
               </span>
             </div>
 

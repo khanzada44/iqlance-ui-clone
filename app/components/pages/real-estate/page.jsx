@@ -518,14 +518,9 @@ export default function realEstate() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
-                  <a href="tel:+14697939837" className=" transition-colors">
-                    +1 866 978 8570
-                  </a>
-                  <span>,</span>
-                  <span> </span>
-                  <a href="tel:+16476379108" className=" transition-colors">
-                      
+                  <span>USA :</span>
+                  <a href="tel:+18669788570" className=" transition-colors">
+                    +1 (866) 978-8570
                   </a>
                 </div>
               </div>
@@ -544,7 +539,7 @@ export default function realEstate() {
           </div>
         </section>
         <section>
-          <div className="text-center mb-10 mt-10">
+          <div className="text-center mb-10 mt-20">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
               Delivery Of Unrivaled Solutions Is Our Prime Objective
             </h1>
@@ -731,14 +726,9 @@ export default function realEstate() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
-                  <a href="tel:+14697939837" className=" transition-colors">
-                    +1 866 978 8570
-                  </a>
-                  <span>,</span>
-                  <span> </span>
-                  <a href="tel:+16476379108" className=" transition-colors">
-                      
+                  <span>USA :</span>
+                  <a href="tel:+18669788570" className=" transition-colors">
+                    +1 (866) 978-8570
                   </a>
                 </div>
               </div>
@@ -1008,14 +998,9 @@ export default function realEstate() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
-                  <a href="tel:+14697939837" className=" transition-colors">
-                    +1 866 978 8570
-                  </a>
-                  <span>,</span>
-                  <span> </span>
-                  <a href="tel:+16476379108" className=" transition-colors">
-                      
+                  <span>USA :</span>
+                  <a href="tel:+18669788570" className=" transition-colors">
+                    +1 (866) 978-8570
                   </a>
                 </div>
               </div>
@@ -1372,14 +1357,9 @@ export default function realEstate() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
-                  <a href="tel:+14697939837" className=" transition-colors">
-                    +1 866 978 8570
-                  </a>
-                  <span>,</span>
-                  <span> </span>
-                  <a href="tel:+16476379108" className=" transition-colors">
-                      
+                  <span>USA :</span>
+                  <a href="tel:+18669788570" className=" transition-colors">
+                    +1 (866) 978-8570
                   </a>
                 </div>
               </div>

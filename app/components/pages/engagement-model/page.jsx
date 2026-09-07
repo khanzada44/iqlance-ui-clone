@@ -492,14 +492,9 @@ export default function EngagementModelSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
-                  <a href="tel:+14697939837" className=" transition-colors">
-                    +1 866 978 8570
-                  </a>
-                  <span>,</span>
-                  <span> </span>
-                  <a href="tel:+16476379108" className=" transition-colors">
-                      
+                  <span>USA :</span>
+                  <a href="tel:+18669788570" className=" transition-colors">
+                    +1 (866) 978-8570
                   </a>
                 </div>
               </div>
@@ -631,15 +626,11 @@ export default function EngagementModelSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
-                  <a href="tel:+14697939837" className=" transition-colors">
-                    +1 866 978 8570
+                  <span>USA :</span>
+                  <a href="tel:+18669788570" className=" transition-colors">
+                    +1 (866) 978-8570
                   </a>
-                  <span>,</span>
-                  <span> </span>
-                  <a href="tel:+16476379108" className=" transition-colors">
-                      
-                  </a>
+                 
                 </div>
               </div>
             </div>

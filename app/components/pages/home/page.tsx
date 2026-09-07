@@ -534,7 +534,7 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  US : +1 866 978 8570
+                  USA +1 (866) 978-8570
                 </button>
               </div>
 
@@ -868,7 +868,7 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  US : <strong>+1 866 978 8570</strong>,  
+                  USA : <strong>+1 (866) 978-8570</strong>  
                   <strong>  </strong>
                 </span>
               </div>
@@ -1225,14 +1225,13 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
+                  <span>USA</span>
                   <a
                     href="tel:+14697939837"
                     className="hover:text-red-600 transition-colors"
                   >
-                    +1 866 978 8570
+                    +1 (866) 978-8570
                   </a>
-                  <span>,</span>
                   <span> </span>
                   <a
                     href="tel:+16476379108"
@@ -1399,7 +1398,7 @@ export default function Home() {
             />
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
-              Have Questions? Let's Talk.
+              Have Questions? Let's Talk
             </h2>
 
             <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg">
@@ -1439,7 +1438,7 @@ export default function Home() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                US :<strong> +1 866 978 8570</strong>,  
+                USA :<strong> +1 (866) 978-8570</strong> 
                 <strong>   </strong>
               </span>
             </div>

@@ -571,10 +571,7 @@ export default function elearning() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      US: +1 866 978 8570
-                      <br className="sm:hidden" />
-                      <span className="hidden sm:inline"> | </span>
-                      CA:   
+                      USA: +1 (866) 978-8570    
                     </span>
                   </div>
                 </div>
@@ -687,10 +684,8 @@ export default function elearning() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      US: +1 866 978 8570
-                      <br className="sm:hidden" />
-                      <span className="hidden sm:inline"> | </span>
-                      CA:   
+                      USA: +1 (866) 978-8570
+                          
                     </span>
                   </div>
                 </div>
@@ -907,10 +902,7 @@ export default function elearning() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      US: +1 866 978 8570
-                      <br className="sm:hidden" />
-                      <span className="hidden sm:inline"> | </span>
-                      CA:   
+                      USA: +1 (866) 978-8570                          
                     </span>
                   </div>
                 </div>
@@ -1178,10 +1170,7 @@ export default function elearning() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      US: +1 866 978 8570
-                      <br className="sm:hidden" />
-                      <span className="hidden sm:inline"> | </span>
-                      CA:   
+                      USA: +1 (866) 978-8570                          
                     </span>
                   </div>
                 </div>
@@ -1233,7 +1222,7 @@ export default function elearning() {
 
                 <p className="mt-3 text-lg leading-none text-black">
                   {item.line1}
-                  <br />
+                  <br  />
                   {item.line2}
                 </p>
               </div>

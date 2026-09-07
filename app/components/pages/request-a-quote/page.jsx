@@ -357,9 +357,7 @@ export default function ContactSection() {
             </div>
           </div>
         </section>
-
-        {/* Office Cards Section */}
-        <section className="py-10 bg-gray-50 w-full">
+        <section className="py-10 w-full">
           <div className="w-full px-2 sm:px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
               {offices.map((office) => (
@@ -374,10 +372,10 @@ export default function ContactSection() {
                   <img
                     src={office.image}
                     alt={office.city}
-                    className="w-24 h-24 mx-auto object-contain"
+                    className="w-24 h-34 mx-auto object-contain"
                   />
 
-                  <h3 className="text-3xl sm:text-4xl font-bold mt-6">
+                  <h3 className="text-2xl sm:text-4xl font-bold mt-6">
                     {office.city}
                   </h3>
 

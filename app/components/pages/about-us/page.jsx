@@ -277,21 +277,14 @@ export default function About() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
+                  <span>USA :</span>
                   <a
-                    href="tel:+14697939837"
+                    href="tel:+18669788570"
                     className=" transition-colors"
                   >
-                    +1 866 978 8570
+                    +1 (866) 978-8570
                   </a>
-                  <span>,</span>
-                  <span> </span>
-                  <a
-                    href="tel:+16476379108"
-                    className="transition-colors"
-                  >
-                      
-                  </a>
+                 
                 </div>
               </div>
             </div>
@@ -383,7 +376,7 @@ export default function About() {
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Let’s Discuss with our Technical Expert to Bring your Idea into
-              Reality.
+              Reality
             </h2>
 
             {/* Subtitle Paragraph */}
@@ -428,13 +421,12 @@ export default function About() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>US :</span>
+                  <span>USA :</span>
                   <a
                     href="tel:+14697939837"
                   >
-                    +1 866 978 8570
+                    +1 (866) 978-8570
                   </a>
-                  <span>,</span>
                   <span> </span>
                   <a
                     href="tel:+16476379108"

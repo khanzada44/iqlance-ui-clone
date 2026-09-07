@@ -11,14 +11,14 @@ import {
 } from "lucide-react";
 
 import { submitContactForm } from "@/services/send-call-request";
-import { offices, testimonials } from "../contact-us/data"
+import { offices } from "../contact-us/data"
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { stats, partners, faqsData } from "../../../../utils/data";
+import { stats, partners, testimonials } from "../../../../utils/data";
 export default function ContactSection() {
   const fileInputRef = useRef(null);
 
@@ -208,9 +208,8 @@ export default function ContactSection() {
               </h3>
 
               <p className="mt-2 text-gray-700 text-sm sm:text-base leading-relaxed">
-                USA: +1 (469) 793-9837
+                USA: +1 (866) 978-8570
                 <br />
-                Canada: +1 (647) 637-9108
               </p>
             </div>
 
