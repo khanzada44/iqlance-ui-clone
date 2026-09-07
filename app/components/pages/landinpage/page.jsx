@@ -31,6 +31,28 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function LandingPage() {
+  const contentRef = useRef(null);
+const [contentVisible, setContentVisible] = useState(false);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setContentVisible(true);
+        observer.disconnect();
+      }
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  if (contentRef.current) {
+    observer.observe(contentRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({
@@ -140,9 +162,6 @@ export default function LandingPage() {
     }
   };
 
-  // =========================
-  // AUTO HIDE MESSAGE
-  // =========================
   useEffect(() => {
     if (statusMessage.text) {
       const timer = setTimeout(() => {
@@ -209,116 +228,178 @@ export default function LandingPage() {
 
         <section className="relative overflow-hidden bg-linear-to-r from-[#e72828] via-[#a60000] to-[#080000]">
           <div className="mx-auto flex w-[94%] flex-col items-center gap-12 py-10 sm:w-[92%] sm:py-12 lg:min-h-125 lg:w-[90%] lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-12 xl:w-[88%]">
-            <style jsx>{`
-              .content-slide-in-left {
-                opacity: 0;
-                animation: contentSlideInLeft 1.5s
-                  cubic-bezier(0.22, 1, 0.36, 1) forwards;
-              }
+<style jsx>{`
+  .content-slide-in-left {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
 
-              @keyframes contentSlideInLeft {
-                from {
-                  opacity: 0;
-                  transform: translateX(-70px);
-                }
+  .content-slide-in-left.show {
+    animation: contentSlideInLeft 1.5s
+      cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
 
-                to {
-                  opacity: 1;
-                  transform: translateX(0);
-                }
-              }
-            `}</style>
+  .content-title {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
 
-            <div className="content-slide-in-left w-full text-white sm:w-[90%] lg:w-[52%] xl:w-[54%]">
-              {/* SMALL TITLE */}
-              <p className="mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px]">
-                Let&apos;s Turn Your Idea Into a Market-Ready Product
-              </p>
+  .content-title.show {
+    animation: contentSlideInLeft 1.5s
+      cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
 
-              {/* MAIN TITLE */}
-              <h1 className="mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px]">
-                Request a Quote
-              </h1>
+  .content-heading {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
 
-              {/* EMAIL */}
-              <p className="text-[12px] leading-[1.7] sm:text-[13px] lg:text-[18px]">
-                Share Your Project Details on{" "}
-                <span className="font-bold">info@DevAppGrid.com</span>
-              </p>
+  .content-heading.show {
+    animation: contentSlideInLeft 1.5s
+      cubic-bezier(0.22, 1, 0.36, 1) 30ms forwards;
+  }
 
-              {/* PHONE */}
-              <p className="mb-5 text-[12px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px]">
-                Talk To Experts:
-                <br />
-                USA: +1 (866) 978-8570
-              </p>
+  @keyframes contentSlideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-70px);
+    }
 
-              {/* DESCRIPTION */}
-              <p className="max-w-140 text-[12px] leading-[1.8] sm:text-[13px] lg:text-[18px]">
-                Have a project in mind? Share your requirements with Devapp and
-                connect with experienced app and software development
-                specialists who can help you define the right solution,
-                timeline, and development strategy.
-              </p>
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+`}</style>
 
-              {/* BENEFITS */}
-              <ul className="mt-5 space-y-3 text-[12px] leading-6 sm:text-[13px] lg:text-[18px]">
-                <li className="flex items-center gap-2">
-                  <span>•</span>
-                  <span>45-minute free consultation</span>
-                </li>
+<div
+  ref={contentRef}
+  className={`w-full text-white sm:w-[90%] lg:w-[52%] xl:w-[54%]`}
+>
+  {/* SMALL TITLE */}
+  <p
+    className={`content-title mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px] ${
+      contentVisible ? "show" : ""
+    }`}
+  >
+    Let&apos;s Turn Your Idea Into a Market-Ready Product
+  </p>
 
-                <li className="flex items-center gap-2">
-                  <span>•</span>
-                  <span>Strict NDA and IP confidentiality</span>
-                </li>
+  {/* MAIN TITLE */}
+  <h1
+    className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${
+      contentVisible ? "show" : ""
+    }`}
+  >
+    Request a Quote
+  </h1>
 
-                <li className="flex items-center gap-2">
-                  <span>•</span>
-                  <span>Detailed feature and project scope document</span>
-                </li>
+  {/* EMAIL */}
+  <p
+    className={`content-slide-in-left text-[17px] leading-[1.7] ${
+      contentVisible ? "show" : ""
+    }`}
+    style={{ animationDelay: "300ms" }}
+  >
+    Share Your Project Details on{" "}
+    <span className="font-bold">info@DevAppGrid.com</span>
+  </p>
 
-                <li className="flex items-center gap-2">
-                  <span>•</span>
-                  <span>Customized technology and development roadmap</span>
-                </li>
+  {/* PHONE */}
+  <p
+    className={`content-slide-in-left mb-5 text-[17px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px] ${
+      contentVisible ? "show" : ""
+    }`}
+    style={{ animationDelay: "400ms" }}
+  >
+    Talk To Experts:
+    <br />
+    USA: +1 (866) 978-8570
+  </p>
 
-                <li className="flex items-center gap-2">
-                  <span>•</span>
-                  <span>Clear timeline and budget estimate</span>
-                </li>
+  {/* DESCRIPTION */}
+  <p
+    className={`content-slide-in-left max-w-140 text-[17px] leading-[1.8] sm:text-[13px] lg:text-[18px] ${
+      contentVisible ? "show" : ""
+    }`}
+    style={{ animationDelay: "500ms" }}
+  >
+    Have a project in mind? Share your requirements with Devapp and
+    connect with experienced app and software development
+    specialists who can help you define the right solution,
+    timeline, and development strategy.
+  </p>
 
-                <li className="flex items-center gap-2">
-                  <span>•</span>
-                  <span>Action plan to move your project forward</span>
-                </li>
-              </ul>
+  {/* BENEFITS */}
+  <ul
+    className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${
+      contentVisible ? "show" : ""
+    }`}
+    style={{ animationDelay: "600ms" }}
+  >
+    <li className="flex items-center gap-2">
+      <span>•</span>
+      <span>45-minute free consultation</span>
+    </li>
 
-              {/* BUTTONS */}
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  href="/contact-us"
-                  className="group flex h-9 items-center gap-2 rounded-[3px] bg-white px-5 text-[10px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
-                >
-                  Contact Us
-                  <ArrowRight
-                    size={14}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </Link>
+    <li className="flex items-center gap-2">
+      <span>•</span>
+      <span>Strict NDA and IP confidentiality</span>
+    </li>
 
-                <Link
-                  href="/portfolio"
-                  className="group flex h-9 items-center gap-2 rounded-[3px] bg-white px-5 text-[10px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
-                >
-                  See Our Work
-                  <ArrowRight
-                    size={14}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </Link>
-              </div>
-            </div>
+    <li className="flex items-center gap-2">
+      <span>•</span>
+      <span>Detailed feature and project scope document</span>
+    </li>
+
+    <li className="flex items-center gap-2">
+      <span>•</span>
+      <span>Customized technology and development roadmap</span>
+    </li>
+
+    <li className="flex items-center gap-2">
+      <span>•</span>
+      <span>Clear timeline and budget estimate</span>
+    </li>
+
+    <li className="flex items-center gap-2">
+      <span>•</span>
+      <span>Action plan to move your project forward</span>
+    </li>
+  </ul>
+
+  {/* BUTTONS */}
+  <div
+    className={`content-slide-in-left mt-6 flex flex-wrap gap-3 ${
+      contentVisible ? "show" : ""
+    }`}
+    style={{ animationDelay: "700ms" }}
+  >
+    <Link
+      href="/contact-us"
+      className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
+    >
+      Contact Us
+
+      <ArrowRight
+        size={14}
+        className="transition-transform duration-300 group-hover:translate-x-1"
+      />
+    </Link>
+
+    <Link
+      href="/portfolio"
+      className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
+    >
+      See Our Work
+
+      <ArrowRight
+        size={14}
+        className="transition-transform duration-300 group-hover:translate-x-1"
+      />
+    </Link>
+  </div>
+</div>
 
             <style jsx>{`
               .form-slide-in-right {
@@ -449,7 +530,7 @@ export default function LandingPage() {
                   </label>
 
                   {/* STATUS MESSAGE */}
-                  {statusMessage.text && (
+                  {/* {statusMessage.text && (
                     <div
                       className={`rounded px-3 py-2 text-[10px] sm:text-[11px] ${
                         statusMessage.type === "success"
@@ -459,7 +540,7 @@ export default function LandingPage() {
                     >
                       {statusMessage.text}
                     </div>
-                  )}
+                  )} */}
 
                   {/* SUBMIT */}
                   <button
@@ -576,10 +657,10 @@ export default function LandingPage() {
                   17250 Dallas Pkwy Dallas, TX 75248, USA
                 </p>
 
-                <p className="mt-2 text-[10px] font-semibold text-black sm:text-[13px] flex items-center">
+                {/* <p className="mt-2 text-[10px] font-semibold text-black sm:text-[13px] flex items-center">
                   <img src="/icons/phone.svg" alt="" />
                   +1 866 978 8570
-                </p>
+                </p> */}
               </div>
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
                 <h3 className="text-[13px] font-bold text-black sm:text-[18px]">
@@ -1193,7 +1274,7 @@ export default function LandingPage() {
                     </label>
 
                     {/* STATUS MESSAGE */}
-                    {statusMessage.text && (
+                    {/* {statusMessage.text && (
                       <div
                         className={`rounded px-3 py-2 text-[11px] ${
                           statusMessage.type === "success"
@@ -1203,7 +1284,7 @@ export default function LandingPage() {
                       >
                         {statusMessage.text}
                       </div>
-                    )}
+                    )} */}
 
                     {/* SUBMIT */}
                     <div>
