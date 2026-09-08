@@ -77,7 +77,7 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
 
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
+      <div className="w-[80%] max-w-7xl mx-auto">
         {/* Header & Hero Section */}
         <section>
           <img
