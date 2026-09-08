@@ -185,7 +185,7 @@ export default function Navbar() {
     !!selectedCategory;
 
   return (
-    <header className="sticky top-0 z-50 w-full lg:max-w-[80%] mx-auto bg-white">
+    <header className="sticky top-0 z-50 w-full max-w-7xl mx-auto bg-white">
       <div className="mx-auto flex h-17 w-full items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <button

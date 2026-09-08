@@ -108,7 +108,7 @@ export default function ContactForm() {
                   Dallas, USA
                 </h4>
                 <p className="mt-1 font-bold text-gray-900 text-base">
-                  +1 866 978 8570
+                  +1 (866) 978-8570
                 </p>
               </div>
 
@@ -133,124 +133,21 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <h4 className="flex items-center gap-2 font-semibold text-gray-500 text-sm">
-                  <div
-                    className="w-6 h-6 bg-red-600"
-                    style={{
-                      maskImage: 'url(/icons/phone-icon.svg)',
-                      maskRepeat: 'no-repeat',
-                      maskSize: 'contain',
-                      WebkitMaskImage: 'url(/icons/phone-icon.svg)',
-                      WebkitMaskRepeat: 'no-repeat',
-                      WebkitMaskSize: 'contain'
-                    }}
-                  />
-                  New York, USA
-                </h4>
                 <p className="mt-1 font-bold text-gray-900 text-base">
                     
                 </p>
               </div>
 
-              <div>
-                <h4 className="flex items-center gap-2 font-semibold text-gray-500 text-sm">
-                </h4>
-                <div
-                  className="w-6 h-6 bg-red-600"
-                  style={{
-                    maskImage: 'url(/icons/teams.svg)',
-                    maskRepeat: 'no-repeat',
-                    maskSize: 'contain',
-                    WebkitMaskImage: 'url(/icons/teams.svg)',
-                    WebkitMaskRepeat: 'no-repeat',
-                    WebkitMaskSize: 'contain'
-                  }}></div>
-                Teams
-                <p className="mt-1 font-bold text-gray-900 text-base">
-                  Devapp Solutions
-                </p>
-              </div>
+                {/* <img src="/images/hand-phone-1.png" alt="" /> */}
 
               <div className="sm:col-span-2">
-                <h4 className="flex items-center gap-2 font-semibold text-gray-500 text-sm">
-                  <div
-                    className="w-6 h-6 bg-red-600"
-                    style={{
-                      maskImage: 'url(/icons/phone-icon.svg)',
-                      maskRepeat: 'no-repeat',
-                      maskSize: 'contain',
-                      WebkitMaskImage: 'url(/icons/phone-icon.svg)',
-                      WebkitMaskRepeat: 'no-repeat',
-                      WebkitMaskSize: 'contain'
-                    }}
-                  />
-                  Canada
-                </h4>
                 <p className="mt-1 font-bold text-gray-900 text-base">
                     
                 </p>
               </div>
             </div>
 
-            <div className="space-y-6 pt-2">
-              <div>
-                <h4 className="flex items-center gap-2 font-semibold text-gray-500 text-sm">
-                  <div
-                    className="w-6 h-6 bg-red-600"
-                    style={{
-                      maskImage: 'url(/icons/address-icn.svg)',
-                      maskRepeat: 'no-repeat',
-                      maskSize: 'contain',
-                      WebkitMaskImage: 'url(/icons/address-icn.svg)',
-                      WebkitMaskRepeat: 'no-repeat',
-                      WebkitMaskSize: 'contain'
-                    }}></div>
-
-                  Dallas
-                </h4>
-                <p className="mt-1 font-bold text-gray-900 text-sm leading-relaxed">
-                  17250 Dallas Pkwy Dallas, Tx 75248, USA
-                </p>
-              </div>
-
-              <div>
-                <h4 className="flex items-center gap-2 font-semibold text-gray-500 text-sm">
-                  <div
-                    className="w-6 h-6 bg-red-600"
-                    style={{
-                      maskImage: 'url(/icons/address-icn.svg)',
-                      maskRepeat: 'no-repeat',
-                      maskSize: 'contain',
-                      WebkitMaskImage: 'url(/icons/address-icn.svg)',
-                      WebkitMaskRepeat: 'no-repeat',
-                      WebkitMaskSize: 'contain'
-                    }}></div>
-                  New York
-                </h4>
-                <p className="mt-1 font-bold text-gray-900 text-sm leading-relaxed">
-                  295 Madison Ave 12th Fl, New York, NY 10017, USA
-                </p>
-              </div>
-
-              <div>
-                <h4 className="flex items-center gap-2 font-semibold text-gray-500 text-sm">
-                  <div
-                    className="w-6 h-6 bg-red-600"
-                    style={{
-                      maskImage: 'url(/icons/address-icn.svg)',
-                      maskRepeat: 'no-repeat',
-                      maskSize: 'contain',
-                      WebkitMaskImage: 'url(/icons/address-icn.svg)',
-                      WebkitMaskRepeat: 'no-repeat',
-                      WebkitMaskSize: 'contain'
-                    }}></div>
-                  Canada
-                </h4>
-                <p className="mt-1 font-bold text-gray-900 text-sm leading-relaxed">
-                  502-10 Markbrook Lane, Etobicoke, M9V5E7, Canada
-                </p>
-              </div>
-            </div>
+       
           </div>
 
           <div className="mt-8 flex items-end justify-between relative z-10">

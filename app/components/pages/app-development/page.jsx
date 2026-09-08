@@ -15,7 +15,7 @@ import {
   Building2,
   Calendar,
 } from "lucide-react";
-import { testimonials, faqsData } from "../landinpage/data";
+import { testimonials, faqsData } from "./data";
 import {
   partners,
   slides,

@@ -116,8 +116,7 @@ export default function ContactSection() {
                 <div className="mt-6">
                   <h3 className="font-bold text-lg">Talk To Experts:</h3>
                   <p className="mt-2 text-gray-700">
-                    USA: +1 (469) 793-9837 &nbsp;&nbsp; Canada: +1 (647)
-                    637-9108
+                    USA: +1 (866) 978-8570
                   </p>
                 </div>
                 <p className="mt-6 text-black leading-8">
