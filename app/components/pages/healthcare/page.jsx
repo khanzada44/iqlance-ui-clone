@@ -248,138 +248,138 @@ export default function HeroQuoteSection() {
                   </p>
 
                   {/* Form Inputs */}
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Name*"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email*"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone*"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <textarea
-                      name="message"
-                      rows={3}
-                      placeholder="Write here Brief about the project..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
-                    />
-                  </div>
-
-                  {/* File Upload */}
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
-                      <Paperclip className="w-4 h-4 text-black" />
-                      <span>Upload file:</span>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
                       <input
-                        type="file"
-                        onChange={handleFileChange}
-                        className="hidden"
+                        type="text"
+                        name="name"
+                        placeholder="Name*"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
-                    </label>
-                    <span className="text-gray-500 truncate max-w-45">
-                      {formData.file ? formData.file.name : "No file chosen."}
-                    </span>
-                  </div>
-
-                  {/* Checkbox */}
-                  <div className="flex items-center gap-2 pt-1">
-                    <input
-                      type="checkbox"
-                      id="nda"
-                      checked={formData.sendNda}
-                      onChange={(e) =>
-                        setFormData((prev) => ({
-                          ...prev,
-                          sendNda: e.target.checked,
-                        }))
-                      }
-                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
-                    />
-                    <label
-                      htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
-                    >
-                      Please Send NDA
-                    </label>
-                  </div>
-
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
-                        ? "bg-green-100 border border-green-400 text-green-800"
-                        : "bg-red-100 border border-red-400 text-red-800"
-                        }`}
-                    >
-                      {statusMessage.text}
                     </div>
-                  )}
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
-                    >
-                      {loading ? (
-                        <span className="flex items-center gap-2">
-                          <svg
-                            className="animate-spin h-4 w-4 text-white"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            ></circle>
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
-                          </svg>
-                          Sending...
-                        </span>
-                      ) : (
-                        "Schedule a free consultation"
-                      )}
-                    </button>
-                  </div>
-                </form>
+
+                    <div>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email*"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone*"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <textarea
+                        name="message"
+                        rows={3}
+                        placeholder="Write here Brief about the project..."
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      />
+                    </div>
+
+                    {/* File Upload */}
+                    <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
+                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
+                        <Paperclip className="w-4 h-4 text-black" />
+                        <span>Upload file:</span>
+                        <input
+                          type="file"
+                          onChange={handleFileChange}
+                          className="hidden"
+                        />
+                      </label>
+                      <span className="text-gray-500 truncate max-w-45">
+                        {formData.file ? formData.file.name : "No file chosen."}
+                      </span>
+                    </div>
+
+                    {/* Checkbox */}
+                    <div className="flex items-center gap-2 pt-1">
+                      <input
+                        type="checkbox"
+                        id="nda"
+                        checked={formData.sendNda}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            sendNda: e.target.checked,
+                          }))
+                        }
+                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                      />
+                      <label
+                        htmlFor="nda"
+                        className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
+                      >
+                        Please Send NDA
+                      </label>
+                    </div>
+
+                    {statusMessage.text && (
+                      <div
+                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                          ? "bg-green-100 border border-green-400 text-green-800"
+                          : "bg-red-100 border border-red-400 text-red-800"
+                          }`}
+                      >
+                        {statusMessage.text}
+                      </div>
+                    )}
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      >
+                        {loading ? (
+                          <span className="flex items-center gap-2">
+                            <svg
+                              className="animate-spin h-4 w-4 text-white"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                              ></circle>
+                              <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                              ></path>
+                            </svg>
+                            Sending...
+                          </span>
+                        ) : (
+                          "Schedule a free consultation"
+                        )}
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -549,7 +549,7 @@ export default function HeroQuoteSection() {
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
-                          
+
                     </span>
                   </div>
                 </div>
@@ -959,7 +959,7 @@ export default function HeroQuoteSection() {
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
-                      <br className="sm:hidden" />      
+                      <br className="sm:hidden" />
                     </span>
                   </div>
                 </div>
@@ -1017,14 +1017,13 @@ export default function HeroQuoteSection() {
                   Our core belief is that no patient should feel alone in their journey.
                   That's why they receive constant support from a team of top-rated doctors available
                   around the clock, even during emergencies.
-
                 </p>
               </div>
             </div>
           </div>
         </section>
-        <section className="py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-5 text-center">
+        <section>
+          <div className="max-w-6xl mx-auto px-5 text-center mt-5 mb-10">
             <h2 className="text-3xl md:text-3xl lg:text-[30px] font-bold leading-tight text-[#111827]">
               How Much Will It Cost You to Build a Healthcare App Like Other Successful Healthcare Apps Available in the Industry?
             </h2>
@@ -1061,10 +1060,10 @@ export default function HeroQuoteSection() {
             </Link>
           </div>
         </section>
-        <section >
-          <div >
+        <section>
+          <div>
             <img src="/images/healthcare-app-built.jpg" alt="" />
-            <div className="mt-10">
+            <div className="mt-15">
               <h1 className="mt-5 flex justify-center font-bold text-3xl">
                 Endeavors That Make Us Proud
               </h1>
@@ -1174,8 +1173,8 @@ export default function HeroQuoteSection() {
             </Swiper>
           </div>
         </section>
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4">
+        <section className="">
+          <div className="max-w-7xl mx-auto ">
             <div className="bg-red-50  px-8 md:px-16 py-10 md:py-14">
               <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                 {/* Left Content */}
@@ -1186,8 +1185,8 @@ export default function HeroQuoteSection() {
                     Innovative Product
                   </h2>
 
-                  <p className="mt-6 text-lg text-gray-700 leading-8">
-                    Our rich portfolio justifies that, we are one of the best
+                  <p className="mt-6 text-lg text-gray-700 leading-5">
+                    We are one of the best
                     app development company in USA.
                   </p>
                 </div>
@@ -1211,10 +1210,10 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div className="mt-4">
-            <h3 className="flex justify-center font-bold text-3xl">
+            <h3 className="flex justify-center font-bold text-3xl mt-10">
               Technology Stack
             </h3>
-            <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 items-center">
+            <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 items-center text-center">
               We only adopt the latest and cutting-edge technology that ensure
               redefining the process of healthcare for the better. So, if you
               want a glimpse of what these state-of-the-art technologies are,
@@ -1297,18 +1296,20 @@ export default function HeroQuoteSection() {
           </div>
         </section>
         <section>
-          <div className="mb-15 mt-10">
+          <div className="mb-15 mt-15">
             <h2 className="flex justify-center font-bold text-3xl">
               Offshore Web, Mobile & Software Development Company
             </h2>
-            <div className="flex flex-wrap justify-center gap-7 mt-24">
+          </div>
+          <section>
+            <div className="flex flex-wrap justify-center gap-7 mb-10">
               {stats.map((item, index) => (
                 <div
                   key={index}
-                  className="relative w-full sm:w-70 lg:w-55 h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
+                  className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
                 >
                   {/* Floating Icon */}
-                  <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                  <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                     <img
                       src={item.icon}
                       alt=""
@@ -1316,19 +1317,22 @@ export default function HeroQuoteSection() {
                     />
                   </div>
 
-                  <h3 className="text-lg font-bold text-black leading-none">
-                    {item.value}
-                  </h3>
+                  {/* Text Container */}
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-lg font-bold text-black leading-none">
+                      {item.value}
+                    </h3>
 
-                  <p className="mt-3 text-lg leading-none text-black">
-                    {item.line1}
-                    <br />
-                    {item.line2}
-                  </p>
+                    <p className="text-sm leading-tight text-black">
+                      {item.line1}
+                      <br />
+                      {item.line2}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
         </section>
         <section>
           <div>
@@ -1370,7 +1374,7 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-10 mt-10">
+            <h1 className="flex justify-center font-bold text-3xl mb-10 mt-15">
               Why Choose Devapp?
             </h1>
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">

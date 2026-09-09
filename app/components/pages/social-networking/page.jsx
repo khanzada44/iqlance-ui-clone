@@ -403,7 +403,7 @@ export default function SocialMedia() {
               <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
                 Social Networking Apps Engineered to Grow Your Business
               </h2>
-              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base text-black max-w-6xl mx-auto leading-relaxed">
                 Our certified developers at Devapp, a trusted mobile app development company in the USA,
                 build powerful, purpose-driven social media solutions for businesses of every size.
                 Backed by deep software integration, cross-platform compatibility,
@@ -450,13 +450,13 @@ export default function SocialMedia() {
           </div>
         </div>
 
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <section className="w-full max-w-6xl mx-auto md:py-16">
           {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
               Features of Social Networking App Development
             </h2>
-            <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
+            <p className="text-black text-sm md:text-base max-w-6xl mx-auto">
               Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
@@ -465,7 +465,7 @@ export default function SocialMedia() {
           </div>
         </section>
         {/* Cards */}
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mb-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {healthcareFeatures.map((feature) => (
             <div
               key={feature.id}
@@ -605,7 +605,7 @@ export default function SocialMedia() {
               Endeavors That Make Us Proud
             </h3>
 
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto">
+            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-8xl mx-auto">
               Our fitness app development work is focused on creating practical,
               engaging, and user-centered digital experiences. From workout platforms
               and coaching solutions to nutrition tracking and connected fitness
@@ -680,7 +680,7 @@ export default function SocialMedia() {
             `}</style>
         </section>
 
-        <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
+        <section className="w-full max-w-7xl mx-auto  space-y-16">
           {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
@@ -703,7 +703,7 @@ export default function SocialMedia() {
           </div>
         </section>
 
-        <div className="text-center max-w-6xl mx-auto space-y-4 mt-4">
+        <div className="text-center max-w-6xl mx-auto space-y-4 mt-15">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Technologies We Use
           </h2>
@@ -713,8 +713,8 @@ export default function SocialMedia() {
             generously for an intuitive and customised app generation.
           </p>
         </div>
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 ">
+        <section>
+          <div className="max-w-7xl mx-auto mt-10 mb-10">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
               <div className="flex flex-wrap gap-8 border-b border-red-300">
@@ -842,7 +842,7 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -906,7 +906,7 @@ export default function SocialMedia() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600  hover:shadow-lg"
+                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600  hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -928,7 +928,7 @@ export default function SocialMedia() {
 
         <section>
           <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center">
-            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
+            <h1 className="text-2xl md:text-4xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
             <p>
@@ -1055,8 +1055,8 @@ export default function SocialMedia() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-200 shadow-md"
-                      : "border-red-200 hover:border-red-300"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

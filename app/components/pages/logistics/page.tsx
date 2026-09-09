@@ -409,7 +409,7 @@ export default function Logistic() {
           </div>
         </section>
 
-        <section className="w-full max-w-6xl mx-auto px-6 py-12 md:py-16 border-t border-gray-100">
+        <section >
           {/* Top Heading */}
           <div className="text-center max-w-6xl mx-auto mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
@@ -479,10 +479,10 @@ export default function Logistic() {
             </div>
           </div>
         </section>
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
+        <section>
+          <div>
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className=" md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -526,7 +526,7 @@ export default function Logistic() {
                         maskImage: "url(/icons/phone-icon.svg)",
                         maskRepeat: "no-repeat",
                         maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
                         WebkitMaskRepeat: "no-repeat",
                         WebkitMaskSize: "contain",
                       }}
@@ -667,10 +667,10 @@ export default function Logistic() {
           })}
         </section>
 
-        <section className="py-10 bg-white">
+        <section>
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="md:mt-10 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -714,14 +714,14 @@ export default function Logistic() {
                         maskImage: "url(/icons/phone-icon.svg)",
                         maskRepeat: "no-repeat",
                         maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
                         WebkitMaskRepeat: "no-repeat",
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                        USA: +1 (866) 978-8570
-                          
+                      USA: +1 (866) 978-8570
+
                     </span>
                   </div>
                 </div>
@@ -746,7 +746,7 @@ export default function Logistic() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Key Features of Logistics and Transportation App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
+            <p className="text-gray-600 text-sm md:text-base max-w-4xl mx-auto">
               Our logistics app solutions come packed with powerful features that
               help you manage every aspect of your operations in a streamlined, organized way.
             </p>
@@ -801,10 +801,10 @@ export default function Logistic() {
             ))}
           </div>
         </section>
-        <section className="py-10 bg-white">
+        <section>
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-10 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -848,14 +848,14 @@ export default function Logistic() {
                         maskImage: "url(/icons/phone-icon.svg)",
                         maskRepeat: "no-repeat",
                         maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
                         WebkitMaskRepeat: "no-repeat",
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
-                          
+
                     </span>
                   </div>
                 </div>
@@ -961,7 +961,7 @@ export default function Logistic() {
             </p>
           </div>
         </section>
-        <section className="py-10">
+        <section>
           {/* Custom style for red pagination dots */}
           <style>{`
             .portfolio-swiper .swiper-pagination-bullet {
@@ -973,7 +973,7 @@ export default function Logistic() {
             }
           `}</style>
 
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-7xl mb-10">
             <Swiper
               modules={[Pagination, Autoplay]}
               pagination={{ clickable: true }}
@@ -1047,7 +1047,7 @@ export default function Logistic() {
             </Swiper>
           </div>
         </section>
-        <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
+        <section className="w-full max-w-7xl mx-auto  space-y-16">
           {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
@@ -1071,7 +1071,7 @@ export default function Logistic() {
 
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-4xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-3xl sm:text-3xl md:text-3xl font-extrabold text-gray-900">
               Power Your Logistics Business with Next-Gen Mobile App Development
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
@@ -1079,7 +1079,7 @@ export default function Logistic() {
             </p>
           </div>
         </section>
-        <section className="py-16">
+        <section>
           <div className="max-w-7xl mx-auto px-4 ">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
@@ -1125,10 +1125,10 @@ export default function Logistic() {
             </div>
           </div>
         </section>
-        <section className="py-10 bg-white">
+        <section>
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mb-10 mt-12 md:mt-10 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -1148,7 +1148,7 @@ export default function Logistic() {
 
               {/* Contact Box */}
               <div className="flex justify-center">
-                <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
+                <div className="w-[80%] mt-8  border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
                     <div
                       className="w-6 h-6 bg-red-600"
@@ -1173,13 +1173,13 @@ export default function Logistic() {
                         maskImage: "url(/icons/phone-icon.svg)",
                         maskRepeat: "no-repeat",
                         maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
                         WebkitMaskRepeat: "no-repeat",
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570      
+                      USA: +1 (866) 978-8570
                     </span>
                   </div>
                 </div>
@@ -1199,9 +1199,9 @@ export default function Logistic() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-              {" "}
+
               America's Go-To Partner for Logistics App Innovation
             </h1>
             <p>
@@ -1214,14 +1214,14 @@ export default function Logistic() {
           </div>
         </section>
         <section>
-          <div className="flex flex-wrap justify-center gap-7 mt-24">
+          <div className="flex flex-wrap justify-center gap-7 mb-10 mt-12">
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
                 {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
                     alt=""
@@ -1229,15 +1229,18 @@ export default function Logistic() {
                   />
                 </div>
 
-                <h3 className="text-lg font-bold text-black leading-none">
-                  {item.value}
-                </h3>
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
 
-                <p className="mt-3 text-lg leading-none text-black">
-                  {item.line1}
-                  <br />
-                  {item.line2}
-                </p>
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -1283,9 +1286,8 @@ export default function Logistic() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
-              {" "}
               Why Businesses Choose Our Logistics App Development Company
             </h1>
             <p>
@@ -1301,7 +1303,7 @@ export default function Logistic() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-500 hover:shadow-lg"
+                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-500 hover:shadow-lg"
               >
                 <img
                   src={service.image}

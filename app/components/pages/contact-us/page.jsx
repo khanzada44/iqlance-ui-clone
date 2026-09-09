@@ -385,7 +385,7 @@ export default function ContactSection() {
         </div>
 
         {/* Offices Section */}
-        <section className="py-10 mt-10">
+        <section className="py-10 mt-15">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {offices.map((office) => (

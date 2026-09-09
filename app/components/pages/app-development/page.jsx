@@ -32,27 +32,27 @@ import "swiper/css/pagination";
 
 export default function LandingPage() {
   const contentRef = useRef(null);
-const [contentVisible, setContentVisible] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        setContentVisible(true);
-        observer.disconnect();
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setContentVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.2,
       }
-    },
-    {
-      threshold: 0.2,
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
     }
-  );
 
-  if (contentRef.current) {
-    observer.observe(contentRef.current);
-  }
-
-  return () => observer.disconnect();
-}, []);
+    return () => observer.disconnect();
+  }, []);
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({
@@ -228,7 +228,7 @@ useEffect(() => {
 
         <section className="relative overflow-hidden bg-linear-to-r from-[#e72828] via-[#a60000] to-[#080000]">
           <div className="mx-auto flex w-[94%] flex-col items-center gap-12 py-10 sm:w-[92%] sm:py-12 lg:min-h-125 lg:w-[90%] lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-12 xl:w-[88%]">
-<style jsx>{`
+            <style jsx>{`
   .content-slide-in-left {
     opacity: 0;
     transform: translateX(-70px);
@@ -272,134 +272,127 @@ useEffect(() => {
   }
 `}</style>
 
-<div
-  ref={contentRef}
-  className={`w-full text-white sm:w-[90%] lg:w-[52%] xl:w-[54%]`}
->
-  {/* SMALL TITLE */}
-  <p
-    className={`content-title mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px] ${
-      contentVisible ? "show" : ""
-    }`}
-  >
-    Let&apos;s Turn Your Idea Into a Market-Ready Product
-  </p>
+            <div
+              ref={contentRef}
+              className={`w-full text-white sm:w-[90%] lg:w-[52%] xl:w-[54%]`}
+            >
+              {/* SMALL TITLE */}
+              <p
+                className={`content-title mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px] ${contentVisible ? "show" : ""
+                  }`}
+              >
+                Let&apos;s Turn Your Idea Into a Market-Ready Product
+              </p>
 
-  {/* MAIN TITLE */}
-  <h1
-    className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${
-      contentVisible ? "show" : ""
-    }`}
-  >
-    Request a Quote
-  </h1>
+              {/* MAIN TITLE */}
+              <h1
+                className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${contentVisible ? "show" : ""
+                  }`}
+              >
+                Request a Quote
+              </h1>
 
-  {/* EMAIL */}
-  <p
-    className={`content-slide-in-left text-[17px] leading-[1.7] ${
-      contentVisible ? "show" : ""
-    }`}
-    style={{ animationDelay: "300ms" }}
-  >
-    Share Your Project Details on{" "}
-    <span className="font-bold">info@DevAppGrid.com</span>
-  </p>
+              {/* EMAIL */}
+              <p
+                className={`content-slide-in-left text-[17px] leading-[1.7] ${contentVisible ? "show" : ""
+                  }`}
+                style={{ animationDelay: "300ms" }}
+              >
+                Share Your Project Details on{" "}
+                <span className="font-bold">info@DevAppGrid.com</span>
+              </p>
 
-  {/* PHONE */}
-  <p
-    className={`content-slide-in-left mb-5 text-[17px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px] ${
-      contentVisible ? "show" : ""
-    }`}
-    style={{ animationDelay: "400ms" }}
-  >
-    Talk To Experts:
-    <br />
-    USA: +1 (866) 978-8570
-  </p>
+              {/* PHONE */}
+              <p
+                className={`content-slide-in-left mb-5 text-[17px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px] ${contentVisible ? "show" : ""
+                  }`}
+                style={{ animationDelay: "400ms" }}
+              >
+                Talk To Experts:
+                <br />
+                USA: +1 (866) 978-8570
+              </p>
 
-  {/* DESCRIPTION */}
-  <p
-    className={`content-slide-in-left max-w-140 text-[17px] leading-[1.8] sm:text-[13px] lg:text-[18px] ${
-      contentVisible ? "show" : ""
-    }`}
-    style={{ animationDelay: "500ms" }}
-  >
-    Have a project in mind? Share your requirements with Devapp and
-    connect with experienced app and software development
-    specialists who can help you define the right solution,
-    timeline, and development strategy.
-  </p>
+              {/* DESCRIPTION */}
+              <p
+                className={`content-slide-in-left max-w-140 text-[17px] leading-[1.8] sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
+                  }`}
+                style={{ animationDelay: "500ms" }}
+              >
+                Have a project in mind? Share your requirements with Devapp and
+                connect with experienced app and software development
+                specialists who can help you define the right solution,
+                timeline, and development strategy.
+              </p>
 
-  {/* BENEFITS */}
-  <ul
-    className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${
-      contentVisible ? "show" : ""
-    }`}
-    style={{ animationDelay: "600ms" }}
-  >
-    <li className="flex items-center gap-2">
-      <span>•</span>
-      <span>45-minute free consultation</span>
-    </li>
+              {/* BENEFITS */}
+              <ul
+                className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
+                  }`}
+                style={{ animationDelay: "600ms" }}
+              >
+                <li className="flex items-center gap-2">
+                  <span>•</span>
+                  <span>45-minute free consultation</span>
+                </li>
 
-    <li className="flex items-center gap-2">
-      <span>•</span>
-      <span>Strict NDA and IP confidentiality</span>
-    </li>
+                <li className="flex items-center gap-2">
+                  <span>•</span>
+                  <span>Strict NDA and IP confidentiality</span>
+                </li>
 
-    <li className="flex items-center gap-2">
-      <span>•</span>
-      <span>Detailed feature and project scope document</span>
-    </li>
+                <li className="flex items-center gap-2">
+                  <span>•</span>
+                  <span>Detailed feature and project scope document</span>
+                </li>
 
-    <li className="flex items-center gap-2">
-      <span>•</span>
-      <span>Customized technology and development roadmap</span>
-    </li>
+                <li className="flex items-center gap-2">
+                  <span>•</span>
+                  <span>Customized technology and development roadmap</span>
+                </li>
 
-    <li className="flex items-center gap-2">
-      <span>•</span>
-      <span>Clear timeline and budget estimate</span>
-    </li>
+                <li className="flex items-center gap-2">
+                  <span>•</span>
+                  <span>Clear timeline and budget estimate</span>
+                </li>
 
-    <li className="flex items-center gap-2">
-      <span>•</span>
-      <span>Action plan to move your project forward</span>
-    </li>
-  </ul>
+                <li className="flex items-center gap-2">
+                  <span>•</span>
+                  <span>Action plan to move your project forward</span>
+                </li>
+              </ul>
 
-  {/* BUTTONS */}
-  <div
-    className={`content-slide-in-left mt-6 flex flex-wrap gap-3 ${
-      contentVisible ? "show" : ""
-    }`}
-    style={{ animationDelay: "700ms" }}
-  >
-    <Link
-      href="/contact-us"
-      className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
-    >
-      Contact Us
+              {/* BUTTONS */}
+              <div
+                className={`content-slide-in-left mt-6 flex flex-wrap gap-3 ${contentVisible ? "show" : ""
+                  }`}
+                style={{ animationDelay: "700ms" }}
+              >
+                <Link
+                  href="/contact-us"
+                  className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
+                >
+                  Contact Us
 
-      <ArrowRight
-        size={14}
-        className="transition-transform duration-300 group-hover:translate-x-1"
-      />
-    </Link>
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
 
-    <Link
-      href="/portfolio"
-      className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
-    >
-      See Our Work
+                <Link
+                  href="/portfolio"
+                  className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
+                >
+                  See Our Work
 
-      <ArrowRight
-        size={14}
-        className="transition-transform duration-300 group-hover:translate-x-1"
-      />
-    </Link>
-  </div>
-</div>
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+              </div>
+            </div>
 
             <style jsx>{`
               .form-slide-in-right {
@@ -546,11 +539,10 @@ useEffect(() => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`h-9 rounded-[3px] px-5 text-[10px] font-semibold text-white transition sm:h-9.5 sm:px-6 sm:text-[11px] focus:outline-none focus:ring-0 ${
-                      loading
+                    className={`h-9 rounded-[3px] px-5 text-[10px] font-semibold text-white transition sm:h-9.5 sm:px-6 sm:text-[11px] focus:outline-none focus:ring-0 ${loading
                         ? "cursor-not-allowed bg-red-600"
                         : "bg-red-600 hover:bg-red-700"
-                    }`}
+                      }`}
                   >
                     {loading ? "Sending..." : "Schedule a free consultation"}
                   </button>
@@ -560,42 +552,98 @@ useEffect(() => {
           </div>
         </section>
 
-        <section className="bg-white py-8 sm:py-9 lg:py-10">
-          <div className="mx-auto grid w-[90%] grid-cols-2 items-center justify-items-center gap-x-8 gap-y-8 sm:w-[85%] sm:grid-cols-3 lg:flex lg:w-[90%] lg:justify-between xl:w-[88%]">
-            {/* REACT */}
-            <img
-              src="/images/React-Native.png"
-              alt="React Native"
-              className="h-10.5 w-auto object-contain sm:h-12 lg:h-13"
-            />
+        <section className="bg-white py-8 sm:py-9 lg:py-10 overflow-hidden">
+          <style>{`
+    @keyframes logoMarquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
 
-            {/* FLUTTER */}
-            <img
-              src="/images/Flutter.png"
-              alt="Flutter"
-              className="h-10.5 w-auto object-contain sm:h-12 lg:h-13"
-            />
+    .logo-marquee {
+      display: flex;
+      width: max-content;
+      animation: logoMarquee 18s linear infinite;
+    }
 
-            {/* XAMARIN */}
-            <img
-              src="/images/Xamarin.png"
-              alt="Xamarin"
-              className="h-10.5 w-auto object-contain sm:h-12 lg:h-13"
-            />
+    .logo-marquee:hover {
+      animation-play-state: paused;
+    }
+  `}</style>
 
-            {/* ORACLE */}
-            <img
-              src="/images/Oracle.png"
-              alt="Oracle"
-              className="h-10.5 w-auto object-contain sm:h-12 lg:h-13"
-            />
+          <div className="overflow-hidden w-full">
+            <div className="logo-marquee">
 
-            {/* UNITY */}
-            <img
-              src="/images/unity.png"
-              alt="Unity"
-              className="h-10.5 w-auto object-contain sm:h-12 lg:h-13"
-            />
+              {/* First Set */}
+              <div className="flex items-center gap-12 sm:gap-16 lg:gap-24 px-6 sm:px-8 lg:px-12">
+                <img
+                  src="/images/React-Native.png"
+                  alt="React Native"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+
+                <img
+                  src="/images/Flutter.png"
+                  alt="Flutter"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+
+                <img
+                  src="/images/Xamarin.png"
+                  alt="Xamarin"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+
+                <img
+                  src="/images/Oracle.png"
+                  alt="Oracle"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+
+                <img
+                  src="/images/unity.png"
+                  alt="Unity"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+              </div>
+
+              {/* Duplicate Set - seamless loop */}
+              <div className="flex items-center gap-12 sm:gap-16 lg:gap-24 px-6 sm:px-8 lg:px-12">
+                <img
+                  src="/images/React-Native.png"
+                  alt="React Native"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+
+                <img
+                  src="/images/Flutter.png"
+                  alt="Flutter"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+
+                <img
+                  src="/images/Xamarin.png"
+                  alt="Xamarin"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+
+                <img
+                  src="/images/Oracle.png"
+                  alt="Oracle"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+
+                <img
+                  src="/images/unity.png"
+                  alt="Unity"
+                  className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
+                />
+              </div>
+
+            </div>
           </div>
         </section>
 
@@ -678,9 +726,9 @@ useEffect(() => {
                 </h4>
 
                 <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
-                  502-10 Murdock Road, Etobicoke,
+                  100 King St W, Suite 5700, Toronto, ON M5X 1A9,
                   <br />
-                  M9V5E3
+                  Canada
                 </p>
               </div>
 
@@ -696,13 +744,10 @@ useEffect(() => {
                 </h4>
 
                 <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
-                  349 5th Ave, New York, NY 10016, USA
+                  USA 45 Rockefeller Plaza, New York, NY 10111, USA
                 </p>
 
-                <p className="text-[10px] font-semibold text-black sm:text-[13px] flex items-center mt-10">
-                  {/* <img src="/icons/phone.svg" alt="" /> */}
-                    
-                </p>
+
               </div>
 
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
@@ -717,9 +762,9 @@ useEffect(() => {
                 </h4>
 
                 <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
-                  701 Brazos St 4th floor ste 415,
+                  USA 500 W 2nd St, Floor 19, Austin, TX 78701, USA
                   <br />
-                  Austin, TX 78701
+                  78701, USA
                 </p>
               </div>
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
@@ -734,9 +779,9 @@ useEffect(() => {
                 </h4>
 
                 <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
-                  2976 Casa Nueva Ct, San Jose, CA
+                  101 California Street, San Francisco, CA 94111, USA
                   <br />
-                  95124, USA
+                  94111, USA
                 </p>
               </div>
 
@@ -752,7 +797,7 @@ useEffect(() => {
                 </h4>
 
                 <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
-                  19 Burnes Ave, Clayton South VIC 3169,
+                  20 Martin Place, Sydney, NSW 2000
                   <br />
                   Australia
                 </p>
@@ -1045,11 +1090,10 @@ useEffect(() => {
               {faqsData.map((faq, index) => (
                 <div
                   key={index}
-                  className={`border bg-white transition-all duration-300 ${
-                    open === index
+                  className={`border bg-white transition-all duration-300 ${open === index
                       ? "border-red-50 shadow-md"
                       : "border-gray-200 hover:border-red-300"
-                  }`}
+                    }`}
                 >
                   {/* Question */}
                   <button
@@ -1061,21 +1105,19 @@ useEffect(() => {
                     </span>
 
                     <ChevronDown
-                      className={`w-5 h-5 transition-transform duration-300 ${
-                        open === index
+                      className={`w-5 h-5 transition-transform duration-300 ${open === index
                           ? "rotate-180 text-black"
                           : "rotate-0 text-black"
-                      }`}
+                        }`}
                     />
                   </button>
 
                   {/* Answer */}
                   <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      open === index
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
                         ? "max-h-150 opacity-100"
                         : "max-h-0 opacity-0"
-                    }`}
+                      }`}
                   >
                     <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                       <p className="text-[17px] leading-8 text-gray-600">
@@ -1291,11 +1333,10 @@ useEffect(() => {
                       <button
                         type="submit"
                         disabled={loading}
-                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${
-                          loading
+                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${loading
                             ? "cursor-not-allowed opacity-60"
                             : "hover:bg-[#d9141c]"
-                        } rounded-full`}
+                          } rounded-full`}
                       >
                         {loading ? "Sending..." : "Get A Free Quote"}
                       </button>

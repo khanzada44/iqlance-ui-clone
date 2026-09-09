@@ -1,7 +1,7 @@
 export const offices = [
   {
     id: 1,
-    title: "Headquarter",
+    title: "",
     city: "Texas, USA",
     address: "17250 Dallas Pkwy Dallas, TX 75248, USA",
     image: "/images/texas_usa_office_iq.png",
@@ -10,14 +10,14 @@ export const offices = [
     id: 2,
     title: "",
     city: "New York, USA",
-    address: "349 5th Ave, New York, NY 10016, USA",
+    address: "45 Rockefeller Plaza, New York, NY 10111, USA",
     image: "/images/newyork-office-icn.png",
   },
   {
     id: 3,
-    title: "Branch",
+    title: "",
     city: "Toronto, Canada",
-    address: "502-10 Markbrook Lane, Etobicoke, M9V5E3",
+    address: "100 King St W, Suite 5700, Toronto, ON M5X 1A9, Canada",
     image: "/images/canada-office-icn.png",
   },
   {
@@ -31,14 +31,14 @@ export const offices = [
     id: 5,
     title: "",
     city: "Australia",
-    address: "19 Burns Ave, Clayton South VIC 3169, Australia",
+    address: "20 Martin Place, Sydney, NSW 2000, Australia",
     image: "/images/australia-office-icn.png",
   },
   {
     id: 6,
     title: "",
     city: "California, USA",
-    address: "2976 Casa Nueva Ct, San Jose, CA 95124, USA",
+    address: "101 California Street, San Francisco, CA 94111, USA",
     image: "/images/california.png",
   },
 ];

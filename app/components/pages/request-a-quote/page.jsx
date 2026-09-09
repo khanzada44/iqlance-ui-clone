@@ -99,7 +99,6 @@ export default function ContactSection() {
   return (
     <>
       <div className="w-[90%] md:w-[80%] mx-auto max-w-full overflow-hidden">
-        {/* Main Form & Content Grid */}
         <section className="py-6 bg-white w-full">
           <div className="w-full px-2 sm:px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start w-full">
@@ -356,7 +355,7 @@ export default function ContactSection() {
             </div>
           </div>
         </section>
-        <section className="py-10 w-full">
+        <section>
           <div className="w-full px-2 sm:px-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
               {offices.map((office) => (

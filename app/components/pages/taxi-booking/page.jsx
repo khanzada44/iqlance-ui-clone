@@ -829,9 +829,9 @@ const processSteps = [
             );
           })}
         </section>
-        <section className="py-12 px-4 max-w-6xl mx-auto font-sans">
+        <section className="py-12 px-4 max-w-6xl mx-auto">
           {/* Main Heading */}
-          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-10 text-left">
+          <h2 className="text-2xl md:text-3xl  text-black mb-10 text-center">
             What Better Taxi Technology Can Do for Your Business
           </h2>
 
@@ -899,7 +899,7 @@ const processSteps = [
           </div>
         </section>
         {/* Endeavors Section */}
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <section >
           <div className="text-center space-y-3">
             <h2 className="text-3xl md:text-3xl font-bold text-black">
               Endeavors That Make Us Proud
@@ -931,7 +931,7 @@ const processSteps = [
             loop={true}
           >
             {portfolioSlides.map((slide, index) => (
-              <SwiperSlide key={index} className="h-auto!">
+              <SwiperSlide key={index} className="h-auto! mt-15 mb-10">
                 <div className="bg-red-50 px-4 sm:px-6 md:px-12 py-8 sm:py-10 h-full flex flex-col justify-between">
                   <div>
                     <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
@@ -1021,7 +1021,7 @@ const processSteps = [
 
 
         </section>
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mt-15">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Technologies We Use
           </h2>
@@ -1204,7 +1204,7 @@ const processSteps = [
 
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -1252,7 +1252,7 @@ const processSteps = [
         </section>
 
 
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+        <div className="text-center max-w-6xl mx-auto space-y-4 mt-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             The Process We Follow for Taxi App Development
           </h2>
@@ -1365,7 +1365,7 @@ const processSteps = [
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-500 hover:shadow-lg"
+                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-500 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1514,8 +1514,8 @@ const processSteps = [
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-200 shadow-md"
-                      : "border-red-200 hover:border-red-300"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

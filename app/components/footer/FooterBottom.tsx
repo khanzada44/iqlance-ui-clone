@@ -6,8 +6,8 @@ interface FooterBottomProps {
 
 export const FooterBottom = ({ year }: FooterBottomProps) => {
   return (
-    <div className="flex flex-col items-center justify-between gap-4 text-sm text-black md:flex-row">
-      <p>
+    <div className="mt-10">
+      <p className="text-center text-sm not-italic text-black leading-relaxed">
         © Copyright {year}{" "}
         <span className="text-black">Devapp Solutions LLC</span>. All rights
         reserved

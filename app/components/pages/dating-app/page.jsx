@@ -415,13 +415,13 @@ export default function SocialMedia() {
             </div>
           </div>
         </section>
-        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
+        <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-center text-gray-800">
           {/* Main Heading */}
-          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6">
             Why Devapp for Custom Dating App Development in the USA
           </h2>
 
-          <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto mb-10">
+          <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto mb-10">
             <p>
               Every dating app has a different purpose, audience, and business model.
               At Devapp, we build custom dating applications around your specific goals,
@@ -631,10 +631,10 @@ export default function SocialMedia() {
           })}
         </section>
 
-        <section className="py-10 bg-white">
+        <section >
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className=" bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -706,10 +706,10 @@ export default function SocialMedia() {
         <section className="w-full max-w-6xl mx-auto md:py-16">
           {/* Section Header */}
           <div className="text-center space-y-3">
-            <h2 className="text-2xl md:text-3xl font-bold text-black">
+            <h2 className="text-2xl md:text-4xl font-bold text-black">
               Essential Features for a Modern Dating App
             </h2>
-            <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
+            <p className="text-black text-sm md:text-base max-w-6xl mx-auto">
               Great dating apps make it easy to discover people, express interest, start conversations,
               and build meaningful connections. We combine the essential functionality users expect with carefully selected features that
               support engagement, trust, personalization, and long-term platform growth.
@@ -763,10 +763,10 @@ export default function SocialMedia() {
           </div>
         </div>
 
-        <section className="py-10 bg-white">
+        <section >
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-10 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -1101,10 +1101,10 @@ export default function SocialMedia() {
           </div>
         </section>
 
-        <section className="py-10 bg-white">
+        <section>
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -1174,7 +1174,7 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -1262,7 +1262,7 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="text-center max-w-6xl mx-auto space-y-4 mt-10">
+          <div className="text-center max-w-6xl mx-auto space-y-4 mt-15">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Why Choose Us for Dating App Development
             </h1>
@@ -1281,7 +1281,7 @@ export default function SocialMedia() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
+                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1430,8 +1430,8 @@ export default function SocialMedia() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-200 shadow-md"
-                      : "border-red-200 hover:border-red-400"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-red-400"
                       }`}
                   >
                     {/* Question */}

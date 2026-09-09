@@ -587,14 +587,14 @@ export default function Restaurant() {
             </div>
           </div>
         </section>
-        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-gray-800">
+        <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-gray-800">
           {/* Main Heading */}
-          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6 text-center">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6 text-center">
             Restaurant App Development That Fits Your Brand
           </h2>
 
           {/* Intro Paragraphs */}
-          <div className="space-y-4 text-center text-sm md:text-base leading-relaxed text-gray-700 max-w-4xl mx-auto mb-10">
+          <div className="space-y-4 text-center text-sm md:text-base leading-relaxed text-gray-700 max-w-5xl mx-auto mb-10">
             <p>
               Your restaurant isn't a template and your app shouldn't be one either.
               We create custom restaurant applications around your menu structure,
@@ -977,7 +977,7 @@ export default function Restaurant() {
 
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -1025,7 +1025,7 @@ export default function Restaurant() {
         </section>
 
 
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-7">
+        <div className="text-center max-w-6xl mx-auto space-y-4 mt-7">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             The Process Behind a Restaurant App Built to Perform
           </h2>
@@ -1290,8 +1290,8 @@ export default function Restaurant() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-200 shadow-md"
-                      : "border-red-200 hover:border-red-300"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

@@ -449,12 +449,12 @@ export default function fitness() {
               );
             })}
           </section>
-          <div className="max-w-5xl mx-auto">
+          <div>
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
+              <h2 className="text-2xl md:text-4xl font-bold text-black mb-4 leading-snug">
                 Essential Features for a Future-Ready Fitness App
               </h2>
-              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base text-black max-w-6xl mx-auto leading-relaxed">
                 Modern fitness users expect convenience, personalization, and measurable progress
                 from the apps they use. We incorporate the features that make your
                 product useful, engaging, and competitive in the U.S. fitness market.
@@ -499,47 +499,43 @@ export default function fitness() {
             </div>
           </div>
         </div>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <section>
           {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
               Why Choose Us for Fitness App Development?
             </h2>
-            <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
+            <p className="text-black md:text-base max-w-7xl mx-auto">
               At Devapp Solutions USA, we pride ourselves on offering an extensive range of features that empower fitness enthusiasts to take control of their health and wellness journey. Our fitness apps are designed to deliver exceptional user experiences, helping users stay motivated, track progress, and achieve their fitness goals. Below are the standout features of our fitness app development:
             </p>
           </div>
         </section>
-        <section className="py-12 px-4 max-w-7xl mx-auto font-sans bg-white">
-          {/* 3-Column Grid with Equal Height Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {fitnessFeatures.map((item) => (
-              <div
-                key={item.id}
-                className="w-full h-full bg-white border border-gray-200 p-8 flex flex-col items-center text-center shadow-xs transition-shadow duration-300 hover:shadow-md"
-              >
-                {/* Top Icon */}
-                <div className="w-12 h-12 mb-5 flex items-center justify-center shrink-0">
-                  <img
-                    src={item.icon}
-                    alt={item.title}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-
-                {/* Title */}
-                <h3 className="text-base md:text-lg font-bold text-black mb-4">
-                  {item.title}
-                </h3>
-
-                {/* Description (grow class ensures uniform filling) */}
-                <p className="text-gray-600 text-xs md:text-sm leading-relaxed grow">
-                  {item.description}
-                </p>
+      <section className="py-12 px-4 max-w-7xl mx-auto font-sans bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
+          {fitnessFeatures.map((item) => (
+            <div
+              key={item.id}
+              className="w-full h-full bg-white border border-gray-200 p-8 flex flex-col items-center text-center shadow-xs transition-shadow duration-300 hover:shadow-md"
+            >
+              <div className="w-12 h-12 mb-5 flex items-center justify-center shrink-0">
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="w-full h-full object-contain"
+                />
               </div>
-            ))}
-          </div>
-        </section>
+
+              <h3 className="text-base md:text-lg font-bold text-black mb-4">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-600 text-xs md:text-sm leading-relaxed grow">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
         <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
@@ -620,14 +616,14 @@ export default function fitness() {
             </div>
           </div>
         </section>
-        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
+        <section className="mt-15 mb-15 text-center text-gray-800">
           {/* Block 1 */}
           <div className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6">
               Tailored Fitness App Development for Every Business
             </h2>
 
-            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto">
+            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 mx-auto">
               <p>
                 The health and wellness app space is booming, with millions of
                 downloads happening every single month, but that also means standing
@@ -775,7 +771,7 @@ export default function fitness() {
           </div>
 
           {/* Technology Stack Heading Section */}
-          <div className="text-center max-w-5xl mx-auto space-y-4">
+          <div className="text-center max-w-6xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               Built on a Secure, Scalable Tech Foundation
             </h2>
@@ -791,8 +787,8 @@ export default function fitness() {
         </section>
 
 
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 ">
+        <section>
+          <div className="max-w-7xl mx-auto">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
               <div className="flex flex-wrap gap-8 border-b border-red-300">
@@ -958,9 +954,8 @@ export default function fitness() {
 
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+            <h1 className="text-2xl md:text-2xl font-extrabold text-black">
               Our Fitness App Development Approach
             </h1>
             <p>
@@ -1009,7 +1004,7 @@ export default function fitness() {
             </div>
           </div>
         </section>
-        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
+        <section className="py-12 px-4 font-sans text-center text-gray-800">
           {/* Block 1 */}
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
@@ -1060,7 +1055,7 @@ export default function fitness() {
           </div>
         </section>
         <section>
-          <div className="flex flex-wrap justify-center gap-7 mb-10">
+          <div className="flex flex-wrap justify-center gap-7 mb-10 mt-10">
             {stats.map((item, index) => (
               <div
                 key={index}
@@ -1092,7 +1087,7 @@ export default function fitness() {
           </div>
         </section>
 
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-10">
+        <div className="text-center max-w-5xl mx-auto space-y-4 mt-10">
           <h2 className="text-2xl sm:text-3xl md:text-3xl font-extrabold text-black">
             Why Partner With Us for Fitness App Development?
           </h2>
@@ -1108,7 +1103,7 @@ export default function fitness() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
+                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1257,8 +1252,8 @@ export default function fitness() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-200 shadow-md"
-                      : "border-red-200 hover:border-red-300"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

@@ -369,7 +369,7 @@ export default function foodOrdering() {
                 End-to-End Restaurant App Development, Built to Scale With You
               </h2>
 
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
                 Devapp has spent years earning its place as a trusted{" "}
                 <strong>restaurant app development company</strong>, working with
                 restaurant owners and food businesses of every size, including startups
@@ -378,7 +378,7 @@ export default function foodOrdering() {
 
               <br />
 
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
                 Own a restaurant and want an app engineered for real ROI? Or still
                 searching for a development partner who actually understands your
                 business? Either way, your search stops here. We take the time to learn
@@ -388,7 +388,7 @@ export default function foodOrdering() {
 
               <br />
 
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
                 Today&apos;s diners expect the convenience of ordering food from anywhere
                 and having it delivered to their door and we help restaurants of every
                 size deliver exactly that. Our{" "}
@@ -399,7 +399,7 @@ export default function foodOrdering() {
 
               <br />
 
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
                 Our on-demand food delivery development team is 400+ professionals strong,
                 all deeply familiar with how the restaurant industry actually works from
                 kitchen operations to the technology that powers modern dining. We&apos;re
@@ -417,7 +417,7 @@ export default function foodOrdering() {
               </Link>
             </div>
           </div>
-          <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm mt-10">
+          <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm mt-20">
             <img
               src="/images/restaurant-app-full.jpg"
               alt="Cost Calculation & Financial Planning"
@@ -427,13 +427,13 @@ export default function foodOrdering() {
         </section>
 
         <section>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10 mt-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-10 mt-20">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
                 How Restaurants Are Turning Food Apps Into Real Revenue
               </h2>
 
-              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base max-w-7xl mx-auto leading-relaxed">
                 Consumer habits shifted permanently once digital ordering became the
                 norm and that shift hasn&apos;t reversed. Customers now expect to order
                 meals from their couch and have them delivered straight to their door.
@@ -444,7 +444,7 @@ export default function foodOrdering() {
 
               <br />
 
-              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base max-w-7xl mx-auto leading-relaxed">
                 A well-built food delivery app pays for itself many times over by
                 converting first-time visitors into paying customers to drive repeat
                 orders through smart promotions. The businesses that get the best
@@ -455,7 +455,7 @@ export default function foodOrdering() {
 
               <br />
 
-              <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base max-w-7xl mx-auto leading-relaxed">
                 Reaching your specific audience is where the real payoff happens.
                 Building an app that appeals to the millions of people looking for
                 dining or takeout options helps you grow your customer base without
@@ -503,8 +503,8 @@ export default function foodOrdering() {
             </div>
           </div>
         </div>
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
+        <section>
+          <div>
             {/* CTA Box */}
             <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
@@ -555,7 +555,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570     
+                      USA: +1 (866) 978-8570
                     </span>
                   </div>
                 </div>
@@ -574,7 +574,7 @@ export default function foodOrdering() {
             </div>
           </div>
         </section>
-        <section className="py-10">
+        <section>
           {/* Custom CSS ko <style> tag ke andar rakha gaya hai */}
           <style>{`
             .swiper-pagination-bullet {
@@ -586,7 +586,7 @@ export default function foodOrdering() {
             }
           `}</style>
 
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-7xl mt-20">
             <Swiper
               modules={[Pagination, Autoplay]}
               slidesPerView={1}
@@ -687,10 +687,10 @@ export default function foodOrdering() {
           })}
         </section>
 
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
+        <section>
+          <div >
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-10 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -738,7 +738,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570      
+                      USA: +1 (866) 978-8570
                     </span>
                   </div>
                 </div>
@@ -763,7 +763,7 @@ export default function foodOrdering() {
             Results That Speak for Themselves
 
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-5xl mx-auto mb-12 leading-relaxed">
+          <p className="text-gray-600 text-sm sm:text-base max-w-6xl mx-auto mb-12 leading-relaxed">
             Our team of experienced food app developers has poured serious effort into building
             a range of on-demand, custom-built applications, and the proof is in the response:
             real, positive feedback from real customers.
@@ -834,10 +834,10 @@ export default function foodOrdering() {
           </div>
         </section>
 
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
+        <section>
+          <div >
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="mt-12 md:mt-10 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -885,7 +885,7 @@ export default function foodOrdering() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570      
+                      USA: +1 (866) 978-8570
                     </span>
                   </div>
                 </div>
@@ -936,7 +936,7 @@ export default function foodOrdering() {
             </div>
           </div>
         </section>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
+        <section className="w-full max-w-7xl mx-auto space-y-12">
           {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -992,7 +992,7 @@ export default function foodOrdering() {
           </div>
 
           {/* Success Stories Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
+          <div className="text-center max-w-5xl mx-auto space-y-3 pt-6 mb-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
               Endeavors That Make Us Proud
             </h2>
@@ -1093,9 +1093,9 @@ export default function foodOrdering() {
             ))}
           </Swiper>
         </section>
-        <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
+        <section>
           {/* Top CTA Banner Box */}
-          <div className="bg-red-50  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-red-50  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mt-15">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
                 Check How We turn Your Idea into Innovative Product
@@ -1116,11 +1116,11 @@ export default function foodOrdering() {
           </div>
 
           {/* Technology Stack Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Technology Stack for Custom Logistics App Development
+          <div className="text-center max-w-5xl mx-auto space-y-4 mt-15 mb-10">
+            <h2 className="text-4xl sm:text-3xl md:text-3xl font-extrabold text-gray-900">
+              Technology Stack for Custom Food & Restaurant App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed ">
               Our team of developers leave stones unturned in their quest to
               create usable apps with advanced features for companies, drivers,
               and consumers. We are equipped to handle different types of
@@ -1129,7 +1129,7 @@ export default function foodOrdering() {
             </p>
           </div>
         </section>
-        <section className="py-16">
+        <section >
           <div className="max-w-7xl mx-auto px-4 ">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
@@ -1175,7 +1175,7 @@ export default function foodOrdering() {
             </div>
           </div>
         </section>
-        <section className="py-10 bg-white">
+        <section>
           <div className="max-w-7xl mx-auto px-4">
             {/* CTA Box */}
             <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
@@ -1208,7 +1208,7 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-20 mb-10 ">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               Offshore Web, Mobile & Software Development Company
             </h1>
@@ -1221,15 +1221,15 @@ export default function foodOrdering() {
             </p>
           </div>
         </section>
-        <section>
-          <div className="flex flex-wrap justify-center gap-7 mt-24">
+        <section className="mt-20">
+          <div className="flex flex-wrap justify-center gap-7 mb-10">
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
                 {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
                     alt=""
@@ -1237,15 +1237,18 @@ export default function foodOrdering() {
                   />
                 </div>
 
-                <h3 className="text-lg font-bold text-black leading-none">
-                  {item.value}
-                </h3>
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
 
-                <p className="mt-3 text-lg leading-none text-black">
-                  {item.line1}
-                  <br />
-                  {item.line2}
-                </p>
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -1309,7 +1312,7 @@ export default function foodOrdering() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
+                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1458,8 +1461,8 @@ export default function foodOrdering() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-200 shadow-md"
-                      : "border-red-200 hover:border-red-300"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

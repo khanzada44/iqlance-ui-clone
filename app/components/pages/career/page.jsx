@@ -35,7 +35,7 @@ export default function career() {
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl md:text-6xl font-bold text-center">
-              <span className="text-red-600">Careers at Devapp</span>
+              <span className="text-4xl md:text-5xl font-extrabold text-red-600 mt-2 mb-6">Careers at Devapp</span>
             </h2>
 
             {/* Description */}
@@ -116,39 +116,38 @@ export default function career() {
             </div>
           </div>
         </section>
-        <section className="mb-10">
-          <div className="max-w-7xl mx-auto px-4 mb-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-7">
-              {stats.map((item, index) => {
-                return (
+            <section>
+              <div className="flex flex-wrap justify-center gap-7 mb-10">
+                {stats.map((item, index) => (
                   <div
                     key={index}
-                    className="relative min-h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-20 pb-8"
+                    className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
                   >
                     {/* Floating Icon */}
-                    <div className="absolute -top-8 right-0 w-20 h-20 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                    <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                       <img
                         src={item.icon}
-                        alt="stat icon"
-                        className="w-10 h-10 text-[#4B5563]"
+                        alt=""
+                        className="w-11 h-11 object-contain"
                       />
                     </div>
 
-                    <h3 className="text-[40px] font-bold text-[#3B3F4A] leading-none">
-                      {item.value}
-                    </h3>
+                    {/* Text Container */}
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-lg font-bold text-black leading-none">
+                        {item.value}
+                      </h3>
 
-                    <p className="mt-3 text-lg leading-[1.6] text-black">
-                      {item.line1}
-                      <br />
-                      {item.line2}
-                    </p>
+                      <p className="text-sm leading-tight text-black">
+                        {item.line1}
+                        <br />
+                        {item.line2}
+                      </p>
+                    </div>
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+                ))}
+              </div>
+            </section>
         <section>
           <div className="max-w-7xl mx-auto px-4 mt-10">
             {/* About */}

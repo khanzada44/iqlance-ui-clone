@@ -536,13 +536,13 @@ export default function Ondemadd() {
             );
           })}
         </section>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <section className="w-full max-w-6xl mx-auto ">
           {/* Section Header */}
           <div className="text-center space-y-3">
-            <h2 className="text-2xl md:text-3xl font-bold text-black">
+            <h2 className="text-2xl md:text-4xl font-bold text-black">
               Endeavors that Make us Proud
             </h2>
-            <p className="text-black text-sm md:text-base max-w-3xl mx-auto">
+            <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
               Devapp solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
             </p>
           </div>
@@ -651,7 +651,7 @@ export default function Ondemadd() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Technologies We Use
           </h2>
-          <p className="text-black text-sm md:text-base leading-relaxed">
+          <p className="text-black text-sm  leading-relaxed">
             The right technology stack gives your real estate app the foundation it needs to perform today and scale tomorrow. We select modern tools and frameworks based on your product requirements, target platforms, integrations, and long-term business goals.
 
           </p>
@@ -787,9 +787,8 @@ export default function Ondemadd() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
               Industries We Serve
             </h1>
             <p>
@@ -827,7 +826,7 @@ export default function Ondemadd() {
         </section>
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -994,7 +993,7 @@ export default function Ondemadd() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
             {/* Left Process Image Container */}
-            <div className="relative w-72 h-72 mx-auto flex items-center justify-center">
+            <div className="relative w-72 h-72 mx-auto">
 
               {/* Step 1 Image - Discover */}
               {activeStepIndex === 0 && (
@@ -1249,8 +1248,8 @@ export default function Ondemadd() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-200 shadow-md"
-                      : "border-red-200 hover:border-red-300"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

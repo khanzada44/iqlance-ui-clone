@@ -890,7 +890,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="max-w-5xl mx-auto text-center mt-10 sm:mt-14 px-3 mb-10">
+        <div className="max-w-5xl mx-auto text-center sm:mt-14 px-3 mb-10 mt-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
             Hire Mobile App & Software Developers
           </h2>
@@ -1512,7 +1512,7 @@ export default function Home() {
         </section> */}
 
         {/* CONTACT */}
-        <div className="mt-2 px-3">
+        <div className="mt-12 px-3">
           <h1 className="flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight text-center">
             Have Something in Mind? Let's Talk.
           </h1>

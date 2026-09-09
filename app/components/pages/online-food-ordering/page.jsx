@@ -526,13 +526,12 @@ export default function fitness() {
             ))}
           </div>
         </section>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
-          {/* Section Header */}
-          <div className="text-center space-y-3">
+        <section>
+          <div className="text-center space-y-3 mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
               Endeavors that Make us Proud
             </h2>
-            <p className="text-black text-sm md:text-base max-w-3xl mx-auto">
+            <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
               Devapp solutions has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
@@ -670,9 +669,9 @@ export default function fitness() {
           </div>
 
           {/* Main Layout (Circular Icons + Description) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
             {/* Left Process Image Container */}
-            <div className="relative w-72 h-72 mx-auto flex items-center justify-center">
+            <div className="relative w-72 h-72 mx-auto flex">
               {/* Step 1 Image - Discover */}
               {activeStepIndex === 0 && (
                 <div className="">
@@ -876,7 +875,7 @@ export default function fitness() {
           </div>
         </section>
 
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-10 mb-10">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mt-15 mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
             Our On-Demand App Development Solutions
           </h2>
@@ -993,7 +992,7 @@ export default function fitness() {
         </section>
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -1148,7 +1147,7 @@ export default function fitness() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
+                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1170,7 +1169,7 @@ export default function fitness() {
 
         <section>
           <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center">
-            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
+            <h1 className="text-3xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
             <p>
@@ -1297,8 +1296,8 @@ export default function fitness() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-200 shadow-md"
-                      : "border-red-200 hover:border-red-300"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

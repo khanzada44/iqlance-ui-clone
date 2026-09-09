@@ -190,18 +190,7 @@ export const slides = [
           "Generative AI, Agentic AI, AI Agents, and more ",
         ],
       },
-      {
-        title: "Cloud Consulting",
-        items: [
-          "AWS, Microsoft Azure, Google Cloud",
-        ],
-      },
-      {
-        title: "IT Staff Augmentation",
-        items: [
-          "Hire Dedicated Developers, Software Engineers, and Development Teams"
-        ],
-      },
+      
     ],
 
     image:

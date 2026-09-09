@@ -15,21 +15,21 @@ export default function About() {
       <div className="w-[80%] max-w-7xl mx-auto">
         <div className="mt-6 pt-2">
           <img
-            src="/images/about-header.png"
+            src="/images/about-header.webp"
             alt=""
             className="w-full object-cover"
           />
         </div>
 
         <section className="bg-white py-20">
-          <div className="w-full px-6 text-center">
-            {/* Heading */}
-            <h2 className="text-4xl md:text-6xl font-bold text-red-600">
+          <div className="  text-center">
+           <h2 className="text-4xl md:text-6xl font-bold text-red-600">
               About Devapp
             </h2>
+          </div>
 
-            {/* Sub Heading */}
-            <h3 className="mt-4 text-xl md:text-3xl font-bold text-black">
+          <div className="w-full px-6 text-center mt-15">
+            <h3 className="text-xl md:text-3xl font-bold text-black">
               Award-Winning App Development Agency
             </h3>
 

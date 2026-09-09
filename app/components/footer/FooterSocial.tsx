@@ -23,7 +23,7 @@ interface FooterSocialProps {
 export const FooterSocial = ({ title = 'Follow us on' }: FooterSocialProps) => {
   return (
     <div>
-      <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-black">
+      <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-black text-center">
         {title}
       </h3>
       <div className="flex gap-3">
@@ -33,13 +33,6 @@ export const FooterSocial = ({ title = 'Follow us on' }: FooterSocialProps) => {
           aria-label="Facebook"
         >
           <FaFacebookF size={14} />
-        </a>
-        <a
-          href="#"
-          className="flex h-9 w-9 items-center justify-center rounded-full bg-[#060707] text-white transition hover:bg-red-700 hover:text-white"
-          aria-label="Twitter"
-        >
-          <FaTwitter size={14} />
         </a>
         <a
           href="#"
@@ -55,13 +48,7 @@ export const FooterSocial = ({ title = 'Follow us on' }: FooterSocialProps) => {
         >
           <FaInstagram size={14} />
         </a>
-        <a
-          href="#"
-          className="flex h-9 w-9 items-center justify-center rounded-full bg-[#000000] text-white transition hover:bg-red-700 hover:text-white"
-          aria-label="YouTube"
-        >
-          <FaYoutube size={14} />
-        </a>
+       
       </div>
     </div>
   );

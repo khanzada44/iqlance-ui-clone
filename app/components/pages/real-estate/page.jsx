@@ -457,7 +457,7 @@ export default function realEstate() {
             />
           </div>
         </section>
-        <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10 ">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -751,7 +751,7 @@ export default function realEstate() {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
             Features of Wellness and Fitness App Development
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-gray-600 text-sm sm:text-base max-w-4xl mx-auto mb-12 leading-relaxed">
             The next-gen real estate app we provide will surely boost your
             everyday operation by the use of top features like:
           </p>
@@ -1112,7 +1112,7 @@ export default function realEstate() {
           </div>
 
           {/* Success Stories Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
+          <div className="text-center max-w-5xl mx-auto space-y-3 pt-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
               Endeavors That Make Us Proud
             </h2>
@@ -1236,11 +1236,11 @@ export default function realEstate() {
           </div>
 
           {/* Technology Stack Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Technology Stack for Custom Logistics App Development
+          <div className="text-center max-w-6xl mx-auto space-y-4">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+              Technology Stack for Custom Real Estate App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed">
               Our team of developers leave stones unturned in their quest to
               create usable apps with advanced features for companies, drivers,
               and consumers. We are equipped to handle different types of
@@ -1296,7 +1296,7 @@ export default function realEstate() {
           </div>
         </section>
 
-        <section className="w-full bg-red-50 py-16 px-6 font-sans">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -1378,8 +1378,8 @@ export default function realEstate() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black mt-5">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-15">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black mt-10">
               {" "}
               Offshore Web, Mobile & Software Development Company
             </h1>
@@ -1392,35 +1392,38 @@ export default function realEstate() {
             </p>
           </div>
         </section>
-        <section>
-          <div className="flex flex-wrap justify-center gap-7 mt-24">
-            {stats.map((item, index) => (
-              <div
-                key={index}
-                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
-              >
-                {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
-                  <img
-                    src={item.icon}
-                    alt=""
-                    className="w-11 h-11 object-contain"
-                  />
-                </div>
+            <section className="mt-10">
+              <div className="flex flex-wrap justify-center gap-7 mb-10">
+                {stats.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+                  >
+                    {/* Floating Icon */}
+                    <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                      <img
+                        src={item.icon}
+                        alt=""
+                        className="w-11 h-11 object-contain"
+                      />
+                    </div>
 
-                <h3 className="text-lg font-bold text-black leading-none">
-                  {item.value}
-                </h3>
+                    {/* Text Container */}
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-lg font-bold text-black leading-none">
+                        {item.value}
+                      </h3>
 
-                <p className="mt-3 text-lg leading-none text-black">
-                  {item.line1}
-                  <br />
-                  {item.line2}
-                </p>
+                      <p className="text-sm leading-tight text-black">
+                        {item.line1}
+                        <br />
+                        {item.line2}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
@@ -1434,7 +1437,7 @@ export default function realEstate() {
               beautiful experience with them.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12 mb-10">
             {industries.map((item, index) => (
               <div
                 key={index}
@@ -1464,7 +1467,7 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 mt-10">
               {" "}
               Why Choose Us?
             </h1>

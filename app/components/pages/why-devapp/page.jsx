@@ -18,16 +18,22 @@ export default function whyDevapp() {
             className="w-full h-auto rounded-lg"
           />
         </div>
-
         <div className="w-full text-center mt-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-red-600">
+          <h2 className="text-4xl md:text-6xl font-bold text-red-600">
             Why Devapp
           </h2>
-          <p className="text-base font-medium mt-1">
+        </div>
+        <div className="w-full text-center mt-14">
+
+          <p className="mt-10 text-xl md:text-3xl font-bold text-black">
             Because a strong MVP needs more than a development team
           </p>
-          <p className="mt-6 text-black text-lg leading-8">
-            At Devapp, we combine product thinking, technical expertise, and execution to help businesses turn early-stage ideas into products people can actually use. We don't believe in stuffing an MVP with every possible feature. Instead, we identify what can create the most value, build it well, and give you a foundation that can grow with your business.
+          <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
+            At Devapp, we combine product thinking, technical expertise, and execution to help
+             businesses turn early-stage ideas into products people can actually use. We don't 
+             believe in stuffing an MVP with every possible feature. Instead, we identify what can 
+             create the most value, build it well, and give you a foundation that can grow with your
+              business.
 
           </p>
 
@@ -59,7 +65,7 @@ export default function whyDevapp() {
           <h2 className="text-2xl md:text-3xl font-bold text-black">
             Turning Your Idea Into a Product People Actually Use
           </h2>
-          <p className="mt-6 text-black text-sm leading-6">
+          <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
             We don't just build mobile apps; we build unique concepts that help businesses
             show up stronger online, run more efficiently, and genuinely connect with their users.
             Our developers bring real expertise to Android, iOS, and cross-platform app
@@ -67,35 +73,38 @@ export default function whyDevapp() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-7 mt-24">
-          {stats.map((item, index) => {
-            return (
+        <section>
+          <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
+            {stats.map((item, index) => (
               <div
                 key={index}
-                className="relative min-h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-20 pb-8"
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
                 {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-20 h-20 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
-                    alt="stat icon"
-                    className="w-10 h-10 text-[#4B5563]"
+                    alt=""
+                    className="w-11 h-11 object-contain"
                   />
                 </div>
 
-                <h3 className="text-[40px] font-bold text-[#3B3F4A] leading-none">
-                  {item.value}
-                </h3>
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
 
-                <p className="mt-3 text-lg leading-[1.6] text-black">
-                  {item.line1}
-                  <br />
-                  {item.line2}
-                </p>
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        </section>
 
         <section className="w-full py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -134,7 +143,7 @@ export default function whyDevapp() {
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
                   <span className="text-lg font-medium text-gray-800">
-                     Communication that's clear, not confusing  
+                    Communication that's clear, not confusing
                   </span>
                 </li>
 
@@ -181,8 +190,8 @@ export default function whyDevapp() {
         </section>
 
         <section className="w-full py-2">
-          <p className="text-center text-gray-600 text-lg mb-2">
-              Mobile App & Web Development, All Under One Roof
+          <p className="text-center text-gray-600 text-lg mb-10 mt-15">
+            Mobile App & Web Development, All Under One Roof
           </p>
 
           <h2 className="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -190,16 +199,16 @@ export default function whyDevapp() {
           </h2>
 
           <p className="w-full text-center text-gray-700 text-lg leading-7 mb-4">
-            Devapp stands as one of the fastest-growing app development companies, 
-            with a full team of developers, designers, testers, business developers, 
-            and marketers all working together under one roof. Our multiplatform mobile app services 
-            scale to fit anyone, from large enterprises to small and medium businesses. 
-            We focus on delivering custom mobile apps, high-quality products, 
+            Devapp stands as one of the fastest-growing app development companies,
+            with a full team of developers, designers, testers, business developers,
+            and marketers all working together under one roof. Our multiplatform mobile app services
+            scale to fit anyone, from large enterprises to small and medium businesses.
+            We focus on delivering custom mobile apps, high-quality products,
             and interactive UI/UX that set us apart from other app development companies in the USA.
           </p>
 
           <p className="w-full text-center text-gray-700 text-lg leading-7 mb-6">
-           Got an amazing idea for a web or mobile app?
+            Got an amazing idea for a web or mobile app?
             You can count on us to bring it to life, from first concept to finished product.
           </p>
 
@@ -224,7 +233,7 @@ export default function whyDevapp() {
                 See How We Turn Your Idea Into an Innovative Product
               </h2>
               <p className="mt-4 text-gray-700 text-base md:text-lg">
-                Our portfolio does the talking here, it's the reason businesses across 
+                Our portfolio does the talking here, it's the reason businesses across
                 the USA see us as one of the top app development companies around.
               </p>
             </div>
@@ -246,12 +255,12 @@ export default function whyDevapp() {
           {/* Bottom Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black">
-                10 Reasons to Choose Devapp
+              10 Reasons to Choose Devapp
             </h2>
-            <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
-             Growth doesn't happen by accident, it happens when the right team is behind the wheel. 
-             That's the mission we've built our entire company around, like helping businesses 
-             grow through digital solutions shaped around what makes them different.
+            <p className="text-center text-xl text-black mb-6 mt-5">
+              Growth doesn't happen by accident, it happens when the right team is behind the wheel.
+              That's the mission we've built our entire company around, like helping businesses
+              grow through digital solutions shaped around what makes them different.
             </p>
           </div>
         </div>
@@ -291,7 +300,7 @@ export default function whyDevapp() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-             Ready to Get Started?
+              Ready to Get Started?
             </h2>
 
             {/* Subtitle Paragraph */}
@@ -365,18 +374,18 @@ export default function whyDevapp() {
         <section className="py-16 bg-white w-full">
           <div className="text-center">
             <h2 className="text-2xl md:text-[35px] font-bold text-[#1F2937]">
-                Still Weighing Your Options? Here's What Sets Us Apart
+              Still Weighing Your Options? Here's What Sets Us Apart
             </h2>
 
             <p className="mt-6 text-lg md:text-[20px] leading-8 text-[#4B5563] w-full">
-              Take a look at what Devapp Solutions brings to the table: our services, 
-              our step-by-step process for mobile app and software development, 
-              and what clients have to say after working with us. When you're ready to move forward, 
+              Take a look at what Devapp Solutions brings to the table: our services,
+              our step-by-step process for mobile app and software development,
+              and what clients have to say after working with us. When you're ready to move forward,
               reach out and let's turn your next great idea into something real.
             </p>
           </div>
         </section>
-        <section className="py-20 bg-white">
+        <section className=" bg-white">
           <div className="w-full px-5">
             <h2 className="text-4xl font-bold text-center">
               Frequently Asked Questions

@@ -18,11 +18,10 @@ export default function testimonials() {
             alt=""
           />
         </div>
-        <section className="py-16 md:py-24 bg-white mt-4">
+        <section className="py-10 md:py-14 bg-white mt-4">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-center leading-tight">
-              <span className="text-red-600">Words of Praise</span>{" "}
-              <span className="text-red-700">From All The Hard Work</span>
+              <span className="text-4xl md:text-6xl font-bold text-red-600">Words of Praise From All The Hard Work</span>
             </h2>
             <p className="max-w-6xl mx-auto mt-8 text-center text-gray-800 text-base sm:text-lg leading-8">
               Few words as the reward of our unique product development process
@@ -36,7 +35,7 @@ export default function testimonials() {
               face challenges and find an amazing solution that can take the
               purpose of development to the next elevating step.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-20">
               {/* Inquiry Now Link */}
               <Link
                 href="/contact"
@@ -61,7 +60,7 @@ export default function testimonials() {
                 />
               </Link>
             </div>
-            <h3 className="mt-20 text-3xl md:text-5xl font-bold text-center text-black leading-tight">
+            <h3 className="mt-15 text-2xl md:text-4xl font-bold text-center text-black leading-tight">
               Offshore Web, Mobile & Software Development Company
             </h3>
 
@@ -75,50 +74,38 @@ export default function testimonials() {
           </div>
         </section>
         <section>
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-7">
-              {stats.map((item, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="relative min-h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-20 pb-8"
-                  >
-                    {/* Floating Icon */}
-                    <div className="absolute -top-8 right-0 w-20 h-20 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
-                      <img
-                        src={item.icon}
-                        alt="stat icon"
-                        className="w-10 h-10 text-[#4B5563]"
-                      />
-                    </div>
+          <div className="flex flex-wrap justify-center gap-7 mt-10 mb-10">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+              >
+                {/* Floating Icon */}
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="w-11 h-11 object-contain"
+                  />
+                </div>
 
-                    <h3 className="text-[40px] font-bold text-[#3B3F4A] leading-none">
-                      {item.value}
-                    </h3>
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
 
-                    <p className="mt-3 text-lg leading-[1.6] text-black">
-                      {item.line1}
-                      <br />
-                      {item.line2}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="mt-16 text-center">
-              <h2 className="text-3xl md:text-5xl font-bold">
-                What Client Say About Us?
-              </h2>
-
-              <p className="max-w-5xl mx-auto mt-6 text-lg text-gray-700 leading-9">
-                It Provides Immense Satisfaction In Knowing That, We Did Our Job
-                To The Highest Level Of Standards. We Like Even More When Our
-                Client Takes Time To Acknowledge Their Satisfaction.
-              </p>
-            </div>
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
-        <section className="py-16 bg-white">
+        <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {testimonialsData.map((item) => (
@@ -298,7 +285,7 @@ export default function testimonials() {
             </div>
           </div>
         </section>
-               <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -384,7 +371,7 @@ export default function testimonials() {
             </div>
           </div>
         </section>
-        <section className="py-20 bg-white">
+        <section className="py-10 bg-white">
           <div className="w-full px-5">
             <h2 className="text-4xl font-bold text-center">
               Frequently Asked Questions

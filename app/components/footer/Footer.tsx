@@ -26,10 +26,10 @@ export default function Footer() {
           {footerDescription}
         </p>
         <div className="my-6 border-t border-gray-200" />
-        <FooterBottom year={currentYear} />
         <div className="mt-6 flex justify-center">
           <FooterSocial />
         </div>
+        <FooterBottom year={currentYear} />
       </div>
     </footer>
   );

@@ -379,13 +379,13 @@ export default function elearning() {
           </div>
         </section>
         <section>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
                 Transform Learning With Our E-Learning Development Solutions
               </h2>
 
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-gray-600">
+              <p className="text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-gray-600">
                 Digital education is changing how students learn and how organizations
                 train their teams. E-learning platforms make it easier to deliver updated
                 content, standardize training, and keep learners connected without relying
@@ -394,7 +394,7 @@ export default function elearning() {
 
               <br />
 
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-gray-600">
+              <p className="text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-gray-600">
                 With a customized{" "}
                 <span className="font-semibold text-gray-900">
                   LMS development solution
@@ -520,10 +520,10 @@ export default function elearning() {
             </Swiper>
           </div>
         </section>
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
+        <section>
+          <div >
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -633,10 +633,10 @@ export default function elearning() {
             );
           })}
         </section>
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
+        <section>
+          <div >
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -706,7 +706,7 @@ export default function elearning() {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
             Features of Wellness and Fitness App Development
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-gray-600 text-sm sm:text-base max-w-5xl mx-auto mb-12 leading-relaxed">
             Our wellness and fitness app successfully grabs the eyeballs of
             health maniacs because of the valuable features we add. Making the
             process of being fit effortless for people.
@@ -850,10 +850,10 @@ export default function elearning() {
             </div>
           </div>
         </section>
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
+        <section >
+          <div >
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -960,9 +960,9 @@ export default function elearning() {
             </div>
           </div>
         </section>
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
+        <section className="w-full max-w-6xl mx-auto md:py-16 space-y-12">
           {/* Top Text Content */}
-          <div className="text-center max-w-5xl mx-auto space-y-6">
+          <div className="text-center max-w-6xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               How Much Does It Cost to Build a Custom Logistics App?
             </h2>
@@ -1008,7 +1008,7 @@ export default function elearning() {
           </div>
 
           {/* Success Stories Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
+          <div className="text-center max-w-6xl mx-auto space-y-3 ">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
               How Much Does It Cost to Develop a education App?
             </h2>
@@ -1036,7 +1036,7 @@ export default function elearning() {
             </p>
           </div>
         </section>
-        <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
+        <section className="w-full max-w-7xl mx-auto space-y-16">
           {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
@@ -1059,9 +1059,9 @@ export default function elearning() {
           </div>
 
           {/* Technology Stack Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-4">
+          <div className="text-center max-w-6xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
-              Technology Stack for Custom Logistics App Development
+              Technology Stack for Custom Education App Development
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
               Our team of developers leave stones unturned in their quest to
@@ -1118,10 +1118,10 @@ export default function elearning() {
             </div>
           </div>
         </section>
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
+        <section>
+          <div>
             {/* CTA Box */}
-            <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
+            <div className="bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
@@ -1186,7 +1186,7 @@ export default function elearning() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
               Your Trusted Logistics App Development Company in the USA
@@ -1200,15 +1200,15 @@ export default function elearning() {
             </p>
           </div>
         </section>
-        <section>
-          <div className="flex flex-wrap justify-center gap-7 mt-24">
+        <section className="mt-20">
+          <div className="flex flex-wrap justify-center gap-7 mb-10">
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="relative w-full sm:w-70 lg:w-55 h-55 rounded-3xl border border-[#E7E7E7] bg-white px-6 pt-24 pb-8"
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
                 {/* Floating Icon */}
-                <div className="absolute -top-8 right-0 w-25.5 h-25.5 rounded-[20px] border border-[#E7E7E7] bg-white flex items-center justify-center">
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
                     alt=""
@@ -1216,15 +1216,18 @@ export default function elearning() {
                   />
                 </div>
 
-                <h3 className="text-lg font-bold text-black leading-none">
-                  {item.value}
-                </h3>
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
 
-                <p className="mt-3 text-lg leading-none text-black">
-                  {item.line1}
-                  <br  />
-                  {item.line2}
-                </p>
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -1288,7 +1291,7 @@ export default function elearning() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
+                className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
                 <img
                   src={service.image}
@@ -1436,8 +1439,8 @@ export default function elearning() {
                   <div
                     key={index}
                     className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-200 shadow-md"
-                      : "border-red-200 hover:border-red-300"
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-red-300"
                       }`}
                   >
                     {/* Question */}

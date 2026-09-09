@@ -2,7 +2,7 @@
 import React from 'react';
 import { useState } from "react";
 import { submitContactForm } from "@/services/send-call-request";
-
+import Image from "next/image";
 
 
 export default function ContactForm() {
@@ -91,8 +91,9 @@ export default function ContactForm() {
         {/* Left Side: Contact Details */}
         <div className="lg:col-span-5 p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-200 relative flex flex-col justify-between">
           <div className="space-y-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4">
-              <div>
+            <div className="">
+             <div className='flex gap-5'>
+               <div>
                 <h4 className="flex items-center gap-2 font-semibold text-gray-500 text-sm">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -131,20 +132,15 @@ export default function ContactForm() {
                   info@DevAppGrid.com
                 </p>
               </div>
-
-              <div>
-                <p className="mt-1 font-bold text-gray-900 text-base">
-                    
-                </p>
-              </div>
-
-                {/* <img src="/images/hand-phone-1.png" alt="" /> */}
-
-              <div className="sm:col-span-2">
-                <p className="mt-1 font-bold text-gray-900 text-base">
-                    
-                </p>
-              </div>
+             </div>
+             
+                <Image
+                  src="/images/footer-form-image.png"
+                  alt=""
+                  width={400}
+                  height={400}
+                  className="w-full max-w-100 h-100 object-cover"
+                />
             </div>
 
        
