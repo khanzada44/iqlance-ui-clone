@@ -82,223 +82,78 @@ export default function Home() {
   ];
   return (
     <>
-      <div className="w-[95%] sm:w-full lg:w-[80%] max-w-7xl mx-auto">
+      <div className="">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full">
           {/* LEFT CONTENT */}
-          <div className="w-full lg:w-1/2 px-2 sm:px-4 py-6 sm:py-8 font-sans">
-            <p className="text-black text-base sm:text-lg font-medium mb-1">
-              Got a Big Idea? Let's Build It Into Something Real.
-            </p>
+<section className="relative w-full min-h-155 overflow-hidden">
 
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
-              Custom Software, Web & Mobile App Development.
-              <br className="hidden sm:block" />
-              Built to Grow With You!
-            </h1>
+  {/* Background Video */}
+  <video
+    className="absolute inset-0 w-full h-full object-cover"
+    src="https://brobintech.com/assets/images/banner.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+  />
 
-            <p className="text-black text-sm sm:text-base md:text-lg">
-              Every great business starts with an idea. We help you turn yours
-              into a digital product that actually works. Our team of
-              developers, designers, and tech strategists doesn't just write
-              code. We build secure, high-performing solutions shaped around
-              your goals. Guiding you from that first conversation all the way
-              to launch, and staying with you long after.
-            </p>
+  {/* Black Overlay */}
+  <div className="absolute inset-0 bg-black/65" />
 
-            <p className="text-black text-sm sm:text-base md:text-lg mt-4">
-              Here's Why Businesses Trust Us With Their Next Big Move:
-            </p>
+  {/* Content */}
+  <div className="relative z-10 mx-auto w-[92%] min-h-155 flex items-center">
+    <div className="w-full lg:w-[58%] xl:w-[55%] py-16 lg:py-20">
 
-            {/* FEATURES */}
-            <div>
-              <div className="flex items-center gap-2 pt-4 md:pt-6">
-                <ChevronRight
-                  size={12}
-                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
-                />
+      {/* Small Heading */}
+      <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium mb-3">
+        Got a Big Idea? Let's Build It Into Something Real.
+      </p>
 
-                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
-                  Solutions built around what your business actually needs
-                </p>
-              </div>
+      {/* Main Heading */}
+      <h1 className="max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[58px] font-bold leading-[1.08] mb-5 text-white">
+       DevApp Grid - Mobile App Development Company
+      </h1>
 
-              <div className="flex items-center gap-2 pt-4 md:pt-6">
-                <ChevronRight
-                  size={12}
-                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
-                />
+      {/* Description - width kam */}
+      <p className="max-w-1xl text-white/80 text-sm sm:text-base md:text-lg leading-relaxed">
+        Every great business starts with an idea. We help you turn yours
+        into a digital product that actually works. Our team of developers,
+        designers, and tech strategists builds secure, high-performing
+        solutions shaped around your goals. Explore our work and contact us today/
+      </p>
 
-                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
-                  A team that knows your industry, not just the tech stack
-                </p>
-              </div>
+      {/* Why Us */}
 
-              <div className="flex items-center gap-2 pt-4 md:pt-6">
-                <ChevronRight
-                  size={12}
-                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
-                />
 
-                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
-                  Engagement models that flex with your project, not against it
-                </p>
-              </div>
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-7">
 
-              <div className="flex items-center gap-2 pt-4 md:pt-6">
-                <ChevronRight
-                  size={12}
-                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
-                />
+        <Link href="/contact-us">
+          <button className="group bg-red-700 hover:bg-red-600 text-white px-6 py-3.5 font-semibold flex items-center justify-center gap-3 transition">
+            Book Your Free Consultation
+            <ArrowRight
+              size={18}
+              className="group-hover:translate-x-1 transition-transform"
+            />
+          </button>
+        </Link>
 
-                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
-                  A process you can actually see which is clear, honest, always
-                  supported
-                </p>
-              </div>
-              <div className="flex items-center gap-2 pt-4 md:pt-6">
-                <ChevronRight
-                  size={12}
-                  className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
-                />
+        <Link href="/portfolio">
+          <button className="group border border-white/50 hover:border-white text-white px-7 py-3.5 font-semibold flex items-center justify-center gap-3 transition">
+            Our Work
+            <ArrowRight
+              size={18}
+              className="group-hover:translate-x-1 transition-transform"
+            />
+          </button>
+        </Link>
 
-                <p className="text-black text-sm sm:text-base md:text-md font-medium leading-relaxed">
-                  Technology designed to scale as fast as you do
-                </p>
-              </div>
+      </div>
 
-              <div>
-                {/* Links List - Ek line mein rakhne ke liye whitespace-nowrap aur items-center */}
-                {/* <div className="pt-6 px-1 sm:px-4">
-                  <ul className="flex flex-wrap sm:flex-nowrap items-center gap-4 sm:gap-6 font-bold">
-                    <li>
-                      <Link
-                        href="/mobile-app"
-                        className="underline hover:no-underline transition-all text-sm sm:text-base md:text-lg whitespace-nowrap"
-                      >
-                        Mobile App
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/software-development"
-                        className="underline hover:no-underline transition-all text-sm sm:text-base md:text-lg whitespace-nowrap"
-                      >
-                        Software Development
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/hire-developer"
-                        className="underline hover:no-underline transition-all text-sm sm:text-base md:text-lg whitespace-nowrap"
-                      >
-                        Hire Developer
-                      </Link>
-                    </li>
-                  </ul>
-                </div> */}
-
-                {/* Buttons Section */}
-                <div className=" flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-6">
-                  <Link href="/contact-us" className="w-full sm:w-auto">
-                    <button className="group w-full bg-red-700 hover:bg-red-600 text-white px-6 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer whitespace-nowrap">
-                      Book Your Free Consultation
-                      <ArrowRight
-                        size={18}
-                        className="transition-transform duration-300 group-hover:translate-x-1 shrink-0"
-                      />
-                    </button>
-                  </Link>
-
-                  <Link href="/portfolio" className="w-full sm:w-auto">
-                    <button className="group w-full sm:w-auto border border-gray-300 hover:border-red-700 px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer whitespace-nowrap">
-                      Our work
-                      <ArrowRight
-                        size={18}
-                        className="transition-transform duration-300 group-hover:translate-x-1 shrink-0"
-                      />
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full lg:w-1/2 flex px-4 ">
-            <section className="w-full py-10 px-0">
-              <div className="w-full">
-                <motion.div
-                  className="
-          grid
-          grid-cols-3
-          gap-0
-          w-full
-          overflow-hidden
-        "
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {img_services.map((item, index) => {
-                    const isRed = redCards.includes(index);
-
-                    return (
-                      <motion.div
-                        key={item.id}
-                        custom={index}
-                        variants={cardVariants}
-                        whileHover={{
-                          scale: 1.04,
-                          zIndex: 20,
-                        }}
-                        transition={{
-                          duration: 0.3,
-                          ease: "easeOut",
-                        }}
-                        className={`
-                group
-                relative
-                aspect-square
-                overflow-hidden
-                flex
-                items-center
-                justify-center
-                p-0
-                m-0
-                ${isRed ? "bg-linear-to-b from-white" : "bg-white"}
-              `}
-                      >
-                        <motion.div
-                          className="
-                  relative
-                  w-full
-                  h-full
-                  flex
-                  items-center
-                  justify-center
-                "
-                          whileHover={{
-                            scale: 1.08,
-                          }}
-                          transition={{
-                            duration: 0.35,
-                            ease: "easeOut",
-                          }}
-                        >
-                          <Image
-                            src={item.src}
-                            alt={item.alt}
-                            fill
-                            sizes="(max-width: 768px) 33vw, 16vw"
-                            className="object-cover"
-                          />
-                        </motion.div>
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
-              </div>
-            </section>
-          </div>
+    </div>
+  </div>
+</section>
         </div>
 
         <div className="max-w-7xl mx-auto w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 mt-10 mb-10">
@@ -559,31 +414,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* ICONS */}
-          <div className="flex gap-6 sm:gap-8 mt-8 sm:mt-10 text-xl sm:text-2xl text-[#184A8B] justify-center">
-            <div className="flex gap-4">
-              {icons.map((src, i) => (
-                <div
-                  key={i}
-                  className="w-6 h-6 bg-red-600 hover:bg-red-700 transition-colors cursor-pointer"
-                  style={{
-                    maskImage: `url(${src})`,
-                    maskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    maskSize: "contain",
-                    WebkitMaskImage: `url(${src})`,
-                    WebkitMaskRepeat: "no-repeat",
-                    WebkitMaskPosition: "center",
-                    WebkitMaskSize: "contain",
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-
           {/* SERVICES INTRO */}
-          <div className="w-full mt-8 sm:mt-5 text-center">
+          <div className="w-full mt-15 sm:mt-5 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               Our Full Range of Development Services
             </h2>
@@ -1119,7 +951,7 @@ export default function Home() {
           </div>
         </section>
         {/* INDUSTRIES */}
-        <section>
+        <section className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
           <div className="text-center max-w-x2 mx-auto space-y-2 mt-10 mb-10">
             <h1 className="text-3xl sm:text-3xl md:text-3xl font-extrabold text-gray-900">
               Why Businesses Trust Us
@@ -1165,7 +997,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className="w-full bg-red-50 py-16 px-6 font-sans">
+        <section className="w-full bg-red-50 py-16 px-6 font-sans  sm:px-5 sm:py-12 max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
@@ -1304,7 +1136,7 @@ export default function Home() {
         </section>
 
         {/* TWO PANEL CTA */}
-        <section className="py-8 sm:py-12">
+        <section className="py-8 sm:py-12 w-full px-3 sm:px-5  max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="bg-red-50 p-6 sm:p-8 md:p-12 text-center lg:text-left">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold leading-tight">
@@ -1359,7 +1191,7 @@ export default function Home() {
         </section>
 
         {/* WHO WE WORK WITH */}
-        <section className="py-4">
+        <section className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
           <div className="bg-red-50 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               <div className="px-4 sm:px-8 md:px-14 py-8 sm:py-12 text-center lg:text-left">
@@ -1389,7 +1221,7 @@ export default function Home() {
         </section>
 
         {/* FINAL DISCUSS CTA */}
-        <section className="bg-red-50 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2">
+        <section className="bg-red-50 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2 w-full  max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <img
               src="/images/letdiscuss-icon.png.webp"
@@ -1512,7 +1344,7 @@ export default function Home() {
         </section> */}
 
         {/* CONTACT */}
-        <div className="mt-12 px-3">
+        <div className="mt-12 w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
           <h1 className="flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight text-center">
             Have Something in Mind? Let's Talk.
           </h1>
