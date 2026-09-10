@@ -227,60 +227,60 @@ export default function ServicesCategory({ slug }) {
   if (serviceLoading) {
     return (
       <div className="mx-auto max-w-6xl px-4 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
-        {/* Left Side: Content & Stats Skeleton */}
-        <div className="lg:col-span-7 space-y-6 animate-pulse">
-          {/* Main Title Skeleton */}
-          <div className="h-10 bg-gray-200 rounded-md w-3/4"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-          {/* Subtitle / Description Lines */}
-          <div className="space-y-3">
-            <div className="h-4 bg-gray-200 rounded w-full"></div>
-            <div className="h-4 bg-gray-200 rounded w-11/12"></div>
-            <div className="h-4 bg-gray-200 rounded w-4/5"></div>
-            <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+          {/* Left Side: Content & Stats Skeleton */}
+          <div className="lg:col-span-7 space-y-6 animate-pulse">
+            {/* Main Title Skeleton */}
+            <div className="h-10 bg-gray-200 rounded-md w-3/4"></div>
+
+            {/* Subtitle / Description Lines */}
+            <div className="space-y-3">
+              <div className="h-4 bg-gray-200 rounded w-full"></div>
+              <div className="h-4 bg-gray-200 rounded w-11/12"></div>
+              <div className="h-4 bg-gray-200 rounded w-4/5"></div>
+              <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+            </div>
+
+            {/* Large Content Box / Image placeholder */}
+            <div className="h-64 bg-gray-200 rounded-xl w-full mt-6"></div>
+
+            {/* Stats / Bullet points skeleton */}
+            <div className="space-y-2 pt-4">
+              <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+              <div className="h-4 bg-gray-200 rounded w-2/5"></div>
+              <div className="h-4 bg-gray-200 rounded w-1/3"></div>
+            </div>
           </div>
 
-          {/* Large Content Box / Image placeholder */}
-          <div className="h-64 bg-gray-200 rounded-xl w-full mt-6"></div>
+          {/* Right Side: Request a Quote Form Skeleton */}
+          <div className="lg:col-span-5 bg-gray-50 border border-gray-100 p-6 rounded-2xl shadow-sm animate-pulse space-y-4">
+            {/* Form Title */}
+            <div className="space-y-2">
+              <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+              <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+            </div>
 
-          {/* Stats / Bullet points skeleton */}
-          <div className="space-y-2 pt-4">
-            <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-            <div className="h-4 bg-gray-200 rounded w-2/5"></div>
-            <div className="h-4 bg-gray-200 rounded w-1/3"></div>
+            {/* Input fields skeletons */}
+            <div className="space-y-4 pt-2">
+              <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
+              <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
+              <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
+              <div className="h-24 bg-gray-200 rounded-lg w-full"></div>
+            </div>
+
+            {/* File upload & checkbox placeholder */}
+            <div className="space-y-3 pt-2">
+              <div className="h-4 bg-gray-200 rounded w-1/3"></div>
+              <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+            </div>
+
+            {/* Submit Button Skeleton */}
+            <div className="h-12 bg-gray-300 rounded-lg w-full mt-4"></div>
           </div>
+
         </div>
-
-        {/* Right Side: Request a Quote Form Skeleton */}
-        <div className="lg:col-span-5 bg-gray-50 border border-gray-100 p-6 rounded-2xl shadow-sm animate-pulse space-y-4">
-          {/* Form Title */}
-          <div className="space-y-2">
-            <div className="h-6 bg-gray-200 rounded w-3/4"></div>
-            <div className="h-3 bg-gray-200 rounded w-1/2"></div>
-          </div>
-
-          {/* Input fields skeletons */}
-          <div className="space-y-4 pt-2">
-            <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
-            <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
-            <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
-            <div className="h-24 bg-gray-200 rounded-lg w-full"></div>
-          </div>
-
-          {/* File upload & checkbox placeholder */}
-          <div className="space-y-3 pt-2">
-            <div className="h-4 bg-gray-200 rounded w-1/3"></div>
-            <div className="h-4 bg-gray-200 rounded w-1/4"></div>
-          </div>
-
-          {/* Submit Button Skeleton */}
-          <div className="h-12 bg-gray-300 rounded-lg w-full mt-4"></div>
-        </div>
-
       </div>
-    </div>
     );
   }
   if (serviceError && !serviceData) {
@@ -332,25 +332,8 @@ export default function ServicesCategory({ slug }) {
                   dramatically changed the eatery and café sector.
                 </p>
               )}
-              {serviceData?.content ? (
-                <div
-                  className="mt-6 text-base leading-7 text-black md:text-lg md:leading-8"
-                  dangerouslySetInnerHTML={{
-                    __html: serviceData.content,
-                  }}
-                />
-              ) : (
-                <p className="mt-6 text-base leading-7 text-black md:text-lg md:leading-8">
-                  Many conventional retailers have moved to digitalization
-                  with the introduction of on-demand options. Technology
-                  advancements, particularly mobile evolution, have
-                  dramatically changed the eatery and café sector.
-                </p>
-              )}
             </div>
 
-
-            {/* ================= RIGHT CONTACT FORM ================= */}
             <div className="relative lg:col-span-5">
 
               <div className="relative w-full border border-blue-100/60 bg-[#F7F8FA] p-6 shadow-lg md:p-8">
@@ -377,8 +360,8 @@ export default function ServicesCategory({ slug }) {
                 {statusMessage.text && (
                   <p
                     className={`mb-4 text-center text-xs font-semibold ${statusMessage.type === "success"
-                        ? "text-green-600"
-                        : "text-red-600"
+                      ? "text-green-600"
+                      : "text-red-600"
                       }`}
                   >
                     {statusMessage.text}
@@ -534,6 +517,27 @@ export default function ServicesCategory({ slug }) {
 
             </div>
 
+          </div>
+        </section>
+        <section className="mx-auto w-full max-w-7xl px-6 pb-12 md:pb-16">
+          <div className="w-full">
+            {serviceData?.content ? (
+              <div
+                className="w-full"
+                dangerouslySetInnerHTML={{
+                  __html: serviceData.content
+                    .replace(/\sstyle="[^"]*"/gi, "")
+                    .replace(/\sstyle='[^']*'/gi, ""),
+                }}
+              />
+            ) : (
+              <p className="text-base leading-7 text-black md:text-lg md:leading-8">
+                Many conventional retailers have moved to digitalization
+                with the introduction of on-demand options. Technology
+                advancements, particularly mobile evolution, have
+                dramatically changed the eatery and café sector.
+              </p>
+            )}
           </div>
         </section>
 

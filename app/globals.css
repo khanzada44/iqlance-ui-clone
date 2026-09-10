@@ -221,12 +221,15 @@ p.pt-20.text-center.mt-iq-20 {
 }
 
 .offshore-box-main .row {
-  display: grid !important;
+  /* display: grid !important;
+   */
+   display: none !important;
   grid-template-columns: repeat(5, 1fr);
   gap: 32px;
   max-width: 920px;
   margin: 0 auto !important;
   padding: 0 !important;
+
 }
 
 .offshore-box-main .col {
@@ -768,7 +771,7 @@ p.pt-20.text-center.mt-iq-20 {
   border-radius: 0px;
   padding: 35px 30px;
   box-sizing: border-box;
-  height: 100%;
+  height: 481.792px !important;
   transition: border-color 0.3s ease;
 }
 
@@ -978,8 +981,12 @@ p.pt-20.text-center.mt-iq-20 {
   width: 85%;
   box-sizing: border-box;
   transition: all 0.3s ease;
-}
+  height: 370px;
 
+}
+img.is-80 {
+    height: 80px;
+}
 .row.pt-5 .processheading {
   display: flex;
   align-items: center;
@@ -1017,7 +1024,7 @@ p.pt-20.text-center.mt-iq-20 {
   right: 20px;
   width: 60px;
   height: 60px;
-  border: 1px solid #cbd5e1;
+  /* border: 1px solid #cbd5e1; */
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1193,7 +1200,7 @@ p.pt-20.text-center.mt-iq-20 {
 .folio-categoery ul li::before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-chevron-right text-black'%3E%3Cpath d='m9 18 6-6-6-6'%3E%3C/path%3E%3C/svg%3E");
   position: absolute;
-  left: 0;
+  left: -15;
   top: 0;
   color: #1e293b;
   font-weight: 700;
@@ -1212,6 +1219,7 @@ p.pt-20.text-center.mt-iq-20 {
 
 .heading-text.text-center {
   text-align: center;
+  margin-top: 20px !important;
 }
 
 .heading-text h2 {
@@ -1221,13 +1229,16 @@ p.pt-20.text-center.mt-iq-20 {
   margin-bottom: 15px;
   line-height: 1.2;
 }
-
+.col-lg-12 {
+    margin-top: 40px !important;
+}
 .heading-text p {
   font-size: 15px;
   line-height: 1.6;
   color: #475569;
   max-width: 850px;
-  margin: 0 auto;
+  margin: 20px 190px !important;
+  
 }
 
 @media (max-width: 991px) {
@@ -1246,7 +1257,8 @@ p.pt-20.text-center.mt-iq-20 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
+  /* margin: -3px -51px !important; */
 }
 
 /* Safe utility classes for spacing */
@@ -1263,8 +1275,21 @@ p.pt-20.text-center.mt-iq-20 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
-
+.row.justify-content-center.mt-iq-20 {
+    margin-left: 150px;
+}
+.row.text-center {
+    margin-top: 22px !important;
+}
+h2 {
+    font-family: sans-serif !important;
+    font-size: 30px !important;
+}
+p{
+    font-size: 16px !important;
+}
 /* Left column text styling specifically for main content sections */
 .container > .row > .col-lg-6:first-child {
   flex: 1;
@@ -1449,6 +1474,7 @@ p.mt-iq-20 {
   line-height: 1.6;
   color: #555555;
   margin-bottom: 0;
+  margin-top: 20px !important;
 }
 
 /* Image Styling */
@@ -1523,7 +1549,7 @@ p.mt-iq-20 {
 .inhouse-heading {
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: space-between;
 }
 
 .inhouse-heading img {
@@ -1580,4 +1606,100 @@ p.mt-iq-20 {
   .mt-iq-sm, .mt-30md {
     margin-top: 30px;
   }
+}
+/* Container Spacing */
+.mt-iq-40 {
+  margin-top: 40px;
+}
+
+/* Individual Card Styling */
+.technologies {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 30px 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover Effect (Optional - card ko smooth uplift dene ke liye) */
+.technologies:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Content Layout */
+.technologies-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Image/Icon Sizing & Centering */
+.technologies-icon img {
+  max-width: 50px;
+  max-height: 50px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Text Styling */
+.technologies-icon p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111111;
+  font-family: inherit;
+}
+/* Brand Logo Container Border */
+.brand-logo {
+  background: #ffffff;
+}
+
+/* Grid Boxes Border & Alignment */
+.trust-box {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+/* Logo Wrapper Styling */
+.trust-logo {
+  padding: 40px 20px;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 150px;
+}
+
+/* Image Sizing & Object Fit */
+.trust-logo img {
+  max-width: 140px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Agar aapko screenshot ki tarah har logo ke neeche "Advertising" text show karna hai, toh HTML me <p>Advertising</p> add karke yeh CSS lagayein: */
+.trust-logo p {
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111111;
 }

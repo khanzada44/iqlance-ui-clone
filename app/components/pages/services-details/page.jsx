@@ -511,7 +511,7 @@ export default function ServicesCategory({ slug }) {
         </section>
 
         {/* FAQ SECTION */}
-        <section className="py-20 bg-white">
+        <section >
           <div className="max-w-7xl mx-auto px-4 sm:px-5">
             <h2 className="text-4xl font-bold text-center">
               Frequently Asked Questions
@@ -553,7 +553,7 @@ export default function ServicesCategory({ slug }) {
               ))}
             </div>
 
-            <div className="mt-20 text-center">
+            <div className="mt-15 text-center">
               <h3 className="text-4xl font-bold">
                 Have Something in Mind? Let's Talk
               </h3>

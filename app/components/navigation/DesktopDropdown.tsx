@@ -41,8 +41,8 @@ export const DesktopDropdown = ({ items }: DesktopDropdownProps) => {
   return (
     <div
       className={`
-  absolute left-0 top-full mt-5 min-w-55
-  rounded-lg bg-white py-2 font-bold shadow-xl
+  absolute left-0 top-full mt-5 min-w-65
+ bg-white py-2 font-bold shadow-xl
   origin-top
   transition-all duration-500 ease-in-out
   ${

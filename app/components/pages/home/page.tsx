@@ -90,7 +90,7 @@ export default function Home() {
   {/* Background Video */}
   <video
     className="absolute inset-0 w-full h-full object-cover"
-    src="https://brobintech.com/assets/images/banner.mp4"
+    src="/videos/banner_dev-app-video.mp4"
     autoPlay
     muted
     loop
