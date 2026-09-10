@@ -4,6 +4,7 @@ import { FooterColumn } from "./FooterColumn";
 import { FooterSocial } from "./FooterSocial";
 import { FooterBottom } from "./FooterBottom";
 import { footerColumns, footerDescription } from "./footer-data";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -30,7 +31,15 @@ export default function Footer() {
           <FooterSocial />
         </div>
         <FooterBottom year={currentYear} />
+        <div className="mt-6 flex justify-center gap-2">
+           <Link href="/terms-and-conditions-website" className="">Terms & Conditions</Link>
+           <div>
+            |
+           </div>
+           <Link href="/privacy-policy-website" className="">Privacy Policy</Link>
+        </div>
       </div>
+      
     </footer>
   );
 }
