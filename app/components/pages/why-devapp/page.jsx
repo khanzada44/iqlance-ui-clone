@@ -19,15 +19,15 @@ export default function whyDevapp() {
           />
         </div>
         <div className="w-full text-center mt-14">
-          <h2 className="text-4xl md:text-6xl font-bold text-red-600">
+          <h3 className="text-4xl md:text-6xl font-bold text-red-600">
             Why Devapp
-          </h2>
+          </h3>
         </div>
         <div className="w-full text-center mt-14">
 
-          <p className="mt-10 text-xl md:text-3xl font-bold text-black">
+          <h2 className="mt-10 text-xl md:text-3xl font-bold text-black">
             Because a strong MVP needs more than a development team
-          </p>
+          </h2>
           <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
             At Devapp, we combine product thinking, technical expertise, and execution to help
              businesses turn early-stage ideas into products people can actually use. We don't 

@@ -63,9 +63,9 @@ export default function EngagementModelSection() {
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
               {/* Left Content */}
               <div className="lg:col-span-7 text-center lg:text-left mt-8">
-                <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
                   Engagement Model                  
-                </h1>
+                </h3>
 
                 <h3 className="mt-4 sm:mt-6 text-xl sm:text-2xl font-semibold">
                   A Process You Can Trust, Results That Speak for Themselves

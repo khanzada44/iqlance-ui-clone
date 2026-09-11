@@ -23,9 +23,9 @@ export default function About() {
 
         <section className="bg-white py-20">
           <div className="  text-center">
-           <h2 className="text-4xl md:text-6xl font-bold text-red-600">
+           <h3 className="text-4xl md:text-6xl font-bold text-red-600">
               About Devapp
-            </h2>
+            </h3>
           </div>
 
           <div className="w-full px-6 text-center mt-15">
@@ -230,10 +230,10 @@ export default function About() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Ready to Turn Your Idea Into a Successful Digital Product? Let’s
               Build It Together.
-            </h2>
+            </h3>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">

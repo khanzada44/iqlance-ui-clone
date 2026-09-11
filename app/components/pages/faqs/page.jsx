@@ -23,9 +23,9 @@ export default function faqs() {
         </div>
 
         <section className="py-10">
-          <h1 className="flex items-center justify-center text-2xl md:text-4xl font-bold text-red-700 leading-tight">
+          <h3 className="flex items-center justify-center text-2xl md:text-4xl font-bold text-red-700 leading-tight">
             FAQs
-          </h1>
+          </h3>
           <p className="flex items-center justify-center text-xl font-bold text-black leading-tight mt-1">
             Got questions?
           </p>
@@ -183,9 +183,9 @@ export default function faqs() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Let's Bring Your Idea to Life. Talk to Our Technical Experts Today.
-            </h2>
+            </h3>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">

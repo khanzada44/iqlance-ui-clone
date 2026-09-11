@@ -152,7 +152,7 @@ export default function career() {
           <div className="max-w-7xl mx-auto px-4 mt-10">
             {/* About */}
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-3xl md:text-5xl font-bold">About Devapp</h2>
+              <h3 className="text-3xl md:text-5xl font-bold">About Devapp</h3>
 
               <div className="mt-8 space-y-7 text-gray-700 text-base md:text-lg leading-8">
                 <p>
