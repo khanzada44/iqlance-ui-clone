@@ -822,7 +822,7 @@ export default function fitness() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@DevAppGrid.com"
+                  href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -836,7 +836,7 @@ export default function fitness() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@DevAppGrid.com</span>
+                  <span>info@devappgrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -1034,7 +1034,7 @@ export default function fitness() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@DevAppGrid.com"
+                  href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
@@ -1048,7 +1048,7 @@ export default function fitness() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@DevAppGrid.com</span>
+                  <span>info@devappgrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>

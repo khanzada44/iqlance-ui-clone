@@ -530,7 +530,7 @@ export const blogs = [
                 />
 
                 <span class="text-sm font-medium leading-6 sm:text-base">
-                info@DevAppGrid.com
+                info@devappgrid.com
                 </span>
                     or
                 <img

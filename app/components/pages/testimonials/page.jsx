@@ -180,7 +180,7 @@ export default function testimonials() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@DevAppGrid.com"
+                  href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
                   <div
@@ -194,7 +194,7 @@ export default function testimonials() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@DevAppGrid.com</span>
+                  <span>info@devappgrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -313,7 +313,7 @@ export default function testimonials() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@DevAppGrid.com"
+                  href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#1B4B82] transition-colors"
                 >
                   <div
@@ -327,7 +327,7 @@ export default function testimonials() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@DevAppGrid.com</span>
+                  <span>info@devappgrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>

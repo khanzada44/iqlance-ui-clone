@@ -299,7 +299,7 @@ export default function LandingPage() {
                 style={{ animationDelay: "300ms" }}
               >
                 Share Your Project Details on{" "}
-                <span className="font-bold">info@DevAppGrid.com</span>
+                <span className="font-bold">info@devappgrid.com</span>
               </p>
 
               {/* PHONE */}
@@ -670,7 +670,7 @@ export default function LandingPage() {
               {/* EMAIL */}
               <div className="flex items-center gap-1.5 text-[20px] font-semibold text-gray-800 sm:text-[20px]">
                 <img src="/icons/landin-mail-icon.svg" alt="" />
-                info@DevAppGrid.com
+                info@devappgrid.com
               </div>
 
               {/* MEETING */}
@@ -1196,7 +1196,7 @@ export default function LandingPage() {
                       TALK TO US NOW
                     </p>
                     <p className="text-[14px] font-bold text-white truncate">
-                      info@DevAppGrid.com
+                      info@devappgrid.com
                     </p>
                   </div>
                 </div>

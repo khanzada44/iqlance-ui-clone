@@ -7,12 +7,16 @@ export default function WebsiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <Navbar />
+ <div className="w-full overflow-x-hidden">
+  <div className="fixed top-0 left-0 right-0 z-50">
+    <Navbar />
+  </div>
 
-      <main>{children}</main>
+  <main className="w-full pt-20 ">
+    {children}
+  </main>
 
-      <Footer />
-    </>
+  <Footer />
+</div>
   );
 }

@@ -343,7 +343,7 @@ export default function career() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                info@DevAppGrid.com
+                info@devappgrid.com
               </span>
 
               <span className="hidden md:block">or</span>

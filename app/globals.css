@@ -798,6 +798,7 @@ p.pt-20.text-center.mt-iq-20 {
   margin: 40px auto;
   padding: 0 15px;
   box-sizing: border-box;
+  justify-content: center;
 }
 
 .container.mt-iq-40 .row {
@@ -1672,4 +1673,12 @@ p.mt-iq-20 {
   50% {
     transform: translateY(-25px);
   }
+}
+.folio-categoery ul li {
+  padding-left: 2px !important;
+  font-size: 13px;
+  margin: 8px;
+}
+.container .mt-iq-40{
+  justify-content: center !important;
 }

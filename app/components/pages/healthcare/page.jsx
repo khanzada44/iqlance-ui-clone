@@ -531,7 +531,7 @@ export default function HeroQuoteSection() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@DevAppGrid.com
+                      info@devappgrid.com
                     </span>
                   </div>
 
@@ -785,7 +785,7 @@ export default function HeroQuoteSection() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@DevAppGrid.com
+                      info@devappgrid.com
                     </span>
                   </div>
 
@@ -941,7 +941,7 @@ export default function HeroQuoteSection() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base">
-                      info@DevAppGrid.com
+                      info@devappgrid.com
                     </span>
                   </div>
 

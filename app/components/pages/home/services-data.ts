@@ -153,16 +153,14 @@ export const slides = [
       "Schedule a free consultation today with Project Manager.",
   },
 
-  // Dusri slide
   {
     title: "Deliver Mobile App and Software Development Services Across the USA",
 
     description1:
-      "Devapp delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs.",
+      "Devapp delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs. By partnering with Devapp, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
 
     description2:
-      "By partnering with Devapp, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
-
+      "",
     services: [
       {
         title: "Mobile App Development",
@@ -181,7 +179,7 @@ export const slides = [
       {
         title: "Software Development",
         items: [
-          "Microsoft .NET, Node JS, Python, React, Laravel, Angular",
+          "Microsoft .NET, Node JS, Python, Laravel, Angular",
         ],
       },
       {

@@ -153,7 +153,7 @@ export default function ContactSection() {
               <div className="w-full">
                 <p className="mt-6 text-gray-700">
                   Share Your Project Details on{" "}
-                  <span className="font-semibold">info@DevAppGrid.com</span>
+                  <span className="font-semibold">info@devappgrid.com</span>
                 </p>
 
                 <div className="mt-6">
@@ -359,7 +359,7 @@ export default function ContactSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  info@DevAppGrid.com
+                  info@devappgrid.com
                 </span>
 
                 <span className="flex items-center gap-2">

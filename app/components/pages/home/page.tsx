@@ -1,4 +1,6 @@
 "use client";
+
+import { useEffect, useState, useRef } from "react";
 import { ArrowLeft, ArrowRight, ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,6 +61,55 @@ const cardVariants = {
 const redCards = [1, 3, 5, 7];
 
 export default function Home() {
+  const [retention, setRetention] = useState(0);
+  const [saas, setSaas] = useState(0);
+  const [industriess, setIndustriess] = useState(0);
+  const [projectStart, setProjectStart] = useState(0);
+
+  const statsRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const element = statsRef.current;
+
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+
+          const duration = 1500;
+          const startTime = performance.now();
+
+          const animate = (currentTime: number) => {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+
+            setRetention(Math.floor(progress * 96));
+            setSaas(Math.floor(progress * 19));
+            setIndustriess(Math.floor(progress * 30));
+            setProjectStart(Math.floor(progress * 24));
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+
+          requestAnimationFrame(animate);
+
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3,
+      },
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
   const icons = [
     "/icons/linkedin-icn.svg",
     "/icons/twitter-icon.svg",
@@ -85,83 +136,73 @@ export default function Home() {
       <div className="">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full">
           {/* LEFT CONTENT */}
-<section className="relative w-full min-h-155 overflow-hidden">
-
-  {/* Background Video */}
-  <video
-    className="absolute inset-0 w-full h-full object-cover"
-    src="/videos/banner_dev-app-video.mp4"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-  />
-
-  {/* Black Overlay */}
-  <div className="absolute inset-0 bg-black/65" />
-
-  {/* Content */}
-  <div className="relative z-10 mx-auto w-[92%] min-h-155 flex items-center">
-    <div className="w-full lg:w-[58%] xl:w-[55%] py-16 lg:py-20">
-
-      {/* Small Heading */}
-      <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium mb-3">
-        Got a Big Idea? Let's Build It Into Something Real.
-      </p>
-
-      {/* Main Heading */}
-      <h1 className="max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[58px] font-bold leading-[1.08] mb-5 text-white">
-       DevApp Grid - Mobile App Development Company
-      </h1>
-
-      {/* Description - width kam */}
-      <p className="max-w-1xl text-white/80 text-sm sm:text-base md:text-lg leading-relaxed">
-        Every great business starts with an idea. We help you turn yours
-        into a digital product that actually works. Our team of developers,
-        designers, and tech strategists builds secure, high-performing
-        solutions shaped around your goals. Explore our work and contact us today/
-      </p>
-
-      {/* Why Us */}
-
-
-      {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-7">
-
-        <Link href="/contact-us">
-          <button className="group bg-red-700 hover:bg-red-600 text-white px-6 py-3.5 font-semibold flex items-center justify-center gap-3 transition">
-            Book Your Free Consultation
-            <ArrowRight
-              size={18}
-              className="group-hover:translate-x-1 transition-transform"
+          <section className="relative w-full min-h-155 overflow-hidden">
+            {/* Background Video */}
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              src="/videos/banner_dev-app-video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
             />
-          </button>
-        </Link>
 
-        <Link href="/portfolio">
-          <button className="group border border-white/50 hover:border-white text-white px-7 py-3.5 font-semibold flex items-center justify-center gap-3 transition">
-            Our Work
-            <ArrowRight
-              size={18}
-              className="group-hover:translate-x-1 transition-transform"
-            />
-          </button>
-        </Link>
+            {/* Black Overlay */}
+            <div className="absolute inset-0 bg-black/65" />
 
-      </div>
+            {/* Content */}
+            <div className="relative z-10 mx-auto w-[92%] min-h-155 flex items-center">
+              <div className="w-full lg:w-[58%] xl:w-[55%] py-16 lg:py-20">
+                {/* Small Heading */}
+                <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium mb-3">
+                  Got a Big Idea? Let's Build It Into Something Real.
+                </p>
+                <h1 className="max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[58px] font-bold italic leading-[1.08] mb-5 text-white">
+                  DevApp Grid - Mobile App Development Company
+                </h1>
+                <p className="max-w-1xl text-white/80 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Every great business starts with an idea. We help you turn
+                  yours into a digital product that actually works. Our team of
+                  developers, designers, and tech strategists builds secure,
+                  high-performing solutions shaped around your goals. Explore
+                  our work and contact us today/
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-7">
+                  <Link href="/contact-us">
+                    <button className="group bg-red-700 hover:bg-red-600 text-white px-6 py-3.5 font-semibold flex items-center justify-center gap-3 transition">
+                      Book Your Free Consultation
+                      <ArrowRight
+                        size={18}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
+                    </button>
+                  </Link>
 
-    </div>
-  </div>
-</section>
+                  <Link href="/portfolio">
+                    <button className="group border border-white/50 hover:border-white text-white px-7 py-3.5 font-semibold flex items-center justify-center gap-3 transition">
+                      Our Work
+                      <ArrowRight
+                        size={18}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
 
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 mt-10 mb-10">
+        <div
+          ref={statsRef}
+          className="max-w-7xl mx-auto w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 mt-10 mb-10"
+        >
           {/* CLIENT RETENTION */}
           <div className="text-center flex flex-col items-center justify-center">
             <div className="flex items-end gap-1">
-              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
-                96
+              <p className="text-x2 sm:text-2xl md:text-4xl lg:text-4xl font-bold text-black">
+                {retention}
               </p>
 
               <span>%</span>
@@ -176,7 +217,7 @@ export default function Home() {
           <div className="text-center flex flex-col items-center justify-center">
             <div className="flex items-end gap-1">
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
-                19
+                {saas}
               </p>
 
               <span>+</span>
@@ -218,7 +259,7 @@ export default function Home() {
           <div className="text-center flex flex-col items-center justify-center">
             <div className="flex items-end gap-1">
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
-                15
+                {industriess}
               </p>
 
               <span>+</span>
@@ -233,7 +274,7 @@ export default function Home() {
           <div className="text-center flex flex-col items-center justify-center col-span-2 sm:col-span-1">
             <div className="flex items-end gap-1">
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
-                24
+                {projectStart}
               </p>
 
               <span>Hrs</span>
@@ -245,7 +286,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 mb-10 w-full max-w-7xl mx-auto">
+        <div className="mt-10 mb-10 w-full max-w-7xl mx-auto px-2">
           <Swiper
             className="portfolio-swiper"
             modules={[Pagination, Autoplay]}
@@ -343,7 +384,7 @@ export default function Home() {
   `}</style>
         </div>
 
-        <div className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
+        <div className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 ">
             {/* IMAGE */}
             <div className="flex justify-center">
@@ -472,7 +513,7 @@ export default function Home() {
           >
             {portfolioSlides.map((slide, index) => (
               <SwiperSlide key={index} className="h-auto!">
-                <div className="flex h-full w-full bg-red-100 px-4 py-8 sm:px-6 sm:py-10 md:px-12">
+                <div className="flex h-full w-full bg-red-100 px-4 py-8 sm:px-6 sm:py-10 md:px-12 ">
                   <div className="grid w-full grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
                     {/* LEFT */}
                     <div className="flex min-w-0 flex-col">
@@ -682,7 +723,7 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  info@DevAppGrid.com
+                  info@devappgrid.com
                 </span>
 
                 <span className="block">or</span>
@@ -700,8 +741,8 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  USA : <strong>+1 (866) 978-8570</strong>  
-                  <strong>  </strong>
+                  USA : <strong>+1 (866) 978-8570</strong>
+                  <strong> </strong>
                 </span>
               </div>
             </div>
@@ -1025,7 +1066,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
                 {/* Email link */}
                 <a
-                  href="mailto:info@DevAppGrid.com"
+                  href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 hover:text-red-600  transition-colors"
                 >
                   <div
@@ -1039,7 +1080,7 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@DevAppGrid.com</span>
+                  <span>info@devappgrid.com</span>
                 </a>
 
                 <span className="text-gray-900 font-normal">or</span>
@@ -1068,9 +1109,7 @@ export default function Home() {
                   <a
                     href="tel:+16476379108"
                     className="hover:text-red-600 transition-colors"
-                  >
-                      
-                  </a>
+                  ></a>
                 </div>
               </div>
             </div>
@@ -1253,7 +1292,7 @@ export default function Home() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                info@DevAppGrid.com
+                info@devappgrid.com
               </span>
 
               <span className="hidden md:block">or</span>
@@ -1270,8 +1309,8 @@ export default function Home() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                USA :<strong> +1 (866) 978-8570</strong> 
-                <strong>   </strong>
+                USA :<strong> +1 (866) 978-8570</strong>
+                <strong> </strong>
               </span>
             </div>
 
@@ -1289,61 +1328,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* BLOGS */}
-        {/* <div className="px-3 mt-10">
-          <h1 className="flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight text-center">
-            Insights and News
-          </h1>
-          <p className="flex items-center justify-center text-center mt-3 sm:mt-4 text-sm sm:text-base">
-            Stay updated with the current trends, latest tools and technologies,
-            and industrial concepts to get an in-depth idea of your project.
-          </p>
-        </div> */}
-
-        {/* <section className="py-10 sm:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-3 sm:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {blogs.map((blog, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-200 overflow-hidden bg-white hover:shadow-lg transition duration-300"
-                >
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    className="w-full h-48 sm:h-56 object-cover"
-                  />
-
-                  <div className="p-4 sm:p-6">
-                    <p className="text-gray-500 text-sm sm:text-lg mb-2 sm:mb-3">
-                      {blog.date}
-                    </p>
-
-                    <h3 className="text-base sm:text-[20px] leading-7 sm:leading-8 font-medium text-gray-900 hover:text-red-500 cursor-pointer transition">
-                      {blog.title}
-                    </h3>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex justify-center">
-              <Link
-                href="/blog"
-                className="group mt-6 sm:mt-8 bg-red-700 text-white px-6 py-3 font-semibold flex items-center justify-center gap-3 hover:bg-red-600 transition w-full sm:w-auto"
-              >
-                All Blogs
-                <ArrowRight
-                  size={18}
-                  className="transition-transform duration-300 group-hover:translate-x-2"
-                />
-              </Link>
-            </div>
-          </div>
-        </section> */}
-
-        {/* CONTACT */}
         <div className="mt-12 w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
           <h1 className="flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight text-center">
             Have Something in Mind? Let's Talk.

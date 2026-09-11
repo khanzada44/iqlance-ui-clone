@@ -185,7 +185,7 @@ export default function ContactSection() {
 
   return (
     <>
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <section className="max-w-7xl mx-auto">
         {/* Main Contact Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-6">
 
@@ -198,7 +198,7 @@ export default function ContactSection() {
             <p className="mt-4 sm:mt-6 text-gray-700 text-base sm:text-lg">
               Share Your Project Details on{" "}
               <span className="font-semibold break-all">
-                info@DevAppGrid.com
+                info@devappgrid.com
               </span>
             </p>
 

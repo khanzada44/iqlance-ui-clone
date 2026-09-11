@@ -57,7 +57,7 @@ export default function EngagementModelSection() {
 
   return (
     <>
-      <div className="w-[80%] max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <section className="py-2 bg-white">
           <div className="w-full px-3 sm:px-5">
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
@@ -460,7 +460,7 @@ export default function EngagementModelSection() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@DevAppGrid.com"
+                  href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5  transition-colors"
                 >
                   <div
@@ -474,7 +474,7 @@ export default function EngagementModelSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@DevAppGrid.com</span>
+                  <span>info@devappgrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
@@ -594,7 +594,7 @@ export default function EngagementModelSection() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
-                  href="mailto:info@DevAppGrid.com"
+                  href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5  transition-colors"
                 >
                   <div
@@ -608,7 +608,7 @@ export default function EngagementModelSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  <span>info@DevAppGrid.com</span>
+                  <span>info@devappgrid.com</span>
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
