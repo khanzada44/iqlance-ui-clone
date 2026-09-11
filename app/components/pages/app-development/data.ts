@@ -43,23 +43,23 @@ export const faqsData = [
     
   },
   {
-    question: " What mobile app development services does Devapp offer? ",
+    question: "2. What mobile app development services does Devapp offer? ",
     answer:
       "Our app development services cover the complete product lifecycle, including strategy, UI/UX design, development, API integration, testing, deployment, and post-launch support. We also provide Flutter mobile app development and cross-platform solutions for businesses of different sizes.",
     
   },
   {
-    question: "How much does mobile app development cost?",
+    question: "3. How much does mobile app development cost?",
     answer:
       "The cost of mobile app development depends on your features, platforms, design requirements, integrations, technology stack, and project complexity. Our mobile app developers evaluate your requirements and provide a customized proposal rather than using a fixed price.",
   },
   {
-    question: "Can Devapp build a custom app from scratch?",
+    question: "4. Can Devapp build a custom app from scratch?",
     answer:
       "Yes. Our mobile app creation service is designed for businesses that need a solution built around their specific goals. From initial concept and product planning to development and launch, our app development team handles the process from end to end.",
   },
   {
-    question: "Why choose Devapp for app development?",
+    question: "5. Why choose Devapp for app development?",
     answer:
       "Devapp combines experienced mobile app developers, modern technologies, flexible engagement options, transparent communication, and ongoing support. Whether you need Flutter mobile app development, native development, or a complete mobile app development solution, we focus on creating a scalable product aligned with your business objectives.",
   },
