@@ -301,7 +301,7 @@ export default function ServicesCategory({ slug }) {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-[80%]">
+      <div className="mx-auto w-full ">
 
         <section className="mx-auto w-full max-w-7xl px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
