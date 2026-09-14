@@ -204,7 +204,7 @@ export default function Service() {
 
     return (
         <>
-            <div className="w-full max-w-[80%] mx-auto">
+            <div className="w-full max-w-7xl mx-auto">
                 <div className="mt-6 pt-2">
                     <img
                         src="/images/service-header-banner.jpg"
