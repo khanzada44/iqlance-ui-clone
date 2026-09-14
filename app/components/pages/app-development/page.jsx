@@ -120,6 +120,12 @@ export default function LandingPage() {
 
       await submitContactForm(payload);
       router.push("/thank-you");
+      // submitContactForm(payload).catch((error) => {
+      //   console.error("API Error Response:", error?.response?.data);
+      // });
+
+      // // Immediately redirect
+      // router.push("/thank-you");
       // SUCCESS
       setStatusMessage({
         type: "success",
@@ -183,9 +189,11 @@ export default function LandingPage() {
             {/* LOGO */}
             <div className="flex items-center">
               <Link href="/">
-                <img
+                <Image
                   src="/images/Dev-App-04.png"
                   alt="Dev App Grid"
+                  width={500}
+                  height={500}
                   className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
                 />
               </Link>
@@ -278,27 +286,24 @@ export default function LandingPage() {
             >
               {/* SMALL TITLE */}
               <p
-                className={`content-title mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px] ${
-                  contentVisible ? "show" : ""
-                }`}
+                className={`content-title mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px] ${contentVisible ? "show" : ""
+                  }`}
               >
                 Let&apos;s Turn Your Idea Into a Market-Ready Product
               </p>
 
               {/* MAIN TITLE */}
               <h1
-                className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${
-                  contentVisible ? "show" : ""
-                }`}
+                className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${contentVisible ? "show" : ""
+                  }`}
               >
                 Request a Quote
               </h1>
 
               {/* EMAIL */}
               <p
-                className={`content-slide-in-left text-[17px] leading-[1.7] ${
-                  contentVisible ? "show" : ""
-                }`}
+                className={`content-slide-in-left text-[17px] leading-[1.7] ${contentVisible ? "show" : ""
+                  }`}
                 style={{ animationDelay: "300ms" }}
               >
                 Share Your Project Details on{" "}
@@ -307,9 +312,8 @@ export default function LandingPage() {
 
               {/* PHONE */}
               <p
-                className={`content-slide-in-left mb-5 text-[17px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px] ${
-                  contentVisible ? "show" : ""
-                }`}
+                className={`content-slide-in-left mb-5 text-[17px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px] ${contentVisible ? "show" : ""
+                  }`}
                 style={{ animationDelay: "400ms" }}
               >
                 Talk To Experts:
@@ -319,9 +323,8 @@ export default function LandingPage() {
 
               {/* DESCRIPTION */}
               <p
-                className={`content-slide-in-left max-w-140 text-[17px] leading-[1.8] sm:text-[13px] lg:text-[18px] ${
-                  contentVisible ? "show" : ""
-                }`}
+                className={`content-slide-in-left max-w-140 text-[17px] leading-[1.8] sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
+                  }`}
                 style={{ animationDelay: "500ms" }}
               >
                 Have a project in mind? Share your requirements with Devapp and
@@ -332,9 +335,8 @@ export default function LandingPage() {
 
               {/* BENEFITS */}
               <ul
-                className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${
-                  contentVisible ? "show" : ""
-                }`}
+                className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
+                  }`}
                 style={{ animationDelay: "600ms" }}
               >
                 <li className="flex items-center gap-2">
@@ -370,9 +372,8 @@ export default function LandingPage() {
 
               {/* BUTTONS */}
               <div
-                className={`content-slide-in-left mt-6 flex flex-wrap gap-3 ${
-                  contentVisible ? "show" : ""
-                }`}
+                className={`content-slide-in-left mt-6 flex flex-wrap gap-3 ${contentVisible ? "show" : ""
+                  }`}
                 style={{ animationDelay: "700ms" }}
               >
                 <Link
@@ -419,7 +420,7 @@ export default function LandingPage() {
             `}</style>
             {/* <div className="relative w-full max-w-130.5 sm:w-[80%] lg:w-[60%] form-slide-in-right min-h-112.5">
               <div className="absolute -right-1 -top-8 z-10 sm:-right-2 sm:-top-9">
-                <img
+                <Image
                   src="/images/contact-form-logo.png"
                   alt="Same Day Response"
                   className="h-16 w-auto object-contain sm:h-18 lg:h-19.5"
@@ -522,11 +523,14 @@ export default function LandingPage() {
             <div className="relative w-full max-w-150 sm:w-[85%] lg:w-[65%] form-slide-in-right min-h-125">
               {/* BADGE */}
               <div className="absolute -right-2 -top-10 z-10 sm:-right-3 sm:-top-11">
-                <img
+                <Image
                   src="/images/contact-form-logo.png"
                   alt="Same Day Response"
+                  width={200}
+                  height={200}
                   className="h-20 w-auto object-contain sm:h-22 lg:h-24"
                 />
+
               </div>
               <div className="rounded-lg bg-[#fff0f1] px-10 py-10 shadow-2xl sm:px-9 sm:py-9">
                 <h2 className="text-[24px] font-bold text-black sm:text-[26px] lg:text-[28px]">
@@ -608,11 +612,10 @@ export default function LandingPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`h-11 rounded-sm px-7 text-[13px] font-semibold text-white transition sm:h-12 sm:px-8 sm:text-[14px] focus:outline-none focus:ring-0 ${
-                      loading
-                        ? "cursor-not-allowed bg-red-600"
-                        : "bg-red-600 hover:bg-red-700"
-                    }`}
+                    className={`h-11 rounded-sm px-7 text-[13px] font-semibold text-white transition sm:h-12 sm:px-8 sm:text-[14px] focus:outline-none focus:ring-0 ${loading
+                      ? "cursor-not-allowed bg-red-600"
+                      : "bg-red-600 hover:bg-red-700"
+                      }`}
                   >
                     {loading ? "Sending..." : "Schedule a free consultation"}
                   </button>
@@ -648,68 +651,91 @@ export default function LandingPage() {
             <div className="logo-marquee">
               {/* First Set */}
               <div className="flex items-center gap-12 sm:gap-16 lg:gap-24 px-6 sm:px-8 lg:px-12">
-                <img
+                <Image
                   src="/images/React-Native.png"
                   alt="React Native"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
 
-                <img
+
+                <Image
                   src="/images/Flutter.png"
                   alt="Flutter"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
 
-                <img
+                <Image
                   src="/images/Xamarin.png"
                   alt="Xamarin"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
 
-                <img
+                <Image
                   src="/images/Oracle.png"
                   alt="Oracle"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
 
-                <img
+                <Image
                   src="/images/unity.png"
                   alt="Unity"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
+
               </div>
 
               {/* Duplicate Set - seamless loop */}
               <div className="flex items-center gap-12 sm:gap-16 lg:gap-24 px-6 sm:px-8 lg:px-12">
-                <img
+                <Image
                   src="/images/React-Native.png"
                   alt="React Native"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
 
-                <img
+                <Image
                   src="/images/Flutter.png"
                   alt="Flutter"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
 
-                <img
+                <Image
                   src="/images/Xamarin.png"
                   alt="Xamarin"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
 
-                <img
+                <Image
                   src="/images/Oracle.png"
                   alt="Oracle"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
 
-                <img
+                <Image
                   src="/images/unity.png"
                   alt="Unity"
+                  width={100}
+                  height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
+
               </div>
             </div>
           </div>
@@ -733,22 +759,41 @@ export default function LandingPage() {
             </p>
             <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
               <div className="flex items-center gap-1.5 text-[20px] font-semibold text-gray-800 sm:text-[20px]">
-                <img src="/icons/landin-teams-icon.svg" alt="" />
+                <Image
+                  src="/icons/landin-teams-icon.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 object-contain"
+                />
                 Devapp Grid
               </div>
 
               {/* EMAIL */}
               <div className="flex items-center gap-1.5 text-[20px] font-semibold text-gray-800 sm:text-[20px]">
-                <img src="/icons/landin-mail-icon.svg" alt="" />
+                <Image
+                  src="/icons/landin-mail-icon.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 object-contain"
+                />
                 info@devappgrid.com
               </div>
 
               {/* MEETING */}
               <div className="flex items-center gap-1.5 text-[20px] font-semibold text-gray-800 sm:text-[20px]">
-                <img src="/icons/landin-schedule.svg" alt="" />
+                <Image
+                  src="/icons/landin-schedule.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 object-contain"
+                />
                 Schedule Meeting
               </div>
             </div>
+
 
             <div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
           </div>
@@ -761,11 +806,14 @@ export default function LandingPage() {
                   Headquarter
                 </h3>
 
-                <img
+                <Image
                   src="/images/texas_usa_office_iq.png"
                   alt="Texas"
+                  width={200}
+                  height={48}
                   className="my-2 h-12 w-auto object-contain"
                 />
+
 
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   Texas, USA
@@ -780,11 +828,14 @@ export default function LandingPage() {
                   Branch
                 </h3>
 
-                <img
+                <Image
                   src="/images/canada-office-icn.png"
                   alt="Toronto"
+                  width={200}
+                  height={48}
                   className="my-2 h-12 w-auto object-contain"
                 />
+
 
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   Toronto, Canada
@@ -798,11 +849,14 @@ export default function LandingPage() {
               </div>
 
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
-                <img
+                <Image
                   src="/images/newyork-office-icn.png"
                   alt="New York"
+                  width={200}
+                  height={52}
                   className="mb-2 h-13 w-auto object-contain"
                 />
+
 
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   New York, USA
@@ -814,11 +868,14 @@ export default function LandingPage() {
               </div>
 
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
-                <img
+                <Image
                   src="/images/london-office-icn.png"
                   alt="Austin"
+                  width={200}
+                  height={52}
                   className="mb-2 h-13 w-auto object-contain"
                 />
+
 
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   Austin
@@ -831,11 +888,14 @@ export default function LandingPage() {
                 </span>
               </div>
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
-                <img
+                <Image
                   src="/images/california.png"
                   alt="California"
+                  width={200}
+                  height={52}
                   className="mb-2 h-13 w-auto object-contain"
                 />
+
 
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   California, USA
@@ -849,11 +909,14 @@ export default function LandingPage() {
               </div>
 
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
-                <img
-                  src="/images/australia-office-icn.png"
-                  alt="Australia"
+                <Image
+                  src="/images/california.png"
+                  alt="California"
+                  width={200}
+                  height={52}
                   className="mb-2 h-13 w-auto object-contain"
                 />
+
 
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   Australia
@@ -883,11 +946,14 @@ export default function LandingPage() {
 
               {/* TRUSTPILOT IMAGE */}
               <div className="flex items-center justify-center">
-                <img
+                <Image
                   src="/images/Container.png"
                   alt="Trustpilot Reviews"
+                  width={200}
+                  height={52}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13"
                 />
+
               </div>
               {/* ORDER BUTTON */}
               <button className="flex h-7.5 items-center gap-2 rounded-sm bg-red-600 px-6 text-[9px] font-semibold text-white transition hover:bg-red-700 sm:h-8.5 sm:px-7 sm:text-[18px]">
@@ -911,7 +977,7 @@ export default function LandingPage() {
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
           {/* Outer Card Wrapper with Fixed Border & Accent */}
-          <div className="relative bg-white border border-red-200 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
+          <div className="relative bg-white border border-gray-200 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
             {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
 
@@ -935,15 +1001,18 @@ export default function LandingPage() {
                     <div className="flex items-center gap-4 mb-6">
                       {/* Avatar Circle */}
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0 overflow-hidden">
-                        <img
+                        <Image
                           src={item.image}
                           alt={item.name}
+                          width={48}
+                          height={48}
                           className="w-full h-full rounded-full object-cover"
                           onError={(e) => {
-                            e.target.src =
+                            e.currentTarget.src =
                               "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg";
                           }}
                         />
+
                       </div>
 
                       <div>
@@ -1000,11 +1069,14 @@ export default function LandingPage() {
                   <div className="relative flex w-full items-center gap-3 rounded-lg bg-[#fffbed] px-4 py-5 sm:gap-5 sm:px-6 sm:py-6 lg:gap-6 lg:px-7">
                     {/* ICON */}
                     <div className="flex shrink-0 items-center justify-center">
-                      <img
+                      <Image
                         src="/images/How_it_Works_1.png"
                         alt=""
-                        className="w-8 sm:w-9 lg:w-10"
+                        width={40}
+                        height={40}
+                        className="w-8 sm:w-9 lg:w-10 h-auto"
                       />
+
                     </div>
 
                     {/* NUMBER */}
@@ -1102,11 +1174,14 @@ export default function LandingPage() {
                         Once approved, we move into execution.
                       </p>
                     </div>
-                    <img
+                    <Image
                       src="/images/How_it_Works_2.png"
                       alt=""
-                      className="w-10"
+                      width={40}
+                      height={40}
+                      className="w-10 h-auto"
                     />
+
                   </div>
                 </div>
 
@@ -1116,11 +1191,14 @@ export default function LandingPage() {
               <div className="mt-5 flex sm:mt-6">
                 <div className="flex w-full max-w-240 items-center gap-3 bg-[#fff0f1] px-4 py-5 sm:gap-5 sm:px-6 sm:py-6 lg:gap-6 lg:px-7 rounded-lg">
                   {/* NUMBER */}
-                  <img
+                  <Image
                     src="/images/How_it_Works_3.png"
                     alt=""
-                    className="w-10"
+                    width={40}
+                    height={40}
+                    className="w-10 h-auto"
                   />
+
                   <div className="shrink-0 text-[28px] font-light leading-none text-black sm:text-[34px] lg:text-[38px]">
                     03.
                   </div>
@@ -1155,11 +1233,10 @@ export default function LandingPage() {
               {faqsData.map((faq, index) => (
                 <div
                   key={index}
-                  className={`border bg-white transition-all duration-300 ${
-                    open === index
-                      ? "border-red-50 shadow-md"
-                      : "border-gray-200 hover:border-red-300"
-                  }`}
+                  className={`border bg-white transition-all duration-300 ${open === index
+                    ? "border-red-50 shadow-md"
+                    : "border-gray-200 hover:border-red-300"
+                    }`}
                 >
                   {/* Question */}
                   <button
@@ -1171,21 +1248,19 @@ export default function LandingPage() {
                     </span>
 
                     <ChevronDown
-                      className={`w-5 h-5 transition-transform duration-300 ${
-                        open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                      }`}
+                      className={`w-5 h-5 transition-transform duration-300 ${open === index
+                        ? "rotate-180 text-black"
+                        : "rotate-0 text-black"
+                        }`}
                     />
                   </button>
 
                   {/* Answer */}
                   <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                      ? "max-h-150 opacity-100"
+                      : "max-h-0 opacity-0"
+                      }`}
                   >
                     <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                       <p className="text-[17px] leading-8 text-gray-600">
@@ -1284,11 +1359,14 @@ export default function LandingPage() {
 
               <div className="relative z-10 bg-white text-black p-8 sm:p-12 lg:p-14 flex flex-col lg:flex-row gap-10 items-center shadow-2xl">
                 <div className="w-full lg:w-[45%] h-72 sm:h-85 lg:h-95 overflow-hidden rounded-lg">
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800"
                     alt="Consultant working"
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover"
                   />
+
                 </div>
                 <div className="w-full lg:w-[55%]">
                   <h3 className="text-[24px] sm:text-[28px] lg:text-[30px] font-bold text-gray-900 mb-3">
@@ -1401,11 +1479,10 @@ export default function LandingPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${
-                          loading
-                            ? "cursor-not-allowed opacity-60"
-                            : "hover:bg-[#d9141c]"
-                        } rounded-full`}
+                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${loading
+                          ? "cursor-not-allowed opacity-60"
+                          : "hover:bg-[#d9141c]"
+                          } rounded-full`}
                       >
                         {loading ? "Sending..." : "Get A Free Quote"}
                       </button>
@@ -1416,11 +1493,14 @@ export default function LandingPage() {
             </div>
             <div className="mx-auto max-w-7xl px-4 text-center relative z-10 pt-10 pb-12">
               <div className="flex justify-center items-center gap-1">
-                <img
+                <Image
                   src="/images/Dev-App-04.png"
                   alt="Dev App Grid"
-                  className="w-44 sm:w-48"
+                  width={192}
+                  height={192}
+                  className="w-44 sm:w-48 h-auto object-contain"
                 />
+
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-around py-6 my-6 gap-4">
                 <div className="text-left sm:text-left">

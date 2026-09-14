@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         hostname: "devappgrid.dev-staging.live",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
     ],
   },
 };
