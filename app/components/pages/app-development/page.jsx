@@ -44,7 +44,7 @@ export default function LandingPage() {
       },
       {
         threshold: 0.2,
-      }
+      },
     );
 
     if (contentRef.current) {
@@ -200,9 +200,9 @@ export default function LandingPage() {
                 </div>
 
                 <div className="hidden leading-tight sm:block">
-                  <p className="text-[12px] font-semibold text-gray-800 lg:text-[13px]">
+                  <span className="text-[12px] font-semibold text-gray-800 lg:text-[13px]">
                     +1 (866) 978-8570
-                  </p>
+                  </span>
 
                   <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
                     Call Us Today!
@@ -229,48 +229,48 @@ export default function LandingPage() {
         <section className="relative overflow-hidden bg-linear-to-r from-[#e72828] via-[#a60000] to-[#080000]">
           <div className="mx-auto flex w-[94%] flex-col items-center gap-12 py-10 sm:w-[92%] sm:py-12 lg:min-h-125 lg:w-[90%] lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-12 xl:w-[88%]">
             <style jsx>{`
-  .content-slide-in-left {
-    opacity: 0;
-    transform: translateX(-70px);
-  }
+              .content-slide-in-left {
+                opacity: 0;
+                transform: translateX(-70px);
+              }
 
-  .content-slide-in-left.show {
-    animation: contentSlideInLeft 1.5s
-      cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
+              .content-slide-in-left.show {
+                animation: contentSlideInLeft 1.5s
+                  cubic-bezier(0.22, 1, 0.36, 1) forwards;
+              }
 
-  .content-title {
-    opacity: 0;
-    transform: translateX(-70px);
-  }
+              .content-title {
+                opacity: 0;
+                transform: translateX(-70px);
+              }
 
-  .content-title.show {
-    animation: contentSlideInLeft 1.5s
-      cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
+              .content-title.show {
+                animation: contentSlideInLeft 1.5s
+                  cubic-bezier(0.22, 1, 0.36, 1) forwards;
+              }
 
-  .content-heading {
-    opacity: 0;
-    transform: translateX(-70px);
-  }
+              .content-heading {
+                opacity: 0;
+                transform: translateX(-70px);
+              }
 
-  .content-heading.show {
-    animation: contentSlideInLeft 1.5s
-      cubic-bezier(0.22, 1, 0.36, 1) 30ms forwards;
-  }
+              .content-heading.show {
+                animation: contentSlideInLeft 1.5s
+                  cubic-bezier(0.22, 1, 0.36, 1) 30ms forwards;
+              }
 
-  @keyframes contentSlideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-70px);
-    }
+              @keyframes contentSlideInLeft {
+                from {
+                  opacity: 0;
+                  transform: translateX(-70px);
+                }
 
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`}</style>
+                to {
+                  opacity: 1;
+                  transform: translateX(0);
+                }
+              }
+            `}</style>
 
             <div
               ref={contentRef}
@@ -278,24 +278,27 @@ export default function LandingPage() {
             >
               {/* SMALL TITLE */}
               <p
-                className={`content-title mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px] ${contentVisible ? "show" : ""
-                  }`}
+                className={`content-title mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px] ${
+                  contentVisible ? "show" : ""
+                }`}
               >
                 Let&apos;s Turn Your Idea Into a Market-Ready Product
               </p>
 
               {/* MAIN TITLE */}
               <h1
-                className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${contentVisible ? "show" : ""
-                  }`}
+                className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${
+                  contentVisible ? "show" : ""
+                }`}
               >
                 Request a Quote
               </h1>
 
               {/* EMAIL */}
               <p
-                className={`content-slide-in-left text-[17px] leading-[1.7] ${contentVisible ? "show" : ""
-                  }`}
+                className={`content-slide-in-left text-[17px] leading-[1.7] ${
+                  contentVisible ? "show" : ""
+                }`}
                 style={{ animationDelay: "300ms" }}
               >
                 Share Your Project Details on{" "}
@@ -304,8 +307,9 @@ export default function LandingPage() {
 
               {/* PHONE */}
               <p
-                className={`content-slide-in-left mb-5 text-[17px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px] ${contentVisible ? "show" : ""
-                  }`}
+                className={`content-slide-in-left mb-5 text-[17px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px] ${
+                  contentVisible ? "show" : ""
+                }`}
                 style={{ animationDelay: "400ms" }}
               >
                 Talk To Experts:
@@ -315,8 +319,9 @@ export default function LandingPage() {
 
               {/* DESCRIPTION */}
               <p
-                className={`content-slide-in-left max-w-140 text-[17px] leading-[1.8] sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
-                  }`}
+                className={`content-slide-in-left max-w-140 text-[17px] leading-[1.8] sm:text-[13px] lg:text-[18px] ${
+                  contentVisible ? "show" : ""
+                }`}
                 style={{ animationDelay: "500ms" }}
               >
                 Have a project in mind? Share your requirements with Devapp and
@@ -327,8 +332,9 @@ export default function LandingPage() {
 
               {/* BENEFITS */}
               <ul
-                className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
-                  }`}
+                className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${
+                  contentVisible ? "show" : ""
+                }`}
                 style={{ animationDelay: "600ms" }}
               >
                 <li className="flex items-center gap-2">
@@ -364,8 +370,9 @@ export default function LandingPage() {
 
               {/* BUTTONS */}
               <div
-                className={`content-slide-in-left mt-6 flex flex-wrap gap-3 ${contentVisible ? "show" : ""
-                  }`}
+                className={`content-slide-in-left mt-6 flex flex-wrap gap-3 ${
+                  contentVisible ? "show" : ""
+                }`}
                 style={{ animationDelay: "700ms" }}
               >
                 <Link
@@ -373,7 +380,6 @@ export default function LandingPage() {
                   className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
                 >
                   Contact Us
-
                   <ArrowRight
                     size={14}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -385,7 +391,6 @@ export default function LandingPage() {
                   className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
                 >
                   See Our Work
-
                   <ArrowRight
                     size={14}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -412,8 +417,7 @@ export default function LandingPage() {
                 }
               }
             `}</style>
-            <div className="relative w-full max-w-127.5 sm:w-[80%] lg:w-[60%] form-slide-in-right">
-              {/* BADGE */}
+            {/* <div className="relative w-full max-w-130.5 sm:w-[80%] lg:w-[60%] form-slide-in-right min-h-112.5">
               <div className="absolute -right-1 -top-8 z-10 sm:-right-2 sm:-top-9">
                 <img
                   src="/images/contact-form-logo.png"
@@ -421,23 +425,14 @@ export default function LandingPage() {
                   className="h-16 w-auto object-contain sm:h-18 lg:h-19.5"
                 />
               </div>
-
-              {/* FORM BOX */}
-              <div className="rounded-[9px] bg-[#fff0f1] px-8 py-8 shadow-xl sm:px-7 sm:py-7">
-                {/* FORM TITLE */}
+              <div className="rounded-md bg-[#fff0f1] px-8 py-8 shadow-xl sm:px-7 sm:py-7 ">
                 <h2 className="text-[19px] font-bold text-black sm:text-[20px] lg:text-[21px]">
                   Got a Project in Mind?
                 </h2>
-
-                {/* FORM DESCRIPTION */}
                 <p className="mt-1 text-[10px] text-gray-600 sm:text-[11px]">
                   We Guarantee To Get Back To You Within A Business Day.
                 </p>
-
-                {/* FORM */}
-
                 <form onSubmit={handleSubmit} className="mt-5 space-y-4 ">
-                  {/* NAME */}
                   <div>
                     <input
                       type="text"
@@ -449,8 +444,6 @@ export default function LandingPage() {
                       className="h-9 w-full border-b border-gray-500 bg-transparent text-[11px] text-gray-800 outline-none placeholder:text-gray-500 focus:border-red-500 sm:h-9.5 sm:text-[12px]"
                     />
                   </div>
-
-                  {/* EMAIL */}
                   <div>
                     <input
                       type="email"
@@ -462,8 +455,6 @@ export default function LandingPage() {
                       className="h-9 w-full border-b border-gray-500 bg-transparent text-[11px] text-gray-800 outline-none placeholder:text-gray-500 focus:border-red-500 sm:h-9.5 sm:text-[12px]"
                     />
                   </div>
-
-                  {/* PHONE */}
                   <div>
                     <input
                       type="text"
@@ -475,8 +466,6 @@ export default function LandingPage() {
                       className="h-9 w-full border-b border-gray-500 bg-transparent text-[11px] text-gray-800 outline-none placeholder:text-gray-500 focus:border-red-500 sm:h-9.5 sm:text-[12px]"
                     />
                   </div>
-
-                  {/* MESSAGE */}
                   <div>
                     <textarea
                       name="message"
@@ -487,8 +476,6 @@ export default function LandingPage() {
                       className="w-full resize-none border-b border-gray-500 bg-transparent pt-2 text-[11px] text-gray-800 outline-none placeholder:text-gray-500 focus:border-red-500 sm:text-[12px]"
                     />
                   </div>
-
-                  {/* UPLOAD */}
                   <div className="flex flex-wrap items-center gap-2 text-[10px] text-gray-700 sm:text-[11px]">
                     <label className="flex cursor-pointer items-center gap-1 font-medium">
                       <Paperclip size={13} />
@@ -508,8 +495,6 @@ export default function LandingPage() {
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
-
-                  {/* NDA */}
                   <label className="flex cursor-pointer items-center gap-2 text-[10px] text-gray-700 sm:text-[11px]">
                     <input
                       type="checkbox"
@@ -518,31 +503,116 @@ export default function LandingPage() {
                       onChange={handleChange}
                       className="h-3 w-3"
                     />
-
                     <span>Please Send NDA</span>
                   </label>
-
-                  {/* STATUS MESSAGE */}
-                  {/* {statusMessage.text && (
-                    <div
-                      className={`rounded px-3 py-2 text-[10px] sm:text-[11px] ${
-                        statusMessage.type === "success"
-                          ? "bg-green-50 text-green-600"
-                          : "bg-red-50 text-red-600"
-                      }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )} */}
-
-                  {/* SUBMIT */}
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`h-9 rounded-[3px] px-5 text-[10px] font-semibold text-white transition sm:h-9.5 sm:px-6 sm:text-[11px] focus:outline-none focus:ring-0 ${loading
+                    className={`h-9 rounded-[3px] px-5 text-[10px] font-semibold text-white transition sm:h-9.5 sm:px-6 sm:text-[11px] focus:outline-none focus:ring-0 ${
+                      loading
                         ? "cursor-not-allowed bg-red-600"
                         : "bg-red-600 hover:bg-red-700"
-                      }`}
+                    }`}
+                  >
+                    {loading ? "Sending..." : "Schedule a free consultation"}
+                  </button>
+                </form>
+              </div>
+            </div> */}
+            <div className="relative w-full max-w-150 sm:w-[85%] lg:w-[65%] form-slide-in-right min-h-125">
+              {/* BADGE */}
+              <div className="absolute -right-2 -top-10 z-10 sm:-right-3 sm:-top-11">
+                <img
+                  src="/images/contact-form-logo.png"
+                  alt="Same Day Response"
+                  className="h-20 w-auto object-contain sm:h-22 lg:h-24"
+                />
+              </div>
+              <div className="rounded-lg bg-[#fff0f1] px-10 py-10 shadow-2xl sm:px-9 sm:py-9">
+                <h2 className="text-[24px] font-bold text-black sm:text-[26px] lg:text-[28px]">
+                  Got a Project in Mind?
+                </h2>
+                <p className="mt-2 text-[13px] text-gray-600 sm:text-[14px]">
+                  We Guarantee To Get Back To You Within A Business Day.
+                </p>
+                <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Name *"
+                      required
+                      className="h-11 w-full border-b-2 border-gray-400 bg-transparent text-[14px] text-gray-800 outline-none placeholder:text-gray-500 focus:border-red-500 sm:h-12 sm:text-[15px]"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Email *"
+                      required
+                      className="h-11 w-full border-b-2 border-gray-400 bg-transparent text-[14px] text-gray-800 outline-none placeholder:text-gray-500 focus:border-red-500 sm:h-12 sm:text-[15px]"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Phone *"
+                      required
+                      className="h-11 w-full border-b-2 border-gray-400 bg-transparent text-[14px] text-gray-800 outline-none placeholder:text-gray-500 focus:border-red-500 sm:h-12 sm:text-[15px]"
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Write here Brief about the project..."
+                      rows={4}
+                      className="w-full resize-none border-b-2 border-gray-400 bg-transparent pt-2 text-[14px] text-gray-800 outline-none placeholder:text-gray-500 focus:border-red-500 sm:text-[15px]"
+                    />
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 text-[12px] text-gray-700 sm:text-[13px]">
+                    <label className="flex cursor-pointer items-center gap-1.5 font-medium">
+                      <Paperclip size={16} />
+                      <span>Upload file:</span>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        name="file"
+                        onChange={handleFileChange}
+                        className="hidden"
+                      />
+                    </label>
+                    <span className="max-w-50 truncate">
+                      {formData.file ? formData.file.name : "No file chosen."}
+                    </span>
+                  </div>
+                  <label className="flex cursor-pointer items-center gap-2 text-[12px] text-gray-700 sm:text-[13px]">
+                    <input
+                      type="checkbox"
+                      name="sendNda"
+                      checked={formData.sendNda}
+                      onChange={handleChange}
+                      className="h-4 w-4"
+                    />
+                    <span>Please Send NDA</span>
+                  </label>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className={`h-11 rounded-sm px-7 text-[13px] font-semibold text-white transition sm:h-12 sm:px-8 sm:text-[14px] focus:outline-none focus:ring-0 ${
+                      loading
+                        ? "cursor-not-allowed bg-red-600"
+                        : "bg-red-600 hover:bg-red-700"
+                    }`}
                   >
                     {loading ? "Sending..." : "Schedule a free consultation"}
                   </button>
@@ -576,7 +646,6 @@ export default function LandingPage() {
 
           <div className="overflow-hidden w-full">
             <div className="logo-marquee">
-
               {/* First Set */}
               <div className="flex items-center gap-12 sm:gap-16 lg:gap-24 px-6 sm:px-8 lg:px-12">
                 <img
@@ -642,16 +711,17 @@ export default function LandingPage() {
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
               </div>
-
             </div>
           </div>
         </section>
 
         <section className="">
           <div className=" mx-auto w-[94%] text-center sm:w-[90%] lg:w-[90%] xl:w-[88%]">
-            <h2 className="text-[20px] font-bold text-black sm:text-[22px] lg:text-[30px]">
-              Our Locations
-            </h2>
+            <div className="flex justify-center mt-10">
+              <h1 className="text-2xl sm:text-3xl md:text-2xl  text-gray-900">
+                Our Locations
+              </h1>
+            </div>
 
             {/* DESCRIPTION */}
             <p className="mx-auto mt-3 max-w-290 text-[11px] leading-[1.8] text-gray-700 sm:text-[12px] lg:text-[19px]">
@@ -701,14 +771,9 @@ export default function LandingPage() {
                   Texas, USA
                 </h4>
 
-                <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
+                <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   17250 Dallas Pkwy Dallas, TX 75248, USA
-                </p>
-
-                {/* <p className="mt-2 text-[10px] font-semibold text-black sm:text-[13px] flex items-center">
-                  <img src="/icons/phone.svg" alt="" />
-                  +1 866 978 8570
-                </p> */}
+                </span>
               </div>
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
                 <h3 className="text-[13px] font-bold text-black sm:text-[18px]">
@@ -725,11 +790,11 @@ export default function LandingPage() {
                   Toronto, Canada
                 </h4>
 
-                <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
+                <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   100 King St W, Suite 5700, Toronto, ON M5X 1A9,
                   <br />
                   Canada
-                </p>
+                </span>
               </div>
 
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
@@ -743,11 +808,9 @@ export default function LandingPage() {
                   New York, USA
                 </h4>
 
-                <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
+                <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   USA 45 Rockefeller Plaza, New York, NY 10111, USA
-                </p>
-
-
+                </span>
               </div>
 
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
@@ -761,11 +824,11 @@ export default function LandingPage() {
                   Austin
                 </h4>
 
-                <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
+                <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   USA 500 W 2nd St, Floor 19, Austin, TX 78701, USA
                   <br />
                   78701, USA
-                </p>
+                </span>
               </div>
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
                 <img
@@ -778,11 +841,11 @@ export default function LandingPage() {
                   California, USA
                 </h4>
 
-                <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
+                <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   101 California Street, San Francisco, CA 94111, USA
                   <br />
                   94111, USA
-                </p>
+                </span>
               </div>
 
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
@@ -796,11 +859,11 @@ export default function LandingPage() {
                   Australia
                 </h4>
 
-                <p className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
+                <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   20 Martin Place, Sydney, NSW 2000
                   <br />
                   Australia
-                </p>
+                </span>
               </div>
             </div>
           </div>
@@ -1082,18 +1145,21 @@ export default function LandingPage() {
           </div>
         </section>
         <section className="py-12">
-          <h1 className="text-4xl font-bold text-center mb-10">
-            Frequently Asked Questions
-          </h1>
+          <div className="flex justify-center mb-10">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+              Frequently Asked Questions
+            </h1>
+          </div>
           <div className="max-w-6xl mx-auto px-4">
             <div className="space-y-4">
               {faqsData.map((faq, index) => (
                 <div
                   key={index}
-                  className={`border bg-white transition-all duration-300 ${open === index
+                  className={`border bg-white transition-all duration-300 ${
+                    open === index
                       ? "border-red-50 shadow-md"
                       : "border-gray-200 hover:border-red-300"
-                    }`}
+                  }`}
                 >
                   {/* Question */}
                   <button
@@ -1105,19 +1171,21 @@ export default function LandingPage() {
                     </span>
 
                     <ChevronDown
-                      className={`w-5 h-5 transition-transform duration-300 ${open === index
+                      className={`w-5 h-5 transition-transform duration-300 ${
+                        open === index
                           ? "rotate-180 text-black"
                           : "rotate-0 text-black"
-                        }`}
+                      }`}
                     />
                   </button>
 
                   {/* Answer */}
                   <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      open === index
                         ? "max-h-150 opacity-100"
                         : "max-h-0 opacity-0"
-                      }`}
+                    }`}
                   >
                     <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                       <p className="text-[17px] leading-8 text-gray-600">
@@ -1333,10 +1401,11 @@ export default function LandingPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${loading
+                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${
+                          loading
                             ? "cursor-not-allowed opacity-60"
                             : "hover:bg-[#d9141c]"
-                          } rounded-full`}
+                        } rounded-full`}
                       >
                         {loading ? "Sending..." : "Get A Free Quote"}
                       </button>

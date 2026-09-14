@@ -1,5 +1,14 @@
 import Link from "next/link";
-import { Phone, ArrowRight, ShieldCheck, Lock, EyeOff, Cookie, UserCheck, Smartphone } from "lucide-react";
+import {
+  Phone,
+  ArrowRight,
+  ShieldCheck,
+  Lock,
+  EyeOff,
+  Cookie,
+  UserCheck,
+  Smartphone,
+} from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 export default function PrivacyPolicy() {
   return (
@@ -12,7 +21,7 @@ export default function PrivacyPolicy() {
               <img
                 src="/images/Dev-App-04.png"
                 alt="Dev App Grid"
-                className="h-10 w-auto object-contain sm:h-12"
+                className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
               />
             </Link>
           </div>
@@ -60,7 +69,8 @@ export default function PrivacyPolicy() {
             Privacy Policy
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-red-100 sm:text-base">
-            At Dev App Grid, we are committed to safeguarding your personal data and ensuring strict confidentiality across all services.
+            At Dev App Grid, we are committed to safeguarding your personal data
+            and ensuring strict confidentiality across all services.
           </p>
         </div>
       </section>
@@ -73,7 +83,10 @@ export default function PrivacyPolicy() {
                 Overview
               </h2>
               <p className="text-[15px] leading-7 text-gray-600 sm:text-base">
-                At Dev App Grid, we are committed to safeguarding the confidentiality of your information. Our privacy policy outlines the procedures we employ to protect your privacy throughout and after our software development collaboration.
+                At Dev App Grid, we are committed to safeguarding the
+                confidentiality of your information. Our privacy policy outlines
+                the procedures we employ to protect your privacy throughout and
+                after our software development collaboration.
               </p>
             </section>
 
@@ -86,7 +99,10 @@ export default function PrivacyPolicy() {
                 User Information
               </h2>
               <p className="text-[15px] leading-7 text-gray-600 sm:text-base">
-                For the purpose of identification and seamless project execution, we collect information to better understand your project requirements and provide you with superior service, specifically for:
+                For the purpose of identification and seamless project
+                execution, we collect information to better understand your
+                project requirements and provide you with superior service,
+                specifically for:
               </p>
               <ol className="grid gap-3 sm:grid-cols-3 pt-2">
                 <li className="rounded-xl bg-slate-50 p-4 border border-slate-100 text-sm font-medium text-gray-700">
@@ -113,10 +129,15 @@ export default function PrivacyPolicy() {
                 Security Standards
               </h2>
               <p className="text-[15px] leading-7 text-gray-600 sm:text-base">
-                We take your information&apos;s security seriously. We have implemented robust physical, electronic, and managerial protocols to prevent unauthorized access or disclosure of the data we collect online.
+                We take your information&apos;s security seriously. We have
+                implemented robust physical, electronic, and managerial
+                protocols to prevent unauthorized access or disclosure of the
+                data we collect online.
               </p>
               <p className="text-[15px] leading-7 text-gray-600 sm:text-base">
-                At Dev App Grid, we use Secure Sockets Layer (SSL) Software to encrypt client information during transmission, ensuring high-level data security.
+                At Dev App Grid, we use Secure Sockets Layer (SSL) Software to
+                encrypt client information during transmission, ensuring
+                high-level data security.
               </p>
             </section>
 
@@ -129,7 +150,10 @@ export default function PrivacyPolicy() {
                 3rd Party Sharing
               </h2>
               <p className="text-[15px] leading-7 text-gray-600 sm:text-base">
-                We never disclose personal information to third parties. Dev App Grid utilizes secure payment processing services solely for billing purposes, ensuring that your financial data remains strictly confidential.
+                We never disclose personal information to third parties. Dev App
+                Grid utilizes secure payment processing services solely for
+                billing purposes, ensuring that your financial data remains
+                strictly confidential.
               </p>
             </section>
 
@@ -142,7 +166,10 @@ export default function PrivacyPolicy() {
                 Cookies And Tracking
               </h2>
               <p className="text-[15px] leading-7 text-gray-600 sm:text-base">
-                Cookies help our systems recognize your browser session and improve website navigation. We use IP addresses to diagnose server issues and analyze aggregated analytics, which is not linked to Personally Identifiable Information (PII).
+                Cookies help our systems recognize your browser session and
+                improve website navigation. We use IP addresses to diagnose
+                server issues and analyze aggregated analytics, which is not
+                linked to Personally Identifiable Information (PII).
               </p>
             </section>
 
@@ -155,7 +182,10 @@ export default function PrivacyPolicy() {
                 Consumer Data Safety & NDAs
               </h2>
               <p className="text-[15px] leading-7 text-gray-600 sm:text-base">
-                We adhere to strict PCI and consumer data protection standards. Your intellectual property and code repository may be accessed by authorized development centers under binding non-disclosure agreements (NDAs) to guarantee full confidentiality.
+                We adhere to strict PCI and consumer data protection standards.
+                Your intellectual property and code repository may be accessed
+                by authorized development centers under binding non-disclosure
+                agreements (NDAs) to guarantee full confidentiality.
               </p>
             </section>
 
@@ -168,17 +198,17 @@ export default function PrivacyPolicy() {
                 Mobile Information Policy
               </h2>
               <p className="text-[15px] leading-7 text-gray-600 sm:text-base">
-                No mobile information will be shared with third parties/affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will strictly remain confidential.
+                No mobile information will be shared with third
+                parties/affiliates for marketing or promotional purposes. Text
+                messaging originator opt-in data and consent will strictly
+                remain confidential.
               </p>
             </section>
 
             {/* FINAL CTA CARD */}
-
-
           </div>
         </div>
-     <div className="relative z-10  bg-black text-center">
-
+        <div className="relative z-10  bg-black text-center">
           {/* LOGO */}
           <div className="flex items-center justify-center gap-1">
             <img
@@ -189,7 +219,6 @@ export default function PrivacyPolicy() {
           </div>
 
           <div className="my-6 flex flex-col items-center justify-around gap-4 py-6 sm:flex-row">
-
             {/* SOCIAL */}
             <div className="text-left">
               <span className="text-[14px] font-medium text-gray-300">
@@ -197,7 +226,6 @@ export default function PrivacyPolicy() {
               </span>
 
               <div className="mt-3 flex items-center gap-3 text-gray-400">
-
                 <a
                   href="#"
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-800 transition-colors hover:border-red-500 hover:text-red-500 sm:h-10 sm:w-10"
@@ -218,7 +246,6 @@ export default function PrivacyPolicy() {
                 >
                   <FaLinkedinIn size={14} />
                 </a>
-
               </div>
             </div>
 
@@ -230,7 +257,7 @@ export default function PrivacyPolicy() {
 
               <div className="text-left">
                 <p className="text-[15px] font-bold leading-tight text-white sm:text-[16px]">
-                 +1 (866) 978-8570
+                  +1 (866) 978-8570
                 </p>
 
                 <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-red-500">
@@ -238,12 +265,10 @@ export default function PrivacyPolicy() {
                 </p>
               </div>
             </div>
-
           </div>
 
           {/* CTA */}
           <div className="py-8">
-
             <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-6xl">
               Let&apos;s work together!
             </h2>
@@ -257,7 +282,6 @@ export default function PrivacyPolicy() {
 
             {/* LEGAL LINKS */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
-
               <Link
                 href="/terms-and-conditions"
                 className="text-gray-400 underline underline-offset-4 transition-colors hover:text-red-500"
@@ -271,7 +295,6 @@ export default function PrivacyPolicy() {
               >
                 Privacy Policy
               </Link>
-
             </div>
           </div>
         </div>

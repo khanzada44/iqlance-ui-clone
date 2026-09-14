@@ -701,7 +701,7 @@ export default function HeroQuoteSection() {
           </div>
         </section>
         <section>
-          <div className="flex flex-col-reverse lg:flex-row gap-10 mt-10">
+          <div className="flex flex-col-reverse lg:flex-row gap-10 mt-10 px-6">
             {/* Left Content */}
             <div className="w-full lg:w-1/2">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Benefits of Healthcare Mobility Solutions</h1>

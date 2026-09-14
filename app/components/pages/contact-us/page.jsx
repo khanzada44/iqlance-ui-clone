@@ -185,7 +185,7 @@ export default function ContactSection() {
 
   return (
     <>
-      <section className="max-w-7xl mx-auto">
+      <section className="max-w-7xl mx-auto px-6">
         {/* Main Contact Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-6">
 

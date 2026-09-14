@@ -782,7 +782,7 @@ const processSteps = [
             </Swiper>
           </div>
         </section>
-        <section>
+        <section className="px-6">
           {ServiceSectionData.map((item, index) => {
             // Checking if index is odd to reverse layout dynamically
             const isEven = index % 2 === 0;

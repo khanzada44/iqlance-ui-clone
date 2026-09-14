@@ -98,7 +98,7 @@ export default function ContactSection() {
   };
   return (
     <>
-      <div className="w-[90%] md:w-[80%] mx-auto max-w-full overflow-hidden">
+      <div className=" w-full  max-w-7xl mx-auto">
         <section className="py-6 bg-white w-full">
           <div className="w-full px-2 sm:px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start w-full">
