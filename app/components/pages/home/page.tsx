@@ -154,7 +154,6 @@ export default function Home() {
             {/* Content */}
             <div className="relative z-10 mx-auto w-[92%] min-h-155 flex items-center">
               <div className="w-full lg:w-[58%] xl:w-[55%] py-16 lg:py-20">
-                {/* Small Heading */}
                 <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium mb-3">
                   Got a Big Idea? Let's Build It Into Something Real.
                 </p>

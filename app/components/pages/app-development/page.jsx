@@ -521,7 +521,6 @@ export default function LandingPage() {
               </div>
             </div> */}
             <div className="relative w-full max-w-150 sm:w-[85%] lg:w-[65%] form-slide-in-right min-h-125">
-              {/* BADGE */}
               <div className="absolute -right-2 -top-10 z-10 sm:-right-3 sm:-top-11">
                 <Image
                   src="/images/contact-form-logo.png"
@@ -626,26 +625,28 @@ export default function LandingPage() {
         </section>
 
         <section className="bg-white py-8 sm:py-9 lg:py-10 overflow-hidden">
-          <style>{`
-    @keyframes logoMarquee {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
+          <style>
+            {`
+                    @keyframes logoMarquee {
+                      from {
+                        transform: translateX(0);
+                      }
+                      to {
+                        transform: translateX(-50%);
+                      }
+                    }
 
-    .logo-marquee {
-      display: flex;
-      width: max-content;
-      animation: logoMarquee 18s linear infinite;
-    }
+                    .logo-marquee {
+                      display: flex;
+                      width: max-content;
+                      animation: logoMarquee 18s linear infinite;
+                    }
 
-    .logo-marquee:hover {
-      animation-play-state: paused;
-    }
-  `}</style>
+                    .logo-marquee:hover {
+                      animation-play-state: paused;
+                    }
+                  `}
+          </style>
 
           <div className="overflow-hidden w-full">
             <div className="logo-marquee">

@@ -25,7 +25,7 @@ export default function Portfolio() {
 
         // Handle response layout securely
         const dataList = res?.response?.data || res?.data || [];
-        console.log('dataList', dataList);
+
 
         setCategoriesData(dataList);
 

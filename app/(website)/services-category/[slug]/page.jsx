@@ -67,7 +67,6 @@ export async function generateMetadata({ params }) {
   const description =
     category?.description ||
     `Explore our ${title} services and solutions.`;
-  console.log('description', description);
 
   return {
     title: `${title} | DEVAPP`,

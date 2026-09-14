@@ -138,10 +138,6 @@ export default function HeroQuoteSection() {
         const blogList = data?.response?.data || [];
         setBlogs(blogList);
       } catch (error) {
-        console.log("Message:", error.message);
-        console.log("Code:", error.code);
-        console.log("Response:", error.response);
-        console.log("Request:", error.request);
         setBlogs([]);
       }
     };

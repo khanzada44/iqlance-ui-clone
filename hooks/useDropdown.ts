@@ -8,7 +8,6 @@ export const useDropdown = () => {
   const isHoveringRef = useRef<boolean>(false);
 
   const handleMouseEnter = useCallback((label: string) => {
-    console.log('useDropdown - Enter:', label); // Debug
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
@@ -18,7 +17,7 @@ export const useDropdown = () => {
   }, []);
 
   const handleMouseLeave = useCallback(() => {
-    console.log('useDropdown - Leave'); // Debug
+
     isHoveringRef.current = false;
     timeoutRef.current = setTimeout(() => {
       if (!isHoveringRef.current) {

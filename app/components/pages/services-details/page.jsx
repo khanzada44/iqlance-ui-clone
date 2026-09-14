@@ -83,20 +83,13 @@ export default function ServicesCategory({ slug }) {
   useEffect(() => {
     const fetchService = async () => {
       if (!slug) {
-        console.log("Slug not found");
         return;
       }
 
       try {
         setServiceLoading(true);
         setServiceError("");
-
-        console.log("URL Slug:", slug);
-
         const data = await serviceCategorieBySlug(slug);
-
-        console.log("Service API Response:", data);
-
         setServiceData(data);
 
         /* Set API service values into form */

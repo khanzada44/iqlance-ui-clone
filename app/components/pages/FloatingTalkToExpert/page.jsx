@@ -18,7 +18,6 @@ export default function FloatingTalkToExpert() {
       // Sirf phone number API me bhejna
       const payload = { number: phoneNumber };
       const response = await submitCallRequest(payload);
-      console.log("Success:", response);
 
       setStatusMessage({
         type: "success",

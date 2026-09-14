@@ -42,7 +42,6 @@
 //         setLoadingCatId(catId);
 //         // 1. API Hit for Sub-Categories
 //         const subCatRes = await blogCategories(catId);
-//         console.log("Sub Categories Data:", subCatRes);
 //       } catch (err) {
 //         console.error("Failed to fetch sub-categories:", err);
 //       } finally {
@@ -67,7 +66,6 @@
 //         // Fetch Categories
 //         const catRes = await blogCategories();
 //         const catData = catRes?.response?.data || catRes?.data || catRes || [];
-//         console.log("catData", catData);
 
 //         setCategories(Array.isArray(catData) ? catData : []);
 

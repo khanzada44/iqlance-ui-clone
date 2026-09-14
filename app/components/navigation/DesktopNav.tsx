@@ -38,7 +38,6 @@ export const DesktopNav = ({
               }
             }}
             onMouseLeave={() => {
-              console.log('Leave from:', link.label); 
               if (isServices) {
                 onServicesLeave();
               } else {

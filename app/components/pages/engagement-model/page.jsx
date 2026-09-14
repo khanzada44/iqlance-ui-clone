@@ -39,9 +39,6 @@ export default function EngagementModelSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-
-    // API Call integration logic
     try {
       const data = new FormData();
       data.append("name", formData.name);

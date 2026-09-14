@@ -84,25 +84,13 @@ export default function ServicesCategory({ slug }) {
   useEffect(() => {
     const fetchService = async () => {
       if (!slug) {
-        console.log("Slug not found");
         return;
       }
 
       try {
         setServiceLoading(true);
         setServiceError("");
-
-        console.log("URL Slug:", slug);
-
         const data = await serviceCategorieSlug(slug);
-
-        console.log("API Response:", data);
-        console.log("Service Name:", data?.[0]?.name);
-        console.log("Service Description:", data?.[0]?.description);
-        console.log("Service Icon:", data?.[0]?.icon_url);
-        console.log("Services:", data?.[0]?.services);
-
-        // IMPORTANT
         const service = data?.[0] || null;
 
         setServiceData(service);

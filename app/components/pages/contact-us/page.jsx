@@ -63,9 +63,6 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("FORM SUBMITTED");
-    console.log("FORM DATA:", formData);
-
     setLoading(true);
 
     setStatusMessage({
@@ -100,44 +97,16 @@ export default function ContactSection() {
         formData.service_category || ""
       );
 
-      // --------------------------------
-      // FILE
-      // --------------------------------
-
       if (formData.file instanceof File) {
         payload.append("file", formData.file);
       }
-
-      // --------------------------------
-      // DEBUG PAYLOAD
-      // --------------------------------
-
-      console.log("FORM PAYLOAD:");
-
       for (const [key, value] of payload.entries()) {
-        console.log(key, value);
       }
-
-      // --------------------------------
-      // API CALL
-      // --------------------------------
-
       const response = await submitContactForm(payload);
-
-      console.log("API SUCCESS:", response);
-
-      // --------------------------------
-      // SUCCESS MESSAGE
-      // --------------------------------
-
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
       });
-
-      // --------------------------------
-      // RESET FORM
-      // --------------------------------
 
       setFormData({
         name: "",
