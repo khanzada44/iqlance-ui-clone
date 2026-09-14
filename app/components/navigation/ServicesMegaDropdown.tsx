@@ -26,7 +26,6 @@ export const ServicesMegaDropdown = ({
       onMouseLeave={onMouseLeave}
     >
       <div className="mx-auto max-w-6xl px-4 py-8">
-        {/* Title */}
         <h2 className="mb-6 text-xl font-semibold text-gray-500">
           {servicesData.title}
         </h2>
