@@ -61,7 +61,7 @@ export const tabsData = [
     modelNum: "Model 1",
     navLabel: "1. Hourly",
     title: "Hourly (Time & Material)",
-    image: "/images/model-tab-1.png",
+    image: "/images/about/engagement-model/model-tab-1.webp",
     paragraphs: [
       "Projects evolve, and this model is built for exactly that. Our Time & Material engagement gives you the flexibility and control to adapt as your development journey unfolds. It's the right fit when requirements aren't set in stone, letting you pay only for the actual time and resources your project uses. This approach lets our experienced team build complex, interactive mobile applications efficiently, without getting locked into a scope that no longer fits.",
     ],
@@ -75,7 +75,7 @@ export const tabsData = [
     modelNum: "Model 2",
     navLabel: "2. Fixed Cost",
     title: "Hourly (Time & Material)",
-    image: "/images/model-tab-2.png",
+    image: "/images/about/engagement-model/model-tab-2.webp",
     paragraphs: [
       "Projects evolve, and this model is built for exactly that. Our Time & Material engagement gives you the flexibility and control to adapt as your development journey unfolds. It's the right fit when requirements aren't set in stone, letting you pay only for the actual time and resources your project uses. This approach lets our experienced team build complex, interactive mobile applications efficiently, without getting locked into a scope that no longer fits.",
       "",
@@ -90,7 +90,7 @@ export const tabsData = [
     modelNum: "Model 3",
     navLabel: "3. Dedicated",
     title: "Dedicated",
-    image: "/images/model-tab-3.png",
+    image: "/images/about/engagement-model/model-tab-3.webp",
     paragraphs: [
       "Our Dedicated Team model allows you to hire skilled developers and other technology professionals based on your specific business requirements. This approach provides greater flexibility and supports long-term collaboration between your business and our development team.",
       "This model is ideal for long-term projects that require flexibility, ongoing development, and direct involvement in resource management and project progress.",

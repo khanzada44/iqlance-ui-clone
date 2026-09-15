@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image"; // Next.js Image Component
+import Image from "next/image"; 
 import Link from "next/link";
 import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react"; // Combined Lucide Icons
 import ContactForm from "../../contactForm/ContactForm";
@@ -99,9 +99,11 @@ export default function About() {
                   >
                     {/* Floating Icon */}
                     <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                      <img
+                      <Image
                         src={item.icon}
                         alt=""
+                        width={44}
+                        height={44}
                         className="w-11 h-11 object-contain"
                       />
                     </div>
@@ -166,8 +168,8 @@ export default function About() {
                 </Link>
               </div>
               <div>
-                <img
-                  src="/images/why-choose-us-hb.jpg"
+                <Image
+                  src="/images/about/about-us/why-choose-us-hb.webp"
                   alt="Technology Partner"
                   width={650}
                   height={700}
@@ -196,7 +198,7 @@ export default function About() {
                   key={index}
                   className="border border-gray-200 p-8 min-h-90"
                 >
-                  <img
+                  <Image
                     src={item.icon}
                     alt={item.title}
                     width={60}
@@ -218,7 +220,6 @@ export default function About() {
         </section>
         <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
@@ -228,22 +229,15 @@ export default function About() {
                 className="object-contain w-auto h-auto"
               />
             </div>
-
-            {/* Section Heading */}
             <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Ready to Turn Your Idea Into a Successful Digital Product? Let’s
               Build It Together.
             </h3>
-
-            {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
               Call us Today for a Free Consultation:
             </p>
-
-            {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-200 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
-                {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -263,8 +257,6 @@ export default function About() {
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                    <div
                     className="w-6 h-6 bg-red-600"
@@ -351,7 +343,7 @@ export default function About() {
             </div>
             <div className="mt-12">
               <img
-                src="/images/about-us-iqlance.jpg"
+                src="/images/about/about-us/about-us-iqlance.webp"
                 alt="About Devapp"
                 width={1200}
                 height={500}

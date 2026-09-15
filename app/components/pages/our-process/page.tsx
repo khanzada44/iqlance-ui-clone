@@ -14,7 +14,13 @@ export default function ourProcess() {
     <>
       <div className="w-full max-w-7xl mx-auto">
         <div className="mt-10">
-          <img src="/images/our-process-header.png" alt="" />
+          <Image
+            src="/images/about/our-process/our-process-header.webp"
+            alt=""
+            width={1200}
+            height={800}
+            className="w-full h-auto rounded-lg"
+          />
         </div>
         <section className="py-16 bg-white text-center">
           <div className="max-w-6xl mx-auto px-4">
@@ -82,38 +88,38 @@ export default function ourProcess() {
             </div>
           </div>
         </section>
-            <section>
-              <div className="flex flex-wrap justify-center gap-7 mb-10">
-                {stats.map((item, index) => (
-                  <div
-                    key={index}
-                    className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
-                  >
-                    {/* Floating Icon */}
-                    <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                      <img
-                        src={item.icon}
-                        alt=""
-                        className="w-11 h-11 object-contain"
-                      />
-                    </div>
+        <section>
+          <div className="flex flex-wrap justify-center gap-7 mb-10">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+              >
+                {/* Floating Icon */}
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="w-11 h-11 object-contain"
+                  />
+                </div>
 
-                    {/* Text Container */}
-                    <div className="flex flex-col gap-1">
-                      <h3 className="text-lg font-bold text-black leading-none">
-                        {item.value}
-                      </h3>
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
 
-                      <p className="text-sm leading-tight text-black">
-                        {item.line1}
-                        <br />
-                        {item.line2}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
               </div>
-            </section>
+            ))}
+          </div>
+        </section>
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -143,13 +149,13 @@ export default function ourProcess() {
                   />
                 </Link>
               </div>
-
-              {/* Right Image */}
               <div>
-                <img
-                  src="/images/our-process-right.jpg"
-                  alt="Development Process"
-                  className="w-full object-cover"
+                <Image
+                  src="/images/about/our-process/our-process-right.webp"
+                  alt=""
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto rounded-lg"
                 />
               </div>
             </div>

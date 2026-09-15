@@ -32,7 +32,7 @@ export const bottomFeatures = [
 export const slides = [
   {
     id: 1,
-    image:"/images/realeaste-left-1.jpg",
+    image:"/images/industry/real-estate/realeaste-left-1.webp",
     title: "Customer-centric approach",
     description:
       "We know very well that a top quality of real estate app development requires detailed research work and in-depth knowledge to come up with a business-oriented, result oriented and customer-centric application.",
@@ -46,8 +46,7 @@ export const slides = [
   },
   {
     id: 2,
-    image:
-      "/images/realeaste-left-2.jpg",
+    image:"/images/industry/real-estate/realeaste-left-2.webp",
     title: "Assistance in Buy/Sell of Property",
     description:
       "Our real estate app helps you in accomplishing your every possible need while you go to buy or sell your property. Thus, our team at Devapp delivers you unrivaled solutions to fulfill almost need of our clients. These are-",
@@ -61,7 +60,7 @@ export const slides = [
   },
   {
     id: 3,
-      image:"/images/realeaste-left-3.jpg",
+    image:"/images/industry/real-estate/realeaste-left-3.webp",
     title: "Property Search and Listings in mobile/web app",
     description:
       "To develop any real estate mobile application, we comprehend each aspect of a real estate business group and focus on incorporating features that influences the users and provide exceptional experience. These are-",
@@ -75,7 +74,7 @@ export const slides = [
   },
   {
     id: 4,
-    image:"/images/realeaste-left-4.jpg",
+    image:"/images/industry/real-estate/realeaste-left-4.webp",
     title: "Emerging functionalities",
      description:
       "Apart from simple buy and sell transaction real estate applications are now supercharged with the extraordinary features. These functionalities have made the life of a user very easy to learn each and every fact from an app itself. These are-",
@@ -103,7 +102,7 @@ export const ServiceSectionData = [
       "A growing suite of features designed to make every real estate transaction smoother",
     ],
 
-    imageUrl: "/images/building-app-re.jpg",
+    imageUrl: "/images/industry/real-estate/building-app-re.webp",
     imageAlt: "Real Estate App Development",
   },
 
@@ -120,7 +119,8 @@ export const ServiceSectionData = [
       "An Agile development process that keeps your budget in check without cutting corners on quality",
     ],
 
-    imageUrl: "/images/advantages-photo-re.jpg",
+
+    imageUrl: "/images/industry/real-estate/advantages-photo-re.webp",
     imageAlt: "Real Estate App Development",
   },
 ];

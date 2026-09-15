@@ -1,21 +1,17 @@
 "use client";
 import { useState } from "react";
-import { offices, benefitsCol1, benefitsCol2, benefitsCol3, faqs } from "../career/data";
+import Image from "next/image";
+import { benefitsCol1, benefitsCol2, benefitsCol3, faqs } from "../career/data";
 import {
   ChevronDown,
   ChevronUp,
   ChevronRight,
-  Star,
-  Paperclip,
   ArrowRight,
-  Phone,
-  ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
 import ContactForm from "../../contactForm/ContactForm";
 import { careerLinks } from "../career/data";
 import { stats, partners, faqsData } from "../../../../utils/data";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -27,7 +23,7 @@ export default function career() {
       <div className="w-full max-w-7xl mx-auto">
         <div>
           <img
-            src="/images/career-header.png"
+            src="/images/about/career/career-header.webp"
             alt=""
             className="mt-10"
           />
@@ -49,19 +45,18 @@ export default function career() {
               </p>
 
               <p>
-                You won't get lost in the shuffle here. Every Devappr works on real projects, 
-                with real clients, solving real problems, not stuck running the same five tasks on repeat 
-                for two years straight. If you're the kind of person who gets restless without a challenge, 
+                You won't get lost in the shuffle here. Every Devappr works on real projects,
+                with real clients, solving real problems, not stuck running the same five tasks on repeat
+                for two years straight. If you're the kind of person who gets restless without a challenge,
                 this is probably where you belong
               </p>
 
               <p>
-                We're growing, and we're looking for people who want to grow with us, 
+                We're growing, and we're looking for people who want to grow with us,
                 not just clock in and out. If that sounds like you, let's talk.
               </p>
             </div>
 
-            {/* Career Links */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-10 max-w-5xl mx-auto mt-12">
               {careerLinks.map((item) => (
                 <Link
@@ -75,7 +70,6 @@ export default function career() {
               ))}
             </div>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-14">
-              {/* Contact Us Link */}
               <Link
                 href="/contact"
                 className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex items-center justify-center gap-3 transition"
@@ -86,8 +80,6 @@ export default function career() {
                   className="transition-transform duration-300 group-hover:translate-x-1.5"
                 />
               </Link>
-
-              {/* See Our Work Link */}
               <Link
                 href="/portfolio"
                 className="group w-full sm:w-auto border border-gray-300 hover:border-red-500 hover:text-black px-8 py-4 font-semibold flex items-center justify-center gap-3 transition"
@@ -99,8 +91,6 @@ export default function career() {
                 />
               </Link>
             </div>
-
-            {/* Bottom Heading */}
             <div className="mt-20">
               <h3 className="text-3xl md:text-5xl font-bold text-center">
                 Offshore Web, Mobile & Software Development Company
@@ -116,38 +106,40 @@ export default function career() {
             </div>
           </div>
         </section>
-            <section>
-              <div className="flex flex-wrap justify-center gap-7 mb-10">
-                {stats.map((item, index) => (
-                  <div
-                    key={index}
-                    className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
-                  >
-                    {/* Floating Icon */}
-                    <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                      <img
-                        src={item.icon}
-                        alt=""
-                        className="w-11 h-11 object-contain"
-                      />
-                    </div>
+        <section>
+          <div className="flex flex-wrap justify-center gap-7 mb-10">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+              >
+                {/* Floating Icon */}
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                  <Image
+                    src={item.icon}
+                    alt=""
+                    width={44}
+                    height={44}
+                    className="w-11 h-11 object-contain"
+                  />
+                </div>
 
-                    {/* Text Container */}
-                    <div className="flex flex-col gap-1">
-                      <h3 className="text-lg font-bold text-black leading-none">
-                        {item.value}
-                      </h3>
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
 
-                      <p className="text-sm leading-tight text-black">
-                        {item.line1}
-                        <br />
-                        {item.line2}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
               </div>
-            </section>
+            ))}
+          </div>
+        </section>
         <section>
           <div className="max-w-7xl mx-auto px-4 mt-10">
             {/* About */}
@@ -157,15 +149,15 @@ export default function career() {
               <div className="mt-8 space-y-7 text-gray-700 text-base md:text-lg leading-8">
                 <p>
                   Every big company was small once. Ours started with just one person and an idea worth chasing,
-                   and over the years, that idea grew into something bigger: a 
+                  and over the years, that idea grew into something bigger: a
                   full team of people who genuinely care about the work they do and the businesses they help build
                 </p>
 
                 <p>
-                  We haven't lost that original spark along the way. If anything, 
-                  it's what still drives us. Because behind every project we take on, 
-                  there's a person on the other end with a vision, sometimes a nervous one, 
-                  sometimes an ambitious one, and always one that deserves to be taken seriously. 
+                  We haven't lost that original spark along the way. If anything,
+                  it's what still drives us. Because behind every project we take on,
+                  there's a person on the other end with a vision, sometimes a nervous one,
+                  sometimes an ambitious one, and always one that deserves to be taken seriously.
                   That's the part of the job we never stop caring about.
 
                 </p>
@@ -186,19 +178,21 @@ export default function career() {
 
               <p className="mt-8 text-gray-700 text-base md:text-lg leading-8 max-w-5xl mx-auto">
                 If you're looking for just a job, this probably isn't it. But if you're looking
-                 for a place to actually build a career, somewhere your ideas matter and your
-                  growth isn't an afterthought, that's exactly what we're offering.
-                   We're looking for people who think differently, work well with others, 
-                   and want to be challenged, not just occupied. If that sounds like you, 
-                   don't wait on it. Apply today, and let's build something worth being proud of,
-                  together.
+                for a place to actually build a career, somewhere your ideas matter and your
+                growth isn't an afterthought, that's exactly what we're offering.
+                We're looking for people who think differently, work well with others,
+                and want to be challenged, not just occupied. If that sounds like you,
+                don't wait on it. Apply today, and let's build something worth being proud of,
+                together.
 
               </p>
             </div>
             <div className="mt-2 pt-2">
-              <img
-                src="/images/why-iq-join-photo.jpg"
+              <Image
+                src="/images/about/career/why-iq-join-photo.webp"
                 alt="Why Join Devapp"
+                width={800}
+                height={600}
                 className="w-full aspect-16/10 lg:aspect-4/3 object-cover"
               />
             </div>
@@ -215,7 +209,7 @@ export default function career() {
             <div className="max-w-4xl mx-auto space-y-4 text-gray-700 text-sm md:text-base leading-relaxed mb-12">
               <p>
                 Walk into Devapp on any given day, and you'll feel it before anyone even explains it:
-                this is a place built on the mix of technical innovation and creative energy. 
+                this is a place built on the mix of technical innovation and creative energy.
                 We work hard, sure, but we also learn, laugh, and build something new almost every
                 single day, and that combination is what makes the culture here genuinely different.
 
@@ -230,9 +224,9 @@ export default function career() {
 
               </p>
               <p>
-                We also believe growth never really stops, which is why feedback isn't an afterthought here. 
+                We also believe growth never really stops, which is why feedback isn't an afterthought here.
                 Through regular feedback sessions, employee surveys, and informal
-                 groups run by our own team members, we keep improving, together, from the inside out.
+                groups run by our own team members, we keep improving, together, from the inside out.
               </p>
             </div>
 
@@ -391,7 +385,7 @@ export default function career() {
             </p>
 
             <div className="mt-12 space-y-4">
-              {faqs.map((faq, index) => (
+              {faqsData.map((faq, index) => (
                 <div
                   key={index}
                   className="border border-gray-200 rounded-lg overflow-hidden"
@@ -447,9 +441,11 @@ export default function career() {
                 key={`${item.id}-${index}`}
                 className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
               >
-                <img
+                <Image
                   src={item.image}
                   alt={item.alt}
+                  width={500}
+                  height={500}
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

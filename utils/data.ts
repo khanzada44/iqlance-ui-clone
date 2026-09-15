@@ -450,31 +450,31 @@ export const technologies = [
 ]
 export const stats = [
   {
-    icon: '/images/icon-5.png',
+    icon: '/images/about/about-us/icon-5.webp',
     value: "8+",
     line1: "Years",
     line2: "of experience",
   },
   {
-    icon: '/images/icon-6.png',
+    icon: '/images/about/about-us/icon-6.webp',
     value: "1500+",
     line1: "Successful",
     line2: "Projects",
   },
   {
-    icon: '/images/icon-7.png',
+    icon: '/images/about/about-us/icon-7.webp',
     value: "200+",
     line1: "Happy Clients",
     line2: "World Wide",
   },
   {
-    icon: '/images/icon-8.png',
+    icon: '/images/about/about-us/icon-8.webp',
     value: "800K+",
     line1: "Hours",
     line2: "Invested",
   },
   {
-    icon: '/images/icon-9.png',
+    icon: '/images/about/about-us/icon-9.webp',
     value: "100%",
     line1: "Best",
     line2: "Quality Delivery",
@@ -484,53 +484,47 @@ export const stats = [
 export const industries = [
   {
     title: "Wellness & Fitness",
-    bgImage:
-      "/images/wellness_fitness_images.jpg",
+    bgImage: "/images/industry/real-estate/wellness_fitness_images.webp",
     icon: "/images/wellness_fitness_icon.png",
   },
   {
     title: "Food & Restaurant",
-    bgImage:
-      "/images/food_restaurant_images.jpg",
+    bgImage: "/images/industry/real-estate/food_restaurant_images.webp",
     icon: "/images/food_restaurant_icon.png",
   },
   {
     title: "Media & Entertainment",
-    bgImage:
-      "/images/streamingconceptscreensofcontent.jpg",
+    bgImage: "/images/industry/real-estate/streamingconceptscreensofcontent.webp",
     icon: "/images/media-icn.png",
   },
   {
     title: "Real Estate",
-    bgImage: "/images/guide-to-real-estate.webp",
+    bgImage: "/images/industry/real-estate/guide-to-real-estate.webp",
     icon: "/images/real-easte-icn.png",
   },
   {
     title: "Healthcare",
-    bgImage: "/images/healthcare-apps.jpg",
+    bgImage: "/images/industry/real-estate/healthcare-apps.webp",
     icon: "/images/healthcare-icn.png",
   },
   {
     title: "E-commerce",
-    bgImage:
-      "/images/upi-credit-cards-v1.png",
+    bgImage: "/images/industry/real-estate/upi-credit-cards-v1.webp",
     icon: "/images/reatail-icn.png",
   },
   {
     title: "Education",
-    bgImage: "/images/60fc9ce79bf37.jpg",
+    bgImage: "/images/industry/real-estate/60fc9ce79bf37.webp",
     icon: "/images/educ-icn.png",
   },
   {
     title: "Logistics",
-    bgImage:
-      "/images/images.jpg",
+    bgImage: "/images/industry/real-estate/images.webp",
     icon: "/images/logistic-icon.png",
   },
   {
     title: "Travel & Hospitality",
-    bgImage:
-      "/images/travel-and-hospitality-industry-banner-1400x800-1.jpg",
+    bgImage: "/images/industry/real-estate/travel-and-hospitality-industry-banner-1400x800-1.webp",
     icon: "/images/travel-icn.png",
   },
   {

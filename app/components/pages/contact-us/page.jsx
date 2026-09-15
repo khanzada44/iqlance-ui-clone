@@ -61,20 +61,14 @@ export default function ContactSection() {
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
+    e.preventDefault()
     setLoading(true);
-
     setStatusMessage({
       type: "",
       text: "",
     });
 
     try {
-      // --------------------------------
-      // CREATE FORMDATA
-      // --------------------------------
-
       const payload = new FormData();
 
       payload.append("name", formData.name.trim());
@@ -119,7 +113,6 @@ export default function ContactSection() {
         sendNda: false,
       });
 
-      // Clear file input
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
@@ -155,10 +148,7 @@ export default function ContactSection() {
   return (
     <>
       <section className="max-w-7xl mx-auto px-6">
-        {/* Main Contact Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-6">
-
-          {/* Left Column: Info & Perks */}
           <div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-950 bg-clip-text text-transparent">
               Contact Us
@@ -214,12 +204,8 @@ export default function ContactSection() {
               <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1.5" />
             </Link>
           </div>
-
-          {/* Right Column: Request a Free Quote Form */}
           <div className="relative w-full pt-4 sm:pt-0">
             <div className="relative bg-[#F7F8FA] border border-blue-100/60 p-6 sm:p-8 w-full lg:w-[95%] xl:w-[90%] shadow-lg rounded-md">
-
-              {/* Ribbon / Badge (Responsive positioning for mobile & desktop) */}
               <div className="absolute -top-5 right-2 sm:-top-6 sm:-right-3 z-10 w-20 sm:w-24 drop-shadow-md">
                 <img
                   src="/images/contact-form-logo.png"

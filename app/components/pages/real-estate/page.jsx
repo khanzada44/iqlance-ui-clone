@@ -109,11 +109,6 @@ export default function realEstate() {
         "service_category",
         formData.service_category || ""
       );
-
-      // --------------------------------
-      // FILE
-      // --------------------------------
-
       if (formData.file instanceof File) {
         payload.append("file", formData.file);
       }
@@ -174,7 +169,6 @@ export default function realEstate() {
       <div className="w-full max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
                 Real Estate App Development
@@ -194,10 +188,7 @@ export default function realEstate() {
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
                 We also offer Virtual CTO support alongside our development services, so you get strategic technology guidance from day one not just code delivered on a deadline.
-
               </p>
-
-              {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
@@ -216,11 +207,8 @@ export default function realEstate() {
                 </Link>
               </div>
             </div>
-
-            {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
               <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
-                {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
                     src="/images/contact-form-logo.png"
@@ -420,11 +408,14 @@ export default function realEstate() {
             </div>
           </div>
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
-            <img
-              src="/images/custom-app-re.jpg"
-              alt="Cost Calculation & Financial Planning"
-              className="w-full h-full object-cover"
-            />
+        <Image
+          src="/images/industry/real-estate/custom-app-re.webp"
+          alt="Cost Calculation & Financial Planning"
+          width={1200}
+          height={800}
+          className="w-full h-full object-cover"
+        />
+
           </div>
         </section>
         <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10 ">
@@ -432,7 +423,7 @@ export default function realEstate() {
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp" 
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -551,11 +542,12 @@ export default function realEstate() {
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
                   <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
-                    {/* Image */}
                     <div className="w-full lg:w-1/2">
-                      <img
+                      <Image
                         src={slide.image}
                         alt={slide.title}
+                        width={1200}
+                        height={800}
                         className="w-full h-64 sm:h-80 md:h-96 lg:h-125 object-cover"
                       />
                     </div>
@@ -1071,14 +1063,13 @@ export default function realEstate() {
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
-
-          {/* Banner Image */}
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
             <img
               src="/images/healthcare-app-built.jpg"
               alt="Cost Calculation & Financial Planning"
               className="w-full h-full object-cover"
             />
+            
           </div>
 
           {/* Success Stories Heading Section */}

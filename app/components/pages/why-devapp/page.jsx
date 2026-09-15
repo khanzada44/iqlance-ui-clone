@@ -12,9 +12,11 @@ export default function whyDevapp() {
     <>
       <div className="w-full  max-w-7xl mx-auto">
         <div className="mt-2 pt-2">
-          <img
-            src="/images/why-us-header-banner.png"
-            alt="Why Us Banner"
+          <Image
+            src="/images/about/why-devapp/why-us-header-banner.webp"
+            alt=""
+            width={1200}
+            height={800}
             className="w-full h-auto rounded-lg"
           />
         </div>
@@ -30,10 +32,10 @@ export default function whyDevapp() {
           </h2>
           <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
             At Devapp, we combine product thinking, technical expertise, and execution to help
-             businesses turn early-stage ideas into products people can actually use. We don't 
-             believe in stuffing an MVP with every possible feature. Instead, we identify what can 
-             create the most value, build it well, and give you a foundation that can grow with your
-              business.
+            businesses turn early-stage ideas into products people can actually use. We don't
+            believe in stuffing an MVP with every possible feature. Instead, we identify what can
+            create the most value, build it well, and give you a foundation that can grow with your
+            business.
 
           </p>
 
@@ -180,10 +182,13 @@ export default function whyDevapp() {
             </div>
 
             <div>
-              <img
-                src="/images/part-b-whyus.jpg"
-                alt="Trusted Partners"
-                className="w-full h-auto object-cover shadow-lg"
+
+              <Image
+                src="/images/about/why-devapp/part-b-whyus.webp"
+                alt=""
+                width={1200}
+                height={800}
+                className="w-full h-auto rounded-lg"
               />
             </div>
           </div>
@@ -218,10 +223,13 @@ export default function whyDevapp() {
           </p>
 
           <div className="flex justify-center">
-            <img
-              src="/images/top-company-whyus.jpg"
-              alt="App Development"
-              className="w-full  shadow-lg object-cover"
+
+            <Image
+              src="/images/about/why-devapp/top-company-whyus.webp"
+              alt=""
+              width={1200}
+              height={800}
+              className="w-full h-auto rounded-lg"
             />
           </div>
         </section>
@@ -272,11 +280,13 @@ export default function whyDevapp() {
                 key={index}
                 className="border border-gray-200 p-6 hover:shadow-lg transition duration-300 bg-white"
               >
-                <img
-                  src={feature.icon}
-                  alt={feature.title}
-                  className="w-12 h-12 mb-4"
-                />
+               <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 mb-4 object-contain"
+                  />
 
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
 
@@ -287,31 +297,23 @@ export default function whyDevapp() {
         </section>
         <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt=""
                 width={64}
                 height={64}
-                className="object-contain w-auto h-auto"
+                className="w-full h-auto rounded-lg"
               />
             </div>
-
-            {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Ready to Get Started?
             </h2>
-
-            {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
               The best time to talk about your idea is before someone else builds it first. Call us today for a free consultation, and let's see where we can take it.
             </p>
-
-            {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-400 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
-                {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5  transition-colors"
@@ -331,8 +333,6 @@ export default function whyDevapp() {
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -355,8 +355,6 @@ export default function whyDevapp() {
                 </div>
               </div>
             </div>
-
-            {/* Action Button */}
             <div>
               <Link
                 href="/lets-talk"

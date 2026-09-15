@@ -6,7 +6,7 @@ import { ChevronDown, ChevronUp } from "lucide-react"; // Combined Lucide Icons
 import ContactForm from "../../contactForm/ContactForm";
 import { ArrowRight, ChevronRight, Paperclip } from "lucide-react";
 import { comparisonData, features, tabsData } from "../engagement-model/data";
-import { stats, partners,faqsData } from "../../../../utils/data";
+import { stats, partners, faqsData } from "../../../../utils/data";
 
 export default function EngagementModelSection() {
   const [activeModelTab, setActiveModelTab] = useState("hourly");
@@ -61,7 +61,7 @@ export default function EngagementModelSection() {
               {/* Left Content */}
               <div className="lg:col-span-7 text-center lg:text-left mt-8">
                 <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
-                  Engagement Model                  
+                  Engagement Model
                 </h3>
 
                 <h3 className="mt-4 sm:mt-6 text-xl sm:text-2xl font-semibold">
@@ -69,16 +69,16 @@ export default function EngagementModelSection() {
                 </h3>
 
                 <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
-                  Devapp Solutions has built its reputation on more than just great technology; 
-                  it's the long-term relationships we build with clients that set us apart. Our experienced 
-                  development team knows that the right engagement model isn't a small detail, it's 
+                  Devapp Solutions has built its reputation on more than just great technology;
+                  it's the long-term relationships we build with clients that set us apart. Our experienced
+                  development team knows that the right engagement model isn't a small detail, it's
                   the foundation for quality delivery, real transparency, and a project that actually succeeds.
                 </p>
 
                 <p className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
-                  As a seasoned mobile app and software development company, we offer three flexible 
-                  engagement models designed to fit different project needs, budgets, and business goals 
-                  because no two projects (or businesses) are exactly alike. Not sure which one fits you? 
+                  As a seasoned mobile app and software development company, we offer three flexible
+                  engagement models designed to fit different project needs, budgets, and business goals
+                  because no two projects (or businesses) are exactly alike. Not sure which one fits you?
                   Get in touch with our consultants today and find the right model for your next project
                 </p>
 
@@ -245,8 +245,8 @@ export default function EngagementModelSection() {
           <div className="w-full px-3 sm:px-5">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-start">
               <div>
-                <img
-                  src="/images/engagement-model-lefts.jpg"
+                <Image
+                  src="/images/about/engagement-model/engagement-model-lefts.webp"
                   alt="Engagement Model"
                   width={700}
                   height={450}
@@ -260,30 +260,28 @@ export default function EngagementModelSection() {
                 </h2>
 
                 <p className="mt-4 sm:mt-5 text-sm sm:text-base md:text-[17px] leading-7 sm:leading-8 text-gray-600">
-                  As your technology partner, we offer three flexible engagement models built to 
-                  match different project scopes and business needs, whether you've got every detail 
+                  As your technology partner, we offer three flexible engagement models built to
+                  match different project scopes and business needs, whether you've got every detail
                   mapped out already or you're still shaping the idea.
-                   Either way, our team can help you find the model that fits.
+                  Either way, our team can help you find the model that fits.
                 </p>
 
                 <p className="mt-5 sm:mt-6 text-sm sm:text-base md:text-[17px] leading-7 sm:leading-8 text-gray-600">
-                  Not sure where to start? That's exactly what we're here for. 
-                  Devapp offers a free 20-minute consultation with an experienced expert to 
+                  Not sure where to start? That's exactly what we're here for.
+                  Devapp offers a free 20-minute consultation with an experienced expert to
                   help you nail down your product vision, development requirements, and project goals.
-                   Get in touch with us today. Let's figure it out together.
+                  Get in touch with us today. Let's figure it out together.
                 </p>
               </div>
             </div>
-
-            {/* Table */}
             <div className="mt-10 sm:mt-14 overflow-x-auto -mx-3 px-3 sm:mx-0 sm:px-0">
               <table className="w-full min-w-160 border border-gray-300 text-center">
                 <thead>
                   <tr>
                     <th className="border border-red-100 bg-red-50  p-3 sm:p-6  w-40 sm:w-64">
                       <div className="flex flex-col items-center">
-                        <img
-                          src="/images/Dev-App-04.png"
+                        <Image
+                          src="/images/about/engagement-model/Dev-App-04.webp"
                           alt="Logo"
                           width={100}
                           height={35}
@@ -297,8 +295,8 @@ export default function EngagementModelSection() {
 
                     <th className="border border-red-100 bg-red-50 p-3 sm:p-6">
                       <div className="flex flex-col items-center">
-                        <img
-                          src="/blog-images/emodel-hourly-icn.png"
+                        <Image
+                          src="/images/about/engagement-model/emodel-hourly-icn.webp"
                           alt=""
                           width={35}
                           height={35}
@@ -312,8 +310,8 @@ export default function EngagementModelSection() {
 
                     <th className="border border-red-100 bg-red-50  p-3 sm:p-6">
                       <div className="flex flex-col items-center">
-                        <img
-                          src="/images/fixbg-icn-em.png"
+                        <Image
+                          src="/images/about/engagement-model/fixbg-icn-em.webp"
                           alt=""
                           width={35}
                           height={35}
@@ -327,8 +325,8 @@ export default function EngagementModelSection() {
 
                     <th className="border border-red-100 bg-red-50  p-3 sm:p-6">
                       <div className="flex flex-col items-center">
-                        <img
-                          src="/images/dedicated-icn-em.png"
+                        <Image
+                          src="/images/about/engagement-model/dedicated-icn-em.webp"
                           alt=""
                           width={35}
                           height={35}
@@ -376,11 +374,10 @@ export default function EngagementModelSection() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveModelTab(tab.id)}
-                  className={`pb-3 text-sm font-semibold transition-all relative ${
-                    activeModelTab === tab.id
+                  className={`pb-3 text-sm font-semibold transition-all relative ${activeModelTab === tab.id
                       ? "text-red-700 border-b-2 border-red-600"
                       : "text-gray-400 hover:text-gray-600"
-                  }`}
+                    }`}
                 >
                   {tab.navLabel}
                 </button>
@@ -496,8 +493,6 @@ export default function EngagementModelSection() {
                 </div>
               </div>
             </div>
-
-            {/* Action Button */}
             <div>
               <Link
                 href="/lets-talk"
@@ -518,12 +513,12 @@ export default function EngagementModelSection() {
               A Development Partner Businesses Actually Trust
             </h2>
             <p className="w-full mx-auto mt-4 text-center text-1xl leading-8 text-black">
-              Devapp Solutions has spent years earning its reputation as a go-to name 
-              in custom software, web, and mobile app development, and it shows in the work. 
+              Devapp Solutions has spent years earning its reputation as a go-to name
+              in custom software, web, and mobile app development, and it shows in the work.
               We build secure, scalable technology solutions shaped around what each business
-               actually needs, not a generic template. Pair that with a team that knows both
-                the technical side and the strategy side, and you get more than just a vendor: 
-                you get a partner invested in helping your digital product actually succeed.
+              actually needs, not a generic template. Pair that with a team that knows both
+              the technical side and the strategy side, and you get more than just a vendor:
+              you get a partner invested in helping your digital product actually succeed.
 
             </p>
 
@@ -534,7 +529,6 @@ export default function EngagementModelSection() {
                     key={index}
                     className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
                   >
-                    {/* Floating Icon */}
                     <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                       <img
                         src={item.icon}
@@ -627,12 +621,9 @@ export default function EngagementModelSection() {
                   <a href="tel:+18669788570" className=" transition-colors">
                     +1 (866) 978-8570
                   </a>
-                 
                 </div>
               </div>
             </div>
-
-            {/* Action Button */}
             <div>
               <Link
                 href="/lets-talk"
@@ -695,9 +686,9 @@ export default function EngagementModelSection() {
               </h3>
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
-                Explore what Devapp Solutions has to offer, from our full range of services 
-                to the step-by-step process we follow for mobile app and software development. 
-                Curious what it's like working with us? See what our clients have to say. 
+                Explore what Devapp Solutions has to offer, from our full range of services
+                to the step-by-step process we follow for mobile app and software development.
+                Curious what it's like working with us? See what our clients have to say.
                 Ready when you are: let's start the conversation and turn your next great idea into something real.
               </p>
             </div>

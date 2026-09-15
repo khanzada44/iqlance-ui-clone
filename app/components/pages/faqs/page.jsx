@@ -15,11 +15,13 @@ export default function faqs() {
     <>
       <div className="w-full max-w-7xl mx-auto">
         <div className="mt-4">
-          <img
-            src="/images/faqs-header-photo.jpg"
-            alt=""
-            className="w-full h-auto rounded-lg"
-          />
+        <Image
+          src="/images/about/faqs/faqs-header-photo.webp"
+          alt=""
+          width={1200}
+          height={800}
+          className="w-full h-auto rounded-lg"
+        />
         </div>
 
         <section className="py-10">

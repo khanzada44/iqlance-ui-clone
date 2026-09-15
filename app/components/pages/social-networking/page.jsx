@@ -697,6 +697,7 @@ export default function SocialMedia() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
+          
         </section>
 
         <div className="text-center max-w-6xl mx-auto space-y-4 mt-15">

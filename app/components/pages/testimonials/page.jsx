@@ -13,9 +13,12 @@ export default function testimonials() {
     <>
       <div className="w-full max-w-7xl mx-auto">
         <div className="mt-10">
-          <img
-            src="/images/client-header.jpg"
+          <Image
+            src="/images/about/testimonials/client-header.webp"
             alt=""
+            width={1200}
+            height={800}
+            className="w-full h-auto rounded-lg"
           />
         </div>
         <section className="py-10 md:py-14 bg-white mt-4">
