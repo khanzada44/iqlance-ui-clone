@@ -630,50 +630,45 @@ export const industries = [
 ];
 export const services = [
   {
-    image:
-      "/images/data-protection-icn.png",
+    image:"/images/industry/health-care/data-protection-icn.webp",
     title: "Data Protection",
     description:
       "Every app we build comes with strong data protection to defend against growing malware threats and rising cybercrime, keeping pace with new technology entering the healthcare space.",
   },
   {
-    image:
-      "/images/custom-dp-icn.png",
+    image:"/images/industry/health-care/custom-dp-icn.webp",
     title: " Agile Development ",
     description:
       "Devapp prioritizes fast, efficient project delivery while maintaining strong client relationships throughout. We also make sure thorough documentation is in place for ongoing support and training",
   },
   {
-    image:
-      "/images/easy-commution-icn.png",
+    image:"/images/industry/health-care/easy-commution-icn.webp",
     title: "Easy Communication",
-    description:
-      "We keep clients updated at every stage scalable, flexible, and cost-friendly, bringing all positive outcomes. We're always in sync with client needs at every step of the process.",
+    description:"We keep clients updated at every stage scalable, flexible, and cost-friendly, bringing all positive outcomes. We're always in sync with client needs at every step of the process.",
   },
   {
-    image:
-      "/images/dedicated-teams.png",
+    image:"/images/industry/health-care/dedicated-teams.webp",
     title: "Dedicated Development Teams",
     description:
       "Our talented professionals bring hands-on experience to every project, ensuring each client receives a smooth and reliable journey from start to finish.",
   },
   {
-    image:
-      "/images/on-time-icn.png",
+
+    image:"/images/industry/health-care/on-time-icn.webp",
     title: "On-Time Delivery",
     description:
       "Our commitment to on-time project delivery is unmatched. We ensure your project is finished on schedule, giving you full confidence in a smooth and dependable process.",
   },
   {
-    image:
-      "/images/quality-first-icn.png",
+
+    image:"/images/industry/health-care/quality-first-icn.webp",
     title: "Quality-First Approach",
     description:
       "Our team stays focused on delivering top-notch results, ensuring the final product fits perfectly within the market and meets every requirement flawlessly.",
   },
   {
-    image:
-      "/images/cost-effective-icn.png",
+
+    image:"/images/industry/health-care/cost-effective-icn.webp",
     title: "Cost-Effective Development Mode",
     description:
       "Choose to work with us and get the best value for your money top-quality solutions delivered at rates that won't strain your budget, without compromising on excellence.",

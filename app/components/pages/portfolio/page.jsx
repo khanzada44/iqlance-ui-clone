@@ -78,10 +78,9 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
   return (
     <>
       <div className="max-w-7xl mx-auto">
-        {/* Header & Hero Section */}
         <section>
           <img
-            src="/images/porfoilo-header-banner.jpg"
+            src="/images/porfoilo-header-banner.webp"
             alt="Portfolio Banner"
             className="mt-10 w-full object-cover"
           />
@@ -107,8 +106,6 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
             </Link>
           </div>
         </section>
-
-        {/* Intro Section */}
         <section className="mt-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug text-center">
             The Glimpse of our Creative Works
@@ -117,10 +114,7 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
             We are strategists. We are innovators. We are a team of full-stack software and mobile app developers, working for great and innovative solutions to take your business to the next level.
           </p>
         </section>
-
-        {/* Dynamic Category & Subcategory Filters */}
         <section className="mt-12">
-          {/* Main Category Tabs */}
           <div className="flex justify-center mb-8 overflow-x-auto">
             {categoriesData.map((cat) => (
               <button
@@ -135,8 +129,6 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
               </button>
             ))}
           </div>
-
-          {/* Dynamic Subcategory Pills */}
           <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 text-xs md:text-sm font-semibold">
             {subCategoriesList.map((category, index) => (
               <button
@@ -151,12 +143,8 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
               </button>
             ))}
           </div>
-
-          {/* Dynamic Portfolio Items Rendering */}
           {loading ? (
             <div className="max-w-6xl mx-auto p-4 py-8 animate-pulse space-y-8">
-
-              {/* Sub-Category Pills Skeleton */}
               <div className="flex flex-wrap justify-center gap-3 py-2">
                 <div className="h-8 bg-gray-300 rounded-md w-16"></div>
                 <div className="h-8 bg-gray-200 rounded-md w-28"></div>
@@ -165,12 +153,8 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
                 <div className="h-8 bg-gray-200 rounded-md w-20"></div>
                 <div className="h-8 bg-gray-200 rounded-md w-28"></div>
               </div>
-
-              {/* Main Portfolio Feature Card Skeleton */}
               <div className="bg-slate-50 border border-slate-100 rounded-2xl p-8 lg:p-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                  
-                  {/* Left Side Text & Button */}
                   <div className="space-y-6">
                     <div className="h-8 bg-gray-300 rounded-md w-2/5"></div>
                     <div className="space-y-3 pt-2">
@@ -180,8 +164,6 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
                     </div>
                     <div className="h-12 bg-gray-300 rounded-md w-40 mt-4"></div>
                   </div>
-
-                  {/* Right Side Phone / App Showcase Placeholder */}
                   <div className="flex justify-center items-center">
                     <div className="w-64 h-105 bg-gray-200 rounded-[40px] border-8 border-gray-300 shadow-inner"></div>
                   </div>
@@ -200,19 +182,14 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
                     className={`${item.bgColor || 'bg-red-50'
                       } p-6 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center transition-all duration-300`}
                   >
-                    {/* Left Details */}
                     <div className="space-y-6">
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                         {item.title}
                       </h3>
-
-                      {/* Description with HTML support */}
                       <div
                         className="text-sm md:text-base text-gray-800 leading-relaxed"
                         dangerouslySetInnerHTML={{ __html: item.description }}
                       />
-
-                      {/* Features List */}
                       {item.features && Array.isArray(item.features) && item.features.length > 0 && (
                         <ul className="space-y-3 py-2">
                           {item.features.map((feature, fIdx) => (
@@ -223,8 +200,6 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
                           ))}
                         </ul>
                       )}
-
-                      {/* Tech Stack Icons */}
                       {item.techStack && Array.isArray(item.techStack) && item.techStack.length > 0 && (
                         <div className="flex flex-wrap items-center gap-6 pt-4">
                           {item.techStack.map((tech, tIdx) => (
@@ -246,8 +221,6 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
                         </Link>
                       </div>
                     </div>
-
-                    {/* Right Mockup Image */}
                     <div className="flex justify-center items-center">
                       <img
                         src={item.image_url || item.image || '/images/vr-feature.png'}

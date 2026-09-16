@@ -26,7 +26,7 @@ export const bottomFeatures = [
 export const slides = [
   {
     id: 1,
-    image: "/images/food-ordering-left-1.jpg",
+    image: "/images/industry/food-restaurant/food-ordering-left-1.webp",
     title: "Native iOS & Android Apps Built for Restaurants Like Yours",
     description:
       "As one of the most trusted restaurant app development teams in the USA, we bring deep, proven experience delivering fully customized mobile apps for restaurants built natively for the platforms your customers already use, iOS and Android.",
@@ -41,7 +41,7 @@ export const slides = [
 
   {
     id: 2,
-    image: "/images/food-ordering-left-2.jpg",
+    image: "/images/industry/food-restaurant/food-ordering-left-2.webp",
     title: "A Polished App Experience That Wins Repeat Orders",
     description:
       "Our team specializes in building online food ordering apps engineered to grow your business and keep customers coming back by making every order effortless from the very first tap.",
@@ -54,7 +54,7 @@ export const slides = [
 
   {
     id: 3,
-    image: "/images/food-ordering-left-3.jpg",
+    image: "/images/industry/food-restaurant/food-ordering-left-3.webp",
     title: "Smart Menu Management",
     description:
       "Every restaurant has its own menu structure, pricing model, and operational needs. Our food delivery solutions give restaurant owners the flexibility to manage menus in real time while creating a more engaging ordering experience for customers.",
@@ -69,7 +69,7 @@ export const slides = [
 
   {
     id: 4,
-    image: "/images/food-ordering-left-4.jpg",
+    image: "/images/industry/food-restaurant/food-ordering-left-4.webp",
     title: "Streamlined Inventory Management",
     description:
       "Stay ahead of stock levels and kitchen requirements with tools designed to make restaurant inventory easier to monitor and control. Our solutions help businesses reduce waste, track costs, and keep daily operations organized.",
@@ -94,7 +94,7 @@ export const ServiceSectionData = [
       "Speeds up service and boosts staff efficiency, freeing up counter space in the process",
       "Comes equipped with NFC and EMV support, so customers can pay with methods like Apple Pay",
     ],
-    imageUrl: "/images/advantages-food-app.jpg",
+    imageUrl: "/images/industry/food-restaurant/advantages-food-app.webp",
     imageAlt: "Restaurant App Development",
   },
 
@@ -107,7 +107,8 @@ export const ServiceSectionData = [
       "Supports third-party CRM integration alongside your backend systems",
       "Gives you a powerful platform to promote your brand and deepen customer relationships",
     ],
-    imageUrl: "/images/advantages-food-app-right.jpg",
+
+    imageUrl: "/images/industry/food-restaurant/advantages-food-app-right.webp",
     imageAlt: "Restaurant App Development",
   },
 ];

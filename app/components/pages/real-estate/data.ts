@@ -157,7 +157,7 @@ export const portfolioSlides = [
     ],
 
     image:
-      "/images/image_2024_08_05T12_52_05_867Z.png",
+      "/images/industry/real-estate/image_2024_08_05T12_52_05_867Z.webp",
   },
   {
     heading: "",

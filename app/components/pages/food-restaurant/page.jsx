@@ -418,9 +418,11 @@ export default function foodOrdering() {
             </div>
           </div>
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm mt-20">
-            <img
-              src="/images/restaurant-app-full.jpg"
+            <Image
+              src="/images/industry/food-restaurant/restaurant-app-full.webp"
               alt="Cost Calculation & Financial Planning"
+              width={1200}
+              height={800}
               className="w-full h-full object-cover"
             />
           </div>
@@ -470,9 +472,11 @@ export default function foodOrdering() {
         </section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
           <div className="flex justify-center lg:justify-end">
-            <img
-              src="/images/food-app-dev-left.jpg"
+            <Image
+              src="/images/industry/food-restaurant/food-app-dev-left.webp"
               alt="Customer Support"
+              width={600}
+              height={600}
               className="w-full max-w-md h-auto object-cover"
             />
           </div>
@@ -505,7 +509,6 @@ export default function foodOrdering() {
         </div>
         <section>
           <div>
-            {/* CTA Box */}
             <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
@@ -521,8 +524,6 @@ export default function foodOrdering() {
                 We are team of talented, experienced, and certified designers
                 and developers. Let us build something extraordinary.
               </p>
-
-              {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[70%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
@@ -575,7 +576,6 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          {/* Custom CSS ko <style> tag ke andar rakha gaya hai */}
           <style>{`
             .swiper-pagination-bullet {
               background-color: #cbd5e1 !important;
@@ -603,16 +603,16 @@ export default function foodOrdering() {
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
                   <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
-                    {/* Image */}
                     <div className="w-full lg:w-1/2">
-                      <img
+                      <Image
                         src={slide.image}
                         alt={slide.title}
+                        width={1200}
+                        height={800}
+                        sizes="100vw"
                         className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
                       />
                     </div>
-
-                    {/* Content */}
                     <div className="w-full lg:w-1/2">
                       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
                         {slide.title}
@@ -673,12 +673,13 @@ export default function foodOrdering() {
                     ))}
                   </ul>
                 </div>
-
-                {/* Image Side */}
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-                  <img
+                  <Image
                     src={item.imageUrl}
-                    alt={item.imageAlt}
+                    alt={item.imageAlt || ""}
+                    width={1200}
+                    height={800}
+                    sizes="100vw"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -907,11 +908,13 @@ export default function foodOrdering() {
 
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left Image Side */}
             <div className="w-full h-full min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-              <img
-                src="/images/our-developers.jpg"
+              <Image
+                src="/images/industry/food-restaurant/our-developers.webp"
                 alt="Expert Logistics App Developers"
+                width={1200}
+                height={800}
+                sizes="100vw"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -937,7 +940,6 @@ export default function foodOrdering() {
           </div>
         </section>
         <section className="w-full max-w-7xl mx-auto space-y-12">
-          {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               How Much Does It Cost to Build a Food Delivery App?
@@ -981,17 +983,16 @@ export default function foodOrdering() {
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
-
-          {/* Banner Image */}
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
-            <img
-              src="/images/healthcare-app-built.jpg"
+            <Image
+              src="/images/industry/food-restaurant/healthcare-app-built.webp"
               alt="Cost Calculation & Financial Planning"
+              width={1200}
+              height={800}
+              sizes="100vw"
               className="w-full h-full object-cover"
             />
           </div>
-
-          {/* Success Stories Heading Section */}
           <div className="text-center max-w-5xl mx-auto space-y-3 pt-6 mb-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
               Endeavors That Make Us Proud
@@ -1005,7 +1006,6 @@ export default function foodOrdering() {
           </div>
         </section>
         <section className="w-full">
-          {/* Custom styles to override Swiper pagination bullet colors to red */}
           <style>{`
         .portfolio-swiper .swiper-pagination-bullet {
           background-color: #cbd5e1;
@@ -1055,9 +1055,11 @@ export default function foodOrdering() {
                       <div className="flex flex-wrap gap-4 sm:gap-6 mb-6">
                         {slide.technologies.map((tech, i) => (
                           <div key={i} className="text-center">
-                            <img
+                            <Image
                               src={tech.icon}
                               alt={tech.name}
+                              width={32}
+                              height={32}
                               className="w-7 h-7 sm:w-8 sm:h-8 mx-auto object-contain"
                             />
                             <p className="text-xs sm:text-sm mt-1">
@@ -1076,13 +1078,14 @@ export default function foodOrdering() {
                         </button>
                       </div>
                     </div>
-
-                    {/* Fixed dimensions container for slide image to ensure equal sizing */}
                     <div className="flex justify-center items-center">
                       <div className="">
-                        <img
+                        <Image
                           src={slide.image}
                           alt={slide.title}
+                          width={800}
+                          height={600}
+                          sizes="100vw"
                           className="w-full h-full object-contain"
                         />
                       </div>
@@ -1094,7 +1097,6 @@ export default function foodOrdering() {
           </Swiper>
         </section>
         <section>
-          {/* Top CTA Banner Box */}
           <div className="bg-red-50  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mt-15">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
@@ -1114,8 +1116,6 @@ export default function foodOrdering() {
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
-
-          {/* Technology Stack Heading Section */}
           <div className="text-center max-w-5xl mx-auto space-y-4 mt-15 mb-10">
             <h2 className="text-4xl sm:text-3xl md:text-3xl font-extrabold text-gray-900">
               Technology Stack for Custom Food & Restaurant App Development
@@ -1131,7 +1131,6 @@ export default function foodOrdering() {
         </section>
         <section >
           <div className="max-w-7xl mx-auto px-4 ">
-            {/* Tabs */}
             <div className="flex justify-center mb-10 ">
               <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
@@ -1144,8 +1143,6 @@ export default function foodOrdering() {
                       }`}
                   >
                     {tab.category}
-
-                    {/* Active underline */}
                     <span
                       className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
                         }`}
@@ -1154,7 +1151,6 @@ export default function foodOrdering() {
                 ))}
               </div>
             </div>
-            {/* Content */}
             <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
               {technologies[activetechnologies].items.map((item, index) => (
                 <div
@@ -1177,11 +1173,12 @@ export default function foodOrdering() {
         </section>
         <section>
           <div className="max-w-7xl mx-auto px-4">
-            {/* CTA Box */}
             <div className="mt-12 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
-              <img
+              <Image
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
+                width={64}
+                height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
@@ -1228,7 +1225,6 @@ export default function foodOrdering() {
                 key={index}
                 className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
-                {/* Floating Icon */}
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
@@ -1236,8 +1232,6 @@ export default function foodOrdering() {
                     className="w-11 h-11 object-contain"
                   />
                 </div>
-
-                {/* Text Container */}
                 <div className="flex flex-col gap-1">
                   <h3 className="text-lg font-bold text-black leading-none">
                     {item.value}

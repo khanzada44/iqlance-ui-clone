@@ -387,7 +387,6 @@ export default function wellnessFitness() {
 
         <section >
           <div className="max-w-7xl mx-auto px-4">
-            {/* CTA Box */}
             <div className=" bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
@@ -404,8 +403,6 @@ export default function wellnessFitness() {
                 scalable, feature-rich logistics mobile applications tailored to
                 your needs.
               </p>
-
-              {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
@@ -477,9 +474,11 @@ export default function wellnessFitness() {
                 <SwiperSlide key={slide.id}>
                   <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
                     <div className="w-full lg:w-1/2">
-                      <img
+                      <Image
                         src={slide.image}
                         alt={slide.title}
+                        width={1200}
+                        height={800}
                         className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
                       />
                     </div>
@@ -967,16 +966,15 @@ export default function wellnessFitness() {
 
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Image Side */}
             <div className="w-full h-full min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-              <img
-                src="/images/our-developers.jpg"
+              <Image
+                src="/images/industry/wellness-fitness/our-developers.webp"
                 alt="Expert Logistics App Developers"
+                width={1200}
+                height={800}
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Our Skilled Developers, Committed to Delivering Peak Performance
@@ -1007,7 +1005,7 @@ export default function wellnessFitness() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
-          {/* Top Text Content */}
+
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               How Much Does It Cost to Build a Wellness and Fitness App Like the
@@ -1048,16 +1046,15 @@ export default function wellnessFitness() {
             </Link>
           </div>
 
-          {/* Banner Image */}
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
-            <img
-              src="/images/healthcare-app-built.jpg"
+            <Image
+              src="/images/industry/wellness-fitness/healthcare-app-built.webp"
               alt="Cost Calculation & Financial Planning"
+              width={1200}
+              height={800}
               className="w-full h-full object-cover"
             />
           </div>
-
-          {/* Success Stories Heading Section */}
           <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
               Endeavors That Make Us Proud
@@ -1071,7 +1068,6 @@ export default function wellnessFitness() {
           </div>
         </section>
         <section >
-          {/* Custom style for red pagination dots */}
           <style>{`
             .case-study-swiper .swiper-pagination-bullet {
               background-color: #cbd5e1 !important;
@@ -1227,16 +1223,17 @@ export default function wellnessFitness() {
                 ))}
               </div>
             </div>
-            {/* Content */}
             <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
               {technologies[activetechnologies].items.map((item, index) => (
                 <div
                   key={index}
                   className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={56}
+                    height={56}
                     className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
                   />
 
@@ -1250,22 +1247,17 @@ export default function wellnessFitness() {
         </section>
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            {/* CTA Box */}
             <div className="bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
                 Certified Experts. Proven Experience. Exceptional Digital Solutions.
-
               </h2>
-
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
                 Our skilled designers and developers bring the expertise, creativity, and technical precision needed to turn ambitious ideas into powerful digital products.
-
               </p>
               <Link
                 href="/contact-us"
@@ -1303,7 +1295,6 @@ export default function wellnessFitness() {
                 key={index}
                 className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
-                {/* Floating Icon */}
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
@@ -1311,8 +1302,6 @@ export default function wellnessFitness() {
                     className="w-11 h-11 object-contain"
                   />
                 </div>
-
-                {/* Text Container */}
                 <div className="flex flex-col gap-1">
                   <h3 className="text-lg font-bold text-black leading-none">
                     {item.value}

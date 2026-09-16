@@ -415,9 +415,11 @@ export default function elearning() {
         </section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
           <div className="flex justify-center lg:justify-end">
-            <img
-              src="/images/gamut -of-earning-left.jpg"
+            <Image
+              src="/images/industry/Education/gamut -of-earning-left.webp"
               alt="Customer Support"
+              width={600}
+              height={600}
               className="w-full max-w-md h-auto object-cover"
             />
           </div>
@@ -426,10 +428,7 @@ export default function elearning() {
           <div className="flex flex-col gap-y-6">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                {/* Chevron Right Icon */}
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-
-                {/* Text Content */}
                 <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                   <strong className="font-semibold text-gray-900">
                     {item.title}:
@@ -456,14 +455,14 @@ export default function elearning() {
         </div>
         <section className="py-10">
           <style>{`
-    .case-study-swiper .swiper-pagination-bullet {
-      background-color: #cbd5e1 !important;
-      opacity: 1 !important;
-    }
-    .case-study-swiper .swiper-pagination-bullet-active {
-      background-color: #dc2626 !important; /* Red Color */
-    }
-  `}</style>
+          .case-study-swiper .swiper-pagination-bullet {
+            background-color: #cbd5e1 !important;
+            opacity: 1 !important;
+          }
+          .case-study-swiper .swiper-pagination-bullet-active {
+            background-color: #dc2626 !important; /* Red Color */
+          }
+        `}</style>
 
           <div className="mx-auto max-w-7xl">
             <Swiper
@@ -483,16 +482,16 @@ export default function elearning() {
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
                   <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
-                    {/* Image */}
                     <div className="w-full lg:w-1/2">
-                      <img
+                      <Image
                         src={slide.image}
                         alt={slide.title}
+                        width={1200}
+                        height={800}
+                        sizes="100vw"
                         className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
                       />
                     </div>
-
-                    {/* Content */}
                     <div className="w-full lg:w-1/2">
                       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
                         {slide.title}
@@ -522,11 +521,12 @@ export default function elearning() {
         </section>
         <section>
           <div >
-            {/* CTA Box */}
             <div className="bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
-              <img
+              <Image
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
+                width={64}
+                height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
@@ -571,7 +571,7 @@ export default function elearning() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570    
+                      USA: +1 (866) 978-8570
                     </span>
                   </div>
                 </div>
@@ -620,12 +620,13 @@ export default function elearning() {
                     ))}
                   </ul>
                 </div>
-
-                {/* Image Side */}
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-                  <img
+                  <Image
                     src={item.imageUrl}
-                    alt={item.imageAlt}
+                    alt={item.imageAlt || ""}
+                    width={1200}
+                    height={800}
+                    sizes="100vw"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -685,7 +686,7 @@ export default function elearning() {
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
-                          
+
                     </span>
                   </div>
                 </div>
@@ -902,7 +903,7 @@ export default function elearning() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570                          
+                      USA: +1 (866) 978-8570
                     </span>
                   </div>
                 </div>
@@ -921,16 +922,16 @@ export default function elearning() {
 
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left Image Side */}
             <div className="w-full h-full min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-              <img
-                src="/images/our-developers.jpg"
+              <Image
+                src="/images/industry/Education/our-developers.webp"
                 alt="Expert Logistics App Developers"
+                width={1200}
+                height={800}
+                sizes="100vw"
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Experienced Developers for Real Estate Apps That Mean Business
@@ -961,7 +962,6 @@ export default function elearning() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto md:py-16 space-y-12">
-          {/* Top Text Content */}
           <div className="text-center max-w-6xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               How Much Does It Cost to Build a Custom Logistics App?
@@ -997,17 +997,16 @@ export default function elearning() {
               </p>
             </div>
           </div>
-
-          {/* Banner Image */}
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
-            <img
-              src="/images/healthcare-app-built.jpg"
+            <Image
+              src="/images/industry/Education/healthcare-app-built.webp"
               alt="Cost Calculation & Financial Planning"
+              width={1200}
+              height={800}
+              sizes="100vw"
               className="w-full h-full object-cover"
             />
           </div>
-
-          {/* Success Stories Heading Section */}
           <div className="text-center max-w-6xl mx-auto space-y-3 ">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
               How Much Does It Cost to Develop a education App?
@@ -1037,7 +1036,6 @@ export default function elearning() {
           </div>
         </section>
         <section className="w-full max-w-7xl mx-auto space-y-16">
-          {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
@@ -1049,16 +1047,14 @@ export default function elearning() {
               </p>
             </div>
 
-          <Link
-            href="/portfolio"
-            className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
-          >
-            <span>See Our Work</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+            <Link
+              href="/portfolio"
+              className="group inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm py-3.5 px-6 transition-colors shrink-0"
+            >
+              <span>See Our Work</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
-
-          {/* Technology Stack Heading Section */}
           <div className="text-center max-w-6xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               Technology Stack for Custom Education App Development
@@ -1074,7 +1070,6 @@ export default function elearning() {
         </section>
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 ">
-            {/* Tabs */}
             <div className="flex justify-center mb-10 ">
               <div className="flex flex-wrap gap-8 border-b border-gray-300">
                 {technologies.map((tab, index) => (
@@ -1087,8 +1082,6 @@ export default function elearning() {
                       }`}
                   >
                     {tab.category}
-
-                    {/* Active underline */}
                     <span
                       className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
                         }`}
@@ -1097,19 +1090,19 @@ export default function elearning() {
                 ))}
               </div>
             </div>
-            {/* Content */}
             <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
               {technologies[activetechnologies].items.map((item, index) => (
                 <div
                   key={index}
                   className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={56}
+                    height={56}
                     className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
                   />
-
                   <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
                     {item.name}
                   </h3>
@@ -1120,24 +1113,21 @@ export default function elearning() {
         </section>
         <section>
           <div>
-            {/* CTA Box */}
             <div className="bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
-              <img
+              <Image
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
+                width={64}
+                height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
                 Ready to Transform Your Transportation and Logistics Mobile Apps Development
-
               </h2>
-
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
                 Partner with our logistics app development company to build custom logistics mobile applications that streamline operations and drive growth.
               </p>
-
-              {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[70%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
@@ -1170,7 +1160,7 @@ export default function elearning() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570                          
+                      USA: +1 (866) 978-8570
                     </span>
                   </div>
                 </div>
@@ -1207,21 +1197,19 @@ export default function elearning() {
                 key={index}
                 className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
-                {/* Floating Icon */}
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                  <img
+                  <Image
                     src={item.icon}
                     alt=""
+                    width={44}
+                    height={44}
                     className="w-11 h-11 object-contain"
                   />
                 </div>
-
-                {/* Text Container */}
                 <div className="flex flex-col gap-1">
                   <h3 className="text-lg font-bold text-black leading-none">
                     {item.value}
                   </h3>
-
                   <p className="text-sm leading-tight text-black">
                     {item.line1}
                     <br />
@@ -1250,9 +1238,12 @@ export default function elearning() {
                 key={index}
                 className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
               >
-                <img
+                <Image
                   src={item.bgImage}
                   alt={item.title}
+                  width={1200}
+                  height={800}
+                  sizes="100vw"
                   className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
@@ -1293,9 +1284,11 @@ export default function elearning() {
                 key={index}
                 className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  width={64}
+                  height={64}
                   className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
                 />
 
@@ -1324,12 +1317,8 @@ export default function elearning() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
-          {/* Outer Card Wrapper with Fixed Border & Accent */}
           <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
-            {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
-
-            {/* Swiper Slider Component */}
             <Swiper
               modules={[Navigation, Autoplay]}
               spaceBetween={30}
@@ -1345,9 +1334,7 @@ export default function elearning() {
               {testimonials.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div>
-                    {/* Top User Info & Rating Section */}
                     <div className="flex items-center gap-4 mb-6">
-                      {/* Avatar Circle */}
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
@@ -1364,7 +1351,6 @@ export default function elearning() {
                         <h4 className="text-lg font-bold text-gray-900 mb-1">
                           {item.name}
                         </h4>
-                        {/* Stars */}
                         <div className="flex items-center gap-1">
                           {[...Array(item.review)].map((_, index) => (
                             <Star
@@ -1375,13 +1361,9 @@ export default function elearning() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Review Text */}
                     <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
-
-                    {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
                       <span className="text-xs text-gray-500 font-medium block">
                         verified
@@ -1400,8 +1382,6 @@ export default function elearning() {
                 </SwiperSlide>
               ))}
             </Swiper>
-
-            {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
                 className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
@@ -1419,7 +1399,6 @@ export default function elearning() {
           </div>
         </section>
         <section>
-          {/* Heading */}
           <div>
             <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions
@@ -1430,8 +1409,6 @@ export default function elearning() {
               what’s in our client’s mind.
             </p>
           </div>
-
-          {/* FAQ */}
           <section className="py-12">
             <div className="max-w-6xl mx-auto px-4">
               <div className="space-y-4">
@@ -1443,7 +1420,6 @@ export default function elearning() {
                       : "border-gray-200 hover:border-red-300"
                       }`}
                   >
-                    {/* Question */}
                     <button
                       onClick={() => setOpen(open === index ? -1 : index)}
                       className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
@@ -1459,8 +1435,6 @@ export default function elearning() {
                           }`}
                       />
                     </button>
-
-                    {/* Answer */}
                     <div
                       className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
                         ? "max-h-150 opacity-100"

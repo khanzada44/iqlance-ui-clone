@@ -76,7 +76,7 @@ export const processSteps = [
     description:
       "We start by getting to know your business, your objectives, your project requirements, your target audience, and the technical hurdles standing in your way. Through open, collaborative conversations, we map out the right technology approach and build a roadmap that supports where you're headed, not just where you are today.",
     image:
-      "/images/proces-icon-1.png",
+      "/images/solutions/Fitness/proces-icon-1.webp",
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export const processSteps = [
     description:
       "Our UI/UX designers, solution architects, and technical experts get to work on user-focused designs, system architecture, wireframes, and a solid project plan. Every single feature is mapped out with intention. So the final product feels intuitive, functions seamlessly, and scales without breaking a sweat.",
     image:
-      "/images/proces-icon-2.png",
+      "/images/home/proces-icon-2.webp",
   },
   {
     id: 3,
@@ -92,7 +92,7 @@ export const processSteps = [
     description:
       "Once the design gets the green light, our developers roll up their sleeves and build using modern technologies, AI-assisted tools, and agile methodologies to create applications that are secure, scalable, and genuinely high-performing. We keep you in the loop the entire way, with regular updates and the flexibility to pivot the moment your business needs shift.",
     image:
-      "/images/proces-icon-3.png",
+      "/images/solutions/Fitness/proces-icon-3.webp",
   },
   {
     id: 4,
@@ -100,7 +100,7 @@ export const processSteps = [
     description:
       "Before anything goes live, our QA team puts it through the wringer, checking functionality, usability, security, compatibility, and performance from every angle. Multiple rounds of testing, both automated and manual, make sure your solution holds up reliably across devices, browsers, and operating environments with no surprises after launch.",
     image:
-      "/images/proces-icon-4.png",
+      "/images/solutions/Fitness/proces-icon-4.webp",
   },
   {
     id: 5,
@@ -108,7 +108,7 @@ export const processSteps = [
     description:
       " Once testing gives the all-clear, we take your application, software, or website live in the right production environment whether that's a cloud platform, enterprise server, web hosting setup, or mobile app store. Every launch is handled with care: secure, seamless, and closely monitored from the moment it goes live",
     image:
-      "/images/proces-icon-5.png",
+      "/images/solutions/Fitness/proces-icon-5.webp",
   },
   {
     id: 6,
@@ -306,37 +306,37 @@ export const portfolioSlides = [
 ];
 export const services = [
   {
-    image: "/images/Services_We_Offer_11.jpg",
+    image: "/images/home/Services_We_Offer_11.webp",
     title: "Custom Software Development",
     description:
       "We design and build scalable enterprise software, CRM systems, ERP solutions, SaaS platforms, and business automation tools engineered around how your operations actually run, not a one-size-fits-all template.",
   },
   {
-    image: "/images/Services_We_Offer_2.jpg",
+    image: "/images/home/Services_We_Offer_2.webp",
     title: "AI Development",
     description:
       "From generative AI applications to intelligent AI agents, chatbots, and smart automation tools, we build AI-powered solutions that sharpen customer experiences, streamline your operations, and keep you ahead of the innovation curve.",
   },
   {
-    image: "/images/Services_We_Offer_3.jpg",
+    image: "/images/home/Services_We_Offer_3.webp",
     title: "Web Development",
     description:
       "We craft fast, responsive, high-performing websites and web applications that strengthen your digital presence, elevate the user experience, and set your business up for long-term success across every online touchpoint",
   },
   {
-    image: "/images/Services_We_Offer_4.jpg",
+    image: "/images/home/Services_We_Offer_4.webp",
     title: "Mobile App Development",
     description:
       "We build engaging iOS, Android, and cross-platform mobile apps that deliver standout user experiences, drive real engagement, and support your business growth with scalable, feature-rich solutions built to last",
   },
   {
-    image: "/images/Services_We_Offer_5.jpg",
+    image: "/images/home/Services_We_Offer_5.webp",
     title: "IT Staff Augmentation",
     description:
       "Scale your development capabilities fast. Our experienced IT professionals slot seamlessly into your existing team, helping you speed up delivery without compromising on flexibility, transparency, or quality.",
   },
   {
-    image: "/images/Services_We_Offer_6.jpg",
+    image: "/images/home/Services_We_Offer_6.webp",
     title: "Cloud Consulting",
     description:
       "Get more out of your cloud infrastructure with expert consulting that boosts scalability, tightens security, cuts operational costs, and ensures reliable performance backed by custom cloud strategies and smooth, hassle-free migration.",

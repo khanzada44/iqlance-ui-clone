@@ -208,7 +208,6 @@ export default function fitness() {
                 across iOS, Android, and web, no matter which platform your customers land
                 on.
               </p>
-              {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
@@ -227,20 +226,17 @@ export default function fitness() {
                 </Link>
               </div>
             </div>
-
-            {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
               <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
-                {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
-                  <img
+                  <Image
                     src="/images/contact-form-logo.png"
                     alt="Same Day Response Guaranteed"
+                    width={500}
+                    height={200}
                     className="w-full h-auto object-contain"
                   />
                 </div>
-
-                {/* Form Heading */}
                 <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
                   Request a Free Quote
                 </h2>
@@ -257,7 +253,6 @@ export default function fitness() {
                     {statusMessage.text}
                   </p>
                 )}
-                {/* Form Inputs */}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <input
@@ -401,9 +396,11 @@ export default function fitness() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
           <div className="flex justify-center lg:justify-end">
-            <img
-              src="/images/top-solution-right.jpg"
+            <Image
+              src="/images/solutions/Online-Food-Ordering/top-solution-right.webp"
               alt="Customer Support"
+              width={600}
+              height={600}
               className="w-full max-w-md h-auto object-cover"
             />
           </div>
@@ -411,10 +408,7 @@ export default function fitness() {
           <div className="flex flex-col gap-y-6">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                {/* Chevron Right Icon */}
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-
-                {/* Text Content */}
                 <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                   <strong className="font-semibold text-gray-900">
                     {item.title}:
@@ -437,7 +431,6 @@ export default function fitness() {
 
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
-            // Checking if index is odd to reverse layout dynamically
             const isEven = index % 2 === 0;
 
             return (
@@ -446,7 +439,6 @@ export default function fitness() {
                 className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
               >
-                {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                     {item.title}
@@ -497,11 +489,12 @@ export default function fitness() {
                 key={index}
                 className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
-                {/* Floating Icon */}
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                  <img
+                  <Image
                     src={item.icon}
                     alt=""
+                    width={44}
+                    height={44}
                     className="w-11 h-11 object-contain"
                   />
                 </div>
@@ -664,15 +657,12 @@ export default function fitness() {
             ))}
           </div>
 
-          {/* Main Layout (Circular Icons + Description) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
-            {/* Left Process Image Container */}
             <div className="relative w-72 h-72 mx-auto flex">
-              {/* Step 1 Image - Discover */}
               {activeStepIndex === 0 && (
                 <div className="">
                   <img
-                    src="/images/discove.jpg"
+                    src="/images/solutions/Online-Food-Ordering/discove.webp"
                     alt="Discover"
                     className="w-full h-full object-contain"
                   />
@@ -683,7 +673,7 @@ export default function fitness() {
               {activeStepIndex === 1 && (
                 <div className="">
                   <img
-                    src="/images/uiux-design.jpg"
+                    src="/images/solutions/Online-Food-Ordering/uiux-design.webp"
                     alt="Design"
                     className="w-full h-full object-contain"
                   />
@@ -694,26 +684,23 @@ export default function fitness() {
               {activeStepIndex === 2 && (
                 <div className="">
                   <img
-                    src="/images/development.jpg"
-                    alt="Build"
+                    src="/images/solutions/Online-Food-Ordering/development.webp"
+                    alt="Design"
                     className="w-full h-full object-contain"
                   />
+
                 </div>
               )}
-
-              {/* Step 4 Image - Deliver */}
               {activeStepIndex === 3 && (
                 <div className="">
                   <img
-                    src="/images/user-testing.jpg"
-                    alt="Deliver"
+                    src="/images/solutions/Online-Food-Ordering/user-testing.webp"
+                    alt="Design"
                     className="w-full h-full object-contain"
                   />
                 </div>
               )}
             </div>
-
-            {/* Right Side Content Display */}
             <div className="flex flex-col justify-center">
               <span className="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-2">
                 {currentStep.stepLabel}
@@ -743,7 +730,6 @@ export default function fitness() {
         </div>
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 ">
-            {/* Tabs */}
             <div className="flex justify-center mb-10 ">
               <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
@@ -756,8 +742,6 @@ export default function fitness() {
                       }`}
                   >
                     {tab.category}
-
-                    {/* Active underline */}
                     <span
                       className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
                         }`}
@@ -766,19 +750,19 @@ export default function fitness() {
                 ))}
               </div>
             </div>
-            {/* Content */}
             <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
               {technologies[activetechnologies].items.map((item, index) => (
                 <div
                   key={index}
                   className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={56}
+                    height={56}
                     className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
                   />
-
                   <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
                     {item.name}
                   </h3>
@@ -909,11 +893,13 @@ export default function fitness() {
               {foodDeliverySlides.map((slide) => (
                 <SwiperSlide key={slide.id}>
                   <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
-                    {/* Image */}
                     <div className="w-full lg:w-1/2">
-                      <img
+                      <Image
                         src={slide.image}
                         alt={slide.title}
+                        width={1200}
+                        height={800}
+                        sizes="100vw"
                         className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
                       />
                     </div>

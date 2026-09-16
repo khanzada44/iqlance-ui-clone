@@ -27,7 +27,7 @@ export const slides = [
 
   {
     id: 1,
-    image: "/images/eCommerce-left-1.jpg",
+    image: "/images/industry/Ecommerce/eCommerce-left-1.webp",
     title: "Experience a Rich e-Commerce Application Development",
     description:
       "Application for eCommerce store comes with countless features to provide intuitive experience to the users. They include:",
@@ -40,7 +40,7 @@ export const slides = [
   },
   {
     id: 2,
-    image: "/images/eCommerce-left-2.jpg",
+    image: "/images/industry/Ecommerce/eCommerce-left-2.webp",
     title: "Smart, Personalized Product Recommendations",
     description:
       "At Devapp, we know that eCommerce success comes down to one thing: understanding how individual users actually shop. That's why personalization sits at the center of everything we build.",
@@ -53,7 +53,7 @@ export const slides = [
 
   {
     id: 3,
-    image: "/images/eCommerce-left-3.jpg",
+    image: "/images/industry/Ecommerce/eCommerce-left-3.webp",
     title: "Mobile App Solutions Built for Modern Retail",
     description:
       "Competition in online retail keeps intensifying and a well-designed store paired with a highly optimized app is quickly becoming the baseline for any eCommerce business that wants to compete, let alone lead.",
@@ -66,7 +66,7 @@ export const slides = [
 
   {
     id: 4,
-    image: "/images/eCommerce-left-4.jpg",
+    image: "/images/industry/Ecommerce/eCommerce-left-4.webp",
     title: "Make Property Discovery Easier With the Right Mobile Experience",
     description:
       "A powerful real estate app can put your entire property business in your customers' pockets. From discovering listings to connecting with agents, the right mobile solution creates a faster, more convenient journey while giving your business more opportunities to engage and convert.",
@@ -87,7 +87,7 @@ export const ServiceSectionData = [
       "Faster load times than a standard website, keeping shoppers engaged instead of bouncing",
       "Continuous improvements in the usability of every mobile solution we build",
     ],
-    imageUrl: "/images/retail-stores-right.jpg",
+    imageUrl: "/images/industry/Ecommerce/retail-stores-right.webp",
     imageAlt: "eCommerce Mobile App Solutions",
   },
 
@@ -100,7 +100,7 @@ export const ServiceSectionData = [
       "Bring listings, location-based search, property details, and agent communication into one seamless app",
       "Turn user interest into meaningful leads with personalized experiences and smart engagement features",
     ],
-    imageUrl: "/images/retail-stores-left.jpg",
+    imageUrl: "/images/industry/Ecommerce/retail-stores-left.webp",
     imageAlt: "Real Estate Mobile App",
   },
 ];

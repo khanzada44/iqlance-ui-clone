@@ -165,7 +165,7 @@ export default function Home() {
                   yours into a digital product that actually works. Our team of
                   developers, designers, and tech strategists builds secure,
                   high-performing solutions shaped around your goals. Explore
-                  our work and contact us today/
+                  our work and contact us today !
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-7">
                   <Link href="/contact-us">
@@ -197,7 +197,6 @@ export default function Home() {
           ref={statsRef}
           className="max-w-7xl mx-auto w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6 px-2 sm:px-4 py-6 sm:py-8 mt-10 mb-10"
         >
-          {/* CLIENT RETENTION */}
           <div className="text-center flex flex-col items-center justify-center">
             <div className="flex items-end gap-1">
               <p className="text-x2 sm:text-2xl md:text-4xl lg:text-4xl font-bold text-black">
@@ -385,16 +384,15 @@ export default function Home() {
 
         <div className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 ">
-            {/* IMAGE */}
             <div className="flex justify-center">
-              <img
-                src="/images/travis_h.jpg"
+              <Image
+                src="/images/home/travis_h.webp"
                 alt="Travis H"
-                className=" object-cover"
+                width={500}
+                height={500}
+                className="object-cover"
               />
             </div>
-
-            {/* CONTENT */}
             <div className="text-center lg:text-left">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-red-600 leading-tight">
                 Talk to a US-Based Technology Specialist About Your Project
@@ -454,7 +452,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* SERVICES INTRO */}
           <div className="w-full mt-15 sm:mt-5 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               Our Full Range of Development Services
@@ -478,9 +475,11 @@ export default function Home() {
                 key={index}
                 className="border border-gray-200 p-6 sm:p-8 hover:shadow-lg transition duration-300"
               >
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  width={80}
+                  height={64}
                   className="w-20 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
                 />
 
@@ -514,10 +513,8 @@ export default function Home() {
               <SwiperSlide key={index} className="h-auto!">
                 <div className="flex h-full w-full bg-red-100 px-4 py-8 sm:px-6 sm:py-10 md:px-12 ">
                   <div className="grid w-full grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
-                    {/* LEFT */}
                     <div className="flex min-w-0 flex-col">
                       <h2 className="mb-6 text-center text-xl font-bold sm:mb-10 sm:text-2xl md:text-4xl">
-                        {/* {slide.heading} */}
                       </h2>
 
                       <h3 className="mb-4 text-xl font-bold sm:mb-6 sm:text-2xl md:text-4xl">
@@ -541,17 +538,17 @@ export default function Home() {
                           </li>
                         ))}
                       </ul>
-
-                      {/* TECHNOLOGIES */}
                       <div className="mb-6 flex flex-wrap gap-5 sm:mb-8 sm:gap-8">
                         {slide.technologies.map((tech, i) => (
                           <div
                             key={i}
                             className="flex flex-col items-center text-center"
                           >
-                            <img
+                            <Image
                               src={tech.icon}
                               alt={tech.name}
+                              width={36}
+                              height={36}
                               className="h-8 w-8 object-contain sm:h-9 sm:w-9"
                             />
 
@@ -572,13 +569,14 @@ export default function Home() {
                         />
                       </Link>
                     </div>
-
-                    {/* RIGHT */}
                     <div className="flex w-full items-center justify-center">
                       <div className="flex w-full items-center justify-center">
-                        <img
+                        <Image
                           src={slide.image}
                           alt={slide.title}
+                          width={1200}
+                          height={800}
+                          sizes="100vw"
                           className="max-h-125 w-full object-contain lg:max-h-135"
                         />
                       </div>
@@ -654,16 +652,16 @@ export default function Home() {
         <div className="mt-10 mb-15 w-full pt-2 max-w-7xl mx-auto">
           <div className="overflow-hidden bg-red-50">
             <div className="grid grid-cols-1 items-stretch lg:grid-cols-2">
-              {/* IMAGE */}
               <div className="h-full min-h-75 lg:min-h-125">
-                <img
-                  src="/images/AI_Development_Company-2.png"
-                  alt="AI Development Company"
-                  className="block h-full w-full object-cover"
-                />
+              <Image
+                src="/images/home/AI_Development_Company-2.png"
+                alt="AI Development Company"
+                width={1200}
+                height={800}
+                sizes="100vw"
+                className="block h-full w-full object-cover"
+              />
               </div>
-
-              {/* CONTENT */}
               <div className="flex items-center p-6 sm:p-8 lg:p-10">
                 <div>
                   <p className="text-base leading-relaxed text-black sm:text-lg md:text-xl">
@@ -686,14 +684,13 @@ export default function Home() {
         </div>
         <section className="max-w-7xl mx-auto w-full overflow-x-hidden bg-red-50 px-4 py-10 pt-2 sm:px-6 sm:py-12 md:px-12">
           <div className="mx-auto mt-10 mb-10 w-full max-w-4xl px-2 text-center sm:mt-14">
-            {/* ICON */}
-            <img
+            <Image
               src="/images/letdiscuss-icon.png.webp"
               alt="Hire Team"
+              width={64}
+              height={64}
               className="mx-auto mb-4 h-12 w-12 object-contain sm:mb-6 sm:h-16 sm:w-16"
             />
-
-            {/* HEADING */}
             <h2 className="text-2xl font-bold text-black sm:text-3xl md:text-4xl">
               Ready to Build Something Extraordinary?
             </h2>
@@ -705,11 +702,8 @@ export default function Home() {
               developers aren't just experienced, they're certified, driven, and
               genuinely obsessed with getting the details right.
             </p>
-
-            {/* CONTACT BOX */}
             <div className="flex justify-center">
               <div className="mt-6 flex w-full max-w-3xl flex-col items-center justify-center gap-3 border border-red-300 px-4 py-4 text-sm sm:mt-8 sm:px-6 sm:py-5 sm:text-base md:flex-row md:text-lg">
-                {/* EMAIL */}
                 <span className="flex items-center gap-1 font-semibold">
                   <div
                     className="h-6 w-6 shrink-0 bg-red-600"
@@ -726,8 +720,6 @@ export default function Home() {
                 </span>
 
                 <span className="block">or</span>
-
-                {/* PHONE */}
                 <span className="flex flex-wrap items-center justify-center gap-1">
                   <div
                     className="h-6 w-6 shrink-0 bg-red-600"
@@ -745,8 +737,6 @@ export default function Home() {
                 </span>
               </div>
             </div>
-
-            {/* BUTTON */}
             <div className="flex justify-center">
               <Link
                 href="/lets-talk"
@@ -777,8 +767,6 @@ export default function Home() {
             built to perform, shaped entirely around your business goals.
           </p>
         </div>
-
-        {/* SWIPER 3 - SERVICES */}
         <section className="mb-10 max-w-7xl mx-auto px-4">
           <Swiper
             modules={[Autoplay]}
@@ -794,22 +782,18 @@ export default function Home() {
           >
             {servicesData.map((service) => (
               <SwiperSlide key={service.id} className="h-auto!">
-                {/* Sirf Hover Par Border Dikhega */}
                 <div className="border border-transparent hover:border-red-600 hover:shadow-lg transition-all duration-300 rounded-none p-6 sm:p-8 h-full bg-white flex flex-col justify-between cursor-pointer">
                   <div>
-                    {/* Icon */}
-                    <img
+                    <Image
                       src={service.icon}
                       alt={service.title}
+                      width={40}
+                      height={40}
                       className="w-10 h-10 object-contain mb-6"
                     />
-
-                    {/* Title */}
                     <h3 className="text-lg sm:text-xl font-bold text-black mb-3 leading-snug">
                       {service.title}
                     </h3>
-
-                    {/* Description */}
                     <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal">
                       {service.description}
                     </p>
@@ -831,8 +815,6 @@ export default function Home() {
             ))}
           </Swiper>
         </section>
-
-        {/* APPROACH HEADER */}
         <div className="px-3 mt-10">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mt-10">
             Our Design & Development Approach
@@ -846,8 +828,6 @@ export default function Home() {
             business goals, not just your original brief.
           </p>
         </div>
-
-        {/* PROCESS STEPS */}
         <section className="mt-20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
@@ -856,30 +836,26 @@ export default function Home() {
                   key={step.id}
                   className="group relative border border-gray-100 rounded-3xl sm:rounded-[30px] bg-white pt-16 sm:pt-20 pb-6 sm:pb-8 px-5 sm:px-8 hover:shadow-xl transition-all duration-300 mb-10"
                 >
-                  {/* Floating Icon */}
                   <div className="absolute -top-8 sm:-top-10 right-5 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24  border-2 border-gray-300  rounded-2xl flex items-center justify-center transition-all duration-300">
-                    <img
+                    <Image
                       src={step.image}
                       alt={step.title}
+                      width={56}
+                      height={56}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 object-contain"
                     />
                   </div>
 
                   <div className="flex items-start gap-3 sm:gap-5">
-                    {/* Number Box */}
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-red-50 group-hover:bg-red-600 rounded-tr-2xl rounded-br-2xl flex items-center justify-center shrink-0 transition-all duration-300">
                       <span className=" group-hover:text-white text-xl sm:text-2xl font-bold">
                         {step.id}
                       </span>
                     </div>
-
-                    {/* Title */}
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold leading-tight text-black transition-colors duration-300">
                       {step.title}
                     </h3>
                   </div>
-
-                  {/* Description */}
                   <p className="mt-5 sm:mt-8 text-sm sm:text-base text-[#555] leading-7 sm:leading-8 font-semibold transition-colors duration-300">
                     {step.description}
                   </p>
@@ -896,12 +872,8 @@ export default function Home() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
-          {/* Outer Card Wrapper with Fixed Border & Accent */}
           <div className="relative bg-white border border-red-200 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
-            {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
-
-            {/* Swiper Slider Component */}
             <Swiper
               modules={[Navigation, Autoplay]}
               spaceBetween={30}
@@ -917,7 +889,6 @@ export default function Home() {
               {testimonials.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div>
-                    {/* Top User Info & Rating Section */}
                     <div className="flex items-center gap-4 mb-6">
                       {/* Avatar Circle */}
                       <div className="w-16 h-16  border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
@@ -1012,16 +983,15 @@ export default function Home() {
                 key={index}
                 className="relative w-full sm:w-70 lg:w-45 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
-                {/* Floating Icon */}
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                  <img
+                  <Image
                     src={item.icon}
                     alt=""
+                    width={44}
+                    height={44}
                     className="w-11 h-11 object-contain"
                   />
                 </div>
-
-                {/* Text Container */}
                 <div className="flex flex-col gap-1">
                   <h3 className="text-lg font-bold text-black leading-none">
                     {item.value}
@@ -1039,31 +1009,23 @@ export default function Home() {
         </section>
         <section className="w-full bg-red-50 py-16 px-6 font-sans  sm:px-5 sm:py-12 max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.png.webp" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.png.webp"
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
                 className="object-contain"
               />
             </div>
-
-            {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
               Ready to Get Started?
             </h2>
-
-            {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
               Send your Requirements on
             </p>
-
-            {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-300  py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 hover:text-red-600  transition-colors"
@@ -1083,8 +1045,6 @@ export default function Home() {
                 </a>
 
                 <span className="text-gray-900 font-normal">or</span>
-
-                {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -1112,9 +1072,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Action Button */}
-
             <div className="flex justify-center">
               <Link
                 href="/lets-talk"
@@ -1149,9 +1106,12 @@ export default function Home() {
                   key={index}
                   className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
                 >
-                  <img
+                  <Image
                     src={item.bgImage}
                     alt={item.title}
+                    width={1200}
+                    height={800}
+                    sizes="100vw"
                     className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
@@ -1172,8 +1132,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* TWO PANEL CTA */}
         <section className="py-8 sm:py-12 w-full px-3 sm:px-5  max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="bg-red-50 p-6 sm:p-8 md:p-12 text-center lg:text-left">
@@ -1227,8 +1185,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* WHO WE WORK WITH */}
         <section className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
           <div className="bg-red-50 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
@@ -1248,22 +1204,24 @@ export default function Home() {
               </div>
 
               <div className="flex justify-center lg:justify-end">
-                <img
+                <Image
                   src="/images/globe-vector.png.webp"
                   alt="Globe"
+                  width={520}
+                  height={520}
                   className="w-full max-w-xs sm:max-w-md lg:max-w-130 object-contain"
                 />
               </div>
             </div>
           </div>
         </section>
-
-        {/* FINAL DISCUSS CTA */}
         <section className="bg-red-50 py-10 sm:py-12 px-4 sm:px-6 md:px-12 mt-5 pt-2 w-full  max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <img
+            <Image
               src="/images/letdiscuss-icon.png.webp"
               alt="Hire Team"
+              width={64}
+              height={64}
               className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 object-contain"
             />
 

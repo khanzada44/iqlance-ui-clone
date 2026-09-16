@@ -400,7 +400,6 @@ export default function fitness() {
         <section>
           <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
             {ServiceSectionData.map((item, index) => {
-              // Checking if index is odd to reverse layout dynamically
               const isEven = index % 2 === 0;
 
               return (
@@ -409,7 +408,6 @@ export default function fitness() {
                   className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                     }`}
                 >
-                  {/* Content Side */}
                   <div className="w-full lg:w-1/2 space-y-6">
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                       {item.title}
@@ -419,7 +417,6 @@ export default function fitness() {
                       className="text-black text-sm md:text-base leading-relaxed"
                       dangerouslySetInnerHTML={{ __html: item.description }}
                     />
-                    {/* Dynamic Feature List */}
                     <ul className="space-y-4 pt-2">
                       {item.features.map((feature, fIndex) => (
                         <li
@@ -432,12 +429,13 @@ export default function fitness() {
                       ))}
                     </ul>
                   </div>
-
-                  {/* Image Side */}
                   <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-                    <img
+                    <Image
                       src={item.imageUrl}
-                      alt={item.imageAlt}
+                      alt={item.imageAlt || ""}
+                      width={1200}
+                      height={800}
+                      sizes="100vw"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -462,9 +460,11 @@ export default function fitness() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
           <div className="flex justify-center lg:justify-end">
-            <img
+            <Image
               src="/images/fitness-sec-left.jpg"
               alt="Customer Support"
+              width={600}
+              height={600}
               className="w-full max-w-md h-auto object-cover"
             />
           </div>
@@ -472,10 +472,7 @@ export default function fitness() {
           <div className="flex flex-col gap-y-6">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                {/* Chevron Right Icon */}
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-
-                {/* Text Content */}
                 <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                   <strong className="font-semibold text-gray-900">
                     {item.title}:
@@ -496,7 +493,6 @@ export default function fitness() {
           </div>
         </div>
         <section>
-          {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
               Why Choose Us for Fitness App Development?
@@ -506,38 +502,39 @@ export default function fitness() {
             </p>
           </div>
         </section>
-      <section className="py-12 px-4 max-w-7xl mx-auto font-sans bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
-          {fitnessFeatures.map((item) => (
-            <div
-              key={item.id}
-              className="w-full h-full bg-white border border-gray-200 p-8 flex flex-col items-center text-center shadow-xs transition-shadow duration-300 hover:shadow-md"
-            >
-              <div className="w-12 h-12 mb-5 flex items-center justify-center shrink-0">
-                <img
-                  src={item.icon}
-                  alt={item.title}
-                  className="w-full h-full object-contain"
-                />
+        <section className="py-12 px-4 max-w-7xl mx-auto font-sans bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
+            {fitnessFeatures.map((item) => (
+              <div
+                key={item.id}
+                className="w-full h-full bg-white border border-gray-200 p-8 flex flex-col items-center text-center shadow-xs transition-shadow duration-300 hover:shadow-md"
+              >
+                <div className="w-12 h-12 mb-5 flex items-center justify-center shrink-0">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                <h3 className="text-base md:text-lg font-bold text-black mb-4">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed grow">
+                  {item.description}
+                </p>
               </div>
-
-              <h3 className="text-base md:text-lg font-bold text-black mb-4">
-                {item.title}
-              </h3>
-
-              <p className="text-gray-600 text-xs md:text-sm leading-relaxed grow">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
         <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp"
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -545,20 +542,16 @@ export default function fitness() {
               />
             </div>
 
-            {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
               Ready to Get Started?
             </h2>
 
-            {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
               Send your Requirements on
             </p>
 
-            {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -578,8 +571,6 @@ export default function fitness() {
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -599,8 +590,6 @@ export default function fitness() {
                 </div>
               </div>
             </div>
-
-            {/* Action Button */}
             <div>
               <Link
                 href="/contact-us"
@@ -613,7 +602,6 @@ export default function fitness() {
           </div>
         </section>
         <section className="mt-15 mb-15 text-center text-gray-800">
-          {/* Block 1 */}
           <div className="mb-12">
             <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6">
               Tailored Fitness App Development for Every Business
@@ -635,8 +623,6 @@ export default function fitness() {
               </p>
             </div>
           </div>
-
-          {/* Block 2 */}
           <div>
             <h3 className="text-xl md:text-2xl font-extrabold text-black mb-6">
               A USA-Based Team You Can Actually Meet
@@ -709,9 +695,11 @@ export default function fitness() {
                         <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
                           {slide.technologies.map((tech, i) => (
                             <div key={i} className="text-center">
-                              <img
+                              <Image
                                 src={tech.icon}
                                 alt={tech.name}
+                                width={32}
+                                height={32}
                                 className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
                               />
                               <p className="text-xs sm:text-sm mt-2">
@@ -731,10 +719,11 @@ export default function fitness() {
                       </div>
 
                       <div className="flex justify-center">
-                        <img
+                        <Image
                           src={slide.image}
                           alt={slide.title}
-                          className=""
+                          width={800}
+                          height={600}
                         />
                       </div>
                     </div>
@@ -745,7 +734,6 @@ export default function fitness() {
           </Swiper>
         </section>
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
-          {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
@@ -765,8 +753,6 @@ export default function fitness() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-
-          {/* Technology Stack Heading Section */}
           <div className="text-center max-w-6xl mx-auto space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               Built on a Secure, Scalable Tech Foundation
@@ -785,7 +771,6 @@ export default function fitness() {
 
         <section>
           <div className="max-w-7xl mx-auto">
-            {/* Tabs */}
             <div className="flex justify-center mb-10 ">
               <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
@@ -798,8 +783,6 @@ export default function fitness() {
                       }`}
                   >
                     {tab.category}
-
-                    {/* Active underline */}
                     <span
                       className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
                         }`}
@@ -808,16 +791,17 @@ export default function fitness() {
                 ))}
               </div>
             </div>
-            {/* Content */}
             <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
               {technologies[activetechnologies].items.map((item, index) => (
                 <div
                   key={index}
                   className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={56}
+                    height={56}
                     className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
                   />
 
@@ -831,12 +815,12 @@ export default function fitness() {
         </section>
         <section className="py-12 px-4 max-w-6xl mx-auto font-sans">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-
-            {/* Left Side: Image Container */}
             <div className="w-full h-full overflow-hidden rounded-xs">
-              <img
+              <Image
                 src="/images/highlight-left.jpg"
                 alt="Track, Analyze, and Improve"
+                width={800}
+                height={600}
                 className="w-full h-auto object-cover rounded-xs"
               />
             </div>
@@ -869,31 +853,23 @@ export default function fitness() {
         </section>
         <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp"
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
                 className="object-contain"
               />
             </div>
-
-            {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
               Looking to Hire Dedicated Team?
             </h2>
-
-            {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
               We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
             </p>
-
-            {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -913,8 +889,6 @@ export default function fitness() {
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -934,8 +908,6 @@ export default function fitness() {
                 </div>
               </div>
             </div>
-
-            {/* Action Button */}
             <div>
               <Link
                 href="/contact-us"
@@ -968,30 +940,26 @@ export default function fitness() {
                   key={step.id}
                   className="group relative border border-gray-100 rounded-3xl sm:rounded-[30px] bg-white pt-16 sm:pt-20 pb-6 sm:pb-8 px-5 sm:px-8 hover:shadow-xl transition-all duration-300 mb-10"
                 >
-                  {/* Floating Icon */}
                   <div className="absolute -top-8 sm:-top-10 right-5 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24  border-2 border-gray-300  rounded-2xl flex items-center justify-center transition-all duration-300">
-                    <img
+                    <Image
                       src={step.image}
                       alt={step.title}
+                      width={56}
+                      height={56}
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 object-contain"
                     />
                   </div>
 
                   <div className="flex items-start gap-3 sm:gap-5">
-                    {/* Number Box */}
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-red-50 group-hover:bg-red-600 rounded-tr-2xl rounded-br-2xl flex items-center justify-center shrink-0 transition-all duration-300">
                       <span className=" group-hover:text-white text-xl sm:text-2xl font-bold">
                         {step.id}
                       </span>
                     </div>
-
-                    {/* Title */}
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold leading-tight text-black transition-colors duration-300">
                       {step.title}
                     </h3>
                   </div>
-
-                  {/* Description */}
                   <p className="mt-5 sm:mt-8 text-sm sm:text-base text-[#555] leading-7 sm:leading-8 font-semibold transition-colors duration-300">
                     {step.description}
                   </p>
@@ -1001,7 +969,6 @@ export default function fitness() {
           </div>
         </section>
         <section className="py-12 px-4 font-sans text-center text-gray-800">
-          {/* Block 1 */}
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
               From Product Idea to Something People Build Habits Around
@@ -1024,8 +991,6 @@ export default function fitness() {
               fitness marketplace.
             </p>
           </div>
-
-          {/* Block 2 */}
           <div className="mt-10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
               What Makes a Fitness App More Than Just Another App?
@@ -1057,16 +1022,15 @@ export default function fitness() {
                 key={index}
                 className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
               >
-                {/* Floating Icon */}
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                  <img
+                  <Image
                     src={item.icon}
                     alt=""
+                    width={44}
+                    height={44}
                     className="w-11 h-11 object-contain"
                   />
                 </div>
-
-                {/* Text Container */}
                 <div className="flex flex-col gap-1">
                   <h3 className="text-lg font-bold text-black leading-none">
                     {item.value}
@@ -1101,9 +1065,11 @@ export default function fitness() {
                 key={index}
                 className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  width={64}
+                  height={64}
                   className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
                 />
 
@@ -1133,12 +1099,8 @@ export default function fitness() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
-          {/* Outer Card Wrapper with Fixed Border & Accent */}
           <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
-            {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
-
-            {/* Swiper Slider Component */}
             <Swiper
               modules={[Navigation, Autoplay]}
               spaceBetween={30}
@@ -1154,9 +1116,7 @@ export default function fitness() {
               {testimonials.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div>
-                    {/* Top User Info & Rating Section */}
                     <div className="flex items-center gap-4 mb-6">
-                      {/* Avatar Circle */}
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
@@ -1173,7 +1133,6 @@ export default function fitness() {
                         <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
-                        {/* Stars */}
                         <div className="flex items-center gap-1">
                           {[...Array(item.review)].map((_, index) => (
                             <Star
@@ -1184,13 +1143,10 @@ export default function fitness() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Review Text */}
                     <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
-                    {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
                       <span className="text-xs text-gray-500 font-medium block">
                         verified
@@ -1210,7 +1166,6 @@ export default function fitness() {
               ))}
             </Swiper>
 
-            {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
                 className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
@@ -1228,7 +1183,6 @@ export default function fitness() {
           </div>
         </section>
         <section>
-          {/* Heading */}
           <div>
             <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions
@@ -1240,7 +1194,6 @@ export default function fitness() {
             </p>
           </div>
 
-          {/* FAQ */}
           <section className="py-12">
             <div className="max-w-6xl mx-auto px-4">
               <div className="space-y-4">

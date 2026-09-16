@@ -413,8 +413,8 @@ export default function Logistic() {
           {/* Top Heading */}
           <div className="text-center max-w-6xl mx-auto mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
-              Transportation and Logistics App Development Company for Western
               Businesses
+              Transportation and Logistics App Development Company for Western
             </h2>
 
             <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
@@ -437,7 +437,7 @@ export default function Logistic() {
           {/* Middle Banner Image */}
           <div className="w-full my-12 overflow-hidden">
             <Image
-              src="/images/logistics-fullwidth.jpg" // Put your image in /public/images/
+              src="/images/industry/logistics/logistics-fullwidth.webp"
               alt="Transportation and Logistics Modes"
               width={1200}
               height={400}
@@ -669,25 +669,20 @@ export default function Logistic() {
 
         <section>
           <div className="max-w-7xl mx-auto px-4">
-            {/* CTA Box */}
             <div className="md:mt-10 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
                 Ready to Build a Custom Logistics App?
               </h2>
-
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
                 Partner with our logistics app development company to streamline
                 fleet management, delivery tracking, and supply chain
                 operations.
               </p>
-
-              {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
@@ -721,7 +716,6 @@ export default function Logistic() {
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
-
                     </span>
                   </div>
                 </div>
@@ -741,7 +735,6 @@ export default function Logistic() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
-          {/* Section Header */}
           <div className="text-center space-y-3 mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Key Features of Logistics and Transportation App Development
@@ -751,8 +744,6 @@ export default function Logistic() {
               help you manage every aspect of your operations in a streamlined, organized way.
             </p>
           </div>
-
-          {/* Tabs Navigation */}
           <div className="flex justify-center  mb-10 overflow-x-auto">
             <div className="flex gap-8 border-b border-red-200">
               {featuresTabsData.map((tab) => {
@@ -772,28 +763,23 @@ export default function Logistic() {
               })}
             </div>
           </div>
-
-          {/* Grid Content */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {currentTab.features.map((feature) => (
               <div
                 key={feature.id}
                 className="border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow bg-white min-h-35"
               >
-                {/* Feature Icon */}
                 <div className="w-12 h-12 mb-3 flex items-center justify-center">
                   <img
                     src={feature.icon}
                     alt={feature.title}
                     className="w-full h-full object-contain"
-                    // Fallback icon placeholder if image missing
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
                         "https://via.placeholder.com/48?text=Icon";
                     }}
                   />
                 </div>
-                {/* Feature Title */}
                 <h3 className="text-sm md:text-base font-semibold text-gray-800">
                   {feature.title}
                 </h3>
@@ -803,7 +789,6 @@ export default function Logistic() {
         </section>
         <section>
           <div className="max-w-7xl mx-auto px-4">
-            {/* CTA Box */}
             <div className="mt-12 md:mt-10 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
@@ -876,16 +861,16 @@ export default function Logistic() {
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left Image Side */}
+
             <div className="w-full h-full min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-              <img
-                src="/images/our-developers.jpg"
+              <Image
+                src="/images/industry/real-estate/our-developers.webp"
                 alt="Expert Logistics App Developers"
+                width={1200}
+                height={800}
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Trusted Logistics App Development Company with Proven Technical Expertise
@@ -939,8 +924,6 @@ export default function Logistic() {
               </p>
             </div>
           </div>
-
-          {/* Banner Image */}
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
             <img
               src="/images/healthcare-app-built.jpg"
@@ -1034,9 +1017,11 @@ export default function Logistic() {
                       </div>
 
                       <div className="hidden lg:flex justify-center items-center h-full max-h-87.5">
-                        <img
+                        <Image
                           src={slide.image}
                           alt={slide.title}
+                          width={800}
+                          height={600}
                           className="object-contain w-[70%]"
                         />
                       </div>

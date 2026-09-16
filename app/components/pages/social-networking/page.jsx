@@ -412,9 +412,11 @@ export default function SocialMedia() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
           <div className="flex justify-center lg:justify-end">
-            <img
-              src="/images/social-app-dev-right.jpg"
+            <Image
+              src="/images/solutions/Social-Networking/social-app-dev-right.webp"
               alt="Customer Support"
+              width={600}
+              height={600}
               className="w-full max-w-md h-auto object-cover"
             />
           </div>
@@ -422,10 +424,7 @@ export default function SocialMedia() {
           <div className="flex flex-col gap-y-6">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                {/* Chevron Right Icon */}
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-
-                {/* Text Content */}
                 <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                   <strong className="font-semibold text-gray-900">
                     {item.title}:
@@ -447,7 +446,6 @@ export default function SocialMedia() {
         </div>
 
         <section className="w-full max-w-6xl mx-auto md:py-16">
-          {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
               Features of Social Networking App Development
@@ -460,16 +458,17 @@ export default function SocialMedia() {
             </p>
           </div>
         </section>
-        {/* Cards */}
         <div className="mb-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {healthcareFeatures.map((feature) => (
             <div
               key={feature.id}
               className="border border-gray-200 rounded-md bg-white hover:shadow-lg transition-all duration-300 p-8 flex flex-col items-center justify-center text-center min-h-42.5"
             >
-              <img
+              <Image
                 src={feature.icon}
                 alt={feature.title}
+                width={56}
+                height={56}
                 className="w-14 h-14 object-contain"
               />
 
@@ -481,31 +480,23 @@ export default function SocialMedia() {
         </div>
         <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp"
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
                 className="object-contain"
               />
             </div>
-
-            {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
               Ready to Get Started?
             </h2>
-
-            {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
               Send your Requirements on
             </p>
-
-            {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -525,8 +516,6 @@ export default function SocialMedia() {
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -546,8 +535,6 @@ export default function SocialMedia() {
                 </div>
               </div>
             </div>
-
-            {/* Action Button */}
             <div>
               <Link
                 href="/contact-us"
@@ -561,7 +548,6 @@ export default function SocialMedia() {
         </section>
 
         <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
-          {/* Main Heading & Content Block */}
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
               Custom App Development for Fitness Businesses
@@ -594,8 +580,6 @@ export default function SocialMedia() {
               </p>
             </div>
           </div>
-
-          {/* Bottom Sub-Block */}
           <div>
             <h3 className="text-xl md:text-2xl font-extrabold text-black mb-4">
               Endeavors That Make Us Proud
@@ -630,9 +614,12 @@ export default function SocialMedia() {
                 <SwiperSlide key={slide.id}>
                   <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
                     <div className="w-full lg:w-1/2">
-                      <img
+                      <Image
                         src={slide.image}
                         alt={slide.title}
+                        width={1200}
+                        height={800}
+                        sizes="100vw"
                         className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
                       />
                     </div>
@@ -697,7 +684,7 @@ export default function SocialMedia() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          
+
         </section>
 
         <div className="text-center max-w-6xl mx-auto space-y-4 mt-15">
@@ -725,8 +712,6 @@ export default function SocialMedia() {
                       }`}
                   >
                     {tab.category}
-
-                    {/* Active underline */}
                     <span
                       className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
                         }`}
@@ -735,19 +720,19 @@ export default function SocialMedia() {
                 ))}
               </div>
             </div>
-            {/* Content */}
             <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
               {technologies[activetechnologies].items.map((item, index) => (
                 <div
                   key={index}
                   className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={56}
+                    height={56}
                     className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
                   />
-
                   <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
                     {item.name}
                   </h3>
@@ -759,31 +744,23 @@ export default function SocialMedia() {
 
         <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp" 
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
                 className="object-contain"
               />
             </div>
-
-            {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
               Looking to Hire Dedicated Team?
             </h2>
-
-            {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
               We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
             </p>
-
-            {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
-                {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -803,8 +780,6 @@ export default function SocialMedia() {
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -868,8 +843,6 @@ export default function SocialMedia() {
                     className="w-11 h-11 object-contain"
                   />
                 </div>
-
-                {/* Text Container */}
                 <div className="flex flex-col gap-1">
                   <h3 className="text-lg font-bold text-black leading-none">
                     {item.value}
@@ -937,12 +910,8 @@ export default function SocialMedia() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
-          {/* Outer Card Wrapper with Fixed Border & Accent */}
           <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
-            {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
-
-            {/* Swiper Slider Component */}
             <Swiper
               modules={[Navigation, Autoplay]}
               spaceBetween={30}
@@ -958,7 +927,6 @@ export default function SocialMedia() {
               {testimonials.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div>
-                    {/* Top User Info & Rating Section */}
                     <div className="flex items-center gap-4 mb-6">
                       {/* Avatar Circle */}
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
@@ -988,13 +956,9 @@ export default function SocialMedia() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Review Text */}
                     <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
-
-                    {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
                       <span className="text-xs text-gray-500 font-medium block">
                         verified
@@ -1032,7 +996,6 @@ export default function SocialMedia() {
           </div>
         </section>
         <section>
-          {/* Heading */}
           <div>
             <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions

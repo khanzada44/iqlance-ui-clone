@@ -242,8 +242,6 @@ export default function HeroQuoteSection() {
                   <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
                     Guaranteed Response within One Business Day!
                   </p>
-
-                  {/* Form Inputs */}
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <input
@@ -418,22 +416,18 @@ export default function HeroQuoteSection() {
                 strengthen patient engagement, and create a foundation for smarter healthcare delivery.
               </p>
             </div>
-
-            {/* Image */}
             <div className="mt-12">
-              <img
-                src="/images/healthcare-full-photo.jpg"
+              <Image
+                src="/images/industry/health-care/healthcare-full-photo.webp"
                 alt="Healthcare Mobile App Development"
+                width={1200}
+                height={800}
                 className="w-full object-cover shadow-md"
               />
             </div>
-
-            {/* Bottom Heading */}
             <h2 className="mt-14 text-2xl md:text-2xl font-bold text-center leading-tight">
               Cloud Healthcare App Development Services for Connected, Future-Ready Care
             </h2>
-
-            {/* Bottom Content */}
             <div className="mt-8 space-y-6 text-center text-black text-base md:text-lg leading-8">
               <p className="m-0 text-black ">
                 Healthcare teams need instant access to information without being tied to a
@@ -459,9 +453,7 @@ export default function HeroQuoteSection() {
         </section>
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            {/* Top Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Left */}
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold leading-tight">
                   Explore the Standout Features of Our Healthcare App Development Solutions
@@ -482,22 +474,22 @@ export default function HeroQuoteSection() {
                   ))}
                 </ul>
               </div>
-              {/* Right */}
               <div>
-                <img
-                  src="/images/apply-change-healthcare.jpg"
-                  alt="Healthcare"
+                <Image
+                  src="/images/industry/health-care/apply-change-healthcare.webp"
+                  alt="Healthcare Mobile App Development"
+                  width={1200}
+                  height={800}
                   className="w-full object-cover shadow-md"
                 />
               </div>
             </div>
-
-            {/* CTA Box */}
-
             <div className="mt-12 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
-              <img
-                src="/images/letdiscuss-icon.png.webp"
-                alt=""
+              <Image
+                src="/images/example.webp"
+                alt="Example"
+                width={64}
+                height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
@@ -977,18 +969,15 @@ export default function HeroQuoteSection() {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-5">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Left Image */}
               <div>
-                <img
-                  src="/images/our-developers.jpg"
-                  alt="Healthcare Developers"
-                  width={600}
-                  height={600}
-                  className="w-full h-full object-cover"
+                <Image
+                  src="/images/industry/health-care/our-developers.webp"
+                  alt="Healthcare Mobile App Development"
+                  width={1200}
+                  height={800}
+                  className="w-full object-cover shadow-md"
                 />
               </div>
-
-              {/* Right Content */}
               <div>
                 <h2 className="text-3xl lg:text-[32px] font-bold text-[#111827] leading-tight">
                   Our Healthcare App Developers are Dedicated to Providing a Seamless Experience
@@ -1058,7 +1047,13 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div>
-            <img src="/images/healthcare-app-built.jpg" alt="" />
+            <Image
+              src="/images/industry/health-care/healthcare-app-built.webp"
+              alt="Healthcare Mobile App Development"
+              width={80}
+              height={80}
+              className="w-full object-cover shadow-md"
+            />
             <div className="mt-15">
               <h1 className="mt-5 flex justify-center font-bold text-3xl">
                 Endeavors That Make Us Proud
@@ -1075,7 +1070,6 @@ export default function HeroQuoteSection() {
         </section>
 
         <section className="py-10">
-          {/* Custom style for red pagination dots */}
           <style>{`
             .case-study-swiper .swiper-pagination-bullet {
               background-color: #cbd5e1 !important;
@@ -1386,11 +1380,13 @@ export default function HeroQuoteSection() {
                   key={index}
                   className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
                 >
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
-                  />
+              <Image
+                src={service.image}
+                alt={service.title}
+                width={64}
+                height={64}
+                className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
+              />
 
                   <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4">
                     {service.title}

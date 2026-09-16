@@ -408,13 +408,13 @@ export default function realEstate() {
             </div>
           </div>
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
-        <Image
-          src="/images/industry/real-estate/custom-app-re.webp"
-          alt="Cost Calculation & Financial Planning"
-          width={1200}
-          height={800}
-          className="w-full h-full object-cover"
-        />
+            <Image
+              src="/images/industry/real-estate/custom-app-re.webp"
+              alt="Cost Calculation & Financial Planning"
+              width={1200}
+              height={800}
+              className="w-full h-full object-cover"
+            />
 
           </div>
         </section>
@@ -423,7 +423,7 @@ export default function realEstate() {
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" 
+                src="/images/letdiscuss-icon.webp"
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -591,7 +591,7 @@ export default function realEstate() {
                 className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
               >
-                {/* Content Side */}
+
                 <div className="w-full lg:w-1/2 space-y-6">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                     {item.title}
@@ -601,7 +601,7 @@ export default function realEstate() {
                     {item.description}
                   </p>
 
-                  {/* Dynamic Feature List */}
+
                   <ul className="space-y-4 pt-2">
                     {item.features.map((feature, fIndex) => (
                       <li
@@ -617,9 +617,11 @@ export default function realEstate() {
 
                 {/* Image Side */}
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-                  <img
+                  <Image
                     src={item.imageUrl}
-                    alt={item.imageAlt}
+                    alt={item.imageAlt || ""}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -633,7 +635,7 @@ export default function realEstate() {
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp"
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -718,9 +720,7 @@ export default function realEstate() {
             everyday operation by the use of top features like:
           </p>
 
-          {/* Main 3x3 Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
-            {/* Card 1 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/doctor-patient-profile-icn.png"
@@ -732,7 +732,6 @@ export default function realEstate() {
               </h3>
             </div>
 
-            {/* Card 2 */}
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/ril-icn.png"
@@ -990,8 +989,6 @@ export default function realEstate() {
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Right Content Side */}
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 We Turn Real Estate Ideas Into Apps People Actually Use
@@ -1023,7 +1020,6 @@ export default function realEstate() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
-          {/* Top Text Content */}
           <div className="text-center max-w-5xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               How Much Does It Cost to Build a Real Estate App?
@@ -1065,11 +1061,11 @@ export default function realEstate() {
           </div>
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
             <img
-              src="/images/healthcare-app-built.jpg"
+              src="/images/industry/real-estate/healthcare-app-built.webp"
               alt="Cost Calculation & Financial Planning"
               className="w-full h-full object-cover"
             />
-            
+
           </div>
 
           {/* Success Stories Heading Section */}
@@ -1136,9 +1132,11 @@ export default function realEstate() {
                       <div className="flex flex-wrap gap-4 sm:gap-6 mb-6">
                         {slide.technologies.map((tech, i) => (
                           <div key={i} className="text-center">
-                            <img
+                            <Image
                               src={tech.icon}
                               alt={tech.name}
+                              width={32}
+                              height={32}
                               className="w-7 h-7 sm:w-8 sm:h-8 mx-auto object-contain"
                             />
                             <p className="text-xs sm:text-sm mt-1">
@@ -1161,9 +1159,11 @@ export default function realEstate() {
                     {/* Fixed dimensions container for slide image to ensure equal sizing */}
                     <div className="flex justify-center items-center">
                       <div className="">
-                        <img
+                        <Image
                           src={slide.image}
                           alt={slide.title}
+                          width={800}
+                          height={600}
                           className="w-full h-full object-contain"
                         />
                       </div>
@@ -1262,7 +1262,7 @@ export default function realEstate() {
             {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp"
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -1353,38 +1353,38 @@ export default function realEstate() {
             </p>
           </div>
         </section>
-            <section className="mt-10">
-              <div className="flex flex-wrap justify-center gap-7 mb-10">
-                {stats.map((item, index) => (
-                  <div
-                    key={index}
-                    className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
-                  >
-                    {/* Floating Icon */}
-                    <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
-                      <img
-                        src={item.icon}
-                        alt=""
-                        className="w-11 h-11 object-contain"
-                      />
-                    </div>
+        <section className="mt-10">
+          <div className="flex flex-wrap justify-center gap-7 mb-10">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className="relative w-full sm:w-70 lg:w-35 rounded-2xl border border-[#E7E7E7] bg-white px-6 pt-10 pb-6"
+              >
+                {/* Floating Icon */}
+                <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="w-11 h-11 object-contain"
+                  />
+                </div>
 
-                    {/* Text Container */}
-                    <div className="flex flex-col gap-1">
-                      <h3 className="text-lg font-bold text-black leading-none">
-                        {item.value}
-                      </h3>
+                {/* Text Container */}
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-bold text-black leading-none">
+                    {item.value}
+                  </h3>
 
-                      <p className="text-sm leading-tight text-black">
-                        {item.line1}
-                        <br />
-                        {item.line2}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  <p className="text-sm leading-tight text-black">
+                    {item.line1}
+                    <br />
+                    {item.line2}
+                  </p>
+                </div>
               </div>
-            </section>
+            ))}
+          </div>
+        </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">

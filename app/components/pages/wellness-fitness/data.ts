@@ -89,7 +89,7 @@ export const services = [
 export const slides = [
   {
     id: 1,
-    image: "/images/wellness-left-1.jpg",
+    image: "/images/industry/wellness-fitness/wellness-left-1.webp",
     title: "Comprehensive App for Fitness Enthusiasts",
     description:
       "We at Devapp offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
@@ -103,7 +103,7 @@ export const slides = [
   },
   {
     id: 2,
-    image: "/images/wellness-left-2.jpg",
+    image: "/images/industry/wellness-fitness/wellness-left-2.webp",
     title: "Effortless Calorie Tracking",
     description:
       "Our team understands that alongside physical activity, diet plays a critical role in reaching fitness goals whether it's toning muscle, tracking body fat, building strength, or anything in between. That's why our nutrition app also helps users discover healthy food choices or connect with experienced dietitians from virtually anywhere in the world.",
@@ -117,7 +117,7 @@ export const slides = [
 
   {
     id: 3,
-    image: "/images/wellness-left-3.jpg",
+    image: "/images/industry/wellness-fitness/wellness-left-3.webp",
     title: "Workout Apps That Keep Users Motivated",
     description:
       "Whether users are focused on general wellness or working toward specific goals like strength training, powerlifting, or bodybuilding, our fitness apps are designed to keep motivation high and help them get closer to their goals every day.",
@@ -130,7 +130,7 @@ export const slides = [
   },
   {
     id: 4,
-    image: "/images/wellness-left-4.jpg",
+    image: "/images/industry/wellness-fitness/wellness-left-4.webp",
     title: "Activity Tracking Solutions to Track Your Activities",
     description:
       "The apps offer well organized workflow of the clinic with advanced hospital mobility. We let the healthcare industry go smart with the simplified processes and managed inventories with the help of our incredible healthcare mobility solutions. ",
@@ -156,7 +156,8 @@ export const ServiceSectionData = [
       "Track and monitor heart rate progression with precision",
     ],
 
-    imageUrl: "/images/sound-wellness-right.jpg",
+
+    imageUrl: "/images/industry/wellness-fitness/sound-wellness-right.webp",
     imageAlt: "Wellness and Fitness App Development",
   },
 
@@ -172,7 +173,7 @@ export const ServiceSectionData = [
       "Set goals and hit them within your own timeline",
     ],
 
-    imageUrl: "/images/fitness-apps-left.jpg",
+    imageUrl: "/images/industry/wellness-fitness/fitness-apps-left.webp",
     imageAlt: "Fitness App Development",
   },
 ];

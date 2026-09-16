@@ -4,7 +4,7 @@ export const ServiceSectionData = [
     description:
       "We deliver full lifecycle solutions for food delivery businesses, whether you're operating locally or scaling internationally. From early-stage discovery and surface analytics to UI/UX design, full-stack development, and post-launch support, our team builds secure, scalable delivery platforms tailored to your exact operational needs.<br/><br/>We follow agile methodology and modern best practices to accelerate development speed without sacrificing performance or data security. With cloud-native deployment architecture and continuous support behind every build, we deliver mobile food delivery systems designed for smooth operations and long-term growth.",
     features: [],
-    imageUrl: "/images/Food-Delivery-App-Development_1.png",
+    imageUrl: "/images/solutions/Online-Food-Ordering/Food-Delivery-App-Development_1.webp",
     imageAlt: "End-to-end food delivery app development",
   },
   {
@@ -12,7 +12,7 @@ export const ServiceSectionData = [
     description:
       "We treat data protection and regulatory compliance as core requirements, not afterthoughts. Every food delivery solution we build integrates secure payment gateways aligned with PCI DSS standards, alongside end-to-end encrypted protocols. We implement role-based access controls, secure APIs, and cloud security best practices to safeguard both customer and business data with continuous monitoring and performance audits, ensuring your platform stays secure, reliable, and fully compliant at all times.",
     features: [],
-    imageUrl: "/images/Food-Delivery-App-Development_3.png",
+    imageUrl: "/images/solutions/Online-Food-Ordering/Food-Delivery-App-Development_3.webp",
     imageAlt: "Secure and compliant food delivery app development",
   },
 ];
@@ -92,7 +92,7 @@ export const slides = [
 export const foodDeliverySlides = [
   {
     id: 1,
-    image: "/images/food_startups.png",
+    image: "/images/solutions/Online-Food-Ordering/food_startups.webp",
     title: "Restaurant Chain Management",
     description:
       "Bring every restaurant location together on one connected platform. Our restaurant chain management solutions centralize operations, improve coordination, and provide greater visibility across every outlet, helping businesses manage menus, orders, inventory, and performance more efficiently.",

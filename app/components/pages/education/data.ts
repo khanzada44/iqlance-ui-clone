@@ -87,7 +87,7 @@ export const ServiceSectionData = [
       "To view progress within no time by using the app",
       "To train as well as monitor the progression of heart rate",
     ],
-    imageUrl: "/images/sound-wellness-right.jpg",
+    imageUrl: "/images/industry/Education/sound-wellness-right.webp",
     imageAlt: "Logistics App Development",
   },
   {
@@ -101,7 +101,7 @@ export const ServiceSectionData = [
       "Set and achieve goals in desired time",
       "Design and plan your diet",
     ],
-    imageUrl: "/images/fitness-apps-left.jpg",
+    imageUrl: "/images/industry/Education/fitness-apps-left.webp",
     imageAlt: "Logistics App Development",
   },
 ];
