@@ -150,7 +150,7 @@ export const ServiceSectionData = [
     description:
       "Transportation businesses don't all operate the same way. A local cab company, corporate transportation provider, chauffeur service, or on-demand mobility business may require very different workflows and customer experiences.<br/><br/>Our taxi app development solutions can be adapted to the way your business operates while keeping the rider experience at the center. We consider your service model, customer expectations, fleet structure, and operational needs before shaping the right functionality.<br/><br/>From booking and dispatch to driver coordination, live tracking, payments, and trip management, we can create a tailored application that supports your specific transportation requirements and gives your business room to expand.",
     features: [],
-    imageUrl: "/images/texti-app-right.jpg",
+    imageUrl: "/images/solutions/taxi-dooking/texti-app-right.webp",
     imageAlt: "Taxi App Solutions",
   },
 ];

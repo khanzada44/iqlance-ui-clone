@@ -295,7 +295,6 @@ export default function Ondemadd() {
                     {statusMessage.text}
                   </p>
                 )}
-                {/* Form Inputs */}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <input
@@ -487,7 +486,6 @@ export default function Ondemadd() {
 
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
-            // Checking if index is odd to reverse layout dynamically
             const isEven = index % 2 === 0;
 
             return (

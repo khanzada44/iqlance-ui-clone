@@ -243,7 +243,6 @@ export default function fitness() {
             {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
               <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
-                {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
                     src="/images/contact-form-logo.png"
@@ -461,7 +460,7 @@ export default function fitness() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
           <div className="flex justify-center lg:justify-end">
             <Image
-              src="/images/fitness-sec-left.jpg"
+              src="/images/solutions/fitness/fitness-sec-left.webp"
               alt="Customer Support"
               width={600}
               height={600}

@@ -383,7 +383,6 @@ export default function Restaurant() {
         <section>
           <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
             {ServiceSectionData.map((item, index) => {
-              // Checking if index is odd to reverse layout dynamically
               const isEven = index % 2 === 0;
 
               return (
@@ -392,7 +391,6 @@ export default function Restaurant() {
                   className={`flex flex-col lg:flex-row  gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                     }`}
                 >
-                  {/* Content Side */}
                   <div className="w-full lg:w-1/2 space-y-6">
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                       {item.title}
@@ -402,7 +400,6 @@ export default function Restaurant() {
                       className="text-black lg:text-2xl  md:text-base leading-relaxed"
                       dangerouslySetInnerHTML={{ __html: item.description }}
                     />
-                    {/* Dynamic Feature List */}
                     <ul className="space-y-4 pt-2">
                       {item.features.map((feature, fIndex) => (
                         <li
@@ -415,12 +412,13 @@ export default function Restaurant() {
                       ))}
                     </ul>
                   </div>
-
-                  {/* Image Side */}
                   <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-                    <img
+                    <Image
                       src={item.imageUrl}
-                      alt={item.imageAlt}
+                      alt={item.imageAlt || ""}
+                      width={1200}
+                      height={800}
+                      sizes="100vw"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -1027,9 +1025,9 @@ export default function Restaurant() {
             The Process Behind a Restaurant App Built to Perform
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
-            A successful restaurant app starts with more than a list of features. 
-            We look at how your customers discover your menu, place orders, book tables, 
-            pay, and come back then turn those real-world interactions into a digital 
+            A successful restaurant app starts with more than a list of features.
+            We look at how your customers discover your menu, place orders, book tables,
+            pay, and come back then turn those real-world interactions into a digital
             experience that works for both your guests and your team.
           </p>
         </div>

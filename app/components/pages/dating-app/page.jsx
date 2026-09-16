@@ -369,8 +369,6 @@ export default function SocialMedia() {
                       Please Send NDA
                     </label>
                   </div>
-
-                  {/* Submit Button */}
                   <div className="pt-2">
                     <button
                       type="submit"
@@ -412,7 +410,6 @@ export default function SocialMedia() {
           </div>
         </section>
         <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-center text-gray-800">
-          {/* Main Heading */}
           <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6">
             Why Devapp for Custom Dating App Development in the USA
           </h2>
@@ -443,12 +440,13 @@ export default function SocialMedia() {
               create a dating platform that users can trust and keep coming back to.
             </p>
           </div>
-
-          {/* Bottom Banner Image */}
           <div className="w-full overflow-hidden ">
-            <img
-              src="/images/Custom-Dating-App-Development-USA.png" // Apni image ka path yahan dein
+            <Image
+              src="/images/Custom-Dating-App-Development-USA.png"
               alt="Dating App Development Banner"
+              width={1200}
+              height={800}
+              sizes="100vw"
               className="w-full h-auto object-cover"
             />
           </div>
@@ -456,14 +454,10 @@ export default function SocialMedia() {
 
         <section className="py-12 px-4 max-w-7xl mx-auto font-sans">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            {/* Left Side: Content & List */}
             <div className="flex flex-col gap-y-6">
-              {/* Main Heading */}
               <h2 className="text-2xl lg:text-3xl font-extrabold text-black leading-snug">
                 On-Demand Dating App Development Solutions We Offer
               </h2>
-
-              {/* Subtitle / Intro Text */}
               <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                 We offer on-demand dating app solutions customized to diverse
                 audiences and their relationship goals. We are not just app
@@ -471,17 +465,12 @@ export default function SocialMedia() {
                 to build an app that stands ahead in the highly competitive
                 market.
               </p>
-
-              {/* Feature List */}
               <div className="flex flex-col gap-y-5">
                 {datingSolutions.map((item, index) => (
                   <div key={index} className="flex items-start gap-2.5">
-                    {/* Bullet Icon */}
                     <span className="text-gray-500 font-bold text-lg leading-snug shrink-0">
                       &#8250;
                     </span>
-
-                    {/* Text Content */}
                     <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                       <strong className="font-bold text-black">
                         {item.title}:
@@ -491,8 +480,6 @@ export default function SocialMedia() {
                   </div>
                 ))}
               </div>
-
-              {/* Call to Action Button */}
               <div className="pt-2">
                 <Link
                   href="/lets-talk"
@@ -503,12 +490,13 @@ export default function SocialMedia() {
                 </Link>
               </div>
             </div>
-
-            {/* Right Side: Image Container */}
             <div className="w-full h-full flex justify-center lg:justify-end">
-              <img
-                src="/images/On-Demand-Dating-App-Solutions.png" // Apni image ka path yahan lagayein
+              <Image
+                src="/images/On-Demand-Dating-App-Solutions.png"
                 alt="On-Demand Dating App Development"
+                width={1024}
+                height={768}
+                sizes="(max-width: 1024px) 100vw, 1024px"
                 className="w-full max-w-lg lg:max-w-none h-auto object-cover rounded-xs"
               />
             </div>
@@ -542,16 +530,16 @@ export default function SocialMedia() {
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
                   <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
-                    {/* Image */}
                     <div className="w-full lg:w-1/2">
-                      <img
+                      <Image
                         src={slide.image}
                         alt={slide.title}
+                        width={1200}
+                        height={800}
+                        sizes="100vw"
                         className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
                       />
                     </div>
-
-                    {/* Content */}
                     <div className="w-full lg:w-1/2">
                       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
                         {slide.title}
@@ -581,7 +569,6 @@ export default function SocialMedia() {
         </section>
         <section className="w-full max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16 md:space-y-24">
           {ServiceSectionData.map((item, index) => {
-            // Checking if index is odd to reverse layout dynamically
             const isEven = index % 2 === 0;
 
             return (
@@ -590,7 +577,6 @@ export default function SocialMedia() {
                 className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
               >
-                {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                     {item.title}
@@ -600,7 +586,6 @@ export default function SocialMedia() {
                     className="text-black text-sm md:text-base leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: item.description }}
                   />
-                  {/* Dynamic Feature List */}
                   <ul className="space-y-4 pt-2">
                     {item.features.map((feature, fIndex) => (
                       <li
@@ -614,11 +599,13 @@ export default function SocialMedia() {
                   </ul>
                 </div>
 
-                {/* Image Side */}
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
-                  <img
+                  <Image
                     src={item.imageUrl}
-                    alt={item.imageAlt}
+                    alt={item.imageAlt || ""}
+                    width={1200}
+                    height={800}
+                    sizes="100vw"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -629,11 +616,12 @@ export default function SocialMedia() {
 
         <section >
           <div className="max-w-7xl mx-auto px-4">
-            {/* CTA Box */}
             <div className=" bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
-              <img
+              <Image
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
+                width={64}
+                height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
@@ -679,8 +667,8 @@ export default function SocialMedia() {
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
-                     
-                          
+
+
                     </span>
                   </div>
                 </div>
@@ -700,7 +688,6 @@ export default function SocialMedia() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto md:py-16">
-          {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-4xl font-bold text-black">
               Essential Features for a Modern Dating App
@@ -713,7 +700,6 @@ export default function SocialMedia() {
           </div>
         </section>
         <div className="max-w-6xl mx-auto p-6 font-sans">
-          {/* Navigation Tabs */}
           <div className="flex justify-center mb-8 w-full">
             <div className="flex gap-8 border-b border-red-200">
               {tabs.map((tab) => {
@@ -728,8 +714,6 @@ export default function SocialMedia() {
                       }`}
                   >
                     {tab.label}
-
-                    {/* Active Blue Bottom Line */}
                     {isActive && (
                       <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-600" />
                     )}
@@ -739,16 +723,17 @@ export default function SocialMedia() {
             </div>
           </div>
 
-          {/* Feature Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {appData[activeTab]?.map((item) => (
               <div
                 key={item.id}
                 className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center rounded-sm min-h-36 gap-3"
               >
-                <img
+                <Image
                   src={item.iconPath}
                   alt={item.title}
+                  width={40}
+                  height={40}
                   className="w-10 h-10 object-contain"
                 />
                 <span className="text-gray-800 font-medium text-sm md:text-base">
@@ -761,11 +746,12 @@ export default function SocialMedia() {
 
         <section >
           <div className="max-w-7xl mx-auto px-4">
-            {/* CTA Box */}
             <div className="mt-10 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
-              <img
+              <Image
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
+                width={64}
+                height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
@@ -776,8 +762,6 @@ export default function SocialMedia() {
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
                 Send your Requirements on
               </p>
-
-              {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
@@ -811,7 +795,7 @@ export default function SocialMedia() {
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
-                          
+
                     </span>
                   </div>
                 </div>
@@ -831,13 +815,14 @@ export default function SocialMedia() {
           </div>
         </section>
         <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-gray-800 space-y-16">
-          {/* Top Section: Image + Content Side by Side */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Left Image */}
             <div className="w-full h-full overflow-hidden rounded-sm">
-              <img
-                src="/images/our-developers.jpg" // Apni top image ka path lagayein
+              <Image
+                src="/images/our-developers.jpg"
                 alt="Hire Developers"
+                width={1200}
+                height={800}
+                sizes="100vw"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -901,8 +886,6 @@ export default function SocialMedia() {
                 ever compromising on quality.
               </p>
             </div>
-
-            {/* CTA Button */}
             <div className="pt-2">
               <Link
                 href="/lets-talk"
@@ -912,13 +895,14 @@ export default function SocialMedia() {
               </Link>
             </div>
           </div>
-
-          {/* Bottom Section: Wide Image Banner + Bottom Text */}
           <div className="space-y-8 text-center">
             <div className="w-full overflow-hidden ">
-              <img
-                src="/images/healthcare-app-built.jpg" // Apni wide image ka path lagayein
+              <Image
+                src="/images/healthcare-app-built.jpg"
                 alt="Cost Analysis Banner"
+                width={1200}
+                height={800}
+                sizes="100vw"
                 className="w-full h-auto object-cover max-h-96"
               />
             </div>
@@ -984,9 +968,11 @@ export default function SocialMedia() {
                         <div className="flex flex-wrap gap-6 sm:gap-8 mb-6 sm:mb-8">
                           {slide.technologies.map((tech, i) => (
                             <div key={i} className="text-center">
-                              <img
+                              <Image
                                 src={tech.icon}
                                 alt={tech.name}
+                                width={32}
+                                height={32}
                                 className="w-7 h-7 sm:w-8 sm:h-8 mx-auto"
                               />
                               <p className="text-xs sm:text-sm mt-2">
@@ -1006,7 +992,12 @@ export default function SocialMedia() {
                       </div>
 
                       <div className="flex justify-center">
-                        <img src={slide.image} alt={slide.title} className="" />
+                        <Image
+                          src={slide.image}
+                          alt={slide.title}
+                          width={1200}
+                          height={800}
+                        />
                       </div>
                     </div>
                   </div>
@@ -1016,7 +1007,6 @@ export default function SocialMedia() {
           </Swiper>
         </section>
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
-          {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
@@ -1036,8 +1026,6 @@ export default function SocialMedia() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-
-          {/* Technology Stack Heading Section */}
         </section>
 
         <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
@@ -1052,7 +1040,6 @@ export default function SocialMedia() {
         </div>
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 ">
-            {/* Tabs */}
             <div className="flex justify-center mb-10 ">
               <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
@@ -1065,8 +1052,6 @@ export default function SocialMedia() {
                       }`}
                   >
                     {tab.category}
-
-                    {/* Active underline */}
                     <span
                       className={`absolute left-0 -bottom-px h-0.5 bg-red-600 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
                         }`}
@@ -1075,16 +1060,17 @@ export default function SocialMedia() {
                 ))}
               </div>
             </div>
-            {/* Content */}
             <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
               {technologies[activetechnologies].items.map((item, index) => (
                 <div
                   key={index}
                   className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={56}
+                    height={56}
                     className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
                   />
 
@@ -1099,14 +1085,14 @@ export default function SocialMedia() {
 
         <section>
           <div className="max-w-7xl mx-auto px-4">
-            {/* CTA Box */}
             <div className="bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
-              <img
+              <Image
                 src="/images/letdiscuss-icon.png.webp"
                 alt=""
+                width={64}
+                height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
                 We are Team of Talented, Experienced, and Certified Designers
                 and Developers.
@@ -1149,7 +1135,7 @@ export default function SocialMedia() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570     
+                      USA: +1 (866) 978-8570
                     </span>
                   </div>
                 </div>
@@ -1234,17 +1220,22 @@ export default function SocialMedia() {
                 key={index}
                 className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
               >
-                <img
+                <Image
                   src={item.bgImage}
                   alt={item.title}
+                  width={1200}
+                  height={800}
+                  sizes="100vw"
                   className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
-                    <img
+                    <Image
                       src={item.icon}
                       alt=""
+                      width={40}
+                      height={40}
                       className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
                     />
                   </div>
@@ -1279,9 +1270,11 @@ export default function SocialMedia() {
                 key={index}
                 className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  width={64}
+                  height={64}
                   className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
                 />
 
@@ -1311,9 +1304,7 @@ export default function SocialMedia() {
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
-          {/* Outer Card Wrapper with Fixed Border & Accent */}
           <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
-            {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
 
             {/* Swiper Slider Component */}
@@ -1332,9 +1323,7 @@ export default function SocialMedia() {
               {testimonials.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div>
-                    {/* Top User Info & Rating Section */}
                     <div className="flex items-center gap-4 mb-6">
-                      {/* Avatar Circle */}
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
@@ -1351,7 +1340,6 @@ export default function SocialMedia() {
                         <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
-                        {/* Stars */}
                         <div className="flex items-center gap-1">
                           {[...Array(item.review)].map((_, index) => (
                             <Star
@@ -1387,8 +1375,6 @@ export default function SocialMedia() {
                 </SwiperSlide>
               ))}
             </Swiper>
-
-            {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
                 className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
@@ -1406,7 +1392,6 @@ export default function SocialMedia() {
           </div>
         </section>
         <section>
-          {/* Heading */}
           <div>
             <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions
@@ -1446,8 +1431,6 @@ export default function SocialMedia() {
                           }`}
                       />
                     </button>
-
-                    {/* Answer */}
                     <div
                       className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
                         ? "max-h-150 opacity-100"

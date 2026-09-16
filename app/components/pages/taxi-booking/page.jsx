@@ -71,36 +71,36 @@ export default function Taxi() {
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
   // Data Array (Component ke bahar ya andar define karein)
-const processSteps = [
-  {
-    stepLabel: "STEP 1",
-    tabTitle: "1. Discover",
-    heading: "Discover",
-    description:
-      "We begin by understanding your transportation model, target riders, driver requirements, competitors, and operational challenges. This stage gives us the insight needed to define the right features and user journeys before design begins.",
-  },
-  {
-    stepLabel: "STEP 2",
-    tabTitle: "2. Design",
-    heading: "Design",
-    description:
-      "Next, we turn the requirements into an intuitive experience for passengers, drivers, and administrators. Our designers map the key interactions and create interfaces that make booking, navigation, trip management, and other essential actions easy to understand.",
-  },
-  {
-    stepLabel: "STEP 3",
-    tabTitle: "3. Build",
-    heading: "Build",
-    description:
-      "Once the experience is finalized, our developers bring it to life using the appropriate technologies and integrations. We develop the core functionality, connect APIs and third-party services, and build the infrastructure needed to support real-time transportation operations.",
-  },
-  {
-    stepLabel: "STEP 4",
-    tabTitle: "4. Deliver",
-    heading: "Deliver",
-    description:
-      "Before launch, we thoroughly test the application across its key workflows, devices, and integrations. After everything is validated, we prepare the product for deployment and can continue supporting improvements as your transportation business evolves.",
-  },
-];
+  const processSteps = [
+    {
+      stepLabel: "STEP 1",
+      tabTitle: "1. Discover",
+      heading: "Discover",
+      description:
+        "We begin by understanding your transportation model, target riders, driver requirements, competitors, and operational challenges. This stage gives us the insight needed to define the right features and user journeys before design begins.",
+    },
+    {
+      stepLabel: "STEP 2",
+      tabTitle: "2. Design",
+      heading: "Design",
+      description:
+        "Next, we turn the requirements into an intuitive experience for passengers, drivers, and administrators. Our designers map the key interactions and create interfaces that make booking, navigation, trip management, and other essential actions easy to understand.",
+    },
+    {
+      stepLabel: "STEP 3",
+      tabTitle: "3. Build",
+      heading: "Build",
+      description:
+        "Once the experience is finalized, our developers bring it to life using the appropriate technologies and integrations. We develop the core functionality, connect APIs and third-party services, and build the infrastructure needed to support real-time transportation operations.",
+    },
+    {
+      stepLabel: "STEP 4",
+      tabTitle: "4. Deliver",
+      heading: "Deliver",
+      description:
+        "Before launch, we thoroughly test the application across its key workflows, devices, and integrations. After everything is validated, we prepare the product for deployment and can continue supporting improvements as your transportation business evolves.",
+    },
+  ];
 
   const currentStep = processSteps[activeStepIndex] || processSteps[0];
   // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
@@ -237,8 +237,6 @@ const processSteps = [
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 shrink-0" /> User-Centered Development</li>
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 shrink-0" /> Modern Mobility Technology</li>
               </ul>
-
-              {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
@@ -267,7 +265,6 @@ const processSteps = [
             {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
               <div className="relative bg-[#F7F8FA] border border-blue-100/60  p-6 md:p-8 w-full shadow-lg">
-                {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
                     src="/images/contact-form-logo.png"
@@ -275,8 +272,6 @@ const processSteps = [
                     className="w-full h-auto object-contain"
                   />
                 </div>
-
-                {/* Form Heading */}
                 <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
                   Request a Free Quote
                 </h2>
@@ -293,7 +288,6 @@ const processSteps = [
                     {statusMessage.text}
                   </p>
                 )}
-                {/* Form Inputs */}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <input
@@ -455,9 +449,11 @@ const processSteps = [
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
           <div className="flex justify-center lg:justify-end">
-            <img
-              src="/images/taxi-app-devlop.jpg"
+            <Image
+              src="/images/solutions/taxi-dooking/taxi-app-devlop.webp"
               alt="Customer Support"
+              width={600}
+              height={600}
               className="w-full max-w-md h-auto object-cover"
             />
           </div>
@@ -465,10 +461,7 @@ const processSteps = [
           <div className="flex flex-col gap-y-6">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                {/* Chevron Right Icon */}
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-
-                {/* Text Content */}
                 <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                   <strong className="font-semibold text-gray-900">
                     {item.title}:
@@ -492,7 +485,6 @@ const processSteps = [
           </div>
         </div>
         <section className="max-w-6xl mx-auto px-4 py-12">
-          {/* Header */}
           <div className="text-center mb-12 max-w-6xl mx-auto">
             <h2 className="text-5xl md:text-4xl font-bold text-slate-900 mb-4">
               Taxi App Development Services for Modern Mobility Businesses
@@ -503,8 +495,6 @@ const processSteps = [
               technology needed to support your business from booking to dispatch.
             </p>
           </div>
-
-          {/* Grid List */}
           <div className="max-w-6xl mx-auto px-4 py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 items-start">
               {TaxiServices.map((item) => {
@@ -515,15 +505,16 @@ const processSteps = [
                     key={item.id}
                     className="border-b border-gray-200 py-4 transition-all duration-300"
                   >
-                    {/* Clickable Header Row */}
                     <div
                       onClick={() => toggleAccordion(item.id)}
                       className="flex items-center justify-between cursor-pointer group"
                     >
                       <div className="flex items-center space-x-4">
-                        <img
+                        <Image
                           src={item.icon}
                           alt={item.title}
+                          width={40}
+                          height={40}
                           className="w-10 h-10 object-contain shrink-0"
                         />
                         <span className="font-semibold text-slate-900 text-lg group-hover:text-red-600 transition-colors">
@@ -538,8 +529,6 @@ const processSteps = [
                           }`}
                       />
                     </div>
-
-                    {/* Expandable Text Description with Smooth CSS Grid Animation */}
                     <div
                       className={`grid transition-all duration-300 ease-in-out ${isOpen
                         ? "grid-rows-[1fr] opacity-100 mt-3"
@@ -570,9 +559,7 @@ const processSteps = [
         </div>
 
         <div className="max-w-6xl mx-auto p-6 font-sans">
-          {/* Navigation Tabs */}
           <div className="max-w-6xl mx-auto p-6 font-sans">
-            {/* Navigation Tabs */}
             <div className="flex justify-center mb-8 w-full">
               <div className="flex gap-8 border-b border-gray-200">
                 {tabs.map((tab) => {
@@ -599,7 +586,6 @@ const processSteps = [
             </div>
           </div>
 
-          {/* Feature Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {appData[activeTab]?.map((item) => (
               <div
@@ -607,8 +593,6 @@ const processSteps = [
                 className="bg-white border border-gray-200 p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-40"
               >
                 <img src={item.iconPath} alt="" />
-                {/* Custom Icon Placeholder - Yahan aap apna image/icon tag laga sakte hain */}
-
                 <span className="text-gray-800 font-medium text-base">
                   {item.title}
                 </span>
@@ -619,31 +603,28 @@ const processSteps = [
 
         <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10 mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            {/* Top Icon Illustration */}
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
+                src="/images/letdiscuss-icon.webp"
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
                 className="object-contain"
               />
             </div>
-
-            {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Have a Ride-Hailing Idea? Let's Put It in Motion
             </h2>
 
-            {/* Subtitle Paragraph */}
+
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
               Tell us what you want to build, who you want to serve, and how you plan to operate. We'll help turn your transportation concept into a product ready for the real world.
             </p>
 
-            {/* Contact Info Box */}
+
             <div className="w-full max-w-2xl bg-red-50 border border-red-500 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
-                {/* Email link */}
+
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -687,8 +668,6 @@ const processSteps = [
                 </div>
               </div>
             </div>
-
-            {/* Action Button */}
             <div>
               <Link
                 href="/lets-talk"
@@ -752,23 +731,19 @@ const processSteps = [
             >
               {sliderData.map((slide) => (
                 <SwiperSlide key={slide.id} className="h-full">
-                  {/* 'h-full' lagane se tamaam cards ki height bilkul equal ho jayegi */}
                   <div className="w-full h-full bg-white border border-gray-200 rounded-sm p-10 flex flex-col transition-all duration-300 hover:border-red-600 hover:shadow-sm">
-                    {/* Icon Container */}
                     <div className="w-14 h-14 mb-6 flex items-center justify-start shrink-0">
-                      <img
+                      <Image
                         src={slide.icon}
                         alt={slide.title}
+                        width={100}
+                        height={100}
                         className="w-full h-full object-contain"
                       />
                     </div>
-
-                    {/* Title */}
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       {slide.title}
                     </h3>
-
-                    {/* Description */}
                     <p className="text-gray-600 text-base leading-relaxed grow">
                       {slide.description}
                     </p>
@@ -780,7 +755,6 @@ const processSteps = [
         </section>
         <section className="px-6">
           {ServiceSectionData.map((item, index) => {
-            // Checking if index is odd to reverse layout dynamically
             const isEven = index % 2 === 0;
 
             return (
