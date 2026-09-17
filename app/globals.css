@@ -197,10 +197,13 @@ mark.has-inline-color {
     text-align: left !important;
   }
 
+
   p {
     text-align: left !important;
   }
-
+.footerDescription{
+  text-align: center !important;
+}
   .row.mt-iq-40 {
     display: block !important;
   }
@@ -221,7 +224,7 @@ mark.has-inline-color {
 
 @media(max-width: 375px) {
   h2 {
-    text-align: left !important;
+    text-align: center !important;
   }
 
   p {
@@ -1994,6 +1997,9 @@ p.mt-iq-20 {
 
     .main-hd-card p {
         font-size: 14px;
+    }
+    .footer{
+          text-align: center !important;
     }
 }
 .font-semib{

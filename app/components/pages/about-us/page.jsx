@@ -296,9 +296,9 @@ export default function About() {
             </div>
           </div>
         </section>
-        <div className="mb-7">
+        <div className="w-full px-5 mb-7">
           {/* Section Heading */}
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-black mb-4">
+          <h2 className="text-center text-4xl font-bold text-black">
             Our Vision
           </h2>
           <p className="max-w-8xl mx-auto text-center text-black text-base md:text-lg mb-12">

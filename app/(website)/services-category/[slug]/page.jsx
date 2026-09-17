@@ -47,7 +47,7 @@ export async function generateStaticParams() {
     .filter(Boolean);
 }
 
-// Dynamic Meta Tags
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 

@@ -23,7 +23,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="my-8 border-t border-gray-200" />
-        <p className="text-center text-sm not-italic text-black leading-relaxed">
+        <p className="text-center text-sm not-italic text-black leading-relaxed footerDescription">
           {footerDescription}
         </p>
         <div className="my-6 border-t border-gray-200" />
