@@ -76,7 +76,7 @@ export const processSteps = [
     description:
       "We start by getting to know your business, your objectives, your project requirements, your target audience, and the technical hurdles standing in your way. Through open, collaborative conversations, we map out the right technology approach and build a roadmap that supports where you're headed, not just where you are today.",
     image:
-      "/images/solutions/Fitness/proces-icon-1.webp",
+      "/images/solutions/fitness/proces-icon-2.webp",
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export const processSteps = [
     description:
       "Our UI/UX designers, solution architects, and technical experts get to work on user-focused designs, system architecture, wireframes, and a solid project plan. Every single feature is mapped out with intention. So the final product feels intuitive, functions seamlessly, and scales without breaking a sweat.",
     image:
-      "/images/home/proces-icon-2.webp",
+      "/images/solutions/fitness/proces-icon-2.webp",
   },
   {
     id: 3,
@@ -92,7 +92,7 @@ export const processSteps = [
     description:
       "Once the design gets the green light, our developers roll up their sleeves and build using modern technologies, AI-assisted tools, and agile methodologies to create applications that are secure, scalable, and genuinely high-performing. We keep you in the loop the entire way, with regular updates and the flexibility to pivot the moment your business needs shift.",
     image:
-      "/images/solutions/Fitness/proces-icon-3.webp",
+      "/images/solutions/fitness/proces-icon-3.webp",
   },
   {
     id: 4,
@@ -100,7 +100,7 @@ export const processSteps = [
     description:
       "Before anything goes live, our QA team puts it through the wringer, checking functionality, usability, security, compatibility, and performance from every angle. Multiple rounds of testing, both automated and manual, make sure your solution holds up reliably across devices, browsers, and operating environments with no surprises after launch.",
     image:
-      "/images/solutions/Fitness/proces-icon-4.webp",
+      "/images/solutions/fitness/proces-icon-4.webp",
   },
   {
     id: 5,
@@ -108,7 +108,7 @@ export const processSteps = [
     description:
       " Once testing gives the all-clear, we take your application, software, or website live in the right production environment whether that's a cloud platform, enterprise server, web hosting setup, or mobile app store. Every launch is handled with care: secure, seamless, and closely monitored from the moment it goes live",
     image:
-      "/images/solutions/Fitness/proces-icon-5.webp",
+      "/images/solutions/fitness/proces-icon-5.webp",
   },
   {
     id: 6,
