@@ -348,12 +348,12 @@ export default function wellnessFitness() {
         <section>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug px-5">
                 Connect Gym Trainers and Nutritionists with Clients Instantly Through
                 Custom Fitness App Development
               </h2>
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
                 At Devapp, we&apos;re committed to delivering the most effective fitness
                 solutions in the industry. That&apos;s why we&apos;ve built a diverse
                 portfolio of innovative wellness and fitness app development solutions,
@@ -362,7 +362,7 @@ export default function wellnessFitness() {
 
               <br />
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
                 We help gym trainers, dietitians, nutritionists, yoga instructors, and
                 aerobics/Zumba coaches bring their services onto web and mobile platforms
                 so athletes and fitness enthusiasts can access what they need, exactly
@@ -394,11 +394,11 @@ export default function wellnessFitness() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Build a Custom Logistics App for Your Business?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Partner with our logistics app development company to create
                 scalable, feature-rich logistics mobile applications tailored to
                 your needs.
@@ -472,7 +472,7 @@ export default function wellnessFitness() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 px-5">
                     <div className="w-full lg:w-1/2">
                       <Image
                         src={slide.image}
@@ -565,11 +565,11 @@ export default function wellnessFitness() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Get Started?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Send your Requirements on
               </p>
 
@@ -762,10 +762,10 @@ export default function wellnessFitness() {
 
         <section >
           <div className="text-center space-y-3 mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 px-5">
               Key Features of Logistics and Transportation App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
+            <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto px-5">
               Our logistics app solutions contain a host of features that shall
               help you manage your activities in a more organized manner.
             </p>
@@ -782,11 +782,11 @@ export default function wellnessFitness() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Build a Custom Logistics App?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Partner with our logistics app development company to streamline
                 fleet management, delivery tracking, and supply chain
                 operations.
@@ -903,11 +903,11 @@ export default function wellnessFitness() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 So, We Guess You want to talk about your Project
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Send your Requirements on
               </p>
 
@@ -1186,10 +1186,10 @@ export default function wellnessFitness() {
 
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-6xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 px-5">
               Technology Stack for Custom Wellness & Fitness App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed px-5">
               Our team of developers leave stones unturned in their quest to
               create usable apps with advanced features for companies, drivers,
               and consumers. We are equipped to handle different types of
@@ -1273,8 +1273,8 @@ export default function wellnessFitness() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-15">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-15 px-5">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 ">
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
@@ -1319,7 +1319,7 @@ export default function wellnessFitness() {
         </section>
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               Industries We Serve
             </h1>
@@ -1358,7 +1358,7 @@ export default function wellnessFitness() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
               Why Choose Us?
@@ -1393,7 +1393,7 @@ export default function wellnessFitness() {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
               Client Testimonials
             </h1>
@@ -1507,7 +1507,7 @@ export default function wellnessFitness() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               Customers frequently ask us the same questions when it comes to
               bespoke software development for food delivery management at their
               businesses. Here are a few that have been solved.
@@ -1581,7 +1581,7 @@ export default function wellnessFitness() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               Have Something in Mind? Let's Talk
             </h1>

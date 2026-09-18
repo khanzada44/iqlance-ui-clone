@@ -439,13 +439,13 @@ export default function EngagementModelSection() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Let’s Discuss Your Project With Our Technical Experts and Bring
               Your Idea to Life.
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               Send your Requirements on :
             </p>
 
@@ -569,13 +569,13 @@ export default function EngagementModelSection() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Not Sure Which Engagement Model Fits Your Project? Let's Talk It Through.
 
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-black max-w-4xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-4xl mb-8 leading-relaxed faq">
               Choosing the right engagement model can make or break a project, and that's exactly where our experts come in. Devapp Solutions has built its name as a trusted software, web, and mobile app development company, delivering secure, scalable, custom technology solutions for years. Our team brings together technical know-how and a structured development approach, helping businesses turn great ideas into digital products that actually succeed. Talk to us today, and let's find the model that works for you.
 
             </p>

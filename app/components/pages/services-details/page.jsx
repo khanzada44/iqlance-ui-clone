@@ -283,10 +283,8 @@ export default function ServicesCategory({ slug }) {
     <>
       <div className="w-full max-w-7xl mx-auto">
         <section className="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-16 lg:px-8">
-          {/* TOP: DESCRIPTION + FORM */}
           <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-start">
-            {/* LEFT - ONLY HERO CONTENT */}
-            <div className="w-full lg:flex-1 lg:min-w-0">
+            <div className="w-full lg:flex-1 lg:min-w-0 px-5">
               {serviceData?.description && (
                 <div
                   className="portfolio-dynamic-content w-full text-base leading-relaxed text-black md:text-lg"
@@ -295,8 +293,6 @@ export default function ServicesCategory({ slug }) {
                   }}
                 />
               )}
-
-              {/* BUTTONS */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
@@ -461,11 +457,11 @@ export default function ServicesCategory({ slug }) {
         {/* INDUSTRIES SECTION */}
         <section className="py-10 sm:py-16">
           <div className="max-w-7xl mx-auto px-3 sm:px-5">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center faq">
               Industries We Serve
             </h2>
 
-            <p className="max-w-6xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base">
+            <p className="max-w-6xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base faq px-4">
               At Devapp, we don't believe in one-size-fits-all every industry
               has its own challenges, and our solutions are built to match.
               Backed by deep, hands-on experience across sectors, we deliver
@@ -506,11 +502,11 @@ export default function ServicesCategory({ slug }) {
         {/* FAQ SECTION */}
         <section >
           <div className="max-w-7xl mx-auto px-4 sm:px-5">
-            <h2 className="text-4xl font-bold text-center">
+            <h2 className="text-4xl font-bold text-center faq">
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto faq">
               Find answers to common questions about our app and software
               development services and learn how we can help turn your idea into
               a successful digital product.
@@ -551,7 +547,7 @@ export default function ServicesCategory({ slug }) {
                 Have Something in Mind? Let's Talk
               </h3>
 
-              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600 faq px-4">
                 Have a look at the services and development process of the
                 Devapp solution. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our

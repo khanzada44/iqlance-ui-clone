@@ -395,7 +395,7 @@ export default function SocialMedia() {
         </section>
         <section>
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
+            <div className="text-center mb-10 px-5">
               <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
                 Social Networking Apps Engineered to Grow Your Business
               </h2>
@@ -421,7 +421,7 @@ export default function SocialMedia() {
             />
           </div>
 
-          <div className="flex flex-col gap-y-6">
+          <div className="flex flex-col gap-y-6 px-5">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
@@ -445,7 +445,7 @@ export default function SocialMedia() {
           </div>
         </div>
 
-        <section className="w-full max-w-6xl mx-auto md:py-16">
+        <section className="w-full max-w-6xl mx-auto md:py-16 px-5">
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
               Features of Social Networking App Development
@@ -612,7 +612,7 @@ export default function SocialMedia() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 px-5">
                     <div className="w-full lg:w-1/2">
                       <Image
                         src={slide.image}
@@ -687,7 +687,7 @@ export default function SocialMedia() {
 
         </section>
 
-        <div className="text-center max-w-6xl mx-auto space-y-4 mt-15">
+        <div className="text-center max-w-6xl mx-auto space-y-4 mt-15 px-5">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Technologies We Use
           </h2>
@@ -698,7 +698,7 @@ export default function SocialMedia() {
           </p>
         </div>
         <section>
-          <div className="max-w-7xl mx-auto mt-10 mb-10">
+          <div className="max-w-7xl mx-auto mt-10 mb-10 px-5">
             {/* Tabs */}
             <div className="flex justify-center mb-10 ">
               <div className="flex flex-wrap gap-8 border-b border-red-300">
@@ -814,7 +814,7 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -860,7 +860,7 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="text-center max-w-6xl mx-auto space-y-4 mt-4">
+          <div className="text-center max-w-6xl mx-auto space-y-4 mt-4 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Why Choose Us for Fitness App Development?
             </h1>
@@ -897,7 +897,7 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-4xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
@@ -1001,7 +1001,7 @@ export default function SocialMedia() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center faq px-5">
               Here you will find the answers you are looking for because we know
               what’s in our client’s mind.
             </p>
@@ -1074,7 +1074,7 @@ export default function SocialMedia() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
             </h1>

@@ -196,7 +196,9 @@ mark.has-inline-color {
   h2 {
     text-align: left !important;
   }
-
+.faq{
+  text-align: center !important;
+}
 
   p {
     text-align: left !important;
@@ -859,7 +861,7 @@ p.pt-20.text-center.mt-iq-20 {
   border-radius: 0px;
   padding: 35px 30px;
   box-sizing: border-box;
-  height: 481.792px !important;
+  height: 480.792px !important;
   transition: border-color 0.3s ease;
 }
 
@@ -2399,6 +2401,51 @@ p.mt-iq-20 {
     flex-direction: column;
     align-items: flex-start;
   }
+  
+.row.pt-5 .processbox {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  height: 370px;
+}
+.row.pt-7 .processbox {
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    width: 100%;
+    padding: 30px 25px;
+    transition: all .3s;
+    position: relative;
+    height: 350px !important;
+}
+.row.mt-iq-20 .col-md-12 {
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.folio-categoery ul li {
+    margin: 8px;
+    font-size: 13px;
+    padding-left: 2px !important;
+    text-align: left;
+}
+.row.mt-iq-40 .top-tech-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0px;
+  padding: 35px 30px;
+  box-sizing: border-box;
+  height: 516.792px !important;
+  transition: border-color 0.3s ease;
+}
 }
 .ui-btm{
   text-align: center;

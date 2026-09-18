@@ -379,7 +379,7 @@ export default function elearning() {
           </div>
         </section>
         <section>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto px-5">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
                 Transform Learning With Our E-Learning Development Solutions
@@ -425,7 +425,7 @@ export default function elearning() {
           </div>
 
 
-          <div className="flex flex-col gap-y-6">
+          <div className="flex flex-col gap-y-6 px-5">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
@@ -448,7 +448,7 @@ export default function elearning() {
             </div>
           </div>
         </div>
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 px-5">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">Immersive Mobile Learning & Teaching</h2>
           <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">We create mobile learning experiences that make education more interactive, accessible, and engaging. Our education app developers build platforms that support live classes, on-demand audio, video lessons, and digital learning resources, giving students and educators the flexibility to learn and teach from anywhere.
           </p>
@@ -481,7 +481,7 @@ export default function elearning() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 px-5">
                     <div className="w-full lg:w-1/2">
                       <Image
                         src={slide.image}
@@ -530,11 +530,11 @@ export default function elearning() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Looking to Hire Dedicated Team?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
               </p>
 
@@ -644,11 +644,11 @@ export default function elearning() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Get Started?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Send your Requirements on
               </p>
 
@@ -861,12 +861,12 @@ export default function elearning() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Have a Real Estate App Idea in Mind?
 
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Share your requirements with our team, and let’s turn your property-tech concept into a product users can actually rely on.
               </p>
 
@@ -961,7 +961,7 @@ export default function elearning() {
             </div>
           </div>
         </section>
-        <section className="w-full max-w-6xl mx-auto md:py-16 space-y-12">
+        <section className="w-full max-w-6xl mx-auto md:py-16 space-y-12 px-5">
           <div className="text-center max-w-6xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               How Much Does It Cost to Build a Custom Logistics App?
@@ -1035,7 +1035,7 @@ export default function elearning() {
             </p>
           </div>
         </section>
-        <section className="w-full max-w-7xl mx-auto space-y-16">
+        <section className="w-full max-w-7xl mx-auto space-y-16 px-5">
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
@@ -1122,10 +1122,10 @@ export default function elearning() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Transform Your Transportation and Logistics Mobile Apps Development
               </h2>
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Partner with our logistics app development company to build custom logistics mobile applications that streamline operations and drive growth.
               </p>
               <div className="flex justify-center">
@@ -1176,7 +1176,7 @@ export default function elearning() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
               Your Trusted Logistics App Development Company in the USA
@@ -1221,7 +1221,7 @@ export default function elearning() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
               Industries We Serve with Custom Logistics App Development
@@ -1264,7 +1264,7 @@ export default function elearning() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
               Why Businesses Choose Our Logistics App Development Company
@@ -1304,7 +1304,7 @@ export default function elearning() {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
               Client Testimonials
             </h1>
@@ -1404,7 +1404,7 @@ export default function elearning() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center faq px-5">
               Here you will find the answers you are looking for because we know
               what’s in our client’s mind.
             </p>
@@ -1472,7 +1472,7 @@ export default function elearning() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               Have Something in Mind? Let's Talk
             </h1>

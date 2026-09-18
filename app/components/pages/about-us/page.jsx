@@ -229,11 +229,11 @@ export default function About() {
                 className="object-contain w-auto h-auto"
               />
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Ready to Turn Your Idea Into a Successful Digital Product? Let’s
               Build It Together.
             </h3>
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               Call us Today for a Free Consultation:
             </p>
             <div className="w-full max-w-2xl bg-red-50 border border-red-200 rounded-sm py-4 px-6 mb-8 shadow-xs">
@@ -366,13 +366,13 @@ export default function About() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Let’s Discuss with our Technical Expert to Bring your Idea into
               Reality
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               Send your Requirements on:
             </p>
 

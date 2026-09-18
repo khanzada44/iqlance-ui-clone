@@ -316,11 +316,11 @@ export default function career() {
               className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 object-contain"
             />
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black faq">
               Ready to Get Started?
             </h2>
 
-            <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg">
+            <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg faq">
               Call us Today for a Free Consultation:
             </p>
 

@@ -424,7 +424,7 @@ export default function Ondemadd() {
         </section>
         <section>
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
+            <div className="text-center mb-10 px-5">
               <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
                 Top On-Demand Solutions Company
               </h2>
@@ -456,7 +456,7 @@ export default function Ondemadd() {
             />
           </div>
 
-          <div className="flex flex-col gap-y-6">
+          <div className="flex flex-col gap-y-6 px-5">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 {/* Chevron Right Icon */}
@@ -530,7 +530,7 @@ export default function Ondemadd() {
             );
           })}
         </section>
-        <section className="w-full max-w-6xl mx-auto ">
+        <section className="w-full max-w-6xl mx-auto px-5">
           {/* Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-4xl font-bold text-black">
@@ -566,7 +566,7 @@ export default function Ondemadd() {
           </div>
 
           {/* Technology Stack Heading Section */}
-          <div className="text-center max-w-4xl mx-auto space-y-4 mt-10 ">
+          <div className="text-center max-w-4xl mx-auto space-y-4 mt-10 px-5">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               Our On-Demand App Development Solutions
             </h2>
@@ -603,7 +603,7 @@ export default function Ondemadd() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 items-center px-5">
                     {/* Image */}
                     <div className="w-full lg:w-1/2">
                       <img
@@ -641,11 +641,11 @@ export default function Ondemadd() {
             </Swiper>
           </div>
         </section>
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4 px-5">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Technologies We Use
           </h2>
-          <p className="text-black text-sm  leading-relaxed">
+          <p className="text-black text-sm  leading-relaxed ">
             The right technology stack gives your real estate app the foundation it needs to perform today and scale tomorrow. We select modern tools and frameworks based on your product requirements, target platforms, integrations, and long-term business goals.
 
           </p>
@@ -716,7 +716,7 @@ export default function Ondemadd() {
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
             </p>
 
@@ -781,7 +781,7 @@ export default function Ondemadd() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Industries We Serve
             </h1>
@@ -820,7 +820,7 @@ export default function Ondemadd() {
         </section>
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -950,7 +950,7 @@ export default function Ondemadd() {
           </div>
         </section>
 
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4 px-5">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Our Process for Real Estate App Design & Development
 
@@ -1079,7 +1079,7 @@ export default function Ondemadd() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+          <div className="text-center max-w-4xl mx-auto space-y-4 mt-4 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">Why Choose Devapp?</h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
               From development to testing, design to deployment, and everything in between, we are the best on-demand app development company  that offers a vast range of scalable solutions.
@@ -1114,7 +1114,7 @@ export default function Ondemadd() {
         </section>
 
         <section>
-          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
@@ -1228,7 +1228,7 @@ export default function Ondemadd() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center faq px-5">
               Here you will find the answers you are looking for because we know
               what’s in our client’s mind.
             </p>
@@ -1301,7 +1301,7 @@ export default function Ondemadd() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
             </h1>

@@ -691,12 +691,12 @@ export default function Home() {
               height={64}
               className="mx-auto mb-4 h-12 w-12 object-contain sm:mb-6 sm:h-16 sm:w-16"
             />
-            <h2 className="text-2xl font-bold text-black sm:text-3xl md:text-4xl">
+            <h2 className="text-2xl font-bold text-black sm:text-3xl md:text-4xl faq">
               Ready to Build Something Extraordinary?
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="mx-auto mt-4 max-w-3xl text-base text-gray-700 sm:mt-5 sm:text-lg">
+            <p className="mx-auto mt-4 max-w-3xl text-base text-gray-700 sm:mt-5 sm:text-lg faq">
               Behind every great product is a team that knows how to bring it to
               life, and that's exactly who you'll get here. Our designers and
               developers aren't just experienced, they're certified, driven, and
@@ -1018,10 +1018,10 @@ export default function Home() {
                 className="object-contain"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
               Ready to Get Started?
             </h2>
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
               Send your Requirements on
             </p>
             <div className="w-full max-w-2xl bg-red-50 border border-red-300  py-4 px-6 mb-8 shadow-xs">
@@ -1225,11 +1225,11 @@ export default function Home() {
               className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 object-contain"
             />
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black faq">
               Have Questions? Let's Talk
             </h2>
 
-            <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg">
+            <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg faq">
               Sit down with one of our technical experts and let's turn your
               idea into reality, no pressure, just a real conversation about
               what you need. Share your requirements, and we'll take it from

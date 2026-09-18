@@ -432,12 +432,12 @@ export default function realEstate() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
               Looking to Hire Dedicated Team?
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
               We are team of talented, experienced, and certified designers and
               developers. Let us build something extraordinary.
             </p>
@@ -913,12 +913,12 @@ export default function realEstate() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
               So, We Guess You want to talk about your Project
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
               Send your Requirements on
             </p>
 
@@ -1271,13 +1271,13 @@ export default function realEstate() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
               We are Team of Talented, Experienced, and Certified Designers and
               Developers.
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
               Let us Build Something Extraordinary.
             </p>
 
@@ -1663,7 +1663,7 @@ export default function realEstate() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               Have Something in Mind? Let's Talk
             </h1>

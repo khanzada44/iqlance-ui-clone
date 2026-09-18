@@ -489,11 +489,11 @@ export default function Logistic() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Build a Custom Logistics App for Your Business?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Partner with our logistics app development company to create
                 scalable, feature-rich logistics mobile applications tailored to
                 your needs.
@@ -675,10 +675,10 @@ export default function Logistic() {
                 alt=""
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Build a Custom Logistics App?
               </h2>
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Partner with our logistics app development company to streamline
                 fleet management, delivery tracking, and supply chain
                 operations.
@@ -796,11 +796,11 @@ export default function Logistic() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Build a Custom Logistics App?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Partner with our logistics app development company to streamline
                 fleet management, delivery tracking, and supply chain
                 operations.
@@ -1120,12 +1120,12 @@ export default function Logistic() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Transform Your Transportation and Logistics Mobile Apps
                 Development
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Partner with our logistics app development company to build
                 custom logistics mobile applications that streamline operations
                 and drive growth.
@@ -1419,7 +1419,7 @@ export default function Logistic() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5 faq">
               Here you will find the answers you are looking for because we know
               what’s in our client’s mind.
             </p>
@@ -1492,7 +1492,7 @@ export default function Logistic() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               Have Something in Mind? Let's Talk
             </h1>

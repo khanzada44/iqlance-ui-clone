@@ -338,7 +338,7 @@ export default function foodOrdering() {
         </section>
         <section>
           <div >
-            <div className="text-center mb-10">
+            <div className="text-center mb-10 px-5">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
                 Creative eCommerce App Development Services
               </h2>
@@ -363,7 +363,7 @@ export default function foodOrdering() {
             </div>
           </div>
         </section>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10 px-5">
           <div className="flex justify-center lg:justify-end">
             <Image
               src="/images/industry/Ecommerce/eccom-app-dev-left.webp"
@@ -399,7 +399,7 @@ export default function foodOrdering() {
         </div>
         <section>
           <div>
-            <div className="text-center mb-10">
+            <div className="text-center mb-10 px-5">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
                 Explore the Standout Features Behind Our eCommerce App Development
               </h2>
@@ -438,7 +438,7 @@ export default function foodOrdering() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 px-5">
                     <div className="w-full lg:w-1/2">
                       <img
                         src={slide.image}
@@ -482,11 +482,11 @@ export default function foodOrdering() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Looking to Hire Dedicated Team?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 We are team of talented, experienced, and certified designers
                 and developers. Let us build something extraordinary.
               </p>
@@ -597,11 +597,11 @@ export default function foodOrdering() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Get Started?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Send your Requirements on
               </p>
               <div className="flex justify-center">
@@ -820,11 +820,11 @@ export default function foodOrdering() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 So, We Guess You want to talk about your Project
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Send your Requirements on
               </p>
 
@@ -918,11 +918,11 @@ export default function foodOrdering() {
         </section>
         <section className="w-full max-w-7xl mx-auto  space-y-12">
           <div className="text-center max-w-6xl mx-auto space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 px-5">
               How Much Does It Cost to Develop a Real Estate App?
             </h2>
 
-            <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
+            <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed px-5">
               <p>
                 The cost of developing a real estate app depends on what you want it to
                 do. A basic property listing app requires a very different development
@@ -965,11 +965,11 @@ export default function foodOrdering() {
             />
           </div>
           <div className="text-center max-w-5xl mx-auto space-y-3 pt-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 px-5">
               Endeavors That Make Us Proud
             </h2>
 
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed px-5">
               Devapp solutions has always been honored with valuable words for the
               efforts given on mobile app development that are efficiently unique and
               user centric. Here are some of the best examples for this.
@@ -1011,7 +1011,7 @@ export default function foodOrdering() {
         </section>
         <section>
           <div>
-            <div className="flex justify-center mb-10 ">
+            <div className="flex justify-center mb-10 px-5">
               <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
                   <button
@@ -1062,11 +1062,11 @@ export default function foodOrdering() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 We are Team of Talented, Experienced, and Certified Designers and Developers.
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Let us Build Something Extraordinary.
               </p>
 
@@ -1081,7 +1081,7 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               Offshore Web, Mobile & Software Development Company
             </h1>
@@ -1123,7 +1123,7 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               Industries We Serve
             </h1>
@@ -1165,7 +1165,7 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
               Why should you choose us?
@@ -1202,7 +1202,7 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
               Testimonials From Our Clients
             </h1>
@@ -1306,11 +1306,11 @@ export default function foodOrdering() {
         </section>
         <section>
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2 px-5">
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               Answers to Some of the frequently asked questions on our E-commerce app and software development services by some valuable clients such as you!
             </p>
           </div>
@@ -1377,8 +1377,8 @@ export default function foodOrdering() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 ">
               Have Something in Mind? Let's Talk
             </h1>
             <p>

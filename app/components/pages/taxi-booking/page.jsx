@@ -416,7 +416,7 @@ export default function Taxi() {
           </div>
         </section>
         <section>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto px-5">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
                 Give Your Transportation Business More Control and Your Riders a Better Experience
@@ -458,7 +458,7 @@ export default function Taxi() {
             />
           </div>
 
-          <div className="flex flex-col gap-y-6">
+          <div className="flex flex-col gap-y-6 px-5">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
@@ -484,7 +484,7 @@ export default function Taxi() {
             </div>
           </div>
         </div>
-        <section className="max-w-6xl mx-auto px-4 py-12">
+        <section className="max-w-6xl mx-auto py-12 px-5">
           <div className="text-center mb-12 max-w-6xl mx-auto">
             <h2 className="text-5xl md:text-4xl font-bold text-slate-900 mb-4">
               Taxi App Development Services for Modern Mobility Businesses
@@ -547,7 +547,7 @@ export default function Taxi() {
             </div>
           </div>
         </section>
-        <div className="text-center max-w-5xl mx-auto">
+        <div className="text-center max-w-5xl mx-auto px-5">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
             One Platform. Multiple Ways to Move Your Business Forward.
           </h2>
@@ -612,12 +612,12 @@ export default function Taxi() {
                 className="object-contain"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Have a Ride-Hailing Idea? Let's Put It in Motion
             </h2>
 
 
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               Tell us what you want to build, who you want to serve, and how you plan to operate. We'll help turn your transportation concept into a product ready for the real world.
             </p>
 
@@ -679,7 +679,7 @@ export default function Taxi() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-6xl mx-auto mt-10">
+          <div className="text-center max-w-6xl mx-auto mt-10 px-5">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Technology Built for Real-Time Transportation
 
@@ -870,7 +870,7 @@ export default function Taxi() {
         </section>
         {/* Endeavors Section */}
         <section >
-          <div className="text-center space-y-3">
+          <div className="text-center space-y-3 px-5">
             <h2 className="text-3xl md:text-3xl font-bold text-black">
               Endeavors That Make Us Proud
             </h2>
@@ -991,7 +991,7 @@ export default function Taxi() {
 
 
         </section>
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-15">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mt-15 px-5">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Technologies We Use
           </h2>
@@ -1111,7 +1111,7 @@ export default function Taxi() {
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
               We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
             </p>
 
@@ -1174,7 +1174,7 @@ export default function Taxi() {
 
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -1222,7 +1222,7 @@ export default function Taxi() {
         </section>
 
 
-        <div className="text-center max-w-6xl mx-auto space-y-4 mt-4">
+        <div className="text-center max-w-6xl mx-auto space-y-4 mt-4 px-5">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             The Process We Follow for Taxi App Development
           </h2>
@@ -1319,7 +1319,7 @@ export default function Taxi() {
         </div>
 
         <section>
-          <div className="text-center max-w-5xl mx-auto space-y-4 mt-4">
+          <div className="text-center max-w-5xl mx-auto space-y-4 mt-4 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Why Choose Devapp?
             </h1>
@@ -1356,7 +1356,7 @@ export default function Taxi() {
         </section>
 
         <section>
-          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
@@ -1470,7 +1470,7 @@ export default function Taxi() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center faq px-5">
               Here you will find the answers you are looking for because we know
               what’s in our client’s mind.
             </p>
@@ -1543,7 +1543,7 @@ export default function Taxi() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
             </h1>

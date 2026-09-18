@@ -529,7 +529,7 @@ export default function SocialMedia() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 px-5">
                     <div className="w-full lg:w-1/2">
                       <Image
                         src={slide.image}
@@ -625,11 +625,11 @@ export default function SocialMedia() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 Ready to Get Started?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Call us Today for a Free Consultation:
               </p>
 
@@ -687,7 +687,7 @@ export default function SocialMedia() {
             </div>
           </div>
         </section>
-        <section className="w-full max-w-6xl mx-auto md:py-16">
+        <section className="w-full max-w-5xl mx-auto md:py-16 px-5 mt-10">
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-4xl font-bold text-black">
               Essential Features for a Modern Dating App
@@ -755,11 +755,11 @@ export default function SocialMedia() {
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 So, We Guess You want to talk about your Project
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Send your Requirements on
               </p>
               <div className="flex justify-center">
@@ -1028,7 +1028,7 @@ export default function SocialMedia() {
           </div>
         </section>
 
-        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mt-4 px-5">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Technologies We Use
           </h2>
@@ -1093,12 +1093,12 @@ export default function SocialMedia() {
                 height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
-              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
                 We are Team of Talented, Experienced, and Certified Designers
                 and Developers.
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
                 Let us Build Something Extraordinary.
               </p>
 
@@ -1156,7 +1156,7 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -1203,7 +1203,7 @@ export default function SocialMedia() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Industries We Serve
@@ -1249,7 +1249,7 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="text-center max-w-6xl mx-auto space-y-4 mt-15">
+          <div className="text-center max-w-6xl mx-auto space-y-4 mt-15 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Why Choose Us for Dating App Development
             </h1>
@@ -1291,7 +1291,7 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
@@ -1397,7 +1397,7 @@ export default function SocialMedia() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center faq px-5">
               Here you will find the answers you are looking for because we know
               what’s in our client’s mind.
             </p>
@@ -1468,8 +1468,8 @@ export default function SocialMedia() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black ">
               Have Something in Mind? Let's Talk
             </h1>
             <p>

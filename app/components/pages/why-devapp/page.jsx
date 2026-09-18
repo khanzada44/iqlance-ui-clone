@@ -306,10 +306,10 @@ export default function whyDevapp() {
                 className="w-full h-auto rounded-lg"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Ready to Get Started?
             </h2>
-            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               The best time to talk about your idea is before someone else builds it first. Call us today for a free consultation, and let's see where we can take it.
             </p>
             <div className="w-full max-w-2xl bg-red-50 border border-red-400 rounded-sm py-4 px-6 mb-8 shadow-xs">

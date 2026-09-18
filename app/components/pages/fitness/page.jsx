@@ -443,7 +443,7 @@ export default function fitness() {
             })}
           </section>
           <div>
-            <div className="text-center mb-10">
+            <div className="text-center mb-10 px-5">
               <h2 className="text-2xl md:text-4xl font-bold text-black mb-4 leading-snug">
                 Essential Features for a Future-Ready Fitness App
               </h2>
@@ -468,7 +468,7 @@ export default function fitness() {
             />
           </div>
 
-          <div className="flex flex-col gap-y-6">
+          <div className="flex flex-col gap-y-6 px-5">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
@@ -492,7 +492,7 @@ export default function fitness() {
           </div>
         </div>
         <section>
-          <div className="text-center space-y-3">
+          <div className="text-center space-y-3 px-5">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
               Why Choose Us for Fitness App Development?
             </h2>
@@ -522,7 +522,7 @@ export default function fitness() {
                   {item.title}
                 </h3>
 
-                <p className="text-gray-600 text-xs md:text-sm leading-relaxed grow">
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed grow faq">
                   {item.description}
                 </p>
               </div>
@@ -601,7 +601,7 @@ export default function fitness() {
           </div>
         </section>
         <section className="mt-15 mb-15 text-center text-gray-800">
-          <div className="mb-12">
+          <div className="mb-12 px-5">
             <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6">
               Tailored Fitness App Development for Every Business
             </h2>
@@ -627,7 +627,7 @@ export default function fitness() {
               A USA-Based Team You Can Actually Meet
             </h3>
 
-            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto">
+            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto px-5">
               <p>
                 While many app development companies outsource behind the scenes,
                 Devapp keeps everything in-house and based right here in the USA. We
@@ -752,12 +752,12 @@ export default function fitness() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="text-center max-w-6xl mx-auto space-y-4">
+          <div className="text-center max-w-6xl mx-auto space-y-4 px-5">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
               Built on a Secure, Scalable Tech Foundation
             </h2>
 
-            <p className="text-black text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed px-3">
               A great fitness app isn't just about design, it's about what's running
               underneath it. We build on modern, battle-tested frameworks that ensure
               your app performs fast, scales as your user base grows, and keeps
@@ -769,7 +769,7 @@ export default function fitness() {
 
 
         <section>
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto px-4">
             <div className="flex justify-center mb-10 ">
               <div className="flex flex-wrap gap-8 border-b border-red-300">
                 {technologies.map((tab, index) => (
@@ -861,10 +861,10 @@ export default function fitness() {
                 className="object-contain"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
               Looking to Hire Dedicated Team?
             </h2>
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
               We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
             </p>
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
@@ -921,7 +921,7 @@ export default function fitness() {
 
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
             <h1 className="text-2xl md:text-2xl font-extrabold text-black">
               Our Fitness App Development Approach
             </h1>
@@ -1046,7 +1046,7 @@ export default function fitness() {
           </div>
         </section>
 
-        <div className="text-center max-w-5xl mx-auto space-y-4 mt-10">
+        <div className="text-center max-w-5xl mx-auto space-y-4 mt-10 px-5">
           <h2 className="text-2xl sm:text-3xl md:text-3xl font-extrabold text-black">
             Why Partner With Us for Fitness App Development?
           </h2>
@@ -1085,7 +1085,7 @@ export default function fitness() {
         </section>
 
         <section>
-          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
@@ -1183,11 +1183,11 @@ export default function fitness() {
         </section>
         <section>
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2 ">
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center faq px-5">
               Here you will find the answers you are looking for because we know
               what’s in our client’s mind.
             </p>
@@ -1259,7 +1259,7 @@ export default function fitness() {
           </section>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
             </h1>

@@ -486,7 +486,7 @@ export default function HeroQuoteSection() {
             </div>
             <div className="mt-12 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <Image
-                src="/images/example.webp"
+                src="/images/letdiscuss-icon.png.webp"
                 alt="Example"
                 width={64}
                 height={64}
@@ -1364,7 +1364,7 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-10 mt-15">
+            <h1 className="flex justify-center font-bold text-3xl mb-10 mt-17">
               Why Choose Devapp?
             </h1>
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
