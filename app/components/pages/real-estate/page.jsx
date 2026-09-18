@@ -363,11 +363,11 @@ export default function realEstate() {
         <section>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug px-5">
                 Custom Real Estate App Development Built Around Your Business
               </h2>
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
                 No two real estate businesses look the same so your app shouldn&apos;t
                 either. Our real estate app developers start with deep research into your
                 specific market, your customers, and your competitors before writing a
@@ -380,7 +380,7 @@ export default function realEstate() {
 
               <br />
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
                 Here&apos;s what makes our approach different:
               </p>
             </div>
@@ -501,10 +501,10 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center mb-10 mt-20">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug px-5">
               Delivery Of Unrivaled Solutions Is Our Prime Objective
             </h1>
-            <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
               We can help you digitalize your real estate business with the best
               real estate mobile app. We are the leading mobile app development
               company that strives to fulfill your every desire through
@@ -514,7 +514,7 @@ export default function realEstate() {
             </p>
           </div>
         </section>
-        <section className="py-10">
+        <section className="py-10 px-5">
           <div className="mx-auto max-w-7xl">
             <style>{`
                 .portfolio-swiper .swiper-pagination-bullet {
@@ -1339,7 +1339,7 @@ export default function realEstate() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-15">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-15 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black mt-10">
               {" "}
               Offshore Web, Mobile & Software Development Company
@@ -1386,7 +1386,7 @@ export default function realEstate() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
               Industries We Serve
@@ -1427,7 +1427,7 @@ export default function realEstate() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 mt-10">
               {" "}
               Why Choose Us?
@@ -1466,7 +1466,7 @@ export default function realEstate() {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
               Client Testimonials
             </h1>
@@ -1589,7 +1589,7 @@ export default function realEstate() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               We deal with some common questions about real estate web
               applications every day. If you too have questions relating to
               them, you can refer to it below:

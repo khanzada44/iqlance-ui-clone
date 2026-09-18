@@ -412,12 +412,12 @@ export default function Logistic() {
         <section >
           {/* Top Heading */}
           <div className="text-center max-w-6xl mx-auto mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug px-5">
               Businesses
               Transportation and Logistics App Development Company for Western
             </h2>
 
-            <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
+            <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
               <p>
                 For companies across the West, we develop custom software solutions built
                 for the transportation and logistics industry. Our apps are designed to
@@ -449,12 +449,12 @@ export default function Logistic() {
           {/* Bottom Heading & 2-Column Grid */}
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug px-5">
                 Logistics App Development Solutions for Modern Transportation
                 Challenges
               </h2>
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
                 Developing user-friendly apps for businesses in the transportation and
                 logistics sector is what we specialize in. From concept through
                 deployment, we manage the complete process, taking care of every stage so
@@ -464,7 +464,7 @@ export default function Logistic() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 px-5 mb-5">
               {bottomFeatures.map((item, index) => (
                 <div key={index} className="flex items-start gap-2.5">
                   <ChevronRight className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
@@ -581,7 +581,7 @@ export default function Logistic() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 px-5">
                     {/* Image */}
                     <div className="w-full lg:w-1/2">
                       <img
@@ -1056,10 +1056,10 @@ export default function Logistic() {
 
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-4xl mx-auto space-y-4">
-            <h2 className="text-3xl sm:text-3xl md:text-3xl font-extrabold text-gray-900">
+            <h2 className="text-3xl sm:text-3xl md:text-3xl font-extrabold text-gray-900 px-5">
               Power Your Logistics Business with Next-Gen Mobile App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed px-5">
               Team up with a logistics app development company that turns complex transportation challenges into scalable, results-driven mobile solutions built to move your business forward.
             </p>
           </div>
@@ -1184,7 +1184,7 @@ export default function Logistic() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
 
               America's Go-To Partner for Logistics App Innovation
@@ -1231,7 +1231,7 @@ export default function Logistic() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               {" "}
               Industries We Serve with Custom Logistics App Development
@@ -1271,7 +1271,7 @@ export default function Logistic() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10">
+          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               Why Businesses Choose Our Logistics App Development Company
             </h1>
@@ -1308,7 +1308,7 @@ export default function Logistic() {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center">
+          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
               What Sets Our Logistics App Development Apart
             </h1>
@@ -1419,7 +1419,7 @@ export default function Logistic() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               Here you will find the answers you are looking for because we know
               what’s in our client’s mind.
             </p>

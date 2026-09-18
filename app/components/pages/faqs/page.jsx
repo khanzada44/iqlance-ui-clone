@@ -34,14 +34,14 @@ export default function faqs() {
           <p className="flex items-center justify-center text-xl font-bold text-black leading-tight">
             We have got answers!
           </p>
-          <p className="flex items-center justify-center text-center text-black text-[18px] mt-2">
+          <p className="flex items-center justify-center text-center text-black text-[18px] mt-2 px-5">
             At Devapp Solutions, no two mobile initiatives get the same cookie-cutter treatment.
             We're driven by ideas, and our job is turning yours into an application built exclusively
             for your business. That process starts the moment we clear up any confusion or doubts you
             have about app development.
 
           </p>
-          <p className="flex items-center justify-center text-center text-black  text-[18px] mt-5">
+          <p className="flex items-center justify-center text-center text-black  text-[18px] mt-5 px-5">
             Your questions matter to us just as much as your ideas do. We're here to consult,
             answer, and guide you through anything
             related to app and software development. Get in touch today,

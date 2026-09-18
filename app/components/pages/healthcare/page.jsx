@@ -554,10 +554,10 @@ export default function HeroQuoteSection() {
           </div>
         </section>
         <section className="py-10">
-          <h1 className="text-center leading-tight text-2xl font-bold text-[30px] mb-2.5">
+          <h1 className="text-center leading-tight text-2xl font-bold text-[30px] mb-2.5 px-5">
             Our Healthcare App Development Solutions
           </h1>
-          <p className="text-[20px] text-center">
+          <p className="text-[20px] text-center px-5">
             Healthcare deserves technology that improves the experience on both sides of care.
             We build digital healthcare solutions that help providers replace fragmented
             processes with connected workflows, easier information access, and more efficient
@@ -593,7 +593,7 @@ export default function HeroQuoteSection() {
             >
               {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10">
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 mb-10 px-5">
                     {/* Image */}
                     <div className="w-full lg:w-1/2">
                       <img
@@ -1203,7 +1203,7 @@ export default function HeroQuoteSection() {
             <h3 className="flex justify-center font-bold text-3xl mt-10">
               Technology Stack
             </h3>
-            <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 items-center text-center">
+            <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 items-center text-center px-5">
               We only adopt the latest and cutting-edge technology that ensure
               redefining the process of healthcare for the better. So, if you
               want a glimpse of what these state-of-the-art technologies are,
@@ -1287,7 +1287,7 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div className="mb-15 mt-15">
-            <h2 className="flex justify-center font-bold text-3xl">
+            <h2 className="flex justify-center font-bold text-3xl px-5">
               Offshore Web, Mobile & Software Development Company
             </h2>
           </div>
@@ -1329,7 +1329,7 @@ export default function HeroQuoteSection() {
             <h2 className="flex justify-center font-bold text-3xl mb-10">
               Industries We Serve
             </h2>
-            <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6">
+            <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 px-5">
               We, as a medical app development company, has grabbed some of the
               greatest milestones by serving leading industries like:
             </p>
@@ -1367,7 +1367,7 @@ export default function HeroQuoteSection() {
             <h1 className="flex justify-center font-bold text-3xl mb-10 mt-15">
               Why Choose Devapp?
             </h1>
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               As the world’s leading Healthcare app development company, we can
               help start your journey to become the next generation of the
               healthcare service sector.
@@ -1405,7 +1405,7 @@ export default function HeroQuoteSection() {
             <h1 className="flex justify-center font-bold text-3xl mb-10 mt-5">
               Client Testimonials
             </h1>
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               The hardwork of our certified healthcare app developers is really
               appreciated by our clients in the face of positive and motivating
               words. However, it is our diligence that has made them stick to
@@ -1515,7 +1515,7 @@ export default function HeroQuoteSection() {
               Frequently Asked Questions
             </h1>
 
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               Here you will find the answers you are looking for because we know
               what’s in our client’s mind.
             </p>
@@ -1592,7 +1592,7 @@ export default function HeroQuoteSection() {
             <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Have Something in Mind? Let's Talk
             </h1>
-            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               Have a look at the services and development process of the Devapp
               solution. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients

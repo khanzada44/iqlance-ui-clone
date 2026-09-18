@@ -27,10 +27,10 @@ export default function whyDevapp() {
         </div>
         <div className="w-full text-center mt-14">
 
-          <h2 className="mt-10 text-xl md:text-3xl font-bold text-black">
+          <h2 className="mt-10 text-xl md:text-3xl font-bold text-black px-5">
             Because a strong MVP needs more than a development team
           </h2>
-          <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
+          <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black px-5">
             At Devapp, we combine product thinking, technical expertise, and execution to help
             businesses turn early-stage ideas into products people can actually use. We don't
             believe in stuffing an MVP with every possible feature. Instead, we identify what can
@@ -64,10 +64,10 @@ export default function whyDevapp() {
         </div>
 
         <div className="w-full text-center mt-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-black">
+          <h2 className="text-2xl md:text-3xl font-bold text-black px-5">
             Turning Your Idea Into a Product People Actually Use
           </h2>
-          <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
+          <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black px-5">
             We don't just build mobile apps; we build unique concepts that help businesses
             show up stronger online, run more efficiently, and genuinely connect with their users.
             Our developers bring real expertise to Android, iOS, and cross-platform app
@@ -195,15 +195,15 @@ export default function whyDevapp() {
         </section>
 
         <section className="w-full py-2">
-          <p className="text-center text-gray-600 text-lg mb-10 mt-15">
+          <p className="text-center text-gray-600 text-lg mb-10 mt-15 px-5">
             Mobile App & Web Development, All Under One Roof
           </p>
 
-          <h2 className="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4 px-5">
             A Leading App Development Company in the USA
           </h2>
 
-          <p className="w-full text-center text-gray-700 text-lg leading-7 mb-4">
+          <p className="w-full text-center text-gray-700 text-lg leading-7 mb-4 px-5">
             Devapp stands as one of the fastest-growing app development companies,
             with a full team of developers, designers, testers, business developers,
             and marketers all working together under one roof. Our multiplatform mobile app services
@@ -212,12 +212,12 @@ export default function whyDevapp() {
             and interactive UI/UX that set us apart from other app development companies in the USA.
           </p>
 
-          <p className="w-full text-center text-gray-700 text-lg leading-7 mb-6">
+          <p className="w-full text-center text-gray-700 text-lg leading-7 mb-6 px-5">
             Got an amazing idea for a web or mobile app?
             You can count on us to bring it to life, from first concept to finished product.
           </p>
 
-          <p className="text-center text-xl text-gray-800 mb-6 font-medium">
+          <p className="text-center text-xl text-gray-800 mb-6 font-medium px-5">
             Latest technology features find a way into our daily business
             practices that helps us stand out.
           </p>
@@ -262,10 +262,10 @@ export default function whyDevapp() {
 
           {/* Bottom Section Header */}
           <div className="text-center space-y-3">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-black">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-black px-5">
               10 Reasons to Choose Devapp
             </h2>
-            <p className="text-center text-xl text-black mb-6 mt-5">
+            <p className="text-center text-xl text-black mb-6 mt-5 px-5">
               Growth doesn't happen by accident, it happens when the right team is behind the wheel.
               That's the mission we've built our entire company around, like helping businesses
               grow through digital solutions shaped around what makes them different.
@@ -371,11 +371,11 @@ export default function whyDevapp() {
         </section>
         <section className="py-16 bg-white w-full">
           <div className="text-center">
-            <h2 className="text-2xl md:text-[35px] font-bold text-[#1F2937]">
+            <h2 className="text-2xl md:text-[35px] font-bold text-[#1F2937] px-5">
               Still Weighing Your Options? Here's What Sets Us Apart
             </h2>
 
-            <p className="mt-6 text-lg md:text-[20px] leading-8 text-[#4B5563] w-full">
+            <p className="mt-6 text-lg md:text-[20px] leading-8 text-[#4B5563] w-full px-5">
               Take a look at what Devapp Solutions brings to the table: our services,
               our step-by-step process for mobile app and software development,
               and what clients have to say after working with us. When you're ready to move forward,
@@ -385,11 +385,11 @@ export default function whyDevapp() {
         </section>
         <section className=" bg-white">
           <div className="w-full px-5">
-            <h2 className="text-4xl font-bold text-center">
+            <h2 className="text-4xl font-bold text-center px-5">
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto px-5">
               Find answers to common questions about our app and software
               development services and learn how we can help turn your idea into
               a successful digital product.
