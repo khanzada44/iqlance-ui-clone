@@ -2008,3 +2008,398 @@ p.mt-iq-20 {
 .steptitle-two{
   font-size: 30px;
 }
+/* ==========================================
+   Portfolio Dynamic Content - Custom Theme
+   ========================================== */
+
+.portfolio-dynamic {
+  background-color: #fffbf7;
+  color: #2b2625;
+  font-family: inherit;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* --- Banner Section --- */
+.food-waste-management-app-banner {
+  background: linear-gradient(135deg, #2b2625 0%, #3f3533 100%);
+  padding: 80px 0;
+  text-align: left;
+}
+
+.food-waste-management-app-banner h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.food-waste-management-app-banner p {
+  font-size: 1.25rem;
+  color: #f3e9e3;
+  opacity: 0.9;
+}
+
+/* --- Utility & Typography --- */
+.white-color {
+  color: #ffffff !important;
+}
+
+.blue-color {
+  color: #d64558 !important; /* Rose-pink accent theme */
+}
+
+.grey-fcolor {
+  color: #7a6e6a !important;
+}
+
+.dark-font {
+  color: #2b2625 !important;
+}
+
+.font-size-16 {
+  font-size: 1rem !important;
+}
+
+.font-size-18 {
+  font-size: 1.125rem !important;
+}
+
+.mt-16-cs {
+  margin-top: 1rem !important;
+}
+
+.mt-24-cs {
+  margin-top: 1.5rem !important;
+}
+
+.mt-iq-40 {
+  margin-top: 40px !important;
+}
+
+.mt-iq-80 {
+  margin-top: 80px !important;
+}
+
+.mb-cs-20 {
+  margin-bottom: 20px !important;
+}
+
+/* --- Screen Mockups Section --- */
+.screen-apps {
+  padding: 60px 0;
+}
+
+.portfolio-parsed-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-parsed-img:hover {
+  transform: translateY(-5px);
+}
+
+/* --- About Section --- */
+.about-Buseor-section {
+  background-color: #ffffff;
+  padding: 80px 0;
+  border-top: 1px solid #f2eae4;
+  border-bottom: 1px solid #f2eae4;
+}
+
+.pad-right-150 {
+  padding-right: 0px;
+}
+
+@media (min-width: 992px) {
+  .pad-right-150 {
+    padding-right: 50px;
+  }
+}
+
+/* --- Key Features Grid Boxes --- */
+.key-box-lf,
+.feature-icnboxss {
+  background: #ffffff;
+  border: 1px solid #f0e6e0;
+  border-radius: 16px;
+  padding: 30px 24px;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(43, 38, 37, 0.03);
+}
+
+.key-box-lf:hover {
+  border-color: #d64558;
+  box-shadow: 0 10px 30px rgba(214, 69, 88, 0.08);
+  transform: translateY(-4px);
+}
+
+.fwq-semi {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #2b2625;
+}
+
+.fwq-semiM {
+  color: #5c504c;
+  line-height: 1.7;
+}
+
+/* --- Technologies Section --- */
+.tech-lf {
+  margin-top: 40px;
+}
+
+.technologies {
+  background: #ffffff;
+  border: 1px solid #f0e6e0;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(43, 38, 37, 0.03);
+}
+
+.technologies:hover {
+  border-color: #d64558;
+  box-shadow: 0 10px 30px rgba(214, 69, 88, 0.08);
+  transform: translateY(-4px);
+}
+
+.technologies-icon img {
+  margin: 0 auto 15px auto;
+  object-fit: contain;
+}
+
+.technologies-icon p {
+  font-weight: 600;
+  color: #2b2625;
+  margin-top: 10px;
+  font-size: 1.05rem;
+}
+
+/* --- Headings styling inside portfolio --- */
+.portfolio-dynamic h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #2b2625;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-dynamic p {
+  color: #5c504c;
+}
+.key-box-lf div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .food-waste-management-app-banner h1 {
+    font-size: 2.2rem;
+  }
+  
+  .portfolio-dynamic h2 {
+    font-size: 1.8rem;
+  }
+}
+/* ==========================================
+   Onseen Portfolio Dynamic Content - White Theme
+   ========================================== */
+
+.portfolio-dynamic {
+  background-color: #ffffff;
+  color: #2b2625;
+  font-family: inherit;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* --- General Typography & Layout --- */
+.portfolio-dynamic h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2b2625;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-dynamic h2,
+.rsr-pos {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2b2625;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.portfolio-dynamic p {
+  color: #5c504c;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+
+.font-bld {
+  font-weight: 600;
+  color: #d64558 !important; /* Coral / Red Theme Accent */
+}
+
+.fonts-24 {
+  font-size: 1.25rem !important;
+  font-weight: 600;
+  color: #2b2625;
+  line-height: 1.5;
+}
+
+/* --- Section Titles --- */
+.onseen-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #2b2625;
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.text-para {
+  max-width: 750px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  color: #6b5e59;
+}
+
+/* --- Background Sections --- */
+.abt-bg {
+  background-color: #fff9f6; /* Soft warm white/cream tint */
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-top: 1px solid #f2eae4;
+  border-bottom: 1px solid #f2eae4;
+}
+
+.pt-90 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* --- App Header Section --- */
+.onseen {
+  padding-top: 2rem !important;
+}
+
+.btn-app {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  align-items: center;
+}
+
+.btn-ps, .btn-app > div {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-ps:hover, .btn-app > div:hover {
+  transform: translateY(-3px);
+}
+
+/* --- Boxes & Containers --- */
+.onseen-box {
+  background: #ffffff;
+  border: 1px solid #f0e6e0;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 4px 20px rgba(43, 38, 37, 0.03);
+  height: 100%;
+}
+
+.o-box {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  color: #4a3f3b;
+  font-size: 1.15rem;
+  background: #fffbf8;
+  border-left: 4px solid #d64558;
+}
+
+.a-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- Feature Cards Style --- */
+.feature-box {
+  background: #ffffff;
+  border: 1px solid #f0e6e0;
+  border-radius: 20px;
+  padding: 35px 25px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(43, 38, 37, 0.03);
+  margin-bottom: 30px;
+}
+
+.feature-box:hover {
+  border-color: #d64558;
+  box-shadow: 0 10px 30px rgba(214, 69, 88, 0.08);
+  transform: translateY(-5px);
+}
+
+.feature-box img {
+  margin: 0 auto 20px auto;
+}
+
+/* --- Images & Parsed Elements --- */
+.portfolio-parsed-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-fluid {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Spacing & Bottom Alignments */
+.ui-btm {
+  margin-bottom: 30px;
+}
+
+.tech-icn {
+  font-weight: 600;
+  color: #2b2625;
+  margin-top: 12px;
+}
+
+.typo-bg {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .onseen-title {
+    font-size: 1.8rem;
+  }
+  
+  .portfolio-dynamic h1 {
+    font-size: 2rem;
+  }
+  
+  .btn-app {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.ui-btm{
+  text-align: center;
+}

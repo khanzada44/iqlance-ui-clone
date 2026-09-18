@@ -28,29 +28,30 @@ function SinglePortfolioContent() {
 
         const data = await singlePortfolio(slug);
         setPortfolio(data);
-        if (data) {
 
+        if (data) {
+          // Set page title
           if (data.title || data.meta_title) {
             document.title = data.meta_title || data.title;
           }
 
-          // Meta Description set karein
+          // Set meta description
           const descriptionText = data.description || data.meta_description;
+
           if (descriptionText) {
             let metaDesc = document.querySelector('meta[name="description"]');
+
             if (!metaDesc) {
               metaDesc = document.createElement("meta");
               metaDesc.name = "description";
               document.head.appendChild(metaDesc);
             }
+
             metaDesc.setAttribute("content", descriptionText);
           }
         }
       } catch (err) {
-        console.error(
-          "Failed to fetch portfolio detail:",
-          err
-        );
+        console.error("Failed to fetch portfolio detail:", err);
         setError("Failed to load portfolio details.");
       } finally {
         setLoading(false);
@@ -62,79 +63,59 @@ function SinglePortfolioContent() {
 
   const parseOptions = {
     replace: (domNode) => {
-      if (
-        domNode.type === "tag" &&
-        domNode.name === "dv"
-      ) {
+      if (!domNode.attribs) return;
+
+      // 1. Remove inline CSS
+      if ("style" in domNode.attribs) {
+        delete domNode.attribs.style;
+      }
+
+      // 2. Convert standard attributes to React equivalents
+      if ("fetchpriority" in domNode.attribs) {
+        domNode.attribs.fetchPriority = domNode.attribs.fetchpriority;
+        delete domNode.attribs.fetchpriority;
+      }
+
+      if ("class" in domNode.attribs) {
+        domNode.attribs.className = domNode.attribs.class;
+        delete domNode.attribs.class;
+      }
+
+      if ("autoplay" in domNode.attribs) {
+        domNode.attribs.autoPlay = domNode.attribs.autoplay;
+        delete domNode.attribs.autoplay;
+      }
+
+      // 3. Fix invalid <dv> tag and convert to <div>
+      if (domNode.type === "tag" && domNode.name === "dv") {
         return (
-          <div
-            className={
-              domNode.attribs?.class || ""
-            }
-          >
-            {domToReact(
-              domNode.children,
-              parseOptions
-            )}
+          <div className={domNode.attribs.className || ""}>
+            {domToReact(domNode.children, parseOptions)}
           </div>
         );
       }
 
-      if (
-        domNode.type === "tag" &&
-        domNode.name === "img"
-      ) {
-        const {
-          src,
-          alt,
-          class: existingClass,
-          width,
-          height,
-        } = domNode.attribs || {};
+      // 4. Custom image handling
+      if (domNode.type === "tag" && domNode.name === "img") {
+        const { src, alt, className, width, height, fetchPriority } = domNode.attribs;
 
         return (
           <img
             src={src}
-            alt={
-              alt &&
-              alt !== "javascript:void(0);"
-                ? alt
-                : "portfolio visual"
-            }
+            alt={alt && alt !== "javascript:void(0);" ? alt : "portfolio visual"}
             width={width}
             height={height}
             loading="lazy"
             decoding="async"
-            className={`${existingClass || ""} portfolio-parsed-img`.trim()}
+            fetchPriority={fetchPriority}
+            className={`${className || ""} portfolio-parsed-img`.trim()}
           />
         );
-      }
-
-      if (domNode.attribs) {
-        if (
-          "fetchpriority" in
-          domNode.attribs
-        ) {
-          domNode.attribs.fetchPriority =
-            domNode.attribs.fetchpriority;
-          delete domNode.attribs.fetchpriority;
-        }
-
-        if ("class" in domNode.attribs) {
-          domNode.attribs.className =
-            domNode.attribs.class;
-          delete domNode.attribs.class;
-        }
-
-        if ("autoplay" in domNode.attribs) {
-          domNode.attribs.autoPlay =
-            domNode.attribs.autoplay;
-          delete domNode.attribs.autoplay;
-        }
       }
     },
   };
 
+  // Loading state
   if (loading) {
     return (
       <div className="min-h-screen bg-white p-6 animate-pulse w-full">
@@ -152,6 +133,7 @@ function SinglePortfolioContent() {
     );
   }
 
+  // Error state
   if (error || !portfolio) {
     return (
       <div className="text-center py-16 text-red-500 font-medium">
@@ -165,10 +147,7 @@ function SinglePortfolioContent() {
       <main className="w-full">
         {portfolio.content && (
           <div className="portfolio-dynamic">
-            {parse(
-              portfolio.content,
-              parseOptions
-            )}
+            {parse(portfolio.content, parseOptions)}
           </div>
         )}
       </main>
