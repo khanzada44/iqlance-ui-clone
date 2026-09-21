@@ -1,5 +1,6 @@
 import ServicesDetails from "../../../components/pages/services-details/page";
 import { getServicesData } from "@/lib/navigation-data";
+import { serviceCategorieBySlug } from "../../../../services/all-sub-categories";
 
 export async function generateStaticParams() {
   const servicesData = await getServicesData();
@@ -23,34 +24,16 @@ export async function generateStaticParams() {
   }));
 }
 
-// Dynamic Meta Tags
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
-  const servicesData = await getServicesData();
+  const service = await serviceCategorieBySlug(slug);
 
-  let service = null;
-
-  servicesData.categories?.forEach((category) => {
-    category.items?.forEach((item) => {
-      if (item.href) {
-        const itemSlug = item.href.split("/").filter(Boolean).pop();
-
-        if (itemSlug === slug) {
-          service = item;
-        }
-      }
-    });
-  });
-
-  const title = service?.name || service?.title || "Services";
-  const description =
-    service?.description ||
-    `Explore our ${title} services and solutions.`;
+  console.log("DETAIL SERVICE:", service);
 
   return {
-    title: `${title} | DEVAPP`,
-    description,
+    title: service?.meta_title || service?.title || "Services",
+    description: service?.meta_description || "",
   };
 }
 
