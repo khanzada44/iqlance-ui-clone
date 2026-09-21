@@ -2446,6 +2446,9 @@ p.mt-iq-20 {
   height: 516.792px !important;
   transition: border-color 0.3s ease;
 }
+.together{
+  text-align: center !important;
+}
 }
 .ui-btm{
   text-align: center;

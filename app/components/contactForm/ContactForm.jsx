@@ -141,7 +141,7 @@ export default function ContactForm() {
               alt=""
               width={400}
               height={400}
-              className="w-full max-w-100 h-100 object-cover footer-image"
+              className="w-65 h-65 sm:w-[320px] sm:h-80 md:w-100 md:h-100 object-contain footer-image"
             />
           </div>
           <div className="flex items-center justify-center relative z-10">

@@ -970,7 +970,7 @@ export default function LandingPage() {
               Client Testimonials
             </h1>
           </div>
-          <p className="text-center mx-auto mt-3 max-w-212.5 leading-[1.7] text-gray-700 sm:text-[11px] lg:text-[12px] ">
+          <p className="px-5 text-center mx-auto mt-3 max-w-212.5 leading-[1.7] text-gray-700 sm:text-[11px] lg:text-[12px] ">
             Innovating user centric and results driven solutions based on the
             demanding industry of the client makes them speak about our work.
             Let&apos;s see what they think about our development method.
@@ -1546,7 +1546,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <div className="py-8">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 together">
                   Let's work together!
                 </h2>
                 <div>
