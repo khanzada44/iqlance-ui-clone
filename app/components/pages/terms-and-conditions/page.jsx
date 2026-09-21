@@ -504,30 +504,37 @@ export default function TermsAndConditions() {
                 Always Connect With Us!
               </span>
 
-              <div className="mt-3 flex items-center gap-3 text-gray-400">
+                  <div className="flex items-center gap-3 text-gray-400 mt-3">
+                    <a
+                      href="https://www.facebook.com/devappgrid"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
+                      aria-label="Facebook"
+                    >
+                      <FaFacebookF size={14} />
+                    </a>
 
-                <a
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-800 transition-colors hover:border-red-500 hover:text-red-500 sm:h-10 sm:w-10"
-                >
-                  <FaFacebookF size={14} />
-                </a>
+                    <a
+                      href="https://www.instagram.com/devappgrids?stkn=MjRweWwyMGk2ODNw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
+                      aria-label="Instagram"
+                    >
+                      <FaInstagram size={14} />
+                    </a>
 
-                <a
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-800 transition-colors hover:border-red-500 hover:text-red-500 sm:h-10 sm:w-10"
-                >
-                  <FaInstagram size={14} />
-                </a>
-
-                <a
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-800 transition-colors hover:border-red-500 hover:text-red-500 sm:h-10 sm:w-10"
-                >
-                  <FaLinkedinIn size={14} />
-                </a>
-
-              </div>
+                    <a
+                      href="https://www.linkedin.com/company/devapp-grid"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
+                      aria-label="LinkedIn"
+                    >
+                      <FaLinkedinIn size={14} />
+                    </a>
+                  </div>
             </div>
 
             {/* PHONE */}

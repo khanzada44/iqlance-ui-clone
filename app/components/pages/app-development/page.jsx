@@ -1510,20 +1510,31 @@ export default function LandingPage() {
                   </span>
                   <div className="flex items-center gap-3 text-gray-400 mt-3">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/devappgrid"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
+                      aria-label="Facebook"
                     >
                       <FaFacebookF size={14} />
                     </a>
+
                     <a
-                      href="#"
+                      href="https://www.instagram.com/devappgrids?stkn=MjRweWwyMGk2ODNw"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
+                      aria-label="Instagram"
                     >
                       <FaInstagram size={14} />
                     </a>
+
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/company/devapp-grid"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
+                      aria-label="LinkedIn"
                     >
                       <FaLinkedinIn size={14} />
                     </a>
