@@ -84,16 +84,16 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
             alt="Portfolio Banner"
             className="mt-10 w-full object-cover"
           />
-          <h1 className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center mt-10">
+          <h1 className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center mt-10 px-5">
             See Our Wide Range Of Innovative Apps & Websites Award-Winning App Development Agency
           </h1>
-          <p className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug text-center mt-5">
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug text-center mt-5 px-5">
             Portfolio
           </p>
-          <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center mt-4">
+          <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center mt-4 px-5">
             As a market leader in providing the best app, web and mobile app development services, our team is striving hard to offer you the best assistance.
           </p>
-          <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center mt-4">
+          <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center mt-4 px-5">
             Your dreams are not only a project for us, it's our responsibility to fulfill it with full dedication so that you can take your business to new heights.
           </p>
           <div className="text-center">
@@ -106,11 +106,11 @@ const currentCategoryObj = categoriesData.find(cat => cat.name === activeTab);
             </Link>
           </div>
         </section>
-        <section className="mt-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug text-center">
+        <section className="mt-12"> 
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug text-center px-5">
             The Glimpse of our Creative Works
           </h2>
-          <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center text-gray-700">
+          <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-center text-gray-700 px-5">
             We are strategists. We are innovators. We are a team of full-stack software and mobile app developers, working for great and innovative solutions to take your business to the next level.
           </p>
         </section>

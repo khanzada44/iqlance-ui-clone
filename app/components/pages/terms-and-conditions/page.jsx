@@ -20,7 +20,7 @@ import {
 export default function TermsAndConditions() {
   return (
     <main className="min-h-screen text-slate-800">
-            <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
         <div className="mx-auto flex h-20 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
           {/* LOGO */}
           <div className="flex items-center">
@@ -485,112 +485,112 @@ export default function TermsAndConditions() {
         </div>
 
       </section>
-           <div className="relative z-10  bg-black text-center">
+      <div className="relative z-10  bg-black text-center">
 
-          {/* LOGO */}
-          <div className="flex items-center justify-center gap-1">
-            <img
-              src="/images/Dev-App-04.png"
-              alt="Dev App Grid"
-              className="w-44 sm:w-48"
-            />
+        {/* LOGO */}
+        <div className="flex items-center justify-center gap-1">
+          <img
+            src="/images/Dev-App-04.png"
+            alt="Dev App Grid"
+            className="w-44 sm:w-48"
+          />
+        </div>
+
+        <div className="my-6 flex flex-col items-center justify-around gap-4 py-6 sm:flex-row">
+
+          {/* SOCIAL */}
+          <div className="text-left">
+            <span className="text-[14px] font-medium text-gray-300">
+              Always Connect With Us!
+            </span>
+
+            <div className="flex items-center gap-3 text-gray-400 mt-3">
+              <a
+                href="https://www.facebook.com/devappgrid"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
+                aria-label="Facebook"
+              >
+                <FaFacebookF size={14} />
+              </a>
+
+              <a
+                href="https://www.instagram.com/devappgrids?stkn=MjRweWwyMGk2ODNw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={14} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/devapp-grid"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedinIn size={14} />
+              </a>
+            </div>
           </div>
 
-          <div className="my-6 flex flex-col items-center justify-around gap-4 py-6 sm:flex-row">
+          {/* PHONE */}
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-600/20 text-red-500 sm:h-11 sm:w-11">
+              <Phone size={17} />
+            </div>
 
-            {/* SOCIAL */}
             <div className="text-left">
-              <span className="text-[14px] font-medium text-gray-300">
-                Always Connect With Us!
-              </span>
+              <p className="text-[15px] font-bold leading-tight text-white sm:text-[16px]">
+                +1 (866) 978-8570
+              </p>
 
-                  <div className="flex items-center gap-3 text-gray-400 mt-3">
-                    <a
-                      href="https://www.facebook.com/devappgrid"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
-                      aria-label="Facebook"
-                    >
-                      <FaFacebookF size={14} />
-                    </a>
-
-                    <a
-                      href="https://www.instagram.com/devappgrids?stkn=MjRweWwyMGk2ODNw"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
-                      aria-label="Instagram"
-                    >
-                      <FaInstagram size={14} />
-                    </a>
-
-                    <a
-                      href="https://www.linkedin.com/company/devapp-grid"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-800 flex items-center justify-center hover:text-red-500 hover:border-red-500 transition-colors"
-                      aria-label="LinkedIn"
-                    >
-                      <FaLinkedinIn size={14} />
-                    </a>
-                  </div>
+              <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-red-500">
+                Call Us Today!
+              </p>
             </div>
-
-            {/* PHONE */}
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-600/20 text-red-500 sm:h-11 sm:w-11">
-                <Phone size={17} />
-              </div>
-
-              <div className="text-left">
-                <p className="text-[15px] font-bold leading-tight text-white sm:text-[16px]">
-                 +1 (866) 978-8570
-                </p>
-
-                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-red-500">
-                  Call Us Today!
-                </p>
-              </div>
-            </div>
-
           </div>
 
-          {/* CTA */}
-          <div className="py-8">
+        </div>
 
-            <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-6xl">
-              Let&apos;s work together!
-            </h2>
+        {/* CTA */}
+        <div className="py-8">
+
+          <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+            Let&apos;s work together!
+          </h2>
+
+          <Link
+            href="/request-a-quote"
+            className="inline-block rounded-full bg-red-600 px-10 py-4 text-[15px] font-medium text-white shadow-lg transition-colors hover:bg-red-700"
+          >
+            Get A Free Quote
+          </Link>
+
+          {/* LEGAL LINKS */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
 
             <Link
-              href="/request-a-quote"
-              className="inline-block rounded-full bg-red-600 px-10 py-4 text-[15px] font-medium text-white shadow-lg transition-colors hover:bg-red-700"
+              href="/terms-and-conditions"
+              className="text-gray-400 underline underline-offset-4 transition-colors hover:text-red-500"
             >
-              Get A Free Quote
+              Terms & Conditions
             </Link>
 
-            {/* LEGAL LINKS */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
+            <Link
+              href="/privacy-policy"
+              className="text-gray-400 underline underline-offset-4 transition-colors hover:text-red-500"
+            >
+              Privacy Policy
+            </Link>
 
-              <Link
-                href="/terms-and-conditions"
-                className="text-gray-400 underline underline-offset-4 transition-colors hover:text-red-500"
-              >
-                Terms & Conditions
-              </Link>
-
-              <Link
-                href="/privacy-policy"
-                className="text-gray-400 underline underline-offset-4 transition-colors hover:text-red-500"
-              >
-                Privacy Policy
-              </Link>
-
-            </div>
           </div>
         </div>
+      </div>
     </main>
-    
+
   );
 }
