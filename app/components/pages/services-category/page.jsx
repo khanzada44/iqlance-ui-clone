@@ -29,22 +29,12 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { submitContactForm } from "../../../../services/send-call-request";
 import { serviceCategorieSlug } from "../../../../services/all-sub-categories";
 
-import {
-  partners,
-  bottomFeatures,
-  slides,
-  portfolioSlides,
-  technologies,
-  stats,
-  industries,
-  services,
-  faqsData,
-  testimonials,
-} from "../../../../utils/data";
+import { partners } from "../../../../utils/data";
 
 import Image from "next/image";
 
 export default function ServicesCategory({ slug }) {
+  const [errors, setErrors] = useState({});
 
   const [serviceData, setServiceData] = useState(null);
 
@@ -63,8 +53,11 @@ export default function ServicesCategory({ slug }) {
   const [blogs, setBlogs] = useState([]);
 
   const fileInputRef = useRef(null);
+
+  // Fixed: Added firstName and lastName to state initialization
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     message: "",
@@ -107,8 +100,8 @@ export default function ServicesCategory({ slug }) {
 
         setServiceError(
           error?.response?.data?.message ||
-          error?.message ||
-          "Failed to load service."
+            error?.message ||
+            "Failed to load service."
         );
       } finally {
         setServiceLoading(false);
@@ -118,7 +111,7 @@ export default function ServicesCategory({ slug }) {
     fetchService();
   }, [slug]);
 
-
+  // Updated: Input change hote hi related error remove ho jayega
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -126,8 +119,16 @@ export default function ServicesCategory({ slug }) {
       ...prev,
       [name]: value,
     }));
-  };
 
+    // Clear field-specific error as user types
+    if (errors[name]) {
+      setErrors((prevErrors) => {
+        const updatedErrors = { ...prevErrors };
+        delete updatedErrors[name];
+        return updatedErrors;
+      });
+    }
+  };
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -138,32 +139,49 @@ export default function ServicesCategory({ slug }) {
     }
   };
 
+const validateForm = () => {
+  const newErrors = {};
+  if (!formData.firstName || !formData.firstName.trim()) {
+    newErrors.firstName = "First name is required";
+  }
+  if (!formData.lastName || !formData.lastName.trim()) {
+    newErrors.lastName = "Last name is required";
+  }
+  if (!formData.email || !formData.email.trim()) {
+    newErrors.email = "Email is required";
+  } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+    newErrors.email = "Enter a valid email address";
+  }
+  if (!formData.phone || !formData.phone.trim()) {
+    newErrors.phone = "Phone number is required";
+  }
+
+  return newErrors;
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setLoading(true);
+    // 1. Validate Form before making API call
+    const newErrors = validateForm();
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
 
-    setStatusMessage({
-      type: "",
-      text: "",
-    });
+    setLoading(true);
+    setStatusMessage({ type: "", text: "" });
 
     try {
       const payload = new FormData();
 
-      payload.append("name", formData.name || "");
+      // Combine First and Last name for backend "name" field
+      const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+      payload.append("name", fullName);
 
       payload.append("email", formData.email || "");
-
       payload.append("phone", formData.phone || "");
-
       payload.append("message", formData.message || "");
-
       payload.append("is_nda", formData.sendNda ? "1" : "0");
-
       payload.append("service", formData.service || "");
-
       payload.append("service_category", formData.service_category || "");
 
       if (formData.file && formData.file instanceof File) {
@@ -177,8 +195,10 @@ export default function ServicesCategory({ slug }) {
         text: "Your message has been sent successfully!",
       });
 
+      // Reset Form
       setFormData({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         phone: "",
         message: "",
@@ -189,18 +209,26 @@ export default function ServicesCategory({ slug }) {
         sendNda: false,
       });
 
+      setErrors({});
+
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API Error Response:", error?.response?.data);
+      // Improved Error Logging
+      console.error("API Error Full:", error);
+      console.error("API Error Response Data:", error?.response?.data);
 
       let errorMsg = "Failed to send message. Please try again later.";
 
-      if (error?.response?.data?.errors?.file) {
-        errorMsg = error.response.data.errors.file.join(" ");
+      if (error?.response?.data?.errors) {
+        // Backend validation errors (e.g. file, email, name)
+        const firstErrorKey = Object.keys(error.response.data.errors)[0];
+        errorMsg = error.response.data.errors[firstErrorKey][0];
       } else if (error?.response?.data?.message) {
         errorMsg = error.response.data.message;
+      } else if (error?.message) {
+        errorMsg = error.message; // Network or CORS error message
       }
 
       setStatusMessage({
@@ -216,24 +244,16 @@ export default function ServicesCategory({ slug }) {
     return (
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
           {/* Left Side: Content & Stats Skeleton */}
           <div className="lg:col-span-7 space-y-6 animate-pulse">
-            {/* Main Title Skeleton */}
             <div className="h-10 bg-gray-200 rounded-md w-3/4"></div>
-
-            {/* Subtitle / Description Lines */}
             <div className="space-y-3">
               <div className="h-4 bg-gray-200 rounded w-full"></div>
               <div className="h-4 bg-gray-200 rounded w-11/12"></div>
               <div className="h-4 bg-gray-200 rounded w-4/5"></div>
               <div className="h-4 bg-gray-200 rounded w-5/6"></div>
             </div>
-
-            {/* Large Content Box / Image placeholder */}
             <div className="h-64 bg-gray-200 rounded-xl w-full mt-6"></div>
-
-            {/* Stats / Bullet points skeleton */}
             <div className="space-y-2 pt-4">
               <div className="h-4 bg-gray-200 rounded w-1/2"></div>
               <div className="h-4 bg-gray-200 rounded w-2/5"></div>
@@ -243,34 +263,27 @@ export default function ServicesCategory({ slug }) {
 
           {/* Right Side: Request a Quote Form Skeleton */}
           <div className="lg:col-span-5 bg-gray-50 border border-gray-100 p-6 rounded-2xl shadow-sm animate-pulse space-y-4">
-            {/* Form Title */}
             <div className="space-y-2">
               <div className="h-6 bg-gray-200 rounded w-3/4"></div>
               <div className="h-3 bg-gray-200 rounded w-1/2"></div>
             </div>
-
-            {/* Input fields skeletons */}
             <div className="space-y-4 pt-2">
               <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
               <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
               <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
               <div className="h-24 bg-gray-200 rounded-lg w-full"></div>
             </div>
-
-            {/* File upload & checkbox placeholder */}
             <div className="space-y-3 pt-2">
               <div className="h-4 bg-gray-200 rounded w-1/3"></div>
               <div className="h-4 bg-gray-200 rounded w-1/4"></div>
             </div>
-
-            {/* Submit Button Skeleton */}
             <div className="h-12 bg-gray-300 rounded-lg w-full mt-4"></div>
           </div>
-
         </div>
       </div>
     );
   }
+
   if (serviceError && !serviceData) {
     return (
       <div className="flex min-h-125 items-center justify-center px-5">
@@ -278,9 +291,7 @@ export default function ServicesCategory({ slug }) {
           <h2 className="text-2xl font-bold text-red-600">
             Unable to load service
           </h2>
-
           <p className="mt-3 text-gray-600">{serviceError}</p>
-
           <p className="mt-2 text-sm text-gray-400">Slug: {slug}</p>
         </div>
       </div>
@@ -289,21 +300,11 @@ export default function ServicesCategory({ slug }) {
 
   return (
     <>
-      <div className="mx-auto w-full ">
-
+      <div className="mx-auto w-full">
         <section className="mx-auto w-full max-w-7xl px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
-
             {/* ================= LEFT CONTENT ================= */}
             <div className="min-w-0 lg:col-span-7">
-
-              {/* CATEGORY NAME */}
-              {/* <h1 className="text-3xl font-bold leading-tight text-red-600 md:text-5xl">
-                {serviceData?.name ||
-                  serviceData?.title ||
-                  "Services Category"}
-              </h1> */}
-
               {/* CATEGORY DESCRIPTION */}
               {serviceData?.description ? (
                 <div
@@ -323,9 +324,7 @@ export default function ServicesCategory({ slug }) {
             </div>
 
             <div className="relative lg:col-span-5">
-
               <div className="relative w-full border border-blue-100/60 bg-[#F7F8FA] p-6 shadow-lg md:p-8">
-
                 {/* FORM BADGE */}
                 <div className="absolute -right-3 -top-6 z-10 w-24 drop-shadow-md md:w-28">
                   <img
@@ -344,77 +343,109 @@ export default function ServicesCategory({ slug }) {
                   Guaranteed Response within One Business Day!
                 </p>
 
-                {/* STATUS MESSAGE */}
-                {statusMessage.text && (
-                  <p
-                    className={`mb-4 text-center text-xs font-semibold ${statusMessage.type === "success"
-                      ? "text-green-600"
-                      : "text-red-600"
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* First Name & Last Name Fields */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <input
+                        type="text"
+                        name="firstName"
+                        placeholder="First Name*"
+                        value={formData.firstName || ""}
+                        onChange={handleChange}
+                        className={`w-full bg-transparent border-b-2 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors ${
+                          errors.firstName
+                            ? "border-red-500"
+                            : "border-gray-300 focus:border-red-600"
+                        }`}
+                      />
+                      {errors.firstName && (
+                        <p className="text-xs text-red-600 font-semibold mt-1">
+                          {errors.firstName}
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <input
+                        type="text"
+                        name="lastName"
+                        placeholder="Last Name*"
+                        value={formData.lastName || ""}
+                        onChange={handleChange}
+                        className={`w-full bg-transparent border-b-2 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors ${
+                          errors.lastName
+                            ? "border-red-500"
+                            : "border-gray-300 focus:border-red-600"
+                        }`}
+                      />
+                      {errors.lastName && (
+                        <p className="text-xs text-red-600 font-semibold mt-1">
+                          {errors.lastName}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Email Field */}
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email*"
+                      value={formData.email || ""}
+                      onChange={handleChange}
+                      className={`w-full bg-transparent border-b-2 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors ${
+                        errors.email
+                          ? "border-red-500"
+                          : "border-gray-300 focus:border-red-600"
                       }`}
-                  >
-                    {statusMessage.text}
-                  </p>
-                )}
+                    />
+                    {errors.email && (
+                      <p className="text-xs text-red-600 font-semibold mt-1">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
 
-                {/* FORM */}
-                <form
-                  onSubmit={handleSubmit}
-                  className="space-y-6"
-                >
+                  {/* Phone Field */}
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone*"
+                      value={formData.phone || ""}
+                      onChange={handleChange}
+                      className={`w-full bg-transparent border-b-2 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors ${
+                        errors.phone
+                          ? "border-red-500"
+                          : "border-gray-300 focus:border-red-600"
+                      }`}
+                    />
+                    {errors.phone && (
+                      <p className="text-xs text-red-600 font-semibold mt-1">
+                        {errors.phone}
+                      </p>
+                    )}
+                  </div>
 
-                  {/* NAME */}
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name*"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none transition-colors placeholder:text-gray-400 focus:border-red-600"
-                  />
+                  {/* Message Field */}
+                  <div>
+                    <textarea
+                      name="message"
+                      rows={3}
+                      placeholder="Write here Brief about the project..."
+                      value={formData.message || ""}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                    />
+                  </div>
 
-                  {/* EMAIL */}
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email*"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none transition-colors placeholder:text-gray-400 focus:border-red-600"
-                  />
-
-                  {/* PHONE */}
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone*"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none transition-colors placeholder:text-gray-400 focus:border-red-600"
-                  />
-
-                  {/* MESSAGE */}
-                  <textarea
-                    name="message"
-                    rows={3}
-                    placeholder="Write here Brief about the project..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full resize-y border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none transition-colors placeholder:text-gray-400 focus:border-red-600"
-                  />
-
-                  {/* FILE UPLOAD */}
-                  <div className="flex items-center gap-2 pt-1 text-xs text-black md:text-sm">
-
-                    <label className="flex cursor-pointer items-center gap-1.5 font-medium">
-                      <Paperclip className="h-4 w-4 text-black" />
-
-                      <span>
-                        Upload file:
-                      </span>
-
+                  {/* File Upload */}
+                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
+                      <Paperclip className="w-4 h-4 text-black" />
+                      <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
                         type="file"
@@ -422,53 +453,57 @@ export default function ServicesCategory({ slug }) {
                         className="hidden"
                       />
                     </label>
-
-                    <span className="max-w-45 truncate text-gray-500">
-                      {formData.file
-                        ? formData.file.name
-                        : "No file chosen."}
+                    <span className="text-gray-500 truncate max-w-45">
+                      {formData.file ? formData.file.name : "No file chosen."}
                     </span>
-
                   </div>
 
-                  {/* NDA */}
+                  {/* Checkbox */}
                   <div className="flex items-center gap-2 pt-1">
-
                     <input
                       type="checkbox"
                       id="nda"
-                      checked={formData.sendNda}
+                      checked={formData.sendNda || false}
                       onChange={(e) =>
                         setFormData((prev) => ({
                           ...prev,
                           sendNda: e.target.checked,
                         }))
                       }
-                      className="h-4 w-4 cursor-pointer border-gray-400 accent-gray-600"
+                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
                     />
-
                     <label
                       htmlFor="nda"
-                      className="cursor-pointer select-none text-xs font-semibold text-black md:text-sm"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
                     >
                       Please Send NDA
                     </label>
-
                   </div>
 
-                  {/* SUBMIT BUTTON */}
-                  <div className="pt-2">
+                  {/* Status Message */}
+                  {statusMessage?.text && (
+                    <div
+                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${
+                        statusMessage.type === "success"
+                          ? "bg-green-100 border border-green-400 text-green-800"
+                          : "bg-red-100 border border-red-400 text-red-800"
+                      }`}
+                    >
+                      {statusMessage.text}
+                    </div>
+                  )}
 
+                  {/* Submit Button */}
+                  <div className="pt-2">
                     <button
                       type="submit"
                       disabled={loading}
-                      className="flex cursor-pointer items-center justify-center bg-red-600 px-6 py-3 text-xs font-bold text-white shadow transition-colors hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-red-600 disabled:opacity-60 md:text-sm"
+                      className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {loading ? (
                         <span className="flex items-center gap-2">
-
                           <svg
-                            className="h-4 w-4 animate-spin text-white"
+                            className="animate-spin h-4 w-4 text-white"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -480,33 +515,26 @@ export default function ServicesCategory({ slug }) {
                               r="10"
                               stroke="currentColor"
                               strokeWidth="4"
-                            />
-
+                            ></circle>
                             <path
                               className="opacity-75"
                               fill="currentColor"
                               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            />
+                            ></path>
                           </svg>
-
                           Sending...
-
                         </span>
                       ) : (
                         "Schedule a free consultation"
                       )}
                     </button>
-
                   </div>
-
                 </form>
-
               </div>
-
             </div>
-
           </div>
         </section>
+
         <section className="mx-auto w-full max-w-7xl px-6 pb-12 md:pb-16">
           <div className="w-full">
             {serviceData?.content ? (
@@ -533,6 +561,7 @@ export default function ServicesCategory({ slug }) {
           <ContactForm />
         </div>
       </div>
+
       <section className="mb-5 overflow-hidden">
         <div className="marquee">
           <div className="marquee-content">

@@ -298,7 +298,8 @@ export default function Home() {
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className="grid grid-cols-1 items-start gap-6 px-1 lg:grid-cols-[55%_45%] lg:gap-8">
+                {/* pb-16 add karyu chhe jethi dots mate neeche space bane */}
+                <div className="grid grid-cols-1 items-start gap-6 px-1 pb-16 lg:grid-cols-[55%_45%] lg:gap-8">
                   {/* LEFT */}
                   <div className="w-full">
                     <h2 className="mt-8 text-2xl font-bold leading-snug">
@@ -653,14 +654,14 @@ export default function Home() {
           <div className="overflow-hidden bg-red-50">
             <div className="grid grid-cols-1 items-stretch lg:grid-cols-2">
               <div className="h-full min-h-75 lg:min-h-125">
-              <Image
-                src="/images/home/AI_Development_Company-2.png"
-                alt="AI Development Company"
-                width={1200}
-                height={800}
-                sizes="100vw"
-                className="block h-full w-full object-cover"
-              />
+                <Image
+                  src="/images/home/AI_Development_Company-2.png"
+                  alt="AI Development Company"
+                  width={1200}
+                  height={800}
+                  sizes="100vw"
+                  className="block h-full w-full object-cover"
+                />
               </div>
               <div className="flex items-center p-6 sm:p-8 lg:p-10">
                 <div>
@@ -907,9 +908,8 @@ export default function Home() {
                         <h4 className="text-lg font-bold text-gray-900 mb-1">
                           {item.name}
                         </h4>
-                        {/* Stars */}
                         <div className="flex items-center gap-1">
-                          {[...Array(item.review)].map((_, index) => (
+                          {[...Array(5)].map((_, index) => (
                             <Star
                               key={index}
                               className="w-5 h-5 fill-amber-400 text-amber-400"

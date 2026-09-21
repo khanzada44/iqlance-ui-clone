@@ -11,38 +11,56 @@ export default function ContactForm() {
     lastName: "",
     email: "",
     phone: "",
-    service: "",
+    service: "Mobile App Development",
     message: "",
     newsletter: false,
   });
 
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value, type } = e.target;
-    if (type === "checkbox") {
-      const { checked } = e.target;
-      setFormData((prev) => ({ ...prev, [name]: checked }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
+    if (!formData.lastName.trim()) newErrors.lastName = "Laat name is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Enter a valid email address";
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+    return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newErrors = validateForm();
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
+
     setLoading(true);
     setStatus(null);
 
     try {
       const bodyFormData = new FormData();
 
-      // First Name aur Last Name ko merge karke 'name' key me bhej rahe hain
+
       const fullName = `${formData.firstName} ${formData.lastName}`.trim();
       bodyFormData.append("name", fullName);
 
       // Baaki fields
       bodyFormData.append("email", formData.email);
+      bodyFormData.append("email", formData.lastName);
       bodyFormData.append("phone", formData.phone);
       bodyFormData.append("message", formData.message || "");
       bodyFormData.append("is_nda", formData.newsletter ? "1" : "0");
@@ -63,10 +81,11 @@ export default function ContactForm() {
           lastName: "",
           email: "",
           phone: "",
-          service: "",
+          service: "Mobile App Development",
           message: "",
           newsletter: false,
         });
+        setErrors({});
       } else {
         setStatus({
           type: "error",
@@ -161,6 +180,8 @@ export default function ContactForm() {
             </a>
           </div>
         </div>
+
+        {/* Right Side: Form */}
         <div className="lg:col-span-7 p-6 md:p-10 relative bg-[#F7F8FA]">
           <div className="bg-transparent">
             <img
@@ -174,30 +195,41 @@ export default function ContactForm() {
             How Can We Help?
           </h2>
 
-          <form className="space-y-5" onSubmit={handleSubmit}>
+          <form className="space-y-5" onSubmit={handleSubmit} noValidate>
             {/* Name Fields */}
             <div>
               <label className="block text-xs font-bold text-gray-800 mb-2">
                 Name
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  placeholder="First Name*"
-                  className="w-full bg-white border border-gray-300 px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] transition-colors"
-                  required
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  placeholder="Last Name"
-                  className="w-full bg-white border border-gray-300 px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] transition-colors"
-                />
+                <div>
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="First Name*"
+                    className={`w-full bg-white border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none transition-colors ${errors.firstName ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
+                      }`}
+                  />
+                  {errors.firstName && (
+                    <p className="text-xs text-red-600 mt-1">{errors.firstName}</p>
+                  )}
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="Last Name*"
+                    className={`w-full bg-white border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none transition-colors ${errors.lastName ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
+                      }`}
+                  />
+                  {errors.lastName && (
+                    <p className="text-xs text-red-600 mt-1">{errors.lastName}</p>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -212,9 +244,12 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your email address*"
-                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] transition-colors"
-                required
+                className={`w-full bg-white border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none transition-colors ${errors.email ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
+                  }`}
               />
+              {errors.email && (
+                <p className="text-xs text-red-600  mt-1">{errors.email}</p>
+              )}
             </div>
 
             {/* Phone Field */}
@@ -228,9 +263,12 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Phone*"
-                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] transition-colors"
-                required
+                className={`w-full bg-white border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none transition-colors ${errors.phone ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
+                  }`}
               />
+              {errors.phone && (
+                <p className="text-xs text-red-600 mt-1">{errors.phone}</p>
+              )}
             </div>
 
             {/* Select Service Dropdown */}
@@ -329,6 +367,6 @@ export default function ContactForm() {
           </form>
         </div>
       </div>
-    </section >
+    </section>
   );
 }

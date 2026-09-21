@@ -100,8 +100,7 @@ export default function ContactSection() {
   };
   return (
     <>
-      <div className="w-full max-w-[80%] mx-auto">
-        {/* Top Connect Banner */}
+      <div className="w-full max-w-7xl mx-auto">
         <section className="w-full my-8">
           <div className="bg-linear-to-r from-red-700 via-red-600 to-red-100 text-white p-6 md:p-12 rounded-lg shadow-lg w-full">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">

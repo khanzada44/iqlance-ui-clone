@@ -46,19 +46,13 @@ import Image from "next/image";
 
 export default function ServicesCategory({ slug }) {
   const [serviceData, setServiceData] = useState(null);
-
   const [serviceLoading, setServiceLoading] = useState(true);
-
   const [serviceError, setServiceError] = useState("");
 
   const [activeTab, setActiveTab] = useState("driver");
-
   const [activetechnologies, setActivetechnologies] = useState(0);
-
   const [open, setOpen] = useState(-1);
-
   const [activeStepIndex, setActiveStepIndex] = useState(0);
-
   const [blogs, setBlogs] = useState([]);
 
   const fileInputRef = useRef(null);
@@ -73,6 +67,7 @@ export default function ServicesCategory({ slug }) {
     sendNda: false,
   });
 
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   const [statusMessage, setStatusMessage] = useState({
@@ -93,7 +88,6 @@ export default function ServicesCategory({ slug }) {
         setServiceData(data);
 
         /* Set API service values into form */
-
         setFormData((prev) => ({
           ...prev,
           service: data?.name || data?.title || "",
@@ -101,13 +95,12 @@ export default function ServicesCategory({ slug }) {
         }));
       } catch (error) {
         console.error("Service API Error:", error);
-
         console.error("API Response:", error?.response?.data);
 
         setServiceError(
           error?.response?.data?.message ||
-            error?.message ||
-            "Failed to load service.",
+          error?.message ||
+          "Failed to load service."
         );
       } finally {
         setServiceLoading(false);
@@ -124,6 +117,15 @@ export default function ServicesCategory({ slug }) {
       ...prev,
       [name]: value,
     }));
+
+    // Clear error for this specific field as the user types
+    if (errors[name]) {
+      setErrors((prevErrors) => {
+        const updated = { ...prevErrors };
+        delete updated[name];
+        return updated;
+      });
+    }
   };
 
   const handleFileChange = (e) => {
@@ -135,11 +137,34 @@ export default function ServicesCategory({ slug }) {
     }
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name || !formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+    if (!formData.email || !formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+    if (!formData.phone || !formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
+
+    return newErrors;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setLoading(true);
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
 
+    setLoading(true);
     setStatusMessage({
       type: "",
       text: "",
@@ -149,17 +174,11 @@ export default function ServicesCategory({ slug }) {
       const payload = new FormData();
 
       payload.append("name", formData.name || "");
-
       payload.append("email", formData.email || "");
-
       payload.append("phone", formData.phone || "");
-
       payload.append("message", formData.message || "");
-
       payload.append("is_nda", formData.sendNda ? "1" : "0");
-
       payload.append("service", formData.service || "");
-
       payload.append("service_category", formData.service_category || "");
 
       if (formData.file && formData.file instanceof File) {
@@ -184,6 +203,8 @@ export default function ServicesCategory({ slug }) {
         file: null,
         sendNda: false,
       });
+
+      setErrors({});
 
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
@@ -214,21 +235,14 @@ export default function ServicesCategory({ slug }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Side: Content & Stats Skeleton */}
           <div className="lg:col-span-7 space-y-6 animate-pulse">
-            {/* Main Title Skeleton */}
             <div className="h-10 bg-gray-200 rounded-md w-3/4"></div>
-
-            {/* Subtitle / Description Lines */}
             <div className="space-y-3">
               <div className="h-4 bg-gray-200 rounded w-full"></div>
               <div className="h-4 bg-gray-200 rounded w-11/12"></div>
               <div className="h-4 bg-gray-200 rounded w-4/5"></div>
               <div className="h-4 bg-gray-200 rounded w-5/6"></div>
             </div>
-
-            {/* Large Content Box / Image placeholder */}
             <div className="h-64 bg-gray-200 rounded-xl w-full mt-6"></div>
-
-            {/* Stats / Bullet points skeleton */}
             <div className="space-y-2 pt-4">
               <div className="h-4 bg-gray-200 rounded w-1/2"></div>
               <div className="h-4 bg-gray-200 rounded w-2/5"></div>
@@ -238,41 +252,33 @@ export default function ServicesCategory({ slug }) {
 
           {/* Right Side: Request a Quote Form Skeleton */}
           <div className="lg:col-span-5 bg-gray-50 border border-gray-100 p-6 rounded-2xl shadow-sm animate-pulse space-y-4">
-            {/* Form Title */}
             <div className="space-y-2">
               <div className="h-6 bg-gray-200 rounded w-3/4"></div>
               <div className="h-3 bg-gray-200 rounded w-1/2"></div>
             </div>
-
-            {/* Input fields skeletons */}
             <div className="space-y-4 pt-2">
               <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
               <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
               <div className="h-11 bg-gray-200 rounded-lg w-full"></div>
               <div className="h-24 bg-gray-200 rounded-lg w-full"></div>
             </div>
-
-            {/* File upload & checkbox placeholder */}
             <div className="space-y-3 pt-2">
               <div className="h-4 bg-gray-200 rounded w-1/3"></div>
               <div className="h-4 bg-gray-200 rounded w-1/4"></div>
             </div>
-
-            {/* Submit Button Skeleton */}
             <div className="h-12 bg-gray-300 rounded-lg w-full mt-4"></div>
           </div>
         </div>
       </div>
     );
   }
+
   if (serviceError && !serviceData) {
     return (
       <div className="flex min-h-125 items-center justify-center px-5">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-red-600">Network Error</h2>
-
           <p className="mt-3 text-gray-600">{serviceError}</p>
-
           <p className="mt-2 text-sm text-gray-400">{slug}</p>
         </div>
       </div>
@@ -331,49 +337,63 @@ export default function ServicesCategory({ slug }) {
                 <p className="mb-8 text-xs font-medium text-black md:text-sm">
                   Guaranteed Response within One Business Day!
                 </p>
-
-                {statusMessage.text && (
-                  <p
-                    className={`mb-4 text-center text-xs font-semibold ${
-                      statusMessage.type === "success"
-                        ? "text-green-600"
-                        : "text-red-600"
-                    }`}
-                  >
-                    {statusMessage.text}
-                  </p>
-                )}
-
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name*"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-red-600"
-                  />
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name*"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={`w-full border-b-2 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 transition-colors ${errors.name
+                          ? "border-red-500 focus:border-red-600"
+                          : "border-gray-300 focus:border-red-600"
+                        }`}
+                    />
+                    {errors.name && (
+                      <span className="text-xs text-red-500 mt-1 block">
+                        {errors.name}
+                      </span>
+                    )}
+                  </div>
 
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email*"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-red-600"
-                  />
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email*"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className={`w-full border-b-2 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 transition-colors ${errors.email
+                          ? "border-red-500 focus:border-red-600"
+                          : "border-gray-300 focus:border-red-600"
+                        }`}
+                    />
+                    {errors.email && (
+                      <span className="text-xs text-red-500 mt-1 block">
+                        {errors.email}
+                      </span>
+                    )}
+                  </div>
 
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone*"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-red-600"
-                  />
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone*"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className={`w-full border-b-2 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 transition-colors ${errors.phone
+                          ? "border-red-500 focus:border-red-600"
+                          : "border-gray-300 focus:border-red-600"
+                        }`}
+                    />
+                    {errors.phone && (
+                      <span className="text-xs text-red-500 mt-1 block">
+                        {errors.phone}
+                      </span>
+                    )}
+                  </div>
 
                   <textarea
                     name="message"
@@ -425,6 +445,16 @@ export default function ServicesCategory({ slug }) {
                       Please Send NDA
                     </label>
                   </div>
+                  {statusMessage?.text && (
+                    <div
+                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                          ? "bg-green-100 border border-green-400 text-green-800"
+                          : "bg-red-100 border border-red-400 text-red-800"
+                        }`}
+                    >
+                      {statusMessage.text}
+                    </div>
+                  )}
 
                   {/* SUBMIT */}
                   <div className="pt-2">
@@ -500,7 +530,7 @@ export default function ServicesCategory({ slug }) {
         </section>
 
         {/* FAQ SECTION */}
-        <section >
+        <section>
           <div className="max-w-7xl mx-auto px-4 sm:px-5">
             <h2 className="text-4xl font-bold text-center faq">
               Frequently Asked Questions

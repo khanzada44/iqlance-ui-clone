@@ -1,18 +1,17 @@
 "use client";
-import { useState } from "react";
-import Image from "next/image"; // Next.js Image Component
+
+import { useState, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, ChevronUp } from "lucide-react"; // Combined Lucide Icons
-import ContactForm from "../../contactForm/ContactForm";
 import { ArrowRight, ChevronRight, Paperclip } from "lucide-react";
 import { comparisonData, features, tabsData } from "../engagement-model/data";
-import { stats, partners, faqsData } from "../../../../utils/data";
+import { stats } from "../../../../utils/data";
+import { submitContactForm } from "../../../../services/send-call-request";
 
 export default function EngagementModelSection() {
   const [activeModelTab, setActiveModelTab] = useState("hourly");
-  const [activetechnologies, setActivetechnologies] = useState(0);
-  const [open, setOpen] = useState(-1);
-  const [activeTab, setActiveTab] = useState("customer");
+  const fileInputRef = useRef(null);
+
   const currentTab =
     tabsData.find((tab) => tab.id === activeModelTab) || tabsData[0];
 
@@ -22,9 +21,18 @@ export default function EngagementModelSection() {
     email: "",
     phone: "",
     message: "",
+    service: "Engagement Model",
+    service_category: "",
     file: null,
     sendNda: false,
   });
+
+  const [statusMessage, setStatusMessage] = useState({
+    type: "",
+    text: "",
+  });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,19 +44,106 @@ export default function EngagementModelSection() {
       setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
     }
   };
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.firstName || !formData.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    }
+    if (!formData.lastName || !formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+    }
+    if (!formData.email || !formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+    if (!formData.phone || !formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
 
+    return newErrors;
+  };
   const handleSubmit = async (e) => {
+    const newErrors = validateForm();
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
+
+    setLoading(true);
+    setStatusMessage({ type: "", text: "" });
     e.preventDefault();
+
+    setLoading(true);
+    setStatusMessage({
+      type: "",
+      text: "",
+    });
+
     try {
-      const data = new FormData();
-      data.append("name", formData.name);
-      data.append("email", formData.email);
-      data.append("phone", formData.phone);
-      data.append("message", formData.message);
-      data.append("sendNda", formData.sendNda);
-      if (formData.file) data.append("file", formData.file);
+      const payload = new FormData();
+
+      payload.append("name", formData.name || "");
+      payload.append("email", formData.email || "");
+      payload.append("phone", formData.phone || "");
+      payload.append("message", formData.message || "");
+      payload.append("is_nda", formData.sendNda ? "1" : "0");
+      payload.append("service", formData.service || "");
+      payload.append("service_category", formData.service_category || "");
+
+      if (formData.file && formData.file instanceof File) {
+        payload.append("file", formData.file);
+      }
+
+      console.log("Submitting form...");
+      const response = await submitContactForm(payload);
+      console.log("API SUCCESS:", response);
+
+      setStatusMessage({
+        type: "success",
+        text: "Your message has been sent successfully!",
+      });
+
+      // Reset Form State
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        service: "Engagement Model",
+        service_category: "",
+        file: null,
+        sendNda: false,
+      });
+
+      // Reset File Input Field UI
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     } catch (error) {
-      console.error("API Error:", error);
+      console.error("========== FORM ERROR ==========");
+      console.error("Error:", error);
+      console.error("Message:", error?.message);
+      console.error("Response:", error?.response);
+      console.error("Response Data:", error?.response?.data);
+      console.error("Status:", error?.response?.status);
+      console.error("================================");
+
+      let errorMsg = "Failed to send message. Please try again later.";
+
+      if (error?.response?.data?.errors) {
+        const errors = error.response.data.errors;
+        errorMsg = Object.values(errors).flat().join(" ");
+      } else if (error?.response?.data?.message) {
+        errorMsg = error.response.data.message;
+      } else if (error?.message) {
+        errorMsg = error.message;
+      }
+
+      setStatusMessage({
+        type: "error",
+        text: errorMsg,
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -60,7 +155,7 @@ export default function EngagementModelSection() {
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
               {/* Left Content */}
               <div className="lg:col-span-7 text-center lg:text-left mt-8">
-                <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-gradient-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
                   Engagement Model
                 </h3>
 
@@ -79,7 +174,7 @@ export default function EngagementModelSection() {
                   As a seasoned mobile app and software development company, we offer three flexible
                   engagement models designed to fit different project needs, budgets, and business goals
                   because no two projects (or businesses) are exactly alike. Not sure which one fits you?
-                  Get in touch with our consultants today and find the right model for your next project
+                  Get in touch with our consultants today and find the right model for your next project.
                 </p>
 
                 <ul className="mt-6 sm:mt-8 space-y-4 sm:space-y-5 inline-block lg:block text-left">
@@ -106,7 +201,7 @@ export default function EngagementModelSection() {
                   </Link>
                   <Link
                     href="/portfolio"
-                    className=" border border-gray-300 group inline-flex items-center gap-3 bg-gray-50  px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-50 "
+                    className="border border-gray-300 group inline-flex items-center gap-3 bg-gray-50 px-8 py-4 text-lg font-semibold text-black transition hover:bg-gray-100"
                   >
                     See Our Work
                     <ArrowRight
@@ -137,7 +232,6 @@ export default function EngagementModelSection() {
                     Guaranteed Response within One Business Day!
                   </p>
 
-                  {/* Form Inputs */}
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <input
@@ -147,7 +241,7 @@ export default function EngagementModelSection() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-400 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -159,7 +253,7 @@ export default function EngagementModelSection() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-400 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -171,7 +265,7 @@ export default function EngagementModelSection() {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-400 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
                       />
                     </div>
 
@@ -182,16 +276,17 @@ export default function EngagementModelSection() {
                         placeholder="Write here Brief about the project..."
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-400 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
                       />
                     </div>
 
                     {/* File Upload */}
-                    <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
-                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900">
-                        <Paperclip className="w-4 h-4 text-gray-600" />
+                    <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
+                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
+                        <Paperclip className="w-4 h-4 text-black" />
                         <span>Upload file:</span>
                         <input
+                          ref={fileInputRef}
                           type="file"
                           onChange={handleFileChange}
                           className="hidden"
@@ -207,6 +302,7 @@ export default function EngagementModelSection() {
                       <input
                         type="checkbox"
                         id="nda"
+
                         checked={formData.sendNda}
                         onChange={(e) =>
                           setFormData((prev) => ({
@@ -214,23 +310,60 @@ export default function EngagementModelSection() {
                             sendNda: e.target.checked,
                           }))
                         }
-                        className="w-4 h-4 border-gray-400 text-red-400 focus:ring-red-400 accent-gray-600 cursor-pointer"
+                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
                       />
                       <label
                         htmlFor="nda"
-                        className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
+                        className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
                       >
                         Please Send NDA
                       </label>
                     </div>
 
-                    {/* Submit Button */}
+                    {statusMessage.text && (
+                      <div
+                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
+                            ? "bg-green-100 border border-green-400 text-green-800"
+                            : "bg-red-100 border border-red-400 text-red-800"
+                          }`}
+                      >
+                        {statusMessage.text}
+                      </div>
+                    )}
+
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
+                        disabled={loading}
+                        className="w-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                       >
-                        Schedule a free consultation
+                        {loading ? (
+                          <span className="flex items-center gap-2">
+                            <svg
+                              className="animate-spin h-4 w-4 text-white"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                              ></circle>
+                              <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                              ></path>
+                            </svg>
+                            Sending...
+                          </span>
+                        ) : (
+                          "Schedule a free consultation"
+                        )}
                       </button>
                     </div>
                   </form>
@@ -274,11 +407,12 @@ export default function EngagementModelSection() {
                 </p>
               </div>
             </div>
+
             <div className="mt-10 sm:mt-14 overflow-x-auto -mx-3 px-3 sm:mx-0 sm:px-0">
               <table className="w-full min-w-160 border border-gray-300 text-center">
                 <thead>
                   <tr>
-                    <th className="border border-red-100 bg-red-50  p-3 sm:p-6  w-40 sm:w-64">
+                    <th className="border border-red-100 bg-red-50 p-3 sm:p-6 w-40 sm:w-64">
                       <div className="flex flex-col items-center">
                         <Image
                           src="/images/about/engagement-model/Dev-App-04.webp"
@@ -308,7 +442,7 @@ export default function EngagementModelSection() {
                       </div>
                     </th>
 
-                    <th className="border border-red-100 bg-red-50  p-3 sm:p-6">
+                    <th className="border border-red-100 bg-red-50 p-3 sm:p-6">
                       <div className="flex flex-col items-center">
                         <Image
                           src="/images/about/engagement-model/fixbg-icn-em.webp"
@@ -323,7 +457,7 @@ export default function EngagementModelSection() {
                       </div>
                     </th>
 
-                    <th className="border border-red-100 bg-red-50  p-3 sm:p-6">
+                    <th className="border border-red-100 bg-red-50 p-3 sm:p-6">
                       <div className="flex flex-col items-center">
                         <Image
                           src="/images/about/engagement-model/dedicated-icn-em.webp"
@@ -368,7 +502,7 @@ export default function EngagementModelSection() {
 
         <section className="w-full max-w-6xl mx-auto px-4 py-12 text-gray-700">
           {/* Navigation Tabs */}
-          <div className=" border-gray-200 mb-8">
+          <div className="border-gray-200 mb-8">
             <nav className="flex space-x-8">
               {tabsData.map((tab) => (
                 <button
@@ -414,8 +548,8 @@ export default function EngagementModelSection() {
               </div>
             </div>
 
-            {/* RIGHT SIDE: Image */}
-            <div className="lg:col-span-5 relative w-full h-full overflow-hidden">
+            {/* RIGHT SIDE: Image Container */}
+            <div className="lg:col-span-5 relative w-full aspect-video lg:aspect-auto lg:h-full min-h-75 overflow-hidden rounded-md">
               <Image
                 src={currentTab.image}
                 alt={currentTab.title}
@@ -425,6 +559,7 @@ export default function EngagementModelSection() {
             </div>
           </div>
         </section>
+
         <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
@@ -455,7 +590,7 @@ export default function EngagementModelSection() {
                 {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
-                  className="inline-flex items-center gap-1.5  transition-colors"
+                  className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -487,12 +622,13 @@ export default function EngagementModelSection() {
                     }}
                   ></div>
                   <span>USA :</span>
-                  <a href="tel:+18669788570" className=" transition-colors">
+                  <a href="tel:+18669788570" className="transition-colors">
                     +1 (866) 978-8570
                   </a>
                 </div>
               </div>
             </div>
+
             <div>
               <Link
                 href="/lets-talk"
@@ -507,6 +643,7 @@ export default function EngagementModelSection() {
             </div>
           </div>
         </section>
+
         <section>
           <div className="w-full px-5">
             <h2 className="text-4xl font-bold text-center">
@@ -519,7 +656,6 @@ export default function EngagementModelSection() {
               actually needs, not a generic template. Pair that with a team that knows both
               the technical side and the strategy side, and you get more than just a vendor:
               you get a partner invested in helping your digital product actually succeed.
-
             </p>
 
             <section>
@@ -555,6 +691,7 @@ export default function EngagementModelSection() {
             </section>
           </div>
         </section>
+
         <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             {/* Top Icon Illustration */}
@@ -571,13 +708,11 @@ export default function EngagementModelSection() {
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Not Sure Which Engagement Model Fits Your Project? Let's Talk It Through.
-
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-4xl mb-8 leading-relaxed faq">
               Choosing the right engagement model can make or break a project, and that's exactly where our experts come in. Devapp Solutions has built its name as a trusted software, web, and mobile app development company, delivering secure, scalable, custom technology solutions for years. Our team brings together technical know-how and a structured development approach, helping businesses turn great ideas into digital products that actually succeed. Talk to us today, and let's find the model that works for you.
-
             </p>
 
             {/* Contact Info Box */}
@@ -586,7 +721,7 @@ export default function EngagementModelSection() {
                 {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
-                  className="inline-flex items-center gap-1.5  transition-colors"
+                  className="inline-flex items-center gap-1.5 transition-colors"
                 >
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -618,12 +753,13 @@ export default function EngagementModelSection() {
                     }}
                   ></div>
                   <span>USA :</span>
-                  <a href="tel:+18669788570" className=" transition-colors">
+                  <a href="tel:+18669788570" className="transition-colors">
                     +1 (866) 978-8570
                   </a>
                 </div>
               </div>
             </div>
+
             <div>
               <Link
                 href="/lets-talk"
@@ -638,85 +774,7 @@ export default function EngagementModelSection() {
             </div>
           </div>
         </section>
-        <section className="py-20 bg-white">
-          <div className="w-full px-5">
-            <h2 className="text-4xl font-bold text-center">
-              Frequently Asked Questions
-            </h2>
-
-            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
-              Find answers to common questions about our app and software
-              development services and learn how we can help turn your idea into
-              a successful digital product.
-            </p>
-
-            <div className="mt-12 space-y-4">
-              {faqsData.map((faq, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-200 rounded-lg overflow-hidden"
-                >
-                  <button
-                    onClick={() => setOpen(open === index ? -1 : index)}
-                    className="w-full flex justify-between items-center px-5 py-5 text-left"
-                  >
-                    <span className="font-semibold text-lg">
-                      {faq.question}
-                    </span>
-
-                    {open === index ? (
-                      <ChevronUp size={22} />
-                    ) : (
-                      <ChevronDown size={22} />
-                    )}
-                  </button>
-
-                  {open === index && (
-                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-20 text-center">
-              <h3 className="text-4xl font-bold">
-                Have Something in Mind? Let's Talk.
-              </h3>
-
-              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
-                Explore what Devapp Solutions has to offer, from our full range of services
-                to the step-by-step process we follow for mobile app and software development.
-                Curious what it's like working with us? See what our clients have to say.
-                Ready when you are: let's start the conversation and turn your next great idea into something real.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <div className="mb-2.5 pb-2">
-          <ContactForm />
-        </div>
       </div>
-      <section className="mb-5 overflow-hidden">
-        <div className="marquee">
-          <div className="marquee-content">
-            {[...partners, ...partners].map((item, index) => (
-              <div
-                key={`${item.id}-${index}`}
-                className="w-35 h-17.5 sm:w-42.5 sm:h-20 md:w-55 md:h-23.75 bg-white border border-gray-200 rounded-md shadow-sm flex items-center justify-center p-3 shrink-0"
-              >
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  className="max-h-full max-w-full object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
