@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import {  useRef,useState } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { offices } from "../contact-us/data";
 import ContactForm from "../../contactForm/ContactForm";
+
 import {
   partners
 } from "../../../../utils/data";
@@ -24,6 +25,8 @@ import { submitContactForm } from "@/services/send-call-request";
 export default function ContactSection() {
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
+   const [errors, setErrors] = useState({});
+   const fileInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState("customer");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -41,59 +44,112 @@ export default function ContactSection() {
 
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
     }
   };
+    const validateForm = () => {
+    const newErrors = {};
 
-  // API Integration Submit Handler
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrorMessage("");
-    setSuccessMessage("");
-    setIsSubmitting(true);
-
-    // 1. Plain JavaScript Object ki jagah FormData banayein
-    const payload = new FormData();
-    payload.append("name", formData.name);
-    payload.append("email", formData.email);
-    payload.append("phone", formData.phone);
-    payload.append("message", formData.message);
-    payload.append("sendNda", String(formData.sendNda));
-
-    // File binary append karein
-    if (formData.file) {
-      payload.append("file", formData.file);
+    if (!formData.name || !formData.name.trim()) {
+      newErrors.name = "Name is required";
     }
 
-    try {
-      // 2. Dynamic FormData Pass karein
-      const result = await submitContactForm(payload);
+    if (!formData.email || !formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
 
-      setSuccessMessage("Form submitted successfully!");
+    if (!formData.phone || !formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
+
+    return newErrors;
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const newErrors = validateForm();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
+    setLoading(true);
+    setStatusMessage({
+      type: "",
+      text: "",
+    });
+
+    try {
+      const payload = new FormData();
+
+      payload.append("name", formData.name.trim());
+      payload.append("email", formData.email.trim());
+      payload.append("phone", formData.phone.trim());
+      payload.append("message", formData.message.trim());
+      payload.append("is_nda", formData.sendNda ? "1" : "0");
+      payload.append("service", formData.service || "");
+      payload.append("service_category", formData.service_category || "");
+
+      if (formData.file instanceof File) {
+        payload.append("file", formData.file);
+      }
+
+      const response = await submitContactForm(payload);
+
+      setStatusMessage({
+        type: "success",
+        text: "Your message has been sent successfully!",
+      });
+
       setFormData({
         name: "",
         email: "",
         phone: "",
         message: "",
-        sendNda: false,
+        service: "",
+        service_category: "",
         file: null,
+        sendNda: false,
       });
+
+      setErrors({});
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     } catch (error) {
-      const backendMessage =
-        error.response?.data?.message ||
-        error.message ||
-        "Failed to submit form.";
-      setErrorMessage(backendMessage);
+      console.error("API ERROR:", error);
+      console.error("API RESPONSE:", error?.response?.data);
+
+      let errorMessage = "Failed to send message. Please try again later.";
+
+      if (error?.response?.data?.errors?.file) {
+        errorMessage = error.response.data.errors.file.join(" ");
+      } else if (error?.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      } else if (error?.message) {
+        errorMessage = error.message;
+      }
+
+      setStatusMessage({
+        type: "error",
+        text: errorMessage,
+      });
     } finally {
-      setIsSubmitting(false);
+      setLoading(false);
     }
   };
   return (
@@ -181,117 +237,151 @@ export default function ContactSection() {
                     We Guarantee To Get Back To You Within A Business Day.
                   </p>
 
-                  <form onSubmit={handleSubmit} className="space-y-6 w-full">
-                    {/* Error Message Display */}
-                    {errorMessage && (
-                      <div className="bg-red-50 border-l-4 border-red-500 p-3 text-red-700 text-sm">
-                        {errorMessage}
-                      </div>
-                    )}
-
-                    {/* Success Message Display */}
-                    {successMessage && (
-                      <div className="bg-green-50 border-l-4 border-green-500 p-3 text-green-700 text-sm">
-                        {successMessage}
-                      </div>
-                    )}
-
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Name*"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email*"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone*"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <textarea
-                        name="message"
-                        rows={3}
-                        placeholder="Write here Brief about the project..."
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
-                      />
-                    </div>
-
-                    {/* File Upload */}
-                    <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
-                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                        <Paperclip className="w-4 h-4 text-gray-600" />
-                        <span>Upload file:</span>
-                        <input
-                          type="file"
-                          onChange={handleFileChange}
-                          className="hidden"
-                        />
-                      </label>
-                      <span className="text-gray-500 truncate max-w-37.5 sm:max-w-50">
-                        {formData.file ? formData.file.name : "No file chosen."}
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-5 sm:space-y-6"
+                  noValidate
+                >
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name*"
+                      value={formData.name}
+                      onChange={handleChange}
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.name ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                    />
+                    {errors.name && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.name}
                       </span>
-                    </div>
+                    )}
+                  </div>
 
-                    {/* Checkbox */}
-                    <div className="flex items-center gap-2 pt-1">
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email*"
+                      value={formData.email}
+                      onChange={handleChange}
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.email ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                    />
+                    {errors.email && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.email}
+                      </span>
+                    )}
+                  </div>
+
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone*"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.phone ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                    />
+                    {errors.phone && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.phone}
+                      </span>
+                    )}
+                  </div>
+
+                  <div>
+                    <textarea
+                      name="message"
+                      rows={3}
+                      placeholder="Write here Brief about the project..."
+                      value={formData.message}
+                      onChange={handleChange}
+                      disabled={loading}
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                    />
+                  </div>
+
+                  {/* File Upload & NDA Checkbox */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
+                      <Paperclip className="w-4 h-4 text-gray-600" />
+                      <span>Upload file:</span>
                       <input
-                        type="checkbox"
-                        id="nda"
-                        checked={formData.sendNda}
-                        onChange={(e) =>
-                          setFormData((prev) => ({
-                            ...prev,
-                            sendNda: e.target.checked,
-                          }))
-                        }
-                        className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-red-600 accent-gray-600 cursor-pointer"
+                        ref={fileInputRef}
+                        type="file"
+                        onChange={handleFileChange}
+                        disabled={loading}
+                        className="hidden"
                       />
-                      <label
-                        htmlFor="nda"
-                        className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
-                      >
-                        Please Send NDA
-                      </label>
-                    </div>
+                    </label>
 
-                    {/* Submit Button */}
-                    <div className="pt-2">
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full sm:w-auto bg-red-700 hover:bg-red-600 disabled:opacity-50 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
-                      >
-                        {isSubmitting ? "Submitting..." : "Schedule a free consultation"}
-                      </button>
+                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                      {formData.file ? formData.file.name : "No file chosen."}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-1">
+                    <input
+                      type="checkbox"
+                      id="nda"
+                      checked={formData.sendNda}
+                      disabled={loading}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          sendNda: e.target.checked,
+                        }))
+                      }
+                      className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 cursor-pointer rounded-xs"
+                    />
+                    <label
+                      htmlFor="nda"
+                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                    >
+                      Please Send NDA
+                    </label>
+                  </div>
+
+                  {/* Status Message */}
+                  {statusMessage.text && (
+                    <div
+                      className={`p-3 text-sm font-medium border rounded-sm ${
+                        statusMessage.type === "success"
+                          ? "bg-green-50 border-green-200 text-green-700"
+                          : "bg-red-50 border-red-200 text-red-700"
+                      }`}
+                    >
+                      {statusMessage.text}
                     </div>
-                  </form>
+                  )}
+
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full bg-red-700 hover:bg-red-600 disabled:bg-red-400 font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed rounded-sm text-white!"
+                    >
+                      {loading ? (
+                        <span className="text-white font-bold">Sending...</span>
+                      ) : (
+                        <span className="text-white font-bold flex items-center gap-2">
+                          Schedule a free consultation
+                          <ArrowRight className="w-4 h-4 shrink-0 text-white" />
+                        </span>
+                      )}
+                    </button>
+                  </div>
+                </form>
                 </div>
               </div>
             </div>

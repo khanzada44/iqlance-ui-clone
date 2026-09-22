@@ -50,6 +50,7 @@ export default function SocialMedia() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
   // Data Array (Component ke bahar ya andar define karein)
   const processSteps = [
@@ -89,45 +90,76 @@ export default function SocialMedia() {
   const [blogs, setBlogs] = useState([]);
   const fileInputRef = useRef(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
     }
   };
+    const validateForm = () => {
+    const newErrors = {};
 
+    if (!formData.name || !formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email || !formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (!formData.phone || !formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
+
+    return newErrors;
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newErrors = validateForm();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
     setLoading(true);
-    setStatusMessage({ type: "", text: "" });
+    setStatusMessage({
+      type: "",
+      text: "",
+    });
 
     try {
       const payload = new FormData();
-      payload.append("name", formData.name || "");
-      payload.append("email", formData.email || "");
-      payload.append("phone", formData.phone || "");
-      payload.append("message", formData.message || "");
+
+      payload.append("name", formData.name.trim());
+      payload.append("email", formData.email.trim());
+      payload.append("phone", formData.phone.trim());
+      payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
       payload.append("service_category", formData.service_category || "");
 
-      // File ko tabhi payload me append karein jab ye valid File instance ho
-      if (formData.file && formData.file instanceof File) {
+      if (formData.file instanceof File) {
         payload.append("file", formData.file);
       }
 
-      await submitContactForm(payload);
+      const response = await submitContactForm(payload);
 
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
       });
 
-      // Reset Form State
       setFormData({
         name: "",
         email: "",
@@ -139,29 +171,33 @@ export default function SocialMedia() {
         sendNda: false,
       });
 
+      setErrors({});
+
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API Error Response:", error?.response?.data);
+      console.error("API ERROR:", error);
+      console.error("API RESPONSE:", error?.response?.data);
 
-      // Backend Error response handling
-      let errorMsg = "Failed to send message. Please try again later.";
+      let errorMessage = "Failed to send message. Please try again later.";
+
       if (error?.response?.data?.errors?.file) {
-        errorMsg = error.response.data.errors.file.join(" ");
+        errorMessage = error.response.data.errors.file.join(" ");
       } else if (error?.response?.data?.message) {
-        errorMsg = error.response.data.message;
+        errorMessage = error.response.data.message;
+      } else if (error?.message) {
+        errorMessage = error.message;
       }
 
       setStatusMessage({
         type: "error",
-        text: errorMsg,
+        text: errorMessage,
       });
     } finally {
       setLoading(false);
     }
   };
-
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -189,33 +225,30 @@ export default function SocialMedia() {
                 That Keeps Users Coming Back
               </h1>
               Build a Dating App People Actually Fall For
-
-
               <p className="text-base md:text-lg leading-relaxed text-black">
-                At Devapp, we design and build enterprise-grade social networking
-                applications for ambitious brands that want to create meaningful digital
-                communities. Our USA-based development team creates scalable solutions
-                tailored to your business requirements, with support for both Android and
-                iOS platforms.
+                At Devapp, we design and build enterprise-grade social
+                networking applications for ambitious brands that want to create
+                meaningful digital communities. Our USA-based development team
+                creates scalable solutions tailored to your business
+                requirements, with support for both Android and iOS platforms.
               </p>
-
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Our social media applications are built around real user engagement, making
-                it easy for people to connect, share content, discover relevant information,
-                interact with communities, and stay active on your platform. We can also
-                integrate targeted advertising, personalized discovery, real-time
-                interactions, notifications, and data-driven features to support long-term
+                Our social media applications are built around real user
+                engagement, making it easy for people to connect, share content,
+                discover relevant information, interact with communities, and
+                stay active on your platform. We can also integrate targeted
+                advertising, personalized discovery, real-time interactions,
+                notifications, and data-driven features to support long-term
                 growth.
               </p>
-
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Beyond consumer-focused platforms, we develop corporate social applications
-                that help businesses strengthen communication between customers, employees,
-                partners, and internal teams. From secure information sharing to real-time
-                collaboration and community engagement, we build connected digital
-                experiences around the way your organization operates.
+                Beyond consumer-focused platforms, we develop corporate social
+                applications that help businesses strengthen communication
+                between customers, employees, partners, and internal teams. From
+                secure information sharing to real-time collaboration and
+                community engagement, we build connected digital experiences
+                around the way your organization operates.
               </p>
-
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
@@ -255,28 +288,29 @@ export default function SocialMedia() {
                 <p className="text-xs md:text-sm text-black font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
-                {statusMessage.text && (
-                  <p
-                    className={`text-xs text-center font-semibold ${statusMessage.type === "success"
-                      ? "text-green-600"
-                      : "text-red-600"
-                      }`}
-                  >
-                    {statusMessage.text}
-                  </p>
-                )}
-                {/* Form Inputs */}
-                <form onSubmit={handleSubmit} className="space-y-6">
+                
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-5 sm:space-y-6"
+                  noValidate
+                >
                   <div>
                     <input
                       type="text"
                       name="name"
                       placeholder="Name*"
-                      required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.name ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
+                    {errors.name && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.name}
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -284,11 +318,18 @@ export default function SocialMedia() {
                       type="email"
                       name="email"
                       placeholder="Email*"
-                      required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.email ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
+                    {errors.email && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.email}
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -296,11 +337,18 @@ export default function SocialMedia() {
                       type="tel"
                       name="phone"
                       placeholder="Phone*"
-                      required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.phone ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
+                    {errors.phone && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.phone}
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -310,81 +358,78 @@ export default function SocialMedia() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      disabled={loading}
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
-                  {/* File Upload */}
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
-                      <Paperclip className="w-4 h-4 text-black" />
+                  {/* File Upload & NDA Checkbox */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
+                      <Paperclip className="w-4 h-4 text-gray-600" />
                       <span>Upload file:</span>
                       <input
+                        ref={fileInputRef}
                         type="file"
                         onChange={handleFileChange}
+                        disabled={loading}
                         className="hidden"
                       />
                     </label>
-                    <span className="text-gray-500 truncate max-w-45">
+
+                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
 
-                  {/* Checkbox */}
                   <div className="flex items-center gap-2 pt-1">
                     <input
                       type="checkbox"
                       id="nda"
                       checked={formData.sendNda}
+                      disabled={loading}
                       onChange={(e) =>
                         setFormData((prev) => ({
                           ...prev,
                           sendNda: e.target.checked,
                         }))
                       }
-                      className="w-4 h-4 border-gray-400 text-red-700 focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                      className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 cursor-pointer rounded-xs"
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
+                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
                     >
                       Please Send NDA
                     </label>
                   </div>
 
-                  {/* Submit Button */}
+                  {/* Status Message */}
+                  {statusMessage.text && (
+                    <div
+                      className={`p-3 text-sm font-medium border rounded-sm ${
+                        statusMessage.type === "success"
+                          ? "bg-green-50 border-green-200 text-green-700"
+                          : "bg-red-50 border-red-200 text-red-700"
+                      }`}
+                    >
+                      {statusMessage.text}
+                    </div>
+                  )}
+
                   <div className="pt-2">
                     <button
                       type="submit"
                       disabled={loading}
-                      className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="w-full bg-red-700 hover:bg-red-600 disabled:bg-red-400 font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed rounded-sm text-white!"
                     >
                       {loading ? (
-                        <span className="flex items-center gap-2">
-                          <svg
-                            className="animate-spin h-4 w-4 text-white"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            ></circle>
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
-                          </svg>
-                          Sending...
-                        </span>
+                        <span className="text-white font-bold">Sending...</span>
                       ) : (
-                        "Schedule a free consultation"
+                        <span className="text-white font-bold flex items-center gap-2">
+                          Schedule a free consultation
+                          <ArrowRight className="w-4 h-4 shrink-0 text-white" />
+                        </span>
                       )}
                     </button>
                   </div>
@@ -400,10 +445,12 @@ export default function SocialMedia() {
                 Social Networking Apps Engineered to Grow Your Business
               </h2>
               <p className="text-sm md:text-base text-black max-w-6xl mx-auto leading-relaxed">
-                Our certified developers at Devapp, a trusted mobile app development company in the USA,
-                build powerful, purpose-driven social media solutions for businesses of every size.
-                Backed by deep software integration, cross-platform compatibility,
-                and flawless performance, every app we deliver sets a new standard for user experience.
+                Our certified developers at Devapp, a trusted mobile app
+                development company in the USA, build powerful, purpose-driven
+                social media solutions for businesses of every size. Backed by
+                deep software integration, cross-platform compatibility, and
+                flawless performance, every app we deliver sets a new standard
+                for user experience.
               </p>
               <br />
             </div>
@@ -555,28 +602,29 @@ export default function SocialMedia() {
 
             <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto">
               <p>
-                Your fitness app should reflect the way your business works, not force
-                your business into a generic template. Our{" "}
+                Your fitness app should reflect the way your business works, not
+                force your business into a generic template. Our{" "}
                 <span className="font-semibold text-black">
                   custom fitness app development services
                 </span>{" "}
-                transform your concept into a digital product designed around your
-                audience, goals, and revenue model.
+                transform your concept into a digital product designed around
+                your audience, goals, and revenue model.
               </p>
 
               <p>
-                Whether you're launching a fitness startup, expanding a gym or wellness
-                brand, or taking personal training into the digital space, we build
-                experiences that bring workouts, coaching, tracking, nutrition, and
-                engagement together in one place.
+                Whether you're launching a fitness startup, expanding a gym or
+                wellness brand, or taking personal training into the digital
+                space, we build experiences that bring workouts, coaching,
+                tracking, nutrition, and engagement together in one place.
               </p>
 
               <p>
-                From the first user journey to the technology powering the platform,
-                every part of your application is planned to make fitness easier to
-                access and your business easier to scale. We combine intuitive UI/UX,
-                powerful functionality, and modern mobile technology to create fitness
-                products built for real-world use.
+                From the first user journey to the technology powering the
+                platform, every part of your application is planned to make
+                fitness easier to access and your business easier to scale. We
+                combine intuitive UI/UX, powerful functionality, and modern
+                mobile technology to create fitness products built for
+                real-world use.
               </p>
             </div>
           </div>
@@ -587,10 +635,11 @@ export default function SocialMedia() {
 
             <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-8xl mx-auto">
               Our fitness app development work is focused on creating practical,
-              engaging, and user-centered digital experiences. From workout platforms
-              and coaching solutions to nutrition tracking and connected fitness
-              products, we build applications designed to deliver meaningful value to
-              users and support long-term business growth.
+              engaging, and user-centered digital experiences. From workout
+              platforms and coaching solutions to nutrition tracking and
+              connected fitness products, we build applications designed to
+              deliver meaningful value to users and support long-term business
+              growth.
             </p>
           </div>
         </section>
@@ -684,7 +733,6 @@ export default function SocialMedia() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-
         </section>
 
         <div className="text-center max-w-6xl mx-auto space-y-4 mt-15 px-5">
@@ -706,15 +754,17 @@ export default function SocialMedia() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                      ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-red-600"
-                      }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
+                      activetechnologies === index
+                        ? "text-red-600 font-semibold"
+                        : "text-gray-500 hover:text-red-600"
+                    }`}
                   >
                     {tab.category}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
-                        }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${
+                        activetechnologies === index ? "w-full" : "w-0"
+                      }`}
                     />
                   </button>
                 ))}
@@ -746,7 +796,7 @@ export default function SocialMedia() {
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
-                src="/images/letdiscuss-icon.webp" 
+                src="/images/letdiscuss-icon.webp"
                 alt="Custom Logistics App Support"
                 width={64}
                 height={64}
@@ -757,7 +807,8 @@ export default function SocialMedia() {
               Looking to Hire Dedicated Team?
             </h2>
             <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
-              We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
+              We are team of talented, experienced, and certified designers and
+              developers. Let us build something extraordinary.
             </p>
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
@@ -1014,10 +1065,11 @@ export default function SocialMedia() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-red-300"
-                      }`}
+                    className={`border bg-white transition-all duration-300 ${
+                      open === index
+                        ? "border-gray-200 shadow-md"
+                        : "border-gray-200 hover:border-red-300"
+                    }`}
                   >
                     {/* Question */}
                     <button
@@ -1029,19 +1081,21 @@ export default function SocialMedia() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          open === index
+                            ? "rotate-180 text-black"
+                            : "rotate-0 text-black"
+                        }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
-                        }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        open === index
+                          ? "max-h-150 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-black">

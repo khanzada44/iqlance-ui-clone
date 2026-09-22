@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -22,6 +22,7 @@ import {
 import { submitContactForm } from "@/services/send-call-request";
 
 export default function ContactSection() {
+  const fileInputRef = useRef(null);
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeTab, setActiveTab] = useState("customer");
@@ -41,58 +42,118 @@ export default function ContactSection() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFileChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    // Clear field-level error as user types
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
-  // API Integration Submit Handler
+  const [errors, setErrors] = useState({}); 
+
+
+  const handleFileChange = (e) => {
+    const file = e.target.files?.[0] || null;
+    setFormData((prev) => ({
+      ...prev,
+      file,
+    }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name || !formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email || !formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (!formData.phone || !formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
+
+    return newErrors;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newErrors = validateForm();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
     setLoading(true);
-    setStatusMessage({ type: "", text: "" });
+    setStatusMessage({
+      type: "",
+      text: "",
+    });
 
     try {
-      // Form Data construct karna file upload ke liye
-      const bodyData = new FormData();
-      bodyData.append("name", formData.name);
-      bodyData.append("email", formData.email);
-      bodyData.append("phone", formData.phone);
-      bodyData.append("message", formData.message);
-      bodyData.append("sendNda", formData.sendNda);
+      const payload = new FormData();
 
-      if (formData.file) {
-        bodyData.append("file", formData.file);
+      payload.append("name", formData.name.trim());
+      payload.append("email", formData.email.trim());
+      payload.append("phone", formData.phone.trim());
+      payload.append("message", formData.message.trim());
+      payload.append("is_nda", formData.sendNda ? "1" : "0");
+      payload.append("service", formData.service || "");
+      payload.append("service_category", formData.service_category || "");
+
+      if (formData.file instanceof File) {
+        payload.append("file", formData.file);
       }
 
-      // API Call
-      await submitContactForm(bodyData);
+      const response = await submitContactForm(payload);
 
       setStatusMessage({
         type: "success",
-        text: "Thank you! Your inquiry has been submitted successfully.",
+        text: "Your message has been sent successfully!",
       });
 
-      // Form reset
       setFormData({
         name: "",
         email: "",
         phone: "",
         message: "",
+        service: "",
+        service_category: "",
         file: null,
         sendNda: false,
       });
+
+      setErrors({});
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     } catch (error) {
-      console.error("Submission Error:", error);
+      console.error("API ERROR:", error);
+      console.error("API RESPONSE:", error?.response?.data);
+
+      let errorMessage = "Failed to send message. Please try again later.";
+
+      if (error?.response?.data?.errors?.file) {
+        errorMessage = error.response.data.errors.file.join(" ");
+      } else if (error?.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      } else if (error?.message) {
+        errorMessage = error.message;
+      }
+
       setStatusMessage({
         type: "error",
-        text:
-          error?.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        text: errorMessage,
       });
     } finally {
       setLoading(false);
@@ -218,102 +279,132 @@ export default function ContactSection() {
                     Guaranteed Response within One Business Day!
                   </p>
 
-                  <form onSubmit={handleSubmit} className="space-y-6 w-full">
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Name*"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-5 sm:space-y-6"
+                noValidate
+              >
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name*"
+                    value={formData.name}
+                    onChange={handleChange}
+                    disabled={loading}
+                    className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                  />
+                  {errors.name && (
+                    <span className="text-xs text-red-600 mt-1 block">
+                      {errors.name}
+                    </span>
+                  )}
+                </div>
 
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email*"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email*"
+                    value={formData.email}
+                    onChange={handleChange}
+                    disabled={loading}
+                    className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                  />
+                  {errors.email && (
+                    <span className="text-xs text-red-600 mt-1 block">
+                      {errors.email}
+                    </span>
+                  )}
+                </div>
 
-                    <div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone*"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
-                      />
-                    </div>
+                <div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone*"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    disabled={loading}
+                    className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                  />
+                  {errors.phone && (
+                    <span className="text-xs text-red-600 mt-1 block">
+                      {errors.phone}
+                    </span>
+                  )}
+                </div>
 
-                    <div>
-                      <textarea
-                        name="message"
-                        rows={3}
-                        placeholder="Write here Brief about the project..."
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
-                      />
-                    </div>
+                <div>
+                  <textarea
+                    name="message"
+                    rows={3}
+                    placeholder="Write here Brief about the project..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    disabled={loading}
+                    className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                  />
+                </div>
 
-                    {/* File Upload */}
-                    <div className="flex items-center gap-2 text-xs md:text-sm text-gray-700 pt-1">
-                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                        <Paperclip className="w-4 h-4 text-gray-600" />
-                        <span>Upload file:</span>
-                        <input
-                          type="file"
-                          onChange={handleFileChange}
-                          className="hidden"
-                        />
-                      </label>
-                      <span className="text-gray-500 truncate max-w-37.5 sm:max-w-50">
-                        {formData.file ? formData.file.name : "No file chosen."}
-                      </span>
-                    </div>
+                {/* File Upload & NDA Checkbox */}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
+                  <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
+                    <Paperclip className="w-4 h-4 text-gray-600" />
+                    <span>Upload file:</span>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      onChange={handleFileChange}
+                      disabled={loading}
+                      className="hidden"
+                    />
+                  </label>
 
-                    {/* Checkbox */}
-                    <div className="flex items-center gap-2 pt-1">
-                      <input
-                        type="checkbox"
-                        id="nda"
-                        checked={formData.sendNda}
-                        onChange={(e) =>
-                          setFormData((prev) => ({
-                            ...prev,
-                            sendNda: e.target.checked,
-                          }))
-                        }
-                        className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 accent-gray-600 cursor-pointer"
-                      />
-                      <label
-                        htmlFor="nda"
-                        className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer select-none"
-                      >
-                        Please Send NDA
-                      </label>
-                    </div>
+                  <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    {formData.file ? formData.file.name : "No file chosen."}
+                  </span>
+                </div>
 
-                    {/* Submit Button */}
-                    <div className="pt-2">
-                      <button
-                        type="submit"
-                        className="w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer"
-                      >
+                <div className="flex items-center gap-2 pt-1">
+                  <input
+                    type="checkbox"
+                    id="nda"
+                    checked={formData.sendNda}
+                    disabled={loading}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        sendNda: e.target.checked,
+                      }))
+                    }
+                    className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 cursor-pointer rounded-xs"
+                  />
+                  <label
+                    htmlFor="nda"
+                    className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                  >
+                    Please Send NDA
+                  </label>
+                </div>
+
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-red-700 hover:bg-red-600 disabled:bg-red-400 font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed rounded-sm text-white!"
+                  >
+                    {loading ? (
+                      <span className="text-white font-bold">Sending...</span>
+                    ) : (
+                      <span className="text-white font-bold flex items-center gap-2">
                         Schedule a free consultation
-                      </button>
-                    </div>
-                  </form>
+                        <ArrowRight className="w-4 h-4 shrink-0 text-white" />
+                      </span>
+                    )}
+                  </button>
+                </div>
+              </form>
                 </div>
               </div>
             </div>

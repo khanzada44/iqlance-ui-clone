@@ -30,7 +30,7 @@ import {
   ServiceSectionData,
   foodDeliverySlides,
   bottomFeatures,
-  services
+  services,
 } from "./data";
 import Image from "next/image";
 
@@ -91,46 +91,77 @@ export default function fitness() {
   // Form State
   const [blogs, setBlogs] = useState([]);
   const fileInputRef = useRef(null);
+  const [errors, setErrors] = useState({});
+  const validateForm = () => {
+    const newErrors = {};
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (!formData.name || !formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email || !formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (!formData.phone || !formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
+
+    return newErrors;
   };
-
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
     }
   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newErrors = validateForm();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
     setLoading(true);
-    setStatusMessage({ type: "", text: "" });
+    setStatusMessage({
+      type: "",
+      text: "",
+    });
 
     try {
       const payload = new FormData();
-      payload.append("name", formData.name || "");
-      payload.append("email", formData.email || "");
-      payload.append("phone", formData.phone || "");
-      payload.append("message", formData.message || "");
+
+      payload.append("name", formData.name.trim());
+      payload.append("email", formData.email.trim());
+      payload.append("phone", formData.phone.trim());
+      payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
       payload.append("service_category", formData.service_category || "");
 
-      // File ko tabhi payload me append karein jab ye valid File instance ho
-      if (formData.file && formData.file instanceof File) {
+      if (formData.file instanceof File) {
         payload.append("file", formData.file);
       }
 
-      await submitContactForm(payload);
+      const response = await submitContactForm(payload);
 
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
       });
 
-      // Reset Form State
       setFormData({
         name: "",
         email: "",
@@ -142,29 +173,33 @@ export default function fitness() {
         sendNda: false,
       });
 
+      setErrors({});
+
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API Error Response:", error?.response?.data);
+      console.error("API ERROR:", error);
+      console.error("API RESPONSE:", error?.response?.data);
 
-      // Backend Error response handling
-      let errorMsg = "Failed to send message. Please try again later.";
+      let errorMessage = "Failed to send message. Please try again later.";
+
       if (error?.response?.data?.errors?.file) {
-        errorMsg = error.response.data.errors.file.join(" ");
+        errorMessage = error.response.data.errors.file.join(" ");
       } else if (error?.response?.data?.message) {
-        errorMsg = error.response.data.message;
+        errorMessage = error.response.data.message;
+      } else if (error?.message) {
+        errorMessage = error.message;
       }
 
       setStatusMessage({
         type: "error",
-        text: errorMsg,
+        text: errorMessage,
       });
     } finally {
       setLoading(false);
     }
   };
-
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -192,21 +227,22 @@ export default function fitness() {
                 Company in the USA
               </h1>
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Ready to launch a food ordering platform that actually holds up under
-                pressure? Devapp has earned its place among the top food delivery app
-                developers in the USA by shipping scalable, cloud-ready platforms packed
-                with the features modern users expect. We build complete delivery
-                ecosystems covering ordering, payments, dispatch, and customer engagement,
-                all running on modern architecture with secure, reliable integrations.
+                Ready to launch a food ordering platform that actually holds up
+                under pressure? Devapp has earned its place among the top food
+                delivery app developers in the USA by shipping scalable,
+                cloud-ready platforms packed with the features modern users
+                expect. We build complete delivery ecosystems covering ordering,
+                payments, dispatch, and customer engagement, all running on
+                modern architecture with secure, reliable integrations.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                From independent restaurants to multi-location aggregators and cloud
-                kitchens, our engineering team builds applications suited to how each
-                business actually operates. We combine advanced tech stacks, real-time
-                tracking, and AI-driven analytics to create a smooth, consistent experience
-                across iOS, Android, and web, no matter which platform your customers land
-                on.
+                From independent restaurants to multi-location aggregators and
+                cloud kitchens, our engineering team builds applications suited
+                to how each business actually operates. We combine advanced tech
+                stacks, real-time tracking, and AI-driven analytics to create a
+                smooth, consistent experience across iOS, Android, and web, no
+                matter which platform your customers land on.
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
@@ -243,27 +279,28 @@ export default function fitness() {
                 <p className="text-xs md:text-sm text-black font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
-                {statusMessage.text && (
-                  <p
-                    className={`text-xs text-center font-semibold ${statusMessage.type === "success"
-                      ? "text-green-600"
-                      : "text-red-600"
-                      }`}
-                  >
-                    {statusMessage.text}
-                  </p>
-                )}
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-5 sm:space-y-6"
+                  noValidate
+                >
                   <div>
                     <input
                       type="text"
                       name="name"
                       placeholder="Name*"
-                      required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.name ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
+                    {errors.name && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.name}
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -271,11 +308,18 @@ export default function fitness() {
                       type="email"
                       name="email"
                       placeholder="Email*"
-                      required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.email ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
+                    {errors.email && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.email}
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -283,11 +327,18 @@ export default function fitness() {
                       type="tel"
                       name="phone"
                       placeholder="Phone*"
-                      required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.phone ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
+                    {errors.phone && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.phone}
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -297,81 +348,78 @@ export default function fitness() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      disabled={loading}
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
-                  {/* File Upload */}
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
-                      <Paperclip className="w-4 h-4 text-black" />
+                  {/* File Upload & NDA Checkbox */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
+                      <Paperclip className="w-4 h-4 text-gray-600" />
                       <span>Upload file:</span>
                       <input
+                        ref={fileInputRef}
                         type="file"
                         onChange={handleFileChange}
+                        disabled={loading}
                         className="hidden"
                       />
                     </label>
-                    <span className="text-gray-500 truncate max-w-45">
+
+                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
 
-                  {/* Checkbox */}
                   <div className="flex items-center gap-2 pt-1">
                     <input
                       type="checkbox"
                       id="nda"
                       checked={formData.sendNda}
+                      disabled={loading}
                       onChange={(e) =>
                         setFormData((prev) => ({
                           ...prev,
                           sendNda: e.target.checked,
                         }))
                       }
-                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-red-600 accent-gray-600 cursor-pointer"
+                      className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 cursor-pointer rounded-xs"
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
+                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
                     >
                       Please Send NDA
                     </label>
                   </div>
 
-                  {/* Submit Button */}
+                  {/* Status Message */}
+                  {statusMessage.text && (
+                    <div
+                      className={`p-3 text-sm font-medium border rounded-sm ${
+                        statusMessage.type === "success"
+                          ? "bg-green-50 border-green-200 text-green-700"
+                          : "bg-red-50 border-red-200 text-red-700"
+                      }`}
+                    >
+                      {statusMessage.text}
+                    </div>
+                  )}
+
                   <div className="pt-2">
                     <button
                       type="submit"
                       disabled={loading}
-                      className="bg-red-700 hover:bg-red-600 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="w-full bg-red-700 hover:bg-red-600 disabled:bg-red-400 font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed rounded-sm text-white!"
                     >
                       {loading ? (
-                        <span className="flex items-center gap-2">
-                          <svg
-                            className="animate-spin h-4 w-4 text-white"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            ></circle>
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
-                          </svg>
-                          Sending...
-                        </span>
+                        <span className="text-white font-bold">Sending...</span>
                       ) : (
-                        "Schedule a free consultation"
+                        <span className="text-white font-bold flex items-center gap-2">
+                          Schedule a free consultation
+                          <ArrowRight className="w-4 h-4 shrink-0 text-white" />
+                        </span>
                       )}
                     </button>
                   </div>
@@ -387,7 +435,8 @@ export default function fitness() {
                 Food Delivery Solutions Designed Around Results
               </h2>
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
-                We don't build generic apps, we build platforms shaped around how your business actually makes money.
+                We don't build generic apps, we build platforms shaped around
+                how your business actually makes money.
               </p>
               <br />
             </div>
@@ -436,8 +485,9 @@ export default function fitness() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
+                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
               >
                 <div className="w-full lg:w-1/2 space-y-6">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
@@ -587,11 +637,7 @@ export default function fitness() {
                       </div>
 
                       <div className="flex justify-center">
-                        <img
-                          src={slide.image}
-                          alt={slide.title}
-                          className=""
-                        />
+                        <img src={slide.image} alt={slide.title} className="" />
                       </div>
                     </div>
                   </div>
@@ -628,8 +674,12 @@ export default function fitness() {
               The Process Behind a Food Delivery App Built to Perform
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              A successful food delivery app is more than a digital menu with a checkout button. We look at how customers discover restaurants, explore dishes, customize meals, place orders, track deliveries, and return for their next meal. Then, we turn those everyday interactions into a fast,
-              convenient experience that works for customers, restaurants, and delivery partners alike.
+              A successful food delivery app is more than a digital menu with a
+              checkout button. We look at how customers discover restaurants,
+              explore dishes, customize meals, place orders, track deliveries,
+              and return for their next meal. Then, we turn those everyday
+              interactions into a fast, convenient experience that works for
+              customers, restaurants, and delivery partners alike.
             </p>
           </div>
         </section>
@@ -641,10 +691,11 @@ export default function fitness() {
                 <button
                   type="button"
                   onClick={() => setActiveStepIndex(index)}
-                  className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${activeStepIndex === index
-                    ? "text-red-800 border-red-600 font-bold"
-                    : "text-gray-400 border-transparent hover:text-red-600"
-                    }`}
+                  className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${
+                    activeStepIndex === index
+                      ? "text-red-800 border-red-600 font-bold"
+                      : "text-gray-400 border-transparent hover:text-red-600"
+                  }`}
                 >
                   {step.tabTitle}
                 </button>
@@ -688,7 +739,6 @@ export default function fitness() {
                     alt="Design"
                     className="w-full h-full object-contain"
                   />
-
                 </div>
               )}
               {activeStepIndex === 3 && (
@@ -736,15 +786,17 @@ export default function fitness() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                      ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-red-500"
-                      }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
+                      activetechnologies === index
+                        ? "text-red-600 font-semibold"
+                        : "text-gray-500 hover:text-red-500"
+                    }`}
                   >
                     {tab.category}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
-                        }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${
+                        activetechnologies === index ? "w-full" : "w-0"
+                      }`}
                     />
                   </button>
                 ))}
@@ -771,7 +823,6 @@ export default function fitness() {
             </div>
           </div>
         </section>
-
 
         <section className="w-full bg-red-50 py-16 px-6 font-sans mt-10">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
@@ -1083,19 +1134,20 @@ export default function fitness() {
                 </h3>
 
                 <p>
-                  At Devapp, we use modern technologies to help food businesses operate
-                  smarter, serve customers faster, and scale with confidence. From
-                  AI-powered insights and cloud infrastructure to real-time delivery
-                  tracking and secure payment solutions, we connect every part of your
-                  digital ecosystem.
+                  At Devapp, we use modern technologies to help food businesses
+                  operate smarter, serve customers faster, and scale with
+                  confidence. From AI-powered insights and cloud infrastructure
+                  to real-time delivery tracking and secure payment solutions,
+                  we connect every part of your digital ecosystem.
                 </p>
 
                 <p>
-                  Our API-first architecture and scalable technology stack make it easier
-                  to automate workflows, improve operational visibility, personalize
-                  customer experiences, and make data-backed decisions. The result is a
-                  food delivery platform built to reduce inefficiencies, control costs,
-                  and support sustainable business growth.
+                  Our API-first architecture and scalable technology stack make
+                  it easier to automate workflows, improve operational
+                  visibility, personalize customer experiences, and make
+                  data-backed decisions. The result is a food delivery platform
+                  built to reduce inefficiencies, control costs, and support
+                  sustainable business growth.
                 </p>
               </div>
             </div>
@@ -1118,9 +1170,11 @@ export default function fitness() {
               Why Growing Food Businesses Choose Devapp
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              At Devapp, we build food delivery platforms that combine reliable technology, thoughtful user experiences, and business-focused strategy.
-              Our solutions are designed to help U.S. food businesses simplify operations,
-              connect with customers, and create a strong foundation for long-term growth.
+              At Devapp, we build food delivery platforms that combine reliable
+              technology, thoughtful user experiences, and business-focused
+              strategy. Our solutions are designed to help U.S. food businesses
+              simplify operations, connect with customers, and create a strong
+              foundation for long-term growth.
             </p>
           </div>
         </section>
@@ -1277,10 +1331,11 @@ export default function fitness() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-red-300"
-                      }`}
+                    className={`border bg-white transition-all duration-300 ${
+                      open === index
+                        ? "border-gray-200 shadow-md"
+                        : "border-gray-200 hover:border-red-300"
+                    }`}
                   >
                     {/* Question */}
                     <button
@@ -1292,19 +1347,21 @@ export default function fitness() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          open === index
+                            ? "rotate-180 text-black"
+                            : "rotate-0 text-black"
+                        }`}
                       />
                     </button>
 
                     {/* Answer */}
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
-                        }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        open === index
+                          ? "max-h-150 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-black">

@@ -1,11 +1,6 @@
 "use client";
 import { useRef, useState, useEffect, params } from "react";
-import {
-  ChevronDown,
-  ChevronRight,
-  Star,
-  Paperclip,
-} from "lucide-react";
+import { ChevronDown, ChevronRight, Star, Paperclip } from "lucide-react";
 import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -30,7 +25,7 @@ import {
   testimonials,
 } from "../../../../utils/data";
 import Image from "next/image";
-import PortfolioSlider from '../portfolio-slider/PortfolioSlider';
+import PortfolioSlider from "../portfolio-slider/PortfolioSlider";
 
 export default function foodOrdering() {
   const [activetechnologies, setActivetechnologies] = useState(0);
@@ -39,7 +34,7 @@ export default function foodOrdering() {
   const [portfolios, setPortfolios] = useState([]);
   const [loading, setLoading] = useState(false);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
-
+  const [errors, setErrors] = useState({});
   // ADD THIS LINE: formData state yahan add karein
   const [formData, setFormData] = useState({
     name: "",
@@ -56,45 +51,76 @@ export default function foodOrdering() {
   const [blogs, setBlogs] = useState([]);
   const fileInputRef = useRef(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const validateForm = () => {
+    const newErrors = {};
 
+    if (!formData.name || !formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email || !formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (!formData.phone || !formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
+
+    return newErrors;
+  };
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
     }
   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newErrors = validateForm();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
     setLoading(true);
-    setStatusMessage({ type: "", text: "" });
+    setStatusMessage({
+      type: "",
+      text: "",
+    });
 
     try {
       const payload = new FormData();
-      payload.append("name", formData.name || "");
-      payload.append("email", formData.email || "");
-      payload.append("phone", formData.phone || "");
-      payload.append("message", formData.message || "");
+
+      payload.append("name", formData.name.trim());
+      payload.append("email", formData.email.trim());
+      payload.append("phone", formData.phone.trim());
+      payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
       payload.append("service_category", formData.service_category || "");
 
-      // File ko tabhi payload me append karein jab ye valid File instance ho
-      if (formData.file && formData.file instanceof File) {
+      if (formData.file instanceof File) {
         payload.append("file", formData.file);
       }
 
-      await submitContactForm(payload);
+      const response = await submitContactForm(payload);
 
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
       });
 
-      // Reset Form State
       setFormData({
         name: "",
         email: "",
@@ -106,23 +132,28 @@ export default function foodOrdering() {
         sendNda: false,
       });
 
+      setErrors({});
+
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API Error Response:", error?.response?.data);
+      console.error("API ERROR:", error);
+      console.error("API RESPONSE:", error?.response?.data);
 
-      // Backend Error response handling
-      let errorMsg = "Failed to send message. Please try again later.";
+      let errorMessage = "Failed to send message. Please try again later.";
+
       if (error?.response?.data?.errors?.file) {
-        errorMsg = error.response.data.errors.file.join(" ");
+        errorMessage = error.response.data.errors.file.join(" ");
       } else if (error?.response?.data?.message) {
-        errorMsg = error.response.data.message;
+        errorMessage = error.response.data.message;
+      } else if (error?.message) {
+        errorMessage = error.message;
       }
 
       setStatusMessage({
         type: "error",
-        text: errorMsg,
+        text: errorMessage,
       });
     } finally {
       setLoading(false);
@@ -142,21 +173,23 @@ export default function foodOrdering() {
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-900">
-                Shopping has moved off the shelf and onto the screen and it&apos;s not
-                slowing down. More consumers than ever are browsing and buying directly from
-                their phones instead of visiting a physical store, which makes{" "}
-                <strong>eCommerce app development</strong> less of an upgrade and more of a
-                survival requirement. A strong app doesn&apos;t just let customers find your
-                products, it makes checkout so effortless they never think twice about coming
-                back.
+                Shopping has moved off the shelf and onto the screen and
+                it&apos;s not slowing down. More consumers than ever are
+                browsing and buying directly from their phones instead of
+                visiting a physical store, which makes{" "}
+                <strong>eCommerce app development</strong> less of an upgrade
+                and more of a survival requirement. A strong app doesn&apos;t
+                just let customers find your products, it makes checkout so
+                effortless they never think twice about coming back.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-900">
-                That&apos;s exactly the gap Devapp was built to close. As a leading{" "}
-                <strong>eCommerce app development company</strong>, we stay laser-focused on
-                performance and functionality, delivering mobile commerce solutions that
-                help your business stay competitive and help your customers shop without
-                friction, wherever they are.
+                That&apos;s exactly the gap Devapp was built to close. As a
+                leading <strong>eCommerce app development company</strong>, we
+                stay laser-focused on performance and functionality, delivering
+                mobile commerce solutions that help your business stay
+                competitive and help your customers shop without friction,
+                wherever they are.
               </p>
 
               {/* Action Buttons */}
@@ -199,18 +232,28 @@ export default function foodOrdering() {
                   Guaranteed Response within One Business Day!
                 </p>
 
-                {/* Form Inputs */}
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-5 sm:space-y-6"
+                  noValidate
+                >
                   <div>
                     <input
                       type="text"
                       name="name"
                       placeholder="Name*"
-                      required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.name ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
+                    {errors.name && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.name}
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -218,11 +261,18 @@ export default function foodOrdering() {
                       type="email"
                       name="email"
                       placeholder="Email*"
-                      required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.email ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
+                    {errors.email && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.email}
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -230,11 +280,18 @@ export default function foodOrdering() {
                       type="tel"
                       name="phone"
                       placeholder="Phone*"
-                      required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors"
+                      disabled={loading}
+                      className={`w-full bg-transparent border-b-2 ${
+                        errors.phone ? "border-red-500" : "border-gray-300"
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
+                    {errors.phone && (
+                      <span className="text-xs text-red-600 mt-1 block">
+                        {errors.phone}
+                      </span>
+                    )}
                   </div>
 
                   <div>
@@ -244,90 +301,78 @@ export default function foodOrdering() {
                       placeholder="Write here Brief about the project..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                      disabled={loading}
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
-                  {/* File Upload */}
-                  <div className="flex items-center gap-2 text-xs md:text-sm text-black pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black">
-                      <Paperclip className="w-4 h-4 text-black" />
+                  {/* File Upload & NDA Checkbox */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
+                      <Paperclip className="w-4 h-4 text-gray-600" />
                       <span>Upload file:</span>
                       <input
+                        ref={fileInputRef}
                         type="file"
                         onChange={handleFileChange}
+                        disabled={loading}
                         className="hidden"
                       />
                     </label>
-                    <span className="text-gray-500 truncate max-w-45">
+
+                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
 
-                  {/* Checkbox */}
                   <div className="flex items-center gap-2 pt-1">
                     <input
                       type="checkbox"
                       id="nda"
                       checked={formData.sendNda}
+                      disabled={loading}
                       onChange={(e) =>
                         setFormData((prev) => ({
                           ...prev,
                           sendNda: e.target.checked,
                         }))
                       }
-                      className="w-4 h-4 border-gray-400 text-[#1E40AF] focus:ring-[#1E40AF] accent-gray-600 cursor-pointer"
+                      className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 cursor-pointer rounded-xs"
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-black cursor-pointer select-none"
+                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
                     >
                       Please Send NDA
                     </label>
                   </div>
 
+                  {/* Status Message */}
                   {statusMessage.text && (
                     <div
-                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
-                        ? "bg-green-100 border border-green-400 text-green-800"
-                        : "bg-red-100 border border-red-400 text-red-800"
-                        }`}
+                      className={`p-3 text-sm font-medium border rounded-sm ${
+                        statusMessage.type === "success"
+                          ? "bg-green-50 border-green-200 text-green-700"
+                          : "bg-red-50 border-red-200 text-red-700"
+                      }`}
                     >
                       {statusMessage.text}
                     </div>
                   )}
+
                   <div className="pt-2">
                     <button
                       type="submit"
                       disabled={loading}
-                      className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow flex items-center justify-center cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="w-full bg-red-700 hover:bg-red-600 disabled:bg-red-400 font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed rounded-sm text-white!"
                     >
                       {loading ? (
-                        <span className="flex items-center gap-2">
-                          <svg
-                            className="animate-spin h-4 w-4 text-white"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            ></circle>
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
-                          </svg>
-                          Sending...
-                        </span>
+                        <span className="text-white font-bold">Sending...</span>
                       ) : (
-                        "Schedule a free consultation"
+                        <span className="text-white font-bold flex items-center gap-2">
+                          Schedule a free consultation
+                          <ArrowRight className="w-4 h-4 shrink-0 text-white" />
+                        </span>
                       )}
                     </button>
                   </div>
@@ -337,28 +382,29 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div >
+          <div>
             <div className="text-center mb-10 px-5">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
                 Creative eCommerce App Development Services
               </h2>
 
               <p className="text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
-                Mobile commerce isn&apos;t optional anymore; it&apos;s the primary way
-                businesses connect with customers today. Beyond convenience, a
-                well-built <strong>eCommerce mobile app</strong> puts your business a
-                single tap away from every customer, giving you direct insight into how
-                they browse, compare, and buy.
+                Mobile commerce isn&apos;t optional anymore; it&apos;s the
+                primary way businesses connect with customers today. Beyond
+                convenience, a well-built <strong>eCommerce mobile app</strong>{" "}
+                puts your business a single tap away from every customer, giving
+                you direct insight into how they browse, compare, and buy.
               </p>
 
               <br />
 
               <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
-                We&apos;ve helped established brands bring their names into the mobile
-                marketplace with confidence. As a trusted name in{" "}
+                We&apos;ve helped established brands bring their names into the
+                mobile marketplace with confidence. As a trusted name in{" "}
                 <strong>eCommerce app development</strong>, our portfolio spans
                 service-based applications, B2B and B2C eCommerce platforms, and
-                corporate apps designed to sharpen operations and drive productivity.
+                corporate apps designed to sharpen operations and drive
+                productivity.
               </p>
             </div>
           </div>
@@ -401,11 +447,15 @@ export default function foodOrdering() {
           <div>
             <div className="text-center mb-10 px-5">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
-                Explore the Standout Features Behind Our eCommerce App Development
+                Explore the Standout Features Behind Our eCommerce App
+                Development
               </h2>
               <p className="text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
-                Before diving into mobile eCommerce app development, businesses and developers need a clear picture of what the app actually requires. The right feature set is what separates a store that converts
-                from one that loses customers at checkout and it's exactly where our solutions focus first.
+                Before diving into mobile eCommerce app development, businesses
+                and developers need a clear picture of what the app actually
+                requires. The right feature set is what separates a store that
+                converts from one that loses customers at checkout and it's
+                exactly where our solutions focus first.
               </p>
             </div>
           </div>
@@ -472,7 +522,7 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div >
+          <div>
             <div className=" bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <Image
                 src="/images/industry/Ecommerce/letdiscuss-icon.png.webp"
@@ -548,8 +598,9 @@ export default function foodOrdering() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row  gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
+                className={`flex flex-col lg:flex-row  gap-8 lg:gap-12 ${
+                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -589,7 +640,7 @@ export default function foodOrdering() {
           })}
         </section>
         <section>
-          <div >
+          <div>
             <div className="bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
@@ -658,8 +709,8 @@ export default function foodOrdering() {
             eCommerce App Development Features
           </h2>
           <p className="text-gray-600 text-sm sm:text-base max-w-4xl mx-auto mb-12 leading-relaxed">
-            Our eCommerce agency offers a handful of functionalities that will support you in
-            better organising your activities.
+            Our eCommerce agency offers a handful of functionalities that will
+            support you in better organising your activities.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
@@ -811,7 +862,7 @@ export default function foodOrdering() {
           </div>
         </section>
         <section className="">
-          <div >
+          <div>
             {/* CTA Box */}
             <div className="bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
@@ -867,7 +918,6 @@ export default function foodOrdering() {
                 </div>
               </div>
 
-
               <Link
                 href="/lets-talk"
                 className="group mt-10 inline-flex items-center gap-2.5 bg-red-700 hover:bg-red-600 text-white font-semibold text-sm md:text-base px-7 py-3 transition duration-200 shadow-md"
@@ -894,24 +944,27 @@ export default function foodOrdering() {
 
             <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Skilled Developers. Modern Technology. One Team Built Around Your Vision.
+                Skilled Developers. Modern Technology. One Team Built Around
+                Your Vision.
               </h2>
 
               <p>
-                Building a successful real estate app takes more than putting property
-                listings on a screen. It requires thoughtful UX, reliable technology, and
-                a development team that understands how buyers, sellers, renters, and
-                agents interact with property platforms. Our experienced developers bring
-                these elements together to create applications that are intuitive,
-                scalable, and built for real-world use.
+                Building a successful real estate app takes more than putting
+                property listings on a screen. It requires thoughtful UX,
+                reliable technology, and a development team that understands how
+                buyers, sellers, renters, and agents interact with property
+                platforms. Our experienced developers bring these elements
+                together to create applications that are intuitive, scalable,
+                and built for real-world use.
               </p>
 
               <p>
-                Our team works across modern technologies and development frameworks to
-                turn complex requirements into smooth digital experiences. Whether you’re
-                building a property marketplace, an agent-focused platform, or a custom
-                real estate solution, we focus on creating functionality that works
-                seamlessly behind the scenes and feels effortless to your users.
+                Our team works across modern technologies and development
+                frameworks to turn complex requirements into smooth digital
+                experiences. Whether you’re building a property marketplace, an
+                agent-focused platform, or a custom real estate solution, we
+                focus on creating functionality that works seamlessly behind the
+                scenes and feels effortless to your users.
               </p>
             </div>
           </div>
@@ -924,24 +977,25 @@ export default function foodOrdering() {
 
             <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed px-5">
               <p>
-                The cost of developing a real estate app depends on what you want it to
-                do. A basic property listing app requires a very different development
-                approach from a full-scale marketplace with advanced search,
-                location-based discovery, agent dashboards, chat, payments, and property
-                management features.
+                The cost of developing a real estate app depends on what you
+                want it to do. A basic property listing app requires a very
+                different development approach from a full-scale marketplace
+                with advanced search, location-based discovery, agent
+                dashboards, chat, payments, and property management features.
               </p>
 
               <p>
-                Your choice of platforms, integrations, design complexity, backend
-                infrastructure, and custom functionality can all influence the final
-                investment. That’s why we first understand your business model, target
-                users, and must-have features before defining the development scope.
+                Your choice of platforms, integrations, design complexity,
+                backend infrastructure, and custom functionality can all
+                influence the final investment. That’s why we first understand
+                your business model, target users, and must-have features before
+                defining the development scope.
               </p>
 
               <p>
-                Have a real estate app idea in mind? Share your requirements with our
-                team, and we’ll help you map out the right features, technology,
-                timeline, and budget.
+                Have a real estate app idea in mind? Share your requirements
+                with our team, and we’ll help you map out the right features,
+                technology, timeline, and budget.
               </p>
             </div>
           </div>
@@ -970,9 +1024,10 @@ export default function foodOrdering() {
             </h2>
 
             <p className="text-gray-600 text-sm md:text-base leading-relaxed px-5">
-              Devapp solutions has always been honored with valuable words for the
-              efforts given on mobile app development that are efficiently unique and
-              user centric. Here are some of the best examples for this.
+              Devapp solutions has always been honored with valuable words for
+              the efforts given on mobile app development that are efficiently
+              unique and user centric. Here are some of the best examples for
+              this.
             </p>
           </div>
         </section>
@@ -1017,15 +1072,17 @@ export default function foodOrdering() {
                   <button
                     key={index}
                     onClick={() => setActivetechnologies(index)}
-                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
-                      ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-black"
-                      }`}
+                    className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
+                      activetechnologies === index
+                        ? "text-red-600 font-semibold"
+                        : "text-gray-500 hover:text-black"
+                    }`}
                   >
                     {tab.category}
                     <span
-                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
-                        }`}
+                      className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${
+                        activetechnologies === index ? "w-full" : "w-0"
+                      }`}
                     />
                   </button>
                 ))}
@@ -1063,7 +1120,8 @@ export default function foodOrdering() {
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
-                We are Team of Talented, Experienced, and Certified Designers and Developers.
+                We are Team of Talented, Experienced, and Certified Designers
+                and Developers.
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
@@ -1086,10 +1144,11 @@ export default function foodOrdering() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              Devapp solutions is a leading Software, Web, & Mobile App Development Company with a
-              vast area of experience in crafting stunning and end to end encrypted technology solutions.
-              We offer excellent expertise of the industry
-              followed by an exactly planned approach to elevate your growth.
+              Devapp solutions is a leading Software, Web, & Mobile App
+              Development Company with a vast area of experience in crafting
+              stunning and end to end encrypted technology solutions. We offer
+              excellent expertise of the industry followed by an exactly planned
+              approach to elevate your growth.
             </p>
           </div>
         </section>
@@ -1129,8 +1188,8 @@ export default function foodOrdering() {
             </h1>
             <p>
               We’ve worked with a variety of organization throughout the years,
-              including major corporations with
-              enormous employees and local firms in a variety of sectors.
+              including major corporations with enormous employees and local
+              firms in a variety of sectors.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1139,14 +1198,14 @@ export default function foodOrdering() {
                 key={index}
                 className="relative h-40 sm:h-56 md:h-72 overflow-hidden group cursor-pointer"
               >
-            <Image
-              src={item.bgImage}
-              alt={item.title}
-              width={1200}
-              height={800}
-              sizes="100vw"
-              className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-            />
+                <Image
+                  src={item.bgImage}
+                  alt={item.title}
+                  width={1200}
+                  height={800}
+                  sizes="100vw"
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
@@ -1171,7 +1230,11 @@ export default function foodOrdering() {
               Why should you choose us?
             </h1>
             <p>
-              Devapp is a leading Mobile App Development Company USA  has to offer that develops applications for different operating systems. Our specialists develop a consolidated procedure for every business as well as deliver customized guidance at regular instances.
+              Devapp is a leading Mobile App Development Company USA has to
+              offer that develops applications for different operating systems.
+              Our specialists develop a consolidated procedure for every
+              business as well as deliver customized guidance at regular
+              instances.
             </p>
           </div>
         </section>
@@ -1182,13 +1245,13 @@ export default function foodOrdering() {
                 key={index}
                 className="border border-gray-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
               >
-              <Image
-                src={service.image}
-                alt={service.title}
-                width={64}
-                height={64}
-                className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
-              />
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  width={64}
+                  height={64}
+                  className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
+                />
 
                 <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4">
                   {service.title}
@@ -1207,7 +1270,10 @@ export default function foodOrdering() {
               Testimonials From Our Clients
             </h1>
             <p>
-              Customer satisfaction has always been at the forefront of our mission as an Ecommerce software development business in USA. Here are some actual quotes from some of our previous clients on our services.
+              Customer satisfaction has always been at the forefront of our
+              mission as an Ecommerce software development business in USA. Here
+              are some actual quotes from some of our previous clients on our
+              services.
             </p>
           </div>
         </section>
@@ -1311,7 +1377,9 @@ export default function foodOrdering() {
             </h1>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
-              Answers to Some of the frequently asked questions on our E-commerce app and software development services by some valuable clients such as you!
+              Answers to Some of the frequently asked questions on our
+              E-commerce app and software development services by some valuable
+              clients such as you!
             </p>
           </div>
           <section className="py-12">
@@ -1320,10 +1388,11 @@ export default function foodOrdering() {
                 {faqsData.map((faq, index) => (
                   <div
                     key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-red-300"
-                      }`}
+                    className={`border bg-white transition-all duration-300 ${
+                      open === index
+                        ? "border-gray-200 shadow-md"
+                        : "border-gray-200 hover:border-red-300"
+                    }`}
                   >
                     <button
                       onClick={() => setOpen(open === index ? -1 : index)}
@@ -1334,17 +1403,19 @@ export default function foodOrdering() {
                       </span>
 
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          open === index
+                            ? "rotate-180 text-black"
+                            : "rotate-0 text-black"
+                        }`}
                       />
                     </button>
                     <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
-                        }`}
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        open === index
+                          ? "max-h-150 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
                     >
                       <div className="px-6 pb-5 pt-4 border-t border-gray-100">
                         <p className="text-[17px] leading-8 text-gray-600">

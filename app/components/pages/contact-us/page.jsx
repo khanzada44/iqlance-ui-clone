@@ -7,18 +7,18 @@ import {
   ChevronRight,
   Paperclip,
   Star,
-  ArrowLeft
+  ArrowLeft,
 } from "lucide-react";
 
 import { submitContactForm } from "@/services/send-call-request";
-import { offices } from "../contact-us/data"
+import { offices } from "../contact-us/data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ContactForm from "../../contactForm/ContactForm";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { stats, partners, testimonials } from "../../../../utils/data";
+import { Navigation, Autoplay } from "swiper/modules";
+import { partners, testimonials } from "../../../../utils/data";
+
 export default function ContactSection() {
   const fileInputRef = useRef(null);
 
@@ -33,8 +33,8 @@ export default function ContactSection() {
     sendNda: false,
   });
 
+  const [errors, setErrors] = useState({}); // <-- Added missing state hook
   const [loading, setLoading] = useState(false);
-
   const [statusMessage, setStatusMessage] = useState({
     type: "",
     text: "",
@@ -42,26 +42,54 @@ export default function ContactSection() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+    // Clear field-level error as user types
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
-
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0] || null;
-
     setFormData((prev) => ({
       ...prev,
       file,
     }));
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name || !formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email || !formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (!formData.phone || !formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
+
+    return newErrors;
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
+    const newErrors = validateForm();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
     setLoading(true);
     setStatusMessage({
       type: "",
@@ -75,28 +103,16 @@ export default function ContactSection() {
       payload.append("email", formData.email.trim());
       payload.append("phone", formData.phone.trim());
       payload.append("message", formData.message.trim());
-
-      payload.append(
-        "is_nda",
-        formData.sendNda ? "1" : "0"
-      );
-
-      payload.append(
-        "service",
-        formData.service || ""
-      );
-
-      payload.append(
-        "service_category",
-        formData.service_category || ""
-      );
+      payload.append("is_nda", formData.sendNda ? "1" : "0");
+      payload.append("service", formData.service || "");
+      payload.append("service_category", formData.service_category || "");
 
       if (formData.file instanceof File) {
         payload.append("file", formData.file);
       }
-      for (const [key, value] of payload.entries()) {
-      }
+
       const response = await submitContactForm(payload);
+
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -113,25 +129,21 @@ export default function ContactSection() {
         sendNda: false,
       });
 
+      setErrors({});
+
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
     } catch (error) {
       console.error("API ERROR:", error);
-      console.error(
-        "API RESPONSE:",
-        error?.response?.data
-      );
+      console.error("API RESPONSE:", error?.response?.data);
 
-      let errorMessage =
-        "Failed to send message. Please try again later.";
+      let errorMessage = "Failed to send message. Please try again later.";
 
       if (error?.response?.data?.errors?.file) {
-        errorMessage =
-          error.response.data.errors.file.join(" ");
+        errorMessage = error.response.data.errors.file.join(" ");
       } else if (error?.response?.data?.message) {
-        errorMessage =
-          error.response.data.message;
+        errorMessage = error.response.data.message;
       } else if (error?.message) {
         errorMessage = error.message;
       }
@@ -162,9 +174,7 @@ export default function ContactSection() {
             </p>
 
             <div className="mt-6">
-              <h3 className="font-bold text-lg">
-                Talk To Experts:
-              </h3>
+              <h3 className="font-bold text-lg">Talk To Experts:</h3>
 
               <p className="mt-2 text-gray-700 text-sm sm:text-base leading-relaxed">
                 USA: +1 (866) 978-8570
@@ -173,37 +183,42 @@ export default function ContactSection() {
             </div>
 
             <p className="mt-6 text-gray-600 text-sm sm:text-base leading-7 sm:leading-8">
-              Get in touch with us for app development, software development and Hire Dedicated
-              Developers to bring your product to reality within your timeline and budget.
+              Get in touch with us for app development, software development and
+              Hire Dedicated Developers to bring your product to reality within
+              your timeline and budget.
             </p>
 
             <ul className="mt-8 space-y-4 sm:space-y-5 text-base sm:text-lg">
               <li className="flex items-center gap-2">
-                <ChevronRight size={14} className="shrink-0 text-red-600" />
+                <ChevronRight size={14} />
                 <span>45 minutes of free consultation</span>
               </li>
               <li className="flex items-center gap-2">
-                <ChevronRight size={14} className="shrink-0 text-red-600" />
+                <ChevronRight size={14} />
                 <span>A strict non-disclosure policy</span>
               </li>
               <li className="flex items-center gap-2">
-                <ChevronRight size={14} className="shrink-0 text-red-600" />
+                <ChevronRight size={14} />
                 <span>Detailed Feature List Document</span>
               </li>
               <li className="flex items-center gap-2">
-                <ChevronRight size={14} className="shrink-0 text-red-600" />
+                <ChevronRight size={14} />
                 <span>Action plan to kick start your project</span>
               </li>
             </ul>
 
             <Link
               href="/portfolio"
-              className="group inline-flex items-center justify-center gap-3 border border-red-300 w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-semibold text-black transition mt-8 sm:mt-10 hover:border-red-600 rounded-sm"
+              className="group inline-flex items-center justify-center gap-3 border border-gray-300 w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-semibold text-black transition mt-8 sm:mt-10 hover:border-red-600 rounded-sm"
             >
               See Our Work
-              <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+              <ArrowRight
+                size={20}
+                className="transition-transform duration-300 group-hover:translate-x-1.5"
+              />
             </Link>
           </div>
+
           <div className="relative w-full pt-4 sm:pt-0">
             <div className="relative bg-[#F7F8FA] border border-blue-100/60 p-6 sm:p-8 w-full lg:w-[95%] xl:w-[90%] shadow-lg rounded-md">
               <div className="absolute -top-5 right-2 sm:-top-6 sm:-right-3 z-10 w-20 sm:w-24 drop-shadow-md">
@@ -224,52 +239,76 @@ export default function ContactSection() {
               </p>
 
               {/* Form Fields */}
-              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name*"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  disabled={loading}
-                  className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50"
-                />
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-5 sm:space-y-6"
+                noValidate
+              >
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name*"
+                    value={formData.name}
+                    onChange={handleChange}
+                    disabled={loading}
+                    className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                  />
+                  {errors.name && (
+                    <span className="text-xs text-red-600 mt-1 block">
+                      {errors.name}
+                    </span>
+                  )}
+                </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email*"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  disabled={loading}
-                  className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50"
-                />
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email*"
+                    value={formData.email}
+                    onChange={handleChange}
+                    disabled={loading}
+                    className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                  />
+                  {errors.email && (
+                    <span className="text-xs text-red-600 mt-1 block">
+                      {errors.email}
+                    </span>
+                  )}
+                </div>
 
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone*"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  disabled={loading}
-                  className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50"
-                />
+                <div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone*"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    disabled={loading}
+                    className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                  />
+                  {errors.phone && (
+                    <span className="text-xs text-red-600 mt-1 block">
+                      {errors.phone}
+                    </span>
+                  )}
+                </div>
 
-                <textarea
-                  name="message"
-                  rows={3}
-                  placeholder="Write here Brief about the project..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  disabled={loading}
-                  className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
-                />
+                <div>
+                  <textarea
+                    name="message"
+                    rows={3}
+                    placeholder="Write here Brief about the project..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    disabled={loading}
+                    className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                  />
+                </div>
 
                 {/* File Upload & NDA Checkbox */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs md:text-sm text-gray-700 pt-1">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
                   <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
                     <Paperclip className="w-4 h-4 text-gray-600" />
                     <span>Upload file:</span>
@@ -301,39 +340,30 @@ export default function ContactSection() {
                     }
                     className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 cursor-pointer rounded-xs"
                   />
-                  <label htmlFor="nda" className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer">
+                  <label
+                    htmlFor="nda"
+                    className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                  >
                     Please Send NDA
                   </label>
                 </div>
 
-                {/* Status Message */}
-                {statusMessage.text && (
-                  <div
-                    className={`p-3 text-sm font-medium border rounded-sm ${statusMessage.type === "success"
-                        ? "bg-green-50 border-green-200 text-green-700"
-                        : "bg-red-50 border-red-200 text-red-700"
-                      }`}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-red-700 hover:bg-red-600 disabled:bg-red-400 font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed rounded-sm text-white!"
                   >
-                    {statusMessage.text}
-                  </div>
-                )}
-
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-red-700 hover:bg-red-600 disabled:bg-red-400 font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed rounded-sm text-white!"
-                >
-                  {loading ? (
-                    <span className="text-white font-bold">Sending...</span>
-                  ) : (
-                    <span className="text-white font-bold flex items-center gap-2">
-                      Schedule a free consultation
-                      <ArrowRight className="w-4 h-4 shrink-0 text-white" />
-                    </span>
-                  )}
-                </button>
-              </div>
+                    {loading ? (
+                      <span className="text-white font-bold">Sending...</span>
+                    ) : (
+                      <span className="text-white font-bold flex items-center gap-2">
+                        Schedule a free consultation
+                        <ArrowRight className="w-4 h-4 shrink-0 text-white" />
+                      </span>
+                    )}
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -435,7 +465,7 @@ export default function ContactSection() {
                           {item.name}
                         </h4>
                         <div className="flex items-center gap-1">
-                          {[...Array(item.review)].map((_, index) => (
+                          {[...Array(5)].map((_, index) => (
                             <Star
                               key={index}
                               className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400"
@@ -487,7 +517,6 @@ export default function ContactSection() {
         </section>
       </section>
 
-
       <section className="mb-5 overflow-hidden">
         <div className="marquee">
           <div className="marquee-content">
@@ -507,6 +536,5 @@ export default function ContactSection() {
         </div>
       </section>
     </>
-
   );
 }
