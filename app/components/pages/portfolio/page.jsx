@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ChevronRight } from "lucide-react";
 import ContactForm from "../../contactForm/ContactForm";
-import { partners } from "../portfolio/data";
+import { partners } from "../../../../utils/data";
 import { categoriesWithPortfolio } from '../../../../services/all-sub-categories';
 
 export default function Portfolio() {

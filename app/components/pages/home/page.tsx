@@ -302,9 +302,7 @@ export default function Home() {
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
-                {/* pb-16 add karyu chhe jethi dots mate neeche space bane */}
                 <div className="grid grid-cols-1 items-start gap-6 px-1 pb-16 lg:grid-cols-[55%_45%] lg:gap-8">
-                  {/* LEFT */}
                   <div className="w-full">
                     <h2 className="mt-8 text-2xl font-bold leading-snug">
                       {slide.title}
@@ -324,12 +322,9 @@ export default function Home() {
                           key={i}
                           className="m-0 grid grid-cols-1 gap-2 md:grid-cols-[50%_50%]"
                         >
-                          {/* SERVICE TITLE */}
                           <span className="text-sm font-extrabold text-red-700">
                             {service.title}
                           </span>
-
-                          {/* SERVICE ITEMS */}
                           <ul className="list-disc space-y-2 pl-5 text-sm">
                             {service.items.map((item, j) => (
                               <li key={j}>{item}</li>
@@ -339,8 +334,6 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-
-                  {/* RIGHT */}
                   <div className="w-full max-w-[85%] lg:ml-0">
                     <div className="flex flex-col items-center lg:items-start">
                       <Image
@@ -377,16 +370,18 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <style>{`
-    .portfolio-swiper .swiper-pagination-bullet {
-      background-color: #cbd5e1 !important;
-      opacity: 1 !important;
-    }
+          <style>
+            {`
+          .portfolio-swiper .swiper-pagination-bullet {
+            background-color: #cbd5e1 !important;
+            opacity: 1 !important;
+          }
 
-    .portfolio-swiper .swiper-pagination-bullet-active {
-      background-color: #dc2626 !important;
-    }
-  `}</style>
+          .portfolio-swiper .swiper-pagination-bullet-active {
+            background-color: #dc2626 !important;
+          }
+        `}
+          </style>
         </div>
 
         <div className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto ">
@@ -897,7 +892,6 @@ export default function Home() {
                 <SwiperSlide key={item.id}>
                   <div>
                     <div className="flex items-center gap-4 mb-6">
-                      {/* Avatar Circle */}
                       <div className="w-16 h-16  border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
@@ -924,13 +918,9 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Review Text */}
                     <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
-
-                    {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
                       <span className="text-xs text-gray-500 font-medium block">
                         verified
@@ -949,8 +939,6 @@ export default function Home() {
                 </SwiperSlide>
               ))}
             </Swiper>
-
-            {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
                 className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
@@ -1306,8 +1294,6 @@ export default function Home() {
 
         <ContactForm />
       </div>
-
-      {/* PARTNERS - outside main container */}
       <section className="mb-5 overflow-hidden">
         <div className="marquee">
           <div className="marquee-content">
