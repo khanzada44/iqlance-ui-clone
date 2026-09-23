@@ -13,12 +13,12 @@ export default function WebsiteLayout({
       </div>
       <div className="w-full overflow-x-clip flex-1">
         <main className="w-full pt-17">{children}</main>
+        <Footer />
         <Script
-          id="ze-snippet"
+          id="zendesk-widget"
           src="https://static.zdassets.com/ekr/snippet.js?key=832e42ad-4c5d-4c97-8f07-1e27982ea22a"
           strategy="afterInteractive"
         />
-        <Footer />
       </div>
     </div>
   );

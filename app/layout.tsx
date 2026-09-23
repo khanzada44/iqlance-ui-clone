@@ -21,7 +21,7 @@ export default function RootLayout({
       <body>
         {children}
         <Script
-          id="ze-snippet"
+          id="zendesk-widget"
           src="https://static.zdassets.com/ekr/snippet.js?key=832e42ad-4c5d-4c97-8f07-1e27982ea22a"
           strategy="afterInteractive"
         />
