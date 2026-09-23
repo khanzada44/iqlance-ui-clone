@@ -1328,6 +1328,9 @@ img.is-80 {
 }
 
 @media (max-width: 767px) {
+  .thank-p{
+    text-align: center !important;
+  }
   .folio-categoery ul li {
     margin-bottom: 15px;
   }
