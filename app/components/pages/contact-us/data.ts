@@ -2,8 +2,8 @@ export const offices = [
   {
     id: 1,
     title: "",
-    city: "Texas, USA",
-    address: "17250 Dallas Pkwy Dallas, TX 75248, USA",
+    city: "Los Angeles, USA",
+    address: "6565 Sunset Blvd Ste 190, Los Angeles, CA 90028, USA",
     image: "/images/about/contact/texas_usa_office_iq.webp",
   },
   {

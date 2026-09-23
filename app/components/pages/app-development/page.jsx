@@ -818,7 +818,7 @@ export default function LandingPage() {
                 </h4>
 
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
-                  17250 Dallas Pkwy Dallas, TX 75248, USA
+                  6565 Sunset Blvd Ste 190, Los Angeles, CA 90028, USA
                 </span>
               </div>
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
@@ -861,7 +861,7 @@ export default function LandingPage() {
                 </h4>
 
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
-                  USA 45 Rockefeller Plaza, New York, NY 10111, USA
+                  6565 Sunset Blvd Ste 190, Los Angeles, CA 90028, USA
                 </span>
               </div>
 
