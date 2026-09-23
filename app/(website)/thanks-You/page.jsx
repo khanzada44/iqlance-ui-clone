@@ -23,7 +23,7 @@ export default function ThankYouPage() {
                   
                   {/* Icon */}
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 text-red-600 mb-2">
-                    <Check className="w-8 h-8 stroke-[3]" />
+                    <Check className="w-8 h-8 stroke-3" />
                   </div>
 
                   <div className="space-y-2">
