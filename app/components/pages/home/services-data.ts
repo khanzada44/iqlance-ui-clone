@@ -147,7 +147,7 @@ export const slides = [
     ],
 
     image:
-      "/images/app-development-comapny-canada.png",
+      "/images/app-development-comapny-canada.webp",
 
     consultation:
       "Schedule a free consultation today with Project Manager.",
@@ -192,7 +192,7 @@ export const slides = [
     ],
 
     image:
-      "/images/app-development-comapny-canada.png",
+      "/images/app-development-comapny-canada.webp",
 
     consultation:
       "Schedule a free consultation today with Project Manager.",

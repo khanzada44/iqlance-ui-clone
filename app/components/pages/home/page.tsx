@@ -226,30 +226,34 @@ export default function Home() {
             </p>
           </div>
 
-          {/* NORTH DALLAS */}
           <div className="flex items-center justify-center">
-            <img
+            <Image
               className="max-w-25 sm:max-w-32.5 lg:max-w-40 w-full h-auto object-contain"
-              src="/images/North-Dallas-Chamber-Logo.png"
+              src="/images/North-Dallas-Chamber-Logo.webp"
               alt="North Dallas Chamber Logo"
+              width={200}
+              height={100}
             />
           </div>
 
-          {/* ISO */}
           <div className="flex items-center justify-center">
-            <img
+            <Image
               className="w-14 sm:w-16 md:w-20 lg:w-24 h-auto object-contain"
-              src="/images/iso-1080x675-1.png"
+              src="/images/iso-1080x675-1.webp"
               alt="ISO Certification"
+              width={1080}
+              height={675}
             />
           </div>
 
           {/* CLUTCH */}
           <div className="flex items-center justify-center">
-            <img
+            <Image
               className="max-w-22.5 sm:max-w-27.5 lg:max-w-35 w-full h-auto object-contain"
               src="/images/clutch-logo-update.png.webp"
               alt="Clutch Logo"
+              width={200}
+              height={100}
             />
           </div>
 
@@ -339,10 +343,12 @@ export default function Home() {
                   {/* RIGHT */}
                   <div className="w-full max-w-[85%] lg:ml-0">
                     <div className="flex flex-col items-center lg:items-start">
-                      <img
+                      <Image
                         src={slide.image}
                         alt={slide.title}
-                        className="w-full max-w-65 object-contain sm:max-w-75"
+                        className="w-full max-w-65 h-auto object-contain sm:max-w-75"
+                        width={300}
+                        height={200}
                       />
 
                       <div className="mt-6 w-full text-center sm:mt-8 lg:text-left">
