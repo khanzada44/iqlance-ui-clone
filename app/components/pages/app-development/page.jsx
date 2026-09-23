@@ -1509,7 +1509,7 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="mx-auto max-w-7xl px-4 text-center relative z-10 pt-10 pb-12">
+            <div className="mx-auto max-w-7xl px-4 text-center relative z-10">
               <div className="flex justify-center items-center gap-1">
                 <Image
                   src="/images/Dev-App-04.png"
@@ -1520,7 +1520,7 @@ export default function LandingPage() {
                 />
 
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-around py-6 my-6 gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-around my-6 gap-4">
                 <div className="text-left sm:text-left">
                   <span className="text-[14px] text-gray-300 font-medium">
                     Always Connect With Us!
@@ -1573,7 +1573,7 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-              <div className="py-8">
+              <div>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 together">
                   Let's work together!
                 </h2>
@@ -1591,17 +1591,17 @@ export default function LandingPage() {
                   />
 
                 </div>
-                <div className="flex items-center gap-6 text-sm justify-center mt-13">
+                <div className="flex items-center gap-4 text-sm justify-center mt-11">
                   <Link
                     href="/terms-and-conditions"
-                    className="text-gray-600 hover:text-red-600 transition-colors underline underline-offset-4"
+                    className="text-white hover:text-red-600 transition-colors "
                   >
                     Terms & Conditions
                   </Link>
 
                   <Link
                     href="/privacy-policy"
-                    className="text-gray-600 hover:text-red-600 transition-colors underline underline-offset-4"
+                    className="text-white hover:text-red-600 transition-colors "
                   >
                     Privacy Policy
                   </Link>
