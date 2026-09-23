@@ -210,7 +210,6 @@ export default function LandingPage() {
           <div className="mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
             {/* LOGO */}
             <div className="flex items-center">
-              <Link href="/">
                 <Image
                   src="/images/Dev-App-04.png"
                   alt="Dev App Grid"
@@ -218,7 +217,6 @@ export default function LandingPage() {
                   height={500}
                   className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
                 />
-              </Link>
             </div>
 
             {/* RIGHT HEADER */}
