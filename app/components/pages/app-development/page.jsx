@@ -956,18 +956,18 @@ export default function LandingPage() {
 
               </div>
 
-               <button
-                  type="button"
-                  onClick={() => setIsModalOpen(true)}
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
                 className="flex h-7.5 items-center gap-2 rounded-sm bg-red-600 px-6 text-[9px] font-semibold text-white transition hover:bg-red-700 sm:h-8.5 sm:px-7 sm:text-[18px]">
-               
-                  <span className="hidden sm:inline">ORDER NOW</span>
 
-                  <ArrowRight
-                    size={14}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </button>
+                <span className="hidden sm:inline">ORDER NOW</span>
+
+                <ArrowRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </button>
             </div>
           </section>
         </section>
@@ -1593,7 +1593,7 @@ export default function LandingPage() {
                   />
 
                 </div>
-                <div className="flex items-center gap-6 text-sm justify-center mt-10">
+                <div className="flex items-center gap-6 text-sm justify-center mt-13">
                   <Link
                     href="/terms-and-conditions"
                     className="text-gray-600 hover:text-red-600 transition-colors underline underline-offset-4"
