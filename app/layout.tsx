@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 // import DisableRightClick from "../app/components/DisableRightClick/DisableRightClick";
 
 export const metadata: Metadata = {
@@ -18,7 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-          {children}
+        {children}
+        <Script
+          id="ze-snippet"
+          src="https://static.zdassets.com/ekr/snippet.js?key=832e42ad-4c5d-4c97-8f07-1e27982ea22a"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

@@ -330,9 +330,8 @@ export default function Logistic() {
                       value={formData.name}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-transparent border-b-2 ${
-                        errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -349,9 +348,8 @@ export default function Logistic() {
                       value={formData.email}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-transparent border-b-2 ${
-                        errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -368,9 +366,8 @@ export default function Logistic() {
                       value={formData.phone}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-transparent border-b-2 ${
-                        errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -435,11 +432,10 @@ export default function Logistic() {
                   {/* Status Message */}
                   {statusMessage.text && (
                     <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${
-                        statusMessage.type === "success"
+                      className={`p-3 text-sm font-medium border rounded-sm ${statusMessage.type === "success"
                           ? "bg-green-50 border-green-200 text-green-700"
                           : "bg-red-50 border-red-200 text-red-700"
-                      }`}
+                        }`}
                     >
                       {statusMessage.text}
                     </div>
@@ -684,9 +680,8 @@ export default function Logistic() {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -792,7 +787,7 @@ export default function Logistic() {
           </div>
         </section>
 
-        <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
+        {/* <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
           <div className="text-center space-y-3 mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Key Features of Logistics and Transportation App Development
@@ -822,6 +817,203 @@ export default function Logistic() {
               })}
             </div>
           </div>
+        </section> */}
+        <section>
+          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5 mt-10">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
+              Client Testimonials
+            </h1>
+            <p>
+              Our top priority from the beginning has always been customer
+              satisfaction, and it feels good when the clients feel the same. So
+              here are the words of some of our clients who have enjoyed working
+              with us:
+            </p>
+          </div>
+        </section>
+        <section className="w-full max-w-6xl mx-auto px-4 py-12">
+          <style>{`
+                .portfolio-swiper .swiper-pagination-bullet {
+                  background-color: #cbd5e1;
+                  opacity: 1;
+                }
+                .portfolio-swiper .swiper-pagination-bullet-active {
+                  background-color: #dc2626 !important; /* Red color */
+                }
+              `}</style>
+          {/* Outer Card Wrapper with Fixed Border & Accent */}
+          <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
+            {/* Left Blue Accent Line (Static) */}
+            <div className="absolute top-0 left-0 bottom-0  z-10" />
+
+            {/* Swiper Slider Component */}
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              spaceBetween={30}
+              slidesPerView={1}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              navigation={{
+                nextEl: ".custom-next",
+                prevEl: ".custom-prev",
+              }}
+              loop={true}
+              className="w-full"
+            >
+              {testimonials.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <div>
+                    {/* Top User Info & Rating Section */}
+                    <div className="flex items-center gap-4 mb-6">
+                      {/* Avatar Circle */}
+                      <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-contain rounded-full"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src =
+                              "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg";
+                          }}
+                        />
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                          {item.name}
+                        </h4>
+                        {/* Stars */}
+                        <div className="flex items-center gap-1">
+                          {[...Array(5)].map((_, index) => (
+                            <Star
+                              key={index}
+                              className="w-5 h-5 fill-amber-400 text-amber-400"
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Review Text */}
+                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                      {item.review}
+                    </p>
+
+                    {/* Google Verified Branding */}
+                    <div className="space-y-1 pb-2 md:pb-0">
+                      <span className="text-xs text-gray-500 font-medium block">
+                        verified
+                      </span>
+                      <img
+                        src={item.verifiedImage}
+                        alt="Google Logo"
+                        className="h-7 object-contain"
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg";
+                        }}
+                      />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
+            <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
+              <button
+                className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                aria-label="Previous Slide"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <button
+                className="custom-next bg-red-700 hover:bg-red-600 text-white p-3 rounded-none transition-colors duration-200 focus:outline-none cursor-pointer"
+                aria-label="Next Slide"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </section>
+        <section>
+          {/* Heading */}
+          <div>
+            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+              Frequently Asked Questions
+            </h1>
+
+            <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
+              We deal with some common questions about real estate web
+              applications every day. If you too have questions relating to
+              them, you can refer to it below:
+            </p>
+          </div>
+
+          {/* FAQ */}
+          <section className="py-12">
+            <div className="max-w-6xl mx-auto px-4">
+              <div className="space-y-4">
+                {faqsData.map((faq, index) => (
+                  <div
+                    key={index}
+                    className={`border bg-white transition-all duration-300 ${open === index
+                      ? "border-gray-200 shadow-md"
+                      : "border-gray-200 hover:border-gray-300"
+                      }`}
+                  >
+                    {/* Question */}
+                    <button
+                      onClick={() => setOpen(open === index ? -1 : index)}
+                      className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
+                    >
+                      <span className="text-lg font-medium text-black">
+                        {faq.question}
+                      </span>
+
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform duration-300 ${open === index
+                          ? "rotate-180 text-black"
+                          : "rotate-0 text-black"
+                          }`}
+                      />
+                    </button>
+
+                    {/* Answer */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
+                        ? "max-h-150 opacity-100"
+                        : "max-h-0 opacity-0"
+                        }`}
+                    >
+                      <div className="px-6 pb-5 pt-4 border-t border-gray-100">
+                        <p className="text-[17px] leading-8 text-gray-600">
+                          {faq.answer}
+                        </p>
+
+                        {faq.points && (
+                          <ul className="mt-5 space-y-4">
+                            {faq.points.map((point, i) => (
+                              <li
+                                key={i}
+                                className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
+                              >
+                                <ChevronRight
+                                  size={18}
+                                  className="mt-1 text-black shrink-0"
+                                />
+
+                                <span>{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         </section>
       </div>
     </>
