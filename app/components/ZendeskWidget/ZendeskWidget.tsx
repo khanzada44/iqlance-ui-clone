@@ -1,33 +1,39 @@
 "use client";
 
+import { useEffect } from "react";
 import Script from "next/script";
 
 export default function ZendeskWidget() {
   const openZendesk = () => {
-    const checkZendesk = () => {
-      if (typeof window !== "undefined" && window.zE) {
-        window.zE("messenger", "open");
+    if (typeof window === "undefined") return;
+
+    const checkAndOpen = () => {
+      const zE = (window as any).zE;
+      if (zE) {
+        zE("messenger", "open");
         return true;
       }
-
       return false;
     };
 
-    // Try immediately
-    if (checkZendesk()) return;
+    if (checkAndOpen()) return;
 
-    // Wait until Zendesk is fully initialized
-    const interval = window.setInterval(() => {
-      if (checkZendesk()) {
-        window.clearInterval(interval);
+    const interval = setInterval(() => {
+      if (checkAndOpen()) {
+        clearInterval(interval);
       }
     }, 300);
 
-    // Stop checking after 5 seconds
-    window.setTimeout(() => {
-      window.clearInterval(interval);
+    setTimeout(() => {
+      clearInterval(interval);
     }, 5000);
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && (window as any).zE) {
+      openZendesk();
+    }
+  }, []);
 
   return (
     <Script
@@ -35,6 +41,7 @@ export default function ZendeskWidget() {
       src="https://static.zdassets.com/ekr/snippet.js?key=832e42ad-4c5d-4c97-8f07-1e27982ea22a"
       strategy="afterInteractive"
       onLoad={openZendesk}
+      onReady={openZendesk}
     />
   );
 }
