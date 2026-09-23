@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Phone, Mail, ArrowRight } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import QuoteModal from "../QuoteModal/QuoteModal";
 import {
   ArrowLeft,
   ChevronRight,
@@ -31,6 +32,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function LandingPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const contentRef = useRef(null);
   const [errors, setErrors] = useState({});
   const [contentVisible, setContentVisible] = useState(false);
@@ -82,7 +84,7 @@ export default function LandingPage() {
       setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
     }
   };
-    const validateForm = () => {
+  const validateForm = () => {
     const newErrors = {};
 
     if (!formData.name || !formData.name.trim()) {
@@ -238,7 +240,7 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              <Link
+              {/* <Link
                 href="/request-a-quote"
                 className="group flex h-9 items-center gap-2 rounded-sm bg-red-600 px-4 text-[10px] font-semibold text-white transition hover:bg-red-700 sm:px-5 sm:text-[11px] lg:h-9.5 lg:px-6 lg:text-[12px]"
               >
@@ -249,7 +251,26 @@ export default function LandingPage() {
                   size={14}
                   className="transition-transform duration-300 group-hover:translate-x-1"
                 />
-              </Link>
+              </Link> */}
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="group flex h-9 items-center gap-2 rounded-sm bg-red-600 px-4 text-[10px] font-semibold text-white transition hover:bg-red-700 sm:px-5 sm:text-[11px] lg:h-9.5 lg:px-6 lg:text-[12px]"
+              >
+                <span className="hidden sm:inline">Get A Free Quote</span>
+                <span className="sm:hidden">Quote</span>
+
+                <ArrowRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </button>
+
+              {/* Popup Form Modal */}
+              <QuoteModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+              />
             </div>
           </div>
         </header>
@@ -469,9 +490,8 @@ export default function LandingPage() {
                       value={formData.name}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-transparent border-b-2 ${
-                        errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -488,9 +508,8 @@ export default function LandingPage() {
                       value={formData.email}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-transparent border-b-2 ${
-                        errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -507,9 +526,8 @@ export default function LandingPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-transparent border-b-2 ${
-                        errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -574,11 +592,10 @@ export default function LandingPage() {
                   {/* Status Message */}
                   {statusMessage.text && (
                     <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${
-                        statusMessage.type === "success"
-                          ? "bg-green-50 border-green-200 text-green-700"
-                          : "bg-red-50 border-red-200 text-red-700"
-                      }`}
+                      className={`p-3 text-sm font-medium border rounded-sm ${statusMessage.type === "success"
+                        ? "bg-green-50 border-green-200 text-green-700"
+                        : "bg-red-50 border-red-200 text-red-700"
+                        }`}
                     >
                       {statusMessage.text}
                     </div>
@@ -799,7 +816,7 @@ export default function LandingPage() {
 
 
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
-                  Texas, USA
+                  Los Angeles, USA
                 </h4>
 
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
@@ -842,7 +859,7 @@ export default function LandingPage() {
 
 
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
-                  New York, USA
+                  Los Angeles, USA
                 </h4>
 
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
@@ -938,11 +955,19 @@ export default function LandingPage() {
                 />
 
               </div>
-              {/* ORDER BUTTON */}
-              <button className="flex h-7.5 items-center gap-2 rounded-sm bg-red-600 px-6 text-[9px] font-semibold text-white transition hover:bg-red-700 sm:h-8.5 sm:px-7 sm:text-[18px]">
-                ORDER NOW
-                <ArrowRight size={12} />
-              </button>
+
+               <button
+                  type="button"
+                  onClick={() => setIsModalOpen(true)}
+                className="flex h-7.5 items-center gap-2 rounded-sm bg-red-600 px-6 text-[9px] font-semibold text-white transition hover:bg-red-700 sm:h-8.5 sm:px-7 sm:text-[18px]">
+               
+                  <span className="hidden sm:inline">ORDER NOW</span>
+
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </button>
             </div>
           </section>
         </section>
@@ -1286,13 +1311,25 @@ export default function LandingPage() {
                   Tell us about your app idea and get a free blueprint, timeline
                   and fixed quote within 24 hours.
                 </p>
-                <Link
-                  href="/request-a-quote"
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(true)}
                   className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[14px] font-semibold text-black shadow-lg transition-colors hover:bg-gray-100"
                 >
-                  Start Your Project
-                  <ArrowRight size={16} />
-                </Link>
+                  <span className="hidden sm:inline">Get A Free Quote</span>
+                  <span className="sm:hidden">Quote</span>
+
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </button>
+
+                {/* Popup Form Modal */}
+                <QuoteModal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                />
               </div>
 
               {/* Right Contact Info Boxes */}
@@ -1543,12 +1580,18 @@ export default function LandingPage() {
                   Let's work together!
                 </h2>
                 <div>
-                  <Link
-                    href="/request-a-quote"
-                    className="inline-block bg-red-600 hover:bg-red-700 text-white font-medium text-[15px] px-10 py-4 rounded-full shadow-lg transition-colors"
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(true)}
+                    className="inline-block bg-red-600 hover:bg-red-700 text-white font-medium text-[15px] px-10 py-4 rounded-full shadow-lg transition-colors cursor-pointer"
                   >
                     Get A Free Quote
-                  </Link>
+                  </button>
+                  <QuoteModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                  />
+
                 </div>
                 <div className="flex items-center gap-6 text-sm justify-center mt-10">
                   <Link

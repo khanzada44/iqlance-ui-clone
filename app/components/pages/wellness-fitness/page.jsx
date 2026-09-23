@@ -1499,7 +1499,7 @@ const handleChange = (e) => {
                         </h4>
                         {/* Stars */}
                         <div className="flex items-center gap-1">
-                          {[...Array(item.review)].map((_, index) => (
+                          {[...Array(5)].map((_, index) => (
                             <Star
                               key={index}
                               className="w-5 h-5 fill-amber-400 text-amber-400"

@@ -14,13 +14,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { offices } from "../contact-us/data";
 import ContactForm from "../../contactForm/ContactForm";
-
+import {  ArrowLeft, Mail } from "lucide-react";
 import {
-  partners
+  partners,
+  testimonials
 } from "../../../../utils/data";
 import { submitContactForm } from "@/services/send-call-request";
+
 
 export default function ContactSection() {
   const [activetechnologies, setActivetechnologies] = useState(0);
@@ -505,6 +508,101 @@ export default function ContactSection() {
               demanded industry of the client makes them speak about our work.
               Let’s see what they think about our development method.
             </p>
+          </div>
+        </section>
+                <section className="w-full max-w-6xl mx-auto px-4 py-12">
+          {/* Outer Card Wrapper with Fixed Border & Accent */}
+          <div className="relative bg-white border border-red-300 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
+            {/* Left Blue Accent Line (Static) */}
+            <div className="absolute top-0 left-0 bottom-0  z-10" />
+
+            {/* Swiper Slider Component */}
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              spaceBetween={30}
+              slidesPerView={1}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              navigation={{
+                nextEl: ".custom-next",
+                prevEl: ".custom-prev",
+              }}
+              loop={true}
+              className="w-full"
+            >
+              {testimonials.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <div>
+                    {/* Top User Info & Rating Section */}
+                    <div className="flex items-center gap-4 mb-6">
+                      {/* Avatar Circle */}
+                      <div className="w-16 h-16  border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-contain "
+                          onError={(e) => {
+                            e.target.src =
+                              "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg";
+                          }}
+                        />
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                          {item.name}
+                        </h4>
+                        {/* Stars */}
+                        <div className="flex items-center gap-1">
+                          {[...Array(5)].map((_, index) => (
+                            <Star
+                              key={index}
+                              className="w-5 h-5 fill-amber-400 text-amber-400"
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Review Text */}
+                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                      {item.review}
+                    </p>
+
+                    {/* Google Verified Branding */}
+                    <div className="space-y-1 pb-2 md:pb-0">
+                      <span className="text-xs text-gray-500 font-medium block">
+                        verified
+                      </span>
+                      <img
+                        src={item.verifiedImage}
+                        alt="Google Logo"
+                        className="h-7 object-contain"
+                        onError={(e) => {
+                          e.target.src =
+                            "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg";
+                        }}
+                      />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
+            <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
+              <button
+                className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
+                aria-label="Previous Slide"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <button
+                className="custom-next bg-red-700 hover:bg-red-600 text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
+                aria-label="Next Slide"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </section>
 
