@@ -35,7 +35,7 @@ import {
   services
 } from "./data";
 import Image from "next/image";
-
+  import { useRouter } from "next/navigation";
 export default function SocialMedia() {
   const [activeTab, setActiveTab] = useState("trainer");
   const [activetechnologies, setActivetechnologies] = useState(0);
@@ -57,7 +57,7 @@ export default function SocialMedia() {
 
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
-  // Data Array (Component ke bahar ya andar define karein)
+  const router = useRouter();
   const processSteps = [
     {
       stepLabel: "STEP 1",
@@ -159,7 +159,7 @@ export default function SocialMedia() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -424,20 +424,6 @@ export default function SocialMedia() {
                       Please Send NDA
                     </label>
                   </div>
-
-                  {/* Status Message */}
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${
-                        statusMessage.type === "success"
-                          ? "bg-green-50 border-green-200 text-green-700"
-                          : "bg-red-50 border-red-200 text-red-700"
-                      }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
-
                   <div className="pt-2">
                     <button
                       type="submit"

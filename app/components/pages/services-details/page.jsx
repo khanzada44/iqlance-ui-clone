@@ -3,46 +3,28 @@
 import {
   ChevronDown,
   ChevronUp,
-  ChevronRight,
-  Star,
   Paperclip,
   ArrowRight,
-  ArrowLeft,
-  Mail,
-  Phone,
 } from "lucide-react";
 
-import { useState, useCallback, useRef, useEffect } from "react";
-
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
 import ContactForm from "../../contactForm/ContactForm";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
+import { useRouter } from "next/navigation";
 import { submitContactForm } from "../../../../services/send-call-request";
 import { serviceCategorieBySlug } from "../../../../services/all-sub-categories";
 
 import {
   partners,
-  bottomFeatures,
-  slides,
-  portfolioSlides,
-  technologies,
-  stats,
   industries,
-  services,
   faqsData,
-  testimonials,
 } from "../../../../utils/data";
 
-import Image from "next/image";
 
 export default function ServicesCategory({ slug }) {
   const [serviceData, setServiceData] = useState(null);
@@ -54,6 +36,7 @@ export default function ServicesCategory({ slug }) {
   const [open, setOpen] = useState(-1);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [blogs, setBlogs] = useState([]);
+  const router = useRouter();
 
   const fileInputRef = useRef(null);
   const [formData, setFormData] = useState({
@@ -186,6 +169,7 @@ export default function ServicesCategory({ slug }) {
       }
 
       await submitContactForm(payload);
+      router.push("/thanks-You");
 
       setStatusMessage({
         type: "success",
@@ -445,18 +429,6 @@ export default function ServicesCategory({ slug }) {
                       Please Send NDA
                     </label>
                   </div>
-                  {statusMessage?.text && (
-                    <div
-                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${statusMessage.type === "success"
-                          ? "bg-green-100 border border-green-400 text-green-800"
-                          : "bg-red-100 border border-red-400 text-red-800"
-                        }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
-
-                  {/* SUBMIT */}
                   <div className="pt-2">
                     <button
                       type="submit"

@@ -32,13 +32,14 @@ import {
   testimonials
 } from "../../../../utils/data"
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 export default function Ondemadd() {
   const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [portfolios, setPortfolios] = useState([]);
+  const router = useRouter();
 
   // ADD THIS LINE: formData state yahan add karein
   const [formData, setFormData] = useState({
@@ -157,7 +158,7 @@ export default function Ondemadd() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",

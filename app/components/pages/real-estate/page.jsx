@@ -32,13 +32,13 @@ import {
   testimonials,
 } from "../../../../utils/data";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 export default function realEstate() {
   const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const fileInputRef = useRef(null);
-
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -129,7 +129,7 @@ export default function realEstate() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",

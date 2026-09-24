@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { submitContactForm } from "@/services/send-call-request";
+import { useRouter } from "next/navigation";
 import {
   partners,
   slides,
@@ -31,6 +32,7 @@ import Image from "next/image";
 
 export default function fitness() {
   const [activeTab, setActiveTab] = useState("driver");
+  const router = useRouter();
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
@@ -151,7 +153,7 @@ export default function fitness() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -408,20 +410,6 @@ export default function fitness() {
                       Please Send NDA
                     </label>
                   </div>
-
-                  {/* Status Message */}
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${
-                        statusMessage.type === "success"
-                          ? "bg-green-50 border-green-200 text-green-700"
-                          : "bg-red-50 border-red-200 text-red-700"
-                      }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
-
                   <div className="pt-2">
                     <button
                       type="submit"

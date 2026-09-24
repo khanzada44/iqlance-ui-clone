@@ -44,11 +44,11 @@ import {
   portfolioSlides
 } from "./data";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 export default function Taxi() {
+  const router = useRouter();
   const [activeId, setActiveId] = useState(null);
   const toggleAccordion = (id) => {
-    // Agar wahi item open hai toh close kar do (null), warna naye item ko open karo
     setActiveId((prevId) => (prevId === id ? null : id));
   };
   const [activeTab, setActiveTab] = useState("driver");
@@ -173,7 +173,7 @@ export default function Taxi() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -429,19 +429,6 @@ export default function Taxi() {
                       Please Send NDA
                     </label>
                   </div>
-
-                  {/* Status Message */}
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${
-                        statusMessage.type === "success"
-                          ? "bg-green-50 border-green-200 text-green-700"
-                          : "bg-red-50 border-red-200 text-red-700"
-                      }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
 
                   <div className="pt-2">
                     <button

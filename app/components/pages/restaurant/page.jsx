@@ -29,14 +29,15 @@ import {
 } from "../../../../utils/data";
 import { ServiceSectionData, healthcareFeatures, bottomFeatures } from "../restaurant/data";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Restaurant() {
   const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
+  const router = useRouter();
 
-  // ADD THIS LINE: formData state yahan add karein
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -151,7 +152,7 @@ export default function Restaurant() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -392,20 +393,6 @@ export default function Restaurant() {
                       Please Send NDA
                     </label>
                   </div>
-
-                  {/* Status Message */}
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${
-                        statusMessage.type === "success"
-                          ? "bg-green-50 border-green-200 text-green-700"
-                          : "bg-red-50 border-red-200 text-red-700"
-                      }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
-
                   <div className="pt-2">
                     <button
                       type="submit"

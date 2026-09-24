@@ -27,11 +27,13 @@ import {
   faqsData,
   testimonials,
 } from "../../../../utils/data";
+import { useRouter } from "next/navigation";
 
 import { healthcareFeatures, bottomFeatures, services } from "./data";
 import Image from "next/image";
 
 export default function SocialMedia() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
@@ -85,8 +87,7 @@ export default function SocialMedia() {
   ];
 
   const currentStep = processSteps[activeStepIndex] || processSteps[0];
-  // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
-  // Form State
+
   const [blogs, setBlogs] = useState([]);
   const fileInputRef = useRef(null);
 
@@ -154,7 +155,7 @@ export default function SocialMedia() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -403,19 +404,6 @@ export default function SocialMedia() {
                       Please Send NDA
                     </label>
                   </div>
-
-                  {/* Status Message */}
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${
-                        statusMessage.type === "success"
-                          ? "bg-green-50 border-green-200 text-green-700"
-                          : "bg-red-50 border-red-200 text-red-700"
-                      }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
 
                   <div className="pt-2">
                     <button

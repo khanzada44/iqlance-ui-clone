@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/navigation";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -27,6 +28,7 @@ import { submitContactForm } from "@/services/send-call-request";
 
 export default function ContactSection() {
   const [activetechnologies, setActivetechnologies] = useState(0);
+    const router = useRouter();
   const [open, setOpen] = useState(-1);
    const [errors, setErrors] = useState({});
    const fileInputRef = useRef(null);
@@ -111,7 +113,7 @@ export default function ContactSection() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -354,19 +356,6 @@ export default function ContactSection() {
                       Please Send NDA
                     </label>
                   </div>
-
-                  {/* Status Message */}
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${
-                        statusMessage.type === "success"
-                          ? "bg-green-50 border-green-200 text-green-700"
-                          : "bg-red-50 border-red-200 text-red-700"
-                      }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
 
                   <div className="pt-2">
                     <button

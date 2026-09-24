@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 import { useState, useCallback, useRef, useEffect } from "react";
-
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -35,7 +35,7 @@ import Image from "next/image";
 
 export default function ServicesCategory({ slug }) {
   const [errors, setErrors] = useState({});
-
+  const router = useRouter();
   const [serviceData, setServiceData] = useState(null);
 
   const [serviceLoading, setServiceLoading] = useState(true);
@@ -189,6 +189,7 @@ const validateForm = () => {
       }
 
       await submitContactForm(payload);
+      router.push("/thanks-You");
 
       setStatusMessage({
         type: "success",
@@ -479,21 +480,6 @@ const validateForm = () => {
                       Please Send NDA
                     </label>
                   </div>
-
-                  {/* Status Message */}
-                  {statusMessage?.text && (
-                    <div
-                      className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${
-                        statusMessage.type === "success"
-                          ? "bg-green-100 border border-green-400 text-green-800"
-                          : "bg-red-100 border border-red-400 text-red-800"
-                      }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
-
-                  {/* Submit Button */}
                   <div className="pt-2">
                     <button
                       type="submit"

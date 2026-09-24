@@ -33,14 +33,14 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import { useRouter } from "next/navigation";
 export default function HeroQuoteSection() {
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
 
-  // ADD THIS LINE: formData state yahan add karein
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,8 +58,7 @@ export default function HeroQuoteSection() {
 
   const [blogs, setBlogs] = useState([]);
   const fileInputRef = useRef(null);
-
-
+  const router = useRouter();
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -127,7 +126,7 @@ const handleChange = (e) => {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -390,20 +389,6 @@ const handleChange = (e) => {
                     Please Send NDA
                   </label>
                 </div>
-
-                {/* Status Message */}
-                {statusMessage.text && (
-                  <div
-                    className={`p-3 text-sm font-medium border rounded-sm ${
-                      statusMessage.type === "success"
-                        ? "bg-green-50 border-green-200 text-green-700"
-                        : "bg-red-50 border-red-200 text-red-700"
-                    }`}
-                  >
-                    {statusMessage.text}
-                  </div>
-                )}
-
                 <div className="pt-2">
                   <button
                     type="submit"

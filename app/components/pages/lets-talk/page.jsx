@@ -20,13 +20,13 @@ import {
   partners
 } from "../../../../utils/data";
 import { submitContactForm } from "@/services/send-call-request";
-
+  import { useRouter } from "next/navigation";
 export default function ContactSection() {
   const fileInputRef = useRef(null);
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeTab, setActiveTab] = useState("customer");
-
+  const router = useRouter();
   // Form States
   const [formData, setFormData] = useState({
     name: "",
@@ -115,7 +115,7 @@ export default function ContactSection() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",

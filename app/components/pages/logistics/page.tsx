@@ -42,7 +42,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { getBlogs } from "@/services/blog";
-
+import { useRouter } from "next/navigation";
 export default function Logistic() {
   const [activeTab, setActiveTab] = useState<string>("driver");
   const [loading, setLoading] = useState(false);
@@ -51,7 +51,7 @@ export default function Logistic() {
   const [open, setOpen] = useState<number>(-1);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-
+  const router = useRouter();
   const currentTab =
     featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
 
@@ -146,7 +146,7 @@ export default function Logistic() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -429,17 +429,7 @@ export default function Logistic() {
                     </label>
                   </div>
 
-                  {/* Status Message */}
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${statusMessage.type === "success"
-                          ? "bg-green-50 border-green-200 text-green-700"
-                          : "bg-red-50 border-red-200 text-red-700"
-                        }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
+                  
 
                   <div className="pt-2">
                     <button
@@ -786,38 +776,6 @@ export default function Logistic() {
             </div>
           </div>
         </section>
-
-        {/* <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16">
-          <div className="text-center space-y-3 mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Key Features of Logistics and Transportation App Development
-            </h2>
-            <p className="text-gray-600 text-sm md:text-base max-w-4xl mx-auto">
-              Our logistics app solutions come packed with powerful features that
-              help you manage every aspect of your operations in a streamlined, organized way.
-            </p>
-          </div>
-          <div className="flex justify-center mb-10 overflow-x-auto">
-            <div className="flex gap-8 border-b border-red-200">
-              {featuresTabsData.map((tab) => {
-                const isActive = activeTab === tab.id;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`pb-3 text-sm md:text-base font-semibold transition-all relative cursor-pointer whitespace-nowrap ${
-                      isActive
-                        ? "text-red-900 border-b-2 border-red-600 font-bold"
-                        : "text-gray-500 hover:text-gray-800"
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </section> */}
         <section>
           <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5 mt-10">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">

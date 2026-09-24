@@ -7,9 +7,10 @@ import { ArrowRight, ChevronRight, Paperclip } from "lucide-react";
 import { comparisonData, features, tabsData } from "../engagement-model/data";
 import { stats } from "../../../../utils/data";
 import { submitContactForm } from "../../../../services/send-call-request";
-
+import { useRouter } from "next/navigation";
 export default function EngagementModelSection() {
   const [activeModelTab, setActiveModelTab] = useState("hourly");
+  const router = useRouter();
   const fileInputRef = useRef(null);
 
   const currentTab =
@@ -27,7 +28,7 @@ export default function EngagementModelSection() {
     sendNda: false,
   });
 
-  const [errors, setErrors] = useState({}); // <-- Added missing state hook
+  const [errors, setErrors] = useState({}); 
 
   const [statusMessage, setStatusMessage] = useState({
     type: "",
@@ -105,6 +106,7 @@ export default function EngagementModelSection() {
       console.log("Submitting form...");
 
       const response = await submitContactForm(payload);
+      router.push("/thanks-You");
 
       console.log("API SUCCESS:", response);
 
@@ -130,13 +132,11 @@ export default function EngagementModelSection() {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("========== FORM ERROR ==========");
       console.error("Error:", error);
       console.error("Message:", error?.message);
       console.error("Response:", error?.response);
       console.error("Response Data:", error?.response?.data);
       console.error("Status:", error?.response?.status);
-      console.error("================================");
 
       let errorMsg = "Failed to send message. Please try again later.";
 
@@ -328,19 +328,6 @@ export default function EngagementModelSection() {
                         Please Send NDA
                       </label>
                     </div>
-
-                    {statusMessage.text && (
-                      <div
-                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${
-                          statusMessage.type === "success"
-                            ? "bg-green-100 border border-green-400 text-green-800"
-                            : "bg-red-100 border border-red-400 text-red-800"
-                        }`}
-                      >
-                        {statusMessage.text}
-                      </div>
-                    )}
-
                     <div className="pt-2">
                       <button
                         type="submit"

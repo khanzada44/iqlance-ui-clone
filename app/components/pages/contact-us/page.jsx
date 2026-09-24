@@ -18,10 +18,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
 import { partners, testimonials } from "../../../../utils/data";
+import { useRouter } from "next/navigation";
 
 export default function ContactSection() {
   const fileInputRef = useRef(null);
-
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,7 +34,7 @@ export default function ContactSection() {
     sendNda: false,
   });
 
-  const [errors, setErrors] = useState({}); // <-- Added missing state hook
+  const [errors, setErrors] = useState({}); 
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({
     type: "",
@@ -112,7 +113,7 @@ export default function ContactSection() {
       }
 
       const response = await submitContactForm(payload);
-
+      router.push("/thanks-You");
       setStatusMessage({
         type: "success",
         text: "Your message has been sent successfully!",
@@ -325,19 +326,6 @@ export default function ContactSection() {
                         Please Send NDA
                       </label>
                     </div>
-
-                    {statusMessage.text && (
-                      <div
-                        className={`p-3 rounded-md text-xs md:text-sm font-medium transition-all ${
-                          statusMessage.type === "success"
-                            ? "bg-green-100 border border-green-400 text-green-800"
-                            : "bg-red-100 border border-red-400 text-red-800"
-                        }`}
-                      >
-                        {statusMessage.text}
-                      </div>
-                    )}
-
                     <div className="pt-2">
                       <button
                         type="submit"

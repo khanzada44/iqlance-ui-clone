@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { submitContactForm } from "@/services/send-call-request";
+import { useRouter } from "next/navigation";
 import {
   bottomFeatures,
   slides,
@@ -41,8 +42,8 @@ export default function wellnessFitness() {
   const [open, setOpen] = useState(-1);
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
-    const [errors, setErrors] = useState({});
-
+  const [errors, setErrors] = useState({});
+  const router = useRouter();
   // ADD THIS LINE: formData state yahan add karein
   const [formData, setFormData] = useState({
     name: "",
@@ -127,6 +128,7 @@ const handleChange = (e) => {
       }
 
       const response = await submitContactForm(payload);
+      router.push("/thanks-You");
 
       setStatusMessage({
         type: "success",
