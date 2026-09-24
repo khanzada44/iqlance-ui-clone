@@ -16,15 +16,14 @@ export const testimonials = [
 ];
 export const faqsData = [
   {
-    question: "1. How do I start a project with Devapp Grid? ",
-    answer: "Getting started is simple. Share your idea, business goals, target audience, and key requirements with our team. As an experienced app development company, Devapp will review your needs and recommend the right approach for your mobile app development project.",
-    
+    question: "1. How do I start a project with Devapp Grid?",
+    answer:
+      "Getting started is simple. Share your idea, business goals, target audience, and key requirements with our team. As an experienced app development company, Devapp Grid will review your needs and recommend the right approach for your mobile app development project.",
   },
   {
-    question: "2. What mobile app development services does Devapp Grid offer? ",
+    question: "2. What mobile app development services does Devapp Grid offer?",
     answer:
       "Our app development services cover the complete product lifecycle, including strategy, UI/UX design, development, API integration, testing, deployment, and post-launch support. We also provide Flutter mobile app development and cross-platform solutions for businesses of different sizes.",
-    
   },
   {
     question: "3. How much does mobile app development cost?",
@@ -41,5 +40,4 @@ export const faqsData = [
     answer:
       "Devapp Grid combines experienced mobile app developers, modern technologies, flexible engagement options, transparent communication, and ongoing support. Whether you need Flutter mobile app development, native development, or a complete mobile app development solution, we focus on creating a scalable product aligned with your business objectives.",
   },
-
 ];

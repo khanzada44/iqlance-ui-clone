@@ -301,6 +301,7 @@ export default function LandingPage() {
                   }`}
               >
                 Let&apos;s Turn Your Idea Into a Market-Ready Product
+
               </p>
               <h1
                 className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${contentVisible ? "show" : ""
@@ -331,46 +332,61 @@ export default function LandingPage() {
                   }`}
                 style={{ animationDelay: "500ms" }}
               >
-                Have a project in mind? Share your requirements with Devapp Grid and
-                connect with experienced app and software development
-                specialists who can help you define the right solution,
-                timeline, and development strategy.
+                Have a project in mind? Share your requirements with Devapp and connect with
+                experienced mobile app developers and software development
+                specialists who can help you define the right solution, timeline, and development strategy.
+              </p>
+              <p
+                className={`content-slide-in-left max-w-140 text-[17px] leading-[1.8] sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
+                  }`}
+                style={{ animationDelay: "500ms" }}
+              >
+                What You’ll Get:
               </p>
               <ul
                 className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
-                  }`}
+                  } mb-5`}
                 style={{ animationDelay: "600ms" }}
               >
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 m-1">
                   <span>•</span>
                   <span>45-minute free consultation</span>
                 </li>
 
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 m-1">
                   <span>•</span>
                   <span>Strict NDA and IP confidentiality</span>
                 </li>
 
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 m-1">
                   <span>•</span>
                   <span>Detailed feature and project scope document</span>
                 </li>
 
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 m-1">
                   <span>•</span>
                   <span>Customized technology and development roadmap</span>
                 </li>
 
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 m-1">
                   <span>•</span>
                   <span>Clear timeline and budget estimate</span>
                 </li>
 
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 m-1">
                   <span>•</span>
                   <span>Action plan to move your project forward</span>
                 </li>
               </ul>
+              <p    className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
+                  } mt-10`}
+                  style={{ animationDelay: "600ms" }}
+                  >
+                Whether you need mobile app development, custom software, or dedicated developers,
+                we’re ready to help you move from concept to launch with a clear, practical
+                development plan.
+
+              </p>
               <div
                 className={`content-slide-in-left mt-6 flex flex-wrap gap-3 ${contentVisible ? "show" : ""
                   }`}
@@ -380,7 +396,7 @@ export default function LandingPage() {
                   href="/contact-us"
                   className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
                 >
-                  Contact Us
+                  Contact Our Experts
                   <ArrowRight
                     size={14}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -390,7 +406,7 @@ export default function LandingPage() {
                   href="/portfolio"
                   className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
                 >
-                  See Our Work
+                  View Our Portfolio
                   <ArrowRight
                     size={14}
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -672,11 +688,11 @@ export default function LandingPage() {
               </h1>
             </div>
             <p className="mx-auto mt-3 max-w-290 text-[11px] leading-[1.8] text-gray-700 sm:text-[12px] lg:text-[19px]">
-              Devapp Grid combines local expertise with global delivery to support
-              businesses wherever they operate. With a growing presence across
-              key markets, our teams provide accessible, responsive, and
-              high-quality mobile, web, and software development services
-              tailored to regional business needs
+              Devapp Grid combines local expertise with global delivery to support businesses wherever they operate.
+              With a growing presence across key markets, our teams provide accessible, responsive,
+              and high-quality mobile app development services,
+              web, and software development services tailored to regional business needs.
+
             </p>
             <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
               <div className="flex items-center gap-1.5 text-[20px] font-semibold text-gray-800 sm:text-[20px]">
@@ -948,10 +964,11 @@ export default function LandingPage() {
         </section>
 
         <section>
+          <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 items-center mb-10 flex justify-center">
+            How it Works
+          </h2>
+          <p className="text-center">We keep the process simple, transparent, and focused on getting your project moving without unnecessary delays.</p>
           <div className="mx-auto w-[94%] max-w-250">
-            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 items-center mb-10 flex justify-center">
-              How it Works
-            </h2>
             <div>
               <div className="relative mx-auto w-full max-w-240 px-2 sm:px-4 lg:px-0 m-0 leftLinpage">
                 <div className="mt-5 flex sm:mt-6">
@@ -975,10 +992,9 @@ export default function LandingPage() {
                       </h3>
 
                       <p className="mt-1.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]">
-                        Tell us about your idea, business goals, target
-                        audience, and project requirements. Our business analyst
-                        will connect with you to understand the scope and define
-                        the key objectives.
+                        Tell us about your idea, business goals, target audience, and project requirements.
+                        Our business analyst will
+                        connect with you to understand the scope and define the key objectives.
                       </p>
                     </div>
                   </div>
@@ -1046,10 +1062,8 @@ export default function LandingPage() {
                         Receive Your Proposal
                       </h3>
                       <p>
-                        Based on your requirements, we have prepared a detailed
-                        proposal covering the recommended solution, project
-                        scope, estimated cost, development plan, and timeline.
-                        Once approved, we move into execution.
+                          Based on your requirements, we have prepared a detailed proposal covering the 
+                          recommended solution, project scope,estimated cost, app development plan, and timeline. Once approved, we move into execution.
                       </p>
                     </div>
                     <Image
@@ -1081,11 +1095,9 @@ export default function LandingPage() {
                       Start Your Project
                     </h3>
                     <p>
-                      Your dedicated project team gets to work with a project
-                      manager serving as your primary point of contact.
-                      Designers, developers, and other specialists collaborate
-                      to turn your concept into a functional, market-ready
-                      product.
+                    Your dedicated project team gets to work with a project manager serving as your
+                     primary point of contact. Designers, mobile app developers, and other specialists
+                     collaborate to turn your concept into a functional, market-ready product. 
                     </p>
                   </div>
                 </div>
@@ -1243,9 +1255,7 @@ export default function LandingPage() {
                     Feel Free to Contact Us!
                   </h3>
                   <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-gray-600 leading-relaxed mb-7">
-                    Discuss your app idea with our consultants and we'll help
-                    you transform them to multi-million dollar reality. It's
-                    Free!
+                    Discuss your app idea with our consultants, and we'll help you transform it into a multi-million-dollar reality with our mobile app creation service. It's Free!
                   </p>
                   <form
                     onSubmit={handleSubmit}
@@ -1261,9 +1271,8 @@ export default function LandingPage() {
                           onChange={handleChange}
                           placeholder="Name*"
                           disabled={loading}
-                          className={`w-full rounded-full border ${
-                            errors.name ? "border-red-500" : "border-gray-200"
-                          } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
+                          className={`w-full rounded-full border ${errors.name ? "border-red-500" : "border-gray-200"
+                            } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
                         />
 
                         {errors.name && (
@@ -1280,9 +1289,8 @@ export default function LandingPage() {
                           onChange={handleChange}
                           placeholder="Email*"
                           disabled={loading}
-                          className={`w-full rounded-full border ${
-                            errors.email ? "border-red-500" : "border-gray-200"
-                          } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
+                          className={`w-full rounded-full border ${errors.email ? "border-red-500" : "border-gray-200"
+                            } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
                         />
 
                         {errors.email && (
@@ -1299,9 +1307,8 @@ export default function LandingPage() {
                           onChange={handleChange}
                           placeholder="Phone*"
                           disabled={loading}
-                          className={`w-full rounded-full border ${
-                            errors.phone ? "border-red-500" : "border-gray-200"
-                          } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
+                          className={`w-full rounded-full border ${errors.phone ? "border-red-500" : "border-gray-200"
+                            } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
                         />
 
                         {errors.phone && (
@@ -1319,9 +1326,8 @@ export default function LandingPage() {
                         onChange={handleChange}
                         placeholder="Enter a brief description of your App Project"
                         disabled={loading}
-                        className={`w-full rounded-full border ${
-                          errors.message ? "border-red-500" : "border-gray-200"
-                        } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
+                        className={`w-full rounded-full border ${errors.message ? "border-red-500" : "border-gray-200"
+                          } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
                       />
 
                       {errors.message && (
@@ -1368,11 +1374,10 @@ export default function LandingPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className={`rounded-full bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${
-                          loading
-                            ? "cursor-not-allowed opacity-60"
-                            : "cursor-pointer hover:bg-[#d9141c]"
-                        }`}
+                        className={`rounded-full bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${loading
+                          ? "cursor-not-allowed opacity-60"
+                          : "cursor-pointer hover:bg-[#d9141c]"
+                          }`}
                       >
                         {loading ? "Sending..." : "Get A Free Quote"}
                       </button>
