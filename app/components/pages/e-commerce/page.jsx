@@ -185,7 +185,7 @@ export default function foodOrdering() {
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-900">
-                That&apos;s exactly the gap Devapp was built to close. As a
+                That&apos;s exactly the gap Devapp Grid was built to close. As a
                 leading <strong>eCommerce app development company</strong>, we
                 stay laser-focused on performance and functionality, delivering
                 mobile commerce solutions that help your business stay
@@ -1012,7 +1012,7 @@ export default function foodOrdering() {
             </h2>
 
             <p className="text-gray-600 text-sm md:text-base leading-relaxed px-5">
-              Devapp solutions has always been honored with valuable words for
+              Devapp Grid has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1132,7 +1132,7 @@ export default function foodOrdering() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              Devapp solutions is a leading Software, Web, & Mobile App
+              Devapp Grid is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end to end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -1218,7 +1218,7 @@ export default function foodOrdering() {
               Why should you choose us?
             </h1>
             <p>
-              Devapp is a leading Mobile App Development Company USA has to
+              Devapp Grid is a leading Mobile App Development Company USA has to
               offer that develops applications for different operating systems.
               Our specialists develop a consolidated procedure for every
               business as well as deliver customized guidance at regular
@@ -1442,7 +1442,7 @@ export default function foodOrdering() {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

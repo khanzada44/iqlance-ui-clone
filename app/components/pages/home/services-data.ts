@@ -157,7 +157,7 @@ export const slides = [
     title: "Deliver Mobile App and Software Development Services Across the USA",
 
     description1:
-      "Devapp delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs. By partnering with Devapp, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
+      "Devapp Grid delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs. By partnering with Devapp Grid, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
 
     description2:
       "",
@@ -279,7 +279,7 @@ export const portfolioSlides = [
     heading: "Endeavors That Make Us Proud",
     title: "HRMS Development Solution",
     description:
-      "Meet Devapp HRMS, built by Devapp Solutions. A smarter way to run your HR department from end to end, designed to take the weight off your team's shoulders and put your workforce first.",
+      "Meet Devapp Grid HRMS, built by Devapp Grid. A smarter way to run your HR department from end to end, designed to take the weight off your team's shoulders and put your workforce first.",
 
     features: [
       "Post Jobs in Minutes, Not Hours",
@@ -351,7 +351,7 @@ export const testimonials = [
     verifiedImage:
       "/images/clutch-icon.png.webp",
     review:
-      "Devapp understood our product vision from day one and turned it into a polished, scalable mobile app. Communication was clear, timelines were well managed, and the final product exceeded our expectations.",
+      "Devapp Grid understood our product vision from day one and turned it into a polished, scalable mobile app. Communication was clear, timelines were well managed, and the final product exceeded our expectations.",
   },
   {
     id: 2,
@@ -381,7 +381,7 @@ export const testimonials = [
     verifiedImage:
       "/images/google-logo-new.png.webp",
     review:
-      "From MVP strategy to launch, Devapp kept us focused on the features that actually mattered. Their team helped us move quickly without cutting corners on quality",
+      "From MVP strategy to launch, Devapp Grid kept us focused on the features that actually mattered. Their team helped us move quickly without cutting corners on quality",
   },
   {
     id: 5,
@@ -391,6 +391,6 @@ export const testimonials = [
     verifiedImage:
       "/images/clutch-icon.png.webp",
     review:
-      "We were looking for a development partner who could work closely with our U.S. team. DevApp offered strong communication, flexible engagement, and the technical expertise we needed to scale our application.",
+      "We were looking for a development partner who could work closely with our U.S. team. DevApp Grid offered strong communication, flexible engagement, and the technical expertise we needed to scale our application.",
   },
 ];

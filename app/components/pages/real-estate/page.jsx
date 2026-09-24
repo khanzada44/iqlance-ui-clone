@@ -1090,7 +1090,7 @@ export default function realEstate() {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              Devapp solutions has always been honored with valuable words for
+              Devapp Grid has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1361,7 +1361,7 @@ export default function realEstate() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              Devapp solutions is a leading Software, Web, & Mobile App
+              Devapp Grid is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end to end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -1449,7 +1449,7 @@ export default function realEstate() {
               Why Choose Us?
             </h1>
             <p>
-              Devapp is the dominant real estate mobile app development company
+              Devapp Grid is the dominant real estate mobile app development company
               that provides multiple support to users, has tech-infused
               offerings, agile methodology, and whatnot. We are dedicated to
               enhancing the experience of the buyers and real estate firms by
@@ -1685,7 +1685,7 @@ export default function realEstate() {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

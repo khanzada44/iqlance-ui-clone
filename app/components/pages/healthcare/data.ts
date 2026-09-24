@@ -266,7 +266,7 @@ export const caseStudies = [
   {
     title: "Immigration Management Software",
     description:
-      "At Devapp this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
+      "At Devapp Grid this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
     bgColor: "#c5edff",
     image:
       "/images/immigration-software-slider-2.png",
@@ -639,7 +639,7 @@ export const services = [
     image:"/images/industry/health-care/custom-dp-icn.webp",
     title: " Agile Development ",
     description:
-      "Devapp prioritizes fast, efficient project delivery while maintaining strong client relationships throughout. We also make sure thorough documentation is in place for ongoing support and training",
+      "Devapp Grid prioritizes fast, efficient project delivery while maintaining strong client relationships throughout. We also make sure thorough documentation is in place for ongoing support and training",
   },
   {
     image:"/images/industry/health-care/easy-commution-icn.webp",
@@ -690,7 +690,7 @@ export const testimonials = [
     verifiedImage:
       "/images/clutch-icon.png.webp",
     review:
-      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to Devapp’s technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
+      "The current sandbox product has demonstrated reliable performance and smooth navigation in initial testing, thanks to Devapp’s Grid technical skills. Their willingness to incorporate feedback and consistent responsiveness continue to boost productivity.",
   },
   {
     id: 2,
@@ -700,7 +700,7 @@ export const testimonials = [
     verifiedImage:
       "/images.google-logo-new.png.webp",
     review:
-      "Devapp is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
+      "Devapp Grid is absolutely a topmost company to avail web design and development. From past many months, I was roaming around in search of the best & reliable web development organization and then I found it as a true business partner.",
   },
   {
     id: 3,
@@ -720,7 +720,7 @@ export const testimonials = [
     verifiedImage:
       "/images/good-firms-logo-new.png.webp",
     review:
-      "Devapp was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
+      "Devapp Grid was a great team to work with. They were able to meet our timeline. They are great at technology, they know what they are doing. It has been a great experience overall.",
   },
   {
     id: 5,
@@ -730,7 +730,7 @@ export const testimonials = [
     verifiedImage:
       "/images/clutch-icon.png.webp",
     review:
-      "Devapp’s mobile app received positive feedback from people that interacted with it in the development stage. Devapp communicated quickly, frequently, and over several different platforms.",
+      "Devapp’s Grid mobile app received positive feedback from people that interacted with it in the development stage. Devapp Grid communicated quickly, frequently, and over several different platforms.",
   },
 ];
 export const faqsData = [
@@ -761,7 +761,7 @@ export const faqsData = [
     ],
   },
   {
-    question: "Why choose Devapp to develop a healthcare app?",
+    question: "Why choose Devapp Grid to develop a healthcare app?",
     answer:
       "Our experts encompass a wide array of functionalities and high-quality features in the healthcare app that ensure you become the next market leader. Plus, it comes with the goodness of improved efficiency, high security, seamless connection, and user-friendly structure.",
   },
@@ -771,7 +771,7 @@ export const faqsData = [
       "The primary users of this healthcare app are those struggling to get the required healthcare support on time. The app will provide medical support access to the patients by providing appointment options, real-time chat with a doctor, and other help. Further, it is also for those who believe in a healthy lifestyle by constantly checking their health condition.",
   },
   {
-    question: "What are the coding standards of Devapp developers?",
+    question: "What are the coding standards of Devapp Grid developers?",
     answer:
       " Our certified developers utilize the web framework that contains an organized coding system that further ensures code maintenance. This is because we understand that if a developer doesn’t use it, it may cause an issue in the future.",
   },

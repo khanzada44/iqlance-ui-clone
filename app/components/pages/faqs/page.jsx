@@ -35,7 +35,7 @@ export default function faqs() {
             We have got answers!
           </p>
           <p className="flex items-center justify-center text-center text-black text-[18px] mt-2 px-5">
-            At Devapp Solutions, no two mobile initiatives get the same cookie-cutter treatment.
+            At Devapp Grid, no two mobile initiatives get the same cookie-cutter treatment.
             We're driven by ideas, and our job is turning yours into an application built exclusively
             for your business. That process starts the moment we clear up any confusion or doubts you
             have about app development.
@@ -82,7 +82,7 @@ export default function faqs() {
 
             {/* Description */}
             <p className="mt-6 text-center text-[18px] leading-8 text-black">
-              Devapp Solutions has built a name for itself as a leading software, web,
+              Devapp Grid has built a name for itself as a leading software, web,
               and mobile app development company, with deep experience crafting technology
               solutions that are as secure as they are impressive, backed by end-to-end encryption
               from the ground up. We bring genuine industry expertise
@@ -265,7 +265,7 @@ export default function faqs() {
             </h2>
 
             <p className="mt-2 text-[18px] leading-8 text-[#333]">
-              Take a look at what Devapp Solutions brings to the table: our services,
+              Take a look at what Devapp Grid brings to the table: our services,
               our step-by-step development process for mobile apps and software,
               and what clients have to say after working with us. When you're ready,
               let's start a conversation and build your next great idea into something real.

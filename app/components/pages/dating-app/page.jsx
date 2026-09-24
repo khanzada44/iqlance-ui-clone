@@ -249,7 +249,7 @@ export default function SocialMedia() {
               <p className="text-base md:text-lg leading-relaxed text-black">
                 With a strong focus on security, performance, and thoughtful functionality,
                 we make sure every feature serves a clear purpose. Whether you're launching a
-                new dating startup or expanding an existing platform, Devapp helps you build
+                new dating startup or expanding an existing platform, Devapp Grid helps you build
                 an application designed to encourage meaningful connections while supporting
                 long-term growth.
               </p>
@@ -447,13 +447,13 @@ export default function SocialMedia() {
         </section>
         <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-center text-gray-800">
           <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6">
-            Why Devapp for Custom Dating App Development in the USA
+            Why Devapp Grid for Custom Dating App Development in the USA
           </h2>
 
           <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto mb-10">
             <p>
               Every dating app has a different purpose, audience, and business model.
-              At Devapp, we build custom dating applications around your specific goals,
+              At Devapp Grid, we build custom dating applications around your specific goals,
               user behavior, and growth strategy. From UI/UX design and development to
               testing and deployment, we focus on creating a secure, polished, and
               reliable experience across both Android and iOS.
@@ -948,7 +948,7 @@ export default function SocialMedia() {
                 Endeavors That Make Us Proud
               </h2>
               <p className="text-sm md:text-base text-gray-700 max-w-6xl mx-auto leading-relaxed">
-                Devapp solutions has always been honored with valuable words
+                Devapp Grid has always been honored with valuable words
                 for the efforts given on mobile app development that are
                 efficiently unique and user centric. Here are some of the best
                 examples for this.
@@ -1198,7 +1198,7 @@ export default function SocialMedia() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              Devapp is a leading Software Development Company currently
+              Devapp Grid is a leading Software Development Company currently
               available in the market, with over 7 years of experience under the
               belt. Over the years, our team members have honed their skills,
               handling over 1,500 projects of different types and companies,
@@ -1510,7 +1510,7 @@ export default function SocialMedia() {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

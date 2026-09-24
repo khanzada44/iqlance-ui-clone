@@ -383,7 +383,7 @@ export default function ContactSection() {
               <h2 className="text-4xl font-bold">Our Office</h2>
 
               <p className="max-w-5xl mx-auto mt-6 text-gray-600 leading-8">
-                To better serve our clients, Devapp Solutions has established a
+                To better serve our clients, Devapp Grid has established a
                 global presence, delivering innovative web, mobile, and software
                 development services with local expertise and worldwide reach.
               </p>

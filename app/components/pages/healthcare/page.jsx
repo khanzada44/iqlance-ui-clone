@@ -1091,7 +1091,7 @@ const handleChange = (e) => {
                 Endeavors That Make Us Proud
               </h1>
               <p className="text-center text-black text-lg max-w-1xl mx-auto p-4">
-                Devapp solutions has always been honored with valuable words for
+                Devapp Grid has always been honored with valuable words for
                 the efforts given on mobile app development that are efficiently
                 unique and user centric. Here are some of the best examples for
                 this.
@@ -1397,7 +1397,7 @@ const handleChange = (e) => {
         <section>
           <div>
             <h1 className="flex justify-center font-bold text-3xl mb-10 mt-17">
-              Why Choose Devapp?
+              Why Choose Devapp Grid?
             </h1>
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               As the world’s leading Healthcare app development company, we can
@@ -1626,7 +1626,7 @@ const handleChange = (e) => {
             </h1>
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

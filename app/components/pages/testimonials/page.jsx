@@ -24,16 +24,16 @@ export default function testimonials() {
         <section className="py-10 md:py-14 bg-white mt-4">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-center leading-tight">
-              <span className="text-4xl md:text-6xl font-bold text-red-600">Words of Praise From All The Hard Work</span>
+              <span className="text-4xl md:text-6xl text-red-700">Words of Praise From All The Hard Work</span>
             </h2>
             <p className="max-w-6xl mx-auto mt-8 text-center text-gray-800 text-base sm:text-lg leading-8">
               Few words as the reward of our unique product development process
-              and services given by our valuable clients. Team Devapp solutions
+              and services given by our valuable clients. Team Devapp Grid
               feel pride and appreciated when given reviews and rates as per
               their hardwork.
             </p>
             <p className="max-w-6xl mx-auto mt-8 text-center text-gray-800 text-base sm:text-lg leading-8">
-              Devapp solution has always believed that every emerging is the
+              Devapp Grid has always believed that every emerging is the
               client is not only a solution seeker but is our inspiration to
               face challenges and find an amazing solution that can take the
               purpose of development to the next elevating step.
@@ -68,7 +68,7 @@ export default function testimonials() {
             </h3>
 
             <p className="max-w-6xl mx-auto mt-1 text-center text-gray-700 text-base sm:text-lg leading-8">
-              Devapp solutions is a leading Software, Web, & Mobile App
+              Devapp Grid is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end-to-end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -423,7 +423,7 @@ export default function testimonials() {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
-                Devapp solution. See what process we follow for mobile app and
+                Devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

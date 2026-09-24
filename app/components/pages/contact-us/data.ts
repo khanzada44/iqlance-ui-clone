@@ -1,7 +1,7 @@
 export const offices = [
   {
     id: 1,
-    title: "",
+    title: "Headquarter",
     city: "Los Angeles, USA",
     address: "6565 Sunset Blvd Ste 190, Los Angeles, CA 90028, USA",
     image: "/images/about/contact/texas_usa_office_iq.webp",

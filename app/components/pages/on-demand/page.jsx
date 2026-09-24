@@ -588,7 +588,7 @@ export default function Ondemadd() {
               Endeavors that Make us Proud
             </h2>
             <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
-              Devapp solutions has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
+              Devapp Grid has always been honored with valuable words for the efforts given on mobile app development that are efficiently unique and user centric. Here are some of the best examples for this.
             </p>
           </div>
         </section>
@@ -877,7 +877,7 @@ export default function Ondemadd() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              Devapp is a leading Software Development Company currently available in the market, with over 7 years of experience under the belt.
+              Devapp Grid is a leading Software Development Company currently available in the market, with over 7 years of experience under the belt.
               Over the years, our team members have honed their skills, handling over 1,500 projects of
               different types and companies,
               offering flexible solutions and comprehensive benefits to all.
@@ -1131,7 +1131,7 @@ export default function Ondemadd() {
         </section>
         <section>
           <div className="text-center max-w-4xl mx-auto space-y-4 mt-4 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">Why Choose Devapp?</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">Why Choose Devapp Grid?</h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
               From development to testing, design to deployment, and everything in between, we are the best on-demand app development company  that offers a vast range of scalable solutions.
             </p>
@@ -1358,7 +1358,7 @@ export default function Ondemadd() {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

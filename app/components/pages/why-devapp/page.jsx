@@ -22,7 +22,7 @@ export default function whyDevapp() {
         </div>
         <div className="w-full text-center mt-14">
           <h3 className="text-4xl md:text-6xl font-bold text-red-600">
-            Why Devapp
+            Why Devapp Grid
           </h3>
         </div>
         <div className="w-full text-center mt-14">
@@ -31,7 +31,7 @@ export default function whyDevapp() {
             Because a strong MVP needs more than a development team
           </h2>
           <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black px-5">
-            At Devapp, we combine product thinking, technical expertise, and execution to help
+            At Devapp Grid, we combine product thinking, technical expertise, and execution to help
             businesses turn early-stage ideas into products people can actually use. We don't
             believe in stuffing an MVP with every possible feature. Instead, we identify what can
             create the most value, build it well, and give you a foundation that can grow with your
@@ -116,7 +116,7 @@ export default function whyDevapp() {
               </h2>
 
               <p className="text-gray-700 text-sm leading-6 mb-4">
-                Devapp Solutions has earned its place as a leading software,
+                Devapp Grid has earned its place as a leading software,
                 web, and mobile app development company,
                 with deep experience building technology solutions that are both
                 visually striking and secured end-to-end. We bring real industry expertise
@@ -125,7 +125,7 @@ export default function whyDevapp() {
 
               <p className="text-gray-700 text-sm leading-6 mb-6">
                 As a leading mobile app and software development company in the USA,
-                Devapp has spent years mastering the art of customizing and innovating
+                Devapp Grid has spent years mastering the art of customizing and innovating
                 apps that actually work. We dig deep into research before writing a single
                 line of code, because understanding your app's real needs is where great
                 products start. We push ourselves to stay ahead of the curve, using top-tier
@@ -204,7 +204,7 @@ export default function whyDevapp() {
           </h2>
 
           <p className="w-full text-center text-gray-700 text-lg leading-7 mb-4 px-5">
-            Devapp stands as one of the fastest-growing app development companies,
+            Devapp Grid stands as one of the fastest-growing app development companies,
             with a full team of developers, designers, testers, business developers,
             and marketers all working together under one roof. Our multiplatform mobile app services
             scale to fit anyone, from large enterprises to small and medium businesses.
@@ -263,7 +263,7 @@ export default function whyDevapp() {
           {/* Bottom Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black px-5">
-              10 Reasons to Choose Devapp
+              10 Reasons to Choose Devapp Grid
             </h2>
             <p className="text-center text-xl text-black mb-6 mt-5 px-5">
               Growth doesn't happen by accident, it happens when the right team is behind the wheel.
@@ -376,7 +376,7 @@ export default function whyDevapp() {
             </h2>
 
             <p className="mt-6 text-lg md:text-[20px] leading-8 text-[#4B5563] w-full px-5">
-              Take a look at what Devapp Solutions brings to the table: our services,
+              Take a look at what Devapp Grid brings to the table: our services,
               our step-by-step process for mobile app and software development,
               and what clients have to say after working with us. When you're ready to move forward,
               reach out and let's turn your next great idea into something real.
@@ -432,7 +432,7 @@ export default function whyDevapp() {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
-                Devapp solution. See what process we follow for mobile app and
+                Devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

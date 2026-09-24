@@ -43,7 +43,7 @@ export const slides = [
     image: "/images/industry/Ecommerce/eCommerce-left-2.webp",
     title: "Smart, Personalized Product Recommendations",
     description:
-      "At Devapp, we know that eCommerce success comes down to one thing: understanding how individual users actually shop. That's why personalization sits at the center of everything we build.",
+      "At Devapp Grid, we know that eCommerce success comes down to one thing: understanding how individual users actually shop. That's why personalization sits at the center of everything we build.",
     points: [
       "AI-powered recommendation engines that analyze user behavior to surface relevant, personalized suggestions",
       "Features that keep customers engaged and drive higher cross-selling opportunities",
@@ -182,7 +182,7 @@ export const portfolioSlides = [
     heading: "",
     title: "Immigration Management Software",
     description:
-      " At Devapp this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
+      " At Devapp Grid this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
 
     features: [
       "Easy Operational Visibility",
@@ -469,14 +469,14 @@ export const services = [
       "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "At Devapp, people don’t believe in immobility. We stay on top of fresh ideas and innovations, remove superfluous alternatives, and constantly boost our expertise.",
+      "At Devapp Grid, people don’t believe in immobility. We stay on top of fresh ideas and innovations, remove superfluous alternatives, and constantly boost our expertise.",
   },
   {
     image:
       "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
-      "Contact our Mobile App Development Company USA , Devapp, at any moment. For all of our clients, we are constantly present to handle problems and supply support solutions.",
+      "Contact our Mobile App Development Company USA , Devapp Grid, at any moment. For all of our clients, we are constantly present to handle problems and supply support solutions.",
   },
   {
     image:

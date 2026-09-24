@@ -39,7 +39,7 @@ export const slides = [
     image:"/images/on-demand-left-1.jpg",
     title: "Comprehensive App for Fitness Enthusiasts",
     description:
-      "We at Devapp offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
+      "We at Devapp Grid offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
     points: [
       "Getting regular fitness sessions guided by experts of the fitness sector",
       "Schedule the fitness regime and get the necessary alerts",
@@ -54,7 +54,7 @@ export const slides = [
       "/images/on-demand-left-2.jpg",
     title: "Tracking of Calorie Intake Regularly",
     description:
-      "Our Devapp team is well aware that besides physical exercise, diet of a person has a prime role in achieving fitness goals, whether to get toned muscles and abs, loose extra body fat, increase muscular strength or anything else. Hence, we have developed nutrition app to allow our clients finding healthy food options or getting the necessary consultation solutions from experienced dieticians located in almost any part of the world.",
+      "Our Devapp Grid team is well aware that besides physical exercise, diet of a person has a prime role in achieving fitness goals, whether to get toned muscles and abs, loose extra body fat, increase muscular strength or anything else. Hence, we have developed nutrition app to allow our clients finding healthy food options or getting the necessary consultation solutions from experienced dieticians located in almost any part of the world.",
     points: [
       "Check your calorie intake and compare it with burned calories",
       "Recommendations from an experienced nutritionist to follow an appropriate weight loss/muscle building diet plan",

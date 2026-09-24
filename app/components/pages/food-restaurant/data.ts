@@ -101,7 +101,7 @@ export const ServiceSectionData = [
   {
     title: "",
     description:
-      "Because of all this, the Devapp team has built a reputation for delivering standout app solutions across the restaurant and food business space.",
+      "Because of all this, the Devapp Grid team has built a reputation for delivering standout app solutions across the restaurant and food business space.",
     features: [
       "Keeps you connected with your customers around the clock",
       "Supports third-party CRM integration alongside your backend systems",
@@ -190,7 +190,7 @@ export const portfolioSlides = [
     heading: "",
     title: "Immigration Management Software",
     description:
-      " At Devapp this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
+      " At Devapp Grid this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
 
     features: [
       "Easy Operational Visibility",
@@ -477,14 +477,14 @@ export const services = [
       "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "At Devapp, we don’t believe in stagnation. To put it another way, we stay up with current developments and technology, eliminate duplicate alternatives, and continually enhance our abilities and application development ideas.",
+      "At Devapp Grid, we don’t believe in stagnation. To put it another way, we stay up with current developments and technology, eliminate duplicate alternatives, and continually enhance our abilities and application development ideas.",
   },
   {
     image:
       "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
-      "At any moment, contact our team at the Devapp app development business for a food app. For all of our clients, we are always accessible to answer questions and offer emergency solutions.",
+      "At any moment, contact our team at the Devapp Grid app development business for a food app. For all of our clients, we are always accessible to answer questions and offer emergency solutions.",
   },
   {
     image:
@@ -567,7 +567,7 @@ export const faqsData = [
   {
     question: "Is there usually post-launch app servicing?",
     answer:
-      "We have assistance specialists at Devapp that are solely dedicated to providing organisations with post-launch help. Contact the customer service staff at any time.",
+      "We have assistance specialists at Devapp Grid that are solely dedicated to providing organisations with post-launch help. Contact the customer service staff at any time.",
   },
 ];
 

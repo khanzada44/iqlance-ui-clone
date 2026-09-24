@@ -1087,7 +1087,7 @@ export default function Home() {
             </h2>
 
             <p className="max-w-6xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base">
-              At Devapp, we don't believe in one-size-fits-all every industry
+              At Devapp Grid, we don't believe in one-size-fits-all every industry
               has its own challenges, and our solutions are built to match.
               Backed by deep, hands-on experience across sectors, we deliver
               high-quality web applications, mobile apps, and custom software
@@ -1284,7 +1284,7 @@ export default function Home() {
             Have Something in Mind? Let's Talk.
           </h1>
           <p className="flex items-center justify-center text-center mt-3 sm:mt-4 text-sm sm:text-base">
-            Take a look at what Devapp Solutions brings to the table our
+            Take a look at what Devapp Grid brings to the table our
             services, our development process, and the proven approach we follow
             for mobile app and software development. See what our clients have
             to say about working with us. Then, let's start a conversation and

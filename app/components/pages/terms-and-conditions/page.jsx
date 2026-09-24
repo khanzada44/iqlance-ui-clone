@@ -1,4 +1,9 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import QuoteModal from "../QuoteModal/QuoteModal";
+import Image from "next/image";
 import {
   Phone,
   ArrowRight,
@@ -18,54 +23,57 @@ import {
 } from "react-icons/fa";
 
 export default function TermsAndConditions() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <main className="min-h-screen text-slate-800">
-      <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
-        <div className="mx-auto flex h-20 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
-          {/* LOGO */}
-          <div className="flex items-center">
-            <Link href="/">
-              <img
+        <header className="sticky top-0 z-50 w-full  border-gray-800 bg-white">
+          <div className="mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
+            <div className="flex items-center">
+              <Image
                 src="/images/Dev-App-04.png"
                 alt="Dev App Grid"
+                width={500}
+                height={500}
                 className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
               />
-            </Link>
-          </div>
-
-          {/* RIGHT HEADER */}
-          <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">
-            {/* PHONE */}
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100/80 text-red-600">
-                <Phone size={16} />
-              </div>
-
-              <div className="hidden leading-tight sm:block">
-                <p className="text-[13px] font-bold text-gray-900">
-                  +1 (866) 978-8570
-                </p>
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-red-600">
-                  Call Us Today!
-                </p>
-              </div>
             </div>
+            <div className="flex items-center gap-3 sm:gap-5 lg:gap-8">
+              <div className="flex items-center gap-2">
+                <div className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-red-100">
+                  <Phone size={15} className="text-red-500" />
+                </div>
 
-            <Link
-              href="/request-a-quote"
-              className="group flex h-10 items-center gap-2 rounded-full bg-red-600 px-5 text-xs font-semibold text-white shadow-md shadow-red-600/20 transition-all hover:bg-red-700 hover:shadow-lg sm:px-6"
-            >
-              <span className="hidden sm:inline">Get A Free Quote</span>
-              <span className="sm:hidden">Quote</span>
+                <div className="hidden leading-tight sm:block">
+                  <span className="text-[12px] font-semibold text-gray-800 lg:text-[13px]">
+                    +1 (866) 978-8570
+                  </span>
 
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-300 group-hover:translate-x-1"
+                  <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
+                    Call Us Today!
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="group flex h-9 items-center gap-2 rounded-sm bg-red-600 px-4 text-[10px] font-semibold text-white transition hover:bg-red-700 sm:px-5 sm:text-[11px] lg:h-9.5 lg:px-6 lg:text-[12px]"
+              >
+                <span className="hidden sm:inline">Get A Free Quote</span>
+                <span className="sm:hidden">Quote</span>
+
+                <ArrowRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </button>
+              <QuoteModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
               />
-            </Link>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
       <section className="bg-linear-to-r from-red-700 via-red-600 to-red-900 py-16 text-white sm:py-20">
         <div className="mx-auto w-[92%] max-w-5xl text-center">
 
@@ -559,34 +567,38 @@ export default function TermsAndConditions() {
         {/* CTA */}
         <div className="py-8">
 
-          <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+          <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-6xl together">
             Let&apos;s work together!
           </h2>
 
-          <Link
-            href="/request-a-quote"
-            className="inline-block rounded-full bg-red-600 px-10 py-4 text-[15px] font-medium text-white shadow-lg transition-colors hover:bg-red-700"
-          >
-            Get A Free Quote
-          </Link>
+          <div>
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(true)}
+              className="inline-block bg-red-600 hover:bg-red-700 text-white font-medium text-[15px] px-10 py-4 rounded-full shadow-lg transition-colors cursor-pointer"
+            >
+              Get A Free Quote
+            </button>
+            <QuoteModal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            />
 
-          {/* LEGAL LINKS */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
-
+          </div>
+          <div className="flex items-center gap-4 text-sm justify-center mt-11 policys-button">
             <Link
               href="/terms-and-conditions"
-              className="text-gray-400 underline underline-offset-4 transition-colors hover:text-red-500"
+              className="text-white hover:text-red-600 transition-colors "
             >
               Terms & Conditions
             </Link>
 
             <Link
               href="/privacy-policy"
-              className="text-gray-400 underline underline-offset-4 transition-colors hover:text-red-500"
+              className="text-white hover:text-red-600 transition-colors "
             >
               Privacy Policy
             </Link>
-
           </div>
         </div>
       </div>

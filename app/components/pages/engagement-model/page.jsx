@@ -174,7 +174,7 @@ export default function EngagementModelSection() {
                 </h3>
 
                 <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
-                  Devapp Solutions has built its reputation on more than just great technology;
+                  Devapp Grid has built its reputation on more than just great technology;
                   it's the long-term relationships we build with clients that set us apart. Our experienced
                   development team knows that the right engagement model isn't a small detail, it's
                   the foundation for quality delivery, real transparency, and a project that actually succeeds.
@@ -397,7 +397,7 @@ export default function EngagementModelSection() {
 
                 <p className="mt-5 sm:mt-6 text-sm sm:text-base md:text-[17px] leading-7 sm:leading-8 text-gray-600">
                   Not sure where to start? That's exactly what we're here for.
-                  Devapp offers a free 20-minute consultation with an experienced expert to
+                  Devapp Grid offers a free 20-minute consultation with an experienced expert to
                   help you nail down your product vision, development requirements, and project goals.
                   Get in touch with us today. Let's figure it out together.
                 </p>
@@ -646,7 +646,7 @@ export default function EngagementModelSection() {
               A Development Partner Businesses Actually Trust
             </h2>
             <p className="w-full mx-auto mt-4 text-center text-1xl leading-8 text-black">
-              Devapp Solutions has spent years earning its reputation as a go-to name
+              Devapp Grid has spent years earning its reputation as a go-to name
               in custom software, web, and mobile app development, and it shows in the work.
               We build secure, scalable technology solutions shaped around what each business
               actually needs, not a generic template. Pair that with a team that knows both
@@ -708,7 +708,7 @@ export default function EngagementModelSection() {
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-4xl mb-8 leading-relaxed faq">
-              Choosing the right engagement model can make or break a project, and that's exactly where our experts come in. Devapp Solutions has built its name as a trusted software, web, and mobile app development company, delivering secure, scalable, custom technology solutions for years. Our team brings together technical know-how and a structured development approach, helping businesses turn great ideas into digital products that actually succeed. Talk to us today, and let's find the model that works for you.
+              Choosing the right engagement model can make or break a project, and that's exactly where our experts come in. Devapp Grid has built its name as a trusted software, web, and mobile app development company, delivering secure, scalable, custom technology solutions for years. Our team brings together technical know-how and a structured development approach, helping businesses turn great ideas into digital products that actually succeed. Talk to us today, and let's find the model that works for you.
             </p>
 
             {/* Contact Info Box */}

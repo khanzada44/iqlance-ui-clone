@@ -49,7 +49,7 @@ export const slides = [
     image:"/images/industry/real-estate/realeaste-left-2.webp",
     title: "Assistance in Buy/Sell of Property",
     description:
-      "Our real estate app helps you in accomplishing your every possible need while you go to buy or sell your property. Thus, our team at Devapp delivers you unrivaled solutions to fulfill almost need of our clients. These are-",
+      "Our real estate app helps you in accomplishing your every possible need while you go to buy or sell your property. Thus, our team at Devapp Grid delivers you unrivaled solutions to fulfill almost need of our clients. These are-",
           points: [
       "Display of any property based on interest of customers",
       "Virtual tour, photo and video galleries",
@@ -107,7 +107,7 @@ export const ServiceSectionData = [
   },
 
   {
-    title: "Why US Real Estate Businesses Choose Devapp",
+    title: "Why US Real Estate Businesses Choose Devapp Grid",
 
     description:
       "We bring proven, results-driven strategies to every real estate app we build covering development, marketing, and post-launch optimization. Here's what sets us apart in a crowded PropTech market:",
@@ -204,7 +204,7 @@ export const portfolioSlides = [
     heading: "",
     title: "Immigration Management Software",
     description:
-      " At Devapp this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
+      " At Devapp Grid this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
 
     features: [
       "Easy Operational Visibility",

@@ -30,7 +30,7 @@ export default function ourProcess() {
             </p>
 
             {/* Main Heading */}
-            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 mt-2 mb-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-red-700 mt-2 mb-6">
               Our Process
             </h2>
 
@@ -79,7 +79,7 @@ export default function ourProcess() {
                 Offshore Web, Mobile & Software Development Company
               </h3>
               <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                Devapp solutions is a leading Software, Web, & Mobile App
+                Devapp Grid is a leading Software, Web, & Mobile App
                 Development Company with a vast area of experience in crafting
                 stunning and end to end encrypted technology solutions. We offer
                 excellent expertise of the industry followed by an exactly
@@ -130,7 +130,7 @@ export default function ourProcess() {
                 </h2>
 
                 <p className="mt-8 text-gray-700 text-base md:text-lg leading-8">
-                  At Devapp, ideas aren't just discussed, they're built. We're
+                  At Devapp Grid, ideas aren't just discussed, they're built. We're
                   dedicated to shaping your idea into a real product through a
                   process that's straightforward, easy to follow, and covers
                   every angle of app development, without ever losing sight of
@@ -766,7 +766,7 @@ export default function ourProcess() {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
-                Devapp solution. See what process we follow for mobile app and
+                Devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

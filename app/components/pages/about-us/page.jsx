@@ -24,7 +24,7 @@ export default function About() {
         <section className="bg-white py-20">
           <div className="  text-center">
            <h3 className="text-4xl md:text-6xl font-bold text-red-600">
-              About Devapp
+              About DevApp Grid
             </h3>
           </div>
 
@@ -32,25 +32,15 @@ export default function About() {
             <h3 className="text-xl md:text-3xl font-bold text-black">
               Award-Winning App Development Agency
             </h3>
-
-            {/* Paragraph 1 */}
             <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
-              Devapp Solutions is a leading software and mobile app development
-              company serving clients in the USA. Our team of dedicated
-              developers is always eager to innovate customized solutions based
-              on your business needs.
+              DevApp Grid is a leading software and mobile app development company serving clients in the USA. Our team of dedicated developers is always eager to innovate customized solutions based on your business needs.
             </p>
-
-            {/* Paragraph 2 */}
             <p className="mx-auto mt-10 w-full text-lg md:text-[22px] leading-relaxed text-black">
-              Our highly experienced dedicated developers make us award-winning
-              app development agency in the USA. We design solutions that lend
-              high levels of client satisfaction.
+              Our highly experienced, dedicated developers make us an award-winning app development agency in the USA. We design solutions that deliver high levels of client satisfaction.
             </p>
 
 
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6">
-              {/* Inquiry Now Link */}
               <Link
                 href="/contact-us"
                 className="group inline-flex items-center gap-3 bg-red-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-red-600"
@@ -83,7 +73,7 @@ export default function About() {
               Trusted Custom Software, Web Mobile App Development Services
             </h2>
             <p className="w-full mx-auto mt-4 text-center text-1sxl leading-8 text-black">
-              Devapp solutions is a leading Software, Web, & Mobile App
+              Devapp Grid is a leading Software, Web, & Mobile App
               Development Company with a extensive experience in crafting
               stunning and secure, end-to-end technology solutions. We offer
               excellent expertise of the industry followed by an well-planned
@@ -151,7 +141,7 @@ export default function About() {
                 </p>
 
                 <p className="mt-1 text-[17px] leading-9 ">
-                  Since 2014, Devapp Solutions has delivered more than 1,500
+                  Since 2014, Devapp Grid has delivered more than 1,500
                   digital products, including software and mobile applications
                   such as Doggy Dates, Bidda, Stable Hub, and Ukitchen. We are
                   proud to have worked with 250+ satisfied clients worldwide.
@@ -371,7 +361,6 @@ export default function About() {
               Reality
             </h2>
 
-            {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               Send your Requirements on:
             </p>
@@ -399,8 +388,6 @@ export default function About() {
                 </a>
 
                 <span className="text-gray-500 font-normal">or</span>
-
-                {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                    <div
                     className="w-6 h-6 bg-red-600"
@@ -423,13 +410,10 @@ export default function About() {
                   <a
                     href="tel:+16476379108"
                   >
-                      
                   </a>
                 </div>
               </div>
             </div>
-
-            {/* Action Button */}
             <div>
               <Link
                 href="/request-a-quote"
@@ -493,7 +477,7 @@ export default function About() {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
-                Devapp solution. See what process we follow for mobile app and
+                Devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

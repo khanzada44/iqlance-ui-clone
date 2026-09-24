@@ -188,7 +188,7 @@ const handleChange = (e) => {
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
                 The wellness and fitness industry is undergoing a major digital shift,
                 and forward-thinking business leaders are increasingly turning to mobile solutions
-                to stay ahead. At Devapp, we recognize this shift and bring a
+                to stay ahead. At Devapp Grid, we recognize this shift and bring a
                 team of seasoned experts ready to craft the perfect digital solution for your brand.
               </p>
 
@@ -407,7 +407,7 @@ const handleChange = (e) => {
               </h2>
 
               <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
-                At Devapp, we&apos;re committed to delivering the most effective fitness
+                At Devapp Grid, we&apos;re committed to delivering the most effective fitness
                 solutions in the industry. That&apos;s why we&apos;ve built a diverse
                 portfolio of innovative wellness and fitness app development solutions,
                 helping fitness enthusiasts get their questions answered in record time.
@@ -1034,7 +1034,7 @@ const handleChange = (e) => {
               </h2>
 
               <p>
-                At Devapp, our team of digital specialists lives and breathes wellness and
+                At Devapp Grid, our team of digital specialists lives and breathes wellness and
                 fitness solutions. Our fitness app developers are fitness enthusiasts
                 themselves, which means they truly understand what end users need. They
                 bring a clear vision to every build, incorporating a diverse range of
@@ -1113,7 +1113,7 @@ const handleChange = (e) => {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              Devapp solutions has always been honored with valuable words for
+              Devapp Grid has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1331,7 +1331,7 @@ const handleChange = (e) => {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              Devapp solutions is a leading Software, Web, & Mobile App
+              Devapp Grid is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end to end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -1640,7 +1640,7 @@ const handleChange = (e) => {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

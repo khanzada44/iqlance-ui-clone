@@ -96,14 +96,14 @@ export const tabsData = [
       "This model is ideal for long-term projects that require flexibility, ongoing development, and direct involvement in resource management and project progress.",
     ],
     howItWorks: [
-      "Devapp provides support through our team of project managers, app developers, and designers. These experts handle your project with all their dedication.",
+      "Devapp Grid support through our team of project managers, app developers, and designers. These experts handle your project with all their dedication.",
       "Once we understand your project requirements, we recommend the right team structure and provide details about the available resources. You can then select the professionals who best match your project needs and begin development.",
     ],
   },
 ];
 export const faqsData = [
   {
-    question: " What types of engagement models does Devapp Solutions provide? ",
+    question: " What types of engagement models does Devapp Grid provide? ",
     answer:
       "We offer three engagement models: Time and Material, Fixed Price, and Dedicated Team. Our experts can help you choose the right model based on your project scope, requirements, timeline, and budget.",
     
@@ -122,7 +122,7 @@ export const faqsData = [
     ],
   },
   {
-    question: "What type of support does Devapp provide with the Dedicated Team model?",
+    question: "What type of support does Devapp Grid provide with the Dedicated Team model?",
     answer:
       "Our Dedicated Team model includes support from project managers and skilled developers who collaborate with you throughout the project. You can stay involved in the development process and track project progress through regular communication and updates.",
   },

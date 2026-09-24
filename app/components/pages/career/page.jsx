@@ -31,21 +31,21 @@ export default function career() {
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl md:text-6xl font-bold text-center">
-              <span className="text-4xl md:text-5xl font-extrabold text-red-600 mt-2 mb-6">Careers at Devapp</span>
+              <span className="text-4xl md:text-5xl font-extrabold text-red-600 mt-2 mb-6">Careers at Devapp Grid</span>
             </h2>
 
             {/* Description */}
             <div className="max-w-6xl mx-auto mt-8 space-y-6 text-center text-gray-700 text-base md:text-xl leading-8">
               <p>
                 Some companies hire people to fill seats.
-                We're not one of them. At Devapp, we look for people who actually
+                We're not one of them. At Devapp Grid, we look for people who actually
                 want to build things that matter, and then we give them the room,
                 the tools, and the trust to do exactly that.
 
               </p>
 
               <p>
-                You won't get lost in the shuffle here. Every Devappr works on real projects,
+                You won't get lost in the shuffle here. Every Devapp Grid works on real projects,
                 with real clients, solving real problems, not stuck running the same five tasks on repeat
                 for two years straight. If you're the kind of person who gets restless without a challenge,
                 this is probably where you belong
@@ -97,7 +97,7 @@ export default function career() {
               </h3>
 
               <p className="max-w-5xl mx-auto mt-8 text-center text-gray-700 text-base md:text-lg leading-8">
-                Devapp solutions is a leading Software, Web, & Mobile App
+                Devapp Grid is a leading Software, Web, & Mobile App
                 Development Company with a vast area of experience in crafting
                 stunning and end-to-end encrypted technology solutions. We offer
                 excellent expertise of the industry followed by an exactly
@@ -144,7 +144,7 @@ export default function career() {
           <div className="max-w-7xl mx-auto px-4 mt-10">
             {/* About */}
             <div className="max-w-6xl mx-auto text-center">
-              <h3 className="text-3xl md:text-5xl font-bold">About Devapp</h3>
+              <h3 className="text-3xl md:text-5xl font-bold">About Devapp Grid</h3>
 
               <div className="mt-8 space-y-7 text-gray-700 text-base md:text-lg leading-8">
                 <p>
@@ -173,7 +173,7 @@ export default function career() {
 
             <div className="max-w-6xl mx-auto mt-20 text-center">
               <h2 className="text-3xl md:text-5xl font-bold">
-                Why Join Devapp?
+                Why Join Devapp Grid?
               </h2>
 
               <p className="mt-8 text-gray-700 text-base md:text-lg leading-8 max-w-5xl mx-auto">
@@ -208,7 +208,7 @@ export default function career() {
             {/* Top Description */}
             <div className="max-w-4xl mx-auto space-y-4 text-gray-700 text-sm md:text-base leading-relaxed mb-12">
               <p>
-                Walk into Devapp on any given day, and you'll feel it before anyone even explains it:
+                Walk into Devapp Grid on any given day, and you'll feel it before anyone even explains it:
                 this is a place built on the mix of technical innovation and creative energy.
                 We work hard, sure, but we also learn, laugh, and build something new almost every
                 single day, and that combination is what makes the culture here genuinely different.
@@ -216,7 +216,7 @@ export default function career() {
               </p>
               <p>
                 Ideas aren't just welcomed here, they're expected.
-                Every Devappr has the freedom to think differently,
+                Every Devapp Grid has the freedom to think differently,
                 speak up, and actually see their ideas come to life,
                 and that kind of creative freedom is rare to find.
                 You can feel it the moment you step into our workspace:
@@ -260,7 +260,7 @@ export default function career() {
             {/* Life at Devapp Section */}
             <div className="max-w-5xl mx-auto text-left">
               <h3 className="text-2xl md:text-3xl font-extrabold text-black text-center mb-10">
-                Life at Devapp
+                Life at Devapp Grid
               </h3>
 
               {/* 3-Column List */}
@@ -421,7 +421,7 @@ export default function career() {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
                 Have a look at the services and development process of the
-                devapp solution. See what process we follow for mobile app and
+                devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

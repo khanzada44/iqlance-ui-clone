@@ -4,34 +4,30 @@ import { useEffect } from "react";
 import Script from "next/script";
 
 export default function ZendeskWidget() {
-  const openWidget = () => {
-    if (typeof window === "undefined") return;
+const openWidget = () => {
+  if (typeof window === "undefined") return;
 
-    const zE = (window as any).zE;
+  const zE = (window as any).zE;
 
-    if (typeof zE === "function") {
-      zE(() => {
-        try {
-          zE("webWidget", "open");
-        } catch (e) {
-          console.error("[Zendesk] Open failed:", e);
-        }
-      });
-      try {
-        zE("webWidget:on", "open", () => {
-        });
-      } catch (e) {
-      }
-    }
-  };
+  if (typeof zE !== "function") {
+    console.warn("Zendesk Widget is not loaded yet.");
+    return;
+  }
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      openWidget();
-    }, 800);
+  try {
+    zE(() => {
+      zE("webWidget", "open");
+    });
+  } catch (error) {
+    console.error("Zendesk Failed to open widget:", error);
+  }
+};
 
-    return () => clearTimeout(timer);
-  }, []);
+useEffect(() => {
+  const timer = window.setTimeout(openWidget, 800);
+
+  return () => window.clearTimeout(timer);
+}, []);
 
   return (
     <Script

@@ -110,7 +110,7 @@ export const portfolioSlides = [
     heading: "",
     title: "Commercial Movers",
     description:
-      "Devapp Solutions created the commercial movers app, a comprehensive business management platform to solve staffing challenges. This platform provides access to a vetted network of mobile movers and dynamic pricing models. Our technology helps moving companies expand seamlessly and efficiently across projects and regions.",
+      "Devapp Grid created the commercial movers app, a comprehensive business management platform to solve staffing challenges. This platform provides access to a vetted network of mobile movers and dynamic pricing models. Our technology helps moving companies expand seamlessly and efficiently across projects and regions.",
 
     features: [
       "Access vetted mobile movers",
@@ -476,14 +476,14 @@ export const services = [
       "/images/custom-dp-icn.png",
     title: " Agile Development ",
     description:
-      "At Devapp, we don’t believe in stagnation. To put it another way, we stay up with current developments and technology, eliminate duplicate alternatives, and continually enhance our abilities and application development ideas.",
+      "At Devapp Grid, we don’t believe in stagnation. To put it another way, we stay up with current developments and technology, eliminate duplicate alternatives, and continually enhance our abilities and application development ideas.",
   },
   {
     image:
       "/images/easy-commution-icn.png",
     title: "Easy Communication",
     description:
-      "At any moment, contact our team at the Devapp app development business for a food app. For all of our clients, we are always accessible to answer questions and offer emergency solutions.",
+      "At any moment, contact our team at the Devapp Grid app development business for a food app. For all of our clients, we are always accessible to answer questions and offer emergency solutions.",
   },
   {
     image:
@@ -572,6 +572,6 @@ export const faqsData = [
   {
     question: "Is post-launch app maintenance always available?",
     answer:
-      "At Devapp, we have support professionals who focus entirely on post-launch support for companies. Contact the support team whenever.",
+      "At Devapp Grid, we have support professionals who focus entirely on post-launch support for companies. Contact the support team whenever.",
   },
 ];

@@ -92,7 +92,7 @@ export const slides = [
     image: "/images/industry/wellness-fitness/wellness-left-1.webp",
     title: "Comprehensive App for Fitness Enthusiasts",
     description:
-      "We at Devapp offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
+      "We at Grid offer you with a comprehensive mobile fitness app that comes with almost everything required by any fitness enthusiast to maintain his/her perfect body shape. Our health and fitness app helps you to schedule your workout, choose an appropriate diet plan, plays role as a running assistant and as a fitness coach, while offers workout videos, which you may follow in your gym or home.",
     points: [
       "Getting regular fitness sessions guided by experts of the fitness sector",
       "Schedule the fitness regime and get the necessary alerts",
@@ -263,7 +263,7 @@ export const caseStudies = [
   {
     title: "Immigration Management Software",
     description:
-      "At Devapp this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
+      "At Devapp Grid this is the first step towards not only building an app but also a client-developer relationship that lasts for long. The client in this stage describes his ideas to the developers on which they can build.",
     bgColor: "#c5edff",
     image:
       "/images/immigration-software-slider-2.png",
@@ -343,7 +343,7 @@ export const faqsData = [
   {
     question: "Is post-launch app maintenance always available?",
     answer:
-      "At Devapp, we have support professionals who focus entirely on post-launch support for companies. Contact the support team whenever.",
+      "At Devapp Grid, we have support professionals who focus entirely on post-launch support for companies. Contact the support team whenever.",
   },
 ];
 

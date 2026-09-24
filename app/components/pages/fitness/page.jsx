@@ -532,7 +532,7 @@ export default function fitness() {
               Why Choose Us for Fitness App Development?
             </h2>
             <p className="text-black md:text-base max-w-7xl mx-auto">
-              At Devapp Solutions USA, we pride ourselves on offering an extensive range of features that empower fitness enthusiasts to take control of their health and wellness journey. Our fitness apps are designed to deliver exceptional user experiences, helping users stay motivated, track progress, and achieve their fitness goals. Below are the standout features of our fitness app development:
+              At DevApp Grid USA, we pride ourselves on offering an extensive range of features that empower fitness enthusiasts to take control of their health and wellness journey. Our fitness apps are designed to deliver exceptional user experiences, helping users stay motivated, track progress, and achieve their fitness goals. Below are the standout features of our fitness app development:
             </p>
           </div>
         </section>
@@ -645,7 +645,7 @@ export default function fitness() {
               <p>
                 The health and wellness app space is booming, with millions of
                 downloads happening every single month, but that also means standing
-                out takes more than just a good idea. At Devapp USA, we build custom
+                out takes more than just a good idea. At Devapp Grid USA, we build custom
                 fitness app solutions engineered for real differentiation: sharper UX,
                 smarter features, and stronger user retention.
               </p>
@@ -665,7 +665,7 @@ export default function fitness() {
             <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto px-5">
               <p>
                 While many app development companies outsource behind the scenes,
-                Devapp keeps everything in-house and based right here in the USA. We
+                Devapp Grid keeps everything in-house and based right here in the USA. We
                 meet with clients directly, which means your vision doesn't get lost
                 in translation; it gets built exactly the way you imagined it, aligned
                 with your business goals and target users.
@@ -1087,7 +1087,7 @@ export default function fitness() {
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
 
-            At Devapp Solutions USA, we strive to build fitness apps that are not only
+            At DevApp Grid USA, we strive to build fitness apps that are not only
             cutting-edge but also user-friendly
             and impactful. Here’s why we stand out from the competition:
           </p>
@@ -1300,7 +1300,7 @@ export default function fitness() {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

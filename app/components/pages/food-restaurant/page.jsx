@@ -410,7 +410,7 @@ const handleChange = (e) => {
               </h2>
 
               <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">
-                Devapp has spent years earning its place as a trusted{" "}
+                Devapp Grid has spent years earning its place as a trusted{" "}
                 <strong>restaurant app development company</strong>, working with
                 restaurant owners and food businesses of every size, including startups
                 moving their entire operation online for the first time.
@@ -501,7 +501,7 @@ const handleChange = (e) => {
                 Reaching your specific audience is where the real payoff happens.
                 Building an app that appeals to the millions of people looking for
                 dining or takeout options helps you grow your customer base without
-                added friction on your end. The app does the heavy lifting. Devapp
+                added friction on your end. The app does the heavy lifting. Devapp Grid
                 brings deep, hands-on expertise in food delivery app development to
                 clients across the industry, and we&apos;ve distilled it into a
                 development approach built around the essentials that actually drive
@@ -995,7 +995,7 @@ const handleChange = (e) => {
               </p>
 
               <p>
-                At Devapp, we assess your business model, target audience, required
+                At Devapp Grid, we assess your business model, target audience, required
                 features, UI/UX complexity, backend architecture, integrations, and
                 technology stack before estimating the development cost. This allows us
                 to create a pricing plan based on your actual requirements rather than
@@ -1038,7 +1038,7 @@ const handleChange = (e) => {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed px-5">
-              Devapp solutions has always been honored with valuable words for
+              Devapp Grid has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1250,7 +1250,7 @@ const handleChange = (e) => {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              Devapp solutions is a leading Software, Web, & Mobile App
+              Devapp Grid is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end to end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -1333,7 +1333,7 @@ const handleChange = (e) => {
               Why should you choose us?
             </h1>
             <p>
-              Devapp is a top-tier food application creation company that
+              Devapp Grid is a top-tier food application creation company that
               creates applications for a variety of operating systems, including
               Android and iPhone. Our professionals provide a centralized
               process for each customer and provide personalised assistance in
@@ -1560,7 +1560,7 @@ const handleChange = (e) => {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

@@ -227,7 +227,7 @@ export default function SocialMedia() {
               </h1>
               Build a Dating App People Actually Fall For
               <p className="text-base md:text-lg leading-relaxed text-black">
-                At Devapp, we design and build enterprise-grade social
+                At Devapp Grid, we design and build enterprise-grade social
                 networking applications for ambitious brands that want to create
                 meaningful digital communities. Our USA-based development team
                 creates scalable solutions tailored to your business
@@ -433,7 +433,7 @@ export default function SocialMedia() {
                 Social Networking Apps Engineered to Grow Your Business
               </h2>
               <p className="text-sm md:text-base text-black max-w-6xl mx-auto leading-relaxed">
-                Our certified developers at Devapp, a trusted mobile app
+                Our certified developers at Devapp Grid, a trusted mobile app
                 development company in the USA, build powerful, purpose-driven
                 social media solutions for businesses of every size. Backed by
                 deep software integration, cross-platform compatibility, and
@@ -486,7 +486,7 @@ export default function SocialMedia() {
               Features of Social Networking App Development
             </h2>
             <p className="text-black text-sm md:text-base max-w-6xl mx-auto">
-              Devapp solutions has always been honored with valuable words for
+              Devapp Grid has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -859,7 +859,7 @@ export default function SocialMedia() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              Devapp is a leading Software Development Company currently
+              Devapp Grid is a leading Software Development Company currently
               available in the market, with over 7 years of experience under the
               belt. Over the years, our team members have honed their skills,
               handling over 1,500 projects of different types and companies,
@@ -1122,7 +1122,7 @@ export default function SocialMedia() {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

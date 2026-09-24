@@ -181,7 +181,7 @@ const handleChange = (e) => {
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                At <span className="font-semibold text-gray-900">Devapp</span>, we create
+                At <span className="font-semibold text-gray-900">Devapp Grid</span>, we create
                 custom <span className="font-semibold text-gray-900">e-learning and
                   education applications</span> that make learning more accessible,
                 engaging, and adaptable. From schools and universities to training
@@ -1216,7 +1216,7 @@ const handleChange = (e) => {
               Your Trusted Logistics App Development Company in the USA
             </h1>
             <p>
-              Devapp solutions is a leading Software, Web, & Mobile App
+              Devapp Grid is a leading Software, Web, & Mobile App
               Development Company with a vast area of experience in crafting
               stunning and end to end encrypted technology solutions. We offer
               excellent expertise of the industry followed by an exactly planned
@@ -1304,7 +1304,7 @@ const handleChange = (e) => {
               Why Businesses Choose Our Logistics App Development Company
             </h1>
             <p>
-              Devapp Solutions specializes in developing scalable, feature-rich
+              DevApp Grid specializes in developing scalable, feature-rich
               mobile applications for different operating systems, like Android
               and iPhone. Our experts deliver a centralized workflow for every
               client and offer dedicated service at all times.{" "}
@@ -1512,7 +1512,7 @@ const handleChange = (e) => {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.

@@ -13,19 +13,11 @@ import {
   ChevronDown,
   Paperclip,
   Star,
-  Building2,
-  Calendar,
 } from "lucide-react";
 import { testimonials, faqsData } from "./data";
-import {
-  partners,
-  slides,
-  stats,
-  industries,
-  services,
-} from "../../../../utils/data";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { submitContactForm } from "../../../../services/send-call-request";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -63,7 +55,6 @@ export default function LandingPage() {
     text: "",
   });
 
-  const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
 
   const fileInputRef = useRef(null);
@@ -208,20 +199,16 @@ export default function LandingPage() {
       <main className="w-full bg-white ">
         <header className="sticky top-0 z-50 w-full  border-gray-800 bg-white">
           <div className="mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
-            {/* LOGO */}
             <div className="flex items-center">
-                <Image
-                  src="/images/Dev-App-04.png"
-                  alt="Dev App Grid"
-                  width={500}
-                  height={500}
-                  className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
-                />
+              <Image
+                src="/images/Dev-App-04.png"
+                alt="Dev App Grid"
+                width={500}
+                height={500}
+                className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
+              />
             </div>
-
-            {/* RIGHT HEADER */}
             <div className="flex items-center gap-3 sm:gap-5 lg:gap-8">
-              {/* PHONE */}
               <div className="flex items-center gap-2">
                 <div className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-red-100">
                   <Phone size={15} className="text-red-500" />
@@ -238,18 +225,6 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* <Link
-                href="/request-a-quote"
-                className="group flex h-9 items-center gap-2 rounded-sm bg-red-600 px-4 text-[10px] font-semibold text-white transition hover:bg-red-700 sm:px-5 sm:text-[11px] lg:h-9.5 lg:px-6 lg:text-[12px]"
-              >
-                <span className="hidden sm:inline">Get A Free Quote</span>
-                <span className="sm:hidden">Quote</span>
-
-                <ArrowRight
-                  size={14}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </Link> */}
               <button
                 type="button"
                 onClick={() => setIsModalOpen(true)}
@@ -263,8 +238,6 @@ export default function LandingPage() {
                   className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </button>
-
-              {/* Popup Form Modal */}
               <QuoteModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -323,23 +296,18 @@ export default function LandingPage() {
               ref={contentRef}
               className={`w-full text-white sm:w-[90%] lg:w-[52%] xl:w-[54%]`}
             >
-              {/* SMALL TITLE */}
               <p
                 className={`content-title mb-4 text-[12px] font-medium sm:text-[13px] lg:text-[20px] ${contentVisible ? "show" : ""
                   }`}
               >
                 Let&apos;s Turn Your Idea Into a Market-Ready Product
               </p>
-
-              {/* MAIN TITLE */}
               <h1
                 className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${contentVisible ? "show" : ""
                   }`}
               >
                 Request a Quote
               </h1>
-
-              {/* EMAIL */}
               <p
                 className={`content-slide-in-left text-[17px] leading-[1.7] ${contentVisible ? "show" : ""
                   }`}
@@ -348,8 +316,6 @@ export default function LandingPage() {
                 Share Your Project Details on{" "}
                 <span className="font-bold">info@devappgrid.com</span>
               </p>
-
-              {/* PHONE */}
               <p
                 className={`content-slide-in-left mb-5 text-[17px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px] ${contentVisible ? "show" : ""
                   }`}
@@ -360,19 +326,16 @@ export default function LandingPage() {
                 USA: +1 (866) 978-8570
               </p>
 
-              {/* DESCRIPTION */}
               <p
                 className={`content-slide-in-left max-w-140 text-[17px] leading-[1.8] sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
                   }`}
                 style={{ animationDelay: "500ms" }}
               >
-                Have a project in mind? Share your requirements with Devapp and
+                Have a project in mind? Share your requirements with Devapp Grid and
                 connect with experienced app and software development
                 specialists who can help you define the right solution,
                 timeline, and development strategy.
               </p>
-
-              {/* BENEFITS */}
               <ul
                 className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
                   }`}
@@ -408,8 +371,6 @@ export default function LandingPage() {
                   <span>Action plan to move your project forward</span>
                 </li>
               </ul>
-
-              {/* BUTTONS */}
               <div
                 className={`content-slide-in-left mt-6 flex flex-wrap gap-3 ${contentVisible ? "show" : ""
                   }`}
@@ -425,7 +386,6 @@ export default function LandingPage() {
                     className="transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </Link>
-
                 <Link
                   href="/portfolio"
                   className="group flex h-10 items-center gap-2 rounded-[3px] bg-white px-5 text-[15px] font-semibold text-black transition hover:bg-gray-100 sm:h-9.5 sm:px-6 sm:text-[11px]"
@@ -438,7 +398,6 @@ export default function LandingPage() {
                 </Link>
               </div>
             </div>
-
             <style jsx>{`
               .form-slide-in-right {
                 animation: slideInRight 3.5s cubic-bezier(0.32, 2, 0.46, 2)
@@ -460,13 +419,12 @@ export default function LandingPage() {
             <div className="relative w-full max-w-150 sm:w-[85%] lg:w-[65%] form-slide-in-right min-h-125">
               <div className="absolute -right-2 -top-10 z-10 sm:-right-3 sm:-top-11">
                 <Image
-                  src="/images/contact-form-logo.png"
+                  src="/images/contact-form-logo.webp"
                   alt="Same Day Response"
                   width={200}
                   height={200}
                   className="h-20 w-auto object-contain sm:h-22 lg:h-24"
                 />
-
               </div>
               <div className="rounded-lg bg-[#fff0f1] px-10 py-10 shadow-2xl sm:px-9 sm:py-9">
                 <h2 className="text-[24px] font-bold text-black sm:text-[26px] lg:text-[28px]">
@@ -497,7 +455,6 @@ export default function LandingPage() {
                       </span>
                     )}
                   </div>
-
                   <div>
                     <input
                       type="email"
@@ -545,8 +502,6 @@ export default function LandingPage() {
                       className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
-
-                  {/* File Upload & NDA Checkbox */}
                   <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
                     <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
                       <Paperclip className="w-4 h-4 text-gray-600" />
@@ -586,19 +541,6 @@ export default function LandingPage() {
                       Please Send NDA
                     </label>
                   </div>
-
-                  {/* Status Message */}
-                  {statusMessage.text && (
-                    <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${statusMessage.type === "success"
-                        ? "bg-green-50 border-green-200 text-green-700"
-                        : "bg-red-50 border-red-200 text-red-700"
-                        }`}
-                    >
-                      {statusMessage.text}
-                    </div>
-                  )}
-
                   <div className="pt-2">
                     <button
                       type="submit"
@@ -620,7 +562,6 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
         <section className="bg-white py-8 sm:py-9 lg:py-10 overflow-hidden">
           <style>
             {`
@@ -644,10 +585,8 @@ export default function LandingPage() {
                     }
                   `}
           </style>
-
           <div className="overflow-hidden w-full">
             <div className="logo-marquee">
-              {/* First Set */}
               <div className="flex items-center gap-12 sm:gap-16 lg:gap-24 px-6 sm:px-8 lg:px-12">
                 <Image
                   src="/images/React-Native.png"
@@ -656,8 +595,6 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
-
                 <Image
                   src="/images/Flutter.png"
                   alt="Flutter"
@@ -665,7 +602,6 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
                 <Image
                   src="/images/Xamarin.png"
                   alt="Xamarin"
@@ -673,7 +609,6 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
                 <Image
                   src="/images/Oracle.png"
                   alt="Oracle"
@@ -681,7 +616,6 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
                 <Image
                   src="/images/unity.png"
                   alt="Unity"
@@ -689,10 +623,7 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
               </div>
-
-              {/* Duplicate Set - seamless loop */}
               <div className="flex items-center gap-12 sm:gap-16 lg:gap-24 px-6 sm:px-8 lg:px-12">
                 <Image
                   src="/images/React-Native.png"
@@ -701,7 +632,6 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
                 <Image
                   src="/images/Flutter.png"
                   alt="Flutter"
@@ -709,7 +639,6 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
                 <Image
                   src="/images/Xamarin.png"
                   alt="Xamarin"
@@ -717,7 +646,6 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
                 <Image
                   src="/images/Oracle.png"
                   alt="Oracle"
@@ -725,7 +653,6 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
                 <Image
                   src="/images/unity.png"
                   alt="Unity"
@@ -733,23 +660,19 @@ export default function LandingPage() {
                   height={100}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13 shrink-0"
                 />
-
               </div>
             </div>
           </div>
         </section>
-
-        <section className="">
+        <section>
           <div className=" mx-auto w-[94%] text-center sm:w-[90%] lg:w-[90%] xl:w-[88%]">
             <div className="flex justify-center mt-10">
               <h1 className="text-2xl sm:text-3xl md:text-2xl  text-gray-900">
                 Our Locations
               </h1>
             </div>
-
-            {/* DESCRIPTION */}
             <p className="mx-auto mt-3 max-w-290 text-[11px] leading-[1.8] text-gray-700 sm:text-[12px] lg:text-[19px]">
-              Devapp combines local expertise with global delivery to support
+              Devapp Grid combines local expertise with global delivery to support
               businesses wherever they operate. With a growing presence across
               key markets, our teams provide accessible, responsive, and
               high-quality mobile, web, and software development services
@@ -766,8 +689,6 @@ export default function LandingPage() {
                 />
                 Devapp Grid
               </div>
-
-              {/* EMAIL */}
               <div className="flex items-center gap-1.5 text-[20px] font-semibold text-gray-800 sm:text-[20px]">
                 <Image
                   src="/icons/landin-mail-icon.svg"
@@ -778,8 +699,6 @@ export default function LandingPage() {
                 />
                 info@devappgrid.com
               </div>
-
-              {/* MEETING */}
               <div className="flex items-center gap-1.5 text-[20px] font-semibold text-gray-800 sm:text-[20px]">
                 <Image
                   src="/icons/landin-schedule.svg"
@@ -791,8 +710,6 @@ export default function LandingPage() {
                 Schedule Meeting
               </div>
             </div>
-
-
             <div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
           </div>
         </section>
@@ -803,7 +720,6 @@ export default function LandingPage() {
                 <h3 className="text-[13px] font-bold text-black sm:text-[18px]">
                   Headquarter
                 </h3>
-
                 <Image
                   src="/images/texas_usa_office_iq.png"
                   alt="Texas"
@@ -811,12 +727,9 @@ export default function LandingPage() {
                   height={48}
                   className="my-2 h-12 w-auto object-contain"
                 />
-
-
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   Los Angeles, USA
                 </h4>
-
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   6565 Sunset Blvd Ste 190, Los Angeles, CA 90028, USA
                 </span>
@@ -825,7 +738,6 @@ export default function LandingPage() {
                 <h3 className="text-[13px] font-bold text-black sm:text-[18px]">
                   Branch
                 </h3>
-
                 <Image
                   src="/images/canada-office-icn.png"
                   alt="Toronto"
@@ -833,19 +745,15 @@ export default function LandingPage() {
                   height={48}
                   className="my-2 h-12 w-auto object-contain"
                 />
-
-
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   Toronto, Canada
                 </h4>
-
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   100 King St W, Suite 5700, Toronto, ON M5X 1A9,
                   <br />
                   Canada
                 </span>
               </div>
-
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
                 <Image
                   src="/images/newyork-office-icn.png"
@@ -854,17 +762,13 @@ export default function LandingPage() {
                   height={52}
                   className="mb-2 h-13 w-auto object-contain"
                 />
-
-
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   Los Angeles, USA
                 </h4>
-
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   6565 Sunset Blvd Ste 190, Los Angeles, CA 90028, USA
                 </span>
               </div>
-
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
                 <Image
                   src="/images/london-office-icn.png"
@@ -873,12 +777,9 @@ export default function LandingPage() {
                   height={52}
                   className="mb-2 h-13 w-auto object-contain"
                 />
-
-
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
                   Austin
                 </h4>
-
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
                   USA 500 W 2nd St, Floor 19, Austin, TX 78701, USA
                   <br />
@@ -931,7 +832,6 @@ export default function LandingPage() {
 
           <section className="mt-5 w-full bg-black">
             <div className="mx-auto flex min-h-19 w-[94%] flex-col items-center justify-center gap-4 py-4 sm:w-[90%] sm:flex-row sm:justify-between sm:gap-6 lg:w-[90%] lg:min-h-19">
-              {/* LEFT TEXT */}
               <div className="text-center sm:text-left">
                 <p className="text-[16px] font-medium leading-tight text-white sm:text-[20px] lg:text-[18px]">
                   WE ARE WIDELY
@@ -941,8 +841,6 @@ export default function LandingPage() {
                   RECOGNIZED ON
                 </p>
               </div>
-
-              {/* TRUSTPILOT IMAGE */}
               <div className="flex items-center justify-center">
                 <Image
                   src="/images/Container.png"
@@ -951,16 +849,12 @@ export default function LandingPage() {
                   height={52}
                   className="h-10.5 w-auto object-contain sm:h-12 lg:h-13"
                 />
-
               </div>
-
               <button
                 type="button"
                 onClick={() => setIsModalOpen(true)}
                 className="flex h-7.5 items-center gap-2 rounded-sm bg-red-600 px-6 text-[9px] font-semibold text-white transition hover:bg-red-700 sm:h-8.5 sm:px-7 sm:text-[18px]">
-
                 <span className="hidden sm:inline">ORDER NOW</span>
-
                 <ArrowRight
                   size={14}
                   className="transition-transform duration-300 group-hover:translate-x-1"
@@ -982,12 +876,8 @@ export default function LandingPage() {
           </p>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
-          {/* Outer Card Wrapper with Fixed Border & Accent */}
           <div className="relative bg-white border border-gray-200 p-8 md:p-10  shadow-sm hover:border-red-600 transition-all duration-300">
-            {/* Left Blue Accent Line (Static) */}
             <div className="absolute top-0 left-0 bottom-0  z-10" />
-
-            {/* Swiper Slider Component */}
             <Swiper
               modules={[Navigation, Autoplay]}
               spaceBetween={30}
@@ -1003,9 +893,7 @@ export default function LandingPage() {
               {testimonials.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div>
-                    {/* Top User Info & Rating Section */}
                     <div className="flex items-center gap-4 mb-6">
-                      {/* Avatar Circle */}
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0 overflow-hidden">
                         <Image
                           src={item.image}
@@ -1025,7 +913,6 @@ export default function LandingPage() {
                         <h4 className="text-lg font-bold text-gray-900 mb-1">
                           {item.name}
                         </h4>
-                        {/* Stars */}
                         <div className="flex items-center gap-1">
                           {[...Array(5)].map((_, index) => (
                             <Star
@@ -1036,8 +923,6 @@ export default function LandingPage() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Review Text */}
                     <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
@@ -1045,8 +930,6 @@ export default function LandingPage() {
                 </SwiperSlide>
               ))}
             </Swiper>
-
-            {/* STATIC NAVIGATION BUTTONS (Outside Swiper, inside Outer Card) */}
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 flex items-center gap-2 z-20">
               <button
                 className="custom-prev bg-red-700 hover:bg-red-600 text-white p-3  transition-colors duration-200 focus:outline-none cursor-pointer"
@@ -1073,7 +956,6 @@ export default function LandingPage() {
               <div className="relative mx-auto w-full max-w-240 px-2 sm:px-4 lg:px-0 m-0 leftLinpage">
                 <div className="mt-5 flex sm:mt-6">
                   <div className="relative flex w-full items-center gap-3 rounded-lg bg-[#fffbed] px-4 py-5 sm:gap-5 sm:px-6 sm:py-6 lg:gap-6 lg:px-7">
-                    {/* ICON */}
                     <div className="flex shrink-0 items-center justify-center">
                       <Image
                         src="/images/How_it_Works_1.png"
@@ -1084,13 +966,9 @@ export default function LandingPage() {
                       />
 
                     </div>
-
-                    {/* NUMBER */}
                     <div className="shrink-0 text-[26px] font-light leading-none text-black sm:text-[32px] lg:text-[38px]">
                       01.
                     </div>
-
-                    {/* CONTENT */}
                     <div className="min-w-0 flex-1 pr-2 sm:pr-4 lg:pr-6">
                       <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
                         Share Your Requirements
@@ -1104,8 +982,6 @@ export default function LandingPage() {
                       </p>
                     </div>
                   </div>
-
-                  {/* ARROW - OUTSIDE BOX */}
                   <div
                     className="
                   pointer-events-none
@@ -1143,7 +1019,6 @@ export default function LandingPage() {
                     </svg>
                   </div>
                 </div>
-                {/* BOX */}
               </div>
 
               <div className="relative mt-5 flex justify-center sm:mt-6">
@@ -1166,14 +1041,11 @@ export default function LandingPage() {
                     <div className="shrink-0 text-[28px] font-light leading-none text-black sm:text-[34px] lg:text-[38px]">
                       02.
                     </div>
-
-                    {/* CONTENT */}
                     <div className="min-w-0 flex-1">
                       <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[17px] lg:text-[18px]">
                         Receive Your Proposal
                       </h3>
-                      <p className="">
-                        {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]"> */}
+                      <p>
                         Based on your requirements, we have prepared a detailed
                         proposal covering the recommended solution, project
                         scope, estimated cost, development plan, and timeline.
@@ -1187,16 +1059,12 @@ export default function LandingPage() {
                       height={40}
                       className="w-10 h-auto"
                     />
-
                   </div>
                 </div>
-
-                {/* LEFT ARROW (SVG) */}
               </div>
 
               <div className="mt-5 flex sm:mt-6">
                 <div className="flex w-full max-w-240 items-center gap-3 bg-[#fff0f1] px-4 py-5 sm:gap-5 sm:px-6 sm:py-6 lg:gap-6 lg:px-7 rounded-lg">
-                  {/* NUMBER */}
                   <Image
                     src="/images/How_it_Works_3.png"
                     alt=""
@@ -1208,14 +1076,11 @@ export default function LandingPage() {
                   <div className="shrink-0 text-[28px] font-light leading-none text-black sm:text-[34px] lg:text-[38px]">
                     03.
                   </div>
-
-                  {/* CONTENT */}
                   <div className="min-w-0 flex-1">
                     <h3 className="text-[15px] font-bold leading-tight text-black sm:text-[16px] lg:text-[16px]">
                       Start Your Project
                     </h3>
-                    {/* <p className="mt-1.5 max-w-82.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]"> */}
-                    <p className="">
+                    <p>
                       Your dedicated project team gets to work with a project
                       manager serving as your primary point of contact.
                       Designers, developers, and other specialists collaborate
@@ -1244,7 +1109,6 @@ export default function LandingPage() {
                     : "border-gray-200 hover:border-red-300"
                     }`}
                 >
-                  {/* Question */}
                   <button
                     onClick={() => setOpen(open === index ? -1 : index)}
                     className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
@@ -1260,8 +1124,6 @@ export default function LandingPage() {
                         }`}
                     />
                   </button>
-
-                  {/* Answer */}
                   <div
                     className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
                       ? "max-h-150 opacity-100"
@@ -1300,7 +1162,6 @@ export default function LandingPage() {
         <section className="bg-black text-white font-sans overflow-hidden">
           <div className="relative bg-linear-to-r from-[#cc0000] via-[#990000] to-[#110000] py-12 sm:py-16 lg:py-20 px-6 sm:px-12 lg:px-20">
             <div className="mx-auto max-w-300 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-              {/* Left Content */}
               <div className="max-w-137.5">
                 <h2 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bold tracking-tight leading-tight mb-3">
                   Ready to work with us?
@@ -1322,17 +1183,12 @@ export default function LandingPage() {
                     className="transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </button>
-
-                {/* Popup Form Modal */}
                 <QuoteModal
                   isOpen={isModalOpen}
                   onClose={() => setIsModalOpen(false)}
                 />
               </div>
-
-              {/* Right Contact Info Boxes */}
               <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                {/* Call Box */}
                 <div className="flex items-center gap-4 bg-red-950/80 border border-red-900/50 backdrop-blur-md px-6 py-4 rounded-xl flex-1 sm:w-65">
                   <div className="flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-red-600/20 text-red-500">
                     <Phone size={20} />
@@ -1346,8 +1202,6 @@ export default function LandingPage() {
                     </p>
                   </div>
                 </div>
-
-                {/* Email Box */}
                 <div className="flex items-center gap-4 bg-red-950/80 border border-red-900/50 backdrop-blur-md px-6 py-4 rounded-xl flex-1 sm:w-70">
                   <div className="flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-red-600/20 text-red-500">
                     <Mail size={20} />
@@ -1369,12 +1223,10 @@ export default function LandingPage() {
         <section className="font-sans overflow-hidden relative">
           <div className="absolute top-0 left-0 right-0 h-48 sm:h-56 bg-white pointer-events-none z-0"></div>
           <div className="absolute top-48 sm:top-56 left-0 right-0 bottom-0 bg-black pointer-events-none z-0"></div>
-
           <div className="relative bg-transparent sm:pt-12 sm:pb-24 sm:px-8">
             <div className="mx-auto max-w-260 relative z-20 mb-16">
               <div className="absolute -top-4 -left-4 w-40 h-40 border-t-8 border-l-8 border-red-600 pointer-events-none z-0"></div>
               <div className="absolute -bottom-4 -right-4 w-40 h-40 border-b-8 border-r-8 border-red-600 pointer-events-none z-0"></div>
-
               <div className="relative z-10 bg-white text-black p-8 sm:p-12 lg:p-14 flex flex-col lg:flex-row gap-10 items-center shadow-2xl">
                 <div className="w-full lg:w-[45%] h-72 sm:h-85 lg:h-95 overflow-hidden rounded-lg">
                   <Image
@@ -1395,45 +1247,70 @@ export default function LandingPage() {
                     you transform them to multi-million dollar reality. It's
                     Free!
                   </p>
-
-                  {/* Form Inputs */}
-                  <form className="space-y-4" onSubmit={handleSubmit}>
-                    {/* NAME */}
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-4"
+                    noValidate
+                  >
                     <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Name"
-                        required
-                        className="w-full rounded-full border border-gray-200 bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none"
-                      />
+                      <div>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Name*"
+                          disabled={loading}
+                          className={`w-full rounded-full border ${
+                            errors.name ? "border-red-500" : "border-gray-200"
+                          } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
+                        />
 
-                      {/* EMAIL */}
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Email"
-                        required
-                        className="w-full rounded-full border border-gray-200 bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none"
-                      />
+                        {errors.name && (
+                          <span className="mt-1 block px-2 text-xs text-red-600">
+                            {errors.name}
+                          </span>
+                        )}
+                      </div>
+                      <div>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="Email*"
+                          disabled={loading}
+                          className={`w-full rounded-full border ${
+                            errors.email ? "border-red-500" : "border-gray-200"
+                          } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
+                        />
 
-                      {/* PHONE */}
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="Phone"
-                        required
-                        className="w-full rounded-full border border-gray-200 bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none"
-                      />
+                        {errors.email && (
+                          <span className="mt-1 block px-2 text-xs text-red-600">
+                            {errors.email}
+                          </span>
+                        )}
+                      </div>
+                      <div>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="Phone*"
+                          disabled={loading}
+                          className={`w-full rounded-full border ${
+                            errors.phone ? "border-red-500" : "border-gray-200"
+                          } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
+                        />
+
+                        {errors.phone && (
+                          <span className="mt-1 block px-2 text-xs text-red-600">
+                            {errors.phone}
+                          </span>
+                        )}
+                      </div>
                     </div>
-
-                    {/* MESSAGE */}
                     <div>
                       <input
                         type="text"
@@ -1441,11 +1318,18 @@ export default function LandingPage() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Enter a brief description of your App Project"
-                        className="w-full rounded-full border border-gray-200 bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none"
+                        disabled={loading}
+                        className={`w-full rounded-full border ${
+                          errors.message ? "border-red-500" : "border-gray-200"
+                        } bg-gray-50 px-5 py-3.5 text-[14px] focus:border-red-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60`}
                       />
-                    </div>
 
-                    {/* FILE UPLOAD */}
+                      {errors.message && (
+                        <span className="mt-1 block px-2 text-xs text-red-600">
+                          {errors.message}
+                        </span>
+                      )}
+                    </div>
                     <div className="flex flex-wrap items-center gap-2 text-[11px] text-gray-700">
                       <label className="flex cursor-pointer items-center gap-1 font-medium">
                         <Paperclip size={13} />
@@ -1457,50 +1341,38 @@ export default function LandingPage() {
                           type="file"
                           name="file"
                           onChange={handleFileChange}
+                          disabled={loading}
                           className="hidden"
                         />
                       </label>
 
-                      <span className="max-w-45 truncate">
-                        {formData.file ? formData.file.name : "No file chosen."}
+                      <span className="max-w-45 truncate text-gray-500">
+                        {formData.file
+                          ? formData.file.name
+                          : "No file chosen."}
                       </span>
                     </div>
-
-                    {/* NDA */}
                     <label className="flex cursor-pointer items-center gap-2 text-[11px] text-gray-700">
                       <input
                         type="checkbox"
                         name="sendNda"
                         checked={formData.sendNda}
+                        disabled={loading}
                         onChange={handleChange}
-                        className="h-3 w-3"
+                        className="h-3 w-3 cursor-pointer rounded border-gray-300 text-red-600 focus:ring-red-600 disabled:cursor-not-allowed"
                       />
 
                       <span>Please Send NDA</span>
                     </label>
-
-                    {/* STATUS MESSAGE */}
-                    {/* {statusMessage.text && (
-                      <div
-                        className={`rounded px-3 py-2 text-[11px] ${
-                          statusMessage.type === "success"
-                            ? "bg-green-50 text-green-600"
-                            : "bg-red-50 text-red-600"
-                        }`}
-                      >
-                        {statusMessage.text}
-                      </div>
-                    )} */}
-
-                    {/* SUBMIT */}
                     <div>
                       <button
                         type="submit"
                         disabled={loading}
-                        className={`bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${loading
-                          ? "cursor-not-allowed opacity-60"
-                          : "hover:bg-[#d9141c]"
-                          } rounded-full`}
+                        className={`rounded-full bg-[#ed1c24] px-9 py-3.5 text-[14px] font-medium text-white shadow-md transition-colors ${
+                          loading
+                            ? "cursor-not-allowed opacity-60"
+                            : "cursor-pointer hover:bg-[#d9141c]"
+                        }`}
                       >
                         {loading ? "Sending..." : "Get A Free Quote"}
                       </button>
@@ -1518,7 +1390,6 @@ export default function LandingPage() {
                   height={192}
                   className="w-44 sm:w-48 h-auto object-contain"
                 />
-
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-around my-6 gap-4">
                 <div className="text-left sm:text-left">
@@ -1535,7 +1406,6 @@ export default function LandingPage() {
                     >
                       <FaFacebookF size={14} />
                     </a>
-
                     <a
                       href="https://www.instagram.com/devappgrids?stkn=MjRweWwyMGk2ODNw"
                       target="_blank"
@@ -1557,8 +1427,6 @@ export default function LandingPage() {
                     </a>
                   </div>
                 </div>
-
-                {/* Direct Phone */}
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center shrink-0">
                     <Phone size={17} />
@@ -1591,7 +1459,7 @@ export default function LandingPage() {
                   />
 
                 </div>
-                <div className="flex items-center gap-4 text-sm justify-center mt-11">
+                <div className="flex items-center gap-4 text-sm justify-center mt-11 policys-button">
                   <Link
                     href="/terms-and-conditions"
                     className="text-white hover:text-red-600 transition-colors "

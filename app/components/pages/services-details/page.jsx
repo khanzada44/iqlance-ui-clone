@@ -464,7 +464,7 @@ export default function ServicesCategory({ slug }) {
             </h2>
 
             <p className="max-w-6xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base faq px-4">
-              At Devapp, we don't believe in one-size-fits-all every industry
+              At Devapp Grid, we don't believe in one-size-fits-all every industry
               has its own challenges, and our solutions are built to match.
               Backed by deep, hands-on experience across sectors, we deliver
               high-quality web applications, mobile apps, and custom software
@@ -551,7 +551,7 @@ export default function ServicesCategory({ slug }) {
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600 faq px-4">
                 Have a look at the services and development process of the
-                Devapp solution. See what process we follow for mobile app and
+                Devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our
                 clients. Start a conversation to innovate your next great idea
                 into reality with us.

@@ -1328,6 +1328,9 @@ img.is-80 {
 }
 
 @media (max-width: 767px) {
+  .policys-button{
+    margin-bottom: 13px !important;
+  }
   .thank-p{
     text-align: center !important;
   }

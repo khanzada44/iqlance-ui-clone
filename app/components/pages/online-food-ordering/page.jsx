@@ -230,7 +230,7 @@ export default function fitness() {
               </h1>
               <p className="text-base md:text-lg leading-relaxed text-black">
                 Ready to launch a food ordering platform that actually holds up
-                under pressure? Devapp has earned its place among the top food
+                under pressure? Devapp Grid has earned its place among the top food
                 delivery app developers in the USA by shipping scalable,
                 cloud-ready platforms packed with the features modern users
                 expect. We build complete delivery ecosystems covering ordering,
@@ -560,7 +560,7 @@ export default function fitness() {
               Endeavors that Make us Proud
             </h2>
             <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
-              Devapp solutions has always been honored with valuable words for
+              Devapp Grid has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
               this.
@@ -1020,7 +1020,7 @@ export default function fitness() {
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
-              Devapp is a leading Software Development Company currently
+              Devapp Grid is a leading Software Development Company currently
               available in the market, with over 7 years of experience under the
               belt. Over the years, our team members have honed their skills,
               handling over 1,500 projects of different types and companies,
@@ -1123,7 +1123,7 @@ export default function fitness() {
                 </h3>
 
                 <p>
-                  At Devapp, we use modern technologies to help food businesses
+                  At Devapp Grid, we use modern technologies to help food businesses
                   operate smarter, serve customers faster, and scale with
                   confidence. From AI-powered insights and cloud infrastructure
                   to real-time delivery tracking and secure payment solutions,
@@ -1156,10 +1156,10 @@ export default function fitness() {
         <section>
           <div className="text-center max-w-6xl mx-auto space-y-4 mt-4 px-5">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why Growing Food Businesses Choose Devapp
+              Why Growing Food Businesses Choose Devapp Grid
             </h1>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              At Devapp, we build food delivery platforms that combine reliable
+              At Devapp Grid, we build food delivery platforms that combine reliable
               technology, thoughtful user experiences, and business-focused
               strategy. Our solutions are designed to help U.S. food businesses
               simplify operations, connect with customers, and create a strong
@@ -1389,7 +1389,7 @@ export default function fitness() {
             </h1>
             <p>
               Have a look at the services and development process of the Devapp
-              solution. See What process we follow for mobile app and software
+              Grid. See What process we follow for mobile app and software
               development. Have a look at how we are praised by our clients
               Start a conversation to innovate your next great idea into reality
               with us.
