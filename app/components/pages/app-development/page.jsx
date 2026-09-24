@@ -307,7 +307,7 @@ export default function LandingPage() {
                 className={`content-heading mb-4 text-[30px] font-bold leading-tight sm:text-[34px] lg:text-[38px] ${contentVisible ? "show" : ""
                   }`}
               >
-                Request a Quote
+                Mobile app development
               </h1>
               <p
                 className={`content-slide-in-left text-[17px] leading-[1.7] ${contentVisible ? "show" : ""
