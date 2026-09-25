@@ -385,75 +385,82 @@ export default function Home() {
         </div>
 
         <div className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 ">
-            <div className="flex justify-center">
-              <Image
-                src="/images/home/travis_h.webp"
-                alt="Travis H"
-                width={500}
-                height={500}
-                className="object-cover"
-              />
-            </div>
-            <div className="text-center lg:text-left">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-red-600 leading-tight">
-                Talk to a US-Based Technology Specialist About Your Project
-              </h2>
+<div className="w-full max-w-7xl mx-auto px-4">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
+    
+    {/* Left Column (50% on Large Screens) */}
+    <div className="w-full flex justify-center">
+      <Image
+        src="/images/home/travis_h.webp"
+        alt="Travis H"
+        width={500}
+        height={500}
+        className="object-cover w-full max-w-md lg:max-w-full h-125!"
+      />
+    </div>
 
-              <h3 className="mt-5 sm:mt-6 text-2xl sm:text-3xl font-bold">
-                Travis H
-              </h3>
+    {/* Right Column (50% on Large Screens) */}
+    <div className="w-full text-center lg:text-left">
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-red-600 leading-tight">
+        Talk to a US-Based Technology Specialist About Your Project
+      </h2>
 
-              <p className="text-gray-600 text-base sm:text-lg mt-1">
-                IT Project Specialist, USA
-              </p>
+      <h3 className="mt-5 sm:mt-6 text-2xl sm:text-3xl font-bold">
+        Travis H
+      </h3>
 
-              <p className="mt-5 sm:mt-6 text-gray-700 leading-7 sm:leading-8 text-base sm:text-lg">
-                Have an App or Software Idea? Let's Figure Out the Smartest Way
-                to Build It. Book a free strategy call with our US-based IT
-                specialist to walk through your idea, technical requirements,
-                budget expectations, and the smartest path to bring your product
-                to market.
-              </p>
+      <p className="text-gray-600 text-base sm:text-lg mt-1">
+        IT Project Specialist, USA
+      </p>
 
-              <div className="mt-6 sm:mt-8 flex justify-center lg:justify-start">
-                <button className="border border-red-600 px-4 sm:px-6 py-3 text-base sm:text-xl font-semibold transition flex gap-1.5 items-center w-full sm:w-auto justify-center">
-                  <div
-                    className="w-6 h-6 bg-red-600"
-                    style={{
-                      maskImage: "url(/icons/phone-icon.svg)",
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                      WebkitMaskRepeat: "no-repeat",
-                      WebkitMaskSize: "contain",
-                    }}
-                  />
-                  USA +1 (866) 978-8570
-                </button>
-              </div>
+      <p className="mt-5 sm:mt-6 text-gray-700 leading-7 sm:leading-8 text-base sm:text-lg">
+        Have an App or Software Idea? Let's Figure Out the Smartest Way
+        to Build It. Book a free strategy call with our US-based IT
+        specialist to walk through your idea, technical requirements,
+        budget expectations, and the smartest path to bring your product
+        to market.
+      </p>
 
-              <div className="mt-4 sm:mt-5 flex justify-center lg:justify-start">
-                <Link
-                  href="/lets-talk"
-                  className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer"
-                >
-                  Book Your Free Strategy Call
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </Link>
-              </div>
+      <div className="mt-6 sm:mt-8 flex justify-center lg:justify-start">
+        <button className="border border-red-600 px-4 sm:px-6 py-3 text-base sm:text-xl font-semibold transition flex gap-1.5 items-center w-full sm:w-auto justify-center">
+          <div
+            className="w-6 h-6 bg-red-600"
+            style={{
+              maskImage: "url(/icons/phone-icon.svg)",
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              WebkitMaskImage: "url(/icons/phone-icon.svg)",
+              WebkitMaskRepeat: "no-repeat",
+              WebkitMaskSize: "contain",
+            }}
+          />
+          USA +1 (866) 978-8570
+        </button>
+      </div>
 
-              <div className="flex gap-6 sm:gap-8 mt-8 sm:mt-10 text-2xl sm:text-3xl text-[#184A8B] justify-center lg:justify-start">
-                <i className="ri-linkedin-fill"></i>
-                <i className="ri-twitter-x-line"></i>
-                <i className="ri-mail-fill"></i>
-                <i className="ri-share-line"></i>
-              </div>
-            </div>
-          </div>
+      <div className="mt-4 sm:mt-5 flex justify-center lg:justify-start">
+        <Link
+          href="/lets-talk"
+          className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer"
+        >
+          Book Your Free Strategy Call
+          <ArrowRight
+            size={18}
+            className="transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </Link>
+      </div>
+
+      <div className="flex gap-6 sm:gap-8 mt-8 sm:mt-10 text-2xl sm:text-3xl text-[#184A8B] justify-center lg:justify-start">
+        <i className="ri-linkedin-fill"></i>
+        <i className="ri-twitter-x-line"></i>
+        <i className="ri-mail-fill"></i>
+        <i className="ri-share-line"></i>
+      </div>
+    </div>
+
+  </div>
+</div>
           <div className="w-full mt-15 sm:mt-5 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               Our Full Range of Development Services
@@ -624,9 +631,8 @@ export default function Home() {
               </h2>
 
               <p className="mt-4 sm:mt-5 text-black text-base sm:text-lg leading-6 max-w-xl mx-auto lg:mx-0">
-                Our portfolio speaks for itself, it's the reason businesses
-                across the USA trust us as one of the leading software and app
-                development companies in the industry.
+                Our portfolio speaks for itself. It reflects the experience and expertise that businesses across 
+                  the USA rely on when choosing a trusted software and app development company.
               </p>
             </div>
 
@@ -667,17 +673,13 @@ export default function Home() {
               <div className="flex items-center p-6 sm:p-8 lg:p-10">
                 <div>
                   <p className="text-base leading-relaxed text-black sm:text-lg md:text-xl">
-                    The businesses winning right now aren't just adapting to
-                    change;e, they're building with it. That's where we come in.
-                    We help companies harness the full power of AI, generative
-                    AI, agentic AI, machine learning, cloud computing, data
-                    science & analytics, and cybersecurity to solve problems
-                    that used to feel unsolvable and turn them into growth
-                    opportunities instead. Over a decade in this industry has
-                    taught us one thing: great technology is never built by one
-                    person. It takes consultants, designers, engineers, and
-                    specialists working as one team, and that's exactly what we
-                    bring to every idea you hand us, no matter how ambitious.
+                    AI Development Company USA | Building Smarter Digital Products As an agentic AI development 
+company, we design task-oriented AI workflows that can reason through defined steps, use approved 
+tools, and keep people in control. Our AI agent development services focus on practical, governed 
+automation for repeatable business tasks, with clear boundaries and human oversight where needed.
+Over a decade in this industry has taught us one thing: great technology is never built by one person. 
+It takes consultants, designers, engineers, and specialists working as one team, and that's exactly what 
+we bring to every idea you hand us, no matter how ambitious.
                   </p>
                 </div>
               </div>
@@ -756,17 +758,14 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto text-center sm:mt-14 px-3 mb-10 mt-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
-            Hire Mobile App & Software Developers
+            Hire Mobile App Developers & Software Development Teams.
           </h2>
 
           <p className="mt-4 sm:mt-6 text-gray-700 text-sm sm:text-base md:text-lg leading-7 sm:leading-8">
-            Whether you need one extra pair of hands or a full dedicated team,
-            we've got developers ready to hit the ground running. Our team
-            doesn't just work alongside yours, they fit right into your existing
-            processes like they've always been there. From mobile apps and
-            custom software to AI-powered solutions and enterprise platforms,
-            our experts build applications that are reliable, scalable, and
-            built to perform, shaped entirely around your business goals.
+              Need extra expertise or a dedicated team? Our developers, designers, and QA specialists 
+              work seamlessly with your team to deliver reliable iOS app development services, web, 
+              software development, and AI solutions Whether you need one specialist or a complete team, hire dedicated developers USA
+              businesses can rely on for flexible support and scalable development tailored to your goals.
           </p>
         </div>
         <section className="mb-10 max-w-7xl mx-auto px-4">
@@ -822,12 +821,10 @@ export default function Home() {
             Our Design & Development Approach
           </h1>
           <p className="max-w-5xl mx-auto text-center text-black mt-5 sm:mt-6 leading-5 sm:leading-8 text-sm sm:text-base font-semibold">
-            Every great digital product starts long before a single line of code
-            is written. It starts with a clear strategy. Whether you're building
-            a mobile app, custom software, web application, or AI-powered
-            solution, we follow a proven process built to reduce risk, keep
-            delivery on track, and make sure the end result actually serves your
-            business goals, not just your original brief.
+            Every great digital product starts with a clear strategy not a line of code. Whether you need 
+            mobile app development, custom software, web application development, or an AI-
+            powered solution, our proven process reduces risk, keeps projects on track, and aligns the 
+            final product with your business goals.
           </p>
         </div>
         <section className="mt-20">
@@ -962,16 +959,15 @@ export default function Home() {
               Why Businesses Trust Us
             </h1>
             <p className="text-xl text-gray-900">
-              From startups to established enterprises, we help businesses turn
-              their ideas into digital solutions that actually perform. Our
-              developers work with cutting-edge technology to deliver results
-              you can measure on time, and without blowing the budget
+                From startups to established enterprises, we help businesses turn ideas into digital solutions 
+                that deliver real results. Our team uses modern technology and custom software 
+                development to build reliable products, delivered on time and within budget.
             </p>
           </div>
         </section>
 
         <section>
-          <div className="flex flex-wrap justify-center gap-7 mt-24 mb-10">
+          <div className="flex flex-wrap justify-center gap-7 mt-10 mb-10">
             {stats.map((item, index) => (
               <div
                 key={index}
@@ -1087,11 +1083,11 @@ export default function Home() {
             </h2>
 
             <p className="max-w-6xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base">
-              At Devapp Grid, we don't believe in one-size-fits-all every industry
-              has its own challenges, and our solutions are built to match.
-              Backed by deep, hands-on experience across sectors, we deliver
-              high-quality web applications, mobile apps, and custom software
-              built around what your industry actually needs.
+              At DevApp, we don't believe in one-size-fits-all solutions. Every industry has its own 
+              challenges, so we build technology around what your business actually needs. With hands-on 
+              experience across sectors, we deliver high-quality web applications and custom software 
+              development solutions designed for real-world requirements.
+
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1188,12 +1184,10 @@ export default function Home() {
                 </h2>
 
                 <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 max-w-lg mx-auto lg:mx-0">
-                  We're proud to stand alongside some of the best in the
-                  business, including Fortune 500 companies. Our clients put
-                  their trust in us, and we deliver innovation that turns into
-                  real, measurable success. From local startups to global
-                  enterprises, we've helped build digital solutions that make an
-                  impact across the world.
+                    We're proud to stand alongside some of the best in the business, including Fortune 500 companies. 
+                    Our clients put their trust in us, and we deliver innovation that turns into real, measurable success. 
+                    From local startups to global enterprises, we've helped build digital solutions that make an impact 
+                    across the world
                 </p>
               </div>
 

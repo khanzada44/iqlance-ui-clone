@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image"; 
+import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react"; // Combined Lucide Icons
+import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
 import ContactForm from "../../contactForm/ContactForm";
 import { missionData } from "../about-us/data";
-import { stats, partners,faqsData } from "../../../../utils/data";
+import { stats, partners, faqsData } from "../../../../utils/data";
 
 export default function About() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(null);
 
   return (
     <>
@@ -23,20 +23,28 @@ export default function About() {
 
         <section className="bg-white py-20">
           <div className="  text-center">
-           <h3 className="text-4xl md:text-6xl font-bold text-red-600">
+            <h3 className="text-4xl md:text-6xl font-bold text-red-600">
               About DevApp Grid
             </h3>
           </div>
 
           <div className="w-full px-6 text-center mt-15">
             <h3 className="text-xl md:text-3xl font-bold text-black">
-              Award-Winning App Development Agency
+              Award-Winning Software & App Development Company
             </h3>
             <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
-              DevApp Grid is a leading software and mobile app development company serving clients in the USA. Our team of dedicated developers is always eager to innovate customized solutions based on your business needs.
+              DevApp Grid is a trusted software development company USA businesses can rely on to turn
+              ideas into powerful digital products. Our team builds custom software, web applications, and
+              mobile solutions that improve efficiency, support growth, and create better user experiences.
+
             </p>
             <p className="mx-auto mt-10 w-full text-lg md:text-[22px] leading-relaxed text-black">
-              Our highly experienced, dedicated developers make us an award-winning app development agency in the USA. We design solutions that deliver high levels of client satisfaction.
+              From product strategy and engineering to QA and post-launch support, we handle every stage
+              of development. Businesses looking for a software development company Dallas can work
+              with our experienced team on custom software, enterprise platforms, mobile products, and
+              web solutions. Our digital transformation expertise also includes AI solutions and software
+              modernization, helping businesses build secure, scalable technology that evolves with their
+              needs.
             </p>
 
 
@@ -70,14 +78,15 @@ export default function About() {
         <section>
           <div className="w-full px-5">
             <h2 className="text-4xl font-bold text-center">
-              Trusted Custom Software, Web Mobile App Development Services
+              Custom Software Development Services & Mobile App
+              Development Services
             </h2>
             <p className="w-full mx-auto mt-4 text-center text-1sxl leading-8 text-black">
-              Devapp Grid is a leading Software, Web, & Mobile App
-              Development Company with a extensive experience in crafting
-              stunning and secure, end-to-end technology solutions. We offer
-              excellent expertise of the industry followed by an well-planned
-              approach to accelerate your business growth.
+              Devapp Grid provides end-to-end software development, web development, and mobile app
+              development services for startups, growing businesses, and established enterprises.
+              From initial strategy and UI/UX design to development, quality assurance, deployment, and ongoing
+              support, we build technology solutions that are reliable, scalable, and aligned with your business
+              objectives.
             </p>
 
             <section>
@@ -122,29 +131,27 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-[15px] md:text-[28px] font-bold leading-tight text-black">
-                  You Need a Technology Partner, Not Just a Developer
+                  We Don't Just Build Apps, We Build Your Competitive Edge
                 </h2>
 
                 <p className="mt-4 text-[17px] leading-9 text-black]">
-                  At Devapp, we believe successful digital products are built
-                  through collaboration, strategic planning, and technical
-                  expertise. We work closely with our clients to understand
-                  their goals and challenges and deliver scalable, user-focused
-                  digital solutions.
+                  Here's the truth: most development companies will happily code whatever you ask for and call it a
+                  day. That's not how we work at DevApp. Before we write a single line of code, we want to understand
+                  your business, your goals, and the problem you're actually trying to solve, because the best digital
+                  products come from real collaboration, not a checklist.
                 </p>
 
                 <p className="mt-1 text-[17px] leading-9 text-black">
-                  Our dedicated team of software and app developers in the USA
-                  follows a structured approach covering strategy, design,
-                  development, testing, and deployment to create customized
-                  solutions that drive business growth.
+                  Our team works alongside you from day one, turning ideas into digital products people want
+                  to use. We bring strategy, design, engineering, and testing together to create solutions that
+                  perform when it matters most.
                 </p>
 
                 <p className="mt-1 text-[17px] leading-9 ">
-                  Since 2014, Devapp Grid has delivered more than 1,500
-                  digital products, including software and mobile applications
-                  such as Doggy Dates, Bidda, Stable Hub, and Ukitchen. We are
-                  proud to have worked with 250+ satisfied clients worldwide.
+                  From custom software development services and mobile apps to web platforms, SaaS
+                  products, and enterprise solutions, we provide the expertise to move your project forward.
+                  Built with long-term growth in mind, our solutions can evolve as your business does.
+
                 </p>
                 <Link
                   href="/contact-us"
@@ -175,11 +182,11 @@ export default function About() {
             <h2 className="text-3xl font-bold text-center">Our Mission</h2>
 
             <p className="w-full mx-auto mt-4 text-center text-[16px] leading-7 text-gray-700">
-              Our mission is to help businesses achieve sustainable growth
-              through innovative, secure, and customized digital solutions. We
-              combine technology expertise, strategic thinking, and user-focused
-              design to solve complex business challenges and create measurable
-              value for our clients.
+              At DevApp Grid, we build technology that earns its keep. Every project starts with one question: will this
+              actually move your business forward? That question shapes how we plan, design, and build, so the
+              end result is not just functional but genuinely useful, something that helps you serve customers better,
+              work faster, or grow revenue. We are not interested in delivering software for the sake of it. We are
+              interested in results you can measure.
             </p>
 
             <div className="grid md:grid-cols-2 gap-5 mt-12 mb-10">
@@ -232,7 +239,7 @@ export default function About() {
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
                 >
-                   <div
+                  <div
                     className="w-6 h-6 bg-red-600"
                     style={{
                       maskImage: "url(/icons/email-icon.svg)",
@@ -248,7 +255,7 @@ export default function About() {
 
                 <span className="text-gray-500 font-normal">or</span>
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                   <div
+                  <div
                     className="w-6 h-6 bg-red-600"
                     style={{
                       maskImage: "url(/icons/phone-icon.svg)",
@@ -266,7 +273,7 @@ export default function About() {
                   >
                     +1 (866) 978-8570
                   </a>
-                 
+
                 </div>
               </div>
             </div>
@@ -302,7 +309,7 @@ export default function About() {
         <section className="bg-white">
           <div className="w-full px-5">
             <h2 className="text-center text-4xl font-bold text-black">
-              About Devapp
+              About Devapp Grid
             </h2>
             <div className="w-full mx-auto mt-8 space-y-8">
               <p className="text-center text-[17px] leading-8 text-black">
@@ -389,7 +396,7 @@ export default function About() {
 
                 <span className="text-gray-500 font-normal">or</span>
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
-                   <div
+                  <div
                     className="w-6 h-6 bg-red-600"
                     style={{
                       maskImage: "url(/icons/phone-icon.svg)",
@@ -435,39 +442,54 @@ export default function About() {
             </h2>
 
             <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
-              Find answers to common questions about our app and software
-              development services and learn how we can help turn your idea into
-              a successful digital product.
+              Have questions about working with Devapp Grid? Here are some quick answers to help you understand our
+              development process, services, and how we can support your project. Still have questions? Reach out
+              to our team and we’ll be happy to discuss your requirements. To understand how to choose a
+              software development company, evaluate technical expertise, relevant portfolio work,
+              communication, security, development process, scalability, and support.
             </p>
 
             <div className="mt-12 space-y-4">
-              {faqsData.map((faq, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-200 rounded-lg overflow-hidden"
-                >
-                  <button
-                    onClick={() => setOpen(open === index ? -1 : index)}
-                    className="w-full flex justify-between items-center px-5 py-5 text-left"
+              {faqsData.map((faq, index) => {
+                const isOpen = open === index;
+
+                return (
+                  <div
+                    key={index}
+                    className="border border-gray-200 rounded-lg overflow-hidden"
                   >
-                    <span className="font-semibold text-lg">
-                      {faq.question}
-                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setOpen(isOpen ? -1 : index)}
+                      className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="font-semibold text-lg">
+                        {faq.question}
+                      </span>
 
-                    {open === index ? (
-                      <ChevronUp size={22} />
-                    ) : (
-                      <ChevronDown size={22} />
-                    )}
-                  </button>
+                      <span
+                        className={`shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"
+                          }`}
+                      >
+                        <ChevronDown size={22} />
+                      </span>
+                    </button>
 
-                  {open === index && (
-                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
-                      {faq.answer}
+                    {/* Smooth FAQ Content */}
+                    <div
+                      className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                        }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                          {faq.answer}
+                        </div>
+                      </div>
                     </div>
-                  )}
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
 
             <div className="mt-20 text-center">

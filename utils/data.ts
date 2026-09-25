@@ -644,98 +644,105 @@ export const testimonials = [
       "Devapp’s mobile app received positive feedback from people that interacted with it in the development stage. Devapp communicated quickly, frequently, and over several different platforms.",
   },
 ];
+
 export const faqsData = [
   {
-    question: "What mobile app development services does Devapp offer?",
+    question: "What mobile app development services does Devapp Grid offer?",
     answer:
-      "Devapp provides end-to-end mobile app development services, including iOS, Android, Flutter, React Native, hybrid, Apple Watch, healthcare, food delivery, e-learning, MVP, and cross-platform development. Our services also cover UI/UX design, API integration, testing, deployment, migration, and ongoing support.",
+      "Devapp Grid provides end-to-end Mobile App Development for iOS, Android, Flutter, React Native, hybrid, Apple Watch, healthcare, food delivery, education, MVP, and cross-platform products. We also cover UI/UX design, API integration, testing, deployment, migration, analytics, security, and ongoing support.",
     points: [],
   },
   {
-    question: "How much does it cost to develop a mobile app?",
+    question: "How much does it cost to build a mobile app?",
     answer:
-      "The cost depends on your app's features, complexity, platforms, integrations, design requirements, technology stack, and timeline. Devapp evaluates your requirements first and provides a customized estimate based on your actual project scope.",
+      "The cost depends on features, platforms, design, backend complexity, integrations, security requirements, and timeline. Devapp reviews the scope first and provides an estimate based on the actual product requirements rather than a generic package.",
     points: [],
   },
   {
     question: "How long does it take to build a mobile app?",
     answer:
-      "Timelines vary depending on the product and feature set. A focused MVP can often be launched within 6–8 weeks, while complex healthcare, food delivery, marketplace, or enterprise applications may require a longer development cycle.",
+      "Timelines vary by product complexity. A focused MVP may move to launch faster than a healthcare, marketplace, food delivery, or enterprise product with extensive integrations. We define milestones during discovery so the delivery plan is clear before development begins.",
     points: [],
   },
   {
-    question: "Can Devapp build apps for both iOS and Android?",
+    question: "Can Devapp Grid build apps for both iOS and Android?",
     answer:
-      "Yes. Devapp develops applications for iOS and Android using both native technologies and cross-platform frameworks such as Flutter and React Native. We recommend the approach that best fits your performance, budget, and scalability goals.",
+      "Yes. Devapp Grid builds iOS and Android applications using native technologies and cross-platform frameworks such as Flutter and React Native. The technology choice is based on performance, device capabilities, budget, user experience, and long-term scalability.",
     points: [],
   },
   {
-    question: "Why should I choose Flutter or React Native?",
+    question:
+      "What is the difference between native and cross-platform app development?",
     answer:
-      "Both frameworks allow businesses to develop applications for multiple platforms using a shared codebase. Devapp helps you determine which technology is better suited to your features, integrations, performance requirements, budget, and long-term product roadmap.",
+      "Native vs cross platform app development depends on the product. Native development can provide deeper platform-specific capabilities, while cross-platform development can share more code across iOS and Android. We compare performance, integrations, device features, budget, and maintenance before recommending an approach.",
     points: [],
   },
   {
-    question: "Does Devapp provide custom UI/UX design?",
+    question: "How should I choose an app development company?",
     answer:
-      "Yes. Our UI/UX process includes user flows, wireframes, prototypes, visual design, and responsive interfaces. We create experiences around your brand and users, with a focus on intuitive navigation and engagement.",
+      "To choose an app development company, compare relevant portfolio experience, technical expertise, product strategy, communication, QA practices, security, delivery process, and post-launch support. Businesses comparing the best mobile options should evaluate these factors against their own requirements instead of relying on a single ranking.",
     points: [],
   },
   {
-    question: "Can Devapp develop healthcare mobile applications?",
+    question:
+      "Can I hire mobile app developers for an existing or new product?",
     answer:
-      "Yes. We build healthcare solutions including telemedicine apps, appointment booking platforms, patient monitoring systems, EHR/EMR applications, and healthcare management platforms. Depending on the project, we can also address requirements related to HIPAA, HL7, GDPR, HITECH, and other applicable standards.",
+      "Yes. You can hire mobile app developers for a new product, an existing application, modernization, integrations, maintenance, or a dedicated development team. We can match developers to the required platform, framework, backend, and project stage.",
     points: [],
   },
   {
-    question: "Can you build a food delivery or grocery delivery app?",
+    question: "How do I hire a mobile app developer?",
     answer:
-      "Absolutely. Devapp develops customized food delivery, restaurant, grocery, and marketplace platforms with features such as online ordering, secure payments, inventory management, real-time tracking, automated dispatch, delivery scheduling, notifications, and analytics.",
+      "If you are deciding how to hire a mobile app developer, first define the product scope, target platforms, required technical skills, communication expectations, portfolio requirements, timeline, and engagement model. Then assess candidates or teams against those criteria and the complexity of your product.",
     points: [],
   },
   {
-    question: "Does Devapp offer MVP development services?",
+    question: "What is the app development process step by step?",
     answer:
-      "Yes. Our MVP development services help startups and businesses validate ideas before committing to a full-scale product. We identify essential features, design and develop the MVP, test it, launch it, and help use early feedback to shape future development.",
+      "The app development process step by step typically includes discovery and requirements, UX/UI design, architecture and prototyping, development, quality assurance, deployment, analytics, and maintenance. Devapp keeps stakeholders involved through regular reviews and delivery checkpoints.",
     points: [],
   },
   {
-    question: "Can Devapp migrate an existing app to React Native or Flutter?",
+    question: "Does Devapp Grid build healthcare and food delivery apps?",
     answer:
-      "Yes. We assess your existing application, architecture, integrations, and functionality before creating a migration strategy. Our goal is to modernize your product while maintaining critical functionality and minimizing disruption.",
+      "Yes. Devapp Grid supports healthcare applications such as telemedicine, patient engagement, scheduling, monitoring, and healthcare operations. We also build food delivery and grocery platforms with ordering, payments, restaurant management, dispatch, tracking, notifications, and analytics.",
     points: [],
   },
   {
-    question: "Does Devapp handle API and third-party integrations?",
+    question: "Does Devapp Grid offer MVP development?",
     answer:
-      "Yes. We integrate applications with REST APIs, payment gateways, maps, Firebase, social platforms, cloud services, authentication systems, databases, and other third-party technologies required for your product.",
+      "Yes. As an MVP app development company, Devapp helps teams define essential features, design the first release, develop and test the product, launch it, and use early feedback to guide future iterations. The goal is to validate the core idea without unnecessary scope.",
     points: [],
   },
   {
-    question: "Does Devapp develop Apple Watch applications?",
+    question: "Can Devapp Grid migrate an existing app to React Native or Flutter?",
     answer:
-      "Yes. Devapp creates custom Apple Watch applications and extensions for industries and use cases such as fitness, healthcare, food ordering, productivity, and connected experiences. We also provide testing, upgrades, security, and maintenance.",
+      "Yes. We assess the existing architecture, codebase, integrations, functionality, and product goals before creating a migration plan. The objective is to modernize the application while protecting important functionality and reducing disruption.",
     points: [],
   },
   {
-    question: "What support does Devapp provide after app launch?",
+    question:
+      "Does Devapp Grid handle APIs, cloud services, and third-party integrations?",
     answer:
-      "Our services continue after deployment with bug fixing, maintenance, performance optimization, security updates, platform compatibility updates, monitoring, and feature enhancements to keep your application reliable and up to date.",
+      "Yes. We integrate REST APIs, payment gateways, maps, Firebase, authentication, databases, social platforms, cloud services, and other third-party systems. We also provide cloud consulting services when architecture, migration, scalability, security, or cost optimization needs specialist planning.",
     points: [],
   },
   {
-    question: "Can I hire dedicated developers from Devapp?",
+    question:
+      "Can I hire dedicated developers or a complete development team?",
     answer:
-      "Yes. Devapp offers flexible engagement models, including dedicated developers, dedicated teams, staff augmentation, hourly hiring, and project-based development. You can choose the model that best matches your scope, budget, and timeline.",
+      "Yes. Businesses can hire dedicated developers, a full development team, or individual specialists through flexible engagement models. Options include mobile, software, AI, full-stack, Flutter, .NET, and other technical roles depending on the project.",
     points: [],
   },
   {
-    question: "Why should U.S. businesses choose Devapp?",
+    question:
+      "How do I choose a software development company for a U.S. project?",
     answer:
-      "Devapp combines experienced developers, transparent communication, flexible engagement models, U.S. time-zone collaboration, scalable technology, and long-term support. We focus on understanding your business objectives, not just your technical requirements, to build applications designed for sustainable growth.",
+      "To understand how to choose a software development company, compare relevant experience, technical depth, security practices, communication, project process, scalability, and post-launch support. U.S. businesses can also consider time-zone alignment, engagement flexibility, and experience with similar products.",
     points: [],
   },
 ];
+
 export const partners = [
   {
     id: 1,

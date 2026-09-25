@@ -5,23 +5,23 @@ import { ArrowRight } from "lucide-react";
 import ContactForm from "../../contactForm/ContactForm";
 // import { faqsData } from "../faqs/data";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { stats, partners ,faqsData } from "../../../../utils/data";
+import { stats, partners, faqsData } from "../../../../utils/data";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function faqs() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(null);
   return (
     <>
       <div className="w-full max-w-7xl mx-auto">
         <div className="mt-4">
-        <Image
-          src="/images/about/faqs/faqs-header-photo.webp"
-          alt=""
-          width={1200}
-          height={800}
-          className="w-full h-auto rounded-lg"
-        />
+          <Image
+            src="/images/about/faqs/faqs-header-photo.webp"
+            alt=""
+            width={1200}
+            height={800}
+            className="w-full h-auto rounded-lg"
+          />
         </div>
 
         <section className="py-10">
@@ -139,36 +139,48 @@ export default function faqs() {
         </section>
 
         <section className="py-12">
-          <div className="w-full px-4">
-            <div className="space-y-3">
-              {faqsData.map((faq, index) => (
+
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
+
+              return (
                 <div
                   key={index}
-                  className="border border-gray-200 rounded-lg overflow-hidden bg-white"
+                  className="border border-gray-200 rounded-lg overflow-hidden"
                 >
                   <button
-                    onClick={() => setOpen(open === index ? -1 : index)}
-                    className="w-full flex items-center justify-between px-5 py-5 text-left"
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
-                    <span className="text-[18px] font-medium text-black">
+                    <span className="font-semibold text-lg">
                       {faq.question}
                     </span>
 
-                    {open === index ? (
-                      <ChevronUp className="w-5 h-5 text-red-700" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-red-600" />
-                    )}
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                    >
+                      <ChevronDown size={22} />
+                    </span>
                   </button>
 
-                  {open === index && (
-                    <div className="px-5 pb-5 text-[17px] leading-8 text-gray-600 border-t border-gray-100">
-                      {faq.answer}
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                        {faq.answer}
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </section>
         <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
@@ -238,7 +250,7 @@ export default function faqs() {
                   >
                     +1 (866) 978-8570
                   </a>
-                 
+
                 </div>
               </div>
             </div>

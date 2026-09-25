@@ -4,11 +4,13 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, Paperclip } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react"; 
 import { comparisonData, features, tabsData } from "../engagement-model/data";
-import { stats } from "../../../../utils/data";
 import { submitContactForm } from "../../../../services/send-call-request";
 import { useRouter } from "next/navigation";
+import { stats,faqsData } from "../../../../utils/data";
 export default function EngagementModelSection() {
+  const [open, setOpen] = useState(null);
   const [activeModelTab, setActiveModelTab] = useState("hourly");
   const router = useRouter();
   const fileInputRef = useRef(null);
@@ -171,20 +173,21 @@ export default function EngagementModelSection() {
 
                 <h3 className="mt-4 sm:mt-6 text-xl sm:text-2xl font-semibold">
                   A Process You Can Trust, Results That Speak for Themselves
+
                 </h3>
 
                 <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
-                  Devapp Grid has built its reputation on more than just great technology;
-                  it's the long-term relationships we build with clients that set us apart. Our experienced
-                  development team knows that the right engagement model isn't a small detail, it's
-                  the foundation for quality delivery, real transparency, and a project that actually succeeds.
+                 Devapp Grid has built its reputation on more than just great technology; it's the long-term 
+                  relationships we build with clients that set us apart. Our experienced development team knows that 
+                  the right engagement model isn't a small detail, it's the foundation for quality delivery, real 
+                  transparency, and a project that actually succeeds.
                 </p>
 
                 <p className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
-                  As a seasoned mobile app and software development company, we offer three flexible
-                  engagement models designed to fit different project needs, budgets, and business goals
-                  because no two projects (or businesses) are exactly alike. Not sure which one fits you?
-                  Get in touch with our consultants today and find the right model for your next project.
+                  As a seasoned mobile app and software development company, we offer three flexible engagement 
+                  models designed to fit different project needs, budgets, and business goals because no two projects (or 
+                  businesses) are exactly alike. Not sure which one fits you? Get in touch with our consultants today 
+                  and find the right model for your next project.
                 </p>
 
                 <ul className="mt-6 sm:mt-8 space-y-4 sm:space-y-5 inline-block lg:block text-left">
@@ -770,6 +773,80 @@ export default function EngagementModelSection() {
             </div>
           </div>
         </section>
+                <section className="py-20 bg-white">
+                  <div className="w-full px-5">
+                    <h2 className="text-4xl font-bold text-center">
+                      Frequently Asked Questions
+                    </h2>
+        
+                    <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+                      Have questions about working with Devapp Grid? Here are some quick answers to help you understand our 
+                      development process, services, and how we can support your project. Still have questions? Reach out 
+                      to our team and we’ll be happy to discuss your requirements. To understand how to choose a 
+                      software development company, evaluate technical expertise, relevant portfolio work, 
+                      communication, security, development process, scalability, and support.
+                    </p>
+        
+<div className="mt-12 space-y-4">
+  {faqsData.map((faq, index) => {
+    const isOpen = open === index;
+
+    return (
+      <div
+        key={index}
+        className="border border-gray-200 rounded-lg overflow-hidden"
+      >
+        <button
+          type="button"
+          onClick={() => setOpen(isOpen ? -1 : index)}
+          className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+          aria-expanded={isOpen}
+        >
+          <span className="font-semibold text-lg">
+            {faq.question}
+          </span>
+
+          <span
+            className={`shrink-0 transition-transform duration-300 ease-in-out ${
+              isOpen ? "rotate-180" : "rotate-0"
+            }`}
+          >
+            <ChevronDown size={22} />
+          </span>
+        </button>
+
+        {/* Smooth FAQ Content */}
+        <div
+          className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+            isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+              {faq.answer}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
+        
+                    <div className="mt-20 text-center">
+                      <h3 className="text-4xl font-bold">
+                        Have Something in Mind? Let's Talk
+                      </h3>
+        
+                      <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+                        Have a look at the services and development process of the
+                        Devapp Grid. See what process we follow for mobile app and
+                        software development. Have a look at how we are praised by our
+                        clients. Start a conversation to innovate your next great idea
+                        into reality with us.
+                      </p>
+                    </div>
+                  </div>
+                </section>
       </div>
     </>
   );

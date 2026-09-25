@@ -332,7 +332,7 @@ export default function LandingPage() {
                   }`}
                 style={{ animationDelay: "500ms" }}
               >
-                Have a project in mind? Share your requirements with Devapp and connect with
+                Have a project in mind? Share your requirements with Devapp Grid and connect with
                 experienced mobile app developers and software development
                 specialists who can help you define the right solution, timeline, and development strategy.
               </p>
@@ -1112,63 +1112,50 @@ export default function LandingPage() {
             </h1>
           </div>
           <div className="max-w-6xl mx-auto px-4">
-            <div className="space-y-4">
-              {faqsData.map((faq, index) => (
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
+
+              return (
                 <div
                   key={index}
-                  className={`border bg-white transition-all duration-300 ${open === index
-                    ? "border-red-50 shadow-md"
-                    : "border-gray-200 hover:border-red-300"
-                    }`}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
                 >
                   <button
-                    onClick={() => setOpen(open === index ? -1 : index)}
-                    className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
-                    <span className="text-lg font-medium text-black">
+                    <span className="font-semibold text-lg">
                       {faq.question}
                     </span>
 
-                    <ChevronDown
-                      className={`w-5 h-5 transition-transform duration-300 ${open === index
-                        ? "rotate-180 text-black"
-                        : "rotate-0 text-black"
-                        }`}
-                    />
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                      ? "max-h-150 opacity-100"
-                      : "max-h-0 opacity-0"
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${
+                        isOpen ? "rotate-180" : "rotate-0"
                       }`}
+                    >
+                      <ChevronDown size={22} />
+                    </span>
+                  </button>
+
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
                   >
-                    <div className="px-6 pb-5 pt-4 border-t border-gray-100">
-                      <p className="text-[17px] leading-8 text-gray-600">
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
                         {faq.answer}
-                      </p>
-
-                      {faq.points && (
-                        <ul className="mt-5 space-y-4">
-                          {faq.points.map((point, i) => (
-                            <li
-                              key={i}
-                              className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
-                            >
-                              <ChevronRight
-                                size={18}
-                                className="mt-1 text-black shrink-0"
-                              />
-
-                              <span>{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
+          </div>
           </div>
         </section>
         <section className="bg-black text-white font-sans overflow-hidden">

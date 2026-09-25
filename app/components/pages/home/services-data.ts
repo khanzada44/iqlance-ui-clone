@@ -32,7 +32,7 @@ export const servicesData = [
     id: 2,
     title: "Hire Software Developers",
     description:
-      "Get skilled software developers on your team to build custom, enterprise-grade applications that cut through operational friction, sharpen efficiency, and set your business up for long-term growth, with solutions that are well-architected and built to last.",
+      "You can hire software developers USA businesses can rely on for custom applications, enterprise systems, APIs, and ongoing product development.",
     icon: "/images/wd-icn.png.webp",
     button: "Hire Now",
   },
@@ -69,6 +69,7 @@ export const servicesData = [
   //   button: "Hire Now",
   // },
 ];
+
 export const processSteps = [
   {
     id: 1,
@@ -90,7 +91,7 @@ export const processSteps = [
     id: 3,
     title: "Development",
     description:
-      "Once the design gets the green light, our developers roll up their sleeves and build using modern technologies, AI-assisted tools, and agile methodologies to create applications that are secure, scalable, and genuinely high-performing. We keep you in the loop the entire way, with regular updates and the flexibility to pivot the moment your business needs shift.",
+      "Once the design is approved, our developers get to work using modern technologies, AI-assisted tools, and agile methods to deliver mobile app development and custom software solutions that are secure, scalable, and high-performing. With regular updates and flexible development, we adapt quickly as your business needs evolve.",
     image:
       "/images/solutions/fitness/proces-icon-3.webp",
   },
@@ -106,7 +107,7 @@ export const processSteps = [
     id: 5,
     title: "Deployment",
     description:
-      " Once testing gives the all-clear, we take your application, software, or website live in the right production environment whether that's a cloud platform, enterprise server, web hosting setup, or mobile app store. Every launch is handled with care: secure, seamless, and closely monitored from the moment it goes live",
+      "Once testing gives the all-clear, we take your application, software, or website live in the right production environment whether that's a cloud platform, enterprise server, web hosting setup, or mobile app store. Every launch is handled with care: secure, seamless, and closely monitored from the moment it goes live.",
     image:
       "/images/solutions/fitness/proces-icon-5.webp",
   },
@@ -119,12 +120,16 @@ export const processSteps = [
       "/images/proces-icon-6.png",
   },
 ];
+
 export const slides = [
   {
     title: "Looking for a Development Team That Actually Gets Your Business?",
-    description1: "Hiring a development team isn't just about finding people who can write code. It's about finding professionals who genuinely understand your goals, communicate clearly at every step, and build technology that solves the real problems your business faces. Whether you're launching something brand new or upgrading a platform that's already live, our developers partner with startups, SMBs, and enterprises across the USA to build reliable digital products shaped around their market, their users, and their business goals.",
+    description1: `For businesses comparing a mobile app development company in Dallas, we can support product 
+strategy, design, engineering, and ongoing maintenance. For organizations in the region, our app
+development company Dallas services can cover discovery, UI/UX, engineering, QA, deployment, 
+and ongoing support.`,
     description2:
-      "",
+      ``,
 
     services: [
       {
@@ -157,8 +162,14 @@ export const slides = [
     title: "Deliver Mobile App and Software Development Services Across the USA",
 
     description1:
-      "Devapp Grid delivers innovative software development and app development services all over the USA. We offer design-led agile development solutions for customers in North America, including startups, SMEs, established corporations, and non-profit organizations. We bring real-world experience to every engagement so we can better understand your business needs. By partnering with Devapp Grid, clients can expect to work with a staff that pays close attention to detail. Together, we transform your app idea into a scalable, user-focused solution that stands out in today's competitive app marketplace.",
-
+      `Hiring a development team isn't just about finding people who can write code. It's about finding 
+professionals who genuinely understand your goals, communicate clearly at every step, and build 
+technology that solves the real problems your business faces. Whether you're launching something 
+brand new or upgrading a platform that's already live, our developers partner with startups, SMBs, 
+and enterprises across the USA to build reliable digital products shaped around their market, their 
+users, and their business goals. Businesses looking for an app development company USA partner 
+can work with a team aligned to U.S. business goals, communication needs, and delivery 
+expectations.`,
     description2:
       "",
     services: [
@@ -188,7 +199,7 @@ export const slides = [
           "Generative AI, Agentic AI, AI Agents, and more ",
         ],
       },
-      
+
     ],
 
     image:
@@ -207,8 +218,12 @@ export const portfolioSlides = [
     heading: "Find the Right Fit for Your Next Project",
     title: "Supply Chain Management App",
     description:
-      "Modern B2B trade moves fast and this supply chain management app was built to keep pace with it. Designed to tackle the everyday headaches of scattered data and clunky interfaces, it brings structure, speed, and security to B2B operations that used to run on spreadsheets and guesswork. The result? A platform that turns supply chain complexity into a competitive advantage.",
-
+      `
+      Modern B2B trade moves fast and this supply chain management app was built to keep pace with it. 
+Designed to tackle the everyday headaches of scattered data and clunky interfaces, it brings structure, 
+speed, and security to B2B operations that used to run on spreadsheets and guesswork. The result? A 
+platform that turns supply chain complexity into a competitive advantage.
+      `,
     features: [
       "A Global Hub for Chemical Procurement",
       "Built to Serve Industries Across the Board",
@@ -309,37 +324,59 @@ export const services = [
     image: "/images/home/Services_We_Offer_11.webp",
     title: "Custom Software Development",
     description:
-      "We design and build scalable enterprise software, CRM systems, ERP solutions, SaaS platforms, and business automation tools engineered around how your operations actually run, not a one-size-fits-all template.",
+      `We design and build scalable enterprise software, CRM systems, ERP solutions, SaaS platforms, and 
+business automation tools engineered around how your operations actually run, not a one-size-fits-all 
+template. Our custom software development services include business applications, CRM and ERP 
+platforms, SaaS products, workflow automation, integrations, and modernization.`
   },
   {
     image: "/images/home/Services_We_Offer_2.webp",
     title: "AI Development",
     description:
-      "From generative AI applications to intelligent AI agents, chatbots, and smart automation tools, we build AI-powered solutions that sharpen customer experiences, streamline your operations, and keep you ahead of the innovation curve.",
+      `From generative AI applications to intelligent AI agents, chatbots, and smart automation tools, we 
+build AI-powered solutions that sharpen customer experiences, streamline your operations, and keep 
+you ahead of the innovation curve. As an AI development company, we connect practical AI 
+capabilities with real business workflows rather than adding automation without a clear purpose.`
   },
   {
     image: "/images/home/Services_We_Offer_3.webp",
     title: "Web Development",
     description:
-      "We craft fast, responsive, high-performing websites and web applications that strengthen your digital presence, elevate the user experience, and set your business up for long-term success across every online touchpoint",
+      `We build fast, responsive websites and web applications designed to improve user 
+experience, strengthen your online presence, and support long-term growth.
+As a trusted web development company USA business can work with, we focus on web 
+design, web application development, performance, accessibility, technical SEO, and 
+secure integrations—creating digital experiences that work smoothly across every device.
+`
   },
   {
     image: "/images/home/Services_We_Offer_4.webp",
     title: "Mobile App Development",
     description:
-      "We build engaging iOS, Android, and cross-platform mobile apps that deliver standout user experiences, drive real engagement, and support your business growth with scalable, feature-rich solutions built to last",
+  `We build engaging iOS, Android, and cross-platform mobile apps that deliver standout user 
+experiences, drive real engagement, and support your business growth with scalable, feature-rich 
+solutions built to last. We cover native app development, cross-platform frameworks, mobile
+UI/UX, API connectivity, analytics, security, and continuous optimization.`    
   },
   {
     image: "/images/home/Services_We_Offer_5.webp",
     title: "IT Staff Augmentation",
     description:
-      "Scale your development capabilities fast. Our experienced IT professionals slot seamlessly into your existing team, helping you speed up delivery without compromising on flexibility, transparency, or quality.",
+  `Scale your development capabilities fast. Our experienced IT professionals slot seamlessly into your 
+existing team, helping you speed up delivery without compromising on flexibility, transparency, or 
+quality. As an IT staff augmentation company, we add experienced developers and specialists to 
+your existing team without forcing a one-size-fits-all delivery model.`   
   },
   {
     image: "/images/home/Services_We_Offer_6.webp",
     title: "Cloud Consulting",
-    description:
-      "Get more out of your cloud infrastructure with expert consulting that boosts scalability, tightens security, cuts operational costs, and ensures reliable performance backed by custom cloud strategies and smooth, hassle-free migration.",
+    description:`Get more out of your cloud infrastructure with expert consulting that boosts scalability, tightens 
+security, cuts operational costs, and ensures reliable performance backed by custom cloud strategies 
+and smooth, hassle-free migration. Our cloud consulting services cover architecture, migration 
+planning, scalability, security, cost visibility, and ongoing cloud optimization. Our cloud work 
+includes cloud-native architecture, migration, DevOps practices, infrastructure optimization, 
+security, and cost management.
+`
   },
 ];
 export const testimonials = [
