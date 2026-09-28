@@ -201,7 +201,7 @@ export default function HeroQuoteSection() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
-                <p className="text-lg text-gray-700">USA's Top-Notch</p>
+                <p className="text-lg text-black">USA's Top-Notch</p>
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
                   Healthcare App
                   <br className="hidden sm:block" />
@@ -212,7 +212,7 @@ export default function HeroQuoteSection() {
 
                 </h3>
 
-                <p className="mt-6 text-gray-700 leading-8 text-lg">
+                <p className="mt-6 text-black leading-8 text-lg">
                   Healthcare is becoming more connected, mobile, and patient-driven. We help hospitals,
                   clinics, medical practices, and health-tech companies turn this shift into practical
                   digital products that simplify care and improve everyday healthcare experiences.
@@ -275,10 +275,10 @@ export default function HeroQuoteSection() {
                   </div>
 
                   {/* Form Heading */}
-                  <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
+                  <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
                     Request a Free Quote
                   </h2>
-                  <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
+                  <p className="text-xs md:text-sm text-black font-medium mb-8">
                     Guaranteed Response within One Business Day!
                   </p>
                   <form
@@ -294,7 +294,7 @@ export default function HeroQuoteSection() {
                         value={formData.name}
                         onChange={handleChange}
                         disabled={loading}
-                        className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                        className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                       />
                       {errors.name && (
                         <span className="text-xs text-red-600 mt-1 block">
@@ -311,7 +311,7 @@ export default function HeroQuoteSection() {
                         value={formData.email}
                         onChange={handleChange}
                         disabled={loading}
-                        className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                        className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                       />
                       {errors.email && (
                         <span className="text-xs text-red-600 mt-1 block">
@@ -328,7 +328,7 @@ export default function HeroQuoteSection() {
                         value={formData.phone}
                         onChange={handleChange}
                         disabled={loading}
-                        className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                        className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                       />
                       {errors.phone && (
                         <span className="text-xs text-red-600 mt-1 block">
@@ -345,14 +345,14 @@ export default function HeroQuoteSection() {
                         value={formData.message}
                         onChange={handleChange}
                         disabled={loading}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                       />
                     </div>
 
                     {/* File Upload & NDA Checkbox */}
-                    <div className="flex flex-col sm:flex-row sm:items-center  gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                        <Paperclip className="w-4 h-4 text-gray-600" />
+                    <div className="flex flex-col sm:flex-row sm:items-center  gap-3 text-xs md:text-sm text-black pt-1">
+                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                        <Paperclip className="w-4 h-4 text-black" />
                         <span>Upload file:</span>
                         <input
                           ref={fileInputRef}
@@ -363,7 +363,7 @@ export default function HeroQuoteSection() {
                         />
                       </label>
 
-                      <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                      <span className="text-black truncate max-w-full sm:max-w-45">
                         {formData.file ? formData.file.name : "No file chosen."}
                       </span>
                     </div>
@@ -384,7 +384,7 @@ export default function HeroQuoteSection() {
                       />
                       <label
                         htmlFor="nda"
-                        className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                        className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                       >
                         Please Send NDA
                       </label>
@@ -498,7 +498,7 @@ export default function HeroQuoteSection() {
                         <ChevronRight size={14} className="mt-1 shrink-0" />
                       </span>
 
-                      <p className="text-gray-700 leading-normal">
+                      <p className="text-black leading-normal">
                         <strong>{item.title}: </strong>
                         {item.description}
                       </p>
@@ -529,7 +529,7 @@ export default function HeroQuoteSection() {
                 Looking to Hire a Healthcare App Development Team?
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-gray-700 max-w-3xl mx-auto leading-7">
+              <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
                 Partner with us to hire experienced healthcare app developers to
                 build secure, scalable and user-friendly mobile solutions
                 tailored to your healthcare business needs.
@@ -641,7 +641,7 @@ export default function HeroQuoteSection() {
                         {slide.title}
                       </h2>
 
-                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
                         {slide.description}
                       </p>
 
@@ -668,14 +668,14 @@ export default function HeroQuoteSection() {
             <h1 className="text-center leading-tight font-bold text-[30px] mb-2.5">
               Advantages of Adopting Healthcare App Solutions
             </h1>
-            <p className="text-center text-gray-600 text-base max-w-3xl mx-auto mb-8">
+            <p className="text-center text-black text-base max-w-3xl mx-auto mb-8">
               Healthcare apps are reshaping the way patients, physicians, and care teams connect,
               communicate, and manage care. By bringing essential healthcare services, patient information,
               and digital communication into one connected environment,
               mobile solutions can help providers deliver faster, more coordinated, and patient-focused care.
             </p>
 
-            <div className="flex flex-col lg:flex-row gap-6 text-gray-700">
+            <div className="flex flex-col lg:flex-row gap-6 text-black">
               <div className="flex-1 space-y-4">
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0 " />
@@ -846,14 +846,14 @@ export default function HeroQuoteSection() {
             <h1 className="text-center leading-tight font-bold text-[30px] mb-2.5">
               Advantages of adopting healthcare app solutions
             </h1>
-            <p className="text-center text-gray-600 text-base max-w-3xl mx-auto mb-8">
+            <p className="text-center text-black text-base max-w-3xl mx-auto mb-8">
               Undoubtedly, the IoT has transformed the way of working in almost
               all the industries! Also, it has redefined how apps, devices and
               people interact and connect with each other for delivering
               healthcare solutions.
             </p>
 
-            <div className="flex flex-col lg:flex-row gap-6 text-gray-700">
+            <div className="flex flex-col lg:flex-row gap-6 text-black">
               <div className="flex-1 space-y-4">
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0 " />
@@ -900,7 +900,7 @@ export default function HeroQuoteSection() {
               Features of Healthcare App Development
             </h2>
 
-            <p className="mt-6 max-w-4xl mx-auto text-center text-gray-600 text-base md:text-lg leading-8">
+            <p className="mt-6 max-w-4xl mx-auto text-center text-black text-base md:text-lg leading-8">
               We craft only top-notch applications that not only help in
               achieving every healthcare solution but also act as a gateway to
               new medical opportunities.
@@ -919,7 +919,7 @@ export default function HeroQuoteSection() {
                     className="w-14 h-14 object-contain"
                   />
 
-                  <h3 className="mt-5 text-base md:text-lg font-semibold text-gray-900">
+                  <h3 className="mt-5 text-base md:text-lg font-semibold text-black">
                     {feature.title}
                   </h3>
                 </div>
@@ -1207,7 +1207,7 @@ export default function HeroQuoteSection() {
                     Innovative Product
                   </h2>
 
-                  <p className="mt-6 text-lg text-gray-700 leading-5">
+                  <p className="mt-6 text-lg text-black leading-5">
                     We are one of the best
                     app development company in USA.
                   </p>
@@ -1254,7 +1254,7 @@ export default function HeroQuoteSection() {
                     onClick={() => setActiveTab(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activeTab === index
                       ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-black"
+                      : "text-black hover:text-black"
                       }`}
                   >
                     {tab.category}
@@ -1424,7 +1424,7 @@ export default function HeroQuoteSection() {
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-700 leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
+                  <p className="text-black leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
                     {service.description}
                   </p>
                 </div>
@@ -1483,7 +1483,7 @@ export default function HeroQuoteSection() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                        <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
                         {/* Stars */}
@@ -1499,13 +1499,13 @@ export default function HeroQuoteSection() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1585,7 +1585,7 @@ export default function HeroQuoteSection() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                       {faq.points && (
@@ -1593,7 +1593,7 @@ export default function HeroQuoteSection() {
                           {faq.points.map((point, i) => (
                             <li
                               key={i}
-                              className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
+                              className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
                             >
                               <ChevronRight
                                 size={18}

@@ -257,7 +257,7 @@ export default function fitness() {
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-gray-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work
                   <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 group-hover:translate-x-1" />
@@ -296,7 +296,7 @@ export default function fitness() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -315,7 +315,7 @@ export default function fitness() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -334,7 +334,7 @@ export default function fitness() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -351,14 +351,14 @@ export default function fitness() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -369,7 +369,7 @@ export default function fitness() {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -390,7 +390,7 @@ export default function fitness() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -446,9 +446,9 @@ export default function fitness() {
           <div className="flex flex-col gap-y-6 px-5">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                  <strong className="font-semibold text-gray-900">
+                <ChevronRight className="w-4 h-4 text-black shrink-0 mt-1" />
+                <p className="text-sm md:text-base text-black leading-relaxed">
+                  <strong className="font-semibold text-black">
                     {item.title}:
                   </strong>{" "}
                   {item.description}
@@ -588,14 +588,14 @@ export default function fitness() {
                           {slide.title}
                         </h3>
 
-                        <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+                        <p className="text-black leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
                           {slide.description}
                         </p>
 
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
                           {slide.features.map((feature, i) => (
                             <li key={i} className="flex items-center gap-2">
-                              <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />{" "}
+                              <ChevronRight className="w-4 h-4 text-black shrink-0 stroke-[2.5]" />{" "}
                               {feature}
                             </li>
                           ))}
@@ -639,10 +639,10 @@ export default function fitness() {
           {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
                 Check How We turn Your Idea into Innovative Product
               </h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Our rich portfolio justifies that we are one of the best
                 logistics app development companies in the USA.
               </p>
@@ -659,7 +659,7 @@ export default function fitness() {
 
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-6xl mx-auto space-y-4 px-5">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               The Process Behind a Food Delivery App Built to Perform
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
@@ -683,13 +683,13 @@ export default function fitness() {
                   className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${
                     activeStepIndex === index
                       ? "text-red-800 border-red-600 font-bold"
-                      : "text-gray-400 border-transparent hover:text-red-600"
+                      : "text-black border-transparent hover:text-red-600"
                   }`}
                 >
                   {step.tabTitle}
                 </button>
                 {index < processSteps.length - 1 && (
-                  <span className="text-gray-400 font-light">
+                  <span className="text-black font-light">
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 )}
@@ -741,13 +741,13 @@ export default function fitness() {
               )}
             </div>
             <div className="flex flex-col justify-center">
-              <span className="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-2">
+              <span className="text-xs font-semibold tracking-wider text-black uppercase mb-2">
                 {currentStep.stepLabel}
               </span>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
+              <h2 className="text-3xl font-extrabold text-black mb-4">
                 {currentStep.heading}
               </h2>
-              <p className="text-gray-600 leading-relaxed text-sm max-w-md">
+              <p className="text-black leading-relaxed text-sm max-w-md">
                 {currentStep.description}
               </p>
             </div>
@@ -778,7 +778,7 @@ export default function fitness() {
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
                       activetechnologies === index
                         ? "text-red-600 font-semibold"
-                        : "text-gray-500 hover:text-red-500"
+                        : "text-black hover:text-red-500"
                     }`}
                   >
                     {tab.category}
@@ -827,19 +827,19 @@ export default function fitness() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Looking to Hire Dedicated Team?
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               We are team of talented, experienced, and certified designers and
               developers. Let us build something extraordinary.
             </p>
 
             {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
@@ -859,7 +859,7 @@ export default function fitness() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -896,7 +896,7 @@ export default function fitness() {
         </section>
 
         <div className="text-center max-w-4xl mx-auto space-y-4 mt-15 mb-10 px-5">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
             Our On-Demand App Development Solutions
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
@@ -1042,18 +1042,18 @@ export default function fitness() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Ready to Get Started?
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
               Send your Requirements on
             </p>
 
             {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
@@ -1073,7 +1073,7 @@ export default function fitness() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -1117,7 +1117,7 @@ export default function fitness() {
                 Advanced Technologies for Food Business Growth
               </h2>
 
-              <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+              <div className="space-y-4 text-black text-sm md:text-base leading-relaxed">
                 <h3 className="text-lg md:text-xl font-bold text-black">
                   Turn Food Delivery Technology Into a Competitive Advantage
                 </h3>
@@ -1259,13 +1259,13 @@ export default function fitness() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1346,7 +1346,7 @@ export default function fitness() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                       {faq.points && (

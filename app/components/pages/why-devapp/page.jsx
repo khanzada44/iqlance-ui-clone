@@ -111,11 +111,11 @@ export default function whyDevapp() {
         <section className="w-full py-16 px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl font-bold text-black mb-4">
                 A Development Company Businesses Actually Trust
               </h2>
 
-              <p className="text-gray-700 text-sm leading-6 mb-4">
+              <p className="text-black text-sm leading-6 mb-4">
                 Devapp Grid has earned its place as a leading software,
                 web, and mobile app development company,
                 with deep experience building technology solutions that are both
@@ -123,7 +123,7 @@ export default function whyDevapp() {
                 together with a carefully planned approach, all built to push your business forward
               </p>
 
-              <p className="text-gray-700 text-sm leading-6 mb-6">
+              <p className="text-black text-sm leading-6 mb-6">
                 As a leading mobile app and software development company in the USA,
                 Devapp Grid has spent years mastering the art of customizing and innovating
                 apps that actually work. We dig deep into research before writing a single
@@ -137,21 +137,21 @@ export default function whyDevapp() {
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
-                  <span className="text-lg font-medium text-gray-800">
+                  <span className="text-lg font-medium text-black">
                     Your app idea stays protected, always
                   </span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
-                  <span className="text-lg font-medium text-gray-800">
+                  <span className="text-lg font-medium text-black">
                     Communication that's clear, not confusing
                   </span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
-                  <span className="text-lg font-medium text-gray-800">
+                  <span className="text-lg font-medium text-black">
                     A development process you can actually see into
 
                   </span>
@@ -159,14 +159,14 @@ export default function whyDevapp() {
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
-                  <span className="text-lg font-medium text-gray-800">
+                  <span className="text-lg font-medium text-black">
                     Every design gets verified before it moves forward
                   </span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
-                  <span className="text-lg font-medium text-gray-800">
+                  <span className="text-lg font-medium text-black">
                     Delivery that happens on time, every time
 
                   </span>
@@ -174,7 +174,7 @@ export default function whyDevapp() {
 
                 <li className="flex items-center gap-3">
                   <ChevronRight size={14} />
-                  <span className="text-lg font-medium text-gray-800">
+                  <span className="text-lg font-medium text-black">
                     Quality that's never left to chance
                   </span>
                 </li>
@@ -195,15 +195,15 @@ export default function whyDevapp() {
         </section>
 
         <section className="w-full py-2">
-          <p className="text-center text-gray-600 text-lg mb-10 mt-15 px-5">
+          <p className="text-center text-black text-lg mb-10 mt-15 px-5">
             Mobile App & Web Development, All Under One Roof
           </p>
 
-          <h2 className="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4 px-5">
+          <h2 className="text-center text-3xl md:text-4xl font-bold text-black mb-4 px-5">
             A Leading App Development Company in the USA
           </h2>
 
-          <p className="w-full text-center text-gray-700 text-lg leading-7 mb-4 px-5">
+          <p className="w-full text-center text-black text-lg leading-7 mb-4 px-5">
             Devapp Grid stands as one of the fastest-growing app development companies,
             with a full team of developers, designers, testers, business developers,
             and marketers all working together under one roof. Our multiplatform mobile app services
@@ -212,12 +212,12 @@ export default function whyDevapp() {
             and interactive UI/UX that set us apart from other app development companies in the USA.
           </p>
 
-          <p className="w-full text-center text-gray-700 text-lg leading-7 mb-6 px-5">
+          <p className="w-full text-center text-black text-lg leading-7 mb-6 px-5">
             Got an amazing idea for a web or mobile app?
             You can count on us to bring it to life, from first concept to finished product.
           </p>
 
-          <p className="text-center text-xl text-gray-800 mb-6 font-medium px-5">
+          <p className="text-center text-xl text-black mb-6 font-medium px-5">
             Latest technology features find a way into our daily business
             practices that helps us stand out.
           </p>
@@ -240,7 +240,7 @@ export default function whyDevapp() {
               <h2 className="text-2xl md:text-3xl font-extrabold text-black leading-tight">
                 See How We Turn Your Idea Into an Innovative Product
               </h2>
-              <p className="mt-4 text-gray-700 text-base md:text-lg">
+              <p className="mt-4 text-black text-base md:text-lg">
                 Our portfolio does the talking here, it's the reason businesses across
                 the USA see us as one of the top app development companies around.
               </p>
@@ -290,7 +290,7 @@ export default function whyDevapp() {
 
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
 
-                <p className="text-gray-600 leading-7">{feature.description}</p>
+                <p className="text-black leading-7">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -332,7 +332,7 @@ export default function whyDevapp() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -389,7 +389,7 @@ export default function whyDevapp() {
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto px-5">
+            <p className="mt-5 text-center text-[17px] text-black w-full mx-auto px-5">
               Find answers to common questions about our app and software
               development services and learn how we can help turn your idea into
               a successful digital product.
@@ -430,7 +430,7 @@ export default function whyDevapp() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                     </div>
@@ -445,7 +445,7 @@ export default function whyDevapp() {
                 Have Something in Mind? Let's Talk
               </h3>
 
-              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black">
                 Have a look at the services and development process of the
                 Devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our

@@ -181,7 +181,7 @@ export default function About() {
           <div className="w-full px-5">
             <h2 className="text-3xl font-bold text-center">Our Mission</h2>
 
-            <p className="w-full mx-auto mt-4 text-center text-[16px] leading-7 text-gray-700">
+            <p className="w-full mx-auto mt-4 text-center text-[16px] leading-7 text-black ">
               At DevApp Grid, we build technology that earns its keep. Every project starts with one question: will this
               actually move your business forward? That question shapes how we plan, design, and build, so the
               end result is not just functional but genuinely useful, something that helps you serve customers better,
@@ -207,7 +207,7 @@ export default function About() {
                     {item.title}
                   </h3>
 
-                  <p className="text-[15px] leading-8 text-gray-700">
+                  <p className="text-[15px] leading-8 text-black ">
                     {item.description}
                   </p>
                 </div>
@@ -441,7 +441,7 @@ export default function About() {
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+            <p className="mt-5 text-center text-[17px] text-black 0 w-full mx-auto">
               Have questions about working with Devapp Grid? Here are some quick answers to help you understand our
               development process, services, and how we can support your project. Still have questions? Reach out
               to our team and we’ll be happy to discuss your requirements. To understand how to choose a
@@ -482,7 +482,7 @@ export default function About() {
                         }`}
                     >
                       <div className="overflow-hidden">
-                        <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                        <div className="px-5 pb-5 text-[16px] leading-8 text-black ">
                           {faq.answer}
                         </div>
                       </div>
@@ -497,7 +497,7 @@ export default function About() {
                 Have Something in Mind? Let's Talk
               </h3>
 
-              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black ">
                 Have a look at the services and development process of the
                 Devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our

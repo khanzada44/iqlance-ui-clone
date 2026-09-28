@@ -270,7 +270,7 @@ export default function fitness() {
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-red-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-red-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work
                   <ArrowRight className="w-4 h-4 text-black transition-transform duration-200 group-hover:translate-x-1" />
@@ -311,7 +311,7 @@ export default function fitness() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -330,7 +330,7 @@ export default function fitness() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -349,7 +349,7 @@ export default function fitness() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -366,14 +366,14 @@ export default function fitness() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -384,7 +384,7 @@ export default function fitness() {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -405,7 +405,7 @@ export default function fitness() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -506,9 +506,9 @@ export default function fitness() {
           <div className="flex flex-col gap-y-6 px-5">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                  <strong className="font-semibold text-gray-900">
+                <ChevronRight className="w-4 h-4 text-black shrink-0 mt-1" />
+                <p className="text-sm md:text-base text-black leading-relaxed">
+                  <strong className="font-semibold text-black">
                     {item.title}:
                   </strong>{" "}
                   {item.description}
@@ -557,7 +557,7 @@ export default function fitness() {
                   {item.title}
                 </h3>
 
-                <p className="text-gray-600 text-xs md:text-sm leading-relaxed grow faq">
+                <p className="text-black text-xs md:text-sm leading-relaxed grow faq">
                   {item.description}
                 </p>
               </div>
@@ -576,16 +576,16 @@ export default function fitness() {
               />
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Ready to Get Started?
             </h2>
 
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
               Send your Requirements on
             </p>
 
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -604,7 +604,7 @@ export default function fitness() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -635,13 +635,13 @@ export default function fitness() {
             </div>
           </div>
         </section>
-        <section className="mt-15 mb-15 text-center text-gray-800">
+        <section className="mt-15 mb-15 text-center text-black">
           <div className="mb-12 px-5">
             <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6">
               Tailored Fitness App Development for Every Business
             </h2>
 
-            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 mx-auto">
+            <div className="space-y-4 text-sm md:text-base leading-relaxed text-black mx-auto">
               <p>
                 The health and wellness app space is booming, with millions of
                 downloads happening every single month, but that also means standing
@@ -662,7 +662,7 @@ export default function fitness() {
               A USA-Based Team You Can Actually Meet
             </h3>
 
-            <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto px-5">
+            <div className="space-y-4 text-sm md:text-base leading-relaxed text-black max-w-6xl mx-auto px-5">
               <p>
                 While many app development companies outsource behind the scenes,
                 Devapp Grid keeps everything in-house and based right here in the USA. We
@@ -713,14 +713,14 @@ export default function fitness() {
                           {slide.title}
                         </h3>
 
-                        <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+                        <p className="text-black leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
                           {slide.description}
                         </p>
 
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
                           {slide.features.map((feature, i) => (
                             <li key={i} className="flex items-center gap-2">
-                              <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />{" "}
+                              <ChevronRight className="w-4 h-4 text-black shrink-0 stroke-[2.5]" />{" "}
                               {feature}
                             </li>
                           ))}
@@ -770,10 +770,10 @@ export default function fitness() {
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
                 Check How We turn Your Idea into Innovative Product
               </h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Our rich portfolio justifies that we are one of the best
                 logistics app development companies in the USA.
               </p>
@@ -788,7 +788,7 @@ export default function fitness() {
             </Link>
           </div>
           <div className="text-center max-w-6xl mx-auto space-y-4 px-5">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Built on a Secure, Scalable Tech Foundation
             </h2>
 
@@ -813,7 +813,7 @@ export default function fitness() {
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                       ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-red-600"
+                      : "text-black hover:text-red-600"
                       }`}
                   >
                     {tab.category}
@@ -859,19 +859,19 @@ export default function fitness() {
               />
             </div>
 
-            <div className="flex flex-col space-y-4 text-gray-800">
+            <div className="flex flex-col space-y-4 text-black">
               <h2 className="text-2xl lg:text-3xl font-extrabold text-black leading-snug">
                 Turn Your Fitness Vision Into a High-Impact Digital Product
               </h2>
 
-              <p className="text-sm lg:text-base leading-relaxed text-gray-700">
+              <p className="text-sm lg:text-base leading-relaxed text-black">
                 Technology is transforming how people train, track progress, and stay
                 committed to healthier lifestyles. We help fitness brands, startups, gyms,
                 wellness companies, and personal trainers turn their ideas into intuitive
                 digital experiences built around the way modern users actually exercise.
               </p>
 
-              <p className="text-sm lg:text-base leading-relaxed text-gray-700">
+              <p className="text-sm lg:text-base leading-relaxed text-black">
                 From personalized workout platforms and coaching apps to nutrition
                 trackers and wearable-connected solutions, our{" "}
                 <span className="font-semibold text-black">
@@ -896,14 +896,14 @@ export default function fitness() {
                 className="object-contain"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Looking to Hire Dedicated Team?
             </h2>
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               We are team of talented, experienced, and certified designers and developers. Let us build something extraordinary.
             </p>
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -922,7 +922,7 @@ export default function fitness() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -1002,13 +1002,13 @@ export default function fitness() {
             </div>
           </div>
         </section>
-        <section className="py-12 px-4 font-sans text-center text-gray-800">
+        <section className="py-12 px-4 font-sans text-center text-black">
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
               From Product Idea to Something People Build Habits Around
             </h2>
 
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto">
+            <p className="text-sm md:text-base leading-relaxed text-black max-w-7xl mx-auto">
               A strong fitness product doesn't happen by stacking features until the
               screen looks busy. It starts with understanding{" "}
               <span className="font-semibold text-black">
@@ -1019,7 +1019,7 @@ export default function fitness() {
               action feel obvious.
             </p>
 
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto mt-4">
+            <p className="text-sm md:text-base leading-relaxed text-black max-w-7xl mx-auto mt-4">
               Your business goals stay at the center too whether that means
               subscriptions, digital coaching, memberships, premium programs, or a new
               fitness marketplace.
@@ -1030,7 +1030,7 @@ export default function fitness() {
               What Makes a Fitness App More Than Just Another App?
             </h2>
 
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto">
+            <p className="text-sm md:text-base leading-relaxed text-black max-w-7xl mx-auto">
               The difference isn't another dashboard or another workout library. It's
               what happens between the first download and the hundredth workout. We
               design experiences around the moments that matter, helping users discover
@@ -1038,7 +1038,7 @@ export default function fitness() {
               see enough progress to keep going.
             </p>
 
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto mt-4">
+            <p className="text-sm md:text-base leading-relaxed text-black max-w-7xl mx-auto mt-4">
               Your product can bring coaching, community, movement tracking, nutrition,
               challenges, and personal goals into one connected experience. The result
               is a fitness platform built around{" "}
@@ -1177,12 +1177,12 @@ export default function fitness() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1261,7 +1261,7 @@ export default function fitness() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                       {faq.points && (

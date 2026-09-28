@@ -26,12 +26,12 @@ export default function testimonials() {
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-center leading-tight">
               <span className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">Hear It From the People We’ve Worked With  </span>
             </h2>
-            <p className="max-w-6xl mx-auto mt-8 text-center text-gray-800 text-base sm:text-lg leading-8">
+            <p className="max-w-6xl mx-auto mt-8 text-center text-black text-base sm:text-lg leading-8">
               Good work speaks for itself, but hearing it straight from our clients makes it even better. From first 
               conversations to final delivery, we’re proud of the relationships we’ve built and the results we’ve 
               achieved together.
             </p>
-            <p className="max-w-6xl mx-auto mt-8 text-center text-gray-800 text-base sm:text-lg leading-8">
+            <p className="max-w-6xl mx-auto mt-8 text-center text-black text-base sm:text-lg leading-8">
               At Grid  Devapp, we believe the best projects are a two-way street. We listen, collaborate, tackle challenges 
               head-on, and keep the bigger picture in mind. So your idea doesn’t just get built, it gets built right
             </p>
@@ -64,7 +64,7 @@ export default function testimonials() {
               Web, Mobile & Custom Software Development
             </h3>
 
-            <p className="max-w-6xl mx-auto mt-1 text-center text-gray-700 text-base sm:text-lg leading-8">
+            <p className="max-w-6xl mx-auto mt-1 text-center text-black text-base sm:text-lg leading-8">
                 Got an idea you want to bring to life? We’ve got you covered. Devapp creates custom web, mobile, 
                 and software solutions that are built around your business, not the other way around. From the first 
                 line of code to the final launch, we keep things practical, purposeful, and ready to grow with you.
@@ -133,11 +133,11 @@ export default function testimonials() {
                       </div>
                     </div>
                   </div>
-                  <p className="mt-6 text-gray-700 text-sm leading-6">
+                  <p className="mt-6 text-black text-sm leading-6">
                     {item.review}
                   </p>
                   <div className="mt-6">
-                    <p className="text-xs text-gray-500 mb-2">Verified by</p>
+                    <p className="text-xs text-black mb-2">Verified by</p>
 
                     <img
                       src={item.verifiedLogo}
@@ -195,7 +195,7 @@ export default function testimonials() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -266,11 +266,11 @@ export default function testimonials() {
                       </div>
                     </div>
                   </div>
-                  <p className="mt-6 text-gray-700 text-sm leading-6">
+                  <p className="mt-6 text-black text-sm leading-6">
                     {item.review}
                   </p>
                   <div className="mt-6">
-                    <p className="text-xs text-gray-500 mb-2">Verified by</p>
+                    <p className="text-xs text-black mb-2">Verified by</p>
 
                     <img
                       src={item.verifiedLogo}
@@ -328,7 +328,7 @@ export default function testimonials() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -375,7 +375,7 @@ export default function testimonials() {
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+            <p className="mt-5 text-center text-[17px] text-black w-full mx-auto">
               Find answers to common questions about our app and software
               development services and learn how we can help turn your idea into
               a successful digital product.
@@ -416,7 +416,7 @@ export default function testimonials() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                     </div>
@@ -431,7 +431,7 @@ export default function testimonials() {
                 Have Something in Mind? Let's Talk
               </h3>
 
-              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black">
                 Have a look at the services and development process of the
                 Devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our

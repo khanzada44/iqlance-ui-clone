@@ -184,14 +184,14 @@ export default function wellnessFitness() {
                 Wellness & Fitness
               </h1>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 The wellness and fitness industry is undergoing a major digital shift,
                 and forward-thinking business leaders are increasingly turning to mobile solutions
                 to stay ahead. At Devapp Grid, we recognize this shift and bring a
                 team of seasoned experts ready to craft the perfect digital solution for your brand.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 Our fitness app development services are built to help your business
                 unlock new growth opportunities, think broader audience reach, reduced
                 stress levels for users, higher productivity, and lower healthcare costs,
@@ -199,7 +199,7 @@ export default function wellnessFitness() {
 
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 As a leading health and fitness app development company, we ensure every fitness
                 app we build is loaded with the features today's fitness enthusiasts actually need from custom
                 diet planning to connecting with fitness experts and scheduling workouts with ease.
@@ -219,10 +219,10 @@ export default function wellnessFitness() {
                 {/* See Our Work Link */}
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-red-300 hover:red-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-red-300 hover:red-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
                 >
                   See Our Work
-                  <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
+                  <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
                 </Link>
               </div>
             </div>
@@ -240,10 +240,10 @@ export default function wellnessFitness() {
                 </div>
 
                 {/* Form Heading */}
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
+                <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
                   Request a Free Quote
                 </h2>
-                <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
+                <p className="text-xs md:text-sm text-black font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
 
@@ -261,7 +261,7 @@ export default function wellnessFitness() {
                       onChange={handleChange}
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"
-                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -279,7 +279,7 @@ export default function wellnessFitness() {
                       onChange={handleChange}
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"
-                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -297,7 +297,7 @@ export default function wellnessFitness() {
                       onChange={handleChange}
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"
-                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -314,14 +314,14 @@ export default function wellnessFitness() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -332,7 +332,7 @@ export default function wellnessFitness() {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -353,7 +353,7 @@ export default function wellnessFitness() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -396,12 +396,12 @@ export default function wellnessFitness() {
         <section>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug px-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug px-5">
                 Connect Gym Trainers and Nutritionists with Clients Instantly Through
                 Custom Fitness App Development
               </h2>
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
+              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
                 At Devapp Grid, we&apos;re committed to delivering the most effective fitness
                 solutions in the industry. That&apos;s why we&apos;ve built a diverse
                 portfolio of innovative wellness and fitness app development solutions,
@@ -410,7 +410,7 @@ export default function wellnessFitness() {
 
               <br />
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
+              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
                 We help gym trainers, dietitians, nutritionists, yoga instructors, and
                 aerobics/Zumba coaches bring their services onto web and mobile platforms
                 so athletes and fitness enthusiasts can access what they need, exactly
@@ -420,9 +420,9 @@ export default function wellnessFitness() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
               {bottomFeatures.map((item, index) => (
                 <div key={index} className="flex items-start gap-2.5">
-                  <ChevronRight className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    <strong className="font-bold text-gray-900">
+                  <ChevronRight className="w-5 h-5 text-black shrink-0 mt-0.5" />
+                  <p className="text-sm md:text-base text-black leading-relaxed">
+                    <strong className="font-bold text-black">
                       {item.title}
                     </strong>{" "}
                     {item.description}
@@ -536,7 +536,7 @@ export default function wellnessFitness() {
                         {slide.title}
                       </h2>
 
-                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
                         {slide.description}
                       </p>
 
@@ -570,11 +570,11 @@ export default function wellnessFitness() {
                   }`}
               >
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                     {item.title}
                   </h2>
 
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  <p className="text-black text-sm md:text-base leading-relaxed">
                     {item.description}
                   </p>
 
@@ -582,9 +582,9 @@ export default function wellnessFitness() {
                     {item.features.map((feature, fIndex) => (
                       <li
                         key={fIndex}
-                        className="flex items-center gap-3 text-gray-900 font-semibold text-sm md:text-base"
+                        className="flex items-center gap-3 text-black font-semibold text-sm md:text-base"
                       >
-                        <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />
+                        <ChevronRight className="w-4 h-4 text-black shrink-0 stroke-[2.5]" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -678,7 +678,7 @@ export default function wellnessFitness() {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
             Features That Power Our Wellness and Fitness App Development
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-black text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
             Our wellness and fitness apps are designed to capture the attention of health-conscious users through valuable, purposeful features that make staying fit effortless.
           </p>
 
@@ -689,7 +689,7 @@ export default function wellnessFitness() {
                 alt="Login & Profile Creation"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Login & Profile Creation
               </h3>
             </div>
@@ -700,7 +700,7 @@ export default function wellnessFitness() {
                 alt="Push Notification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Push Notifications
               </h3>
             </div>
@@ -711,7 +711,7 @@ export default function wellnessFitness() {
                 alt="Social Sharing"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Social Sharing
               </h3>
             </div>
@@ -722,7 +722,7 @@ export default function wellnessFitness() {
                 alt="Geolocation"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Geolocation
               </h3>
             </div>
@@ -733,7 +733,7 @@ export default function wellnessFitness() {
                 alt="Reminders"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Reminders
               </h3>
             </div>
@@ -744,7 +744,7 @@ export default function wellnessFitness() {
                 alt="Food and Calorie Tracker"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Food and Calorie Tracker
               </h3>
             </div>
@@ -755,7 +755,7 @@ export default function wellnessFitness() {
                 alt="Schedules and Calendar"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Schedule and Calendar
               </h3>
             </div>
@@ -766,7 +766,7 @@ export default function wellnessFitness() {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Gamification
               </h3>
             </div>
@@ -777,7 +777,7 @@ export default function wellnessFitness() {
                 alt="Online Sessions"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Online Sessions
               </h3>
             </div>
@@ -790,7 +790,7 @@ export default function wellnessFitness() {
                 alt="Analytics & Reports"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Analytics & Reports
               </h3>
             </div>
@@ -801,7 +801,7 @@ export default function wellnessFitness() {
                 alt="Chat"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Chat
               </h3>
             </div>
@@ -810,10 +810,10 @@ export default function wellnessFitness() {
 
         <section >
           <div className="text-center space-y-3 mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 px-5">
+            <h2 className="text-2xl md:text-3xl font-bold text-black px-5">
               Key Features of Logistics and Transportation App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto px-5">
+            <p className="text-black text-sm md:text-base max-w-3xl mx-auto px-5">
               Our logistics app solutions contain a host of features that shall
               help you manage your activities in a more organized manner.
             </p>
@@ -897,7 +897,7 @@ export default function wellnessFitness() {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
             Efforts that make us proud include
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-black text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
             Our crew of experienced food app developers has dedicated their
             attention and effort to developing a variety of on-demand bespoke
             applications for consumers. We are pleased to report that our
@@ -914,7 +914,7 @@ export default function wellnessFitness() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-6 py-3 text-lg font-medium transition-colors duration-200 border-b-2 ${activeTab === tab.id
                       ? "border-red-600 text-red-600 font-semibold"
-                      : "border-transparent text-gray-500 hover:text-red-700"
+                      : "border-transparent text-black hover:text-red-700"
                       }`}
                   >
                     {tab.label}
@@ -933,7 +933,7 @@ export default function wellnessFitness() {
                   <img src={item.iconPath} alt="" />
                   {/* Custom Icon Placeholder - Yahan aap apna image/icon tag laga sakte hain */}
 
-                  <span className="text-gray-800 font-medium text-base">
+                  <span className="text-black font-medium text-base">
                     {item.title}
                   </span>
                 </div>
@@ -1023,8 +1023,8 @@ export default function wellnessFitness() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-5 text-black text-sm md:text-base leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                 Our Skilled Developers, Committed to Delivering Peak Performance
               </h2>
 
@@ -1055,12 +1055,12 @@ export default function wellnessFitness() {
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
 
           <div className="text-center max-w-5xl mx-auto space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               How Much Does It Cost to Build a Wellness and Fitness App Like the
               Industry&apos;s Best?
             </h2>
 
-            <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
+            <div className="space-y-4 text-black text-sm md:text-base leading-relaxed">
               <p>
                 The market is full of successful fitness apps, and their success largely
                 comes down to one thing: the range of features they offer to enhance the
@@ -1104,10 +1104,10 @@ export default function wellnessFitness() {
             />
           </div>
           <div className="text-center max-w-4xl mx-auto space-y-3 pt-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-black">
               Endeavors That Make Us Proud
             </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed">
               Devapp Grid has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
@@ -1214,10 +1214,10 @@ export default function wellnessFitness() {
           {/* Top CTA Banner Box */}
           <div className="bg-red-50  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
                 Check How We turn Your Idea into Innovative Product
               </h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Our rich portfolio justifies that we are one of the best
                 logistics app development companies in the USA.
               </p>
@@ -1234,10 +1234,10 @@ export default function wellnessFitness() {
 
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-6xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 px-5">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black px-5">
               Technology Stack for Custom Wellness & Fitness App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed px-5">
+            <p className="text-black text-sm md:text-base leading-relaxed px-5">
               Our team of developers leave stones unturned in their quest to
               create usable apps with advanced features for companies, drivers,
               and consumers. We are equipped to handle different types of
@@ -1257,12 +1257,10 @@ export default function wellnessFitness() {
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                       ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-red-400"
+                      : "text-black hover:text-red-400"
                       }`}
                   >
                     {tab.category}
-
-                    {/* Active underline */}
                     <span
                       className={`absolute left-0 -bottom-px h-0.5 bg-red-700 transition-all duration-300 ${activetechnologies === index ? "w-full" : "w-0"
                         }`}
@@ -1322,7 +1320,7 @@ export default function wellnessFitness() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-15 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 ">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black ">
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
@@ -1368,7 +1366,7 @@ export default function wellnessFitness() {
 
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Industries We Serve
             </h1>
             <p>
@@ -1407,7 +1405,7 @@ export default function wellnessFitness() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Why Choose Us?
             </h1>
@@ -1433,7 +1431,7 @@ export default function wellnessFitness() {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-700 leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
+                <p className="text-black leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
                   {service.description}
                 </p>
               </div>
@@ -1441,8 +1439,8 @@ export default function wellnessFitness() {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
+            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
             <p>
@@ -1491,7 +1489,7 @@ export default function wellnessFitness() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                        <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
                         {/* Stars */}
@@ -1507,13 +1505,13 @@ export default function wellnessFitness() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1595,7 +1593,7 @@ export default function wellnessFitness() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                       {faq.points && (
@@ -1603,7 +1601,7 @@ export default function wellnessFitness() {
                           {faq.points.map((point, i) => (
                             <li
                               key={i}
-                              className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
+                              className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
                             >
                               <ChevronRight
                                 size={18}
@@ -1624,7 +1622,7 @@ export default function wellnessFitness() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
             </h1>
             <p>

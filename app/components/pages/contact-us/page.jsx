@@ -167,7 +167,7 @@ export default function ContactSection() {
               Contact Us
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-gray-700 text-base sm:text-lg">
+            <p className="mt-4 sm:mt-6 text-black text-base sm:text-lg">
               Share Your Project Details on{" "}
               <span className="font-semibold break-all">
                 info@devappgrid.com
@@ -177,13 +177,13 @@ export default function ContactSection() {
             <div className="mt-6">
               <h3 className="font-bold text-lg">Talk To Experts:</h3>
 
-              <p className="mt-2 text-gray-700 text-sm sm:text-base leading-relaxed">
+              <p className="mt-2 text-black text-sm sm:text-base leading-relaxed">
                 USA: +1 (866) 978-8570
                 <br />
               </p>
             </div>
 
-            <p className="mt-6 text-gray-600 text-sm sm:text-base leading-7 sm:leading-8">
+            <p className="mt-6 text-black text-sm sm:text-base leading-7 sm:leading-8">
               Get in touch with us for app development, software development and
               Hire Dedicated Developers to bring your product to reality within
               your timeline and budget.
@@ -231,11 +231,11 @@ export default function ContactSection() {
               </div>
 
               {/* Form Heading */}
-              <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1 pr-16 sm:pr-0">
+              <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1 pr-16 sm:pr-0">
                 Request a Free Quote
               </h2>
 
-              <p className="text-xs sm:text-sm text-gray-600 font-medium mb-6 sm:mb-8">
+              <p className="text-xs sm:text-sm text-black font-medium mb-6 sm:mb-8">
                 Guaranteed Response within One Business Day!
               </p>
 
@@ -248,7 +248,7 @@ export default function ContactSection() {
                         placeholder="Name*"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`w-full bg-transparent border-b-2 ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors`}
+                        className={`w-full bg-transparent border-b-2 ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-black placeholder-gray-400 transition-colors`}
                       />
                       {errors.name && <span className="text-xs text-red-600 mt-1 block">{errors.name}</span>}
                     </div>
@@ -260,7 +260,7 @@ export default function ContactSection() {
                         placeholder="Email*"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full bg-transparent border-b-2 ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors`}
+                        className={`w-full bg-transparent border-b-2 ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-black placeholder-gray-400 transition-colors`}
                       />
                       {errors.email && <span className="text-xs text-red-600 mt-1 block">{errors.email}</span>}
                     </div>
@@ -272,7 +272,7 @@ export default function ContactSection() {
                         placeholder="Phone*"
                         value={formData.phone}
                         onChange={handleChange}
-                        className={`w-full bg-transparent border-b-2 ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors`}
+                        className={`w-full bg-transparent border-b-2 ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-black placeholder-gray-400 transition-colors`}
                       />
                       {errors.phone && <span className="text-xs text-red-600 mt-1 block">{errors.phone}</span>}
                     </div>
@@ -284,7 +284,7 @@ export default function ContactSection() {
                         placeholder="Write here Brief about the project..."
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-black placeholder-gray-400 resize-y transition-colors"
                       />
                     </div>
 
@@ -300,7 +300,7 @@ export default function ContactSection() {
                           className="hidden"
                         />
                       </label>
-                      <span className="text-gray-500 truncate max-w-45">
+                      <span className="text-black truncate max-w-45">
                         {formData.file ? formData.file.name : "No file chosen."}
                       </span>
                     </div>
@@ -377,7 +377,7 @@ export default function ContactSection() {
                 >
                   <div>
                     {office.title && (
-                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-900">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-black">
                         {office.title}
                       </h4>
                     )}
@@ -386,16 +386,16 @@ export default function ContactSection() {
                       alt={office.city}
                       className="w-20 h-20 sm:w-24 sm:h-24 mx-auto object-contain"
                     />
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mt-4 sm:mt-6 text-gray-900">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mt-4 sm:mt-6 text-black">
                       {office.city}
                     </h3>
-                    <p className="text-gray-600 mt-2 sm:mt-3 text-sm md:text-base leading-relaxed">
+                    <p className="text-black mt-2 sm:mt-3 text-sm md:text-base leading-relaxed">
                       {office.address}
                     </p>
                   </div>
 
                   {office.phone && (
-                    <div className="flex justify-center items-center gap-2 mt-6 sm:mt-8 text-base sm:text-lg md:text-xl font-semibold text-gray-800">
+                    <div className="flex justify-center items-center gap-2 mt-6 sm:mt-8 text-base sm:text-lg md:text-xl font-semibold text-black">
                       <div
                         className="w-5 h-5 sm:w-6 sm:h-6 bg-red-600 shrink-0"
                         style={{
@@ -422,7 +422,7 @@ export default function ContactSection() {
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black leading-tight">
               Client Testimonials
             </h2>
-            <p className="mt-4 sm:mt-6 text-gray-700 text-sm sm:text-base md:text-xl leading-relaxed max-w-4xl mx-auto">
+            <p className="mt-4 sm:mt-6 text-black text-sm sm:text-base md:text-xl leading-relaxed max-w-4xl mx-auto">
               Innovating user-centric and results-driven solutions based on the
               demanded industry of the client makes them speak about our work.
             </p>
@@ -458,7 +458,7 @@ export default function ContactSection() {
                         />
                       </div>
                       <div>
-                        <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-0.5 sm:mb-1">
+                        <h4 className="text-base sm:text-lg font-bold text-black mb-0.5 sm:mb-1">
                           {item.name}
                         </h4>
                         <div className="flex items-center gap-1">
@@ -472,12 +472,12 @@ export default function ContactSection() {
                       </div>
                     </div>
 
-                    <p className="text-gray-800 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     <div className="space-y-1">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img

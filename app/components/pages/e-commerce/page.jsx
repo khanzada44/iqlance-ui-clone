@@ -173,7 +173,7 @@ export default function foodOrdering() {
                 Development Company
               </h1>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-900">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 Shopping has moved off the shelf and onto the screen and
                 it&apos;s not slowing down. More consumers than ever are
                 browsing and buying directly from their phones instead of
@@ -184,7 +184,7 @@ export default function foodOrdering() {
                 effortless they never think twice about coming back.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-900">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 That&apos;s exactly the gap Devapp Grid was built to close. As a
                 leading <strong>eCommerce app development company</strong>, we
                 stay laser-focused on performance and functionality, delivering
@@ -205,10 +205,10 @@ export default function foodOrdering() {
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-red-100 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-gray-300 hover:border-red-100 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work
-                  <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -226,10 +226,10 @@ export default function foodOrdering() {
                 </div>
 
                 {/* Form Heading */}
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
+                <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
                   Request a Free Quote
                 </h2>
-                <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
+                <p className="text-xs md:text-sm text-black font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
 
@@ -248,7 +248,7 @@ export default function foodOrdering() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -267,7 +267,7 @@ export default function foodOrdering() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -286,7 +286,7 @@ export default function foodOrdering() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -303,14 +303,14 @@ export default function foodOrdering() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -321,7 +321,7 @@ export default function foodOrdering() {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -342,7 +342,7 @@ export default function foodOrdering() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -372,7 +372,7 @@ export default function foodOrdering() {
         <section>
           <div>
             <div className="text-center mb-10 px-5">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
                 Creative eCommerce App Development Services
               </h2>
 
@@ -411,9 +411,9 @@ export default function foodOrdering() {
           <div className="flex flex-col gap-y-6">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                  <strong className="font-semibold text-gray-900">
+                <ChevronRight className="w-4 h-4 text-black shrink-0 mt-1" />
+                <p className="text-sm md:text-base text-black leading-relaxed">
+                  <strong className="font-semibold text-black">
                     {item.title}:
                   </strong>{" "}
                   {item.description}
@@ -434,7 +434,7 @@ export default function foodOrdering() {
         <section>
           <div>
             <div className="text-center mb-10 px-5">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug">
                 Explore the Standout Features Behind Our eCommerce App
                 Development
               </h2>
@@ -488,7 +488,7 @@ export default function foodOrdering() {
                       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
                         {slide.title}
                       </h2>
-                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
                         {slide.description}
                       </p>
                       <div className="space-y-3 lg:space-y-4">
@@ -592,11 +592,11 @@ export default function foodOrdering() {
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                     {item.title}
                   </h2>
 
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  <p className="text-black text-sm md:text-base leading-relaxed">
                     {item.description}
                   </p>
 
@@ -605,9 +605,9 @@ export default function foodOrdering() {
                     {item.features.map((feature, fIndex) => (
                       <li
                         key={fIndex}
-                        className="flex items-center gap-3 text-gray-900 font-semibold text-sm md:text-base"
+                        className="flex items-center gap-3 text-black font-semibold text-sm md:text-base"
                       >
-                        <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />
+                        <ChevronRight className="w-4 h-4 text-black shrink-0 stroke-[2.5]" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -696,7 +696,7 @@ export default function foodOrdering() {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
             eCommerce App Development Features
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-4xl mx-auto mb-12 leading-relaxed">
+          <p className="text-black text-sm sm:text-base max-w-4xl mx-auto mb-12 leading-relaxed">
             Our eCommerce agency offers a handful of functionalities that will
             support you in better organising your activities.
           </p>
@@ -707,7 +707,7 @@ export default function foodOrdering() {
                 alt="Login & Profile Creation"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Social Media & User Profile
               </h3>
             </div>
@@ -719,7 +719,7 @@ export default function foodOrdering() {
                 alt="Push Notification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Property List
               </h3>
             </div>
@@ -731,7 +731,7 @@ export default function foodOrdering() {
                 alt="Social Sharing"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Search
               </h3>
             </div>
@@ -743,7 +743,7 @@ export default function foodOrdering() {
                 alt="Filter"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Filter
               </h3>
             </div>
@@ -755,7 +755,7 @@ export default function foodOrdering() {
                 alt="Category"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Categories
               </h3>
             </div>
@@ -767,7 +767,7 @@ export default function foodOrdering() {
                 alt="Food and Calorie Tracker"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Favourite
               </h3>
             </div>
@@ -779,7 +779,7 @@ export default function foodOrdering() {
                 alt="Schedules and Calendar"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Settings
               </h3>
             </div>
@@ -791,7 +791,7 @@ export default function foodOrdering() {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Map
               </h3>
             </div>
@@ -801,7 +801,7 @@ export default function foodOrdering() {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 History
               </h3>
             </div>
@@ -811,7 +811,7 @@ export default function foodOrdering() {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Recommendation
               </h3>
             </div>
@@ -821,7 +821,7 @@ export default function foodOrdering() {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Push Notification
               </h3>
             </div>
@@ -833,7 +833,7 @@ export default function foodOrdering() {
                 alt="Online Sessions"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Cost Calculator
               </h3>
             </div>
@@ -843,7 +843,7 @@ export default function foodOrdering() {
                 alt="Chat"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Calendar
               </h3>
             </div>
@@ -930,8 +930,8 @@ export default function foodOrdering() {
               />
             </div>
 
-            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-5 text-black text-sm md:text-base leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                 Skilled Developers. Modern Technology. One Team Built Around
                 Your Vision.
               </h2>
@@ -959,11 +959,11 @@ export default function foodOrdering() {
         </section>
         <section className="w-full max-w-7xl mx-auto  space-y-12">
           <div className="text-center max-w-6xl mx-auto space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 px-5">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black px-5">
               How Much Does It Cost to Develop a Real Estate App?
             </h2>
 
-            <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed px-5">
+            <div className="space-y-4 text-black text-sm md:text-base leading-relaxed px-5">
               <p>
                 The cost of developing a real estate app depends on what you
                 want it to do. A basic property listing app requires a very
@@ -1007,11 +1007,11 @@ export default function foodOrdering() {
             />
           </div>
           <div className="text-center max-w-5xl mx-auto space-y-3 pt-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 px-5">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-black px-5">
               Endeavors That Make Us Proud
             </h2>
 
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed px-5">
+            <p className="text-black text-sm md:text-base leading-relaxed px-5">
               Devapp Grid has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
@@ -1023,10 +1023,10 @@ export default function foodOrdering() {
         <section className="w-full max-w-7xl mx-auto px-4 py-12 space-y-16">
           <div className="bg-red-50  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
                 Check How We turn Your Idea into Innovative Product
               </h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Our rich portfolio justifies that we are one of the best
                 logistics app development companies in the USA.
               </p>
@@ -1040,10 +1040,10 @@ export default function foodOrdering() {
             </Link>
           </div>
           <div className="text-center max-w-6xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Technology Stack for Custom e-commerce App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed">
               Our team of developers leave stones unturned in their quest to
               create usable apps with advanced features for companies, drivers,
               and consumers. We are equipped to handle different types of
@@ -1063,7 +1063,7 @@ export default function foodOrdering() {
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
                       activetechnologies === index
                         ? "text-red-600 font-semibold"
-                        : "text-gray-500 hover:text-black"
+                        : "text-black hover:text-black"
                     }`}
                   >
                     {tab.category}
@@ -1128,7 +1128,7 @@ export default function foodOrdering() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Offshore Web, Mobile & Software Development Company
             </h1>
             <p>
@@ -1171,7 +1171,7 @@ export default function foodOrdering() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Industries We Serve
             </h1>
             <p>
@@ -1213,7 +1213,7 @@ export default function foodOrdering() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Why should you choose us?
             </h1>
@@ -1245,7 +1245,7 @@ export default function foodOrdering() {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-700 leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
+                <p className="text-black leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
                   {service.description}
                 </p>
               </div>
@@ -1253,8 +1253,8 @@ export default function foodOrdering() {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
+            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Testimonials From Our Clients
             </h1>
             <p>
@@ -1303,7 +1303,7 @@ export default function foodOrdering() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                        <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
                         {/* Stars */}
@@ -1319,13 +1319,13 @@ export default function foodOrdering() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1403,7 +1403,7 @@ export default function foodOrdering() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                       {faq.points && (
@@ -1411,7 +1411,7 @@ export default function foodOrdering() {
                           {faq.points.map((point, i) => (
                             <li
                               key={i}
-                              className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
+                              className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
                             >
                               <ChevronRight
                                 size={18}
@@ -1432,7 +1432,7 @@ export default function foodOrdering() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 ">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black ">
               Have Something in Mind? Let's Talk
             </h1>
             <p>

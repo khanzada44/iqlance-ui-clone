@@ -283,7 +283,7 @@ export default function SocialMedia() {
 
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="inline-flex items-center gap-2 bg-white text-black border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work <ArrowRight className="w-4 h-4 text-black" />
                 </Link>
@@ -325,7 +325,7 @@ export default function SocialMedia() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -344,7 +344,7 @@ export default function SocialMedia() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -363,7 +363,7 @@ export default function SocialMedia() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -380,14 +380,14 @@ export default function SocialMedia() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -398,7 +398,7 @@ export default function SocialMedia() {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -419,7 +419,7 @@ export default function SocialMedia() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold  cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -445,12 +445,12 @@ export default function SocialMedia() {
             </div>
           </div>
         </section>
-        <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-center text-gray-800">
+        <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-center text-black">
           <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6">
             Why Devapp Grid for Custom Dating App Development in the USA
           </h2>
 
-          <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-6xl mx-auto mb-10">
+          <div className="space-y-6 text-sm md:text-base leading-relaxed  max-w-6xl mx-auto mb-10">
             <p>
               Every dating app has a different purpose, audience, and business model.
               At Devapp Grid, we build custom dating applications around your specific goals,
@@ -494,7 +494,7 @@ export default function SocialMedia() {
               <h2 className="text-2xl lg:text-3xl font-extrabold text-black leading-snug">
                 On-Demand Dating App Development Solutions We Offer
               </h2>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+              <p className="text-sm md:text-base  leading-relaxed">
                 We offer on-demand dating app solutions customized to diverse
                 audiences and their relationship goals. We are not just app
                 developers, but we ensure to be your trusted technology partner
@@ -504,10 +504,10 @@ export default function SocialMedia() {
               <div className="flex flex-col gap-y-5">
                 {datingSolutions.map((item, index) => (
                   <div key={index} className="flex items-start gap-2.5">
-                    <span className="text-gray-500 font-bold text-lg leading-snug shrink-0">
+                    <span className="text-black font-bold text-lg leading-snug shrink-0">
                       &#8250;
                     </span>
-                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                    <p className="text-sm md:text-base  leading-relaxed">
                       <strong className="font-bold text-black">
                         {item.title}:
                       </strong>{" "}
@@ -746,7 +746,7 @@ export default function SocialMedia() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`relative pb-3 text-base md:text-lg transition-colors duration-200 ${isActive
                       ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-red-700 font-normal cursor-pointer"
+                      : "text-black hover:text-red-700 font-normal cursor-pointer"
                       }`}
                   >
                     {tab.label}
@@ -772,7 +772,7 @@ export default function SocialMedia() {
                   height={40}
                   className="w-10 h-10 object-contain"
                 />
-                <span className="text-gray-800 font-medium text-sm md:text-base">
+                <span className="text-black font-medium text-sm md:text-base">
                   {item.title}
                 </span>
               </div>
@@ -850,7 +850,7 @@ export default function SocialMedia() {
             </div>
           </div>
         </section>
-        <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-gray-800 space-y-16">
+        <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-black space-y-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="w-full h-full overflow-hidden rounded-sm">
               <Image
@@ -868,7 +868,7 @@ export default function SocialMedia() {
                 Hire Top Dating App Developers in the USA
               </h2>
 
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+              <p className="text-sm md:text-base  leading-relaxed">
                 As a leading dating app development company in the USA, we bring
                 top-tier talent and years of hands-on experience to every project,
                 delivering cutting-edge dating app solutions built to perform. We
@@ -876,14 +876,14 @@ export default function SocialMedia() {
                 in a crowded market and stay true to your brand&apos;s vision.
               </p>
 
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+              <p className="text-sm md:text-base  leading-relaxed">
                 Our experienced developers study user behavior and industry trends before
                 a single line of code gets written. We combine strong functionality with
                 fresh innovation to create seamless, intuitive, and genuinely engaging
                 experiences for every user.
               </p>
 
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+              <p className="text-sm md:text-base  leading-relaxed">
                 Partner with the best custom dating app developers in the USA and get a
                 secure, scalable platform built around your users. Whether you&apos;re
                 starting from scratch or scaling an existing app, we deliver tailored
@@ -898,7 +898,7 @@ export default function SocialMedia() {
               Cost To Hire a Custom Dating App Development Company
             </h2>
 
-            <div className="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm md:text-base  leading-relaxed">
               <p>
                 Dating app development costs vary based on several factors, including
                 app complexity, feature set, platform choice (Android, iOS, or both),
@@ -947,7 +947,7 @@ export default function SocialMedia() {
               <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-3">
                 Endeavors That Make Us Proud
               </h2>
-              <p className="text-sm md:text-base text-gray-700 max-w-6xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base  max-w-6xl mx-auto leading-relaxed">
                 Devapp Grid has always been honored with valuable words
                 for the efforts given on mobile app development that are
                 efficiently unique and user centric. Here are some of the best
@@ -988,14 +988,14 @@ export default function SocialMedia() {
                           {slide.title}
                         </h3>
 
-                        <p className="text-gray-700 leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
+                        <p className=" leading-7 sm:leading-8 mb-6 sm:mb-8 text-sm sm:text-base">
                           {slide.description}
                         </p>
 
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-sm sm:text-base">
                           {slide.features.map((feature, i) => (
                             <li key={i} className="flex items-center gap-2">
-                              <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />{" "}
+                              <ChevronRight className="w-4 h-4  shrink-0 stroke-[2.5]" />{" "}
                               {feature}
                             </li>
                           ))}
@@ -1045,10 +1045,10 @@ export default function SocialMedia() {
         <section className="w-full max-w-7xl mx-auto py-12 space-y-16">
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
                 Check How We turn Your Idea into Innovative Product
               </h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Our rich portfolio justifies that we are one of the best
                 logistics app development companies in the USA.
               </p>
@@ -1084,7 +1084,7 @@ export default function SocialMedia() {
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                       ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-red-400"
+                      : "text-black hover:text-red-400"
                       }`}
                   >
                     {tab.category}
@@ -1388,13 +1388,13 @@ export default function SocialMedia() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1472,7 +1472,7 @@ export default function SocialMedia() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                       {faq.points && (

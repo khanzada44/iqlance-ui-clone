@@ -213,11 +213,11 @@ export default function Service() {
                         Services
                     </h1>
 
-                    <p className="text-gray-700 text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
+                    <p className="text-black text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
                         Devapp Grid develops web, mobile apps, softwares that help businesses for better operational efficiency and engagement. Hire certified mobile app developers from Devapp Grid who are experienced enough for delivering excellence in Android, iOS and cross-platform app development services.
                     </p>
 
-                    <p className="text-gray-700 text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
+                    <p className="text-black text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
                         Devapp Grid is a expert and professional web and mobile software development company. The Devapp Grid team consists of trained and qualified software developers, UI/UX designers, and software testers. The entire Devapp Grid team works in synchronization with each other, to transform your software development dream into reality.
                     </p>
 
@@ -233,7 +233,7 @@ export default function Service() {
 
                         <Link
                             href="/portfolio"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-300 bg-white hover:bg-red-50 px-6 py-2.5 text-sm font-semibold text-gray-800 transition"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-300 bg-white hover:bg-red-50 px-6 py-2.5 text-sm font-semibold text-black transition"
                         >
                             See Our Work
                             <ArrowRight size={16} />
@@ -247,15 +247,15 @@ export default function Service() {
                         Get The Devapp Grid
                     </h2>
 
-                    <p className="text-gray-800 font-medium text-sm md:text-base flex justify-center">
+                    <p className="text-black font-medium text-sm md:text-base flex justify-center">
                         Process-driven Methodology, Result-driven Solutions
                     </p>
 
-                    <p className="text-gray-800 font-medium text-sm md:text-base flex justify-center">
+                    <p className="text-black font-medium text-sm md:text-base flex justify-center">
                         The perfect blend of tailored services for any development inducement. Any Scope. Any time.
                     </p>
 
-                    <div className="space-y-4 pt-2 text-gray-700 text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-center">
+                    <div className="space-y-4 pt-2 text-black text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-center">
                         <p>
                             At Devapp Grid, we build engaging digital experiences. With our full suite of skills and services, we connect your brand with customers in unique ways, open new business opportunities and growth through extensible solutions. Over the years of rich experience, Devapp Grid, as an IT solutions company has designed, developed and promoted outstanding expertise.
                         </p>
@@ -289,7 +289,7 @@ export default function Service() {
                                     onClick={() => setActiveServiceTab(tab.id)}
                                     className={`w-[72%] flex items-center gap-4 p-4 border text-left transition duration-200 ${isActive
                                         ? "border-red-500 bg-white shadow-sm font-semibold"
-                                        : "border-red-200 bg-white hover:bg-red-50 text-gray-600"
+                                        : "border-red-200 bg-white hover:bg-red-50 text-black"
                                         }`}
                                 >
                                     <img
@@ -298,7 +298,7 @@ export default function Service() {
                                         className="w-10 h-10 object-contain shrink-0"
                                     />
                                     <span
-                                        className={`text-base md:text-lg ${isActive ? "text-black font-semibold" : "text-gray-600"
+                                        className={`text-base md:text-lg ${isActive ? "text-black font-semibold" : "text-black"
                                             }`}
                                     >
                                         {tab.title}
@@ -316,7 +316,7 @@ export default function Service() {
                                     <h2 className="text-2xl md:text-3xl font-bold text-black mb-3">
                                         {currentContent.heading}
                                     </h2>
-                                    <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-3xl">
+                                    <p className="text-black text-base md:text-lg leading-relaxed max-w-3xl">
                                         {currentContent.description}
                                     </p>
                                 </div>
@@ -333,7 +333,7 @@ export default function Service() {
                                                 alt={subItem.title}
                                                 className="w-12 h-12 object-contain mb-4"
                                             />
-                                            <span className="text-sm md:text-base font-semibold text-gray-800">
+                                            <span className="text-sm md:text-base font-semibold text-black">
                                                 {subItem.title}
                                             </span>
                                         </div>
@@ -399,7 +399,7 @@ export default function Service() {
                                     <span>info@devappgrid.com</span>
                                 </a>
 
-                                <span className="text-gray-500 font-normal">or</span>
+                                <span className="text-black font-normal">or</span>
 
                                 {/* Phone links */}
                                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -456,7 +456,7 @@ export default function Service() {
                                 Ideation and Evaluation
                             </h2>
 
-                            <p className="text-gray-800 text-base leading-relaxed">
+                            <p className="text-black text-base leading-relaxed">
                                 Whatever type of apps we develop or the services we provide, we start
                                 the work by talking to the client. This provides an idea of what
                                 exactly the client needs and what he has in mind. The next step is
@@ -469,7 +469,7 @@ export default function Service() {
                                 {points.map((point, index) => (
                                     <li key={index} className="flex items-start gap-3">
                                         <ChevronRight className="w-5 h-5 text-black shrink-0 mt-0.5" />
-                                        <span className="text-gray-900 font-medium text-base">
+                                        <span className="text-black font-medium text-base">
                                             {point}
                                         </span>
                                     </li>
@@ -508,7 +508,7 @@ export default function Service() {
                                 Product Design
                             </h2>
 
-                            <p className="text-gray-800 text-base leading-relaxed">
+                            <p className="text-black text-base leading-relaxed">
                                 Design is an important part of the app we build. Half the work is
                                 done when a client approves the project by looking at the app. Our
                                 team of designers ensures the client with a good looking design
@@ -524,7 +524,7 @@ export default function Service() {
                                     {leftPoints.map((point, index) => (
                                         <li key={index} className="flex items-start gap-2">
                                             <ChevronRight className="w-5 h-5 text-black shrink-0 mt-0.5" />
-                                            <span className="text-gray-900 font-medium text-base">
+                                            <span className="text-black font-medium text-base">
                                                 {point}
                                             </span>
                                         </li>
@@ -536,7 +536,7 @@ export default function Service() {
                                     {rightPoints.map((point, index) => (
                                         <li key={index} className="flex items-start gap-2">
                                             <ChevronRight className="w-5 h-5 text-black shrink-0 mt-0.5" />
-                                            <span className="text-gray-900 font-medium text-base">
+                                            <span className="text-black font-medium text-base">
                                                 {point}
                                             </span>
                                         </li>
@@ -606,13 +606,13 @@ export default function Service() {
                                     onClick={() => setActiveStepIndex(index)}
                                     className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${activeStepIndex === index
                                         ? "text-red-700 border-red-600 font-bold"
-                                        : "text-gray-400 border-transparent hover:text-red-600"
+                                        : "text-black border-transparent hover:text-red-600"
                                         }`}
                                 >
                                     {step.tabTitle}
                                 </button>
                                 {index < processSteps.length - 1 && (
-                                    <span className="text-gray-400 font-light">
+                                    <span className="text-black font-light">
                                         <ArrowRight className="w-4 h-4" />
                                     </span>
                                 )}
@@ -671,13 +671,13 @@ export default function Service() {
 
                         {/* Right Side Content Display */}
                         <div className="flex flex-col justify-center">
-                            <span className="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-2">
+                            <span className="text-xs font-semibold tracking-wider text-black uppercase mb-2">
                                 {currentStep.stepLabel}
                             </span>
-                            <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
+                            <h2 className="text-3xl font-extrabold text-black mb-4">
                                 {currentStep.heading}
                             </h2>
-                            <p className="text-gray-600 leading-relaxed text-sm max-w-md">
+                            <p className="text-black leading-relaxed text-sm max-w-md">
                                 {currentStep.description}
                             </p>
                         </div>
@@ -788,7 +788,7 @@ export default function Service() {
                                         onClick={() => setActivetechnologies(index)}
                                         className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                                             ? "text-red-600 font-semibold"
-                                            : "text-gray-500 hover:text-red-500"
+                                            : "text-black hover:text-red-500"
                                             }`}
                                     >
                                         {tab.category}

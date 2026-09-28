@@ -180,9 +180,9 @@ const handleChange = (e) => {
                 Development Company in the USA
               </h1>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                At <span className="font-semibold text-gray-900">Devapp Grid</span>, we create
-                custom <span className="font-semibold text-gray-900">e-learning and
+              <p className="text-base md:text-lg leading-relaxed text-black">
+                At <span className="font-semibold text-black">Devapp Grid</span>, we create
+                custom <span className="font-semibold text-black">e-learning and
                   education applications</span> that make learning more accessible,
                 engaging, and adaptable. From schools and universities to training
                 organizations and businesses, we develop digital learning solutions that
@@ -190,7 +190,7 @@ const handleChange = (e) => {
                 convenient platform.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 Our experienced education app developers combine modern technology with
                 thoughtful learning experiences to build solutions around your
                 institution's specific goals. Whether you're launching an online learning
@@ -198,11 +198,11 @@ const handleChange = (e) => {
                 application, we help turn your vision into a scalable digital product.
               </p>
 
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 pt-2">
+              <h2 className="text-xl md:text-2xl font-bold text-black pt-2">
                 Take Learning Beyond the Classroom
               </h2>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 Remove the limitations of location, schedules, and traditional learning
                 methods with an education platform designed for today's connected
                 learners. Give students and professionals the flexibility to access
@@ -210,11 +210,11 @@ const handleChange = (e) => {
                 learning wherever they are.
               </p>
 
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 pt-2">
+              <h2 className="text-xl md:text-2xl font-bold text-black pt-2">
                 Create a Scalable Education App
               </h2>
 
-              <ul className="space-y-3 pt-2 text-base md:text-lg font-medium text-gray-800">
+              <ul className="space-y-3 pt-2 text-base md:text-lg font-medium text-black">
                 <li className="flex items-center gap-2">
                   <ChevronRight size={17} />
                   Create A Scalable
@@ -249,10 +249,10 @@ const handleChange = (e) => {
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-gray-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work
-                  <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -270,10 +270,10 @@ const handleChange = (e) => {
                 </div>
 
                 {/* Form Heading */}
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
+                <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
                   Request a Free Quote
                 </h2>
-                <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
+                <p className="text-xs md:text-sm text-black font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
 
@@ -292,7 +292,7 @@ const handleChange = (e) => {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -311,7 +311,7 @@ const handleChange = (e) => {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -330,7 +330,7 @@ const handleChange = (e) => {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -347,14 +347,14 @@ const handleChange = (e) => {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -365,7 +365,7 @@ const handleChange = (e) => {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -386,7 +386,7 @@ const handleChange = (e) => {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black  cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -415,11 +415,11 @@ const handleChange = (e) => {
         <section>
           <div className="max-w-6xl mx-auto px-5">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
+              <h2 className="text-2xl md:text-4xl font-bold text-black mb-4 leading-snug">
                 Transform Learning With Our E-Learning Development Solutions
               </h2>
 
-              <p className="text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-gray-600">
+              <p className="text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-black">
                 Digital education is changing how students learn and how organizations
                 train their teams. E-learning platforms make it easier to deliver updated
                 content, standardize training, and keep learners connected without relying
@@ -428,9 +428,9 @@ const handleChange = (e) => {
 
               <br />
 
-              <p className="text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-gray-600">
+              <p className="text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-black">
                 With a customized{" "}
-                <span className="font-semibold text-gray-900">
+                <span className="font-semibold text-black">
                   LMS development solution
                 </span>
                 , administrators can update courses, replace outdated resources,
@@ -440,7 +440,7 @@ const handleChange = (e) => {
 
               <br />
 
-              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-gray-600">
+              <p className="text-sm md:text-base max-w-4xl mx-auto leading-relaxed text-black">
                 Learners get access to current content, while institutions and businesses
                 gain a more flexible and manageable way to deliver education at scale.
               </p>
@@ -462,9 +462,9 @@ const handleChange = (e) => {
           <div className="flex flex-col gap-y-6 px-5">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                  <strong className="font-semibold text-gray-900">
+                <ChevronRight className="w-4 h-4 text-black shrink-0 mt-1" />
+                <p className="text-sm md:text-base text-black  leading-relaxed">
+                  <strong className="font-semibold text-black">
                     {item.title}:
                   </strong>{" "}
                   {item.description}
@@ -483,7 +483,7 @@ const handleChange = (e) => {
           </div>
         </div>
         <div className="text-center mb-10 px-5">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">Immersive Mobile Learning & Teaching</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-black mb-4 leading-snug">Immersive Mobile Learning & Teaching</h2>
           <p className="text-sm md:text-base max-w-6xl mx-auto leading-relaxed">We create mobile learning experiences that make education more interactive, accessible, and engaging. Our education app developers build platforms that support live classes, on-demand audio, video lessons, and digital learning resources, giving students and educators the flexibility to learn and teach from anywhere.
           </p>
         </div>
@@ -531,7 +531,7 @@ const handleChange = (e) => {
                         {slide.title}
                       </h2>
 
-                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
                         {slide.description}
                       </p>
 
@@ -633,11 +633,11 @@ const handleChange = (e) => {
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                     {item.title}
                   </h2>
 
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  <p className="text-black text-sm md:text-base leading-relaxed">
                     {item.description}
                   </p>
 
@@ -646,9 +646,9 @@ const handleChange = (e) => {
                     {item.features.map((feature, fIndex) => (
                       <li
                         key={fIndex}
-                        className="flex items-center gap-3 text-gray-900 font-semibold text-sm md:text-base"
+                        className="flex items-center gap-3 text-black font-semibold text-sm md:text-base"
                       >
-                        <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />
+                        <ChevronRight className="w-4 h-4 text-black  shrink-0 stroke-[2.5]" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -741,7 +741,7 @@ const handleChange = (e) => {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
             Features of Wellness and Fitness App Development
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-5xl mx-auto mb-12 leading-relaxed">
+          <p className="text-black text-sm sm:text-base max-w-5xl mx-auto mb-12 leading-relaxed">
             Our wellness and fitness app successfully grabs the eyeballs of
             health maniacs because of the valuable features we add. Making the
             process of being fit effortless for people.
@@ -756,7 +756,7 @@ const handleChange = (e) => {
                 alt="Login & Profile Creation"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Login & Profile Creation
               </h3>
             </div>
@@ -768,7 +768,7 @@ const handleChange = (e) => {
                 alt="Push Notification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Push Notification
               </h3>
             </div>
@@ -780,7 +780,7 @@ const handleChange = (e) => {
                 alt="Social Sharing"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Social Sharing
               </h3>
             </div>
@@ -792,7 +792,7 @@ const handleChange = (e) => {
                 alt="Geolocation"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Geolocation
               </h3>
             </div>
@@ -804,7 +804,7 @@ const handleChange = (e) => {
                 alt="Reminders"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Reminders
               </h3>
             </div>
@@ -816,7 +816,7 @@ const handleChange = (e) => {
                 alt="Food and Calorie Tracker"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Food and Calorie Tracker
               </h3>
             </div>
@@ -828,7 +828,7 @@ const handleChange = (e) => {
                 alt="Schedules and Calendar"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Schedules and Calendar
               </h3>
             </div>
@@ -840,7 +840,7 @@ const handleChange = (e) => {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Gamification
               </h3>
             </div>
@@ -852,7 +852,7 @@ const handleChange = (e) => {
                 alt="Online Sessions"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Online Sessions
               </h3>
             </div>
@@ -867,7 +867,7 @@ const handleChange = (e) => {
                 alt="Analytics & Reports"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Analytics & Reports
               </h3>
             </div>
@@ -879,7 +879,7 @@ const handleChange = (e) => {
                 alt="Chat"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Chat
               </h3>
             </div>
@@ -966,8 +966,8 @@ const handleChange = (e) => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-5 text-black  text-sm md:text-base leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                 Experienced Developers for Real Estate Apps That Mean Business
               </h2>
 
@@ -997,16 +997,16 @@ const handleChange = (e) => {
         </section>
         <section className="w-full max-w-6xl mx-auto md:py-16 space-y-12 px-5">
           <div className="text-center max-w-6xl mx-auto space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               How Much Does It Cost to Build a Custom Logistics App?
             </h2>
 
-            <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
+            <div className="space-y-4 text-black text-sm md:text-base leading-relaxed">
               <p>
                 While constructing a customized logistics mobile app integrated
                 with multiple features, the question of cost does come into
                 play. Our team of{" "}
-                <span className="font-bold text-gray-900">
+                <span className="font-bold text-black">
                   app developers USA
                 </span>{" "}
                 also includes financial specialists. They would carefully
@@ -1042,11 +1042,11 @@ const handleChange = (e) => {
             />
           </div>
           <div className="text-center max-w-6xl mx-auto space-y-3 ">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-black">
               How Much Does It Cost to Develop a education App?
             </h2>
 
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed">
               There’s no fixed price for building a education app because every
               project comes with different goals, features, and technical requirements.
               A basic property listing app will naturally require a different
@@ -1054,7 +1054,7 @@ const handleChange = (e) => {
               dashboards, messaging, payments, and other complex functionality.
             </p>
 
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed">
               The final development cost can also vary depending on your choice of
               platform, design requirements, third-party integrations, backend
               infrastructure, and the level of customization your product needs.
@@ -1062,7 +1062,7 @@ const handleChange = (e) => {
               matter most to your users and business.
             </p>
 
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed">
               Want to know what your real estate app could cost? Tell us what you’re
               planning to build, and our experts will help you determine the right
               development scope and budget for your project.
@@ -1072,10 +1072,10 @@ const handleChange = (e) => {
         <section className="w-full max-w-7xl mx-auto space-y-16 px-5">
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
                 Check How We turn Your Idea into Innovative Product
               </h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Our rich portfolio justifies that we are one of the best
                 logistics app development companies in the USA.
               </p>
@@ -1090,10 +1090,10 @@ const handleChange = (e) => {
             </Link>
           </div>
           <div className="text-center max-w-6xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Technology Stack for Custom Education App Development
             </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed">
               Our team of developers leave stones unturned in their quest to
               create usable apps with advanced features for companies, drivers,
               and consumers. We are equipped to handle different types of
@@ -1112,7 +1112,7 @@ const handleChange = (e) => {
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                       ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-black"
+                      : "text-black hover:text-black"
                       }`}
                   >
                     {tab.category}
@@ -1211,7 +1211,7 @@ const handleChange = (e) => {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Your Trusted Logistics App Development Company in the USA
             </h1>
@@ -1256,7 +1256,7 @@ const handleChange = (e) => {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Industries We Serve with Custom Logistics App Development
             </h1>
@@ -1299,7 +1299,7 @@ const handleChange = (e) => {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Why Businesses Choose Our Logistics App Development Company
             </h1>
@@ -1330,7 +1330,7 @@ const handleChange = (e) => {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-700 leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
+                <p className="text-black leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
                   {service.description}
                 </p>
               </div>
@@ -1338,8 +1338,8 @@ const handleChange = (e) => {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
+            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
             <p>
@@ -1382,7 +1382,7 @@ const handleChange = (e) => {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                        <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
                         <div className="flex items-center gap-1">
@@ -1395,11 +1395,11 @@ const handleChange = (e) => {
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1476,7 +1476,7 @@ const handleChange = (e) => {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                       {faq.points && (
@@ -1484,7 +1484,7 @@ const handleChange = (e) => {
                           {faq.points.map((point, i) => (
                             <li
                               key={i}
-                              className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
+                              className="flex gap-3 text-[17px] leading-8 text-black  items-center m-0"
                             >
                               <ChevronRight
                                 size={18}
@@ -1505,7 +1505,7 @@ const handleChange = (e) => {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
             </h1>
             <p>

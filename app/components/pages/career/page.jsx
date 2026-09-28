@@ -35,7 +35,7 @@ export default function career() {
             </h2>
 
             {/* Description */}
-            <div className="max-w-6xl mx-auto mt-8 space-y-6 text-center text-gray-700 text-base md:text-xl leading-8">
+            <div className="max-w-6xl mx-auto mt-8 space-y-6 text-center text-black text-base md:text-xl leading-8">
               <p>
                 Some companies hire people to fill seats.
                 We're not one of them. At Devapp Grid, we look for people who actually
@@ -96,7 +96,7 @@ export default function career() {
                 Offshore Web, Mobile & Software Development Company
               </h3>
 
-              <p className="max-w-5xl mx-auto mt-8 text-center text-gray-700 text-base md:text-lg leading-8">
+              <p className="max-w-5xl mx-auto mt-8 text-center text-black text-base md:text-lg leading-8">
                 Devapp Grid is a leading Software, Web, & Mobile App
                 Development Company with a vast area of experience in crafting
                 stunning and end-to-end encrypted technology solutions. We offer
@@ -146,7 +146,7 @@ export default function career() {
             <div className="max-w-6xl mx-auto text-center">
               <h3 className="text-3xl md:text-5xl font-bold">About Devapp Grid</h3>
 
-              <div className="mt-8 space-y-7 text-gray-700 text-base md:text-lg leading-8">
+              <div className="mt-8 space-y-7 text-black text-base md:text-lg leading-8">
                 <p>
                   Every big company was small once. Ours started with just one person and an idea worth chasing,
                   and over the years, that idea grew into something bigger: a
@@ -176,7 +176,7 @@ export default function career() {
                 Why Join Devapp Grid?
               </h2>
 
-              <p className="mt-8 text-gray-700 text-base md:text-lg leading-8 max-w-5xl mx-auto">
+              <p className="mt-8 text-black text-base md:text-lg leading-8 max-w-5xl mx-auto">
                 If you're looking for just a job, this probably isn't it. But if you're looking
                 for a place to actually build a career, somewhere your ideas matter and your
                 growth isn't an afterthought, that's exactly what we're offering.
@@ -206,7 +206,7 @@ export default function career() {
             </h2>
 
             {/* Top Description */}
-            <div className="max-w-4xl mx-auto space-y-4 text-gray-700 text-sm md:text-base leading-relaxed mb-12">
+            <div className="max-w-4xl mx-auto space-y-4 text-black text-sm md:text-base leading-relaxed mb-12">
               <p>
                 Walk into Devapp Grid on any given day, and you'll feel it before anyone even explains it:
                 this is a place built on the mix of technical innovation and creative energy.
@@ -264,11 +264,11 @@ export default function career() {
               </h3>
 
               {/* 3-Column List */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8 text-gray-800 text-sm md:text-base font-medium">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8 text-black text-sm md:text-base font-medium">
                 <ul className="space-y-4">
                   {benefitsCol1.map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <span className="text-gray-400 font-bold"><ChevronRight
+                      <span className="text-black font-bold"><ChevronRight
                         size={14}
                         className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
                       /></span>
@@ -280,7 +280,7 @@ export default function career() {
                 <ul className="space-y-4">
                   {benefitsCol2.map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <span className="text-gray-400 font-bold">
+                      <span className="text-black font-bold">
                         <ChevronRight
                           size={14}
                           className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
@@ -294,7 +294,7 @@ export default function career() {
                 <ul className="space-y-4">
                   {benefitsCol3.map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <span className="text-gray-400 font-bold">
+                      <span className="text-black font-bold">
                         <ChevronRight
                           size={14}
                           className="w-4 h-4 md:w-5 md:h-5 text-black shrink-0 mt-1"
@@ -320,7 +320,7 @@ export default function career() {
               Ready to Get Started?
             </h2>
 
-            <p className="mt-4 sm:mt-5 text-gray-700 text-base sm:text-lg faq">
+            <p className="mt-4 sm:mt-5 text-black text-base sm:text-lg faq">
               Call us Today for a Free Consultation:
             </p>
 
@@ -378,7 +378,7 @@ export default function career() {
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+            <p className="mt-5 text-center text-[17px] text-black w-full mx-auto">
               Find answers to common questions about our app and software
               development services and learn how we can help turn your idea into
               a successful digital product.
@@ -419,7 +419,7 @@ export default function career() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                     </div>
@@ -434,7 +434,7 @@ export default function career() {
                 Have Something in Mind? Let's Talk
               </h3>
 
-              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black">
                 Have a look at the services and development process of the
                 devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our

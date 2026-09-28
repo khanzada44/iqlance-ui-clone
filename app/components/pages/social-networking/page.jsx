@@ -262,7 +262,7 @@ export default function SocialMedia() {
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-red-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-red-300 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work
                   <ArrowRight className="w-4 h-4 text-black transition-transform duration-200 group-hover:translate-x-1" />
@@ -305,7 +305,7 @@ export default function SocialMedia() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -324,7 +324,7 @@ export default function SocialMedia() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -343,7 +343,7 @@ export default function SocialMedia() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -360,14 +360,14 @@ export default function SocialMedia() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -378,7 +378,7 @@ export default function SocialMedia() {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -399,7 +399,7 @@ export default function SocialMedia() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -459,9 +459,9 @@ export default function SocialMedia() {
           <div className="flex flex-col gap-y-6 px-5">
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
-                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                  <strong className="font-semibold text-gray-900">
+                <ChevronRight className="w-4 h-4 text-black shrink-0 mt-1" />
+                <p className="text-sm md:text-base text-black leading-relaxed">
+                  <strong className="font-semibold text-black">
                     {item.title}:
                   </strong>{" "}
                   {item.description}
@@ -507,7 +507,7 @@ export default function SocialMedia() {
                 className="w-14 h-14 object-contain"
               />
 
-              <h3 className="mt-5 text-base md:text-lg font-semibold text-gray-900">
+              <h3 className="mt-5 text-base md:text-lg font-semibold text-black">
                 {feature.title}
               </h3>
             </div>
@@ -524,14 +524,14 @@ export default function SocialMedia() {
                 className="object-contain"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Ready to Get Started?
             </h2>
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
               Send your Requirements on
             </p>
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -550,7 +550,7 @@ export default function SocialMedia() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -582,13 +582,13 @@ export default function SocialMedia() {
           </div>
         </section>
 
-        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-gray-800">
+        <section className="py-12 px-4 max-w-5xl mx-auto font-sans text-center text-black">
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-6">
               Custom App Development for Fitness Businesses
             </h2>
 
-            <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700 max-w-7xl mx-auto">
+            <div className="space-y-6 text-sm md:text-base leading-relaxed text-black max-w-7xl mx-auto">
               <p>
                 Your fitness app should reflect the way your business works, not
                 force your business into a generic template. Our{" "}
@@ -621,7 +621,7 @@ export default function SocialMedia() {
               Endeavors That Make Us Proud
             </h3>
 
-            <p className="text-sm md:text-base leading-relaxed text-gray-700 max-w-8xl mx-auto">
+            <p className="text-sm md:text-base leading-relaxed text-black max-w-8xl mx-auto">
               Our fitness app development work is focused on creating practical,
               engaging, and user-centered digital experiences. From workout
               platforms and coaching solutions to nutrition tracking and
@@ -666,7 +666,7 @@ export default function SocialMedia() {
                         {slide.title}
                       </h2>
 
-                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
                         {slide.description}
                       </p>
 
@@ -704,10 +704,10 @@ export default function SocialMedia() {
           {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
                 Check How We turn Your Idea into Innovative Product
               </h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Our rich portfolio justifies that we are one of the best
                 logistics app development companies in the USA.
               </p>
@@ -745,7 +745,7 @@ export default function SocialMedia() {
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
                       activetechnologies === index
                         ? "text-red-600 font-semibold"
-                        : "text-gray-500 hover:text-red-600"
+                        : "text-black hover:text-red-600"
                     }`}
                   >
                     {tab.category}
@@ -791,15 +791,15 @@ export default function SocialMedia() {
                 className="object-contain"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Looking to Hire Dedicated Team?
             </h2>
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
               We are team of talented, experienced, and certified designers and
               developers. Let us build something extraordinary.
             </p>
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 <a
                   href="mailto:info@devappgrid.com"
                   className="inline-flex items-center gap-1.5 transition-colors"
@@ -818,7 +818,7 @@ export default function SocialMedia() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
                   <div
                     className="w-6 h-6 bg-red-600"
@@ -995,11 +995,11 @@ export default function SocialMedia() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1079,7 +1079,7 @@ export default function SocialMedia() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                       {faq.points && (

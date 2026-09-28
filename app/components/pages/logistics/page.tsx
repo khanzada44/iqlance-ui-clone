@@ -245,20 +245,20 @@ export default function Logistic() {
                 Development Company
               </h1>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 Whether it's building an all-in-one logistics management platform or a
                 specialized transportation solution, our team of experienced developers is
                 ready to bring your project to life. We craft custom apps designed to
                 simplify logistics operations and make transportation management more efficient than ever.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 By combining the latest technologies with proven development practices,
                 we deliver logistics apps that
                 streamline processes and improve everyday operations for businesses like yours.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 Our logistics app development services include:
               </p>
 
@@ -267,9 +267,9 @@ export default function Logistic() {
                 {topBulletPoints.map((point, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-2 font-semibold text-gray-800 text-base md:text-lg"
+                    className="flex items-center gap-2 font-semibold text-black text-base md:text-lg"
                   >
-                    <ChevronRight className="w-5 h-5 text-gray-600 shrink-0" />
+                    <ChevronRight className="w-5 h-5 text-black shrink-0" />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -287,10 +287,10 @@ export default function Logistic() {
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-red-100 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-gray-300 hover:border-red-100 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
                 >
                   See Our Work
-                  <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -308,10 +308,10 @@ export default function Logistic() {
                 </div>
 
                 {/* Form Heading */}
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
+                <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
                   Book a Free Consultation
                 </h2>
-                <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
+                <p className="text-xs md:text-sm text-black font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
 
@@ -329,7 +329,7 @@ export default function Logistic() {
                       onChange={handleChange}
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"
-                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -347,7 +347,7 @@ export default function Logistic() {
                       onChange={handleChange}
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"
-                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -365,7 +365,7 @@ export default function Logistic() {
                       onChange={handleChange}
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"
-                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -382,14 +382,14 @@ export default function Logistic() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -400,7 +400,7 @@ export default function Logistic() {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -421,7 +421,7 @@ export default function Logistic() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -454,11 +454,11 @@ export default function Logistic() {
         <section>
           {/* Top Heading */}
           <div className="text-center max-w-6xl mx-auto mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug px-5">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug px-5">
               Businesses Transportation and Logistics App Development Company for Western
             </h2>
 
-            <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
+            <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
               <p>
                 For companies across the West, we develop custom software solutions built
                 for the transportation and logistics industry. Our apps are designed to
@@ -490,12 +490,12 @@ export default function Logistic() {
           {/* Bottom Heading & 2-Column Grid */}
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug px-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug px-5">
                 Logistics App Development Solutions for Modern Transportation
                 Challenges
               </h2>
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
+              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
                 Developing user-friendly apps for businesses in the transportation and
                 logistics sector is what we specialize in. From concept through
                 deployment, we manage the complete process, taking care of every stage so
@@ -508,9 +508,9 @@ export default function Logistic() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 px-5 mb-5">
               {bottomFeatures.map((item, index) => (
                 <div key={index} className="flex items-start gap-2.5">
-                  <ChevronRight className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    <strong className="font-bold text-gray-900">
+                  <ChevronRight className="w-5 h-5 text-black shrink-0 mt-0.5" />
+                  <p className="text-sm md:text-base text-black leading-relaxed">
+                    <strong className="font-bold text-black">
                       {item.title}
                     </strong>{" "}
                     {item.description}
@@ -638,7 +638,7 @@ export default function Logistic() {
                         {slide.title}
                       </h2>
 
-                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
                         {slide.description}
                       </p>
 
@@ -673,11 +673,11 @@ export default function Logistic() {
               >
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                     {item.title}
                   </h2>
 
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  <p className="text-black text-sm md:text-base leading-relaxed">
                     {item.description}
                   </p>
 
@@ -685,9 +685,9 @@ export default function Logistic() {
                     {item.features.map((feature, fIndex) => (
                       <li
                         key={fIndex}
-                        className="flex items-center gap-3 text-gray-900 font-semibold text-sm md:text-base"
+                        className="flex items-center gap-3 text-black font-semibold text-sm md:text-base"
                       >
-                        <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />
+                        <ChevronRight className="w-4 h-4 text-black shrink-0 stroke-[2.5]" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -775,8 +775,8 @@ export default function Logistic() {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5 mt-10">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5 mt-10">
+            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
             <p>
@@ -834,7 +834,7 @@ export default function Logistic() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                        <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
                         {/* Stars */}
@@ -850,13 +850,13 @@ export default function Logistic() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -938,7 +938,7 @@ export default function Logistic() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
                         {faq.answer}
                       </div>
                       {faq.points && (
@@ -946,7 +946,7 @@ export default function Logistic() {
                           {faq.points.map((point, i) => (
                             <li
                               key={i}
-                              className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
+                              className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
                             >
                               <ChevronRight
                                 size={18}

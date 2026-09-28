@@ -168,14 +168,14 @@ export default function ContactSection() {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 mt-10">
                   Request a Quote
                 </h1>
-                <p className="mt-6 text-gray-700">
+                <p className="mt-6 text-black">
                   Share Your Project Details on{" "}
                   <span className="font-semibold">info@devappgrid.com</span>
                 </p>
 
                 <div className="mt-6">
                   <h3 className="font-bold text-lg">Talk To Experts:</h3>
-                  <p className="mt-2 text-gray-700">
+                  <p className="mt-2 text-black">
                     USA: +1 (866) 978-8570
                   </p>
                 </div>
@@ -214,9 +214,9 @@ export default function ContactSection() {
 
                   <Link
                     href="/portfolio"
-                    className="inline-flex items-center gap-2 bg-white text-gray-800 border border-[#F7F8FA] hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                    className="inline-flex items-center gap-2 bg-white text-black border border-[#F7F8FA] hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                   >
-                    See Our Work <ArrowRight className="w-4 h-4 text-gray-600" />
+                    See Our Work <ArrowRight className="w-4 h-4 text-black" />
                   </Link>
                 </div>
               </div>
@@ -235,10 +235,10 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
+                  <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
                     Got a Project in Mind?
                   </h2>
-                  <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
+                  <p className="text-xs md:text-sm text-black font-medium mb-8">
                     We Guarantee To Get Back To You Within A Business Day.
                   </p>
 
@@ -257,7 +257,7 @@ export default function ContactSection() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -276,7 +276,7 @@ export default function ContactSection() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -295,7 +295,7 @@ export default function ContactSection() {
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -312,14 +312,14 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -330,7 +330,7 @@ export default function ContactSection() {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -351,7 +351,7 @@ export default function ContactSection() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -382,7 +382,7 @@ export default function ContactSection() {
             <div className="mt-20 text-center w-full">
               <h2 className="text-4xl font-bold">Our Office</h2>
 
-              <p className="max-w-5xl mx-auto mt-6 text-gray-600 leading-8">
+              <p className="max-w-5xl mx-auto mt-6 text-black leading-8">
                 To better serve our clients, Devapp Grid has established a
                 global presence, delivering innovative web, mobile, and software
                 development services with local expertise and worldwide reach.
@@ -459,7 +459,7 @@ export default function ContactSection() {
                     {office.city}
                   </h3>
 
-                  <p className="text-gray-600 mt-5 leading-8">
+                  <p className="text-black mt-5 leading-8">
                     {office.address}
                   </p>
 
@@ -492,7 +492,7 @@ export default function ContactSection() {
               Client Testimonials
             </h2>
 
-            <p className="mt-8 text-gray-700 text-base md:text-xl leading-8 md:leading-10 max-w-5xl mx-auto">
+            <p className="mt-8 text-black text-base md:text-xl leading-8 md:leading-10 max-w-5xl mx-auto">
               Innovating user centric and results driven solutions based on the
               demanded industry of the client makes them speak about our work.
               Let’s see what they think about our development method.
@@ -537,7 +537,7 @@ export default function ContactSection() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                        <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
                         {/* Stars */}
@@ -553,13 +553,13 @@ export default function ContactSection() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
