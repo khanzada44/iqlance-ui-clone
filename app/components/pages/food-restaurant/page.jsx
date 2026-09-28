@@ -24,7 +24,6 @@ import {
   portfolioSlides,
   technologies,
   services,
-  faqsData,
   tabs,
   appData,
 } from "./data";
@@ -33,6 +32,7 @@ import {
   stats,
   industries,
   testimonials,
+  faqsData
 } from "../../../../utils/data";
 import Image from "next/image";
 
@@ -189,7 +189,7 @@ const handleChange = (e) => {
                 Built to Fill Every Table and Every Order
               </h1>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 Fast, flawless food delivery isn&apos;t a nice-to-have anymore; it&apos;s
                 the baseline customers expect. As a leading restaurant app development
                 company, Devapp helps restaurant owners and food businesses turn that
@@ -198,14 +198,14 @@ const handleChange = (e) => {
                 help your food delivery app development project deliver real returns.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 We&apos;re the partner restaurants turn to when they&apos;re ready to go
                 digital. Our in-house developers focus on one thing: making food ordering
                 and delivery effortless for your customers and your kitchen alike. No
                 glitches, no friction, just a smooth path from craving to doorstep.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 Whether you&apos;re a food startup finding your footing or an established
                 restaurant brand ready to modernize, a well-built app isn&apos;t just
                 convenient, it&apos;s a competitive necessity. Here&apos;s what the right app
@@ -342,7 +342,7 @@ const handleChange = (e) => {
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
                     <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
                       <Paperclip className="w-4 h-4 text-gray-600" />
                       <span>Upload file:</span>
@@ -376,7 +376,7 @@ const handleChange = (e) => {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -528,8 +528,8 @@ const handleChange = (e) => {
                 <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
 
                 {/* Text Content */}
-                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                  <strong className="font-semibold text-gray-900">
+                <p className="text-sm md:text-base text-black leading-relaxed">
+                  <strong className="font-semibold text-black">
                     {item.title}:
                   </strong>{" "}
                   {item.description}
@@ -705,9 +705,9 @@ const handleChange = (e) => {
                     {item.features.map((feature, fIndex) => (
                       <li
                         key={fIndex}
-                        className="flex items-center gap-3 text-gray-900 font-semibold text-sm md:text-base"
+                        className="flex items-center gap-3 text-black font-semibold text-sm md:text-base"
                       >
-                        <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[2.5]" />
+                        <ChevronRight className="w-4 h-4 text-black shrink-0 stroke-[2.5]" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -958,7 +958,7 @@ const handleChange = (e) => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
+            <div className="space-y-5 text-black text-sm md:text-base leading-relaxed">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Specialized, Qualified Developers Ready for Any Technology Stack
               </h2>
@@ -1077,7 +1077,7 @@ const handleChange = (e) => {
                         {slide.title}
                       </h3>
 
-                      <p className="text-gray-700 leading-6 sm:leading-7 mb-4 text-sm sm:text-base line-clamp-3">
+                      <p className="text-black leading-6 sm:leading-7 mb-4 text-sm sm:text-base line-clamp-3">
                         {slide.description}
                       </p>
 
@@ -1358,7 +1358,7 @@ const handleChange = (e) => {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-700 leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
+                <p className="text-black leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
                   {service.description}
                 </p>
               </div>
@@ -1487,71 +1487,65 @@ const handleChange = (e) => {
             </p>
           </div>
 
-          {/* FAQ */}
-          <section className="py-12">
-            <div className="max-w-6xl mx-auto px-4">
-              <div className="space-y-4">
-                {faqsData.map((faq, index) => (
-                  <div
-                    key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-red-300"
-                      }`}
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
+
+              return (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
-                    {/* Question */}
-                    <button
-                      onClick={() => setOpen(open === index ? -1 : index)}
-                      className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
-                    >
-                      <span className="text-lg font-medium text-black">
-                        {faq.question}
-                      </span>
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
 
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
-                      />
-                    </button>
-
-                    {/* Answer */}
-                    <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"
                         }`}
                     >
-                      <div className="px-6 pb-5 pt-4 border-t border-gray-100">
-                        <p className="text-[17px] leading-8 text-gray-600">
-                          {faq.answer}
-                        </p>
+                      <ChevronDown size={22} />
+                    </span>
+                  </button>
 
-                        {faq.points && (
-                          <ul className="mt-5 space-y-4">
-                            {faq.points.map((point, i) => (
-                              <li
-                                key={i}
-                                className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
-                              >
-                                <ChevronRight
-                                  size={18}
-                                  className="mt-1 text-black shrink-0"
-                                />
-
-                                <span>{point}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                        {faq.answer}
                       </div>
+                      {faq.points && (
+                        <ul className="mt-5 space-y-4">
+                          {faq.points.map((point, i) => (
+                            <li
+                              key={i}
+                              className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
+                            >
+                              <ChevronRight
+                                size={18}
+                                className="mt-1 text-black shrink-0"
+                              />
+
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </section>
+                </div>
+              );
+            })}
+          </div>
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">

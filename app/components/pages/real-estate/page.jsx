@@ -185,17 +185,17 @@ export default function realEstate() {
                 That Turns Browsers Into Buyers
               </h1>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 The way people search for their next home has changed for good. Today's buyers don't wait for open houses; they scroll, swipe, and shortlist properties from their phones before they ever step through a front door. As a trusted real estate app development company, we help brokerages, agents, and PropTech startups meet that shift head-on with mobile and web platforms built to convert interest into closed deals.
 
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 From MLS and IDX integration to AI-driven property recommendations and immersive virtual tours, we build custom real estate apps that keep you ahead of an industry moving faster than ever. Whether you're a solo agent looking to modernize your listings or an enterprise brokerage overhauling legacy systems, our team delivers real estate software development backed by real technical depth not just a pretty interface.
 
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+              <p className="text-base md:text-lg leading-relaxed text-black">
                 We also offer Virtual CTO support alongside our development services, so you get strategic technology guidance from day one not just code delivered on a deadline.
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-6">
@@ -209,10 +209,10 @@ export default function realEstate() {
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work
-                  <ArrowRight className="w-4 h-4 text-gray-600 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -227,10 +227,10 @@ export default function realEstate() {
                 </div>
 
                 {/* Form Heading */}
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
+                <h2 className="text-xl md:text-2xl font-extrabold text-black mb-1">
                   Request a Free Quote
                 </h2>
-                <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
+                <p className="text-xs md:text-sm text-black font-medium mb-8">
                   Guaranteed Response within One Business Day!
                 </p>
               <form
@@ -246,7 +246,7 @@ export default function realEstate() {
                     value={formData.name}
                     onChange={handleChange}
                     disabled={loading}
-                    className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                    className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                   />
                   {errors.name && (
                     <span className="text-xs text-red-600 mt-1 block">
@@ -263,7 +263,7 @@ export default function realEstate() {
                     value={formData.email}
                     onChange={handleChange}
                     disabled={loading}
-                    className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                    className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                   />
                   {errors.email && (
                     <span className="text-xs text-red-600 mt-1 block">
@@ -280,7 +280,7 @@ export default function realEstate() {
                     value={formData.phone}
                     onChange={handleChange}
                     disabled={loading}
-                    className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                    className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                   />
                   {errors.phone && (
                     <span className="text-xs text-red-600 mt-1 block">
@@ -297,14 +297,14 @@ export default function realEstate() {
                     value={formData.message}
                     onChange={handleChange}
                     disabled={loading}
-                    className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                    className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                   />
                 </div>
 
                 {/* File Upload & NDA Checkbox */}
-                <div className="flex flex-col sm:flex-row sm:items-center  gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                  <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                    <Paperclip className="w-4 h-4 text-gray-600" />
+                <div className="flex flex-col sm:flex-row sm:items-center  gap-3 text-xs md:text-sm text-black pt-1">
+                  <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                    <Paperclip className="w-4 h-4 text-black" />
                     <span>Upload file:</span>
                     <input
                       ref={fileInputRef}
@@ -315,7 +315,7 @@ export default function realEstate() {
                     />
                   </label>
 
-                  <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                  <span className="text-black truncate max-w-full sm:max-w-45">
                     {formData.file ? formData.file.name : "No file chosen."}
                   </span>
                 </div>
@@ -336,7 +336,7 @@ export default function realEstate() {
                   />
                   <label
                     htmlFor="nda"
-                    className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                    className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                   >
                     Please Send NDA
                   </label>
@@ -379,11 +379,11 @@ export default function realEstate() {
         <section>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug px-5">
+              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug px-5">
                 Custom Real Estate App Development Built Around Your Business
               </h2>
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
+              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
                 No two real estate businesses look the same so your app shouldn&apos;t
                 either. Our real estate app developers start with deep research into your
                 specific market, your customers, and your competitors before writing a
@@ -396,16 +396,16 @@ export default function realEstate() {
 
               <br />
 
-              <p className="text-sm md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed px-5">
+              <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
                 Here&apos;s what makes our approach different:
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 mb-10">
               {bottomFeatures.map((item, index) => (
                 <div key={index} className="flex items-start gap-2.5">
-                  <ChevronRight className="w-5 h-5 text-gray-700 shrink-0 mt-0.5" />
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    <strong className="font-bold text-gray-900">
+                  <ChevronRight className="w-5 h-5 text-black shrink-0 mt-0.5" />
+                  <p className="text-sm md:text-base text-black leading-relaxed">
+                    <strong className="font-bold text-black">
                       {item.title}
                     </strong>{" "}
                     {item.description}
@@ -448,19 +448,19 @@ export default function realEstate() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Looking to Hire Dedicated Team?
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               We are team of talented, experienced, and certified designers and
               developers. Let us build something extraordinary.
             </p>
 
             {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
@@ -480,7 +480,7 @@ export default function realEstate() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -517,7 +517,7 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center mb-10 mt-20">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug px-5">
+            <h1 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug px-5">
               Delivery Of Unrivaled Solutions Is Our Prime Objective
             </h1>
             <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
@@ -574,7 +574,7 @@ export default function realEstate() {
                         {slide.title}
                       </h2>
 
-                      <p className="text-gray-600 leading-7 lg:leading-8 mb-6 lg:mb-8">
+                      <p className="text-black leading-7 lg:leading-8 mb-6 lg:mb-8">
                         {slide.description}
                       </p>
 
@@ -609,11 +609,11 @@ export default function realEstate() {
               >
 
                 <div className="w-full lg:w-1/2 space-y-6">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                     {item.title}
                   </h2>
 
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  <p className="text-black text-sm md:text-base leading-relaxed">
                     {item.description}
                   </p>
 
@@ -622,9 +622,9 @@ export default function realEstate() {
                     {item.features.map((feature, fIndex) => (
                       <li
                         key={fIndex}
-                        className="flex items-center gap-3 text-gray-900 font-semibold text-sm md:text-base"
+                        className="flex items-center gap-3 text-black font-semibold text-sm md:text-base"
                       >
-                        <ChevronRight className="w-4 h-4 text-gray-700 shrink-0 stroke-[3.5]" />
+                        <ChevronRight className="w-4 h-4 text-black shrink-0 stroke-[3.5]" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -660,18 +660,18 @@ export default function realEstate() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Ready to Get Started?
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
               Send your Requirements on
             </p>
 
             {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
@@ -691,7 +691,7 @@ export default function realEstate() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -731,7 +731,7 @@ export default function realEstate() {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
             Features of Wellness and Fitness App Development
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-4xl mx-auto mb-12 leading-relaxed">
+          <p className="text-black text-sm sm:text-base max-w-4xl mx-auto mb-12 leading-relaxed">
             The next-gen real estate app we provide will surely boost your
             everyday operation by the use of top features like:
           </p>
@@ -743,7 +743,7 @@ export default function realEstate() {
                 alt="Login & Profile Creation"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Social Media & User Profile
               </h3>
             </div>
@@ -754,7 +754,7 @@ export default function realEstate() {
                 alt="Push Notification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Property List
               </h3>
             </div>
@@ -766,7 +766,7 @@ export default function realEstate() {
                 alt="Social Sharing"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Search
               </h3>
             </div>
@@ -778,7 +778,7 @@ export default function realEstate() {
                 alt="Filter"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Filter
               </h3>
             </div>
@@ -790,7 +790,7 @@ export default function realEstate() {
                 alt="Category"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Categories
               </h3>
             </div>
@@ -802,7 +802,7 @@ export default function realEstate() {
                 alt="Food and Calorie Tracker"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Favourite
               </h3>
             </div>
@@ -814,7 +814,7 @@ export default function realEstate() {
                 alt="Schedules and Calendar"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Settings
               </h3>
             </div>
@@ -826,7 +826,7 @@ export default function realEstate() {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Map
               </h3>
             </div>
@@ -836,7 +836,7 @@ export default function realEstate() {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 History
               </h3>
             </div>
@@ -846,7 +846,7 @@ export default function realEstate() {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Recommendation
               </h3>
             </div>
@@ -856,7 +856,7 @@ export default function realEstate() {
                 alt="Gamification"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Push Notification
               </h3>
             </div>
@@ -868,7 +868,7 @@ export default function realEstate() {
                 alt="Online Sessions"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Cost Calculator
               </h3>
             </div>
@@ -878,7 +878,7 @@ export default function realEstate() {
                 alt="Chat"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Calendar
               </h3>
             </div>
@@ -888,7 +888,7 @@ export default function realEstate() {
                 alt="Chat"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Call or Message
               </h3>
             </div>
@@ -898,7 +898,7 @@ export default function realEstate() {
                 alt="Chat"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Virtual Tour Request
               </h3>
             </div>
@@ -908,7 +908,7 @@ export default function realEstate() {
                 alt="Chat"
                 className="w-10 h-10 object-contain mb-4"
               />
-              <h3 className="text-gray-900 font-semibold text-sm sm:text-base">
+              <h3 className="text-black font-semibold text-sm sm:text-base">
                 Viewing Request
               </h3>
             </div>
@@ -929,18 +929,18 @@ export default function realEstate() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               So, We Guess You want to talk about your Project
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               Send your Requirements on
             </p>
 
             {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
@@ -960,7 +960,7 @@ export default function realEstate() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -1005,8 +1005,8 @@ export default function realEstate() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="space-y-5 text-gray-700 text-sm md:text-base leading-relaxed">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-5 text-black text-sm md:text-base leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                 We Turn Real Estate Ideas Into Apps People Actually Use
               </h2>
 
@@ -1037,11 +1037,11 @@ export default function realEstate() {
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12 md:py-16 space-y-12">
           <div className="text-center max-w-5xl mx-auto space-y-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               How Much Does It Cost to Build a Real Estate App?
             </h2>
 
-            <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
+            <div className="space-y-4 text-black text-sm md:text-base leading-relaxed">
               <p>
                 There&apos;s no one-size-fits-all price for real estate app development.
                 The investment depends on what you want your app to accomplish, from a
@@ -1086,10 +1086,10 @@ export default function realEstate() {
 
           {/* Success Stories Heading Section */}
           <div className="text-center max-w-5xl mx-auto space-y-3 pt-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-black">
               Endeavors That Make Us Proud
             </h2>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed">
               Devapp Grid has always been honored with valuable words for
               the efforts given on mobile app development that are efficiently
               unique and user centric. Here are some of the best examples for
@@ -1130,7 +1130,7 @@ export default function realEstate() {
                         {slide.title}
                       </h3>
 
-                      <p className="text-gray-700 leading-6 sm:leading-7 mb-4 text-sm sm:text-base line-clamp-3">
+                      <p className="text-black leading-6 sm:leading-7 mb-4 text-sm sm:text-base line-clamp-3">
                         {slide.description}
                       </p>
 
@@ -1194,10 +1194,10 @@ export default function realEstate() {
           {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
                 Check How We turn Your Idea into Innovative Product
               </h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Our rich portfolio justifies that we are one of the best
                 logistics app development companies in the USA.
               </p>
@@ -1214,7 +1214,7 @@ export default function realEstate() {
 
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-6xl mx-auto space-y-4">
-            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Technology Stack for Custom Real Estate App Development
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
@@ -1237,7 +1237,7 @@ export default function realEstate() {
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                       ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-red-600"
+                      : "text-black hover:text-red-600"
                       }`}
                   >
                     {tab.category}
@@ -1287,19 +1287,19 @@ export default function realEstate() {
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight faq">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               We are Team of Talented, Experienced, and Certified Designers and
               Developers.
             </h2>
 
             {/* Subtitle Paragraph */}
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mb-8 leading-relaxed faq">
+            <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               Let us Build Something Extraordinary.
             </p>
 
             {/* Contact Info Box */}
             <div className="w-full max-w-2xl bg-red-50 border border-red-600 rounded-sm py-4 px-6 mb-8 shadow-xs">
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-gray-900">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base font-bold text-black">
                 {/* Email link */}
                 <a
                   href="mailto:info@devappgrid.com"
@@ -1319,7 +1319,7 @@ export default function realEstate() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -1403,7 +1403,7 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               {" "}
               Industries We Serve
             </h1>
@@ -1444,7 +1444,7 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900 mt-10">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black mt-10">
               {" "}
               Why Choose Us?
             </h1>
@@ -1474,7 +1474,7 @@ export default function realEstate() {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-700 leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
+                <p className="text-black leading-7 sm:leading-8 text-sm sm:text-base md:text-lg">
                   {service.description}
                 </p>
               </div>
@@ -1482,8 +1482,8 @@ export default function realEstate() {
           </div>
         </section>
         <section>
-          <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed text-center px-5">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">
+          <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
+            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
             </h1>
             <p>
@@ -1541,7 +1541,7 @@ export default function realEstate() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-bold text-gray-900 mb-1">
+                        <h4 className="text-lg font-bold text-black mb-1">
                           {item.name}
                         </h4>
                         {/* Stars */}
@@ -1557,13 +1557,13 @@ export default function realEstate() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1612,75 +1612,69 @@ export default function realEstate() {
             </p>
           </div>
 
-          {/* FAQ */}
-          <section className="py-12">
-            <div className="max-w-6xl mx-auto px-4">
-              <div className="space-y-4">
-                {faqsData.map((faq, index) => (
-                  <div
-                    key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-gray-300"
-                      }`}
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
+
+              return (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
-                    {/* Question */}
-                    <button
-                      onClick={() => setOpen(open === index ? -1 : index)}
-                      className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
-                    >
-                      <span className="text-lg font-medium text-black">
-                        {faq.question}
-                      </span>
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
 
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
-                      />
-                    </button>
-
-                    {/* Answer */}
-                    <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"
                         }`}
                     >
-                      <div className="px-6 pb-5 pt-4 border-t border-gray-100">
-                        <p className="text-[17px] leading-8 text-gray-600">
-                          {faq.answer}
-                        </p>
+                      <ChevronDown size={22} />
+                    </span>
+                  </button>
 
-                        {faq.points && (
-                          <ul className="mt-5 space-y-4">
-                            {faq.points.map((point, i) => (
-                              <li
-                                key={i}
-                                className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
-                              >
-                                <ChevronRight
-                                  size={18}
-                                  className="mt-1 text-black shrink-0"
-                                />
-
-                                <span>{point}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
+                        {faq.answer}
                       </div>
+                      {faq.points && (
+                        <ul className="mt-5 space-y-4">
+                          {faq.points.map((point, i) => (
+                            <li
+                              key={i}
+                              className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
+                            >
+                              <ChevronRight
+                                size={18}
+                                className="mt-1 text-black shrink-0"
+                              />
+
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </section>
+                </div>
+              );
+            })}
+          </div>
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
             </h1>
             <p>

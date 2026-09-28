@@ -24,19 +24,16 @@ export default function testimonials() {
         <section className="py-10 md:py-14 bg-white mt-4">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-center leading-tight">
-              <span className="text-4xl md:text-6xl text-red-700">Words of Praise From All The Hard Work</span>
+              <span className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">Hear It From the People We’ve Worked With  </span>
             </h2>
             <p className="max-w-6xl mx-auto mt-8 text-center text-gray-800 text-base sm:text-lg leading-8">
-              Few words as the reward of our unique product development process
-              and services given by our valuable clients. Team Devapp Grid
-              feel pride and appreciated when given reviews and rates as per
-              their hardwork.
+              Good work speaks for itself, but hearing it straight from our clients makes it even better. From first 
+              conversations to final delivery, we’re proud of the relationships we’ve built and the results we’ve 
+              achieved together.
             </p>
             <p className="max-w-6xl mx-auto mt-8 text-center text-gray-800 text-base sm:text-lg leading-8">
-              Devapp Grid has always believed that every emerging is the
-              client is not only a solution seeker but is our inspiration to
-              face challenges and find an amazing solution that can take the
-              purpose of development to the next elevating step.
+              At Grid  Devapp, we believe the best projects are a two-way street. We listen, collaborate, tackle challenges 
+              head-on, and keep the bigger picture in mind. So your idea doesn’t just get built, it gets built right
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-20">
               {/* Inquiry Now Link */}
@@ -64,15 +61,13 @@ export default function testimonials() {
               </Link>
             </div>
             <h3 className="mt-15 text-2xl md:text-4xl font-bold text-center text-black leading-tight">
-              Offshore Web, Mobile & Software Development Company
+              Web, Mobile & Custom Software Development
             </h3>
 
             <p className="max-w-6xl mx-auto mt-1 text-center text-gray-700 text-base sm:text-lg leading-8">
-              Devapp Grid is a leading Software, Web, & Mobile App
-              Development Company with a vast area of experience in crafting
-              stunning and end-to-end encrypted technology solutions. We offer
-              excellent expertise of the industry followed by an exactly planned
-              approach to elevate your growth.
+                Got an idea you want to bring to life? We’ve got you covered. Devapp creates custom web, mobile, 
+                and software solutions that are built around your business, not the other way around. From the first 
+                line of code to the final launch, we keep things practical, purposeful, and ready to grow with you.
             </p>
           </div>
         </section>
@@ -386,35 +381,50 @@ export default function testimonials() {
               a successful digital product.
             </p>
 
-            <div className="mt-12 space-y-4">
-              {faqsData.map((faq, index) => (
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
+
+              return (
                 <div
                   key={index}
                   className="border border-gray-200 rounded-lg overflow-hidden"
                 >
                   <button
-                    onClick={() => setOpen(open === index ? -1 : index)}
-                    className="w-full flex justify-between items-center px-5 py-5 text-left"
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
                     <span className="font-semibold text-lg">
                       {faq.question}
                     </span>
 
-                    {open === index ? (
-                      <ChevronUp size={22} />
-                    ) : (
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${
+                        isOpen ? "rotate-180" : "rotate-0"
+                      }`}
+                    >
                       <ChevronDown size={22} />
-                    )}
+                    </span>
                   </button>
 
-                  {open === index && (
-                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
-                      {faq.answer}
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                        {faq.answer}
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
+          </div>
 
             <div className="mt-20 text-center">
               <h3 className="text-4xl font-bold">

@@ -65,7 +65,7 @@ export default function HeroQuoteSection() {
       setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
     }
   };
-const handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
@@ -281,131 +281,131 @@ const handleChange = (e) => {
                   <p className="text-xs md:text-sm text-gray-600 font-medium mb-8">
                     Guaranteed Response within One Business Day!
                   </p>
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-5 sm:space-y-6"
-                noValidate
-              >
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name*"
-                    value={formData.name}
-                    onChange={handleChange}
-                    disabled={loading}
-                    className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
-                  />
-                  {errors.name && (
-                    <span className="text-xs text-red-600 mt-1 block">
-                      {errors.name}
-                    </span>
-                  )}
-                </div>
-
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email*"
-                    value={formData.email}
-                    onChange={handleChange}
-                    disabled={loading}
-                    className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
-                  />
-                  {errors.email && (
-                    <span className="text-xs text-red-600 mt-1 block">
-                      {errors.email}
-                    </span>
-                  )}
-                </div>
-
-                <div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone*"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    disabled={loading}
-                    className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
-                  />
-                  {errors.phone && (
-                    <span className="text-xs text-red-600 mt-1 block">
-                      {errors.phone}
-                    </span>
-                  )}
-                </div>
-
-                <div>
-                  <textarea
-                    name="message"
-                    rows={3}
-                    placeholder="Write here Brief about the project..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    disabled={loading}
-                    className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
-                  />
-                </div>
-
-                {/* File Upload & NDA Checkbox */}
-                <div className="flex flex-col sm:flex-row sm:items-center  gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                  <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                    <Paperclip className="w-4 h-4 text-gray-600" />
-                    <span>Upload file:</span>
-                    <input
-                      ref={fileInputRef}
-                      type="file"
-                      onChange={handleFileChange}
-                      disabled={loading}
-                      className="hidden"
-                    />
-                  </label>
-
-                  <span className="text-gray-500 truncate max-w-full sm:max-w-45">
-                    {formData.file ? formData.file.name : "No file chosen."}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2 pt-1">
-                  <input
-                    type="checkbox"
-                    id="nda"
-                    checked={formData.sendNda}
-                    disabled={loading}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        sendNda: e.target.checked,
-                      }))
-                    }
-                    className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 cursor-pointer rounded-xs"
-                  />
-                  <label
-                    htmlFor="nda"
-                    className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-5 sm:space-y-6"
+                    noValidate
                   >
-                    Please Send NDA
-                  </label>
-                </div>
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full bg-red-700 hover:bg-red-600 disabled:bg-red-400 font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed rounded-sm text-white!"
-                  >
-                    {loading ? (
-                      <span className="text-white font-bold">Sending...</span>
-                    ) : (
-                      <span className="text-white font-bold flex items-center gap-2">
-                        Schedule a free consultation
-                        <ArrowRight className="w-4 h-4 shrink-0 text-white" />
+                    <div>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name*"
+                        value={formData.name}
+                        onChange={handleChange}
+                        disabled={loading}
+                        className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      />
+                      {errors.name && (
+                        <span className="text-xs text-red-600 mt-1 block">
+                          {errors.name}
+                        </span>
+                      )}
+                    </div>
+
+                    <div>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email*"
+                        value={formData.email}
+                        onChange={handleChange}
+                        disabled={loading}
+                        className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      />
+                      {errors.email && (
+                        <span className="text-xs text-red-600 mt-1 block">
+                          {errors.email}
+                        </span>
+                      )}
+                    </div>
+
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone*"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        disabled={loading}
+                        className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      />
+                      {errors.phone && (
+                        <span className="text-xs text-red-600 mt-1 block">
+                          {errors.phone}
+                        </span>
+                      )}
+                    </div>
+
+                    <div>
+                      <textarea
+                        name="message"
+                        rows={3}
+                        placeholder="Write here Brief about the project..."
+                        value={formData.message}
+                        onChange={handleChange}
+                        disabled={loading}
+                        className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      />
+                    </div>
+
+                    {/* File Upload & NDA Checkbox */}
+                    <div className="flex flex-col sm:flex-row sm:items-center  gap-3 text-xs md:text-sm text-gray-700 pt-1">
+                      <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
+                        <Paperclip className="w-4 h-4 text-gray-600" />
+                        <span>Upload file:</span>
+                        <input
+                          ref={fileInputRef}
+                          type="file"
+                          onChange={handleFileChange}
+                          disabled={loading}
+                          className="hidden"
+                        />
+                      </label>
+
+                      <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                        {formData.file ? formData.file.name : "No file chosen."}
                       </span>
-                    )}
-                  </button>
-                </div>
-              </form>
+                    </div>
+
+                    <div className="flex items-center gap-2 pt-1">
+                      <input
+                        type="checkbox"
+                        id="nda"
+                        checked={formData.sendNda}
+                        disabled={loading}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            sendNda: e.target.checked,
+                          }))
+                        }
+                        className="w-4 h-4 border-gray-400 text-red-600 focus:ring-red-600 cursor-pointer rounded-xs"
+                      />
+                      <label
+                        htmlFor="nda"
+                        className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      >
+                        Please Send NDA
+                      </label>
+                    </div>
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="w-full bg-red-700 hover:bg-red-600 disabled:bg-red-400 font-bold text-xs md:text-sm py-3 px-6 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed rounded-sm text-white!"
+                      >
+                        {loading ? (
+                          <span className="text-white font-bold">Sending...</span>
+                        ) : (
+                          <span className="text-white font-bold flex items-center gap-2">
+                            Schedule a free consultation
+                            <ArrowRight className="w-4 h-4 shrink-0 text-white" />
+                          </span>
+                        )}
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -1412,13 +1412,13 @@ const handleChange = (e) => {
                   key={index}
                   className="border border-red-200 p-6 sm:p-8 transition-all duration-300 hover:border-red-600 hover:shadow-lg"
                 >
-              <Image
-                src={service.image}
-                alt={service.title}
-                width={64}
-                height={64}
-                className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
-              />
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={64}
+                    height={64}
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
+                  />
 
                   <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4">
                     {service.title}
@@ -1552,72 +1552,65 @@ const handleChange = (e) => {
               what’s in our client’s mind.
             </p>
           </div>
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
 
-          {/* FAQ */}
-          <section className="py-12">
-            <div className="max-w-6xl mx-auto px-4">
-              <div className="space-y-4">
-                {faqsData.map((faq, index) => (
-                  <div
-                    key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-red-50 shadow-md"
-                      : "border-red-200 hover:border-red-300"
-                      }`}
+              return (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
-                    {/* Question */}
-                    <button
-                      onClick={() => setOpen(open === index ? -1 : index)}
-                      className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
-                    >
-                      <span className="text-lg font-medium text-black">
-                        {faq.question}
-                      </span>
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
 
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
-                      />
-                    </button>
-
-                    {/* Answer */}
-                    <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"
                         }`}
                     >
-                      <div className="px-6 pb-5 pt-4 border-t border-gray-100">
-                        <p className="text-[17px] leading-8 text-gray-600">
-                          {faq.answer}
-                        </p>
+                      <ChevronDown size={22} />
+                    </span>
+                  </button>
 
-                        {faq.points && (
-                          <ul className="mt-5 space-y-4">
-                            {faq.points.map((point, i) => (
-                              <li
-                                key={i}
-                                className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
-                              >
-                                <ChevronRight
-                                  size={18}
-                                  className="mt-1 text-black shrink-0"
-                                />
-
-                                <span>{point}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                        {faq.answer}
                       </div>
+                      {faq.points && (
+                        <ul className="mt-5 space-y-4">
+                          {faq.points.map((point, i) => (
+                            <li
+                              key={i}
+                              className="flex gap-3 text-[17px] leading-8 text-gray-700 items-center m-0"
+                            >
+                              <ChevronRight
+                                size={18}
+                                className="mt-1 text-black shrink-0"
+                              />
+
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </section>
+                </div>
+              );
+            })}
+          </div>
         </section>
         <section>
           <div>

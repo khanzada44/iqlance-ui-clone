@@ -25,7 +25,7 @@ export default function ourProcess() {
         <section className="py-16 bg-white text-center">
           <div className="max-w-6xl mx-auto px-4">
             {/* Top Subtitle */}
-            <p className="text-gray-700 text-sm md:text-base font-normal tracking-wide">
+            <p className="text-black text-sm md:text-base font-normal tracking-wide">
               A Process Built for Results, Not Just Deadlines
             </p>
 
@@ -33,22 +33,14 @@ export default function ourProcess() {
             <h2 className="text-4xl md:text-5xl font-extrabold text-red-700 mt-2 mb-6">
               Our Process
             </h2>
-
-            {/* Description Paragraph */}
-            <p className="max-w-5xl mx-auto text-gray-700 text-sm md:text-base leading-relaxed mb-8">
-              Great outcomes don't happen by chance, they happen because of a
-              process that's been tested, refined, and proven to work. As a
-              respected app and software development agency, we follow a
-              structured, no-shortcuts approach because that's what it takes to
-              consistently deliver what our clients actually need. Every method
-              we use is built around one goal: getting you results you can
-              measure, backed by a commitment to getting the details right the
-              first time.
+            <p className="max-w-5xl mx-auto text-black text-sm md:text-base leading-relaxed mb-8">
+                Great outcomes don't happen by chance, they happen because of a process that's been tested, refined, 
+                and proven to work. As a respected app and software development agency, we follow a structured, 
+                no-shortcuts approach because that's what it takes to consistently deliver what our clients actually 
+                need. Every method we use is built around one goal: getting you results you can measure, backed by a 
+                commitment to getting the details right the first time.
             </p>
-
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
-              {/* Contact Us Button */}
               <Link
                 href="/contact"
                 className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white font-semibold text-sm px-6 py-3 transition-colors flex items-center justify-center gap-2"
@@ -63,7 +55,7 @@ export default function ourProcess() {
               {/* See Our Work Button */}
               <Link
                 href="/portfolio"
-                className="group w-full sm:w-auto border border-gray-200 hover:border-red-600 bg-white text-gray-900 font-semibold text-sm px-6 py-3 transition-all flex items-center justify-center gap-2"
+                className="group w-full sm:w-auto border border-gray-200 hover:border-red-600 bg-white text-black font-semibold text-sm px-6 py-3 transition-all flex items-center justify-center gap-2"
               >
                 <span>See Our Work</span>
                 <ArrowRight
@@ -78,7 +70,7 @@ export default function ourProcess() {
               <h3 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
                 Offshore Web, Mobile & Software Development Company
               </h3>
-              <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Devapp Grid is a leading Software, Web, & Mobile App
                 Development Company with a vast area of experience in crafting
                 stunning and end to end encrypted technology solutions. We offer
@@ -129,7 +121,7 @@ export default function ourProcess() {
                   What Makes Our Development Process Stand Out?
                 </h2>
 
-                <p className="mt-8 text-gray-700 text-base md:text-lg leading-8">
+                <p className="mt-8 text-black text-base md:text-lg leading-8">
                   At Devapp Grid, ideas aren't just discussed, they're built. We're
                   dedicated to shaping your idea into a real product through a
                   process that's straightforward, easy to follow, and covers
@@ -167,9 +159,9 @@ export default function ourProcess() {
               This Is Where We Start
             </h2>
 
-            <p className="text-center text-gray-600 max-w-4xl mx-auto mt-4">
-              Before your great idea turns into an actual product, we lay down a
-              clear plan and stick to a process that's been proven to work.
+            <p className="text-center text-black max-w-4xl mx-auto mt-4">
+              Before your great idea turns into an actual product, we lay down a clear plan and stick to a process 
+              that's been proven to work.
             </p>
 
             <section className="mt-20">
@@ -198,7 +190,7 @@ export default function ourProcess() {
                             Sign NDA
                           </h3>
 
-                          <p className="mt-1.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]">
+                          <p className="mt-1.5 text-[12px] leading-normal text-black sm:text-[13px] lg:text-[14px]">
                             Your privacy matters to us, full stop. Before any details are shared, our team signs a Non-Disclosure Agreement, giving
                             you the assurance that your information stays exactly where it belongs: between us and you.
                           </p>
@@ -273,7 +265,7 @@ export default function ourProcess() {
                             Brainstorming & Discussion
                           </h3>
                           <p className="">
-                            {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]"> */}
+                            {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-black sm:text-[13px] lg:text-[14px]"> */}
                             This is where ideas start taking shape. We sit down with you and dig into open, honest conversation, pulling out ideas that are both creative and genuinely workable. Our team leans on real brainstorming techniques, not just for generating ideas, but for
                             building the kind of collaboration and problem-solving that makes those ideas actually stick.
                           </p>
@@ -311,7 +303,7 @@ export default function ourProcess() {
                             Scope Defined & Agreement
                           </h3>
 
-                          <p className="mt-1.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]">
+                          <p className="mt-1.5 text-[12px] leading-normal text-black sm:text-[13px] lg:text-[14px]">
                             Before development begins, we put everything in writing: what we're building, what needs to happen to get there, and when. That means clear deliverables, realistic timelines, and transparent costs,
                             all documented upfront so there's no guesswork and no surprises down the road for either side.
                           </p>
@@ -385,7 +377,7 @@ export default function ourProcess() {
                             Project Kickoff & Team Introduction
                           </h3>
                           <p className="">
-                            {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]"> */}
+                            {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-black sm:text-[13px] lg:text-[14px]"> */}
                             Once the agreement is set, it's time. We build a realistic project timeline right from day one and introduce you to the actual people working on your build, not just names on an invoice. From there, you'll get regular updates and full visibility into what's happening at every stage, so you always know exactly where things stand.
 
                           </p>
@@ -423,7 +415,7 @@ export default function ourProcess() {
                             Design
                           </h3>
 
-                          <p className="mt-1.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]">
+                          <p className="mt-1.5 text-[12px] leading-normal text-black sm:text-[13px] lg:text-[14px]">
                             As per our initial research work, we at iQlance perform a thorough analysis and
                             prepare the necessary documents. In this way, we prepare an interactive design,
                             while make sure to
@@ -537,7 +529,7 @@ export default function ourProcess() {
                             Quality Assurance
                           </h3>
 
-                          <p className="mt-1.5 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]">
+                          <p className="mt-1.5 text-[12px] leading-normal text-black sm:text-[13px] lg:text-[14px]">
                             We don't wait until the end to check our work, testing happens at multiple stages throughout design and development. Backed by strong technical expertise, we run your solution through a range of environments and scenarios, catching issues early and making sure everything holds up before it ever reaches you.
                           </p>
                         </div>
@@ -610,7 +602,7 @@ export default function ourProcess() {
                             Launch
                           </h3>
                           <p className="">
-                            {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-gray-700 sm:text-[13px] lg:text-[14px]"> */}
+                            {/* <p className="mt-1.5 max-w-90 text-[12px] leading-normal text-black sm:text-[13px] lg:text-[14px]"> */}
                             This is the moment everything's been building toward.
                             We launch your product with one goal in mind: making sure it
                             meets every requirement you set, functions exactly as it should,
@@ -679,7 +671,7 @@ export default function ourProcess() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -723,48 +715,63 @@ export default function ourProcess() {
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-5 text-center text-[17px] text-gray-600 w-full mx-auto">
+            <p className="mt-5 text-center text-[17px] text-black w-full mx-auto">
               Find answers to common questions about our app and software
               development services and learn how we can help turn your idea into
               a successful digital product.
             </p>
 
-            <div className="mt-12 space-y-4">
-              {faqsData.map((faq, index) => (
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
+
+              return (
                 <div
                   key={index}
                   className="border border-gray-200 rounded-lg overflow-hidden"
                 >
                   <button
-                    onClick={() => setOpen(open === index ? -1 : index)}
-                    className="w-full flex justify-between items-center px-5 py-5 text-left"
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
                     <span className="font-semibold text-lg">
                       {faq.question}
                     </span>
 
-                    {open === index ? (
-                      <ChevronUp size={22} />
-                    ) : (
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${
+                        isOpen ? "rotate-180" : "rotate-0"
+                      }`}
+                    >
                       <ChevronDown size={22} />
-                    )}
+                    </span>
                   </button>
 
-                  {open === index && (
-                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
-                      {faq.answer}
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
+                        {faq.answer}
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
+          </div>
 
             <div className="mt-20 text-center">
               <h3 className="text-4xl font-bold">
                 Have Something in Mind? Let's Talk
               </h3>
 
-              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600">
+              <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black">
                 Have a look at the services and development process of the
                 Devapp Grid. See what process we follow for mobile app and
                 software development. Have a look at how we are praised by our

@@ -99,7 +99,7 @@ export default function Ondemadd() {
       setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
     }
   };
-    const validateForm = () => {
+  const validateForm = () => {
     const newErrors = {};
 
     if (!formData.name || !formData.name.trim()) {
@@ -265,24 +265,25 @@ export default function Ondemadd() {
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                We create reliable and scalable on-demand applications that help
-                businesses connect with customers, manage daily operations, and deliver
-                services more efficiently. Our development process focuses on building
-                secure, easy-to-use, and high-performing applications that can grow with
-                your business.
+                As an on-demand app development company, we build marketplace and service platforms that
+                connect customers, providers, scheduling, payments, and real-time status. Our on-demand app
+                development services connect customers and providers through scheduling, location services,
+                payments, notifications, and real-time status.
+
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                From the initial concept to design, development, testing, and launch, our
-                team manages every stage of the project. We use modern technologies to
-                create smooth digital experiences for both customers and service
-                providers.
+                We create reliable and scalable on-demand applications that help businesses connect with customers,
+                manage daily operations, and deliver services more efficiently. Our development process focuses on
+                building secure, easy-to-use, and high-performing applications that can grow with your business.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
-                Whether you need a delivery platform, booking application, marketplace, or
-                custom business solution, we develop applications according to your goals,
-                target audience, and operational requirements.
+                From the initial concept to design, development, testing, and launch, our team manages every stage of
+                the project. We use modern technologies to create smooth digital experiences for both customers and
+                service providers.
+                Whether you need a delivery platform, booking application, marketplace, or custom business solution,
+                we develop applications according to your goals, target audience, and operational requirements
               </p>
 
               {/* Action Buttons */}
@@ -297,7 +298,7 @@ export default function Ondemadd() {
 
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-gray-800 border border-red-100 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-red-100 hover:border-red-400 font-semibold px-6 py-3 transition duration-200 shadow-sm"
                 >
                   See Our Work
                   <ArrowRight className="w-4 h-4 text-black transition-transform duration-200 group-hover:translate-x-1" />
@@ -337,9 +338,8 @@ export default function Ondemadd() {
                       value={formData.name}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-transparent border-b-2 ${
-                        errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      className={`w-full bg-transparent border-b-2 ${errors.name ? "border-red-500" : "border-gray-300"
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -356,9 +356,8 @@ export default function Ondemadd() {
                       value={formData.email}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-transparent border-b-2 ${
-                        errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      className={`w-full bg-transparent border-b-2 ${errors.email ? "border-red-500" : "border-gray-300"
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.email && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -375,9 +374,8 @@ export default function Ondemadd() {
                       value={formData.phone}
                       onChange={handleChange}
                       disabled={loading}
-                      className={`w-full bg-transparent border-b-2 ${
-                        errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
+                      className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"
+                        } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-red-600 mt-1 block">
@@ -394,14 +392,14 @@ export default function Ondemadd() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 resize-y transition-colors disabled:opacity-50"
                     />
                   </div>
 
                   {/* File Upload & NDA Checkbox */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-gray-700 pt-1">
-                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-gray-900 shrink-0">
-                      <Paperclip className="w-4 h-4 text-gray-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-xs md:text-sm text-black pt-1">
+                    <label className="flex items-center gap-1.5 cursor-pointer font-medium hover:text-black shrink-0">
+                      <Paperclip className="w-4 h-4 text-black" />
                       <span>Upload file:</span>
                       <input
                         ref={fileInputRef}
@@ -412,7 +410,7 @@ export default function Ondemadd() {
                       />
                     </label>
 
-                    <span className="text-gray-500 truncate max-w-full sm:max-w-45">
+                    <span className="text-black truncate max-w-full sm:max-w-45">
                       {formData.file ? formData.file.name : "No file chosen."}
                     </span>
                   </div>
@@ -433,7 +431,7 @@ export default function Ondemadd() {
                     />
                     <label
                       htmlFor="nda"
-                      className="text-xs md:text-sm font-semibold text-gray-700 cursor-pointer"
+                      className="text-xs md:text-sm font-semibold text-black cursor-pointer"
                     >
                       Please Send NDA
                     </label>
@@ -442,11 +440,10 @@ export default function Ondemadd() {
                   {/* Status Message */}
                   {statusMessage.text && (
                     <div
-                      className={`p-3 text-sm font-medium border rounded-sm ${
-                        statusMessage.type === "success"
+                      className={`p-3 text-sm font-medium border rounded-sm ${statusMessage.type === "success"
                           ? "bg-green-50 border-green-200 text-green-700"
                           : "bg-red-50 border-red-200 text-red-700"
-                      }`}
+                        }`}
                     >
                       {statusMessage.text}
                     </div>
@@ -511,11 +508,11 @@ export default function Ondemadd() {
             {bottomFeatures.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 {/* Chevron Right Icon */}
-                <ChevronRight className="w-4 h-4 text-gray-800 shrink-0 mt-1" />
+                <ChevronRight className="w-4 h-4 text-black shrink-0 mt-1" />
 
                 {/* Text Content */}
-                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                  <strong className="font-semibold text-gray-900">
+                <p className="text-sm md:text-base text-black leading-relaxed">
+                  <strong className="font-semibold text-black">
                     {item.title}:
                   </strong>{" "}
                   {item.description}
@@ -598,10 +595,10 @@ export default function Ondemadd() {
           {/* Top CTA Banner Box */}
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
                 Check How We turn Your Idea into Innovative Product
               </h2>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p className="text-black text-sm md:text-base leading-relaxed">
                 Our rich portfolio justifies that we are one of the best
                 logistics app development companies in the USA.
               </p>
@@ -618,7 +615,7 @@ export default function Ondemadd() {
 
           {/* Technology Stack Heading Section */}
           <div className="text-center max-w-4xl mx-auto space-y-4 mt-10 px-5">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Our On-Demand App Development Solutions
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
@@ -712,7 +709,7 @@ export default function Ondemadd() {
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                       ? "text-red-600 font-semibold"
-                      : "text-gray-500 hover:text-red-500"
+                      : "text-black hover:text-red-500"
                       }`}
                   >
                     {tab.category}
@@ -793,7 +790,7 @@ export default function Ondemadd() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -961,7 +958,7 @@ export default function Ondemadd() {
                   <span>info@devappgrid.com</span>
                 </a>
 
-                <span className="text-gray-500 font-normal">or</span>
+                <span className="text-black font-normal">or</span>
 
                 {/* Phone links */}
                 <div className="inline-flex items-center gap-1.5 flex-wrap justify-center">
@@ -983,7 +980,7 @@ export default function Ondemadd() {
                   >
                     +1 (866) 978-8570
                   </a>
-           
+
                 </div>
               </div>
             </div>
@@ -1020,13 +1017,13 @@ export default function Ondemadd() {
                   onClick={() => setActiveStepIndex(index)}
                   className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${activeStepIndex === index
                     ? "text-red-700 border-red-600 font-bold"
-                    : "text-gray-400 border-transparent hover:text-red-600"
+                    : "text-black border-transparent hover:text-red-600"
                     }`}
                 >
                   {step.tabTitle}
                 </button>
                 {index < processSteps.length - 1 && (
-                  <span className="text-gray-400 font-light">
+                  <span className="text-black font-light">
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 )}
@@ -1072,13 +1069,13 @@ export default function Ondemadd() {
 
             {/* Right Side Content Display */}
             <div className="flex flex-col justify-center">
-              <span className="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-2">
+              <span className="text-xs font-semibold tracking-wider text-black uppercase mb-2">
                 {currentStep.stepLabel}
               </span>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
+              <h2 className="text-3xl font-extrabold text-black0 mb-4">
                 {currentStep.heading}
               </h2>
-              <p className="text-gray-600 leading-relaxed text-sm max-w-md">
+              <p className="text-black leading-relaxed text-sm max-w-md">
                 {currentStep.description}
               </p>
             </div>
@@ -1090,8 +1087,8 @@ export default function Ondemadd() {
 
             {/* Left Text Content */}
             <div className="flex flex-col ">
-              <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <div className="space-y-4 text-black text-sm md:text-base leading-relaxed">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight">
                   Faster Property Discovery. Better User Experiences.
                 </h2>
 
@@ -1109,7 +1106,7 @@ export default function Ondemadd() {
                   entire journey within reach.
                 </p>
 
-                <p className="font-semibold text-gray-900">
+                <p className="font-semibold text-black">
                   Ready to build a real estate app your customers will come back to? Let’s
                   talk.
                 </p>
@@ -1231,13 +1228,13 @@ export default function Ondemadd() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
+                    <p className="text-black text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-normal">
                       {item.review}
                     </p>
 
                     {/* Google Verified Branding */}
                     <div className="space-y-1 pb-2 md:pb-0">
-                      <span className="text-xs text-gray-500 font-medium block">
+                      <span className="text-xs text-black font-medium block">
                         verified
                       </span>
                       <img
@@ -1285,71 +1282,65 @@ export default function Ondemadd() {
             </p>
           </div>
 
-          {/* FAQ */}
-          <section className="py-12">
-            <div className="max-w-6xl mx-auto px-4">
-              <div className="space-y-4">
-                {faqsData.map((faq, index) => (
-                  <div
-                    key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-red-300"
-                      }`}
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
+
+              return (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
-                    {/* Question */}
-                    <button
-                      onClick={() => setOpen(open === index ? -1 : index)}
-                      className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
-                    >
-                      <span className="text-lg font-medium text-black">
-                        {faq.question}
-                      </span>
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
 
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
-                      />
-                    </button>
-
-                    {/* Answer */}
-                    <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"
                         }`}
                     >
-                      <div className="px-6 pb-5 pt-4 border-t border-gray-100">
-                        <p className="text-[17px] leading-8 text-black">
-                          {faq.answer}
-                        </p>
+                      <ChevronDown size={22} />
+                    </span>
+                  </button>
 
-                        {faq.points && (
-                          <ul className="mt-5 space-y-4">
-                            {faq.points.map((point, i) => (
-                              <li
-                                key={i}
-                                className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
-                              >
-                                <ChevronRight
-                                  size={18}
-                                  className="mt-1 text-black shrink-0"
-                                />
-
-                                <span>{point}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                        {faq.answer}
                       </div>
+                      {faq.points && (
+                        <ul className="mt-5 space-y-4">
+                          {faq.points.map((point, i) => (
+                            <li
+                              key={i}
+                              className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
+                            >
+                              <ChevronRight
+                                size={18}
+                                className="mt-1 text-black shrink-0"
+                              />
+
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </section>
+                </div>
+              );
+            })}
+          </div>
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">

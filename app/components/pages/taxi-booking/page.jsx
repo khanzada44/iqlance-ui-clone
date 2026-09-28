@@ -1512,71 +1512,65 @@ export default function Taxi() {
             </p>
           </div>
 
-          {/* FAQ */}
-          <section className="py-12">
-            <div className="max-w-6xl mx-auto px-4">
-              <div className="space-y-4">
-                {faqsData.map((faq, index) => (
-                  <div
-                    key={index}
-                    className={`border bg-white transition-all duration-300 ${open === index
-                      ? "border-gray-200 shadow-md"
-                      : "border-gray-200 hover:border-red-300"
-                      }`}
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
+
+              return (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
-                    {/* Question */}
-                    <button
-                      onClick={() => setOpen(open === index ? -1 : index)}
-                      className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
-                    >
-                      <span className="text-lg font-medium text-black">
-                        {faq.question}
-                      </span>
+                    <span className="font-semibold text-lg">
+                      {faq.question}
+                    </span>
 
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${open === index
-                          ? "rotate-180 text-black"
-                          : "rotate-0 text-black"
-                          }`}
-                      />
-                    </button>
-
-                    {/* Answer */}
-                    <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${open === index
-                        ? "max-h-150 opacity-100"
-                        : "max-h-0 opacity-0"
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"
                         }`}
                     >
-                      <div className="px-6 pb-5 pt-4 border-t border-gray-100">
-                        <p className="text-[17px] leading-8 text-black">
-                          {faq.answer}
-                        </p>
+                      <ChevronDown size={22} />
+                    </span>
+                  </button>
 
-                        {faq.points && (
-                          <ul className="mt-5 space-y-4">
-                            {faq.points.map((point, i) => (
-                              <li
-                                key={i}
-                                className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
-                              >
-                                <ChevronRight
-                                  size={18}
-                                  className="mt-1 text-black shrink-0"
-                                />
-
-                                <span>{point}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                        {faq.answer}
                       </div>
+                      {faq.points && (
+                        <ul className="mt-5 space-y-4">
+                          {faq.points.map((point, i) => (
+                            <li
+                              key={i}
+                              className="flex gap-3 text-[17px] leading-8 text-black items-center m-0"
+                            >
+                              <ChevronRight
+                                size={18}
+                                className="mt-1 text-black shrink-0"
+                              />
+
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </section>
+                </div>
+              );
+            })}
+          </div>
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">

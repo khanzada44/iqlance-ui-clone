@@ -514,35 +514,50 @@ export default function ServicesCategory({ slug }) {
               a successful digital product.
             </p>
 
-            <div className="mt-12 space-y-4">
-              {faqsData.map((faq, index) => (
+          <div className="mt-12 space-y-4">
+            {faqsData.map((faq, index) => {
+              const isOpen = open === index;
+
+              return (
                 <div
                   key={index}
                   className="border border-gray-200 rounded-lg overflow-hidden"
                 >
                   <button
-                    onClick={() => setOpen(open === index ? -1 : index)}
-                    className="w-full flex justify-between items-center px-5 py-5 text-left"
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                    aria-expanded={isOpen}
                   >
                     <span className="font-semibold text-lg">
                       {faq.question}
                     </span>
 
-                    {open === index ? (
-                      <ChevronUp size={22} />
-                    ) : (
+                    <span
+                      className={`shrink-0 transition-transform duration-300 ease-in-out ${
+                        isOpen ? "rotate-180" : "rotate-0"
+                      }`}
+                    >
                       <ChevronDown size={22} />
-                    )}
+                    </span>
                   </button>
 
-                  {open === index && (
-                    <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
-                      {faq.answer}
+                  {/* Smooth FAQ Content */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                        {faq.answer}
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
+          </div>
 
             <div className="mt-15 text-center">
               <h3 className="text-4xl font-bold">
