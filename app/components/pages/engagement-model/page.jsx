@@ -18,7 +18,6 @@ export default function EngagementModelSection() {
   const currentTab =
     tabsData.find((tab) => tab.id === activeModelTab) || tabsData[0];
 
-  // Form State & Event Handlers
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -42,7 +41,6 @@ export default function EngagementModelSection() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error for the field as user types
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -224,11 +222,8 @@ export default function EngagementModelSection() {
                   </Link>
                 </div>
               </div>
-
-              {/* Right Form Container */}
               <div className="lg:col-span-5 relative pt-6 pr-4">
                 <div className="relative bg-[#F7F8FA] border border-blue-100/60 p-6 md:p-8 w-full shadow-lg">
-                  {/* Top Right Ribbon Badge */}
                   <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                     <img
                       src="/images/contact-form-logo.png"
@@ -236,8 +231,6 @@ export default function EngagementModelSection() {
                       className="w-full h-auto object-contain"
                     />
                   </div>
-
-                  {/* Form Heading */}
                   <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">
                     Request a Free Quote
                   </h2>
@@ -392,17 +385,17 @@ export default function EngagementModelSection() {
                 </h2>
 
                 <p className="mt-4 sm:mt-5 text-sm sm:text-base md:text-[17px] leading-7 sm:leading-8 text-gray-600">
-                  As your technology partner, we offer three flexible engagement models built to
-                  match different project scopes and business needs, whether you've got every detail
-                  mapped out already or you're still shaping the idea.
-                  Either way, our team can help you find the model that fits.
+                    As your technology partner, we offer three flexible engagement models designed around 
+                    different project scopes and business needs. Whether you have a detailed plan or are still 
+                    shaping your idea, we'll help you choose the right approach and team.
                 </p>
 
                 <p className="mt-5 sm:mt-6 text-sm sm:text-base md:text-[17px] leading-7 sm:leading-8 text-gray-600">
-                  Not sure where to start? That's exactly what we're here for.
-                  Devapp Grid offers a free 20-minute consultation with an experienced expert to
-                  help you nail down your product vision, development requirements, and project goals.
-                  Get in touch with us today. Let's figure it out together.
+                    Not sure where to start? Book a free 20-minute consultation with an experienced expert to 
+                    discuss your product vision, development needs, and goals. Whether you need project-based 
+                    support or want to hire mobile app development team members, we're here to help you find 
+                    the right fit.
+
                 </p>
               </div>
             </div>

@@ -1,59 +1,59 @@
 export const features = [
-    "Industry-Specific Dedicated Developers",
-    "Customized Solutions at Competitive Prices",
-    "One-Week Risk-Free Trial",
-    "Flexible Engagement Models",
+  "Industry-Specific Dedicated Developers",
+  "Customized Solutions at Competitive Prices",
+  "One-Week Risk-Free Trial",
+  "Flexible Engagement Models",
 ];
 
 export const comparisonData = [
-    {
-        title: "Size of project",
-        time: "Small/Medium",
-        fixed: "Small",
-        dedicated: "Medium/Large",
-    },
-    {
-        title: "Requirements",
-        time: "Can be altered",
-        fixed: "Defined",
-        dedicated: "Can be altered",
-    },
-    {
-        title: "Flexibility",
-        time: "Little",
-        fixed: "No",
-        dedicated: "Full",
-    },
-    {
-        title: "Client's control",
-        time: "Moderate",
-        fixed: "Little",
-        dedicated: "Full",
-    },
-    {
-        title: "Methodology",
-        time: "Waterfall",
-        fixed: "Waterfall",
-        dedicated: "Agile",
-    },
-    {
-        title: "Reporting",
-        time: "Yes",
-        fixed: "Yes",
-        dedicated: "Yes",
-    },
-    {
-        title: "Scope",
-        time: "Fixed",
-        fixed: "Fixed",
-        dedicated: "Can be altered",
-    },
-    {
-        title: "Development Cost",
-        time: "Not Fixed",
-        fixed: "Fixed",
-        dedicated: "Not Fixed",
-    },
+  {
+    title: "Size of project",
+    time: "Small/Medium",
+    fixed: "Small",
+    dedicated: "Medium/Large",
+  },
+  {
+    title: "Requirements",
+    time: "Can be altered",
+    fixed: "Defined",
+    dedicated: "Can be altered",
+  },
+  {
+    title: "Flexibility",
+    time: "Little",
+    fixed: "No",
+    dedicated: "Full",
+  },
+  {
+    title: "Client's control",
+    time: "Moderate",
+    fixed: "Little",
+    dedicated: "Full",
+  },
+  {
+    title: "Methodology",
+    time: "Waterfall",
+    fixed: "Waterfall",
+    dedicated: "Agile",
+  },
+  {
+    title: "Reporting",
+    time: "Yes",
+    fixed: "Yes",
+    dedicated: "Yes",
+  },
+  {
+    title: "Scope",
+    time: "Fixed",
+    fixed: "Fixed",
+    dedicated: "Can be altered",
+  },
+  {
+    title: "Development Cost",
+    time: "Not Fixed",
+    fixed: "Fixed",
+    dedicated: "Not Fixed",
+  },
 ];
 export const tabsData = [
   {
@@ -63,11 +63,20 @@ export const tabsData = [
     title: "Hourly (Time & Material)",
     image: "/images/about/engagement-model/model-tab-1.webp",
     paragraphs: [
-      "Projects evolve, and this model is built for exactly that. Our Time & Material engagement gives you the flexibility and control to adapt as your development journey unfolds. It's the right fit when requirements aren't set in stone, letting you pay only for the actual time and resources your project uses. This approach lets our experienced team build complex, interactive mobile applications efficiently, without getting locked into a scope that no longer fits.",
+      `Projects evolve, and this model is built for exactly that. Our Time & Material engagement gives you 
+the flexibility and control to adapt as your development journey unfolds. It's the right fit when 
+requirements aren't set in stone, letting you pay only for the actual time and resources your project 
+uses. This approach lets our experienced team build complex, interactive mobile applications 
+efficiently, without getting locked into a scope that no longer fits.`,
     ],
     howItWorks: [
-      "When a project's scope isn't fully defined at the outset, Time & Material is the smart, cost-effective way to move forward. We put together the right mix of developers, designers, and specialists based on what your project actually needs, and you can scale that team up or down as things evolve.",
-      "Some mobile development projects are simply too complex to pin down from day one. When that's the case, this model gives you more control and more flexibility than a fixed-price engagement, letting your project grow exactly the way it needs to.",
+      `When a project's scope isn't fully defined at the outset, Time & Material is the smart, cost-effective 
+way to move forward. We put together the right mix of developers, designers, and specialists based on 
+what your project actually needs, and you can scale that team up or down as things evolve.
+`,
+      `Some mobile development projects are simply too complex to pin down from day one. When that's 
+the case, this model gives you more control and more flexibility than a fixed-price engagement, letting 
+your project grow exactly the way it needs to.`
     ],
   },
   {
@@ -106,7 +115,7 @@ export const faqsData = [
     question: " What types of engagement models does Devapp Grid provide? ",
     answer:
       "We offer three engagement models: Time and Material, Fixed Price, and Dedicated Team. Our experts can help you choose the right model based on your project scope, requirements, timeline, and budget.",
-    
+
   },
   {
     question: "Do you follow a milestone-based product development process?",
