@@ -779,10 +779,10 @@ export default function LandingPage() {
                   className="mb-2 h-13 w-auto object-contain"
                 />
                 <h4 className="text-[12px] font-bold text-black sm:text-[18px]">
-                  Los Angeles, USA
+                  Dallas, TX, USA
                 </h4>
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
-                  6565 Sunset Blvd Ste 190, Los Angeles, CA 90028, USA
+                   1910 Pacific Ave Suite  75201
                 </span>
               </div>
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
