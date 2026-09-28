@@ -19,7 +19,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18460576382"></script>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18460576382"
+      />
+
+      <Script id="google-ads-tag">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18460576382');
+        `}
+      </Script>
         {children}
         <ZendeskWidget />
       </body>
