@@ -225,7 +225,7 @@ export default function SocialMedia() {
                 <br className="hidden sm:block" />
                 That Keeps Users Coming Back
               </h1>
-              Build a Dating App People Actually Fall For
+              Build a Dating App People Actually Fall For:
               <p className="text-base md:text-lg leading-relaxed text-black">
                 At Devapp Grid, we design and build enterprise-grade social
                 networking applications for ambitious brands that want to create
@@ -250,7 +250,6 @@ export default function SocialMedia() {
                 community engagement, we build connected digital experiences
                 around the way your organization operates.
               </p>
-              {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
@@ -269,11 +268,8 @@ export default function SocialMedia() {
                 </Link>
               </div>
             </div>
-
-            {/* Right Form Card */}
             <div className="lg:col-span-5 relative pt-6 pr-4">
               <div className="relative bg-[#F7F8FA] border border-red-100/60  p-6 md:p-8 w-full shadow-lg">
-                {/* Top Right Ribbon Badge */}
                 <div className="absolute -top-6 -right-3 z-10 w-24 md:w-28 drop-shadow-md">
                   <img
                     src="/images/contact-form-logo.png"

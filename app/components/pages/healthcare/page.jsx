@@ -569,7 +569,6 @@ export default function HeroQuoteSection() {
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
-
                     </span>
                   </div>
                 </div>
