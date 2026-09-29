@@ -2,14 +2,14 @@ export const testimonials = [
   {
     id: 1,
     name: "Sarah Jenkins",
-    image: "/images/landinpage-slider-1.jpg",
+    image: "/images/sarah-jenkins.jpg",
     verifiedImage: "/images/clutch-icon.png.webp",
     review: "DevApp Grid delivered excellent mobile app development and maintenance services. Their team was professional, responsive, and technically skilled. The app works smoothly, and ongoing support has been reliable and efficient.",
   },
   {
     id: 2,
     name: "Michael Vance",
-    image: "/images/sarah-jenkins.jpg",
+    image: "/images/landinpage-slider-1.jpg",
     verifiedImage: "/images.google-logo-new.png.webp",
     review: "We purchased mobile app development and maintenance services from DevApp Grid and are very satisfied. They delivered quality work on time, communicated clearly, and provided dependable maintenance and support.",
   },
