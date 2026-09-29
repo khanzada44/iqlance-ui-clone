@@ -23,12 +23,13 @@ import {
 } from "react-icons/fa";
 
 export default function TermsAndConditions() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <main className="min-h-screen text-slate-800">
-        <header className="sticky top-0 z-50 w-full  border-gray-800 bg-white">
-          <div className="mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
-            <div className="flex items-center">
+      <header className="sticky top-0 z-50 w-full  border-gray-800 bg-white">
+        <div className="mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center shrink-0">
               <Image
                 src="/images/Dev-App-04.png"
                 alt="Dev App Grid"
@@ -36,44 +37,46 @@ export default function TermsAndConditions() {
                 height={500}
                 className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
               />
-            </div>
-            <div className="flex items-center gap-3 sm:gap-5 lg:gap-8">
-              <div className="flex items-center gap-2">
-                <div className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-red-100">
-                  <Phone size={15} className="text-red-500" />
-                </div>
+            </Link>
 
-                <div className="hidden leading-tight sm:block">
-                  <span className="text-[12px] font-semibold text-gray-800 lg:text-[13px]">
-                    +1 (866) 978-8570
-                  </span>
-
-                  <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
-                    Call Us Today!
-                  </p>
-                </div>
+          </div>
+          <div className="flex items-center gap-3 sm:gap-5 lg:gap-8">
+            <div className="flex items-center gap-2">
+              <div className="flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-full bg-red-100">
+                <Phone size={20} className="text-red-500" />
               </div>
 
-              <button
-                type="button"
-                onClick={() => setIsModalOpen(true)}
-                className="group flex h-9 items-center gap-2 rounded-sm bg-red-600 px-4 text-[10px] font-semibold text-white transition hover:bg-red-700 sm:px-5 sm:text-[11px] lg:h-9.5 lg:px-6 lg:text-[12px]"
-              >
-                <span className="hidden sm:inline">Get A Free Quote</span>
-                <span className="sm:hidden">Quote</span>
+              <div className="hidden leading-tight sm:block">
+                <span className="text-[12px] font-semibold text-gray-800 lg:text-[16px]">
+                  +1 (866) 978-8570
+                </span>
 
-                <ArrowRight
-                  size={14}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </button>
-              <QuoteModal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-              />
+                {/* <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
+                    Call Us Today!
+                  </p> */}
+              </div>
             </div>
+
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(true)}
+              className="group flex h-9 items-center gap-2 rounded-sm bg-red-600 px-4 text-[10px] font-semibold text-white transition hover:bg-red-700 sm:px-5 sm:text-[11px] lg:h-9.5 lg:px-6 lg:text-[12px]"
+            >
+              <span className="hidden sm:inline">Get A Free Quote</span>
+              <span className="sm:hidden">Quote</span>
+
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </button>
+            <QuoteModal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            />
           </div>
-        </header>
+        </div>
+      </header>
       <section className="bg-linear-to-r from-red-700 via-red-600 to-red-900 py-16 text-white sm:py-20">
         <div className="mx-auto w-[92%] max-w-5xl text-center">
 

@@ -22,28 +22,31 @@ export default function PrivacyPolicy() {
       <header className="sticky top-0 z-50 w-full  border-gray-800 bg-white">
         <div className="mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
           <div className="flex items-center">
-            <Image
-              src="/images/Dev-App-04.png"
-              alt="Dev App Grid"
-              width={500}
-              height={500}
-              className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
-            />
+            <Link href="/" className="flex items-center shrink-0">
+              <Image
+                src="/images/Dev-App-04.png"
+                alt="Dev App Grid"
+                width={500}
+                height={500}
+                className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
+              />
+            </Link>
+
           </div>
           <div className="flex items-center gap-3 sm:gap-5 lg:gap-8">
             <div className="flex items-center gap-2">
-              <div className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-red-100">
-                <Phone size={15} className="text-red-500" />
+              <div className="flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-full bg-red-100">
+                <Phone size={20} className="text-red-500" />
               </div>
 
               <div className="hidden leading-tight sm:block">
-                <span className="text-[12px] font-semibold text-gray-800 lg:text-[13px]">
+                <span className="text-[12px] font-semibold text-gray-800 lg:text-[17px]">
                   +1 (866) 978-8570
                 </span>
 
-                <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
+                {/* <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
                   Call Us Today!
-                </p>
+                </p> */}
               </div>
             </div>
 

@@ -200,28 +200,31 @@ export default function LandingPage() {
         <header className="sticky top-0 z-50 w-full  border-gray-800 bg-white">
           <div className="mx-auto flex h-18 w-[94%] items-center justify-between sm:w-[92%] lg:w-[90%] xl:w-[88%]">
             <div className="flex items-center">
-              <Image
-                src="/images/Dev-App-04.png"
-                alt="Dev App Grid"
-                width={500}
-                height={500}
-                className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
-              />
+              <Link href="/" className="flex items-center shrink-0">
+                <Image
+                  src="/images/Dev-App-04.png"
+                  alt="Dev App Grid"
+                  width={500}
+                  height={500}
+                  className="h-10.5 w-auto object-contain sm:h-11.5 lg:h-25"
+                />
+              </Link>
+
             </div>
             <div className="flex items-center gap-3 sm:gap-5 lg:gap-8">
               <div className="flex items-center gap-2">
-                <div className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-red-100">
-                  <Phone size={15} className="text-red-500" />
+                <div className="flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-full bg-red-100">
+                  <Phone size={20} className="text-red-500" />
                 </div>
 
                 <div className="hidden leading-tight sm:block">
-                  <span className="text-[12px] font-semibold text-gray-800 lg:text-[13px]">
+                  <span className="text-[13px] font-semibold text-gray-800 lg:text-[17px]">
                     +1 (866) 978-8570
                   </span>
 
-                  <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
+                  {/* <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
                     Call Us Today!
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
@@ -378,10 +381,10 @@ export default function LandingPage() {
                   <span>Action plan to move your project forward</span>
                 </li>
               </ul>
-              <p    className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
-                  } mt-10`}
-                  style={{ animationDelay: "600ms" }}
-                  >
+              <p className={`content-slide-in-left mt-5 space-y-3 text-[17px] leading-6 sm:text-[13px] lg:text-[18px] ${contentVisible ? "show" : ""
+                } mt-10`}
+                style={{ animationDelay: "600ms" }}
+              >
                 Whether you need mobile app development, custom software, or dedicated developers,
                 we’re ready to help you move from concept to launch with a clear, practical
                 development plan.
@@ -782,7 +785,7 @@ export default function LandingPage() {
                   Dallas, TX, USA
                 </h4>
                 <span className="mt-1 text-[8px] leading-4 text-gray-600 sm:text-[13px]">
-                   1910 Pacific Ave Suite  75201
+                  1910 Pacific Ave Suite  75201
                 </span>
               </div>
               <div className="flex min-h-45 flex-col items-center justify-center rounded-sm bg-white px-4 py-5 shadow-[0_2px_15px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.12)]">
@@ -1062,8 +1065,8 @@ export default function LandingPage() {
                         Receive Your Proposal
                       </h3>
                       <p>
-                          Based on your requirements, we have prepared a detailed proposal covering the 
-                          recommended solution, project scope,estimated cost, app development plan, and timeline. Once approved, we move into execution.
+                        Based on your requirements, we have prepared a detailed proposal covering the
+                        recommended solution, project scope,estimated cost, app development plan, and timeline. Once approved, we move into execution.
                       </p>
                     </div>
                     <Image
@@ -1095,9 +1098,9 @@ export default function LandingPage() {
                       Start Your Project
                     </h3>
                     <p>
-                    Your dedicated project team gets to work with a project manager serving as your
-                     primary point of contact. Designers, mobile app developers, and other specialists
-                     collaborate to turn your concept into a functional, market-ready product. 
+                      Your dedicated project team gets to work with a project manager serving as your
+                      primary point of contact. Designers, mobile app developers, and other specialists
+                      collaborate to turn your concept into a functional, market-ready product.
                     </p>
                   </div>
                 </div>
@@ -1112,50 +1115,48 @@ export default function LandingPage() {
             </h1>
           </div>
           <div className="max-w-6xl mx-auto px-4">
-          <div className="mt-12 space-y-4">
-            {faqsData.map((faq, index) => {
-              const isOpen = open === index;
+            <div className="mt-12 space-y-4">
+              {faqsData.map((faq, index) => {
+                const isOpen = open === index;
 
-              return (
-                <div
-                  key={index}
-                  className="border border-gray-200 rounded-lg overflow-hidden"
-                >
-                  <button
-                    type="button"
-                    onClick={() => setOpen(isOpen ? -1 : index)}
-                    className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
-                    aria-expanded={isOpen}
-                  >
-                    <span className="font-semibold text-lg">
-                      {faq.question}
-                    </span>
-
-                    <span
-                      className={`shrink-0 transition-transform duration-300 ease-in-out ${
-                        isOpen ? "rotate-180" : "rotate-0"
-                      }`}
-                    >
-                      <ChevronDown size={22} />
-                    </span>
-                  </button>
-
-                  {/* Smooth FAQ Content */}
+                return (
                   <div
-                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
-                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                    }`}
+                    key={index}
+                    className="border border-gray-200 rounded-lg overflow-hidden"
                   >
-                    <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
-                        {faq.answer}
+                    <button
+                      type="button"
+                      onClick={() => setOpen(isOpen ? -1 : index)}
+                      className="w-full flex justify-between items-center gap-4 px-5 py-5 text-left"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="font-semibold text-lg">
+                        {faq.question}
+                      </span>
+
+                      <span
+                        className={`shrink-0 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"
+                          }`}
+                      >
+                        <ChevronDown size={22} />
+                      </span>
+                    </button>
+
+                    {/* Smooth FAQ Content */}
+                    <div
+                      className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                        }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-5 pb-5 text-[16px] leading-8 text-gray-600">
+                          {faq.answer}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
           </div>
         </section>
         <section className="bg-black text-white font-sans overflow-hidden">
