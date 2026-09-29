@@ -9,7 +9,7 @@ export const testimonials = [
   {
     id: 2,
     name: "Michael Vance",
-    image: "/images/landinpage-slider-2.jpg",
+    image: "/images/sarah-jenkins.jpg",
     verifiedImage: "/images.google-logo-new.png.webp",
     review: "We purchased mobile app development and maintenance services from DevApp Grid and are very satisfied. They delivered quality work on time, communicated clearly, and provided dependable maintenance and support.",
   },
