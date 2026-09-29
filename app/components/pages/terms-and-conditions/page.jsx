@@ -50,10 +50,6 @@ export default function TermsAndConditions() {
                 <span className="text-[12px] font-semibold text-gray-800 lg:text-[16px]">
                   +1 (866) 978-8570
                 </span>
-
-                {/* <p className="text-[9px] font-medium text-red-500 lg:text-[10px]">
-                    Call Us Today!
-                  </p> */}
               </div>
             </div>
 

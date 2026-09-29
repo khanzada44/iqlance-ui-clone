@@ -9,8 +9,8 @@ export const offices = [
   {
     id: 2,
     title: "",
-    city: "New York, USA",
-    address: "45 Rockefeller Plaza, New York, NY 10111, USA",
+    city: "Dallas, TX, USA",
+    address: "1910 Pacific Ave Suite 75201",
     image: "/images/about/contact/newyork-office-icn.webp",
   },
   {
