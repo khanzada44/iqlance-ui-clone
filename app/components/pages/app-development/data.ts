@@ -13,6 +13,20 @@ export const testimonials = [
     verifiedImage: "/images.google-logo-new.png.webp",
     review: "We purchased mobile app development and maintenance services from DevApp Grid and are very satisfied. They delivered quality work on time, communicated clearly, and provided dependable maintenance and support.",
   },
+  {
+    id: 3,
+    name: "Rachel",
+    image: "/images/Rachel-G.jpg",
+    verifiedImage: "/images.google-logo-new.png.webp",
+    review: "I had a great experience with the Devapp Grid regarding my Swift app development service. They handled the whole process from start to finish quite smoothly, without making it complicated. Overall, I’m literally happy with the result!",
+  },
+  {
+    id: 4,
+    name: "Joshua G",
+    image: "/images/Joshua-G.jpg",
+    verifiedImage: "/images.google-logo-new.png.webp",
+    review: "I’m really satisfied with the iOS application that I got done with them. From the start to till end communication was consistent and surprisingly their pricing was under the budget.",
+  },
 ];
 export const faqsData = [
   {
