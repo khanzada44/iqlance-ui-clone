@@ -312,14 +312,7 @@ export default function LandingPage() {
               >
                 Mobile App Development
               </h1>
-              <p
-                className={`content-slide-in-left text-[17px] leading-[1.7] ${contentVisible ? "show" : ""
-                  }`}
-                style={{ animationDelay: "300ms" }}
-              >
-                Share Your Project Details on{" "}
-                <span className="font-bold">info@devappgrid.com</span>
-              </p>
+             
               <p
                 className={`content-slide-in-left mb-5 text-[17px] font-semibold leading-[1.7] sm:text-[13px] lg:text-[14px] ${contentVisible ? "show" : ""
                   }`}
