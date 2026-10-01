@@ -2,9 +2,18 @@
 
 import React from "react";
 import Link from "next/link";
+import React, { useEffect } from "react";
 import { Check, ArrowLeft, Mail, Phone, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import Script from "next/script";
 export default function ThankYouPage() {
+  useEffect(() => {
+    const hasReloaded = sessionStorage.getItem("thankYouReloaded");
+
+    if (!hasReloaded) {
+      sessionStorage.setItem("thankYouReloaded", "true");
+      window.location.reload();
+    }
+  }, []);
 
   return (
     <>
