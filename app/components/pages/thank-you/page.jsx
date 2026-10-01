@@ -5,7 +5,6 @@ import Script from "next/script";
 export default function ThankYouPageRed() {
   return (
     <>
-
       <div className="relative w-full min-h-screen bg-[#FDF8F8] overflow-hidden flex flex-col items-center justify-center font-sans py-12 px-4">
         <div className="absolute -top-20 -left-20 sm:-top-32 sm:-left-32 md:-top-40 md:-left-40 w-64 h-64 sm:w-96 sm:h-96 md:w-125 md:h-125 bg-red-600 transform rotate-45 pointer-events-none opacity-90 transition-all" />
         <div className="absolute -bottom-20 -right-20 sm:-bottom-32 sm:-right-32 md:-bottom-40 md:-right-40 w-64 h-64 sm:w-96 sm:h-96 md:w-125 md:h-125 bg-red-600 transform rotate-45 pointer-events-none transition-all" />
@@ -34,6 +33,12 @@ export default function ThankYouPageRed() {
           </div>
         </div>
       </div>
+
+          {/* <Script
+            id="ze-snippet"
+            src="https://static.zdassets.com/ekr/snippet.js?key=832e42ad-4c5d-4c97-8f07-1e27982ea22a"
+            strategy="afterInteractive"
+          /> */}
     </>
 
   )
