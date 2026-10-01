@@ -8,7 +8,6 @@ export default function ThankYouPage() {
 
   return (
     <>
-
       <div className="min-h-screen text-gray-800 font-sans flex flex-col justify-between">
 
         <main className="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -148,19 +147,6 @@ export default function ThankYouPage() {
           </div>
         </main>
       </div>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-18460576382"
-        strategy="afterInteractive"
-      />
-
-      <Script id="google-ads-tag" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-18460576382');
-        `}
-      </Script>
     </>
 
   );
