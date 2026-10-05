@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from "react";
 import { submitContactForm } from "@/services/send-call-request";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -19,6 +19,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -59,17 +60,16 @@ export default function ContactForm() {
       bodyFormData.append("name", fullName);
 
       // Baaki fields
-      bodyFormData.append("email", formData.email);
-      bodyFormData.append("email", formData.lastName);
-      bodyFormData.append("phone", formData.phone);
-      bodyFormData.append("message", formData.message || "");
-      bodyFormData.append("is_nda", formData.newsletter ? "1" : "0");
-      bodyFormData.append("service", formData.service || "");
-      bodyFormData.append("service_category", "");
+        bodyFormData.append("email", formData.email);
+        bodyFormData.append("phone", formData.phone);
+        bodyFormData.append("message", formData.message || "");
+        bodyFormData.append("is_nda", formData.newsletter ? "1" : "0");
+        bodyFormData.append("service", formData.service || "");
+        bodyFormData.append("service_category", "");
 
       // Correct API Call
       const response = await submitContactForm(bodyFormData);
-
+      router.push("/thanks-You");
       // Axios Call Validation
       if (
         response &&
@@ -92,7 +92,8 @@ export default function ContactForm() {
           text: response?.message || "Failed to submit. Please try again.",
         });
       }
-    } catch (err) {
+    } 
+    catch (err) {
       setStatus({
         type: "error",
         text:
