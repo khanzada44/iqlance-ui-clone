@@ -54,23 +54,17 @@ export default function ContactForm() {
 
     try {
       const bodyFormData = new FormData();
-
-
       const fullName = `${formData.firstName} ${formData.lastName}`.trim();
       bodyFormData.append("name", fullName);
+      bodyFormData.append("email", formData.email);
+      bodyFormData.append("phone", formData.phone);
+      bodyFormData.append("message", formData.message || "");
+      bodyFormData.append("is_nda", formData.newsletter ? "1" : "0");
+      bodyFormData.append("service", formData.service || "");
+      bodyFormData.append("service_category", "");
 
-      // Baaki fields
-        bodyFormData.append("email", formData.email);
-        bodyFormData.append("phone", formData.phone);
-        bodyFormData.append("message", formData.message || "");
-        bodyFormData.append("is_nda", formData.newsletter ? "1" : "0");
-        bodyFormData.append("service", formData.service || "");
-        bodyFormData.append("service_category", "");
-
-      // Correct API Call
       const response = await submitContactForm(bodyFormData);
       router.push("/thanks-You");
-      // Axios Call Validation
       if (
         response &&
         (response.status === 200 || response.success || response.status === 201)
@@ -108,7 +102,6 @@ export default function ContactForm() {
   return (
     <section className="max-w-7xl mx-auto bg-[#F7F8FA] my-12 border border-gray-200 shadow-sm">
       <div className="grid lg:grid-cols-12 overflow-hidden">
-        {/* Left Side: Contact Details */}
         <div className="lg:col-span-5 p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-200 relative flex flex-col justify-between">
           <div className="space-y-8">
             <div className="">
@@ -181,8 +174,6 @@ export default function ContactForm() {
             </a>
           </div>
         </div>
-
-        {/* Right Side: Form */}
         <div className="lg:col-span-7 p-6 md:p-10 relative bg-[#F7F8FA]">
           <div className="bg-transparent">
             <img
@@ -192,14 +183,13 @@ export default function ContactForm() {
             />
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-extrabold text-[#1F2937] mb-8 pt-2">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-8 pt-2">
             How Can We Help?
           </h2>
 
           <form className="space-y-5" onSubmit={handleSubmit} noValidate>
-            {/* Name Fields */}
             <div>
-              <label className="block text-xs font-bold text-gray-800 mb-2">
+              <label className="block text-xs font-bold text-black mb-2">
                 Name
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -210,7 +200,7 @@ export default function ContactForm() {
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="First Name*"
-                    className={`w-full bg-white border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none transition-colors ${errors.firstName ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
+                    className={`w-full bg-white border px-4 py-3 text-sm text-black placeholder-gray-400 focus:outline-none transition-colors ${errors.firstName ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
                       }`}
                   />
                   {errors.firstName && (
@@ -224,7 +214,7 @@ export default function ContactForm() {
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Last Name*"
-                    className={`w-full bg-white border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none transition-colors ${errors.lastName ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
+                    className={`w-full bg-white border px-4 py-3 text-sm text-black placeholder-gray-400 focus:outline-none transition-colors ${errors.lastName ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
                       }`}
                   />
                   {errors.lastName && (
@@ -233,10 +223,8 @@ export default function ContactForm() {
                 </div>
               </div>
             </div>
-
-            {/* Email Field */}
             <div>
-              <label className="block text-xs font-bold text-gray-800 mb-2">
+              <label className="block text-xs font-bold text-black mb-2">
                 Email
               </label>
               <input
@@ -245,17 +233,15 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your email address*"
-                className={`w-full bg-white border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none transition-colors ${errors.email ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
+                className={`w-full bg-white border px-4 py-3 text-sm text-black placeholder-gray-400 focus:outline-none transition-colors ${errors.email ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
                   }`}
               />
               {errors.email && (
                 <p className="text-xs text-red-600  mt-1">{errors.email}</p>
               )}
             </div>
-
-            {/* Phone Field */}
             <div>
-              <label className="block text-xs font-bold text-gray-800 mb-2">
+              <label className="block text-xs font-bold text-black mb-2">
                 Phone
               </label>
               <input
@@ -264,17 +250,15 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Phone*"
-                className={`w-full bg-white border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none transition-colors ${errors.phone ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
+                className={`w-full bg-white border px-4 py-3 text-sm text-black placeholder-gray-400 focus:outline-none transition-colors ${errors.phone ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
                   }`}
               />
               {errors.phone && (
                 <p className="text-xs text-red-600 mt-1">{errors.phone}</p>
               )}
             </div>
-
-            {/* Select Service Dropdown */}
             <div>
-              <label className="block text-xs font-bold text-gray-800 mb-2">
+              <label className="block text-xs font-bold text-black mb-2">
                 Select a Service
               </label>
               <div className="relative">
@@ -311,10 +295,8 @@ export default function ContactForm() {
                 </div>
               </div>
             </div>
-
-            {/* Message Field */}
             <div>
-              <label className="block text-xs font-bold text-gray-800 mb-2">
+              <label className="block text-xs font-bold text-black mb-2">
                 Brief about the project
               </label>
               <textarea
@@ -323,11 +305,9 @@ export default function ContactForm() {
                 onChange={handleChange}
                 rows={4}
                 placeholder="Message"
-                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] resize-y transition-colors"
+                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm text-black placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] resize-y transition-colors"
               ></textarea>
             </div>
-
-            {/* Newsletter Checkbox */}
             <div className="flex items-center gap-2 pt-1">
               <input
                 type="checkbox"
@@ -339,13 +319,11 @@ export default function ContactForm() {
               />
               <label
                 htmlFor="newsletter"
-                className="text-xs font-semibold text-gray-800 cursor-pointer select-none"
+                className="text-xs font-semibold text-black cursor-pointer select-none"
               >
                 Subscribe Our newsletter
               </label>
             </div>
-
-            {/* Status Message */}
             {status && (
               <p
                 className={`text-xs font-bold ${status.type === "success" ? "text-green-600" : "text-red-600"
@@ -354,8 +332,6 @@ export default function ContactForm() {
                 {status.text}
               </p>
             )}
-
-            {/* Submit Button */}
             <div className="pt-2">
               <button
                 type="submit"
