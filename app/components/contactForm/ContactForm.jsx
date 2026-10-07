@@ -126,7 +126,7 @@ export default function ContactForm() {
                         WebkitMaskSize: "contain",
                       }}
                     />
-                    Dallas, USA
+                    Los Angeles, USA
                   </h4>
                   <p className="mt-1 font-bold text-gray-900 text-base">
                     +1 (866) 978-8570
