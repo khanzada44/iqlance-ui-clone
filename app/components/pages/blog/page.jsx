@@ -1,15 +1,14 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { ChevronRight, ArrowRight, Paperclip } from "lucide-react";
-// Assumed service imports - inko apne file structure ke hisab se update rakhein
+// Assumed service imports
 import { getBlogs } from "@/services/blog";
 import { blogByCategory } from "../../../../services/blog";
 import { submitContactForm } from "../../../../services/send-call-request";
-import { useRouter } from "next/navigation";
 import {
   partners,
   bottomFeatures,
@@ -23,7 +22,7 @@ import {
   testimonials,
 } from "../../../../utils/data";
 
-export default function Blog() {
+function BlogContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const categoryId = searchParams.get("category_id"); // URL se category_id check kar rahe hain
@@ -124,18 +123,14 @@ export default function Blog() {
     try {
       let res;
 
-      // Check: Agar URL me category_id mojood hai
       if (categoryId) {
-        // all-blogs API bypass ho jayegi, directly Category API hit hogi
         res = await blogByCategory(categoryId, page);
       } else {
-        // Agar normal blog route par aaye hain to standard all-blogs API hit hogi
         res = await getBlogs(page);
       }
 
       const paginatedData = res?.response?.data || res?.data || res;
 
-      // Data handling depending on response structure
       const blogList = Array.isArray(paginatedData)
         ? paginatedData
         : paginatedData?.data || [];
@@ -151,7 +146,6 @@ export default function Blog() {
     }
   };
 
-  // Re-fetch trigger jab page number ya category_id badle
   useEffect(() => {
     fetchBlogs(currentPage);
   }, [currentPage, categoryId]);
@@ -179,23 +173,23 @@ export default function Blog() {
                   <p className="mt-6 text-black leading-8 text-lg">
                     Curious about what goes into building a great digital product?
                   </p>
-                    <p className="mt-6 text-black leading-8 text-lg">
-                      We share practical lessons, ideas, and insights from the world of software
-                      and app development, without all the technical jargon.
-                    </p>
+                  <p className="mt-6 text-black leading-8 text-lg">
+                    We share practical lessons, ideas, and insights from the world of software
+                    and app development, without all the technical jargon.
+                  </p>
 
-                    <p className="mt-6 text-black leading-8 text-lg">
-                      From choosing the right technology and improving app performance to creating
-                      better user experiences and planning new features, our articles cover the
-                      questions businesses often face when building or growing a digital product.
-                    </p>
+                  <p className="mt-6 text-black leading-8 text-lg">
+                    From choosing the right technology and improving app performance to creating
+                    better user experiences and planning new features, our articles cover the
+                    questions businesses often face when building or growing a digital product.
+                  </p>
 
-                    <p className="mt-6 text-black leading-8 text-lg">
-                      Whether you&apos;re starting an app from scratch, upgrading an existing
-                      platform, or simply exploring what&apos;s possible with technology,
-                      you&apos;ll find useful advice and real-world perspectives to help you make
-                      better decisions.
-                    </p>
+                  <p className="mt-6 text-black leading-8 text-lg">
+                    Whether you&apos;re starting an app from scratch, upgrading an existing
+                    platform, or simply exploring what&apos;s possible with technology,
+                    you&apos;ll find useful advice and real-world perspectives to help you make
+                    better decisions.
+                  </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 mt-10">
                     <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
@@ -224,7 +218,7 @@ export default function Blog() {
                     className="absolute -top-12 right-6 w-28 z-10"
                   />
 
-                  <div className="bg-[#F7F8FA]  border-[#F7F8FA] rounded-2xl shadow-lg p-6 md:p-8">
+                  <div className="bg-[#F7F8FA] border-[#F7F8FA] rounded-2xl shadow-lg p-6 md:p-8">
                     <h2 className="text-3xl font-bold">Request a Free Quote</h2>
                     <p className="mt-3 text-lg mb-6">
                       Guaranteed Response within One Business Day!
@@ -233,10 +227,11 @@ export default function Blog() {
                     <form onSubmit={handleSubmit} className="space-y-6">
                       {statusMessage.text && (
                         <div
-                          className={`p-3 text-sm rounded ${statusMessage.type === "success"
-                            ? "bg-green-100 text-green-700"
-                            : "bg-red-100 text-red-700"
-                            }`}
+                          className={`p-3 text-sm rounded ${
+                            statusMessage.type === "success"
+                              ? "bg-green-100 text-green-700"
+                              : "bg-red-100 text-red-700"
+                          }`}
                         >
                           {statusMessage.text}
                         </div>
@@ -352,12 +347,10 @@ export default function Blog() {
                 Our Blog
               </h1>
               <p className="mt-2 space-y-6 text-center md:text-lg leading-7">
-               Get practical ideas, expert perspectives, and useful tips on software, apps, and digital products. Explore our latest articles to make smarter decisions for your next project.
-
+                Get practical ideas, expert perspectives, and useful tips on software, apps, and digital products. Explore our latest articles to make smarter decisions for your next project.
               </p>
             </div>
           </section>
-
 
           <section className="mt-12 mb-8">
             {fetchingBlogs ? (
@@ -401,12 +394,6 @@ export default function Blog() {
                       </div>
 
                       <div className="p-5">
-                        {blog.category?.name && (
-                          <span className="text-sm text-red-600 font-medium">
-                            {blog.category.name}
-                          </span>
-                        )}
-
                         <h3 className="mt-3 text-xl font-semibold leading-7 text-red-800 line-clamp-2">
                           {blog.title}
                         </h3>
@@ -415,14 +402,11 @@ export default function Blog() {
                   </div>
                 ))}
               </div>
-            ) :
-              (
-                <div className="text-center py-10 text-gray-500">
-                  No blogs available.
-                </div>
-              )}
-
-         
+            ) : (
+              <div className="text-center py-10 text-gray-500">
+                No blogs available.
+              </div>
+            )}
           </section>
         </div>
 
@@ -454,3 +438,11 @@ export default function Blog() {
   );
 }
 
+// Wrap in Suspense boundary for Next.js build prerendering
+export default function Blog() {
+  return (
+    <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
+      <BlogContent />
+    </Suspense>
+  );
+}

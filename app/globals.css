@@ -2459,3 +2459,72 @@ p.mt-iq-20 {
 .ui-btm{
   text-align: center;
 }
+
+
+/* Legacy Software Modernization Table Only */
+
+.legacy-modernization-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  margin: 28px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.legacy-modernization-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #dbe3ec;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  color: #243247;
+  font-size: 16px;
+  line-height: 1.65;
+  box-shadow: 0 8px 24px rgba(21, 35, 57, 0.07);
+}
+
+.legacy-modernization-table thead th {
+  padding: 16px 18px;
+  background: rgb(228, 18, 18);
+  color: #ffffff;
+  text-align: left;
+  font-weight: 700;
+  vertical-align: top;
+  border: none;
+}
+
+.legacy-modernization-table tbody td {
+  padding: 16px 18px;
+  text-align: left;
+  vertical-align: top;
+  border: none;
+  border-bottom: 1px solid #e5ebf2;
+}
+
+.legacy-modernization-table tbody tr:nth-child(even) td {
+  background: #f8eeee;
+}
+
+.legacy-modernization-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.legacy-modernization-table tbody td:first-child {
+  color: rgb(228, 18, 18);;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .legacy-modernization-table {
+    min-width: 620px;
+    font-size: 14px;
+  }
+
+  .legacy-modernization-table thead th,
+  .legacy-modernization-table tbody td {
+    padding: 12px 14px;
+  }
+}
