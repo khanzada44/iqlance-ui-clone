@@ -40,7 +40,7 @@ export default function About() {
             </p>
             <p className="mx-auto mt-10 w-full text-lg md:text-[22px] leading-relaxed text-black">
               From product strategy and engineering to QA and post-launch support, we handle every stage
-              of development. Businesses looking for a software development company Dallas can work
+              of development. Businesses looking for a software development company Los Angeles can work
               with our experienced team on custom software, enterprise platforms, mobile products, and
               web solutions. Our digital transformation expertise also includes AI solutions and software
               modernization, helping businesses build secure, scalable technology that evolves with their

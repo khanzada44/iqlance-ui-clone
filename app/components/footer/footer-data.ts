@@ -75,7 +75,7 @@ export const footerColumns = [
 ];
 
 export const footerDescription =
-  'DevApp Grid is a trusted mobile app and software development company based in Dallas';
+  'DevApp Grid is a trusted mobile app and software development company based in Los Angeles';
 
 export const socialLinks = [
   { icon: 'FaLinkedinIn', href: '#', label: 'LinkedIn' },

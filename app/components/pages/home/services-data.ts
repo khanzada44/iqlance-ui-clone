@@ -124,9 +124,9 @@ export const processSteps = [
 export const slides = [
   {
     title: "Looking for a Development Team That Actually Gets Your Business?",
-    description1: `For businesses comparing a mobile app development company in Dallas, we can support product 
+    description1: `For businesses comparing a mobile app development company in Los Angeles, we can support product 
 strategy, design, engineering, and ongoing maintenance. For organizations in the region, our app
-development company Dallas services can cover discovery, UI/UX, engineering, QA, deployment, 
+development company Los Angeles services can cover discovery, UI/UX, engineering, QA, deployment, 
 and ongoing support.`,
     description2:
       ``,
