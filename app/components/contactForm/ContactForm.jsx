@@ -21,8 +21,36 @@ export default function ContactForm() {
   const [status, setStatus] = useState(null);
   const router = useRouter();
 
+  // Phone: sirf digits, +, space, -, ( ) allowed. "+" sirf shuru mein.
+  const sanitizePhone = (value) => {
+    let v = value.replace(/[^\d+\s()-]/g, "");
+    v = v.replace(/(?!^)\+/g, "");
+    return v.slice(0, 20);
+  };
+
+  // 10-15 digits zaroori (optional + country code ke sath)
+  const getPhoneError = (phone) => {
+    const value = (phone || "").trim();
+    if (!value) return "Phone number is required";
+
+    const cleaned = value.replace(/[\s()-]/g, "");
+    if (!/^\+?\d+$/.test(cleaned)) {
+      return "Phone number can only contain digits";
+    }
+
+    const digits = cleaned.replace(/\D/g, "");
+    if (digits.length < 10) return "Phone number must be at least 10 digits";
+    if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+    if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
+
+    return "";
+  };
+
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, type, checked } = e.target;
+    let value = e.target.value;
+    if (name === "phone") value = sanitizePhone(value);
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
@@ -32,13 +60,19 @@ export default function ContactForm() {
     }
   };
 
+  const handlePhoneBlur = () => {
+    if (!formData.phone) return;
+    setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }));
+  };
+
   const validateForm = () => {
     const newErrors = {};
     if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
-    if (!formData.lastName.trim()) newErrors.lastName = "Laat name is required";
+    if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
     else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Enter a valid email address";
-    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) newErrors.phone = phoneError;
     return newErrors;
   };
 
@@ -57,7 +91,7 @@ export default function ContactForm() {
       const fullName = `${formData.firstName} ${formData.lastName}`.trim();
       bodyFormData.append("name", fullName);
       bodyFormData.append("email", formData.email);
-      bodyFormData.append("phone", formData.phone);
+      bodyFormData.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       bodyFormData.append("message", formData.message || "");
       bodyFormData.append("is_nda", formData.newsletter ? "1" : "0");
       bodyFormData.append("service", formData.service || "");
@@ -252,6 +286,11 @@ export default function ContactForm() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                onBlur={handlePhoneBlur}
+                inputMode="tel"
+                autoComplete="tel"
+                maxLength={20}
+                aria-invalid={!!errors.phone}
                 placeholder="Phone*"
                 className={`w-full bg-white border px-4 py-3 text-sm text-black placeholder-gray-400 focus:outline-none transition-colors ${errors.phone ? "border-red-500" : "border-gray-300 focus:border-[#B91C1C]"
                   }`}

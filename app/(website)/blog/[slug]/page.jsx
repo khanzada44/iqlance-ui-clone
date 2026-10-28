@@ -56,7 +56,7 @@ export default async function BlogDetailPage({ params }) {
           </div>
 
           {/* Featured Image */}
-          <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[550px] mt-8">
+          <div className="relative w-full h-75 sm:h-100 lg:h-137.5 mt-8">
             <Image
               src={blog.image}
               alt={blog.title}

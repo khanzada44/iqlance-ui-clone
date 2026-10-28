@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
@@ -8,6 +7,34 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 
 import { getSingleBlog, blogCategories } from "@/services/blog";
+
+function getDescription(html = "", max = 155) {
+  const text = String(html)
+    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;|&rsquo;|&lsquo;/g, "'")
+    .replace(/&[a-z0-9#]+;/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,.;:\-]+$/, "") + "…";
+}
+
+
+function setMetaTag(attr, key, content) {
+  if (!content) return;
+  let tag = document.head.querySelector(`meta[${attr}="${key}"]`);
+  if (!tag) {
+    tag = document.createElement("meta");
+    tag.setAttribute(attr, key);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("content", content);
+}
 
 function SingleBlogPageContent() {
   const router = useRouter();
@@ -79,6 +106,20 @@ function SingleBlogPageContent() {
       cancelled = true;
     };
   }, [slug]);
+
+  useEffect(() => {
+    if (!blog?.title) return;
+
+    const metaTitle = blog.title;
+    const metaDescription = blog.meta_description || getDescription(blog.content);
+
+    document.title = metaTitle;
+    setMetaTag("name", "description", metaDescription);
+    setMetaTag("property", "og:title", metaTitle);
+    setMetaTag("property", "og:description", metaDescription);
+    setMetaTag("name", "twitter:title", metaTitle);
+    setMetaTag("name", "twitter:description", metaDescription);
+  }, [blog]);
 
   // Category click handler
   const handleCategoryClick = async (e, cat) => {
@@ -246,7 +287,7 @@ function SingleBlogPageContent() {
                   return (
                     <Link
                       key={post.id || post.slug || index}
-                      href={`/blog?slug=${encodeURIComponent(post.slug || "")}`}
+                      href={`/blog-details?slug=${encodeURIComponent(post.slug || "")}`}
                       className="flex items-center gap-4 group transition-colors"
                     >
                       <div className="relative w-20 h-16 shrink-0 overflow-hidden bg-gray-100">
@@ -392,7 +433,6 @@ function SingleBlogPageContent() {
   );
 }
 
-// Suspense boundary fixes useSearchParams prerendering error
 export default function SingleBlogPage() {
   return (
     <Suspense

@@ -69,7 +69,30 @@ export default function LandingPage() {
     file: null,
     sendNda: false,
   });
+  // Phone: sirf digits, +, space, -, ( ) allowed. "+" sirf shuru mein.
+  const sanitizePhone = (value) => {
+    let v = value.replace(/[^\d+\s()-]/g, "");
+    v = v.replace(/(?!^)\+/g, "");
+    return v.slice(0, 20);
+  };
 
+  // 10-15 digits zaroori (optional + country code ke sath)
+  const getPhoneError = (phone) => {
+    const value = (phone || "").trim();
+    if (!value) return "Phone number is required";
+
+    const cleaned = value.replace(/[\s()-]/g, "");
+    if (!/^\+?\d+$/.test(cleaned)) {
+      return "Phone number can only contain digits";
+    }
+
+    const digits = cleaned.replace(/\D/g, "");
+    if (digits.length < 10) return "Phone number must be at least 10 digits";
+    if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+    if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
+
+    return "";
+  };
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
@@ -88,19 +111,28 @@ export default function LandingPage() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
   };
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value =
+      name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
+  };
+
+  const handlePhoneBlur = () => {
+    if (!formData.phone) return;
+    const phoneError = getPhoneError(formData.phone);
+    setErrors((prev) => ({ ...prev, phone: phoneError }));
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -123,7 +155,7 @@ export default function LandingPage() {
 
       payload.append("name", formData.name.trim());
       payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
+      payload.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -492,6 +524,11 @@ export default function LandingPage() {
                       placeholder="Phone*"
                       value={formData.phone}
                       onChange={handleChange}
+                      onBlur={handlePhoneBlur}
+                      inputMode="tel"
+                      autoComplete="tel"
+                      maxLength={20}
+                      aria-invalid={!!errors.phone}
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"
                         } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
