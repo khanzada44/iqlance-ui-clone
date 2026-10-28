@@ -568,7 +568,10 @@ export default function HeroQuoteSection() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570
+                      USA: +1 (866) 978-8570,
+                    </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                       +1 (323) 747-7192
                     </span>
                   </div>
                 </div>
@@ -821,7 +824,10 @@ export default function HeroQuoteSection() {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570
+                      USA: +1 (866) 978-8570,
+                    </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                      USA: +1 (323) 747-7192
                     </span>
                   </div>
                 </div>
@@ -971,13 +977,17 @@ export default function HeroQuoteSection() {
                         maskImage: "url(/icons/phone-icon.svg)",
                         maskRepeat: "no-repeat",
                         maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg",
+                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
                         WebkitMaskRepeat: "no-repeat",
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570
+                      USA: +1 (866) 978-8570,
+                      <br className="sm:hidden" />
+                    </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                       +1 (323) 747-7192
                       <br className="sm:hidden" />
                     </span>
                   </div>

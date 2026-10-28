@@ -272,6 +272,13 @@ export default function About() {
                     className=" transition-colors"
                   >
                     +1 (866) 978-8570
+                    
+                  </a>,
+                  <a
+                    href="tel:+1(323)747-7192"
+                    className=" transition-colors"
+                  >
+                    +1 (323)747-7192
                   </a>
 
                 </div>
@@ -415,8 +422,9 @@ export default function About() {
                   </a>
                   <span> </span>
                   <a
-                    href="tel:+16476379108"
+                    href="tel:+1 (323) 747-7192"
                   >
+                    +1 (323) 747-7192
                   </a>
                 </div>
               </div>

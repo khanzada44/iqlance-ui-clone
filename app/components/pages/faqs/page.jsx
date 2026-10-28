@@ -250,6 +250,12 @@ export default function faqs() {
                   >
                     +1 (866) 978-8570
                   </a>
+                  <a
+                    href="tel:+13237477192"
+                    className=" transition-colors"
+                  >
+                   +1 (323) 747-7192
+                  </a>
 
                 </div>
               </div>

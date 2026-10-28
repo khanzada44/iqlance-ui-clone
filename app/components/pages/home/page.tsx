@@ -729,7 +729,7 @@ export default function Home() {
                   info@devappgrid.com
                 </span>
 
-                <span className="block">or</span>
+                <span className="block"></span>
                 <span className="flex flex-wrap items-center justify-center gap-1">
                   <div
                     className="h-6 w-6 shrink-0 bg-red-600"
@@ -742,8 +742,8 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  USA : <strong>+1 (866) 978-8570</strong>
-                  <strong> </strong>
+                  USA : <strong>+1 (866) 978-8570,</strong>
+                  <strong>+1 (323) 747-7192 </strong>
                 </span>
               </div>
             </div>
@@ -1058,11 +1058,11 @@ export default function Home() {
                     href="tel:+14697939837"
                     className="hover:text-red-600 transition-colors"
                   >
-                    +1 (866) 978-8570
+                    +1 (866) 978-8570,
                   </a>
-                  <span> </span>
+                  <span>+1 (323) 747-7192 </span>
                   <a
-                    href="tel:+16476379108"
+                    href="tel:+1323747-7192"
                     className="hover:text-red-600 transition-colors"
                   ></a>
                 </div>
@@ -1260,8 +1260,8 @@ export default function Home() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                USA :<strong> +1 (866) 978-8570</strong>
-                <strong> </strong>
+                USA :<strong> +1 (866) 978-8570,</strong>
+                <strong>+1 (323) 747-7192 </strong>
               </span>
             </div>
 

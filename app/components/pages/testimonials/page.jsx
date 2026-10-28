@@ -215,7 +215,13 @@ export default function testimonials() {
                     href="tel:+18669788570"
                     className=" transition-colors"
                   >
-                    +1 (866) 978-8570
+                    +1 (866) 978-8570,
+                  </a>
+                  <a
+                    href="tel:+1323747-7192"
+                    className=" transition-colors"
+                  >
+                    +1 (323) 747-7192
                   </a>
                 </div>
               </div>
@@ -348,7 +354,13 @@ export default function testimonials() {
                     href="tel:+18669788570"
                     className=" transition-colors"
                   >
-                    +1 (866) 978-8570
+                    +1 (866) 978-8570,
+                  </a>
+                  <a
+                    href="tel:+1323747-7192"
+                    className=" transition-colors"
+                  >
+                    +1 (323) 747-7192
                   </a>
                 </div>
               </div>

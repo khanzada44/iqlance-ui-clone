@@ -124,6 +124,9 @@ export default function ContactForm() {
                   <p className="mt-1 font-bold text-gray-900 text-base">
                     +1 (866) 978-8570
                   </p>
+                  <p className="mt-1 font-bold text-gray-900 text-base">
+                     +1 (323) 747-7192
+                  </p>
                 </div>
 
                 <div>

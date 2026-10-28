@@ -354,7 +354,9 @@ export default function career() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                USA :<strong> +1 (866) 978-8570</strong>
+                USA :<strong> +1 (866) 978-8570,</strong>
+                <strong>+1 (323) 747-7192</strong>
+                    
               </span>
             </div>
 

@@ -180,6 +180,12 @@ export default function ContactSection() {
               <p className="mt-2 text-black text-sm sm:text-base leading-relaxed">
                 USA: +1 (866) 978-8570
                 <br />
+                <a
+                    href="tel:+1323747-7192"
+                    className=" transition-colors"
+                  >
+                   USA: +1 (323) 747-7192
+                  </a>
               </p>
             </div>
 

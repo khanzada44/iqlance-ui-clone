@@ -607,6 +607,9 @@ const handleChange = (e) => {
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
                     </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                       +1 (323) 747-7192
+                    </span>
                   </div>
                 </div>
               </div>
@@ -721,6 +724,9 @@ const handleChange = (e) => {
                     <span className="font-medium text-sm sm:text-base leading-6">
                       USA: +1 (866) 978-8570
 
+                    </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                       +1 (323) 747-7192
                     </span>
                   </div>
                 </div>
@@ -937,7 +943,10 @@ const handleChange = (e) => {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570
+                      USA: +1 (866) 978-8570,
+                    </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                       +1 (323) 747-7192
                     </span>
                   </div>
                 </div>
@@ -1194,7 +1203,10 @@ const handleChange = (e) => {
                       }}
                     ></div>
                     <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570
+                      USA: +1 (866) 978-8570,
+                    </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">
+                       +1 (323) 747-7192
                     </span>
                   </div>
                 </div>
