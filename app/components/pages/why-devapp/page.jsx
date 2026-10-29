@@ -6,24 +6,40 @@ import Image from "next/image";
 import ContactForm from "../../contactForm/ContactForm";
 import { features } from "./data";
 import { stats, partners, faqsData } from "../../../../utils/data";
-export default function whyDevapp() {
-  const [open, setOpen] = useState(null);
+// FAQPage schema — wahi sawal jo page par dikh rahe hain
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: { "@type": "Answer", text: String(f.answer).replace(/<[^>]*>/g, "") },
+  })),
+};
+
+export default function WhyDevapp() {
+  const [open, setOpen] = useState(-1);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full  max-w-7xl mx-auto">
         <div className="mt-2 pt-2">
           <Image
             src="/images/about/why-devapp/why-us-header-banner.webp"
-            alt=""
+            alt="Why businesses choose DevApp Grid for app development"
             width={1200}
             height={800}
+            priority
             className="w-full h-auto rounded-lg"
           />
         </div>
         <div className="w-full text-center mt-14">
-          <h3 className="text-4xl md:text-6xl font-bold text-red-600">
-            Why Devapp Grid
-          </h3>
+          <h1 className="text-4xl md:text-6xl font-bold text-red-600">
+            Why Choose DevApp Grid
+          </h1>
         </div>
         <div className="w-full text-center mt-14">
 
@@ -31,7 +47,7 @@ export default function whyDevapp() {
             Because a strong MVP needs more than a development team
           </h2>
           <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black px-5">
-            At Devapp Grid, we combine product thinking, technical expertise, and execution to help
+            At DevApp Grid, we combine product thinking, technical expertise, and execution to help
             businesses turn early-stage ideas into products people can actually use. We don't
             believe in stuffing an MVP with every possible feature. Instead, we identify what can
             create the most value, build it well, and give you a foundation that can grow with your
@@ -86,7 +102,8 @@ export default function whyDevapp() {
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
-                    alt=""
+                    alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                    loading="lazy"
                     className="w-11 h-11 object-contain"
                   />
                 </div>
@@ -116,16 +133,16 @@ export default function whyDevapp() {
               </h2>
 
               <p className="text-black text-sm leading-6 mb-4">
-                Devapp Grid has earned its place as a leading software,
+                DevApp Grid has earned its place as a leading software,
                 web, and mobile app development company,
                 with deep experience building technology solutions that are both
                 visually striking and secured end-to-end. We bring real industry expertise
-                together with a carefully planned approach, all built to push your business forward
+                together with a carefully planned approach, all built to push your business forward.
               </p>
 
               <p className="text-black text-sm leading-6 mb-6">
                 As a leading mobile app and software development company in the USA,
-                Devapp Grid has spent years mastering the art of customizing and innovating
+                DevApp Grid has spent years mastering the art of customizing and innovating
                 apps that actually work. We dig deep into research before writing a single
                 line of code, because understanding your app's real needs is where great
                 products start. We push ourselves to stay ahead of the curve, using top-tier
@@ -185,7 +202,7 @@ export default function whyDevapp() {
 
               <Image
                 src="/images/about/why-devapp/part-b-whyus.webp"
-                alt=""
+                alt="DevApp Grid team planning a mobile app project"
                 width={1200}
                 height={800}
                 className="w-full h-auto rounded-lg"
@@ -204,7 +221,7 @@ export default function whyDevapp() {
           </h2>
 
           <p className="w-full text-center text-black text-lg leading-7 mb-4 px-5">
-            Devapp Grid stands as one of the fastest-growing app development companies,
+            DevApp Grid stands as one of the fastest-growing app development companies,
             with a full team of developers, designers, testers, business developers,
             and marketers all working together under one roof. Our multiplatform mobile app services
             scale to fit anyone, from large enterprises to small and medium businesses.
@@ -218,15 +235,15 @@ export default function whyDevapp() {
           </p>
 
           <p className="text-center text-xl text-black mb-6 font-medium px-5">
-            Latest technology features find a way into our daily business
-            practices that helps us stand out.
+            We bring the latest technology into our everyday work, and that
+            is what helps us stand out.
           </p>
 
           <div className="flex justify-center">
 
             <Image
               src="/images/about/why-devapp/top-company-whyus.webp"
-              alt=""
+              alt="DevApp Grid, a leading app development company in the USA"
               width={1200}
               height={800}
               className="w-full h-auto rounded-lg"
@@ -241,7 +258,7 @@ export default function whyDevapp() {
                 See How We Turn Your Idea Into an Innovative Product
               </h2>
               <p className="mt-4 text-black text-base md:text-lg">
-                Our portfolio does the talking here, it's the reason businesses across
+                Our portfolio does the talking here. It's the reason businesses across
                 the USA see us as one of the top app development companies around.
               </p>
             </div>
@@ -263,11 +280,11 @@ export default function whyDevapp() {
           {/* Bottom Section Header */}
           <div className="text-center space-y-3">
             <h2 className="text-2xl md:text-3xl font-extrabold text-black px-5">
-              10 Reasons to Choose Devapp Grid
+              10 Reasons to Choose DevApp Grid
             </h2>
             <p className="text-center text-xl text-black mb-6 mt-5 px-5">
               Growth doesn't happen by accident, it happens when the right team is behind the wheel.
-              That's the mission we've built our entire company around, like helping businesses
+              That's the mission we've built our entire company around: helping businesses
               grow through digital solutions shaped around what makes them different.
             </p>
           </div>
@@ -300,7 +317,7 @@ export default function whyDevapp() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="w-full h-auto rounded-lg"
@@ -353,7 +370,7 @@ export default function whyDevapp() {
                     +1 (866) 978-8570
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                    +1 (323) 747-7192
@@ -382,7 +399,7 @@ export default function whyDevapp() {
             </h2>
 
             <p className="mt-6 text-lg md:text-[20px] leading-8 text-[#4B5563] w-full px-5">
-              Take a look at what Devapp Grid brings to the table: our services,
+              Take a look at what DevApp Grid brings to the table: our services,
               our step-by-step process for mobile app and software development,
               and what clients have to say after working with us. When you're ready to move forward,
               reach out and let's turn your next great idea into something real.
@@ -447,16 +464,15 @@ export default function whyDevapp() {
           </div>
 
             <div className="mt-20 text-center">
-              <h3 className="text-4xl font-bold">
+              <h2 className="text-4xl font-bold">
                 Have Something in Mind? Let's Talk
-              </h3>
+              </h2>
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black">
-                Have a look at the services and development process of the
-                Devapp Grid. See what process we follow for mobile app and
-                software development. Have a look at how we are praised by our
-                clients. Start a conversation to innovate your next great idea
-                into reality with us.
+                Explore DevApp Grid’s services and the development process we
+                follow for mobile app and software projects, and see what our
+                clients say about working with us. Then start a conversation
+                and let’s turn your next great idea into reality together.
               </p>
             </div>
           </div>
@@ -476,6 +492,7 @@ export default function whyDevapp() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

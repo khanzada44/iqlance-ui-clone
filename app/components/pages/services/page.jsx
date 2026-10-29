@@ -7,7 +7,7 @@ import {
     Paperclip,
 } from "lucide-react";
 import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
@@ -31,9 +31,22 @@ import {
 import { servicesData } from "../services/data";
 import Image from "next/image";
 
+// FAQPage schema — wahi sawal jo page par dikh rahe hain (points bhi jawab mein)
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqsData.map((f) => ({
+        "@type": "Question",
+        name: String(f.question),
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: [String(f.answer || ""), ...(f.points || [])].join(" ").replace(/<[^>]*>/g, "").trim(),
+        },
+    })),
+};
+
 export default function Service() {
     const [activeServiceTab, setActiveServiceTab] = useState("mobile-apps");
-    const currentContent = servicesData.find((item) => item.id === activeServiceTab);
     const [activeTab, setActiveTab] = useState("driver");
     const [activetechnologies, setActivetechnologies] = useState(0);
     const [open, setOpen] = useState(-1);
@@ -56,21 +69,21 @@ export default function Service() {
         "Conceptualize",
         "Define the Product",
         "Conduct Consumer Research",
-        "Outlining",
+        "Outline the Features",
         "Create A Blueprint",
     ];
 
     const rightPoints = [
         "Collecting Specifications",
-        "Test the sample",
+        "Test the Prototype",
         "Start Development",
-        "Quality providing",
-        "Developing in-house sample application",
+        "Quality Assurance",
+        "Build an In-House Prototype",
     ];
     const points = [
         "Ask the right questions to the client",
         "Propose solutions other than the obvious ones",
-        "Bring your team’s opinions and abilities forward.",
+        "Bring your team’s opinions and abilities forward",
         "Compare the apps in the market with what you desire",
         "Identify opportunities",
     ];
@@ -94,7 +107,7 @@ export default function Service() {
             tabTitle: "3. Build",
             heading: "Build",
             description:
-                "Next, trained developers at our Top On-Demand App Development company use the planned technology stack and coding skills to complete the app-building process, adding features and configurations.",
+                "Next, our trained developers use the planned technology stack and coding skills to complete the app-building process, adding features and configurations.",
         },
         {
             stepLabel: "STEP 4",
@@ -105,10 +118,14 @@ export default function Service() {
         },
     ];
 
-    const currentStep = processSteps[activeStepIndex] || processSteps[0];
-    // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
+    const stepImages = [
+        { src: "/images/discove.jpg", alt: "Discover – project research" },
+        { src: "/images/uiux-design.jpg", alt: "Design – UI/UX design" },
+        { src: "/images/development.jpg", alt: "Build – app development" },
+        { src: "/images/user-testing.jpg", alt: "Deliver – testing and launch" },
+    ];
+
     // Form State
-    const [blogs, setBlogs] = useState([]);
     const fileInputRef = useRef(null);
 
     const handleChange = (e) => {
@@ -184,27 +201,17 @@ export default function Service() {
         }
     };
 
-    useEffect(() => {
-        const fetchBlogs = async () => {
-            try {
-                const data = await getBlogs();
-                const blogList = data?.response?.data || [];
-                setBlogs(blogList);
-            } catch (error) {
-                setBlogs([]);
-            }
-        };
-
-        fetchBlogs();
-    }, []);
-
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+            />
             <div className="w-full max-w-7xl mx-auto">
                 <div className="mt-6 pt-2">
                     <img
                         src="/images/service-header-banner.jpg"
-                        alt=""
+                        alt="DevApp Grid software, web, and mobile app development services"
                         className="w-full object-cover"
                     />
                 </div>
@@ -214,11 +221,11 @@ export default function Service() {
                     </h1>
 
                     <p className="text-black text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
-                        Devapp Grid develops web, mobile apps, softwares that help businesses for better operational efficiency and engagement. Hire certified mobile app developers from Devapp Grid who are experienced enough for delivering excellence in Android, iOS and cross-platform app development services.
+                        DevApp Grid builds websites, mobile apps, and software that help businesses improve operational efficiency and customer engagement. Hire certified mobile app developers from DevApp Grid with the experience to deliver excellent Android, iOS, and cross-platform app development services.
                     </p>
 
                     <p className="text-black text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
-                        Devapp Grid is a expert and professional web and mobile software development company. The Devapp Grid team consists of trained and qualified software developers, UI/UX designers, and software testers. The entire Devapp Grid team works in synchronization with each other, to transform your software development dream into reality.
+                        DevApp Grid is an expert web and mobile software development company. Our team includes trained and qualified software developers, UI/UX designers, and software testers who work closely together to turn your software idea into reality.
                     </p>
 
                     {/* Buttons */}
@@ -227,7 +234,7 @@ export default function Service() {
                             href="/contact-us"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-red-700 hover:bg-red-600 px-6 py-2.5 text-sm font-semibold text-white transition"
                         >
-                            Inquiry Now
+                            Inquire Now
                             <ArrowRight size={16} />
                         </Link>
 
@@ -241,10 +248,10 @@ export default function Service() {
                     </div>
                 </section>
 
-                {/* Get The Devapp Section */}
+                {/* Get The DevApp Grid Section */}
                 <section className="mt-16 space-y-4">
                     <h2 className="text-2xl md:text-3xl font-bold text-black flex justify-center">
-                        Get The Devapp Grid
+                        Get the DevApp Grid Advantage
                     </h2>
 
                     <p className="text-black font-medium text-sm md:text-base flex justify-center">
@@ -252,16 +259,16 @@ export default function Service() {
                     </p>
 
                     <p className="text-black font-medium text-sm md:text-base flex justify-center">
-                        The perfect blend of tailored services for any development inducement. Any Scope. Any time.
+                        The perfect blend of tailored services for any development need. Any scope. Any time.
                     </p>
 
                     <div className="space-y-4 pt-2 text-black text-sm md:text-base max-w-5xl mx-auto leading-relaxed text-center">
                         <p>
-                            At Devapp Grid, we build engaging digital experiences. With our full suite of skills and services, we connect your brand with customers in unique ways, open new business opportunities and growth through extensible solutions. Over the years of rich experience, Devapp Grid, as an IT solutions company has designed, developed and promoted outstanding expertise.
+                            At DevApp Grid, we build engaging digital experiences. With our full suite of skills and services, we connect your brand with customers in unique ways and open new business opportunities through scalable solutions. Over years of experience as an IT solutions company, DevApp Grid has built deep expertise in design, development, and digital growth.
                         </p>
 
                         <p>
-                            In today's digital era, this is the right time to build a strong online web presence with elegant, interactive, modernized and responsive solutions for the end-users. At Devapp Grid, we care and understand your unique requirements for your business; from mobile app development services, web development, digital marketing, and game app development solutions to trending technologies for all industries.
+                            In today's digital era, now is the right time to build a strong online presence with elegant, interactive, modern, and responsive solutions for your users. At DevApp Grid, we understand the unique requirements of your business, from mobile app development, web development, digital marketing, and game app development to the latest technologies for every industry.
                         </p>
 
                         <p>
@@ -274,7 +281,7 @@ export default function Service() {
                 <div className="mt-12 w-full">
                     <img
                         src="/images/get-devapp-service.jpg"
-                        alt="Devapp Services Teamwork"
+                        alt="DevApp Grid team working on client projects"
                         className="w-full h-auto object-cover shadow-sm"
                     />
                 </div>
@@ -286,6 +293,8 @@ export default function Service() {
                             return (
                                 <button
                                     key={tab.id}
+                                    type="button"
+                                    aria-pressed={isActive}
                                     onClick={() => setActiveServiceTab(tab.id)}
                                     className={`w-[72%] flex items-center gap-4 p-4 border text-left transition duration-200 ${isActive
                                         ? "border-red-500 bg-white shadow-sm font-semibold"
@@ -310,8 +319,12 @@ export default function Service() {
 
                     {/* Right Tab Content Display */}
                     <div className="lg:col-span-8 space-y-8 pl-0 lg:pl-4">
-                        {currentContent && (
-                            <>
+                        {/* Har service ka content HTML mein (Google parh sake), sirf active nazar aata hai */}
+                        {servicesData.map((currentContent) => (
+                            <div
+                                key={currentContent.id}
+                                className={activeServiceTab === currentContent.id ? "space-y-8" : "hidden"}
+                            >
                                 <div>
                                     <h2 className="text-2xl md:text-3xl font-bold text-black mb-3">
                                         {currentContent.heading}
@@ -331,6 +344,7 @@ export default function Service() {
                                             <img
                                                 src={subItem.icon}
                                                 alt={subItem.title}
+                                                loading="lazy"
                                                 className="w-12 h-12 object-contain mb-4"
                                             />
                                             <span className="text-sm md:text-base font-semibold text-black">
@@ -346,12 +360,12 @@ export default function Service() {
                                         href="/services"
                                         className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 transition duration-200 text-sm md:text-base"
                                     >
-                                        View All
+                                        View All Services
                                         <ArrowRight size={18} />
                                     </Link>
                                 </div>
-                            </>
-                        )}
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <section className="w-full bg-red-50 py-16 px-6 font-sans">
@@ -359,8 +373,8 @@ export default function Service() {
                         {/* Top Icon Illustration */}
                         <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
                             <Image
-                                src="/images/customer-support-icon.png" // Update this path to match your icon asset
-                                alt="Custom Logistics App Support"
+                                src="/images/customer-support-icon.png"
+                                alt="Talk to the DevApp Grid team"
                                 width={64}
                                 height={64}
                                 className="object-contain"
@@ -369,12 +383,12 @@ export default function Service() {
 
                         {/* Section Heading */}
                         <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-                            Let’s Discuss your Software or Mobile Application Project.
+                            Let’s Discuss Your Software or Mobile App Project
                         </h2>
 
                         {/* Subtitle Paragraph */}
                         <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-                            Send your Requirements on :
+                            Send your requirements to:
                         </p>
 
                         {/* Contact Info Box */}
@@ -414,20 +428,18 @@ export default function Service() {
                                             WebkitMaskSize: "contain",
                                         }}
                                     ></div>
-                                    <span>US :</span>
+                                    <span>USA:</span>
                                     <a
-                                        href="tel:+14697939837"
-                                        className=" transition-colors"
-                                    >
-                                        +1 866 978 8570
-                                    </a>
-                                    <span>,</span>
-                                    <span> </span>
-                                    <a
-                                        href="tel:+16476379108"
+                                        href="tel:+18669788570"
                                         className="transition-colors"
                                     >
-                                          
+                                        +1 (866) 978-8570,
+                                    </a>
+                                    <a
+                                        href="tel:+13237477192"
+                                        className="transition-colors"
+                                    >
+                                        +1 (323) 747-7192
                                     </a>
                                 </div>
                             </div>
@@ -459,9 +471,9 @@ export default function Service() {
                             <p className="text-black text-base leading-relaxed">
                                 Whatever type of apps we develop or the services we provide, we start
                                 the work by talking to the client. This provides an idea of what
-                                exactly the client needs and what he has in mind. The next step is
-                                evaluating the needs of the clients and then creating an outline of
-                                what the software/ app would like. This process involves the
+                                exactly the client needs and what they have in mind. The next step is
+                                evaluating the client’s needs and then creating an outline of
+                                what the software or app should look like. This process involves the
                                 following steps:
                             </p>
 
@@ -481,7 +493,7 @@ export default function Service() {
                         <div className="w-full h-full min-h-87.5 overflow-hidden rounded-md">
                             <img
                                 src="/images/highlights-res-app.jpg"
-                                alt="Ideation and Evaluation"
+                                alt="Ideation and evaluation stage of app development"
                                 className="w-full h-full object-cover rounded-md"
                             />
                         </div>
@@ -493,7 +505,7 @@ export default function Service() {
                         <div className="lg:col-span-5 w-full bg-linear-to-tr p-8 flex items-center justify-center min-h-105">
                             <img
                                 src="/images/prodcut-photo-service-2.jpg"
-                                alt="Product Design App Mockup"
+                                alt="Product design app mockup"
                                 className="w-full max-w-sm h-auto object-contain drop-shadow-xl"
                             />
                         </div>
@@ -509,12 +521,11 @@ export default function Service() {
                             </h2>
 
                             <p className="text-black text-base leading-relaxed">
-                                Design is an important part of the app we build. Half the work is
-                                done when a client approves the project by looking at the app. Our
-                                team of designers ensures the client with a good looking design
-                                for the app. They also ensure the product design is such that the
-                                user can easily use the software app without requiring any help.
-                                The steps involved in Product Design include:
+                                Design is an important part of every app we build. Half the work is
+                                done when a client approves the project after seeing the design. Our
+                                designers create a clean, attractive design for your app and make
+                                sure users can navigate it easily without any help.
+                                The steps involved in product design include:
                             </p>
 
                             {/* 2-Column List Layout */}
@@ -552,8 +563,8 @@ export default function Service() {
                             Industries We Serve
                         </h2>
                         <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6">
-                            We, as a medical app development company, has grabbed some of the
-                            greatest milestones by serving leading industries like:
+                            As a software and app development company, we have reached major
+                            milestones by serving leading industries such as:
                         </p>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -564,7 +575,8 @@ export default function Service() {
                             >
                                 <img
                                     src={item.bgImage}
-                                    alt={item.title}
+                                    alt={`${item.title} app development`}
+                                    loading="lazy"
                                     className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
@@ -572,7 +584,8 @@ export default function Service() {
                                     <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
                                         <img
                                             src={item.icon}
-                                            alt=""
+                                            alt={`${item.title} icon`}
+                                            loading="lazy"
                                             className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
                                         />
                                     </div>
@@ -586,14 +599,13 @@ export default function Service() {
                 </section>
                 <div className="text-center max-w-7xl mx-auto space-y-4 mt-10">
                     <h2 className="text-2xl sm:text-2xl md:text-5xl font-extrabold text-black">
-                        The Process We Follow For Web Design and Development
+                        The Process We Follow for Software and App Development
                     </h2>
                     <p className="text-black text-sm md:text-base leading-relaxed">
-                        Our team of App Developers Toronto have worked on different types of
-                        on-demand app development projects, with satisfactory results. We
-                        provide dedicated attention and care throughout the development
-                        journey, using top-notch techniques. Here, we shall tailor our
-                        development plan as per your needs.
+                        Our developers have delivered many types of web, mobile, and software
+                        projects with great results. We give every project dedicated attention
+                        throughout the development journey and tailor our development plan to
+                        your needs.
                     </p>
                 </div>
                 <div className="w-full max-w-5xl mx-auto px-4 py-12">
@@ -624,75 +636,44 @@ export default function Service() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         {/* Left Process Image Container */}
                         <div className="relative w-72 h-72 mx-auto flex items-center justify-center">
-                            {/* Step 1 Image - Discover */}
-                            {activeStepIndex === 0 && (
-                                <div className="">
-                                    <img
-                                        src="/images/discove.jpg"
-                                        alt="Discover"
-                                        className="w-full h-full object-contain"
-                                    />
+                            {/* Chaaron step images HTML mein, sirf active nazar aati hai */}
+                            {stepImages.map((img, index) => (
+                                <div key={index} className={activeStepIndex === index ? "" : "hidden"}>
+                                    <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-contain" />
                                 </div>
-                            )}
-
-                            {/* Step 2 Image - Design */}
-                            {activeStepIndex === 1 && (
-                                <div className="">
-                                    <img
-                                        src="/images/uiux-design.jpg"
-                                        alt="Design"
-                                        className="w-full h-full object-contain"
-                                    />
-                                </div>
-                            )}
-
-                            {/* Step 3 Image - Build */}
-                            {activeStepIndex === 2 && (
-                                <div className="">
-                                    <img
-                                        src="/images/development.jpg"
-                                        alt="Build"
-                                        className="w-full h-full object-contain"
-                                    />
-                                </div>
-                            )}
-
-                            {/* Step 4 Image - Deliver */}
-                            {activeStepIndex === 3 && (
-                                <div className="">
-                                    <img
-                                        src="/images/user-testing.jpg"
-                                        alt="Deliver"
-                                        className="w-full h-full object-contain"
-                                    />
-                                </div>
-                            )}
+                            ))}
                         </div>
 
                         {/* Right Side Content Display */}
-                        <div className="flex flex-col justify-center">
-                            <span className="text-xs font-semibold tracking-wider text-black uppercase mb-2">
-                                {currentStep.stepLabel}
-                            </span>
-                            <h2 className="text-3xl font-extrabold text-black mb-4">
-                                {currentStep.heading}
-                            </h2>
-                            <p className="text-black leading-relaxed text-sm max-w-md">
-                                {currentStep.description}
-                            </p>
-                        </div>
+                        {/* Har step ka text HTML mein (Google parh sake), sirf active nazar aata hai */}
+                        {processSteps.map((step, index) => (
+                            <div
+                                key={index}
+                                className={activeStepIndex === index ? "flex flex-col justify-center" : "hidden"}
+                            >
+                                <span className="text-xs font-semibold tracking-wider text-black uppercase mb-2">
+                                    {step.stepLabel}
+                                </span>
+                                <h3 className="text-3xl font-extrabold text-black mb-4">
+                                    {step.heading}
+                                </h3>
+                                <p className="text-black leading-relaxed text-sm max-w-md">
+                                    {step.description}
+                                </p>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
                 <section>
                     <div className="text-center max-w-4xl mx-auto space-y-4 mt-4">
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-                            Why Choose Devapp Grid?
-                        </h1>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
+                            Why Choose DevApp Grid?
+                        </h2>
                         <p className="text-black text-sm md:text-base leading-relaxed">
-                            From development to testing, design to deployment, and everything
-                            in between, we are the best on-demand app development company that
-                            offers a vast range of scalable solutions.
+                            From design to development, testing to deployment, and everything
+                            in between, we offer a wide range of scalable software and app
+                            development solutions.
                         </p>
                     </div>
                 </section>
@@ -721,17 +702,15 @@ export default function Service() {
                     </div>
                 </section>
                 <section>
-                    <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10">
-                        <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-                            {" "}
+                    <div className="text-center max-w-5xl mx-auto space-y-5 mt-10 mb-10">
+                        <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
                             Offshore Web, Mobile & Software Development Company
-                        </h1>
+                        </h2>
                         <p>
-                            Devapp Grid is a leading Software Development Company currently
-                            available in the market, with over 7 years of experience under the
-                            belt. Over the years, our team members have honed their skills,
-                            handling over 1,500 projects of different types and companies,
-                            offering flexible solutions and comprehensive benefits to all.
+                            DevApp Grid is a leading software development company with over 7
+                            years of experience. Over the years, our team has completed more
+                            than 1,500 projects for companies of every size, offering flexible
+                            solutions and real business value.
                         </p>
                     </div>
                 </section>
@@ -746,7 +725,8 @@ export default function Service() {
                                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                                     <img
                                         src={item.icon}
-                                        alt=""
+                                        alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                                        loading="lazy"
                                         className="w-11 h-11 object-contain"
                                     />
                                 </div>
@@ -772,9 +752,8 @@ export default function Service() {
                         Technologies We Use
                     </h2>
                     <p className="text-black text-sm md:text-base leading-relaxed">
-                        Capabilities and tools aside, you can expect top-notch technologies
-                        in use at our best on-demand app development company; we use them
-                        generously for an intuitive and customised app generation.
+                        We use modern, proven technologies to build fast, secure, and
+                        scalable websites, mobile apps, and software.
                     </p>
                 </div>
                 <section className="py-16">
@@ -785,6 +764,8 @@ export default function Service() {
                                 {technologies.map((tab, index) => (
                                     <button
                                         key={index}
+                                        type="button"
+                                        aria-pressed={activetechnologies === index}
                                         onClick={() => setActivetechnologies(index)}
                                         className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                                             ? "text-red-600 font-semibold"
@@ -803,36 +784,42 @@ export default function Service() {
                             </div>
                         </div>
                         {/* Content */}
-                        <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
-                            {technologies[activetechnologies].items.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
-                                >
-                                    <img
-                                        src={item.image}
-                                        alt={item.name}
-                                        className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                                    />
-
-                                    <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
-                                        {item.name}
-                                    </h3>
-                                </div>
-                            ))}
-                        </div>
+                        {/* Har tab ka content HTML mein (Google parh sake), sirf active nazar aata hai */}
+                        {technologies.map((tab, tabIndex) => (
+                            <div
+                                key={tabIndex}
+                                className={activetechnologies === tabIndex ? "flex flex-wrap justify-center gap-1 sm:gap-4" : "hidden"}
+                            >
+                                {tab.items.map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
+                                    >
+                                        <img
+                                            src={item.image}
+                                            alt={item.name}
+                                            loading="lazy"
+                                            className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                                        />
+                                        <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
+                                            {item.name}
+                                        </h3>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 </section>
                 <section>
                     {/* Heading */}
                     <div>
-                        <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+                        <h2 className="flex justify-center font-bold text-3xl mb-4 mt-2">
                             Frequently Asked Questions
-                        </h1>
+                        </h2>
 
                         <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center">
-                            Here you will find the answers you are looking for because we know
-                            what’s in our client’s mind.
+                            Here are answers to the questions our clients ask us most often
+                            about our services.
                         </p>
                     </div>
 
@@ -850,6 +837,8 @@ export default function Service() {
                                     >
                                         {/* Question */}
                                         <button
+                                            type="button"
+                                            aria-expanded={open === index}
                                             onClick={() => setOpen(open === index ? -1 : index)}
                                             className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
                                         >
@@ -903,16 +892,15 @@ export default function Service() {
                     </section>
                 </section>
                 <section>
-                    <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10">
-                        <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
+                    <div className="text-center max-w-5xl mx-auto space-y-4 mt-3 mb-10">
+                        <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
                             Have Something in Mind? Let's Talk
-                        </h1>
+                        </h2>
                         <p>
-                            Have a look at the services and development process of the Devapp
-                            Grid. See What process we follow for mobile app and software
-                            development. Have a look at how we are praised by our clients
-                            Start a conversation to innovate your next great idea into reality
-                            with us.
+                            Explore DevApp Grid’s services and the development process we
+                            follow for mobile app and software projects, and see what our
+                            clients say about working with us. Then start a conversation
+                            and let’s turn your next great idea into reality together.
                         </p>
                     </div>
                 </section>
@@ -931,6 +919,7 @@ export default function Service() {
                                 <img
                                     src={item.image}
                                     alt={item.alt}
+                                    loading="lazy"
                                     className="max-h-full max-w-full object-contain"
                                 />
                             </div>

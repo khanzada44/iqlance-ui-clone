@@ -16,39 +16,59 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function career() {
+// ⚠️ Resume kis email par aaye. "hr@Devapp.com" kisi aur company ka domain tha.
+// Agar hr@devappgrid.com mailbox bana hua hai to yahan wo likh dein.
+const HR_EMAIL = "info@devappgrid.com";
+
+// FAQPage schema — wahi sawal jo page par dikh rahe hain
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: { "@type": "Answer", text: String(f.answer).replace(/<[^>]*>/g, "") },
+  })),
+};
+
+export default function Career() {
   const [open, setOpen] = useState(0);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <div>
           <img
             src="/images/about/career/career-header.webp"
-            alt=""
+            alt="Careers at DevApp Grid"
+            fetchPriority="high"
             className="mt-10"
           />
         </div>
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl md:text-6xl font-bold text-center">
-              <span className="text-4xl md:text-5xl font-extrabold text-red-600 mt-2 mb-6">Careers at Devapp Grid</span>
-            </h2>
+            <h1 className="text-4xl md:text-6xl font-bold text-center">
+              <span className="text-4xl md:text-5xl font-extrabold text-red-600 mt-2 mb-6">Careers at DevApp Grid</span>
+            </h1>
 
             {/* Description */}
             <div className="max-w-6xl mx-auto mt-8 space-y-6 text-center text-black text-base md:text-xl leading-8">
               <p>
                 Some companies hire people to fill seats.
-                We're not one of them. At Devapp Grid, we look for people who actually
+                We're not one of them. At DevApp Grid, we look for people who actually
                 want to build things that matter, and then we give them the room,
                 the tools, and the trust to do exactly that.
 
               </p>
 
               <p>
-                You won't get lost in the shuffle here. Every Devapp Grid works on real projects,
+                You won't get lost in the shuffle here. Every DevApp Grid team member works on real projects,
                 with real clients, solving real problems, not stuck running the same five tasks on repeat
                 for two years straight. If you're the kind of person who gets restless without a challenge,
-                this is probably where you belong
+                this is probably where you belong.
               </p>
 
               <p>
@@ -71,7 +91,7 @@ export default function career() {
             </div>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-14">
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex items-center justify-center gap-3 transition"
               >
                 Contact Us
@@ -92,16 +112,16 @@ export default function career() {
               </Link>
             </div>
             <div className="mt-20">
-              <h3 className="text-3xl md:text-5xl font-bold text-center">
+              <h2 className="text-3xl md:text-5xl font-bold text-center">
                 Offshore Web, Mobile & Software Development Company
-              </h3>
+              </h2>
 
               <p className="max-w-5xl mx-auto mt-8 text-center text-black text-base md:text-lg leading-8">
-                Devapp Grid is a leading Software, Web, & Mobile App
-                Development Company with a vast area of experience in crafting
-                stunning and end-to-end encrypted technology solutions. We offer
-                excellent expertise of the industry followed by an exactly
-                planned approach to elevate your growth.
+                DevApp Grid is a leading software, web, and mobile app
+                development company with wide experience in building secure,
+                well-designed technology solutions. We combine deep industry
+                expertise with a carefully planned approach to help your
+                business grow.
               </p>
             </div>
           </div>
@@ -117,7 +137,7 @@ export default function career() {
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <Image
                     src={item.icon}
-                    alt=""
+                    alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
                     width={44}
                     height={44}
                     className="w-11 h-11 object-contain"
@@ -144,13 +164,13 @@ export default function career() {
           <div className="max-w-7xl mx-auto px-4 mt-10">
             {/* About */}
             <div className="max-w-6xl mx-auto text-center">
-              <h3 className="text-3xl md:text-5xl font-bold">About Devapp Grid</h3>
+              <h2 className="text-3xl md:text-5xl font-bold">About DevApp Grid</h2>
 
               <div className="mt-8 space-y-7 text-black text-base md:text-lg leading-8">
                 <p>
                   Every big company was small once. Ours started with just one person and an idea worth chasing,
                   and over the years, that idea grew into something bigger: a
-                  full team of people who genuinely care about the work they do and the businesses they help build
+                  full team of people who genuinely care about the work they do and the businesses they help build.
                 </p>
 
                 <p>
@@ -173,7 +193,7 @@ export default function career() {
 
             <div className="max-w-6xl mx-auto mt-20 text-center">
               <h2 className="text-3xl md:text-5xl font-bold">
-                Why Join Devapp Grid?
+                Why Join DevApp Grid?
               </h2>
 
               <p className="mt-8 text-black text-base md:text-lg leading-8 max-w-5xl mx-auto">
@@ -190,7 +210,7 @@ export default function career() {
             <div className="mt-2 pt-2">
               <Image
                 src="/images/about/career/why-iq-join-photo.webp"
-                alt="Why Join Devapp"
+                alt="DevApp Grid team at work"
                 width={800}
                 height={600}
                 className="w-full aspect-16/10 lg:aspect-4/3 object-cover"
@@ -208,7 +228,7 @@ export default function career() {
             {/* Top Description */}
             <div className="max-w-4xl mx-auto space-y-4 text-black text-sm md:text-base leading-relaxed mb-12">
               <p>
-                Walk into Devapp Grid on any given day, and you'll feel it before anyone even explains it:
+                Walk into DevApp Grid on any given day, and you'll feel it before anyone even explains it:
                 this is a place built on the mix of technical innovation and creative energy.
                 We work hard, sure, but we also learn, laugh, and build something new almost every
                 single day, and that combination is what makes the culture here genuinely different.
@@ -216,7 +236,7 @@ export default function career() {
               </p>
               <p>
                 Ideas aren't just welcomed here, they're expected.
-                Every Devapp Grid has the freedom to think differently,
+                Every DevApp Grid team member has the freedom to think differently,
                 speak up, and actually see their ideas come to life,
                 and that kind of creative freedom is rare to find.
                 You can feel it the moment you step into our workspace:
@@ -237,14 +257,14 @@ export default function career() {
               </h3>
 
               <a
-                href="mailto:hr@Devapp.com"
+                href={`mailto:${HR_EMAIL}?subject=Job%20Application`}
                 className="text-red-700 hover:underline text-base md:text-lg font-medium inline-block mb-6"
               >
-                hr@Devapp.com
+                {HR_EMAIL}
               </a>
 
               <div>
-                <Link className="group bg-red-700 hover:bg-red-600 text-white font-semibold text-sm px-6 py-3 inline-flex items-center gap-2 transition-colors" href="mailto:hr@Devapp.com">
+                <a className="group bg-red-700 hover:bg-red-600 text-white font-semibold text-sm px-6 py-3 inline-flex items-center gap-2 transition-colors" href={`mailto:${HR_EMAIL}?subject=Job%20Application`}>
                   <span className="flex items-center gap-2 justify-center">
                     Send Resume
                     <ArrowRight
@@ -252,15 +272,14 @@ export default function career() {
                       className="transition-transform duration-300 group-hover:translate-x-1.5"
                     />
                   </span>
-
-                </Link>
+                </a>
               </div>
             </div>
 
-            {/* Life at Devapp Section */}
+            {/* Life at DevApp Grid Section */}
             <div className="max-w-5xl mx-auto text-left">
               <h3 className="text-2xl md:text-3xl font-extrabold text-black text-center mb-10">
-                Life at Devapp Grid
+                Life at DevApp Grid
               </h3>
 
               {/* 3-Column List */}
@@ -312,7 +331,8 @@ export default function career() {
           <div className="max-w-4xl mx-auto text-center">
             <img
               src="/images/letdiscuss-icon.png.webp"
-              alt="Hire Team"
+              alt="Talk to the DevApp Grid team"
+              loading="lazy"
               className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 object-contain"
             />
 
@@ -337,7 +357,7 @@ export default function career() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                info@devappgrid.com
+                <a href="mailto:info@devappgrid.com" className="hover:text-red-600">info@devappgrid.com</a>
               </span>
 
               <span className="hidden md:block">or</span>
@@ -354,9 +374,7 @@ export default function career() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                USA :<strong> +1 (866) 978-8570,</strong>
-                <strong>+1 (323) 747-7192</strong>
-                    
+                USA: <a href="tel:+18669788570" className="font-bold hover:text-red-600">+1 (866) 978-8570</a>,{" "}<a href="tel:+13237477192" className="font-bold hover:text-red-600">+1 (323) 747-7192</a>
               </span>
             </div>
 
@@ -432,16 +450,15 @@ export default function career() {
           </div>
 
             <div className="mt-20 text-center">
-              <h3 className="text-4xl font-bold">
+              <h2 className="text-4xl font-bold">
                 Have Something in Mind? Let's Talk
-              </h3>
+              </h2>
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black">
-                Have a look at the services and development process of the
-                devapp Grid. See what process we follow for mobile app and
-                software development. Have a look at how we are praised by our
-                clients. Start a conversation to innovate your next great idea
-                into reality with us.
+                Explore DevApp Grid’s services and the development process we
+                follow for mobile app and software projects, and see what our
+                clients say about working with us. Then start a conversation
+                and let’s turn your next great idea into reality together.
               </p>
             </div>
           </div>

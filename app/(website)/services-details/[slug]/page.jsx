@@ -3,23 +3,24 @@ import { notFound } from "next/navigation";
 import ServicesDetails from "../../../components/pages/services-details/page";
 import { getServicesData } from "@/lib/navigation-data";
 import { serviceCategorieBySlug } from "../../../../services/all-sub-categories";
-
 const SITE_URL = "https://devappgrid.com";
 
-// Sirf build mein bane pages chalenge (static export ke liye)
 export const dynamicParams = false;
 
-// Ek hi service ko metadata aur page dono ke liye do baar API se na mangwaye
 const getService = cache(async (slug) => {
   try {
     const res = await serviceCategorieBySlug(slug);
-    return res?.data ?? res ?? null;
-  } catch {
+    const data = res?.data ?? res ?? null;
+    // Khali array / khali object ko bhi "nahi mila" samjho
+    if (!data || (Array.isArray(data) && data.length === 0)) return null;
+    return data;
+  } catch (error) {
+    // Error chupana nahi — build log mein nazar aaye ke kaun sa page khali gaya
+    console.error(`[services-details] "${slug}" ka data nahi mila:`, error?.message || error);
     return null;
   }
 });
 
-// "&amp;" -> "&"  (Flutter title wala bug)
 function decode(str = "") {
   return String(str)
     .replace(/&nbsp;/g, " ")
@@ -30,7 +31,6 @@ function decode(str = "") {
     .replace(/&amp;/g, "&");
 }
 
-// HTML se saaf text (description / schema ke liye)
 function plain(html = "", max = 0) {
   const text = decode(String(html).replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
   if (!max || text.length <= max) return text;
@@ -38,12 +38,14 @@ function plain(html = "", max = 0) {
   return cut.slice(0, cut.lastIndexOf(" ")) + "…";
 }
 
+const nameFromSlug = (slug = "") =>
+  slug.split("-").filter(Boolean).map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
+
 export async function generateStaticParams() {
   const servicesData = await getServicesData();
-
   const slugs = [];
 
-  servicesData.categories?.forEach((category) => {
+  servicesData?.categories?.forEach((category) => {
     category.items?.forEach((item) => {
       if (item.href) {
         const slug = item.href.split("/").filter(Boolean).pop();
@@ -60,16 +62,17 @@ export async function generateMetadata({ params }) {
   const service = await getService(slug);
 
   const path = `/services-details/${slug}`;
-  const title = decode(service?.meta_title || service?.title || "Services");
-  const description = decode(
-    service?.meta_description || plain(service?.description || service?.content, 155)
-  );
+  const name = decode(service?.h1 || service?.title || service?.name || nameFromSlug(slug));
+  const title = decode(service?.meta_title || `${name} | DevApp Grid`);
+  const description =
+    decode(service?.meta_description || plain(service?.description || service?.content, 155)) ||
+    `Hire DevApp Grid for ${name} services. Custom, secure, and scalable solutions for businesses across the USA.`;
   const image = service?.image || service?.banner_image || undefined;
 
   return {
     title,
     description,
-    alternates: { canonical: path }, // -> https://devappgrid.com/services-details/<slug>
+    alternates: { canonical: path },
     openGraph: {
       title,
       description,
@@ -92,20 +95,21 @@ export default async function Page({ params }) {
   if (!service) notFound();
 
   const path = `/services-details/${slug}`;
-  const name = decode(service?.h1 || service?.title || "");
+  const name = decode(service?.h1 || service?.title || service?.name || nameFromSlug(slug));
   const description = decode(
     service?.meta_description || plain(service?.description || service?.content, 155)
   );
 
-  // FAQ field ka naam apne API ke hisab se check karein (faqs / faq)
-  const faqs = Array.isArray(service?.faqs) ? service.faqs : [];
+  const faqs = (Array.isArray(service?.faqs) ? service.faqs : []).filter(
+    (f) => f?.question && f?.answer
+  );
 
   const schemas = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
       name,
-      description,
+      ...(description ? { description } : {}),
       url: `${SITE_URL}${path}`,
       provider: { "@type": "Organization", name: "DevApp Grid", url: SITE_URL },
       areaServed: { "@type": "Country", name: "United States" },
@@ -120,7 +124,6 @@ export default async function Page({ params }) {
       ],
     },
   ];
-
   if (faqs.length) {
     schemas.push({
       "@context": "https://schema.org",
@@ -143,7 +146,7 @@ export default async function Page({ params }) {
         />
       ))}
 
-      {/* Data ab server se jata hai — HTML mein content hoga, Google parh sakega */}
+      {/* Data server se jata hai — HTML mein content hoga, Google parh sakega */}
       <ServicesDetails slug={slug} initialService={service} />
     </>
   );

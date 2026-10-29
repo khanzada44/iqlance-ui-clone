@@ -20,6 +20,30 @@ import { Navigation, Autoplay } from "swiper/modules";
 import { partners, testimonials } from "../../../../utils/data";
 import { useRouter } from "next/navigation";
 
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\d+\s()-]/g, "").replace(/(?!^)\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\s()-]/g, "");
+  if (!/^\+?\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// "+1 (647) 555-0100" -> "tel:+16475550100"
+const telHref = (phone = "") => {
+  const d = String(phone).replace(/[^\d+]/g, "");
+  if (d.startsWith("+")) return `tel:${d}`;
+  return `tel:+${d.length === 10 ? `1${d}` : d}`; // 10 digit US/Canada number -> +1
+};
+
 export default function ContactSection() {
   const fileInputRef = useRef(null);
   const router = useRouter();
@@ -42,7 +66,8 @@ export default function ContactSection() {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -74,8 +99,9 @@ export default function ContactSection() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
@@ -102,7 +128,7 @@ export default function ContactSection() {
 
       payload.append("name", formData.name.trim());
       payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
+      payload.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -112,7 +138,7 @@ export default function ContactSection() {
         payload.append("file", formData.file);
       }
 
-      const response = await submitContactForm(payload);
+      await submitContactForm(payload);
       router.push("/thanks-You");
       setStatusMessage({
         type: "success",
@@ -136,8 +162,7 @@ export default function ContactSection() {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API ERROR:", error);
-      console.error("API RESPONSE:", error?.response?.data);
+      console.error("Form submit failed:", error?.response?.data || error);
 
       let errorMessage = "Failed to send message. Please try again later.";
 
@@ -169,30 +194,31 @@ export default function ContactSection() {
 
             <p className="mt-4 sm:mt-6 text-black text-base sm:text-lg">
               Share Your Project Details on{" "}
-              <span className="font-semibold break-all">
+              <a href="mailto:info@devappgrid.com" className="font-semibold break-all hover:text-red-600">
                 info@devappgrid.com
-              </span>
+              </a>
             </p>
 
             <div className="mt-6">
-              <h3 className="font-bold text-lg">Talk To Experts:</h3>
+              <h2 className="font-bold text-lg">Talk to Our Experts:</h2>
 
               <p className="mt-2 text-black text-sm sm:text-base leading-relaxed">
-                USA: +1 (866) 978-8570
+                USA:{" "}
+                <a href="tel:+18669788570" className="hover:text-red-600">
+                  +1 (866) 978-8570
+                </a>
                 <br />
-                <a
-                    href="tel:+1323747-7192"
-                    className=" transition-colors"
-                  >
-                   USA: +1 (323) 747-7192
-                  </a>
+                USA:{" "}
+                <a href="tel:+13237477192" className="hover:text-red-600">
+                  +1 (323) 747-7192
+                </a>
               </p>
             </div>
 
             <p className="mt-6 text-black text-sm sm:text-base leading-7 sm:leading-8">
-              Get in touch with us for app development, software development and
-              Hire Dedicated Developers to bring your product to reality within
-              your timeline and budget.
+              Get in touch with us for app development, software development, or
+              to hire dedicated developers who can bring your product to life
+              within your timeline and budget.
             </p>
 
             <ul className="mt-8 space-y-4 sm:space-y-5 text-base sm:text-lg">
@@ -248,7 +274,10 @@ export default function ContactSection() {
 
                   <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                     <div>
+                      <label htmlFor="contact-name" className="sr-only">Name</label>
                       <input
+                        id="contact-name"
+                        autoComplete="name"
                         type="text"
                         name="name"
                         placeholder="Name*"
@@ -260,7 +289,10 @@ export default function ContactSection() {
                     </div>
 
                     <div>
+                      <label htmlFor="contact-email" className="sr-only">Email</label>
                       <input
+                        id="contact-email"
+                        autoComplete="email"
                         type="email"
                         name="email"
                         placeholder="Email*"
@@ -272,22 +304,34 @@ export default function ContactSection() {
                     </div>
 
                     <div>
+                      <label htmlFor="contact-phone" className="sr-only">Phone</label>
                       <input
+                        id="contact-phone"
+                        autoComplete="tel"
+                        inputMode="tel"
+                        maxLength={20}
+                        aria-invalid={!!errors.phone}
                         type="tel"
                         name="phone"
                         placeholder="Phone*"
                         value={formData.phone}
                         onChange={handleChange}
+                        onBlur={() =>
+                          formData.phone &&
+                          setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                        }
                         className={`w-full bg-transparent border-b-2 ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-black placeholder-gray-400 transition-colors`}
                       />
                       {errors.phone && <span className="text-xs text-red-600 mt-1 block">{errors.phone}</span>}
                     </div>
 
                     <div>
+                      <label htmlFor="contact-message" className="sr-only">Project details</label>
                       <textarea
+                        id="contact-message"
                         name="message"
                         rows={3}
-                        placeholder="Write here Brief about the project..."
+                        placeholder="Write a brief about your project..."
                         value={formData.message}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-black placeholder-gray-400 resize-y transition-colors"
@@ -375,6 +419,9 @@ export default function ContactSection() {
         {/* Offices Section */}
         <section className="py-10 mt-15">
           <div className="max-w-7xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black text-center mb-10">
+              Our Offices
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {offices.map((office) => (
                 <div
@@ -383,13 +430,14 @@ export default function ContactSection() {
                 >
                   <div>
                     {office.title && (
-                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-black">
+                      <p className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-black">
                         {office.title}
-                      </h4>
+                      </p>
                     )}
                     <img
                       src={office.image}
-                      alt={office.city}
+                      alt={`DevApp Grid office in ${office.city}`}
+                      loading="lazy"
                       className="w-20 h-20 sm:w-24 sm:h-24 mx-auto object-contain"
                     />
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mt-4 sm:mt-6 text-black">
@@ -413,7 +461,9 @@ export default function ContactSection() {
                           WebkitMaskSize: "contain",
                         }}
                       ></div>
-                      <span>{office.phone}</span>
+                      <a href={telHref(office.phone)} className="hover:text-red-600">
+                        {office.phone}
+                      </a>
                     </div>
                   )}
                 </div>
@@ -429,8 +479,9 @@ export default function ContactSection() {
               Client Testimonials
             </h2>
             <p className="mt-4 sm:mt-6 text-black text-sm sm:text-base md:text-xl leading-relaxed max-w-4xl mx-auto">
-              Innovating user-centric and results-driven solutions based on the
-              demanded industry of the client makes them speak about our work.
+              We build user-centric, results-driven solutions around each
+              client’s industry, and that is why our clients speak so highly
+              of our work.
             </p>
           </div>
 
@@ -455,7 +506,8 @@ export default function ContactSection() {
                       <div className="w-12 h-12 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
-                          alt={item.name}
+                          alt={`${item.name} – client review`}
+                          loading="lazy"
                           className="w-full h-full object-cover rounded-full"
                           onError={(e) => {
                             e.target.src =
@@ -488,7 +540,8 @@ export default function ContactSection() {
                       </span>
                       <img
                         src={item.verifiedImage}
-                        alt="Google Logo"
+                        alt="Verified Google review"
+                        loading="lazy"
                         className="h-6 sm:h-7 object-contain"
                         onError={(e) => {
                           e.target.src =
@@ -531,6 +584,7 @@ export default function ContactSection() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

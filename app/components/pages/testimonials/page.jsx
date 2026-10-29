@@ -7,38 +7,54 @@ import { testimonialsData, testimonials2Data } from "../testimonials/data";
 import Link from "next/link";
 import Image from "next/image";
 import { stats, partners, faqsData } from "../../../../utils/data";
-export default function testimonials() {
+// FAQPage schema — wahi sawal jo page par dikh rahe hain
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: { "@type": "Answer", text: String(f.answer).replace(/<[^>]*>/g, "") },
+  })),
+};
+
+export default function Testimonials() {
   const [open, setOpen] = useState(-1);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <div className="mt-10">
           <Image
             src="/images/about/testimonials/client-header.webp"
-            alt=""
+            alt="DevApp Grid client testimonials and reviews"
             width={1200}
             height={800}
+            priority
             className="w-full h-auto rounded-lg"
           />
         </div>
         <section className="py-10 md:py-14 bg-white mt-4">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-center leading-tight">
-              <span className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">Hear It From the People We’ve Worked With  </span>
-            </h2>
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-center leading-tight">
+              <span className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">Client Testimonials: Hear It From the People We’ve Worked With</span>
+            </h1>
             <p className="max-w-6xl mx-auto mt-8 text-center text-black text-base sm:text-lg leading-8">
-              Good work speaks for itself, but hearing it straight from our clients makes it even better. From first 
+              Good work speaks for itself, but hearing it straight from our clients makes it even better. From first
               conversations to final delivery, we’re proud of the relationships we’ve built and the results we’ve 
               achieved together.
             </p>
             <p className="max-w-6xl mx-auto mt-8 text-center text-black text-base sm:text-lg leading-8">
-              At Grid  Devapp, we believe the best projects are a two-way street. We listen, collaborate, tackle challenges 
-              head-on, and keep the bigger picture in mind. So your idea doesn’t just get built, it gets built right
+              At DevApp Grid, we believe the best projects are a two-way street. We listen, collaborate, tackle challenges
+              head-on, and keep the bigger picture in mind. So your idea doesn’t just get built, it gets built right.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-20">
               {/* Inquiry Now Link */}
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white font-semibold px-8 py-4  transition flex items-center justify-center gap-3"
               >
                 Inquiry Now
@@ -60,12 +76,12 @@ export default function testimonials() {
                 />
               </Link>
             </div>
-            <h3 className="mt-15 text-2xl md:text-4xl font-bold text-center text-black leading-tight">
+            <h2 className="mt-15 text-2xl md:text-4xl font-bold text-center text-black leading-tight">
               Web, Mobile & Custom Software Development
-            </h3>
+            </h2>
 
             <p className="max-w-6xl mx-auto mt-1 text-center text-black text-base sm:text-lg leading-8">
-                Got an idea you want to bring to life? We’ve got you covered. Devapp creates custom web, mobile, 
+                Got an idea you want to bring to life? We’ve got you covered. DevApp Grid creates custom web, mobile,
                 and software solutions that are built around your business, not the other way around. From the first 
                 line of code to the final launch, we keep things practical, purposeful, and ready to grow with you.
             </p>
@@ -82,7 +98,8 @@ export default function testimonials() {
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
-                    alt=""
+                    alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                    loading="lazy"
                     className="w-11 h-11 object-contain"
                   />
                 </div>
@@ -114,7 +131,8 @@ export default function testimonials() {
                   <div className="flex items-center gap-4">
                     <img
                       src={item.logo}
-                      alt={item.name}
+                      alt={`${item.name} logo`}
+                      loading="lazy"
                       className="w-12 h-12 object-contain"
                     />
 
@@ -141,7 +159,8 @@ export default function testimonials() {
 
                     <img
                       src={item.verifiedLogo}
-                      alt={item.source}
+                      alt={`Verified on ${item.source}`}
+                      loading="lazy"
                       className="h-6 object-contain"
                     />
                   </div>
@@ -156,7 +175,7 @@ export default function testimonials() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain w-auto h-auto"
@@ -170,7 +189,7 @@ export default function testimonials() {
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
+              Send your requirements to:
             </p>
 
             {/* Contact Info Box */}
@@ -218,7 +237,7 @@ export default function testimonials() {
                     +1 (866) 978-8570,
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                     +1 (323) 747-7192
@@ -253,7 +272,8 @@ export default function testimonials() {
                   <div className="flex items-center gap-4">
                     <img
                       src={item.logo}
-                      alt={item.name}
+                      alt={`${item.name} logo`}
+                      loading="lazy"
                       className="w-12 h-12 object-contain"
                     />
 
@@ -280,7 +300,8 @@ export default function testimonials() {
 
                     <img
                       src={item.verifiedLogo}
-                      alt={item.source}
+                      alt={`Verified on ${item.source}`}
+                      loading="lazy"
                       className="h-6 object-contain"
                     />
                   </div>
@@ -295,7 +316,7 @@ export default function testimonials() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain w-auto h-auto"
@@ -304,12 +325,12 @@ export default function testimonials() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
-              Ready to Get Started?
+              Like What You See? Let’s Build Yours.
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
+              Send your requirements to:
             </p>
 
             {/* Contact Info Box */}
@@ -357,7 +378,7 @@ export default function testimonials() {
                     +1 (866) 978-8570,
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                     +1 (323) 747-7192
@@ -439,16 +460,15 @@ export default function testimonials() {
           </div>
 
             <div className="mt-20 text-center">
-              <h3 className="text-4xl font-bold">
+              <h2 className="text-4xl font-bold">
                 Have Something in Mind? Let's Talk
-              </h3>
+              </h2>
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black">
-                Have a look at the services and development process of the
-                Devapp Grid. See what process we follow for mobile app and
-                software development. Have a look at how we are praised by our
-                clients. Start a conversation to innovate your next great idea
-                into reality with us.
+                Explore DevApp Grid’s services and the development process we
+                follow for mobile app and software projects, and see what our
+                clients say about working with us. Then start a conversation
+                and let’s turn your next great idea into reality together.
               </p>
             </div>
           </div>
@@ -468,6 +488,7 @@ export default function testimonials() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

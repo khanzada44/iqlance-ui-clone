@@ -9,25 +9,41 @@ import { stats, partners, faqsData } from "../../../../utils/data";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function faqs() {
-  const [open, setOpen] = useState(null);
+// FAQPage schema — wahi sawal jo page par dikh rahe hain
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: { "@type": "Answer", text: String(f.answer).replace(/<[^>]*>/g, "") },
+  })),
+};
+
+export default function Faqs() {
+  const [open, setOpen] = useState(-1);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <div className="mt-4">
           <Image
             src="/images/about/faqs/faqs-header-photo.webp"
-            alt=""
+            alt="DevApp Grid team answering app development questions"
             width={1200}
             height={800}
+            priority
             className="w-full h-auto rounded-lg"
           />
         </div>
 
         <section className="py-10">
-          <h3 className="flex items-center justify-center text-2xl md:text-4xl font-bold text-red-700 leading-tight">
-            FAQs
-          </h3>
+          <h1 className="flex items-center justify-center text-center text-2xl md:text-4xl font-bold text-red-700 leading-tight">
+            App Development FAQs
+          </h1>
           <p className="flex items-center justify-center text-xl font-bold text-black leading-tight mt-1">
             Got questions?
           </p>
@@ -35,7 +51,7 @@ export default function faqs() {
             We have got answers!
           </p>
           <p className="flex items-center justify-center text-center text-black text-[18px] mt-2 px-5">
-            At Devapp Grid, no two mobile initiatives get the same cookie-cutter treatment.
+            At DevApp Grid, no two mobile initiatives get the same cookie-cutter treatment.
             We're driven by ideas, and our job is turning yours into an application built exclusively
             for your business. That process starts the moment we clear up any confusion or doubts you
             have about app development.
@@ -45,7 +61,7 @@ export default function faqs() {
             Your questions matter to us just as much as your ideas do. We're here to consult,
             answer, and guide you through anything
             related to app and software development. Get in touch today,
-            and let's collaborate on making your success the next big step forward.{" "}
+            and let's collaborate on making your success the next big step forward.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
 
@@ -82,7 +98,7 @@ export default function faqs() {
 
             {/* Description */}
             <p className="mt-6 text-center text-[18px] leading-8 text-black">
-              Devapp Grid has built a name for itself as a leading software, web,
+              DevApp Grid has built a name for itself as a leading software, web,
               and mobile app development company, with deep experience crafting technology
               solutions that are as secure as they are impressive, backed by end-to-end encryption
               from the ground up. We bring genuine industry expertise
@@ -101,7 +117,8 @@ export default function faqs() {
                     <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                       <img
                         src={item.icon}
-                        alt=""
+                        alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                        loading="lazy"
                         className="w-11 h-11 object-contain"
                       />
                     </div>
@@ -130,9 +147,9 @@ export default function faqs() {
               </h2>
 
               <p className="mt-4 text-[18px] leading-8 text-[#444]">
-                Have Questions related to our app developers Canada or about the
-                cost of development? Here are Answers to some common questions
-                rising in your mind!
+                Have questions about working with our app developers in the USA
+                or about the cost of development? Here are answers to some of
+                the most common questions.
               </p>
             </div>
           </div>
@@ -189,7 +206,7 @@ export default function faqs() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain w-auto h-auto"
@@ -197,9 +214,9 @@ export default function faqs() {
             </div>
 
             {/* Section Heading */}
-            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
               Let's Bring Your Idea to Life. Talk to Our Technical Experts Today.
-            </h3>
+            </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
@@ -283,7 +300,7 @@ export default function faqs() {
             </h2>
 
             <p className="mt-2 text-[18px] leading-8 text-[#333]">
-              Take a look at what Devapp Grid brings to the table: our services,
+              Take a look at what DevApp Grid brings to the table: our services,
               our step-by-step development process for mobile apps and software,
               and what clients have to say after working with us. When you're ready,
               let's start a conversation and build your next great idea into something real.
@@ -306,6 +323,7 @@ export default function faqs() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

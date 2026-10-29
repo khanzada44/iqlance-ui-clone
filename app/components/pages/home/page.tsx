@@ -60,11 +60,15 @@ const cardVariants = {
 
 const redCards = [1, 3, 5, 7];
 
+// Homepage counters ke asli numbers (HTML mein yahi dikhenge)
+const STATS = { retention: 96, saas: 19, industries: 30, projectStart: 24 };
+
 export default function Home() {
-  const [retention, setRetention] = useState(0);
-  const [saas, setSaas] = useState(0);
-  const [industriess, setIndustriess] = useState(0);
-  const [projectStart, setProjectStart] = useState(0);
+  // Asli numbers pehle se — Google aur bina-JS visitors ko "96%" nazar aaye, "0%" nahi
+  const [retention, setRetention] = useState(STATS.retention);
+  const [saas, setSaas] = useState(STATS.saas);
+  const [industriess, setIndustriess] = useState(STATS.industries);
+  const [projectStart, setProjectStart] = useState(STATS.projectStart);
 
   const statsRef = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
@@ -73,6 +77,14 @@ export default function Home() {
     const element = statsRef.current;
 
     if (!element) return;
+
+    // Agar counters abhi screen par nahi, to 0 se shuru karo (scroll par ginti chalegi)
+    if (element.getBoundingClientRect().top > window.innerHeight) {
+      setRetention(0);
+      setSaas(0);
+      setIndustriess(0);
+      setProjectStart(0);
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -85,10 +97,10 @@ export default function Home() {
           const animate = (currentTime: number) => {
             const progress = Math.min((currentTime - startTime) / duration, 1);
 
-            setRetention(Math.floor(progress * 96));
-            setSaas(Math.floor(progress * 19));
-            setIndustriess(Math.floor(progress * 30));
-            setProjectStart(Math.floor(progress * 24));
+            setRetention(Math.floor(progress * STATS.retention));
+            setSaas(Math.floor(progress * STATS.saas));
+            setIndustriess(Math.floor(progress * STATS.industries));
+            setProjectStart(Math.floor(progress * STATS.projectStart));
 
             if (progress < 1) {
               requestAnimationFrame(animate);
@@ -155,13 +167,14 @@ export default function Home() {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
+              aria-hidden="true"
             />
             <div className="absolute inset-0 bg-black/65" />
             <div className="relative z-10 mx-auto w-[92%] min-h-155 flex items-center">
               <div className="w-full lg:w-[58%] xl:w-[55%] py-16 lg:py-20">
                 <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium mb-3">
-                  Got a Big Idea? Let's Build It Into Something Real.
+                  Got a Big Idea? Let&apos;s Build It Into Something Real.
                 </p>
                 <h1 className="max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[58px] font-bold italic leading-[1.08] mb-5 text-white">
                   DevApp Grid - Mobile App Development Company
@@ -171,7 +184,7 @@ export default function Home() {
                   yours into a digital product that actually works. Our team of
                   developers, designers, and tech strategists builds secure,
                   high-performing solutions shaped around your goals. Explore
-                  our work and contact us today !
+                  our work and contact us today!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-7">
                   <Link href="/contact-us">
@@ -205,7 +218,7 @@ export default function Home() {
         >
           <div className="text-center flex flex-col items-center justify-center">
             <div className="flex items-end gap-1">
-              <p className="text-x2 sm:text-2xl md:text-4xl lg:text-4xl font-bold text-black">
+              <p className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold text-black">
                 {retention}
               </p>
 
@@ -398,7 +411,7 @@ export default function Home() {
               <div className="w-full flex justify-center">
                 <Image
                   src="/images/home/travis_h.webp"
-                  alt="Travis H"
+                  alt="Travis H, IT Project Specialist, USA"
                   width={500}
                   height={500}
                   className="object-cover w-full max-w-md lg:max-w-full h-125!"
@@ -428,7 +441,10 @@ export default function Home() {
                 </p>
 
                 <div className="mt-6 sm:mt-8 flex justify-center lg:justify-start">
-                  <button className="border border-red-600 px-4 sm:px-6 py-3 text-base sm:text-xl font-semibold transition flex gap-1.5 items-center w-full sm:w-auto justify-center">
+                  <a
+                    href="tel:+18669788570"
+                    className="border border-red-600 px-4 sm:px-6 py-3 text-base sm:text-xl font-semibold transition flex gap-1.5 items-center w-full sm:w-auto justify-center hover:bg-red-50"
+                  >
                     <div
                       className="w-6 h-6 bg-red-600"
                       style={{
@@ -441,7 +457,7 @@ export default function Home() {
                       }}
                     />
                     USA +1 (866) 978-8570
-                  </button>
+                  </a>
                 </div>
 
                 <div className="mt-4 sm:mt-5 flex justify-center lg:justify-start">
@@ -458,10 +474,12 @@ export default function Home() {
                 </div>
 
                 <div className="flex gap-6 sm:gap-8 mt-8 sm:mt-10 text-2xl sm:text-3xl text-[#184A8B] justify-center lg:justify-start">
-                  <i className="ri-linkedin-fill"></i>
-                  <i className="ri-twitter-x-line"></i>
-                  <i className="ri-mail-fill"></i>
-                  <i className="ri-share-line"></i>
+                  <i className="ri-linkedin-fill" aria-hidden="true"></i>
+                  <i className="ri-twitter-x-line" aria-hidden="true"></i>
+                  <a href="mailto:info@devappgrid.com" aria-label="Email DevApp Grid">
+                    <i className="ri-mail-fill" aria-hidden="true"></i>
+                  </a>
+                  <i className="ri-share-line" aria-hidden="true"></i>
                 </div>
               </div>
 
@@ -529,8 +547,6 @@ export default function Home() {
                 <div className="flex h-full w-full bg-red-100 px-4 py-8 sm:px-6 sm:py-10 md:px-12 ">
                   <div className="grid w-full grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
                     <div className="flex min-w-0 flex-col">
-                      <h2 className="mb-6 text-center text-xl font-bold sm:mb-10 sm:text-2xl md:text-4xl">
-                      </h2>
 
                       <h3 className="mb-4 text-xl font-bold sm:mb-6 sm:text-2xl md:text-4xl">
                         {slide.title}
@@ -658,9 +674,9 @@ export default function Home() {
         </div>
 
         <div className="w-full text-center pt-2 mt-10 mb-10">
-          <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight px-2">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight px-2">
             The Future Runs on AI, We Help You Build It
-          </h1>
+          </h2>
         </div>
 
         <div className="mt-10 mb-15 w-full pt-2 max-w-7xl mx-auto">
@@ -696,7 +712,7 @@ export default function Home() {
           <div className="mx-auto mt-10 mb-10 w-full max-w-4xl px-2 text-center sm:mt-14">
             <Image
               src="/images/letdiscuss-icon.png.webp"
-              alt="Hire Team"
+              alt="Talk to the DevApp Grid team"
               width={64}
               height={64}
               className="mx-auto mb-4 h-12 w-12 object-contain sm:mb-6 sm:h-16 sm:w-16"
@@ -726,7 +742,7 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  info@devappgrid.com
+                  <a href="mailto:info@devappgrid.com" className="hover:text-red-600">info@devappgrid.com</a>
                 </span>
 
                 <span className="block"></span>
@@ -742,8 +758,7 @@ export default function Home() {
                       WebkitMaskSize: "contain",
                     }}
                   />
-                  USA : <strong>+1 (866) 978-8570,</strong>
-                  <strong>+1 (323) 747-7192 </strong>
+                  USA: <a href="tel:+18669788570" className="font-bold hover:text-red-600">+1 (866) 978-8570</a>,{" "}<a href="tel:+13237477192" className="font-bold hover:text-red-600">+1 (323) 747-7192</a>
                 </span>
               </div>
             </div>
@@ -770,7 +785,7 @@ export default function Home() {
           <p className="mt-4 sm:mt-6 text-black  text-sm sm:text-base md:text-lg leading-7 sm:leading-8">
             Need extra expertise or a dedicated team? Our developers, designers, and QA specialists
             work seamlessly with your team to deliver reliable iOS app development services, web,
-            software development, and AI solutions Whether you need one specialist or a complete team, hire dedicated developers USA
+            software development, and AI solutions. Whether you need one specialist or a complete team, hire dedicated developers USA
             businesses can rely on for flexible support and scalable development tailored to your goals.
           </p>
         </div>
@@ -823,11 +838,11 @@ export default function Home() {
           </Swiper>
         </section>
         <div className="px-3 mt-10">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mt-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mt-10">
             Our Design & Development Approach
-          </h1>
+          </h2>
           <p className="max-w-5xl mx-auto text-center text-black mt-5 sm:mt-6 leading-5 sm:leading-8 text-sm sm:text-base font-semibold">
-            Every great digital product starts with a clear strategy not a line of code. Whether you need
+            Every great digital product starts with a clear strategy, not a line of code. Whether you need
             mobile app development, custom software, web application development, or an AI-
             powered solution, our proven process reduces risk, keeps projects on track, and aligns the
             final product with your business goals.
@@ -871,9 +886,9 @@ export default function Home() {
         </section>
         <section>
           <div className="flex justify-center">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-gray-900">
               What Our Clients Say
-            </h1>
+            </h2>
           </div>
         </section>
         <section className="w-full max-w-6xl mx-auto px-4 py-12">
@@ -898,7 +913,8 @@ export default function Home() {
                       <div className="w-16 h-16  border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
-                          alt={item.name}
+                          alt={`${item.name} – client review`}
+                          loading="lazy"
                           className="w-full h-full object-contain "
                           onError={(e) => {
                             (e.target as HTMLImageElement).src =
@@ -930,7 +946,7 @@ export default function Home() {
                       </span>
                       <img
                         src={item.verifiedImage}
-                        alt="Google Logo"
+                        alt="Verified Google review"
                         className="h-7 object-contain"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src =
@@ -961,9 +977,9 @@ export default function Home() {
         {/* INDUSTRIES */}
         <section className="w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
           <div className="text-center max-w-x2 mx-auto space-y-2 mt-10 mb-10">
-            <h1 className="text-3xl sm:text-3xl md:text-3xl font-extrabold text-gray-900">
+            <h2 className="text-3xl sm:text-3xl md:text-3xl font-extrabold text-gray-900">
               Why Businesses Trust Us
-            </h1>
+            </h2>
             <p className="text-xl text-gray-900">
               From startups to established enterprises, we help businesses turn ideas into digital solutions
               that deliver real results. Our team uses modern technology and custom software
@@ -982,7 +998,7 @@ export default function Home() {
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <Image
                     src={item.icon}
-                    alt=""
+                    alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
                     width={44}
                     height={44}
                     className="w-11 h-11 object-contain"
@@ -1008,7 +1024,7 @@ export default function Home() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.png.webp"
-                alt="Custom Logistics App Support"
+                alt="Get started with DevApp Grid"
                 width={64}
                 height={64}
                 className="object-contain"
@@ -1055,16 +1071,17 @@ export default function Home() {
                   ></div>
                   <span>USA</span>
                   <a
-                    href="tel:+14697939837"
+                    href="tel:+18669788570"
                     className="hover:text-red-600 transition-colors"
                   >
                     +1 (866) 978-8570,
                   </a>
-                  <span>+1 (323) 747-7192 </span>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className="hover:text-red-600 transition-colors"
-                  ></a>
+                  >
+                    +1 (323) 747-7192
+                  </a>
                 </div>
               </div>
             </div>
@@ -1089,7 +1106,7 @@ export default function Home() {
             </h2>
 
             <p className="max-w-6xl mx-auto text-center  mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base">
-              At DevApp, we don't believe in one-size-fits-all solutions. Every industry has its own
+              At DevApp Grid, we don't believe in one-size-fits-all solutions. Every industry has its own
               challenges, so we build technology around what your business actually needs. With hands-on
               experience across sectors, we deliver high-quality web applications and custom software
               development solutions designed for real-world requirements.
@@ -1115,7 +1132,8 @@ export default function Home() {
                     <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
                       <img
                         src={item.icon}
-                        alt=""
+                        alt={`${item.title} industry icon`}
+                        loading="lazy"
                         className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
                       />
                     </div>
@@ -1193,14 +1211,14 @@ export default function Home() {
                   We're proud to stand alongside some of the best in the business, including Fortune 500 companies.
                   Our clients put their trust in us, and we deliver innovation that turns into real, measurable success.
                   From local startups to global enterprises, we've helped build digital solutions that make an impact
-                  across the world
+                  across the world.
                 </p>
               </div>
 
               <div className="flex justify-center lg:justify-end">
                 <Image
                   src="/images/globe-vector.png.webp"
-                  alt="Globe"
+                  alt="DevApp Grid clients around the world"
                   width={520}
                   height={520}
                   className="w-full max-w-xs sm:max-w-md lg:max-w-130 object-contain"
@@ -1213,7 +1231,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <Image
               src="/images/letdiscuss-icon.png.webp"
-              alt="Hire Team"
+              alt="Talk to the DevApp Grid team"
               width={64}
               height={64}
               className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 object-contain"
@@ -1243,7 +1261,7 @@ export default function Home() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                info@devappgrid.com
+                <a href="mailto:info@devappgrid.com" className="hover:text-red-600">info@devappgrid.com</a>
               </span>
 
               <span className="hidden md:block">or</span>
@@ -1260,8 +1278,7 @@ export default function Home() {
                     WebkitMaskSize: "contain",
                   }}
                 ></div>
-                USA :<strong> +1 (866) 978-8570,</strong>
-                <strong>+1 (323) 747-7192 </strong>
+                USA: <a href="tel:+18669788570" className="font-bold hover:text-red-600">+1 (866) 978-8570</a>,{" "}<a href="tel:+13237477192" className="font-bold hover:text-red-600">+1 (323) 747-7192</a>
               </span>
             </div>
 
@@ -1280,11 +1297,11 @@ export default function Home() {
           </div>
         </section>
         <div className="mt-12 w-full px-3 sm:px-5 py-10 sm:py-12 max-w-7xl mx-auto">
-          <h1 className="flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight text-center">
+          <h2 className="flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight text-center">
             Have Something in Mind? Let's Talk.
-          </h1>
+          </h2>
           <p className="flex items-center justify-center text-center mt-3 sm:mt-4 text-sm sm:text-base">
-            Take a look at what Devapp Grid brings to the table our
+            Take a look at what DevApp Grid brings to the table: our
             services, our development process, and the proven approach we follow
             for mobile app and software development. See what our clients have
             to say about working with us. Then, let's start a conversation and
@@ -1305,6 +1322,7 @@ export default function Home() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

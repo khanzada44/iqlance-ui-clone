@@ -7,7 +7,7 @@ import {
   Paperclip,
 } from "lucide-react";
 import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
@@ -35,7 +35,46 @@ import {
 } from "./data";
 import Image from "next/image";
 
-export default function fitness() {
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\d+\s()-]/g, "").replace(/(?!^)\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\s()-]/g, "");
+  if (!/^\+?\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// FAQPage schema — wahi sawal jo page par dikh rahe hain (points bhi jawab mein)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: [String(f.answer || ""), ...(f.points || [])].join(" ").replace(/<[^>]*>/g, "").trim(),
+    },
+  })),
+};
+
+// Process steps ki images (har step ka apna alt)
+const stepImages = [
+  { src: "/images/solutions/Online-Food-Ordering/discove.webp", alt: "Discover: understanding your food delivery business" },
+  { src: "/images/solutions/Online-Food-Ordering/uiux-design.webp", alt: "Design: food ordering app UI/UX" },
+  { src: "/images/solutions/Online-Food-Ordering/development.webp", alt: "Build: food delivery app development" },
+  { src: "/images/solutions/Online-Food-Ordering/user-testing.webp", alt: "Deliver: testing and launching the food delivery app" },
+];
+
+export default function FoodDeliverySolution() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
@@ -88,10 +127,8 @@ export default function fitness() {
     },
   ];
 
-  const currentStep = processSteps[activeStepIndex] || processSteps[0];
   // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
   // Form State
-  const [blogs, setBlogs] = useState([]);
   const fileInputRef = useRef(null);
   const [errors, setErrors] = useState({});
   const validateForm = () => {
@@ -107,8 +144,9 @@ export default function fitness() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
@@ -119,7 +157,8 @@ export default function fitness() {
     }
   };
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
     if (errors[name]) {
@@ -147,7 +186,7 @@ export default function fitness() {
 
       payload.append("name", formData.name.trim());
       payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
+      payload.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -157,7 +196,7 @@ export default function fitness() {
         payload.append("file", formData.file);
       }
 
-      const response = await submitContactForm(payload);
+      await submitContactForm(payload);
       router.push("/thanks-You");
       setStatusMessage({
         type: "success",
@@ -181,8 +220,7 @@ export default function fitness() {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API ERROR:", error);
-      console.error("API RESPONSE:", error?.response?.data);
+      console.error("Form submit failed:", error?.response?.data || error);
 
       let errorMessage = "Failed to send message. Please try again later.";
 
@@ -202,22 +240,13 @@ export default function fitness() {
       setLoading(false);
     }
   };
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const data = await getBlogs();
-        const blogList = data?.response?.data || [];
-        setBlogs(blogList);
-      } catch (error) {
-        setBlogs([]);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -230,7 +259,7 @@ export default function fitness() {
               </h1>
               <p className="text-base md:text-lg leading-relaxed text-black">
                 Ready to launch a food ordering platform that actually holds up
-                under pressure? Devapp Grid has earned its place among the top food
+                under pressure? DevApp Grid has earned its place among the top food
                 delivery app developers in the USA by shipping scalable,
                 cloud-ready platforms packed with the features modern users
                 expect. We build complete delivery ecosystems covering ordering,
@@ -287,7 +316,10 @@ export default function fitness() {
                   noValidate
                 >
                   <div>
+                    <label htmlFor="fds-name" className="sr-only">Name</label>
                     <input
+                      id="fds-name"
+                      autoComplete="name"
                       type="text"
                       name="name"
                       placeholder="Name*"
@@ -306,7 +338,10 @@ export default function fitness() {
                   </div>
 
                   <div>
+                    <label htmlFor="fds-email" className="sr-only">Email</label>
                     <input
+                      id="fds-email"
+                      autoComplete="email"
                       type="email"
                       name="email"
                       placeholder="Email*"
@@ -325,12 +360,22 @@ export default function fitness() {
                   </div>
 
                   <div>
+                    <label htmlFor="fds-phone" className="sr-only">Phone</label>
                     <input
+                      id="fds-phone"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      maxLength={20}
+                      aria-invalid={!!errors.phone}
                       type="tel"
                       name="phone"
                       placeholder="Phone*"
                       value={formData.phone}
                       onChange={handleChange}
+                      onBlur={() =>
+                        formData.phone &&
+                        setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                      }
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.phone ? "border-red-500" : "border-gray-300"
@@ -344,10 +389,12 @@ export default function fitness() {
                   </div>
 
                   <div>
+                    <label htmlFor="fds-message" className="sr-only">Project details</label>
                     <textarea
+                      id="fds-message"
                       name="message"
                       rows={3}
-                      placeholder="Write here Brief about the project..."
+                      placeholder="Write a brief about your project..."
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
@@ -436,7 +483,7 @@ export default function fitness() {
           <div className="flex justify-center lg:justify-end">
             <Image
               src="/images/solutions/Online-Food-Ordering/top-solution-right.webp"
-              alt="Customer Support"
+              alt="Food delivery app solutions designed around results"
               width={600}
               height={600}
               className="w-full max-w-md h-auto object-cover"
@@ -505,7 +552,8 @@ export default function fitness() {
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
                   <img
                     src={item.imageUrl}
-                    alt={item.imageAlt}
+                    alt={item.imageAlt || item.title}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -515,10 +563,9 @@ export default function fitness() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Trusted Web, Mobile & Software Development Company
-            </h1>
+            </h2>
           </div>
         </section>
         <section>
@@ -531,7 +578,7 @@ export default function fitness() {
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <Image
                     src={item.icon}
-                    alt=""
+                    alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
                     width={44}
                     height={44}
                     className="w-11 h-11 object-contain"
@@ -557,13 +604,12 @@ export default function fitness() {
         <section>
           <div className="text-center space-y-3 mb-10 px-5">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
-              Endeavors that Make us Proud
+              Endeavors That Make Us Proud
             </h2>
             <p className="text-black text-sm md:text-base max-w-5xl mx-auto">
-              Devapp Grid has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
+              DevApp Grid has earned great feedback for building mobile apps
+              that are unique and user-centric. Here are some of the projects
+              we are most proud of.
             </p>
           </div>
         </section>
@@ -616,17 +662,20 @@ export default function fitness() {
                           ))}
                         </div>
 
-                        <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                        <Link
+                          href="/portfolio"
+                          className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold inline-flex justify-center items-center gap-3 transition"
+                        >
                           View Case Study
                           <ArrowRight
                             size={18}
                             className="transition-transform duration-300 group-hover:translate-x-1"
                           />
-                        </button>
+                        </Link>
                       </div>
 
                       <div className="flex justify-center">
-                        <img src={slide.image} alt={slide.title} className="" />
+                        <img src={slide.image} alt={slide.title} loading="lazy" />
                       </div>
                     </div>
                   </div>
@@ -640,11 +689,11 @@ export default function fitness() {
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
-                Check How We turn Your Idea into Innovative Product
+                See How We Turn Your Idea Into an Innovative Product
               </h2>
               <p className="text-black text-sm md:text-base leading-relaxed">
-                Our rich portfolio justifies that we are one of the best
-                logistics app development companies in the USA.
+                Our portfolio shows why businesses across the USA trust us as
+                one of the best food delivery app development companies.
               </p>
             </div>
 
@@ -679,6 +728,7 @@ export default function fitness() {
               <div key={index} className="flex items-center gap-6">
                 <button
                   type="button"
+                  aria-pressed={activeStepIndex === index}
                   onClick={() => setActiveStepIndex(index)}
                   className={`text-base font-semibold transition-all whitespace-nowrap pb-3 -mb-3 border-b-2 ${
                     activeStepIndex === index
@@ -697,66 +747,38 @@ export default function fitness() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
-            <div className="relative w-72 h-72 mx-auto flex">
-              {activeStepIndex === 0 && (
-                <div className="">
-                  <img
-                    src="/images/solutions/Online-Food-Ordering/discove.webp"
-                    alt="Discover"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 2 Image - Design */}
-              {activeStepIndex === 1 && (
-                <div className="">
-                  <img
-                    src="/images/solutions/Online-Food-Ordering/uiux-design.webp"
-                    alt="Design"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-
-              {/* Step 3 Image - Build */}
-              {activeStepIndex === 2 && (
-                <div className="">
-                  <img
-                    src="/images/solutions/Online-Food-Ordering/development.webp"
-                    alt="Design"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-              {activeStepIndex === 3 && (
-                <div className="">
-                  <img
-                    src="/images/solutions/Online-Food-Ordering/user-testing.webp"
-                    alt="Design"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
+          {/* Har step ka content HTML mein (Google parh sake), sirf active step nazar aata hai */}
+          {processSteps.map((step, index) => (
+            <div
+              key={step.stepLabel}
+              className={activeStepIndex === index ? "grid grid-cols-1 md:grid-cols-2 gap-12" : "hidden"}
+            >
+              <div className="relative w-72 h-72 mx-auto flex">
+                <img
+                  src={stepImages[index]?.src}
+                  alt={stepImages[index]?.alt || step.tabTitle}
+                  loading="lazy"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                <span className="text-xs font-semibold tracking-wider text-black uppercase mb-2">
+                  {step.stepLabel}
+                </span>
+                <h3 className="text-3xl font-extrabold text-black mb-4">
+                  {step.heading}
+                </h3>
+                <p className="text-black leading-relaxed text-sm max-w-md">
+                  {step.description}
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col justify-center">
-              <span className="text-xs font-semibold tracking-wider text-black uppercase mb-2">
-                {currentStep.stepLabel}
-              </span>
-              <h2 className="text-3xl font-extrabold text-black mb-4">
-                {currentStep.heading}
-              </h2>
-              <p className="text-black leading-relaxed text-sm max-w-md">
-                {currentStep.description}
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="text-center max-w-6xl mx-auto space-y-4 mt-4 px-5">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-            Technologies that Powering Future-Ready Food Delivery App
+            Technologies Powering Future-Ready Food Delivery App
             Development
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
@@ -774,6 +796,8 @@ export default function fitness() {
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
+                    type="button"
+                    aria-pressed={activetechnologies === index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${
                       activetechnologies === index
@@ -791,25 +815,31 @@ export default function fitness() {
                 ))}
               </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
-              {technologies[activetechnologies].items.map((item, index) => (
-                <div
-                  key={index}
-                  className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={56}
-                    height={56}
-                    className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                  />
-                  <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
-                    {item.name}
-                  </h3>
-                </div>
-              ))}
-            </div>
+            {/* Har tab ka content HTML mein (Google parh sake), sirf active nazar aata hai */}
+            {technologies.map((tab, tabIndex) => (
+              <div
+                key={tabIndex}
+                className={activetechnologies === tabIndex ? "flex flex-wrap justify-center gap-1 sm:gap-4" : "hidden"}
+              >
+                {tab.items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={56}
+                      height={56}
+                      className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                    />
+                    <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
+                      {item.name}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -819,7 +849,7 @@ export default function fitness() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain"
@@ -828,12 +858,12 @@ export default function fitness() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
-              Looking to Hire Dedicated Team?
+              Looking to Hire a Dedicated Team?
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
-              We are team of talented, experienced, and certified designers and
+              We are a team of talented, experienced, and certified designers and
               developers. Let us build something extraordinary.
             </p>
 
@@ -875,11 +905,11 @@ export default function fitness() {
                     }}
                   ></div>
                   <span>USA :</span>
-                  <a href="tel:+1866978-8570" className=" transition-colors">
+                  <a href="tel:+18669788570" className=" transition-colors">
                     +1 (866) 978-8570,
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                     +1 (323) 747-7192
@@ -906,8 +936,8 @@ export default function fitness() {
             Our On-Demand App Development Solutions
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
-            Expect interactive and fast processing on-demand services and models
-            from our certified developers
+            Get fast, interactive on-demand apps and business models built by
+            our certified developers.
           </p>
         </div>
         <section className="">
@@ -980,10 +1010,9 @@ export default function fitness() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Industries We Serve
-            </h1>
+            </h2>
             <p>
               Our on-demand app development services extend across multiple
               different industries, offering advanced features, rich technology
@@ -999,6 +1028,7 @@ export default function fitness() {
                 <img
                   src={item.bgImage}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
@@ -1006,7 +1036,8 @@ export default function fitness() {
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
                     <img
                       src={item.icon}
-                      alt=""
+                      alt={`${item.title} industry icon`}
+                      loading="lazy"
                       className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
                     />
                   </div>
@@ -1021,16 +1052,14 @@ export default function fitness() {
 
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Offshore Web, Mobile & Software Development Company
-            </h1>
+            </h2>
             <p>
-              Devapp Grid is a leading Software Development Company currently
-              available in the market, with over 7 years of experience under the
-              belt. Over the years, our team members have honed their skills,
-              handling over 1,500 projects of different types and companies,
-              offering flexible solutions and comprehensive benefits to all.
+              DevApp Grid is a leading software development company with over 7
+              years of experience. Over the years, our team has completed more
+              than 1,500 projects for companies of every size, offering flexible
+              solutions and real business value.
             </p>
           </div>
         </section>
@@ -1040,7 +1069,7 @@ export default function fitness() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain"
@@ -1054,7 +1083,7 @@ export default function fitness() {
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
+              Send your requirements to:
             </p>
 
             {/* Contact Info Box */}
@@ -1095,11 +1124,11 @@ export default function fitness() {
                     }}
                   ></div>
                   <span>USA :</span>
-                  <a href="tel:+1866978-8570" className=" transition-colors">
+                  <a href="tel:+18669788570" className=" transition-colors">
                     +1 (866) 978-8570,
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                     +1 (323) 747-7192
@@ -1135,7 +1164,7 @@ export default function fitness() {
                 </h3>
 
                 <p>
-                  At Devapp Grid, we use modern technologies to help food businesses
+                  At DevApp Grid, we use modern technologies to help food businesses
                   operate smarter, serve customers faster, and scale with
                   confidence. From AI-powered insights and cloud infrastructure
                   to real-time delivery tracking and secure payment solutions,
@@ -1157,21 +1186,21 @@ export default function fitness() {
             <div className="relative w-full h-80 sm:h-96 md:h-105 overflow-hidden">
               <Image
                 src="/images/efficient-access-right.jpg"
-                alt="Fast & Efficient Access To Services"
+                alt="Advanced technologies for food business growth"
                 fill
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
-                priority
               />
             </div>
           </div>
         </section>
         <section>
           <div className="text-center max-w-6xl mx-auto space-y-4 mt-4 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
-              Why Growing Food Businesses Choose Devapp Grid
-            </h1>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
+              Why Growing Food Businesses Choose DevApp Grid
+            </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              At Devapp Grid, we build food delivery platforms that combine reliable
+              At DevApp Grid, we build food delivery platforms that combine reliable
               technology, thoughtful user experiences, and business-focused
               strategy. Our solutions are designed to help U.S. food businesses
               simplify operations, connect with customers, and create a strong
@@ -1206,14 +1235,13 @@ export default function fitness() {
 
         <section>
           <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
-            <h1 className="text-3xl md:text-3xl font-bold text-black mb-6 leading-snug">
+            <h2 className="text-3xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
-            </h1>
+            </h2>
             <p>
-              Our purpose as a logistics app development company, has always
-              centered around putting customer satisfaction first. Here are some
-              of the things our past clients have to say about our services,
-              directly from them.
+              As a food delivery app development company, our purpose has always
+              centered on putting customer satisfaction first. Here is what some
+              of our clients have to say about our services.
             </p>
           </div>
         </section>
@@ -1245,7 +1273,8 @@ export default function fitness() {
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
-                          alt={item.name}
+                          alt={`${item.name} – client review`}
+                          loading="lazy"
                           className="w-full h-full object-contain rounded-full"
                           onError={(e) => {
                             e.target.src =
@@ -1282,7 +1311,7 @@ export default function fitness() {
                       </span>
                       <img
                         src={item.verifiedImage}
-                        alt="Google Logo"
+                        alt="Verified Google review"
                         className="h-7 object-contain"
                         onError={(e) => {
                           e.target.src =
@@ -1315,13 +1344,13 @@ export default function fitness() {
         <section>
           {/* Heading */}
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+            <h2 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions
-            </h1>
+            </h2>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center faq px-5">
-              Here you will find the answers you are looking for because we know
-              what’s in our client’s mind.
+              Here are answers to the questions our clients ask us most often
+              about food delivery app development.
             </p>
           </div>
 
@@ -1387,15 +1416,14 @@ export default function fitness() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
-            </h1>
+            </h2>
             <p>
-              Have a look at the services and development process of the Devapp
-              Grid. See What process we follow for mobile app and software
-              development. Have a look at how we are praised by our clients
-              Start a conversation to innovate your next great idea into reality
-              with us.
+              Explore DevApp Grid’s services and the development process we
+              follow for mobile app and software projects, and see what our
+              clients say about working with us. Then start a conversation
+              and let’s turn your next great idea into reality together.
             </p>
           </div>
         </section>
@@ -1414,6 +1442,7 @@ export default function fitness() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

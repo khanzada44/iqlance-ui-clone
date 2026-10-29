@@ -33,8 +33,38 @@ import {
 } from "../../../../utils/data";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-export default function realEstate() {
-  const [activeTab, setActiveTab] = useState("driver");
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\d+\s()-]/g, "").replace(/(?!^)\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\s()-]/g, "");
+  if (!/^\+?\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// FAQPage schema — wahi sawal jo page par dikh rahe hain (points bhi jawab mein)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: [String(f.answer || ""), ...(f.points || [])].join(" ").replace(/<[^>]*>/g, "").trim(),
+    },
+  })),
+};
+
+export default function RealEstate() {
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const fileInputRef = useRef(null);
@@ -58,12 +88,17 @@ export default function realEstate() {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
 
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
 
@@ -90,8 +125,9 @@ export default function realEstate() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
@@ -118,7 +154,7 @@ export default function realEstate() {
 
       payload.append("name", formData.name.trim());
       payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
+      payload.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -128,7 +164,7 @@ export default function realEstate() {
         payload.append("file", formData.file);
       }
 
-      const response = await submitContactForm(payload);
+      await submitContactForm(payload);
       router.push("/thanks-You");
       setStatusMessage({
         type: "success",
@@ -152,8 +188,7 @@ export default function realEstate() {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API ERROR:", error);
-      console.error("API RESPONSE:", error?.response?.data);
+      console.error("Form submit failed:", error?.response?.data || error);
 
       let errorMessage = "Failed to send message. Please try again later.";
 
@@ -175,6 +210,10 @@ export default function realEstate() {
   };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -239,7 +278,10 @@ export default function realEstate() {
                 noValidate
               >
                 <div>
+                  <label htmlFor="re-name" className="sr-only">Name</label>
                   <input
+                    id="re-name"
+                    autoComplete="name"
                     type="text"
                     name="name"
                     placeholder="Name*"
@@ -256,7 +298,10 @@ export default function realEstate() {
                 </div>
 
                 <div>
+                  <label htmlFor="re-email" className="sr-only">Email</label>
                   <input
+                    id="re-email"
+                    autoComplete="email"
                     type="email"
                     name="email"
                     placeholder="Email*"
@@ -273,12 +318,22 @@ export default function realEstate() {
                 </div>
 
                 <div>
+                  <label htmlFor="re-phone" className="sr-only">Phone</label>
                   <input
+                    id="re-phone"
+                    autoComplete="tel"
+                    inputMode="tel"
+                    maxLength={20}
+                    aria-invalid={!!errors.phone}
                     type="tel"
                     name="phone"
                     placeholder="Phone*"
                     value={formData.phone}
                     onChange={handleChange}
+                    onBlur={() =>
+                      formData.phone &&
+                      setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                    }
                     disabled={loading}
                     className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                   />
@@ -290,10 +345,12 @@ export default function realEstate() {
                 </div>
 
                 <div>
+                  <label htmlFor="re-message" className="sr-only">Project details</label>
                   <textarea
+                    id="re-message"
                     name="message"
                     rows={3}
-                    placeholder="Write here Brief about the project..."
+                    placeholder="Write a brief about your project..."
                     value={formData.message}
                     onChange={handleChange}
                     disabled={loading}
@@ -426,7 +483,7 @@ export default function realEstate() {
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
             <Image
               src="/images/industry/real-estate/custom-app-re.webp"
-              alt="Cost Calculation & Financial Planning"
+              alt="Custom real estate app development"
               width={1200}
               height={800}
               className="w-full h-full object-cover"
@@ -440,7 +497,7 @@ export default function realEstate() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain"
@@ -449,12 +506,12 @@ export default function realEstate() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
-              Looking to Hire Dedicated Team?
+              Looking to Hire a Dedicated Team?
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
-              We are team of talented, experienced, and certified designers and
+              We are a team of talented, experienced, and certified designers and
               developers. Let us build something extraordinary.
             </p>
 
@@ -500,7 +557,7 @@ export default function realEstate() {
                     +1 (866) 978-8570,
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                     +1 (323) 747-7192
@@ -523,9 +580,9 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center mb-10 mt-20">
-            <h1 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug px-5">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-snug px-5">
               Delivery Of Unrivaled Solutions Is Our Prime Objective
-            </h1>
+            </h2>
             <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
               We can help you digitalize your real estate business with the best
               real estate mobile app. We are the leading mobile app development
@@ -641,7 +698,7 @@ export default function realEstate() {
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
                   <Image
                     src={item.imageUrl}
-                    alt={item.imageAlt || ""}
+                    alt={item.imageAlt || item.title}
                     width={800}
                     height={600}
                     className="w-full h-full object-cover"
@@ -658,7 +715,7 @@ export default function realEstate() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain"
@@ -672,7 +729,7 @@ export default function realEstate() {
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
+              Send your requirements to:
             </p>
 
             {/* Contact Info Box */}
@@ -717,7 +774,7 @@ export default function realEstate() {
                     +1 (866) 978-8570,
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                     +1 (323) 747-7192
@@ -741,7 +798,7 @@ export default function realEstate() {
         <section className="max-w-6xl mx-auto px-4 py-16 text-center font-sans">
           {/* Heading & Subtitle */}
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
-            Features of Wellness and Fitness App Development
+            Features of Real Estate App Development
           </h2>
           <p className="text-black text-sm sm:text-base max-w-4xl mx-auto mb-12 leading-relaxed">
             The next-gen real estate app we provide will surely boost your
@@ -752,7 +809,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/doctor-patient-profile-icn.png"
-                alt="Login & Profile Creation"
+                alt="Social Media & User Profile feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -763,7 +821,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/ril-icn.png"
-                alt="Push Notification"
+                alt="Property List feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -775,7 +834,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/search-h-icn.png"
-                alt="Social Sharing"
+                alt="Search feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -787,7 +847,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/filter-h-icn.png"
-                alt="Filter"
+                alt="Filter feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -799,7 +860,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/categeory-icn.png"
-                alt="Category"
+                alt="Categories feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -811,7 +873,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/fav-icn.png"
-                alt="Food and Calorie Tracker"
+                alt="Favourite feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -823,7 +886,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/settings-h-icn.png"
-                alt="Schedules and Calendar"
+                alt="Settings feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -835,7 +899,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/map-h-icn.png"
-                alt="Gamification"
+                alt="Map feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -845,7 +910,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/upcoming-h-icn.png"
-                alt="Gamification"
+                alt="History feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -855,7 +921,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/recommended-h-icn.png"
-                alt="Gamification"
+                alt="Recommendation feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -865,7 +932,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/push-h-icn.png"
-                alt="Gamification"
+                alt="Push Notification feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -877,7 +945,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/revnues-h-icn.png"
-                alt="Online Sessions"
+                alt="Cost Calculator feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -887,7 +956,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/calender-icn-new.png"
-                alt="Chat"
+                alt="Calendar feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -897,7 +967,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/cm-icon.png"
-                alt="Chat"
+                alt="Call or Message feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -907,7 +978,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/vtr-icon.png"
-                alt="Chat"
+                alt="Virtual Tour Request feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -917,7 +989,8 @@ export default function realEstate() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/view-icon.png"
-                alt="Chat"
+                alt="Viewing Request feature icon"
+                loading="lazy"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -933,7 +1006,7 @@ export default function realEstate() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp" // Update this path to match your icon asset
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain"
@@ -942,12 +1015,12 @@ export default function realEstate() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
-              So, We Guess You want to talk about your Project
+              So, We Guess You Want to Talk About Your Project
             </h2>
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
-              Send your Requirements on
+              Send your requirements to:
             </p>
 
             {/* Contact Info Box */}
@@ -992,7 +1065,7 @@ export default function realEstate() {
                     +1 (866) 978-8570,
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                     +1 (323) 747-7192
@@ -1018,8 +1091,9 @@ export default function realEstate() {
             {/* Left Image Side */}
             <div className="w-full h-full min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
               <img
+                loading="lazy"
                 src="/images/our-developers.jpg"
-                alt="Expert Logistics App Developers"
+                alt="Real estate app developers at DevApp Grid"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -1096,7 +1170,8 @@ export default function realEstate() {
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
             <img
               src="/images/industry/real-estate/healthcare-app-built.webp"
-              alt="Cost Calculation & Financial Planning"
+              alt="Real estate app development cost planning"
+              loading="lazy"
               className="w-full h-full object-cover"
             />
 
@@ -1108,10 +1183,9 @@ export default function realEstate() {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              Devapp Grid has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
+              DevApp Grid has earned great feedback for building mobile apps
+              that are unique and user-centric. Here are some of the projects
+              we are most proud of.
             </p>
           </div>
         </section>
@@ -1180,13 +1254,16 @@ export default function realEstate() {
                         ))}
                       </div>
                       <div>
-                        <button className="group sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 py-3 font-semibold flex justify-center items-center gap-3 transition cursor-pointer ">
+                        <Link
+                          href="/portfolio"
+                          className="group inline-flex sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 py-3 font-semibold justify-center items-center gap-3 transition"
+                        >
                           View Case Study
                           <ArrowRight
                             size={18}
                             className="transition-transform duration-300 group-hover:translate-x-1"
                           />
-                        </button>
+                        </Link>
                       </div>
                     </div>
 
@@ -1213,11 +1290,11 @@ export default function realEstate() {
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
-                Check How We turn Your Idea into Innovative Product
+                See How We Turn Your Idea Into an Innovative Product
               </h2>
               <p className="text-black text-sm md:text-base leading-relaxed">
-                Our rich portfolio justifies that we are one of the best
-                logistics app development companies in the USA.
+                Our portfolio shows why businesses across the USA trust us as
+                one of the best real estate app development companies.
               </p>
             </div>
 
@@ -1236,11 +1313,10 @@ export default function realEstate() {
               Technology Stack for Custom Real Estate App Development
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              Our team of developers leave stones unturned in their quest to
-              create usable apps with advanced features for companies, drivers,
-              and consumers. We are equipped to handle different types of
-              technology, and justly utilize them for our app development
-              solutions.
+              Our developers leave no stone unturned to create easy-to-use apps
+              with advanced features for brokerages, agents, buyers, and
+              sellers. We work across a wide range of technologies and choose
+              the right ones for each real estate app we build.
             </p>
           </div>
         </section>
@@ -1252,6 +1328,8 @@ export default function realEstate() {
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
+                    type="button"
+                    aria-pressed={activetechnologies === index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                       ? "text-red-600 font-semibold"
@@ -1269,25 +1347,31 @@ export default function realEstate() {
                 ))}
               </div>
             </div>
-            {/* Content */}
-            <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
-              {technologies[activetechnologies].items.map((item, index) => (
-                <div
-                  key={index}
-                  className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                  />
+            {/* Content — har tab ka content HTML mein (Google parh sake), sirf active nazar aata hai */}
+            {technologies.map((tab, tabIndex) => (
+              <div
+                key={tabIndex}
+                className={activetechnologies === tabIndex ? "flex flex-wrap justify-center gap-1 sm:gap-4" : "hidden"}
+              >
+                {tab.items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      loading="lazy"
+                      className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                    />
 
-                  <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
-                    {item.name}
-                  </h3>
-                </div>
-              ))}
-            </div>
+                    <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
+                      {item.name}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -1297,7 +1381,7 @@ export default function realEstate() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain"
@@ -1306,7 +1390,7 @@ export default function realEstate() {
 
             {/* Section Heading */}
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
-              We are Team of Talented, Experienced, and Certified Designers and
+              We Are a Team of Talented, Experienced, and Certified Designers and
               Developers.
             </h2>
 
@@ -1357,7 +1441,7 @@ export default function realEstate() {
                     +1 (866) 978-8570,
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                     +1 (323) 747-7192
@@ -1380,16 +1464,15 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-3 mb-15 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black mt-10">
-              {" "}
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black mt-10">
               Offshore Web, Mobile & Software Development Company
-            </h1>
+            </h2>
             <p>
-              Devapp Grid is a leading Software, Web, & Mobile App
-              Development Company with a vast area of experience in crafting
-              stunning and end to end encrypted technology solutions. We offer
-              excellent expertise of the industry followed by an exactly planned
-              approach to elevate your growth.
+              DevApp Grid is a leading software, web, and mobile app
+              development company with wide experience in building secure,
+              well-designed technology solutions. We combine deep industry
+              expertise with a carefully planned approach to help your
+              business grow.
             </p>
           </div>
         </section>
@@ -1404,7 +1487,8 @@ export default function realEstate() {
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
-                    alt=""
+                    alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                    loading="lazy"
                     className="w-11 h-11 object-contain"
                   />
                 </div>
@@ -1427,10 +1511,9 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Industries We Serve
-            </h1>
+            </h2>
             <p>
               Our real estate app offering a feature-rich experience and
               unmatched performance has connected us with real estate tycoons.
@@ -1447,6 +1530,7 @@ export default function realEstate() {
                 <img
                   src={item.bgImage}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
@@ -1454,7 +1538,8 @@ export default function realEstate() {
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
                     <img
                       src={item.icon}
-                      alt=""
+                      alt={`${item.title} industry icon`}
+                      loading="lazy"
                       className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
                     />
                   </div>
@@ -1468,16 +1553,14 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black mt-10">
-              {" "}
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black mt-10">
               Why Choose Us?
-            </h1>
+            </h2>
             <p>
-              Devapp Grid is the dominant real estate mobile app development company
-              that provides multiple support to users, has tech-infused
-              offerings, agile methodology, and whatnot. We are dedicated to
-              enhancing the experience of the buyers and real estate firms by
-              incorporating every need and mixing it with a perfect blend:{" "}
+              DevApp Grid is a real estate mobile app development company that
+              offers ongoing support, modern technology, and an agile way of
+              working. We are dedicated to improving the experience of buyers and
+              real estate firms by bringing every need together in one product:
             </p>
           </div>
         </section>
@@ -1491,6 +1574,7 @@ export default function realEstate() {
                 <img
                   src={service.image}
                   alt={service.title}
+                  loading="lazy"
                   className="w-12 h-12 sm:w-16 sm:h-16 object-contain mb-4 sm:mb-6"
                 />
 
@@ -1507,9 +1591,9 @@ export default function realEstate() {
         </section>
         <section>
           <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
-            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
-            </h1>
+            </h2>
             <p>
               Our top priority from the beginning has always been customer
               satisfaction, and it feels good when the clients feel the same. So
@@ -1555,7 +1639,8 @@ export default function realEstate() {
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
-                          alt={item.name}
+                          alt={`${item.name} – client review`}
+                          loading="lazy"
                           className="w-full h-full object-contain rounded-full"
                           onError={(e) => {
                             e.target.src =
@@ -1592,7 +1677,7 @@ export default function realEstate() {
                       </span>
                       <img
                         src={item.verifiedImage}
-                        alt="Google Logo"
+                        alt="Verified Google review"
                         className="h-7 object-contain"
                         onError={(e) => {
                           e.target.src =
@@ -1625,9 +1710,9 @@ export default function realEstate() {
         <section>
           {/* Heading */}
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+            <h2 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions
-            </h1>
+            </h2>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
               We deal with some common questions about real estate web
@@ -1698,15 +1783,14 @@ export default function realEstate() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
-            </h1>
+            </h2>
             <p>
-              Have a look at the services and development process of the Devapp
-              Grid. See What process we follow for mobile app and software
-              development. Have a look at how we are praised by our clients
-              Start a conversation to innovate your next great idea into reality
-              with us.
+              Explore DevApp Grid’s services and the development process we
+              follow for mobile app and software projects, and see what our
+              clients say about working with us. Then start a conversation
+              and let’s turn your next great idea into reality together.
             </p>
           </div>
         </section>
@@ -1725,6 +1809,7 @@ export default function realEstate() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

@@ -125,7 +125,6 @@ export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
     ];
 
     return navLinks.map((link) => {
-      // Label comparison ko safe aur lowercase handle karein
       const currentLabel = link.label?.trim().toLowerCase();
 
       if (currentLabel === "solutions") {
@@ -136,7 +135,7 @@ export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
         return {
           ...link,
           dropdown: solutionsData.map((item: any) => ({
-            id: item.id, // FIX: 'category_id' ki jagah 'id' rakhein taake DesktopDropdown ko item.id mile
+            id: item.id,
             label: item.name || item.title || item.label,
             href: `/solutions/${item.slug || ""}`,
             icon: item.icon_url || item.icon || "/icons/default.svg",
@@ -152,7 +151,7 @@ export const fetchDynamicNavLinks = async (): Promise<NavLink[]> => {
         return {
           ...link,
           dropdown: industryData.map((item: any) => ({
-            id: item.id, // Direct 'id' match
+            id: item.id,
             label: item.name || item.title || item.label,
             href: `/industry/${item.slug || ""}`,
             icon: item.icon_url || item.icon || "/icons/default.svg",

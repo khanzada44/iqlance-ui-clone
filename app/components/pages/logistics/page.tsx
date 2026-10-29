@@ -41,6 +41,83 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { getBlogs } from "@/services/blog";
 import { useRouter } from "next/navigation";
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value: string) =>
+  value.replace(/[^\d+\s()-]/g, "").replace(/(?!^)\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone: string) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\s()-]/g, "");
+  if (!/^\+?\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// FAQPage schema — wahi sawal jo page par dikh rahe hain (points bhi jawab mein)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f: any) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: [String(f.answer || ""), ...(f.points || [])].join(" ").replace(/<[^>]*>/g, "").trim(),
+    },
+  })),
+};
+
+// Contact box: email + dono phone numbers clickable
+function ContactLinks() {
+  return (
+    <>
+      <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+        <div
+          className="w-6 h-6 bg-red-600"
+          style={{
+            maskImage: "url(/icons/email-icon.svg)",
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskImage: "url(/icons/email-icon.svg)",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+          }}
+        ></div>
+        <a href="mailto:info@devappgrid.com" className="font-medium text-sm sm:text-base hover:text-red-600">
+          info@devappgrid.com
+        </a>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-2 text-center lg:text-left">
+        <div
+          className="w-6 h-6 bg-red-600"
+          style={{
+            maskImage: "url(/icons/phone-icon.svg)",
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskImage: "url(/icons/phone-icon.svg)",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+          }}
+        ></div>
+        <span className="font-medium text-sm sm:text-base leading-6">USA:</span>
+        <a href="tel:+18669788570" className="font-medium text-sm sm:text-base leading-6 hover:text-red-600">
+          +1 (866) 978-8570
+        </a>
+        <span>,</span>
+        <a href="tel:+13237477192" className="font-medium text-sm sm:text-base leading-6 hover:text-red-600">
+          +1 (323) 747-7192
+        </a>
+      </div>
+    </>
+  );
+}
+
 export default function Logistic() {
   const [activeTab, setActiveTab] = useState<string>("driver");
   const [loading, setLoading] = useState(false);
@@ -83,7 +160,8 @@ export default function Logistic() {
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
     // Jaise hi user type karna shuru kare, us field ka error hata dein
@@ -105,8 +183,9 @@ export default function Logistic() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
@@ -133,7 +212,7 @@ export default function Logistic() {
 
       payload.append("name", formData.name.trim());
       payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
+      payload.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -143,7 +222,7 @@ export default function Logistic() {
         payload.append("file", formData.file);
       }
 
-      const response = await submitContactForm(payload);
+      await submitContactForm(payload);
       router.push("/thanks-You");
       setStatusMessage({
         type: "success",
@@ -167,8 +246,7 @@ export default function Logistic() {
         fileInputRef.current.value = "";
       }
     } catch (error: any) {
-      console.error("API ERROR:", error);
-      console.error("API RESPONSE:", error?.response?.data);
+      console.error("Form submit failed:", error?.response?.data || error);
 
       let errorMessage = "Failed to send message. Please try again later.";
 
@@ -234,6 +312,10 @@ export default function Logistic() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -321,7 +403,10 @@ export default function Logistic() {
                   noValidate
                 >
                   <div>
+                    <label htmlFor="lg-name" className="sr-only">Name</label>
                     <input
+                      id="lg-name"
+                      autoComplete="name"
                       type="text"
                       name="name"
                       placeholder="Name*"
@@ -339,7 +424,10 @@ export default function Logistic() {
                   </div>
 
                   <div>
+                    <label htmlFor="lg-email" className="sr-only">Email</label>
                     <input
+                      id="lg-email"
+                      autoComplete="email"
                       type="email"
                       name="email"
                       placeholder="Email*"
@@ -357,12 +445,23 @@ export default function Logistic() {
                   </div>
 
                   <div>
+                    <label htmlFor="lg-phone" className="sr-only">Phone</label>
                     <input
+                      id="lg-phone"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      maxLength={20}
+                      aria-invalid={!!errors.phone}
                       type="tel"
                       name="phone"
                       placeholder="Phone*"
                       value={formData.phone}
                       onChange={handleChange}
+                      onBlur={() => {
+                        if (formData.phone) {
+                          setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }));
+                        }
+                      }}
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"
                         } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
@@ -375,10 +474,12 @@ export default function Logistic() {
                   </div>
 
                   <div>
+                    <label htmlFor="lg-message" className="sr-only">Project details</label>
                     <textarea
+                      id="lg-message"
                       name="message"
                       rows={3}
-                      placeholder="Write here Brief about the project..."
+                      placeholder="Write a brief about your project..."
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
@@ -455,7 +556,7 @@ export default function Logistic() {
           {/* Top Heading */}
           <div className="text-center max-w-6xl mx-auto mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug px-5">
-              Businesses Transportation and Logistics App Development Company for Western
+              Transportation and Logistics App Development Company for Western US Businesses
             </h2>
 
             <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
@@ -479,11 +580,10 @@ export default function Logistic() {
           <div className="w-full my-12 overflow-hidden">
             <Image
               src="/images/industry/logistics/logistics-fullwidth.webp"
-              alt="Transportation and Logistics Modes"
+              alt="Transportation and logistics app development"
               width={1200}
               height={400}
               className="w-full h-auto object-cover"
-              priority
             />
           </div>
 
@@ -527,7 +627,8 @@ export default function Logistic() {
             <div className="md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
@@ -544,42 +645,7 @@ export default function Logistic() {
               {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@devappgrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
 
@@ -631,6 +697,7 @@ export default function Logistic() {
                       <img
                         src={slide.image}
                         alt={slide.title}
+                        loading="lazy"
                         className="w-full h-64 sm:h-80 md:h-96 lg:h-155 object-cover"
                       />
                     </div>
@@ -701,7 +768,8 @@ export default function Logistic() {
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
                   <img
                     src={item.imageUrl}
-                    alt={item.imageAlt}
+                    alt={item.imageAlt || item.title}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -715,7 +783,8 @@ export default function Logistic() {
             <div className="md:mt-10 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
@@ -728,47 +797,12 @@ export default function Logistic() {
               </p>
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@devappgrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
 
               <Link
-                href="/custom-software-development"
+                href="/contact-us"
                 className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer"
               >
                 Let’s Discuss Your Project
@@ -782,9 +816,9 @@ export default function Logistic() {
         </section>
         <section>
           <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5 mt-10">
-            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
-            </h1>
+            </h2>
             <p>
               Our top priority from the beginning has always been customer
               satisfaction, and it feels good when the clients feel the same. So
@@ -830,7 +864,8 @@ export default function Logistic() {
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
-                          alt={item.name}
+                          alt={`${item.name} – client review`}
+                          loading="lazy"
                           className="w-full h-full object-contain rounded-full"
                           onError={(e) => {
                             (e.target as HTMLImageElement).src =
@@ -867,7 +902,7 @@ export default function Logistic() {
                       </span>
                       <img
                         src={item.verifiedImage}
-                        alt="Google Logo"
+                        alt="Verified Google review"
                         className="h-7 object-contain"
                         onError={(e) => {
                           e.currentTarget.src =
@@ -900,14 +935,14 @@ export default function Logistic() {
         <section>
           {/* Heading */}
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+            <h2 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions
-            </h1>
+            </h2>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
-              We deal with some common questions about real estate web
-              applications every day. If you too have questions relating to
-              them, you can refer to it below:
+              We answer questions about logistics app development every day.
+              If you have questions too, you will find the most common ones
+              answered below:
             </p>
           </div>
 
