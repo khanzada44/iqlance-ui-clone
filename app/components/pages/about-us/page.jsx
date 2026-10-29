@@ -347,7 +347,7 @@ export default function About() {
             </div>
             <div className="mt-12">
               <img
-                src="/images/about/about-us/about-us-iqlance.webp"
+                src="/images/about/about-us/about-us-devapp.webp"
                 alt="About Devapp"
                 width={1200}
                 height={500}

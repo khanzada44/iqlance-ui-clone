@@ -416,10 +416,7 @@ export default function ourProcess() {
                           </h3>
 
                           <p className="mt-1.5 text-[12px] leading-normal text-black sm:text-[13px] lg:text-[14px]">
-                            As per our initial research work, we at iQlance perform a thorough analysis and
-                            prepare the necessary documents. In this way, we prepare an interactive design,
-                            while make sure to
-                            keep our clients connected with their visitors or customers with interactivity.
+                            We map out the product experience before development begins, defining screen layouts, navigation patterns, and interaction logic around real user needs. Dev App Grid modify complex requirements into sophisticated interfaces, giving every feature a clear purpose and every interaction a reason to exist.
                           </p>
                         </div>
                       </div>
