@@ -172,9 +172,9 @@ export const servicesData = [
     description:
       "Achieve an increased online presence and higher conversion rate with our efficient digital marketing tools.",
     items: [
-      { title: "Social Media", icon: "/images/social-media-iq.png" },
-      { title: "SEO", icon: "/images/seo-iq.png" },
-      { title: "Pay Per Click", icon: "/images/ppc-iq.png" },
+      { title: "Social Media", icon: "/images/social-media-dp.png" },
+      { title: "SEO", icon: "/images/seo-dp.png" },
+      { title: "Pay Per Click", icon: "/images/ppc-dp.png" },
       { title: "Product Marketing", icon: "/images/pm-icon.png" },
       { title: "Applications Promotions", icon: "/images/ap-icn.png" },
     ],
