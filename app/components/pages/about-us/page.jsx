@@ -7,31 +7,47 @@ import ContactForm from "../../contactForm/ContactForm";
 import { missionData } from "../about-us/data";
 import { stats, partners, faqsData } from "../../../../utils/data";
 
+// FAQPage schema — wahi sawal jo page par dikh rahe hain
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: { "@type": "Answer", text: String(f.answer).replace(/<[^>]*>/g, "") },
+  })),
+};
+
 export default function About() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState(-1);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="max-w-7xl mx-auto">
         <div className="mt-6 pt-2">
           <img
             src="/images/about-header.webp"
-            alt=""
+            alt="DevApp Grid software and mobile app development team"
+            fetchPriority="high"
             className="w-full object-cover"
           />
         </div>
 
         <section className="bg-white py-20">
           <div className="  text-center">
-            <h3 className="text-4xl md:text-6xl font-bold text-red-600">
+            <h1 className="text-4xl md:text-6xl font-bold text-red-600">
               About DevApp Grid
-            </h3>
+            </h1>
           </div>
 
           <div className="w-full px-6 text-center mt-15">
-            <h3 className="text-xl md:text-3xl font-bold text-black">
+            <h2 className="text-xl md:text-3xl font-bold text-black">
               Award-Winning Software & App Development Company
-            </h3>
+            </h2>
             <p className="mx-auto mt-8 w-full text-lg md:text-[22px] leading-relaxed text-black">
               DevApp Grid is a trusted software development company USA businesses can rely on to turn
               ideas into powerful digital products. Our team builds custom software, web applications, and
@@ -81,8 +97,8 @@ export default function About() {
               Custom Software Development Services & Mobile App
               Development Services
             </h2>
-            <p className="w-full mx-auto mt-4 text-center text-1sxl leading-8 text-black">
-              Devapp Grid provides end-to-end software development, web development, and mobile app
+            <p className="w-full mx-auto mt-4 text-center text-xl leading-8 text-black">
+              DevApp Grid provides end-to-end software development, web development, and mobile app
               development services for startups, growing businesses, and established enterprises.
               From initial strategy and UI/UX design to development, quality assurance, deployment, and ongoing
               support, we build technology solutions that are reliable, scalable, and aligned with your business
@@ -100,7 +116,7 @@ export default function About() {
                     <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                       <Image
                         src={item.icon}
-                        alt=""
+                        alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
                         width={44}
                         height={44}
                         className="w-11 h-11 object-contain"
@@ -134,9 +150,9 @@ export default function About() {
                   We Don't Just Build Apps, We Build Your Competitive Edge
                 </h2>
 
-                <p className="mt-4 text-[17px] leading-9 text-black]">
+                <p className="mt-4 text-[17px] leading-9 text-black">
                   Here's the truth: most development companies will happily code whatever you ask for and call it a
-                  day. That's not how we work at DevApp. Before we write a single line of code, we want to understand
+                  day. That's not how we work at DevApp Grid. Before we write a single line of code, we want to understand
                   your business, your goals, and the problem you're actually trying to solve, because the best digital
                   products come from real collaboration, not a checklist.
                 </p>
@@ -167,7 +183,7 @@ export default function About() {
               <div>
                 <Image
                   src="/images/about/about-us/why-choose-us-hb.webp"
-                  alt="Technology Partner"
+                  alt="DevApp Grid as your technology partner"
                   width={650}
                   height={700}
                   className="w-full h-auto object-cover"
@@ -220,16 +236,16 @@ export default function About() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain w-auto h-auto"
               />
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight faq">
               Ready to Turn Your Idea Into a Successful Digital Product? Let’s
               Build It Together.
-            </h3>
+            </h2>
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
               Call us Today for a Free Consultation:
             </p>
@@ -272,13 +288,12 @@ export default function About() {
                     className=" transition-colors"
                   >
                     +1 (866) 978-8570
-                    
                   </a>,
                   <a
-                    href="tel:+1(323)747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
-                    +1 (323)747-7192
+                    +1 (323) 747-7192
                   </a>
 
                 </div>
@@ -305,7 +320,7 @@ export default function About() {
           <h2 className="text-center text-4xl font-bold text-black">
             Our Vision
           </h2>
-          <p className="max-w-8xl mx-auto text-center text-black text-base md:text-lg mb-12">
+          <p className="max-w-5xl mx-auto text-center text-black text-base md:text-lg mb-12">
             Our vision is to become a trusted technology partner for businesses
             seeking innovative and scalable digital solutions. By combining our
             clients’ industry knowledge with our technology expertise, we aim to
@@ -316,39 +331,38 @@ export default function About() {
         <section className="bg-white">
           <div className="w-full px-5">
             <h2 className="text-center text-4xl font-bold text-black">
-              About Devapp Grid
+              Our Story
             </h2>
             <div className="w-full mx-auto mt-8 space-y-8">
               <p className="text-center text-[17px] leading-8 text-black">
-                Devapp came into the existence with the aspirations to develop
-                customize creative mobile apps that can cater the requirements
-                of clients in a cost-effective manner. The company was started
-                by two zealous engineers who always wanted to bring the change
-                by proving real-world solutions to stand out from the rest of
-                competitors. With a hope to reach beyond clouds and big plans
-                whirling in the mind, we made our way out and blossomed up with
-                many successful business apps. Our excellent industry based
-                approach helps to deliver ground breaking mobile apps which
-                helped the client to come up with the proficient business.
+                DevApp Grid was founded with one goal: to build custom, creative
+                mobile apps that meet our clients’ requirements in a
+                cost-effective way. The company was started by two passionate
+                engineers who wanted to make a difference by delivering
+                real-world solutions that stand out from the competition. With
+                big plans and a drive to go further, we grew step by step and
+                launched many successful business apps along the way. Our
+                industry-focused approach helps us deliver groundbreaking
+                mobile apps that help our clients build stronger businesses.
               </p>
 
               <p className="text-center text-[17px] leading-8 text-[#333]">
-                Today, Devapp is a trusted software and mobile app development
-                company serving businesses across the USA, with expertise in
-                delivering scalable digital solutions for startups, growing
-                businesses, and enterprises. We believe in adopting the latest
-                trends as per the user's demand, be it Apple TV, Android wear,
-                AR/VR apps, IoT, Beacon, game app and much more; we work with
-                every technology. Our mobile-first approach makes us focus on
-                your requirements; then we strategize mobile app development
-                process to take your business ideas from conceptualization which
-                always dominates the position on App store and Play store.
+                Today, DevApp Grid is a trusted software and mobile app
+                development company serving businesses across the USA, with
+                expertise in delivering scalable digital solutions for
+                startups, growing businesses, and enterprises. We adopt the
+                latest technologies as user demand changes, including Apple TV,
+                Wear OS, AR/VR, IoT, beacons, and game apps. Our mobile-first
+                approach starts with your requirements, then we plan the
+                development process that takes your idea from concept to a
+                product ready for the App Store and Google Play.
               </p>
             </div>
             <div className="mt-12">
               <img
                 src="/images/about/about-us/about-us-devapp.webp"
-                alt="About Devapp"
+                alt="DevApp Grid office and team"
+                loading="lazy"
                 width={1200}
                 height={500}
                 className="w-full h-65 md:h-105 object-cover"
@@ -362,7 +376,7 @@ export default function About() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain w-auto h-auto"
@@ -416,13 +430,13 @@ export default function About() {
                   ></div>
                   <span>USA :</span>
                   <a
-                    href="tel:+14697939837"
+                    href="tel:+18669788570"
                   >
                     +1 (866) 978-8570
                   </a>
                   <span> </span>
                   <a
-                    href="tel:+1 (323) 747-7192"
+                    href="tel:+13237477192"
                   >
                     +1 (323) 747-7192
                   </a>
@@ -449,8 +463,8 @@ export default function About() {
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-5 text-center text-[17px] text-black 0 w-full mx-auto">
-              Have questions about working with Devapp Grid? Here are some quick answers to help you understand our
+            <p className="mt-5 text-center text-[17px] text-black w-full mx-auto">
+              Have questions about working with DevApp Grid? Here are some quick answers to help you understand our
               development process, services, and how we can support your project. Still have questions? Reach out
               to our team and we’ll be happy to discuss your requirements. To understand how to choose a
               software development company, evaluate technical expertise, relevant portfolio work,
@@ -506,11 +520,10 @@ export default function About() {
               </h3>
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black ">
-                Have a look at the services and development process of the
-                Devapp Grid. See what process we follow for mobile app and
-                software development. Have a look at how we are praised by our
-                clients. Start a conversation to innovate your next great idea
-                into reality with us.
+                Explore DevApp Grid’s services and the development process we
+                follow for mobile app and software projects, and see what our
+                clients say about working with us. Then start a conversation
+                and let’s turn your next great idea into reality together.
               </p>
             </div>
           </div>
@@ -531,6 +544,7 @@ export default function About() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

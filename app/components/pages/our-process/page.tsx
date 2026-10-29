@@ -6,19 +6,34 @@ import Image from "next/image";
 import { processSteps, faqsData } from "../our-process/data";
 import ContactForm from "../../contactForm/ContactForm";
 import { stats, partners } from "../../../../utils/data";
-import { div } from "framer-motion/client";
 
-export default function ourProcess() {
+// FAQPage schema — wahi sawal jo page par dikh rahe hain
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: { "@type": "Answer", text: String(f.answer).replace(/<[^>]*>/g, "") },
+  })),
+};
+
+export default function OurProcess() {
   const [open, setOpen] = useState(-1);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <div className="mt-10">
           <Image
             src="/images/about/our-process/our-process-header.webp"
-            alt=""
+            alt="DevApp Grid app development process"
             width={1200}
             height={800}
+            priority
             className="w-full h-auto rounded-lg"
           />
         </div>
@@ -30,11 +45,11 @@ export default function ourProcess() {
             </p>
 
             {/* Main Heading */}
-            <h2 className="text-4xl md:text-5xl font-extrabold text-red-700 mt-2 mb-6">
-              Our Process
-            </h2>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-red-700 mt-2 mb-6">
+              Our App Development Process
+            </h1>
             <p className="max-w-5xl mx-auto text-black text-sm md:text-base leading-relaxed mb-8">
-                Great outcomes don't happen by chance, they happen because of a process that's been tested, refined, 
+                Great outcomes don't happen by chance. They happen because of a process that's been tested, refined,
                 and proven to work. As a respected app and software development agency, we follow a structured, 
                 no-shortcuts approach because that's what it takes to consistently deliver what our clients actually 
                 need. Every method we use is built around one goal: getting you results you can measure, backed by a 
@@ -42,7 +57,7 @@ export default function ourProcess() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white font-semibold text-sm px-6 py-3 transition-colors flex items-center justify-center gap-2"
               >
                 <span>Contact Us</span>
@@ -67,15 +82,15 @@ export default function ourProcess() {
 
             {/* Bottom Section */}
             <div className="max-w-5xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-black mb-4">
                 Offshore Web, Mobile & Software Development Company
-              </h3>
+              </h2>
               <p className="text-black text-sm md:text-base leading-relaxed">
-                Devapp Grid is a leading Software, Web, & Mobile App
-                Development Company with a vast area of experience in crafting
-                stunning and end to end encrypted technology solutions. We offer
-                excellent expertise of the industry followed by an exactly
-                planned approach to elevate your growth.
+                DevApp Grid is a leading software, web, and mobile app
+                development company with wide experience in building secure,
+                well-designed technology solutions. We combine deep industry
+                expertise with a carefully planned approach to help your
+                business grow.
               </p>
             </div>
           </div>
@@ -91,7 +106,8 @@ export default function ourProcess() {
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
-                    alt=""
+                    alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                    loading="lazy"
                     className="w-11 h-11 object-contain"
                   />
                 </div>
@@ -122,7 +138,7 @@ export default function ourProcess() {
                 </h2>
 
                 <p className="mt-8 text-black text-base md:text-lg leading-8">
-                  At Devapp Grid, ideas aren't just discussed, they're built. We're
+                  At DevApp Grid, ideas aren't just discussed, they're built. We're
                   dedicated to shaping your idea into a real product through a
                   process that's straightforward, easy to follow, and covers
                   every angle of app development, without ever losing sight of
@@ -144,7 +160,7 @@ export default function ourProcess() {
               <div>
                 <Image
                   src="/images/about/our-process/our-process-right.webp"
-                  alt=""
+                  alt="DevApp Grid team working through the development process"
                   width={1200}
                   height={800}
                   className="w-full h-auto rounded-lg"
@@ -174,7 +190,8 @@ export default function ourProcess() {
                         <div className="flex shrink-0 items-center justify-center">
                           <img
                             src="/images/process-nda-1.png"
-                            alt=""
+                            alt="Step 1: Sign NDA"
+                            loading="lazy"
                             className="w-8 sm:w-9 lg:w-10"
                           />
                         </div>
@@ -272,7 +289,8 @@ export default function ourProcess() {
                         </div>
                         <img
                           src="/images/brain-process-2.png"
-                          alt=""
+                          alt="Step 2: Brainstorming and discussion"
+                          loading="lazy"
                           className="w-10"
                         />
                       </div>
@@ -287,7 +305,8 @@ export default function ourProcess() {
                         <div className="flex shrink-0 items-center justify-center">
                           <img
                             src="/images/scope-nda-3.png"
-                            alt=""
+                            alt="Step 3: Scope defined and agreement"
+                            loading="lazy"
                             className="w-8 sm:w-9 lg:w-10"
                           />
                         </div>
@@ -384,7 +403,8 @@ export default function ourProcess() {
                         </div>
                         <img
                           src="/images/project-kick-process-4.png"
-                          alt=""
+                          alt="Step 4: Project kickoff and team introduction"
+                          loading="lazy"
                           className="w-10"
                         />
                       </div>
@@ -399,7 +419,8 @@ export default function ourProcess() {
                         <div className="flex shrink-0 items-center justify-center">
                           <img
                             src="/images/2-process-icn-.png"
-                            alt=""
+                            alt="Step 5: Design"
+                            loading="lazy"
                             className="w-8 sm:w-9 lg:w-10"
                           />
                         </div>
@@ -416,7 +437,7 @@ export default function ourProcess() {
                           </h3>
 
                           <p className="mt-1.5 text-[12px] leading-normal text-black sm:text-[13px] lg:text-[14px]">
-                            We map out the product experience before development begins, defining screen layouts, navigation patterns, and interaction logic around real user needs. Dev App Grid modify complex requirements into sophisticated interfaces, giving every feature a clear purpose and every interaction a reason to exist.
+                            We map out the product experience before development begins, defining screen layouts, navigation patterns, and interaction logic around real user needs. DevApp Grid turns complex requirements into sophisticated interfaces, giving every feature a clear purpose and every interaction a reason to exist.
                           </p>
                         </div>
                       </div>
@@ -490,12 +511,13 @@ export default function ourProcess() {
                           <p className="">
                             This is where the real building happens.
                             Our team turns concepts into working code, applying deep technical
-                            knowledge to create solutions engineered specifically around your company's goals, not a generic build that could belong to anyone
+                            knowledge to create solutions engineered specifically around your company's goals, not a generic build that could belong to anyone.
                           </p>
                         </div>
                         <img
                           src="/images/development-kick-process-6.png"
-                          alt=""
+                          alt="Step 6: Development"
+                          loading="lazy"
                           className="w-10"
                         />
                       </div>
@@ -510,7 +532,8 @@ export default function ourProcess() {
                         <div className="flex shrink-0 items-center justify-center">
                           <img
                             src="/images/quality-assurance-process-7.png"
-                            alt=""
+                            alt="Step 7: Quality assurance"
+                            loading="lazy"
                             className="w-8 sm:w-9 lg:w-10"
                           />
                         </div>
@@ -609,7 +632,8 @@ export default function ourProcess() {
                         </div>
                         <img
                           src="/images/5-process-icn-.png"
-                          alt=""
+                          alt="Step 8: Launch"
+                          loading="lazy"
                           className="w-10"
                         />
                       </div>
@@ -629,7 +653,7 @@ export default function ourProcess() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain w-auto h-auto"
@@ -643,7 +667,7 @@ export default function ourProcess() {
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed">
-              Send your Requirements on
+              Send your requirements to:
             </p>
 
             {/* Contact Info Box */}
@@ -688,7 +712,7 @@ export default function ourProcess() {
                     +1 (866) 978-8570,
                   </a>
                   <a
-                    href="tel:+1323747-7192"
+                    href="tel:+13237477192"
                     className=" transition-colors"
                   >
                     +1 (323) 747-7192
@@ -770,16 +794,15 @@ export default function ourProcess() {
           </div>
 
             <div className="mt-20 text-center">
-              <h3 className="text-4xl font-bold">
+              <h2 className="text-4xl font-bold">
                 Have Something in Mind? Let's Talk
-              </h3>
+              </h2>
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black">
-                Have a look at the services and development process of the
-                Devapp Grid. See what process we follow for mobile app and
-                software development. Have a look at how we are praised by our
-                clients. Start a conversation to innovate your next great idea
-                into reality with us.
+                Explore DevApp Grid’s services and the development process we
+                follow for mobile app and software projects, and see what our
+                clients say about working with us. Then start a conversation
+                and let’s turn your next great idea into reality together.
               </p>
             </div>
           </div>
@@ -800,6 +823,7 @@ export default function ourProcess() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

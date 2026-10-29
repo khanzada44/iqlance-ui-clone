@@ -34,7 +34,84 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useRouter } from "next/navigation";
-export default function HeroQuoteSection() {
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\d+\s()-]/g, "").replace(/(?!^)\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\s()-]/g, "");
+  if (!/^\+?\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// FAQPage schema — wahi sawal jo page par dikh rahe hain (points bhi jawab mein)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: [String(f.answer || ""), ...(f.points || [])].join(" ").replace(/<[^>]*>/g, "").trim(),
+    },
+  })),
+};
+
+// Contact box: email + dono phone numbers clickable
+function ContactLinks() {
+  return (
+    <>
+      <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+        <div
+          className="w-6 h-6 bg-red-600"
+          style={{
+            maskImage: "url(/icons/email-icon.svg)",
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskImage: "url(/icons/email-icon.svg)",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+          }}
+        ></div>
+        <a href="mailto:info@devappgrid.com" className="font-medium text-sm sm:text-base hover:text-red-600">
+          info@devappgrid.com
+        </a>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-2 text-center lg:text-left">
+        <div
+          className="w-6 h-6 bg-red-600"
+          style={{
+            maskImage: "url(/icons/phone-icon.svg)",
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskImage: "url(/icons/phone-icon.svg)",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+          }}
+        ></div>
+        <span className="font-medium text-sm sm:text-base leading-6">USA:</span>
+        <a href="tel:+18669788570" className="font-medium text-sm sm:text-base leading-6 hover:text-red-600">
+          +1 (866) 978-8570
+        </a>
+        <span>,</span>
+        <a href="tel:+13237477192" className="font-medium text-sm sm:text-base leading-6 hover:text-red-600">
+          +1 (323) 747-7192
+        </a>
+      </div>
+    </>
+  );
+}
+
+export default function HealthcarePage() {
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [open, setOpen] = useState(-1);
@@ -56,7 +133,6 @@ export default function HeroQuoteSection() {
   const [errors, setErrors] = useState({});
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
 
-  const [blogs, setBlogs] = useState([]);
   const fileInputRef = useRef(null);
   const router = useRouter();
 
@@ -66,7 +142,8 @@ export default function HeroQuoteSection() {
     }
   };
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
     // Jaise hi user type karna shuru kare, us field ka error hata dein
@@ -87,8 +164,9 @@ export default function HeroQuoteSection() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
@@ -115,7 +193,7 @@ export default function HeroQuoteSection() {
 
       payload.append("name", formData.name.trim());
       payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
+      payload.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -125,7 +203,7 @@ export default function HeroQuoteSection() {
         payload.append("file", formData.file);
       }
 
-      const response = await submitContactForm(payload);
+      await submitContactForm(payload);
       router.push("/thanks-You");
       setStatusMessage({
         type: "success",
@@ -149,8 +227,7 @@ export default function HeroQuoteSection() {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API ERROR:", error);
-      console.error("API RESPONSE:", error?.response?.data);
+      console.error("Form submit failed:", error?.response?.data || error);
 
       let errorMessage = "Failed to send message. Please try again later.";
 
@@ -172,19 +249,6 @@ export default function HeroQuoteSection() {
   };
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const data = await getBlogs();
-        const blogList = data?.response?.data || [];
-        setBlogs(blogList);
-      } catch (error) {
-        setBlogs([]);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
-  useEffect(() => {
     if (statusMessage.text) {
       const timer = setTimeout(() => {
         setStatusMessage({ type: "", text: "" });
@@ -196,6 +260,10 @@ export default function HeroQuoteSection() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4">
@@ -207,10 +275,9 @@ export default function HeroQuoteSection() {
                   <br className="hidden sm:block" />
                   Development Company USA
                 </h1>
-                <h3 className="mt-8 text-2xl font-bold leading-snug">
+                <h2 className="mt-8 text-2xl font-bold leading-snug">
                   Digital Solutions Built Around Modern Healthcare
-
-                </h3>
+                </h2>
 
                 <p className="mt-6 text-black leading-8 text-lg">
                   Healthcare is becoming more connected, mobile, and patient-driven. We help hospitals,
@@ -287,7 +354,10 @@ export default function HeroQuoteSection() {
                     noValidate
                   >
                     <div>
+                      <label htmlFor="hc-name" className="sr-only">Name</label>
                       <input
+                        id="hc-name"
+                        autoComplete="name"
                         type="text"
                         name="name"
                         placeholder="Name*"
@@ -304,7 +374,10 @@ export default function HeroQuoteSection() {
                     </div>
 
                     <div>
+                      <label htmlFor="hc-email" className="sr-only">Email</label>
                       <input
+                        id="hc-email"
+                        autoComplete="email"
                         type="email"
                         name="email"
                         placeholder="Email*"
@@ -321,12 +394,22 @@ export default function HeroQuoteSection() {
                     </div>
 
                     <div>
+                      <label htmlFor="hc-phone" className="sr-only">Phone</label>
                       <input
+                        id="hc-phone"
+                        autoComplete="tel"
+                        inputMode="tel"
+                        maxLength={20}
+                        aria-invalid={!!errors.phone}
                         type="tel"
                         name="phone"
                         placeholder="Phone*"
                         value={formData.phone}
                         onChange={handleChange}
+                        onBlur={() =>
+                          formData.phone &&
+                          setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                        }
                         disabled={loading}
                         className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
                       />
@@ -338,10 +421,12 @@ export default function HeroQuoteSection() {
                     </div>
 
                     <div>
+                      <label htmlFor="hc-message" className="sr-only">Project details</label>
                       <textarea
+                        id="hc-message"
                         name="message"
                         rows={3}
-                        placeholder="Write here Brief about the project..."
+                        placeholder="Write a brief about your project..."
                         value={formData.message}
                         onChange={handleChange}
                         disabled={loading}
@@ -473,12 +558,12 @@ export default function HeroQuoteSection() {
                 remote patient monitoring, and healthcare data management, tailored to the way
                 your organization operates. Cloud architecture allows your application to support
                 growing data volumes, expanding teams,
-                and evolving healthcare services without requiring constant infrastructure changes
+                and evolving healthcare services without requiring constant infrastructure changes.
               </p>
               <p className="m-0 text-black ">
                 From centralized information and cross-team collaboration to secure data
                 management and system interoperability, we engineer healthcare applications that help organizations
-                work smarter while creating a more connected experience for patients and providers
+                work smarter while creating a more connected experience for patients and providers.
               </p>
             </div>
           </div>
@@ -509,7 +594,7 @@ export default function HeroQuoteSection() {
               <div>
                 <Image
                   src="/images/industry/health-care/apply-change-healthcare.webp"
-                  alt="Healthcare Mobile App Development"
+                  alt="Features of healthcare app development solutions"
                   width={1200}
                   height={800}
                   className="w-full object-cover shadow-md"
@@ -519,7 +604,7 @@ export default function HeroQuoteSection() {
             <div className="mt-12 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <Image
                 src="/images/letdiscuss-icon.png.webp"
-                alt="Example"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
@@ -538,59 +623,27 @@ export default function HeroQuoteSection() {
               {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@devappgrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
 
-              <button className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer">
+              <Link
+                href="/contact-us"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer"
+              >
                 Hire Dedicated Developers
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
                 />
-              </button>
+              </Link>
             </div>
           </div>
         </section>
         <section className="py-10">
-          <h1 className="text-center leading-tight text-2xl font-bold text-[30px] mb-2.5 px-5">
+          <h2 className="text-center leading-tight text-2xl font-bold text-[30px] mb-2.5 px-5">
             Our Healthcare App Development Solutions
-          </h1>
+          </h2>
           <p className="text-[20px] text-center px-5">
             Healthcare deserves technology that improves the experience on both sides of care.
             We build digital healthcare solutions that help providers replace fragmented
@@ -667,9 +720,9 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div className="max-w-4xl mx-auto px-4 py-10">
-            <h1 className="text-center leading-tight font-bold text-[30px] mb-2.5">
+            <h2 className="text-center leading-tight font-bold text-[30px] mb-2.5">
               Advantages of Adopting Healthcare App Solutions
-            </h1>
+            </h2>
             <p className="text-center text-black text-base max-w-3xl mx-auto mb-8">
               Healthcare apps are reshaping the way patients, physicians, and care teams connect,
               communicate, and manage care. By bringing essential healthcare services, patient information,
@@ -682,7 +735,7 @@ export default function HeroQuoteSection() {
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0 " />
                   <span>
-                    Faster Diagnosis & Treatment,
+                    <strong>Faster Diagnosis & Treatment:</strong>
                     Give healthcare professionals quicker access to relevant patient information, helping them make
                     informed decisions and begin appropriate treatment without unnecessary delays.
                   </span>
@@ -691,7 +744,7 @@ export default function HeroQuoteSection() {
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0" />
                   <span>
-                    Better Doctor-Patient Engagement,
+                    <strong>Better Doctor-Patient Engagement:</strong>
                     Create convenient digital touchpoints between patients and healthcare providers,
                     making communication easier
                     and helping patients stay more involved throughout their treatment journey.
@@ -703,7 +756,7 @@ export default function HeroQuoteSection() {
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0" />
                   <span>
-                    Real-Time Support for Care Teams,
+                    <strong>Real-Time Support for Care Teams:</strong>
                     Enable healthcare professionals to access and share critical information when it matters most, helping streamline hospital workflows, reduce communication gaps, and minimize avoidable errors.
 
                   </span>
@@ -712,10 +765,10 @@ export default function HeroQuoteSection() {
                 <p className="flex items-start gap-2">
                   <ChevronRight size={14} className="mt-1 shrink-0" />
                   <span>
-                    Continuous Health Monitoring,
+                    <strong>Continuous Health Monitoring:</strong>
                     Keep care connected beyond the hospital with tools that support
                     ongoing patient monitoring. Real-time health information can
-                    help providers recognize important changes earlier and respond more proactively
+                    help providers recognize important changes earlier and respond more proactively.
                   </span>
                 </p>
               </div>
@@ -726,7 +779,7 @@ export default function HeroQuoteSection() {
           <div className="flex flex-col-reverse lg:flex-row gap-10 mt-10 px-6">
             {/* Left Content */}
             <div className="w-full lg:w-1/2">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Benefits of Healthcare Mobility Solutions</h1>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Benefits of Healthcare Mobility Solutions</h2>
               <p className="text-black leading-7 mb-8">
                 Healthcare mobility solutions connect patients, providers, and critical health data in ways
                 that make care more accessible and operations more efficient. By bringing digital tools,
@@ -738,20 +791,20 @@ export default function HeroQuoteSection() {
               <div className="space-y-4">
                 <p className="flex items-start gap-2 text-black">
                   <ChevronRight size={18} className="mt-1 shrink-0" />
-                  Lower Healthcare Costs, Automated processes and streamlined workflows can reduce administrative overhead,
+                  <strong>Lower Healthcare Costs:</strong> Automated processes and streamlined workflows can reduce administrative overhead,
                   minimize inefficiencies,
                   and help healthcare providers deliver services more effectively.
                 </p>
 
                 <p className="flex items-start gap-2 text-black">
                   <ChevronRight size={18} className="mt-1 shrink-0 " />
-                  Smarter Disease Management,
+                  <strong>Smarter Disease Management:</strong>
                   Continuous access to relevant patient information enables healthcare teams to monitor conditions more closely, identify changes sooner, and make better-informed care decisions.
                 </p>
 
                 <p className="flex items-start gap-2 text-black">
-                  <ChevronRight size={18} className="mt-1 shrink-0 ]" />
-                  More Connected Patient Care,
+                  <ChevronRight size={18} className="mt-1 shrink-0" />
+                  <strong>More Connected Patient Care:</strong>
                   Mobile and connected healthcare experiences make it easier for patients to
                   communicate with providers, access health information, and receive timely
                   support throughout their care journey.
@@ -764,7 +817,8 @@ export default function HeroQuoteSection() {
             <div className="w-full lg:w-1/2 flex justify-center">
               <img
                 src="/images/healthcare-right.jpg"
-                alt="Healthcare"
+                alt="Benefits of healthcare mobility solutions"
+                loading="lazy"
                 className="w-full max-w-md lg:max-w-full h-auto object-cover"
               />
             </div>
@@ -777,7 +831,8 @@ export default function HeroQuoteSection() {
             <div className="mt-12 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
@@ -794,42 +849,7 @@ export default function HeroQuoteSection() {
               {/* Contact Box */}
               <div className="flex items-center justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@devappgrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (323) 747-7192
-                    </span>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
 
@@ -846,58 +866,6 @@ export default function HeroQuoteSection() {
             </div>
           </div>
         </section>
-        <section>
-          <div className="max-w-4xl mx-auto px-4 py-10">
-            <h1 className="text-center leading-tight font-bold text-[30px] mb-2.5">
-              Advantages of adopting healthcare app solutions
-            </h1>
-            <p className="text-center text-black text-base max-w-3xl mx-auto mb-8">
-              Undoubtedly, the IoT has transformed the way of working in almost
-              all the industries! Also, it has redefined how apps, devices and
-              people interact and connect with each other for delivering
-              healthcare solutions.
-            </p>
-
-            <div className="flex flex-col lg:flex-row gap-6 text-black">
-              <div className="flex-1 space-y-4">
-                <p className="flex items-start gap-2">
-                  <ChevronRight size={14} className="mt-1 shrink-0 " />
-                  <span>
-                    Advanced treatment and accurate diagnosis in a short term
-                    than ever.
-                  </span>
-                </p>
-
-                <p className="flex items-start gap-2">
-                  <ChevronRight size={14} className="mt-1 shrink-0" />
-                  <span>
-                    Improvised engagement between doctors and patient to make
-                    sure the optimized recovery.
-                  </span>
-                </p>
-              </div>
-
-              <div className="flex-1 space-y-4">
-                <p className="flex items-start gap-2">
-                  <ChevronRight size={14} className="mt-1 shrink-0" />
-                  <span>
-                    Real-time support within the hospitals to reduce the errors
-                    and perfection can be attained.
-                  </span>
-                </p>
-
-                <p className="flex items-start gap-2">
-                  <ChevronRight size={14} className="mt-1 shrink-0" />
-                  <span>
-                    Constant patient care to have active involvement for
-                    real-time monitoring of the disease.
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="py-10 bg-white ">
           <div className="max-w-7xl mx-auto px-4">
             {/* Heading */}
@@ -938,7 +906,8 @@ export default function HeroQuoteSection() {
             <div className="mt-12 md:mt-20 bg-red-50 rounded-xl px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
@@ -947,50 +916,13 @@ export default function HeroQuoteSection() {
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7">
-                Send your Requirements on
+                Send your requirements to:
               </p>
 
               {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@devappgrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                      <br className="sm:hidden" />
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                      <br className="sm:hidden" />
-                    </span>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
 
@@ -1013,7 +945,7 @@ export default function HeroQuoteSection() {
               <div>
                 <Image
                   src="/images/industry/health-care/our-developers.webp"
-                  alt="Healthcare Mobile App Development"
+                  alt="DevApp Grid healthcare app developers"
                   width={1200}
                   height={800}
                   className="w-full object-cover shadow-md"
@@ -1036,13 +968,13 @@ export default function HeroQuoteSection() {
                   Beyond that, our expert engineers specialize in interface design, bug fixing, and enhancing
                   overall functionality to deliver a smooth user experience. We also integrate AI and other
                   advanced technologies into our apps to introduce a fresh,
-                  innovative dimension to the healthcare space
+                  innovative dimension to the healthcare space.
                 </p>
 
                 <p className="mt-8 text-[17px] leading-6 text-black">
                   Our core belief is that no patient should feel alone in their journey.
-                  That's why they receive constant support from a team of top-rated doctors available
-                  around the clock, even during emergencies.
+                  That's why we build apps that keep patients connected to their care teams
+                  around the clock, including when they need help urgently.
                 </p>
               </div>
             </div>
@@ -1055,8 +987,8 @@ export default function HeroQuoteSection() {
             </h2>
 
             <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6">
-              Quality healthcare has become one of the most costly needs worldwide today. As a result,
-              the push toward digital healthcare solutions keeps growing. As a leading Mobile App development
+              Quality healthcare has become one of the costliest needs worldwide today. As a result,
+              the push toward digital healthcare solutions keeps growing. As a leading mobile app development
               company in the USA, our experienced developers build strong, reliable digital health platforms.
               This allows patients to stay connected with their doctors
               and access consultations remotely, at any time and from anywhere.
@@ -1075,7 +1007,7 @@ export default function HeroQuoteSection() {
               and capabilities you want included.
             </p>
             <Link
-              href="/contact"
+              href="/contact-us"
               className="group mt-8 bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold inline-flex items-center gap-3 transition cursor-pointer"
             >
               Get a Quotation
@@ -1090,20 +1022,19 @@ export default function HeroQuoteSection() {
           <div>
             <Image
               src="/images/industry/health-care/healthcare-app-built.webp"
-              alt="Healthcare Mobile App Development"
-              width={80}
-              height={80}
+              alt="Healthcare apps built by DevApp Grid"
+              width={1200}
+              height={800}
               className="w-full object-cover shadow-md"
             />
             <div className="mt-15">
-              <h1 className="mt-5 flex justify-center font-bold text-3xl">
+              <h2 className="mt-5 flex justify-center font-bold text-3xl">
                 Endeavors That Make Us Proud
-              </h1>
+              </h2>
               <p className="text-center text-black text-lg max-w-1xl mx-auto p-4">
-                Devapp Grid has always been honored with valuable words for
-                the efforts given on mobile app development that are efficiently
-                unique and user centric. Here are some of the best examples for
-                this.
+                DevApp Grid has earned great feedback for building mobile apps
+                that are unique and user-centric. Here are some of the projects
+                we are most proud of.
               </p>
             </div>
 
@@ -1211,14 +1142,14 @@ export default function HeroQuoteSection() {
                 {/* Left Content */}
                 <div className="max-w-2xl">
                   <h2 className="text-2xl md:text-3xl font-bold text-[#111] leading-tight">
-                    Check How We turn Your Idea into
+                    See How We Turn Your Idea Into
                     <br />
-                    Innovative Product
+                    an Innovative Product
                   </h2>
 
                   <p className="mt-6 text-lg text-black leading-5">
                     We are one of the best
-                    app development company in USA.
+                    app development companies in the USA.
                   </p>
                 </div>
 
@@ -1241,14 +1172,12 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div className="mt-4">
-            <h3 className="flex justify-center font-bold text-3xl mt-10">
+            <h2 className="flex justify-center font-bold text-3xl mt-10">
               Technology Stack
-            </h3>
+            </h2>
             <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 items-center text-center px-5">
-              We only adopt the latest and cutting-edge technology that ensure
-              redefining the process of healthcare for the better. So, if you
-              want a glimpse of what these state-of-the-art technologies are,
-              here they are:
+              We use modern, proven technologies that help improve how healthcare
+              is delivered. Here is a look at the technology stack we work with:
             </p>
           </div>
         </section>
@@ -1260,6 +1189,8 @@ export default function HeroQuoteSection() {
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
+                    type="button"
+                    aria-pressed={activeTab === index}
                     onClick={() => setActiveTab(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activeTab === index
                       ? "text-red-600 font-semibold"
@@ -1277,25 +1208,31 @@ export default function HeroQuoteSection() {
                 ))}
               </div>
             </div>
-            {/* Content */}
-            <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
-              {technologies[activeTab].items.map((item, index) => (
-                <div
-                  key={index}
-                  className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white rounded-lg shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                  />
+            {/* Content — har tab ka content HTML mein (Google parh sake), sirf active nazar aata hai */}
+            {technologies.map((tab, tabIndex) => (
+              <div
+                key={tabIndex}
+                className={activeTab === tabIndex ? "flex flex-wrap justify-center gap-1 sm:gap-4" : "hidden"}
+              >
+                {tab.items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white rounded-lg shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      loading="lazy"
+                      className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                    />
 
-                  <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
-                    {item.name}
-                  </h3>
-                </div>
-              ))}
-            </div>
+                    <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
+                      {item.name}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
         <section className="bg-red-50 py-12 md:py-20">
@@ -1303,12 +1240,13 @@ export default function HeroQuoteSection() {
             <div className="bg-red-50 rounded-xl text-center px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight max-w-4xl mx-auto">
-                We are Team of Talented, Experienced, and Certified Designers
+                We Are a Team of Talented, Experienced, and Certified Designers
                 and Developers.
               </h2>
 
@@ -1316,13 +1254,16 @@ export default function HeroQuoteSection() {
                 Let us Build Something Extraordinary.
               </p>
 
-              <button className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer">
-                Hire Dedicated Developer
+              <Link
+                href="/contact-us"
+                className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3 transition cursor-pointer"
+              >
+                Hire Dedicated Developers
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
                 />
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -1343,7 +1284,8 @@ export default function HeroQuoteSection() {
                   <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                     <img
                       src={item.icon}
-                      alt=""
+                      alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                      loading="lazy"
                       className="w-11 h-11 object-contain"
                     />
                   </div>
@@ -1371,8 +1313,8 @@ export default function HeroQuoteSection() {
               Industries We Serve
             </h2>
             <p className="mt-8 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 px-5">
-              We, as a medical app development company, has grabbed some of the
-              greatest milestones by serving leading industries like:
+              As a medical app development company, we have reached major
+              milestones serving leading industries like:
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1384,6 +1326,7 @@ export default function HeroQuoteSection() {
                 <img
                   src={item.bgImage}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
@@ -1391,7 +1334,8 @@ export default function HeroQuoteSection() {
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
                     <img
                       src={item.icon}
-                      alt=""
+                      alt={`${item.title} industry icon`}
+                      loading="lazy"
                       className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
                     />
                   </div>
@@ -1405,13 +1349,12 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-10 mt-17">
-              Why Choose Devapp Grid?
-            </h1>
+            <h2 className="flex justify-center font-bold text-3xl mb-10 mt-17">
+              Why Choose DevApp Grid?
+            </h2>
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
-              As the world’s leading Healthcare app development company, we can
-              help start your journey to become the next generation of the
-              healthcare service sector.
+              As an experienced healthcare app development company, we can help
+              you build the next generation of digital healthcare services.
             </p>
           </div>
           <section className="max-w-7xl mx-auto px-3 sm:px-5 py-10 sm:py-12">
@@ -1443,14 +1386,13 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-10 mt-5">
+            <h2 className="flex justify-center font-bold text-3xl mb-10 mt-5">
               Client Testimonials
-            </h1>
+            </h2>
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
-              The hardwork of our certified healthcare app developers is really
-              appreciated by our clients in the face of positive and motivating
-              words. However, it is our diligence that has made them stick to
-              us.
+              Our clients value the hard work of our certified healthcare app
+              developers, and our commitment to their success is why they keep
+              working with us.
             </p>
           </div>
         </section>
@@ -1482,7 +1424,8 @@ export default function HeroQuoteSection() {
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
-                          alt={item.name}
+                          alt={`${item.name} – client review`}
+                          loading="lazy"
                           className="w-full h-full object-contain rounded-full"
                           onError={(e) => {
                             e.currentTarget.src =
@@ -1519,7 +1462,7 @@ export default function HeroQuoteSection() {
                       </span>
                       <img
                         src={item.verifiedImage}
-                        alt="Google Logo"
+                        alt="Verified Google review"
                         className="h-7 object-contain"
                         onError={(e) => {
                           e.currentTarget.src =
@@ -1552,13 +1495,13 @@ export default function HeroQuoteSection() {
         <section>
           {/* Heading */}
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+            <h2 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions
-            </h1>
+            </h2>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
-              Here you will find the answers you are looking for because we know
-              what’s in our client’s mind.
+              Here are answers to the questions our clients ask us most often
+              about healthcare app development.
             </p>
           </div>
           <div className="mt-12 space-y-4">
@@ -1623,15 +1566,14 @@ export default function HeroQuoteSection() {
         </section>
         <section>
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+            <h2 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Have Something in Mind? Let's Talk
-            </h1>
+            </h2>
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
-              Have a look at the services and development process of the Devapp
-              Grid. See What process we follow for mobile app and software
-              development. Have a look at how we are praised by our clients
-              Start a conversation to innovate your next great idea into reality
-              with us.
+              Explore DevApp Grid’s services and the development process we
+              follow for mobile app and software projects, and see what our
+              clients say about working with us. Then start a conversation
+              and let’s turn your next great idea into reality together.
             </p>
           </div>
         </section>
@@ -1650,6 +1592,7 @@ export default function HeroQuoteSection() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

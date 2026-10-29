@@ -36,8 +36,86 @@ import {
 } from "../../../../utils/data";
 import Image from "next/image";
 
-export default function wellnessFitness() {
-  const [activeTab, setActiveTab] = useState("driver");
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\d+\s()-]/g, "").replace(/(?!^)\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\s()-]/g, "");
+  if (!/^\+?\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// FAQPage schema — wahi sawal jo page par dikh rahe hain (points bhi jawab mein)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: [String(f.answer || ""), ...(f.points || [])].join(" ").replace(/<[^>]*>/g, "").trim(),
+    },
+  })),
+};
+
+// Contact box: email + dono phone numbers clickable
+function ContactLinks() {
+  return (
+    <>
+      <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
+        <div
+          className="w-6 h-6 bg-red-600"
+          style={{
+            maskImage: "url(/icons/email-icon.svg)",
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskImage: "url(/icons/email-icon.svg)",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+          }}
+        ></div>
+        <a href="mailto:info@devappgrid.com" className="font-medium text-sm sm:text-base hover:text-red-600">
+          info@devappgrid.com
+        </a>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-2 text-center lg:text-left">
+        <div
+          className="w-6 h-6 bg-red-600"
+          style={{
+            maskImage: "url(/icons/phone-icon.svg)",
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            WebkitMaskImage: "url(/icons/phone-icon.svg)",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+          }}
+        ></div>
+        <span className="font-medium text-sm sm:text-base leading-6">USA:</span>
+        <a href="tel:+18669788570" className="font-medium text-sm sm:text-base leading-6 hover:text-red-600">
+          +1 (866) 978-8570
+        </a>
+        <span>,</span>
+        <a href="tel:+13237477192" className="font-medium text-sm sm:text-base leading-6 hover:text-red-600">
+          +1 (323) 747-7192
+        </a>
+      </div>
+    </>
+  );
+}
+
+export default function WellnessFitness() {
+  // Pehla tab default — "driver" logistics page se copy hua tha
+  const [activeTab, setActiveTab] = useState(tabs?.[0]?.id ?? "driver");
   const [open, setOpen] = useState(-1);
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
@@ -58,11 +136,11 @@ export default function wellnessFitness() {
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
 
-  const [blogs, setBlogs] = useState([]);
   const fileInputRef = useRef(null);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
     // Jaise hi user type karna shuru kare, us field ka error hata dein
@@ -83,8 +161,9 @@ export default function wellnessFitness() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
@@ -116,7 +195,7 @@ export default function wellnessFitness() {
 
       payload.append("name", formData.name.trim());
       payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
+      payload.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -126,7 +205,7 @@ export default function wellnessFitness() {
         payload.append("file", formData.file);
       }
 
-      const response = await submitContactForm(payload);
+      await submitContactForm(payload);
       router.push("/thanks-You");
 
       setStatusMessage({
@@ -151,8 +230,7 @@ export default function wellnessFitness() {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API ERROR:", error);
-      console.error("API RESPONSE:", error?.response?.data);
+      console.error("Form submit failed:", error?.response?.data || error);
 
       let errorMessage = "Failed to send message. Please try again later.";
 
@@ -175,28 +253,31 @@ export default function wellnessFitness() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold text-red-700 leading-tight">
-                Wellness & Fitness
+                Wellness & Fitness App Development
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
                 The wellness and fitness industry is undergoing a major digital shift,
                 and forward-thinking business leaders are increasingly turning to mobile solutions
-                to stay ahead. At Devapp Grid, we recognize this shift and bring a
+                to stay ahead. At DevApp Grid, we recognize this shift and bring a
                 team of seasoned experts ready to craft the perfect digital solution for your brand.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
                 Our fitness app development services are built to help your business
-                unlock new growth opportunities, think broader audience reach, reduced
+                unlock new growth opportunities, such as broader audience reach, reduced
                 stress levels for users, higher productivity, and lower healthcare costs,
                 among other benefits.
-
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-black">
@@ -219,7 +300,7 @@ export default function wellnessFitness() {
                 {/* See Our Work Link */}
                 <Link
                   href="/portfolio"
-                  className="group inline-flex items-center gap-2 bg-white text-black border border-red-300 hover:red-gray-400 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
+                  className="group inline-flex items-center gap-2 bg-white text-black border border-red-300 hover:border-red-500 font-semibold px-6 py-3 transition duration-200 shadow-sm cursor-pointer"
                 >
                   See Our Work
                   <ArrowRight className="w-4 h-4 text-black transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
@@ -253,7 +334,10 @@ export default function wellnessFitness() {
                   noValidate
                 >
                   <div>
+                    <label htmlFor="wf-name" className="sr-only">Name</label>
                     <input
+                      id="wf-name"
+                      autoComplete="name"
                       type="text"
                       name="name"
                       placeholder="Name*"
@@ -271,7 +355,10 @@ export default function wellnessFitness() {
                   </div>
 
                   <div>
+                    <label htmlFor="wf-email" className="sr-only">Email</label>
                     <input
+                      id="wf-email"
+                      autoComplete="email"
                       type="email"
                       name="email"
                       placeholder="Email*"
@@ -289,12 +376,22 @@ export default function wellnessFitness() {
                   </div>
 
                   <div>
+                    <label htmlFor="wf-phone" className="sr-only">Phone</label>
                     <input
+                      id="wf-phone"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      maxLength={20}
+                      aria-invalid={!!errors.phone}
                       type="tel"
                       name="phone"
                       placeholder="Phone*"
                       value={formData.phone}
                       onChange={handleChange}
+                      onBlur={() =>
+                        formData.phone &&
+                        setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                      }
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"
                         } focus:border-red-600 outline-none py-2 text-sm sm:text-base text-black placeholder-gray-400 transition-colors disabled:opacity-50`}
@@ -307,10 +404,12 @@ export default function wellnessFitness() {
                   </div>
 
                   <div>
+                    <label htmlFor="wf-message" className="sr-only">Project details</label>
                     <textarea
+                      id="wf-message"
                       name="message"
                       rows={3}
-                      placeholder="Write here Brief about the project..."
+                      placeholder="Write a brief about your project..."
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
@@ -402,7 +501,7 @@ export default function wellnessFitness() {
               </h2>
 
               <p className="text-sm md:text-base text-black max-w-4xl mx-auto leading-relaxed px-5">
-                At Devapp Grid, we&apos;re committed to delivering the most effective fitness
+                At DevApp Grid, we&apos;re committed to delivering the most effective fitness
                 solutions in the industry. That&apos;s why we&apos;ve built a diverse
                 portfolio of innovative wellness and fitness app development solutions,
                 helping fitness enthusiasts get their questions answered in record time.
@@ -438,57 +537,23 @@ export default function wellnessFitness() {
             <div className=" bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
-                Ready to Build a Custom Logistics App for Your Business?
+                Ready to Build a Custom Fitness App for Your Business?
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
-                Partner with our logistics app development company to create
-                scalable, feature-rich logistics mobile applications tailored to
+                Partner with our fitness app development company to create
+                scalable, feature-rich wellness and fitness apps tailored to
                 your needs.
               </p>
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@devappgrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
 
@@ -597,7 +662,8 @@ export default function wellnessFitness() {
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
                   <img
                     src={item.imageUrl}
-                    alt={item.imageAlt}
+                    alt={item.imageAlt || item.title}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -612,7 +678,8 @@ export default function wellnessFitness() {
             <div className="mt-12 md:mt-20 bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
@@ -621,48 +688,13 @@ export default function wellnessFitness() {
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
-                Send your Requirements on
+                Send your requirements to:
               </p>
 
               {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@devappgrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
 
@@ -703,7 +735,7 @@ export default function wellnessFitness() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/push-h-icn.png"
-                alt="Push Notification"
+                alt="Push Notifications"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -758,7 +790,7 @@ export default function wellnessFitness() {
             <div className="bg-white border border-gray-200 rounded-sm p-8 flex flex-col items-center justify-center min-h-35">
               <img
                 src="/images/calender-icn-new.png"
-                alt="Schedules and Calendar"
+                alt="Schedule and Calendar"
                 className="w-10 h-10 object-contain mb-4"
               />
               <h3 className="text-black font-semibold text-sm sm:text-base">
@@ -814,17 +846,6 @@ export default function wellnessFitness() {
           </div>
         </section>
 
-        <section >
-          <div className="text-center space-y-3 mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-black px-5">
-              Key Features of Logistics and Transportation App Development
-            </h2>
-            <p className="text-black text-sm md:text-base max-w-3xl mx-auto px-5">
-              Our logistics app solutions contain a host of features that shall
-              help you manage your activities in a more organized manner.
-            </p>
-          </div>
-        </section>
 
         <section >
           <div className="max-w-7xl mx-auto px-4">
@@ -832,59 +853,25 @@ export default function wellnessFitness() {
             <div className="mt-5 md:mt-20 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
-                Ready to Build a Custom Logistics App?
+                Ready to Build a Custom Wellness App?
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
-                Partner with our logistics app development company to streamline
-                fleet management, delivery tracking, and supply chain
-                operations.
+                Partner with our fitness app development company to launch
+                workout tracking, nutrition planning, and online coaching
+                features your users will love.
               </p>
 
               {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@devappgrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
 
@@ -904,13 +891,12 @@ export default function wellnessFitness() {
         <section className="max-w-6xl mx-auto px-4 py-16 text-center font-sans">
           {/* Heading & Subtitle */}
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-3">
-            Efforts that make us proud include
+            Efforts That Make Us Proud
           </h2>
           <p className="text-black text-sm sm:text-base max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our crew of experienced food app developers has dedicated their
-            attention and effort to developing a variety of on-demand bespoke
-            applications for consumers. We are pleased to report that our
-            initiatives have received positive feedback from our consumers.
+            Our experienced fitness app developers have built a wide range of
+            custom wellness and fitness apps for gyms, trainers, and fitness
+            brands, and our work has earned great feedback from their users.
           </p>
 
           <div className="max-w-6xl mx-auto p-6 font-sans">
@@ -920,6 +906,8 @@ export default function wellnessFitness() {
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
+                    type="button"
+                    aria-pressed={activeTab === tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-6 py-3 text-lg font-medium transition-colors duration-200 border-b-2 ${activeTab === tab.id
                       ? "border-red-600 text-red-600 font-semibold"
@@ -932,22 +920,26 @@ export default function wellnessFitness() {
               </div>
             </div>
 
-            {/* Feature Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {appData[activeTab]?.map((item) => (
-                <div
-                  key={item.id}
-                  className="bg-white border border-gray-200 p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-40"
-                >
-                  <img src={item.iconPath} alt="" />
-                  {/* Custom Icon Placeholder - Yahan aap apna image/icon tag laga sakte hain */}
+            {/* Feature Grid — har tab ka content HTML mein, sirf active nazar aata hai */}
+            {tabs.map((tab) => (
+              <div
+                key={tab.id}
+                className={activeTab === tab.id ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" : "hidden"}
+              >
+                {appData[tab.id]?.map((item) => (
+                  <div
+                    key={item.id}
+                    className="bg-white border border-gray-200 p-8 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-40"
+                  >
+                    <img src={item.iconPath} alt={`${item.title} icon`} loading="lazy" />
 
-                  <span className="text-black font-medium text-base">
-                    {item.title}
-                  </span>
-                </div>
-              ))}
-            </div>
+                    <span className="text-black font-medium text-base">
+                      {item.title}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
         <section >
@@ -956,57 +948,23 @@ export default function wellnessFitness() {
             <div className=" bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
-                So, We Guess You want to talk about your Project
+                So, We Guess You Want to Talk About Your Project
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
-                Send your Requirements on
+                Send your requirements to:
               </p>
 
               {/* Contact Box */}
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left break-all">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/email-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/email-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base">
-                      info@devappgrid.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 text-center lg:text-left">
-                    <div
-                      className="w-6 h-6 bg-red-600"
-                      style={{
-                        maskImage: "url(/icons/phone-icon.svg)",
-                        maskRepeat: "no-repeat",
-                        maskSize: "contain",
-                        WebkitMaskImage: "url(/icons/phone-icon.svg)",
-                        WebkitMaskRepeat: "no-repeat",
-                        WebkitMaskSize: "contain",
-                      }}
-                    ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
 
@@ -1029,7 +987,7 @@ export default function wellnessFitness() {
             <div className="w-full h-full min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
               <Image
                 src="/images/industry/wellness-fitness/our-developers.webp"
-                alt="Expert Logistics App Developers"
+                alt="Fitness app developers at DevApp Grid"
                 width={1200}
                 height={800}
                 className="w-full h-full object-cover"
@@ -1041,7 +999,7 @@ export default function wellnessFitness() {
               </h2>
 
               <p>
-                At Devapp Grid, our team of digital specialists lives and breathes wellness and
+                At DevApp Grid, our team of digital specialists lives and breathes wellness and
                 fitness solutions. Our fitness app developers are fitness enthusiasts
                 themselves, which means they truly understand what end users need. They
                 bring a clear vision to every build, incorporating a diverse range of
@@ -1109,7 +1067,7 @@ export default function wellnessFitness() {
           <div className="w-full h-64 sm:h-80 md:h-96  overflow-hidden shadow-sm">
             <Image
               src="/images/industry/wellness-fitness/healthcare-app-built.webp"
-              alt="Cost Calculation & Financial Planning"
+              alt="Fitness app development cost planning"
               width={1200}
               height={800}
               className="w-full h-full object-cover"
@@ -1120,10 +1078,9 @@ export default function wellnessFitness() {
               Endeavors That Make Us Proud
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
-              Devapp Grid has always been honored with valuable words for
-              the efforts given on mobile app development that are efficiently
-              unique and user centric. Here are some of the best examples for
-              this.
+              DevApp Grid has earned great feedback for building mobile apps
+              that are unique and user-centric. Here are some of the projects
+              we are most proud of.
             </p>
           </div>
         </section>
@@ -1227,11 +1184,11 @@ export default function wellnessFitness() {
           <div className="bg-red-50  p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
-                Check How We turn Your Idea into Innovative Product
+                See How We Turn Your Idea Into an Innovative Product
               </h2>
               <p className="text-black text-sm md:text-base leading-relaxed">
-                Our rich portfolio justifies that we are one of the best
-                logistics app development companies in the USA.
+                Our portfolio shows why businesses across the USA trust us as
+                one of the best fitness app development companies.
               </p>
             </div>
 
@@ -1250,11 +1207,10 @@ export default function wellnessFitness() {
               Technology Stack for Custom Wellness & Fitness App Development
             </h2>
             <p className="text-black text-sm md:text-base leading-relaxed px-5">
-              Our team of developers leave stones unturned in their quest to
-              create usable apps with advanced features for companies, drivers,
-              and consumers. We are equipped to handle different types of
-              technology, and justly utilize them for our app development
-              solutions.
+              Our developers leave no stone unturned to create easy-to-use apps
+              with advanced features for gyms, trainers, and fitness
+              enthusiasts. We work across a wide range of technologies and
+              choose the right ones for each fitness app we build.
             </p>
           </div>
         </section>
@@ -1266,6 +1222,8 @@ export default function wellnessFitness() {
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
+                    type="button"
+                    aria-pressed={activetechnologies === index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                       ? "text-red-600 font-semibold"
@@ -1281,26 +1239,32 @@ export default function wellnessFitness() {
                 ))}
               </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
-              {technologies[activetechnologies].items.map((item, index) => (
-                <div
-                  key={index}
-                  className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={56}
-                    height={56}
-                    className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                  />
+            {/* Har tab ka content HTML mein (Google parh sake), sirf active nazar aata hai */}
+            {technologies.map((tab, tabIndex) => (
+              <div
+                key={tabIndex}
+                className={activetechnologies === tabIndex ? "flex flex-wrap justify-center gap-1 sm:gap-4" : "hidden"}
+              >
+                {tab.items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={56}
+                      height={56}
+                      className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                    />
 
-                  <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
-                    {item.name}
-                  </h3>
-                </div>
-              ))}
-            </div>
+                    <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
+                      {item.name}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
         <section className="py-10 bg-white">
@@ -1308,7 +1272,8 @@ export default function wellnessFitness() {
             <div className="bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <img
                 src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                alt="Talk to the DevApp Grid team"
+                loading="lazy"
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
@@ -1321,7 +1286,7 @@ export default function wellnessFitness() {
                 href="/contact-us"
                 className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
               >
-                Hire Dedicated Developer
+                Hire Dedicated Developers
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
@@ -1332,15 +1297,15 @@ export default function wellnessFitness() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-15 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black ">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black ">
               Offshore Web, Mobile & Software Development Company
-            </h1>
+            </h2>
             <p>
-              Devapp Grid is a leading Software, Web, & Mobile App
-              Development Company with a vast area of experience in crafting
-              stunning and end to end encrypted technology solutions. We offer
-              excellent expertise of the industry followed by an exactly planned
-              approach to elevate your growth.
+              DevApp Grid is a leading software, web, and mobile app
+              development company with wide experience in building secure,
+              well-designed technology solutions. We combine deep industry
+              expertise with a carefully planned approach to help your
+              business grow.
             </p>
           </div>
         </section>
@@ -1356,7 +1321,8 @@ export default function wellnessFitness() {
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
-                    alt=""
+                    alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                    loading="lazy"
                     className="w-11 h-11 object-contain"
                   />
                 </div>
@@ -1378,13 +1344,13 @@ export default function wellnessFitness() {
 
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Industries We Serve
-            </h1>
+            </h2>
             <p>
-              We’ve worked with a variety of organization throughout the years,
-              including major corporations with enormous employees and local
-              firms in a variety of sectors.
+              Over the years, we’ve worked with many kinds of organizations,
+              from large corporations with big teams to local firms across a
+              variety of sectors.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1396,6 +1362,7 @@ export default function wellnessFitness() {
                 <img
                   src={item.bgImage}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
@@ -1403,7 +1370,8 @@ export default function wellnessFitness() {
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
                     <img
                       src={item.icon}
-                      alt=""
+                      alt={`${item.title} industry icon`}
+                      loading="lazy"
                       className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
                     />
                   </div>
@@ -1417,10 +1385,9 @@ export default function wellnessFitness() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-5 mt-13 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Why Choose Us?
-            </h1>
+            </h2>
             <p>
               As one of the most trusted mobile app development companies in the USA, we help businesses build apps that truly dominate the market. Here's how we set every client up for success:
             </p>
@@ -1452,14 +1419,13 @@ export default function wellnessFitness() {
         </section>
         <section>
           <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
-            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
-            </h1>
+            </h2>
             <p>
-              As a food software development business, our mission has always
-              been to prioritize client happiness. Here is what some of our
-              previous clients had to comment regarding our offerings, straight
-              from them.
+              As a fitness app development company, our mission has always been
+              to put client happiness first. Here is what some of our clients
+              have to say about working with us.
             </p>
           </div>
         </section>
@@ -1491,7 +1457,8 @@ export default function wellnessFitness() {
                       <div className="w-16 h-16  border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
-                          alt={item.name}
+                          alt={`${item.name} – client review`}
+                          loading="lazy"
                           className="w-full h-full object-contain "
                           onError={(e) => {
                             e.target.src =
@@ -1528,7 +1495,7 @@ export default function wellnessFitness() {
                       </span>
                       <img
                         src={item.verifiedImage}
-                        alt="Google Logo"
+                        alt="Verified Google review"
                         className="h-7 object-contain"
                         onError={(e) => {
                           e.target.src =
@@ -1561,14 +1528,13 @@ export default function wellnessFitness() {
         <section>
           {/* Heading */}
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+            <h2 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions
-            </h1>
+            </h2>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center px-5">
-              Customers frequently ask us the same questions when it comes to
-              bespoke software development for food delivery management at their
-              businesses. Here are a few that have been solved.
+              Clients often ask us similar questions about building custom
+              wellness and fitness apps. Here are answers to the most common ones.
             </p>
           </div>
 
@@ -1634,15 +1600,14 @@ export default function wellnessFitness() {
         </section>
         <section>
           <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Have Something in Mind? Let's Talk
-            </h1>
+            </h2>
             <p>
-              Have a look at the services and development process of the Devapp
-              Grid. See What process we follow for mobile app and software
-              development. Have a look at how we are praised by our clients
-              Start a conversation to innovate your next great idea into reality
-              with us.
+              Explore DevApp Grid’s services and the development process we
+              follow for mobile app and software projects, and see what our
+              clients say about working with us. Then start a conversation
+              and let’s turn your next great idea into reality together.
             </p>
           </div>
         </section>
@@ -1661,6 +1626,7 @@ export default function wellnessFitness() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

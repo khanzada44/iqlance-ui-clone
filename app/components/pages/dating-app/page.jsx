@@ -7,7 +7,7 @@ import {
   Paperclip,
 } from "lucide-react";
 import { ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "../../contactForm/ContactForm";
@@ -35,8 +35,41 @@ import {
   services
 } from "./data";
 import Image from "next/image";
-  import { useRouter } from "next/navigation";
-export default function SocialMedia() {
+import { useRouter } from "next/navigation";
+
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\\d+\\s()-]/g, "").replace(/(?!^)\\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\\s()-]/g, "");
+  if (!/^\\+?\\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\\d)\\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// FAQPage schema — wahi sawal jo page par dikh rahe hain (points bhi jawab mein)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: [String(f.answer || ""), ...(f.points || [])].join(" ").replace(/<[^>]*>/g, "").trim(),
+    },
+  })),
+};
+
+// Component ka naam theek kiya (ye Dating page hai, SocialMedia nahi)
+export default function DatingApp() {
   const [activeTab, setActiveTab] = useState("trainer");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
@@ -89,10 +122,7 @@ export default function SocialMedia() {
     },
   ];
 
-  const currentStep = processSteps[activeStepIndex] || processSteps[0];
-  // const currentTab = featuresTabsData.find((tab) => tab.id === activeTab) || featuresTabsData[0];
   // Form State
-  const [blogs, setBlogs] = useState([]);
   const fileInputRef = useRef(null);
 
   const handleFileChange = (e) => {
@@ -113,14 +143,16 @@ export default function SocialMedia() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
   };
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
     if (errors[name]) {
@@ -148,7 +180,7 @@ export default function SocialMedia() {
 
       payload.append("name", formData.name.trim());
       payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
+      payload.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -158,7 +190,7 @@ export default function SocialMedia() {
         payload.append("file", formData.file);
       }
 
-      const response = await submitContactForm(payload);
+      await submitContactForm(payload);
       router.push("/thanks-You");
       setStatusMessage({
         type: "success",
@@ -182,8 +214,7 @@ export default function SocialMedia() {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API ERROR:", error);
-      console.error("API RESPONSE:", error?.response?.data);
+      console.error("Form submit failed:", error?.response?.data || error);
 
       let errorMessage = "Failed to send message. Please try again later.";
 
@@ -202,24 +233,14 @@ export default function SocialMedia() {
     } finally {
       setLoading(false);
     }
-  };;
-
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const data = await getBlogs();
-        const blogList = data?.response?.data || [];
-        setBlogs(blogList);
-      } catch (error) {
-        setBlogs([]);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -249,7 +270,7 @@ export default function SocialMedia() {
               <p className="text-base md:text-lg leading-relaxed text-black">
                 With a strong focus on security, performance, and thoughtful functionality,
                 we make sure every feature serves a clear purpose. Whether you're launching a
-                new dating startup or expanding an existing platform, Devapp Grid helps you build
+                new dating startup or expanding an existing platform, DevApp Grid helps you build
                 an application designed to encourage meaningful connections while supporting
                 long-term growth.
               </p>
@@ -316,7 +337,10 @@ export default function SocialMedia() {
                   noValidate
                 >
                   <div>
+                    <label htmlFor="dating-name" className="sr-only">Name</label>
                     <input
+                      id="dating-name"
+                      autoComplete="name"
                       type="text"
                       name="name"
                       placeholder="Name*"
@@ -335,7 +359,10 @@ export default function SocialMedia() {
                   </div>
 
                   <div>
+                    <label htmlFor="dating-email" className="sr-only">Email</label>
                     <input
+                      id="dating-email"
+                      autoComplete="email"
                       type="email"
                       name="email"
                       placeholder="Email*"
@@ -354,12 +381,22 @@ export default function SocialMedia() {
                   </div>
 
                   <div>
+                    <label htmlFor="dating-phone" className="sr-only">Phone</label>
                     <input
+                      id="dating-phone"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      maxLength={20}
+                      aria-invalid={!!errors.phone}
                       type="tel"
                       name="phone"
                       placeholder="Phone*"
                       value={formData.phone}
                       onChange={handleChange}
+                      onBlur={() =>
+                        formData.phone &&
+                        setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                      }
                       disabled={loading}
                       className={`w-full bg-transparent border-b-2 ${
                         errors.phone ? "border-red-500" : "border-gray-300"
@@ -373,10 +410,12 @@ export default function SocialMedia() {
                   </div>
 
                   <div>
+                    <label htmlFor="dating-message" className="sr-only">Project details</label>
                     <textarea
+                      id="dating-message"
                       name="message"
                       rows={3}
-                      placeholder="Write here Brief about the project..."
+                      placeholder="Write a brief about your project..."
                       value={formData.message}
                       onChange={handleChange}
                       disabled={loading}
@@ -447,13 +486,13 @@ export default function SocialMedia() {
         </section>
         <section className="py-12 px-4 max-w-6xl mx-auto font-sans text-center text-black">
           <h2 className="text-2xl md:text-4xl font-extrabold text-black mb-6">
-            Why Devapp Grid for Custom Dating App Development in the USA
+            Why DevApp Grid for Custom Dating App Development in the USA
           </h2>
 
           <div className="space-y-6 text-sm md:text-base leading-relaxed  max-w-6xl mx-auto mb-10">
             <p>
               Every dating app has a different purpose, audience, and business model.
-              At Devapp Grid, we build custom dating applications around your specific goals,
+              At DevApp Grid, we build custom dating applications around your specific goals,
               user behavior, and growth strategy. From UI/UX design and development to
               testing and deployment, we focus on creating a secure, polished, and
               reliable experience across both Android and iOS.
@@ -479,7 +518,7 @@ export default function SocialMedia() {
           <div className="w-full overflow-hidden ">
             <Image
               src="/images/Custom-Dating-App-Development-USA.png"
-              alt="Dating App Development Banner"
+              alt="Custom dating app development in the USA"
               width={1200}
               height={800}
               sizes="100vw"
@@ -497,9 +536,8 @@ export default function SocialMedia() {
               <p className="text-sm md:text-base  leading-relaxed">
                 We offer on-demand dating app solutions customized to diverse
                 audiences and their relationship goals. We are not just app
-                developers, but we ensure to be your trusted technology partner
-                to build an app that stands ahead in the highly competitive
-                market.
+                developers; we act as your trusted technology partner to build
+                an app that stands out in a highly competitive market.
               </p>
               <div className="flex flex-col gap-y-5">
                 {datingSolutions.map((item, index) => (
@@ -638,7 +676,7 @@ export default function SocialMedia() {
                 <div className="w-full lg:w-1/2 min-h-87.5 sm:min-h-112.5 relative overflow-hidden shadow-sm">
                   <Image
                     src={item.imageUrl}
-                    alt={item.imageAlt || ""}
+                    alt={item.imageAlt || item.title}
                     width={1200}
                     height={800}
                     sizes="100vw"
@@ -654,8 +692,8 @@ export default function SocialMedia() {
           <div className="max-w-7xl mx-auto px-4">
             <div className=" bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <Image
-                src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                src="/images/letdiscuss-icon.webp"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
@@ -684,9 +722,9 @@ export default function SocialMedia() {
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
-                    <span className="font-medium text-sm sm:text-base">
+                    <a href="mailto:info@devappgrid.com" className="font-medium text-sm sm:text-base hover:text-red-700">
                       info@devappgrid.com
-                    </span>
+                    </a>
                   </div>
 
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left">
@@ -701,12 +739,13 @@ export default function SocialMedia() {
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">USA:</span>
+                    <a href="tel:+18669788570" className="font-medium text-sm sm:text-base leading-6 hover:text-red-700">
+                      +1 (866) 978-8570,
+                    </a>
+                    <a href="tel:+13237477192" className="font-medium text-sm sm:text-base leading-6 hover:text-red-700">
+                      +1 (323) 747-7192
+                    </a>
                   </div>
                 </div>
               </div>
@@ -744,6 +783,8 @@ export default function SocialMedia() {
                 return (
                   <button
                     key={tab.id}
+                    type="button"
+                    aria-pressed={isActive}
                     onClick={() => setActiveTab(tab.id)}
                     className={`relative pb-3 text-base md:text-lg transition-colors duration-200 ${isActive
                       ? "text-red-600 font-semibold"
@@ -760,44 +801,50 @@ export default function SocialMedia() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {appData[activeTab]?.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center rounded-sm min-h-36 gap-3"
-              >
-                <Image
-                  src={item.iconPath}
-                  alt={item.title}
-                  width={40}
-                  height={40}
-                  className="w-10 h-10 object-contain"
-                />
-                <span className="text-black font-medium text-sm md:text-base">
-                  {item.title}
-                </span>
-              </div>
-            ))}
-          </div>
+          {/* Har tab ka content HTML mein (Google parh sake), sirf active nazar aata hai */}
+          {tabs.map((tab) => (
+            <div
+              key={tab.id}
+              className={activeTab === tab.id ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" : "hidden"}
+            >
+              {(appData[tab.id] || []).map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center rounded-sm min-h-36 gap-3"
+                >
+                  <Image
+                    src={item.iconPath}
+                    alt={item.title}
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain"
+                  />
+                  <span className="text-black font-medium text-sm md:text-base">
+                    {item.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
 
         <section >
           <div className="max-w-7xl mx-auto px-4">
             <div className="mt-10 bg-red-50  px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <Image
-                src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                src="/images/letdiscuss-icon.webp"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
 
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
-                So, We Guess You want to talk about your Project
+                Want to Talk About Your Dating App Project?
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
-                Send your Requirements on
+                Send your requirements to:
               </p>
               <div className="flex justify-center">
                 <div className="w-[80%] mt-8 border border-red-500 bg-red-50 p-5 flex flex-col lg:flex-row justify-center items-center gap-5">
@@ -813,9 +860,9 @@ export default function SocialMedia() {
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
-                    <span className="font-medium text-sm sm:text-base">
+                    <a href="mailto:info@devappgrid.com" className="font-medium text-sm sm:text-base hover:text-red-700">
                       info@devappgrid.com
-                    </span>
+                    </a>
                   </div>
 
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left">
@@ -830,12 +877,13 @@ export default function SocialMedia() {
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">USA:</span>
+                    <a href="tel:+18669788570" className="font-medium text-sm sm:text-base leading-6 hover:text-red-700">
+                      +1 (866) 978-8570,
+                    </a>
+                    <a href="tel:+13237477192" className="font-medium text-sm sm:text-base leading-6 hover:text-red-700">
+                      +1 (323) 747-7192
+                    </a>
                   </div>
                 </div>
               </div>
@@ -858,7 +906,7 @@ export default function SocialMedia() {
             <div className="w-full h-full overflow-hidden rounded-sm">
               <Image
                 src="/images/our-developers.jpg"
-                alt="Hire Developers"
+                alt="Hire dating app developers"
                 width={1200}
                 height={800}
                 sizes="100vw"
@@ -938,7 +986,7 @@ export default function SocialMedia() {
             <div className="w-full overflow-hidden ">
               <Image
                 src="/images/healthcare-app-built.jpg"
-                alt="Cost Analysis Banner"
+                alt="Dating app development cost"
                 width={1200}
                 height={800}
                 sizes="100vw"
@@ -951,10 +999,9 @@ export default function SocialMedia() {
                 Endeavors That Make Us Proud
               </h2>
               <p className="text-sm md:text-base  max-w-6xl mx-auto leading-relaxed">
-                Devapp Grid has always been honored with valuable words
-                for the efforts given on mobile app development that are
-                efficiently unique and user centric. Here are some of the best
-                examples for this.
+                DevApp Grid has earned great feedback for building dating and
+                social apps that are unique and user-centric. Here are some of
+                the projects we are most proud of.
               </p>
             </div>
           </div>
@@ -1049,11 +1096,11 @@ export default function SocialMedia() {
           <div className="bg-red-50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl space-y-3">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-black leading-tight">
-                Check How We turn Your Idea into Innovative Product
+                See How We Turn Your Idea Into an Innovative Product
               </h2>
               <p className="text-black text-sm md:text-base leading-relaxed">
-                Our rich portfolio justifies that we are one of the best
-                logistics app development companies in the USA.
+                Our portfolio shows why businesses across the USA trust us as
+                one of the best dating app development companies.
               </p>
             </div>
 
@@ -1072,9 +1119,8 @@ export default function SocialMedia() {
             Technologies We Use
           </h2>
           <p className="text-black text-sm md:text-base leading-relaxed">
-            Capabilities and tools aside, you can expect top-notch technologies
-            in use at our best on-demand app development company; we use them
-            generously for an intuitive and customised app generation.
+            We use modern, proven technologies to build dating apps that are
+            fast, secure, and ready to scale as your community grows.
           </p>
         </div>
         <section className="py-16">
@@ -1084,6 +1130,8 @@ export default function SocialMedia() {
                 {technologies.map((tab, index) => (
                   <button
                     key={index}
+                    type="button"
+                    aria-pressed={activetechnologies === index}
                     onClick={() => setActivetechnologies(index)}
                     className={`relative py-4 text-lg transition-all duration-200 cursor-pointer ${activetechnologies === index
                       ? "text-red-600 font-semibold"
@@ -1099,26 +1147,31 @@ export default function SocialMedia() {
                 ))}
               </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-1 sm:gap-4">
-              {technologies[activetechnologies].items.map((item, index) => (
-                <div
-                  key={index}
-                  className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={56}
-                    height={56}
-                    className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                  />
-
-                  <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
-                    {item.name}
-                  </h3>
-                </div>
-              ))}
-            </div>
+            {/* Har tab ka content HTML mein (Google parh sake), sirf active nazar aata hai */}
+            {technologies.map((tab, tabIndex) => (
+              <div
+                key={tabIndex}
+                className={activetechnologies === tabIndex ? "flex flex-wrap justify-center gap-1 sm:gap-4" : "hidden"}
+              >
+                {tab.items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-[49%] sm:w-[31%] md:w-[23%] lg:w-37.5 bg-white shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={56}
+                      height={56}
+                      className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                    />
+                    <h3 className="mt-3 text-sm sm:text-base font-medium text-center">
+                      {item.name}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -1126,19 +1179,19 @@ export default function SocialMedia() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="bg-red-50 px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 text-center">
               <Image
-                src="/images/letdiscuss-icon.png.webp"
-                alt=""
+                src="/images/letdiscuss-icon.webp"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="w-14 h-14 sm:w-16 sm:h-16 mx-auto"
               />
               <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight faq">
-                We are Team of Talented, Experienced, and Certified Designers
-                and Developers.
+                We Are a Team of Talented, Experienced, and Certified Designers
+                and Developers
               </h2>
 
               <p className="mt-4 text-sm sm:text-base text-black max-w-3xl mx-auto leading-7 faq">
-                Let us Build Something Extraordinary.
+                Let us build something extraordinary.
               </p>
 
               {/* Contact Box */}
@@ -1156,9 +1209,9 @@ export default function SocialMedia() {
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
-                    <span className="font-medium text-sm sm:text-base">
+                    <a href="mailto:info@devappgrid.com" className="font-medium text-sm sm:text-base hover:text-red-700">
                       info@devappgrid.com
-                    </span>
+                    </a>
                   </div>
 
                   <div className="flex items-center justify-center gap-2 text-center lg:text-left">
@@ -1173,12 +1226,13 @@ export default function SocialMedia() {
                         WebkitMaskSize: "contain",
                       }}
                     ></div>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                      USA: +1 (866) 978-8570,
-                    </span>
-                    <span className="font-medium text-sm sm:text-base leading-6">
-                       +1 (323) 747-7192
-                    </span>
+                    <span className="font-medium text-sm sm:text-base leading-6">USA:</span>
+                    <a href="tel:+18669788570" className="font-medium text-sm sm:text-base leading-6 hover:text-red-700">
+                      +1 (866) 978-8570,
+                    </a>
+                    <a href="tel:+13237477192" className="font-medium text-sm sm:text-base leading-6 hover:text-red-700">
+                      +1 (323) 747-7192
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1187,7 +1241,7 @@ export default function SocialMedia() {
                 href="/contact-us"
                 className="group mt-8 w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold inline-flex justify-center items-center gap-3  transition cursor-pointer"
               >
-                Hire Dedicated Developer
+                Hire Dedicated Developers
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
@@ -1198,17 +1252,15 @@ export default function SocialMedia() {
         </section>
 
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-15 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
+          <div className="text-center max-w-5xl mx-auto space-y-5 mt-15 mb-10 px-5">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Offshore Web, Mobile & Software Development Company
-            </h1>
+            </h2>
             <p>
-              Devapp Grid is a leading Software Development Company currently
-              available in the market, with over 7 years of experience under the
-              belt. Over the years, our team members have honed their skills,
-              handling over 1,500 projects of different types and companies,
-              offering flexible solutions and comprehensive benefits to all.
+              DevApp Grid is a leading software development company with over 7
+              years of experience. Over the years, our team has completed more
+              than 1,500 projects for companies of every size, offering flexible
+              solutions and real business value.
             </p>
           </div>
         </section>
@@ -1223,7 +1275,8 @@ export default function SocialMedia() {
                 <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                   <img
                     src={item.icon}
-                    alt=""
+                    alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                    loading="lazy"
                     className="w-11 h-11 object-contain"
                   />
                 </div>
@@ -1245,15 +1298,14 @@ export default function SocialMedia() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-5 mt-10 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
-              {" "}
+          <div className="text-center max-w-5xl mx-auto space-y-5 mt-10 mb-10 px-5">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black">
               Industries We Serve
-            </h1>
+            </h2>
             <p>
-              Our on-demand app development services extend across multiple
-              different industries, offering advanced features, rich technology
-              stacks, and high-quality performance improvement.
+              Beyond dating apps, our app development services extend across many
+              industries, offering advanced features, modern technology stacks,
+              and high-quality performance.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 mt-8 sm:mt-12">
@@ -1264,7 +1316,7 @@ export default function SocialMedia() {
               >
                 <Image
                   src={item.bgImage}
-                  alt={item.title}
+                  alt={`${item.title} app development`}
                   width={1200}
                   height={800}
                   sizes="100vw"
@@ -1275,7 +1327,7 @@ export default function SocialMedia() {
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
                     <Image
                       src={item.icon}
-                      alt=""
+                      alt={`${item.title} icon`}
                       width={40}
                       height={40}
                       className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
@@ -1292,9 +1344,9 @@ export default function SocialMedia() {
 
         <section>
           <div className="text-center max-w-6xl mx-auto space-y-4 mt-15 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
               Why Choose Us for Dating App Development
-            </h1>
+            </h2>
             <p className="text-black text-sm md:text-base leading-relaxed">
               Building a dating app takes more than matching algorithms and messaging features.
               It requires a deep understanding of human behavior, privacy, trust, engagement,
@@ -1334,14 +1386,13 @@ export default function SocialMedia() {
 
         <section>
           <div className="space-y-4 text-sm md:text-base text-black leading-relaxed text-center px-5">
-            <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-6 leading-snug">
               Client Testimonials
-            </h1>
+            </h2>
             <p>
-              Our purpose as a logistics app development company, has always
-              centered around putting customer satisfaction first. Here are some
-              of the things our past clients have to say about our services,
-              directly from them.
+              As a dating app development company, our purpose has always
+              centered on putting customer satisfaction first. Here is what
+              some of our clients have to say about our services.
             </p>
           </div>
         </section>
@@ -1369,7 +1420,8 @@ export default function SocialMedia() {
                       <div className="w-16 h-16 rounded-full border border-gray-200 p-1 flex items-center justify-center bg-gray-50 shrink-0">
                         <img
                           src={item.image}
-                          alt={item.name}
+                          alt={`${item.name} – client review`}
+                          loading="lazy"
                           className="w-full h-full object-contain rounded-full"
                           onError={(e) => {
                             e.target.src =
@@ -1405,7 +1457,7 @@ export default function SocialMedia() {
                       </span>
                       <img
                         src={item.verifiedImage}
-                        alt="Google Logo"
+                        alt="Verified Google review"
                         className="h-7 object-contain"
                         onError={(e) => {
                           e.target.src =
@@ -1435,13 +1487,13 @@ export default function SocialMedia() {
         </section>
         <section>
           <div>
-            <h1 className="flex justify-center font-bold text-3xl mb-4 mt-2">
+            <h2 className="flex justify-center font-bold text-3xl mb-4 mt-2">
               Frequently Asked Questions
-            </h1>
+            </h2>
 
             <p className="mt-8 mb-10 max-w-5xl mx-auto text-black text-base md:text-lg leading-6 text-center faq px-5">
-              Here you will find the answers you are looking for because we know
-              what’s in our client’s mind.
+              Here are answers to the questions our clients ask us most often
+              about dating app development.
             </p>
           </div>
 
@@ -1506,16 +1558,15 @@ export default function SocialMedia() {
           </div>
         </section>
         <section>
-          <div className="text-center max-w-1xl mx-auto space-y-4 mt-3 mb-10 px-5">
-            <h1 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black ">
+          <div className="text-center max-w-5xl mx-auto space-y-4 mt-3 mb-10 px-5">
+            <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-black ">
               Have Something in Mind? Let's Talk
-            </h1>
+            </h2>
             <p>
-              Have a look at the services and development process of the Devapp
-              Grid. See What process we follow for mobile app and software
-              development. Have a look at how we are praised by our clients
-              Start a conversation to innovate your next great idea into reality
-              with us.
+              Explore DevApp Grid’s services and the development process we
+              follow for mobile app and software projects, and see what our
+              clients say about working with us. Then start a conversation
+              and let’s turn your next great idea into reality together.
             </p>
           </div>
         </section>
@@ -1534,6 +1585,7 @@ export default function SocialMedia() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

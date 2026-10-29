@@ -20,7 +20,28 @@ import {
   partners
 } from "../../../../utils/data";
 import { submitContactForm } from "@/services/send-call-request";
-  import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
+
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\\d+\\s()-]/g, "").replace(/(?!^)\\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\\s()-]/g, "");
+  if (!/^\\+?\\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\\d)\\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// "+1 (647) 555-1234" -> "tel:+16475551234"
+const telHref = (phone) => `tel:${String(phone).replace(/[^\d+]/g, "")}`;
+
 export default function ContactSection() {
   const fileInputRef = useRef(null);
   const [activetechnologies, setActivetechnologies] = useState(0);
@@ -39,9 +60,11 @@ export default function ContactSection() {
 
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -51,8 +74,6 @@ export default function ContactSection() {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
-
-  const [errors, setErrors] = useState({}); 
 
 
   const handleFileChange = (e) => {
@@ -76,8 +97,9 @@ export default function ContactSection() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
@@ -104,7 +126,7 @@ export default function ContactSection() {
 
       payload.append("name", formData.name.trim());
       payload.append("email", formData.email.trim());
-      payload.append("phone", formData.phone.trim());
+      payload.append("phone", formData.phone.replace(/[\s()-]/g, ""));
       payload.append("message", formData.message.trim());
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -114,7 +136,7 @@ export default function ContactSection() {
         payload.append("file", formData.file);
       }
 
-      const response = await submitContactForm(payload);
+      await submitContactForm(payload);
       router.push("/thanks-You");
       setStatusMessage({
         type: "success",
@@ -138,8 +160,7 @@ export default function ContactSection() {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("API ERROR:", error);
-      console.error("API RESPONSE:", error?.response?.data);
+      console.error("Form submit failed:", error?.response?.data || error);
 
       let errorMessage = "Failed to send message. Please try again later.";
 
@@ -164,9 +185,9 @@ export default function ContactSection() {
       <div className="w-full max-w-7xl mx-auto">
         <section className="w-full my-8">
           <div className="bg-linear-to-r from-red-700 via-red-600 to-red-100 text-white p-6 md:p-12 rounded-lg shadow-lg w-full">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
               Let’s Connect
-            </h2>
+            </h1>
             <p className="text-gray-200 text-base md:text-lg max-w-3xl mb-8 leading-relaxed">
               Hey there! If you have the next great mobile app and software
               development idea, our team would love to help you bring it to
@@ -199,9 +220,9 @@ export default function ContactSection() {
           </div>
 
           <div className="text-center mt-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-black">
-              During the 30 minute call, we’ll discuss:
-            </h3>
+            <h2 className="text-2xl md:text-3xl font-bold text-black">
+              During the 30-minute call, we’ll discuss:
+            </h2>
           </div>
         </section>
 
@@ -212,14 +233,19 @@ export default function ContactSection() {
               {/* Left Side Info */}
               <div className="w-full">
                 <p className="mt-6 text-gray-700">
-                  Share Your Project Details on{" "}
-                  <span className="font-semibold">info@devappgrid.com</span>
+                  Share your project details at{" "}
+                  <a href="mailto:info@devappgrid.com" className="font-semibold hover:text-red-700">
+                    info@devappgrid.com
+                  </a>
                 </p>
 
                 <div className="mt-6">
                   <h3 className="font-bold text-lg">Talk To Experts:</h3>
                   <p className="mt-2 text-gray-700">
-                    USA: +1 (866) 978-8570
+                    USA:{" "}
+                    <a href="tel:+18669788570" className="hover:text-red-700">
+                      +1 (866) 978-8570
+                    </a>
                   </p>
                 </div>
 
@@ -245,14 +271,14 @@ export default function ContactSection() {
 
                 <p className="mt-6 text-black leading-8">
                   We’ll also provide you with some advice on what to avoid,
-                  based on our 12 years experience of building and launching
+                  based on our years of experience building and launching
                   apps, as well as industry trends and best practices that we
                   observe in the market today.
                 </p>
 
-                <h1 className="font-bold text-lg mt-6">
+                <h3 className="font-bold text-lg mt-6">
                   What do I need to prepare?
-                </h1>
+                </h3>
                 <p className="mt-2 text-black leading-8">
                   Please come prepared to provide as much detail about your
                   project as possible. What problem are you trying to solve? Who
@@ -285,7 +311,10 @@ export default function ContactSection() {
                 noValidate
               >
                 <div>
+                  <label htmlFor="lt-name" className="sr-only">Name</label>
                   <input
+                    id="lt-name"
+                    autoComplete="name"
                     type="text"
                     name="name"
                     placeholder="Name*"
@@ -302,7 +331,10 @@ export default function ContactSection() {
                 </div>
 
                 <div>
+                  <label htmlFor="lt-email" className="sr-only">Email</label>
                   <input
+                    id="lt-email"
+                    autoComplete="email"
                     type="email"
                     name="email"
                     placeholder="Email*"
@@ -319,12 +351,22 @@ export default function ContactSection() {
                 </div>
 
                 <div>
+                  <label htmlFor="lt-phone" className="sr-only">Phone</label>
                   <input
+                    id="lt-phone"
+                    autoComplete="tel"
+                    inputMode="tel"
+                    maxLength={20}
+                    aria-invalid={!!errors.phone}
                     type="tel"
                     name="phone"
                     placeholder="Phone*"
                     value={formData.phone}
                     onChange={handleChange}
+                    onBlur={() =>
+                      formData.phone &&
+                      setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                    }
                     disabled={loading}
                     className={`w-full bg-transparent border-b-2 ${errors.phone ? "border-red-500" : "border-gray-300"} focus:border-red-600 outline-none py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-colors disabled:opacity-50`}
                   />
@@ -336,10 +378,12 @@ export default function ContactSection() {
                 </div>
 
                 <div>
+                  <label htmlFor="lt-message" className="sr-only">Project details</label>
                   <textarea
+                    id="lt-message"
                     name="message"
                     rows={3}
-                    placeholder="Write here Brief about the project..."
+                    placeholder="Write a brief about your project..."
                     value={formData.message}
                     onChange={handleChange}
                     disabled={loading}
@@ -388,6 +432,19 @@ export default function ContactSection() {
                   </label>
                 </div>
 
+                {statusMessage.text && (
+                  <div
+                    role="status"
+                    className={`p-3 text-sm font-medium border rounded-sm ${
+                      statusMessage.type === "success"
+                        ? "bg-green-50 border-green-200 text-green-700"
+                        : "bg-red-50 border-red-200 text-red-700"
+                    }`}
+                  >
+                    {statusMessage.text}
+                  </div>
+                )}
+
                 <div className="pt-2">
                   <button
                     type="submit"
@@ -411,7 +468,7 @@ export default function ContactSection() {
 
             {/* Office Heading */}
             <div className="mt-20 text-center w-full">
-              <h2 className="text-4xl font-bold">Our Office</h2>
+              <h2 className="text-4xl font-bold">Our Offices</h2>
 
               <p className="max-w-5xl mx-auto mt-6 text-gray-600 leading-8">
                 To better serve our clients, DevApp Grid has opened
@@ -434,7 +491,7 @@ export default function ContactSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  Devapp
+                  DevApp Grid
                 </span>
 
                 <span className="flex items-center gap-2">
@@ -449,7 +506,9 @@ export default function ContactSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  info@devappgrid.com
+                  <a href="mailto:info@devappgrid.com" className="hover:text-red-700">
+                    info@devappgrid.com
+                  </a>
                 </span>
 
                 <span className="flex items-center gap-2">
@@ -464,7 +523,7 @@ export default function ContactSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                  schedule meeting
+                  Schedule a Meeting
                 </span>
               </div>
             </div>
@@ -481,12 +540,13 @@ export default function ContactSection() {
                   className="bg-white shadow-sm hover:shadow-lg transition rounded-md p-6 sm:p-10 text-center w-full"
                 >
                   {office.title && (
-                    <h4 className="text-2xl font-bold mb-6">{office.title}</h4>
+                    <p className="text-2xl font-bold mb-6">{office.title}</p>
                   )}
 
                   <img
                     src={office.image}
-                    alt={office.city}
+                    alt={`DevApp Grid ${office.city} office`}
+                    loading="lazy"
                     className="w-24 h-24 mx-auto object-contain"
                   />
 
@@ -511,7 +571,9 @@ export default function ContactSection() {
                       WebkitMaskSize: "contain",
                     }}
                   ></div>
-                      <span>{office.phone}</span>
+                      <a href={telHref(office.phone)} className="hover:text-red-700">
+                        {office.phone}
+                      </a>
                     </div>
                   )}
                 </div>
@@ -528,11 +590,10 @@ export default function ContactSection() {
             </h2>
 
             <p className="mt-8 text-gray-700 text-base md:text-xl leading-8 md:leading-10 max-w-5xl mx-auto">
-              Have a look at the services and development process of the Devapp
-              Grid. See what process we follow for mobile app and software
-              development. Have a look at how we are praised by our clients.
-              Start a conversation to innovate your next great idea into reality
-              with us.
+              Explore DevApp Grid’s services and the development process we
+              follow for mobile app and software projects, and see what our
+              clients say about working with us. Then start a conversation
+              and let’s turn your next great idea into reality together.
             </p>
           </div>
         </section>
@@ -552,6 +613,7 @@ export default function ContactSection() {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

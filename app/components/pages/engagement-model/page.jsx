@@ -9,14 +9,39 @@ import { comparisonData, features, tabsData } from "../engagement-model/data";
 import { submitContactForm } from "../../../../services/send-call-request";
 import { useRouter } from "next/navigation";
 import { stats, faqsData } from "../../../../utils/data";
+// FAQPage schema — wahi sawal jo page par dikh rahe hain
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqsData.map((f) => ({
+    "@type": "Question",
+    name: String(f.question),
+    acceptedAnswer: { "@type": "Answer", text: String(f.answer).replace(/<[^>]*>/g, "") },
+  })),
+};
+
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\d+\s()-]/g, "").replace(/(?!^)\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\s()-]/g, "");
+  if (!/^\+?\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
 export default function EngagementModelSection() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState(-1);
   const [activeModelTab, setActiveModelTab] = useState("hourly");
   const router = useRouter();
   const fileInputRef = useRef(null);
-
-  const currentTab =
-    tabsData.find((tab) => tab.id === activeModelTab) || tabsData[0];
 
   const [formData, setFormData] = useState({
     name: "",
@@ -39,7 +64,8 @@ export default function EngagementModelSection() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
@@ -65,8 +91,9 @@ export default function EngagementModelSection() {
       newErrors.email = "Enter a valid email address";
     }
 
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
@@ -93,7 +120,7 @@ export default function EngagementModelSection() {
 
       payload.append("name", formData.name || "");
       payload.append("email", formData.email || "");
-      payload.append("phone", formData.phone || "");
+      payload.append("phone", (formData.phone || "").replace(/[\s()-]/g, ""));
       payload.append("message", formData.message || "");
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -103,12 +130,8 @@ export default function EngagementModelSection() {
         payload.append("file", formData.file);
       }
 
-      console.log("Submitting form...");
-
-      const response = await submitContactForm(payload);
+      await submitContactForm(payload);
       router.push("/thanks-You");
-
-      console.log("API SUCCESS:", response);
 
       setStatusMessage({
         type: "success",
@@ -132,11 +155,7 @@ export default function EngagementModelSection() {
         fileInputRef.current.value = "";
       }
     } catch (error) {
-      console.error("Error:", error);
-      console.error("Message:", error?.message);
-      console.error("Response:", error?.response);
-      console.error("Response Data:", error?.response?.data);
-      console.error("Status:", error?.response?.status);
+      console.error("Form submit failed:", error?.response?.data || error);
 
       let errorMsg = "Failed to send message. Please try again later.";
 
@@ -160,22 +179,25 @@ export default function EngagementModelSection() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="max-w-7xl mx-auto">
         <section className="py-2 bg-white">
           <div className="w-full px-3 sm:px-5">
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
               <div className="lg:col-span-7 text-center lg:text-left mt-8">
-                <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
-                  Engagement Model
-                </h3>
+                <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold mb-3 leading-snug bg-linear-to-r from-red-500 via-red-800 to-red-900 bg-clip-text text-transparent">
+                  Engagement Models to Hire Dedicated Developers
+                </h1>
 
-                <h3 className="mt-4 sm:mt-6 text-xl sm:text-2xl font-semibold">
+                <h2 className="mt-4 sm:mt-6 text-xl sm:text-2xl font-semibold">
                   A Process You Can Trust, Results That Speak for Themselves
-
-                </h3>
+                </h2>
 
                 <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-7 sm:leading-9 text-black">
-                  Devapp Grid has built its reputation on more than just great technology; it's the long-term
+                  DevApp Grid has built its reputation on more than just great technology; it's the long-term
                   relationships we build with clients that set us apart. Our experienced development team knows that
                   the right engagement model isn't a small detail, it's the foundation for quality delivery, real
                   transparency, and a project that actually succeeds.
@@ -244,6 +266,8 @@ export default function EngagementModelSection() {
                         type="text"
                         name="name"
                         placeholder="Name*"
+                        aria-label="Name"
+                        autoComplete="name"
                         value={formData.name}
                         onChange={handleChange}
                         className={`w-full bg-transparent border-b-2 ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-black  placeholder-gray-400 transition-colors`}
@@ -256,6 +280,8 @@ export default function EngagementModelSection() {
                         type="email"
                         name="email"
                         placeholder="Email*"
+                        aria-label="Email"
+                        autoComplete="email"
                         value={formData.email}
                         onChange={handleChange}
                         className={`w-full bg-transparent border-b-2 ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-black placeholder-gray-400 transition-colors`}
@@ -268,8 +294,17 @@ export default function EngagementModelSection() {
                         type="tel"
                         name="phone"
                         placeholder="Phone*"
+                        aria-label="Phone"
+                        inputMode="tel"
+                        autoComplete="tel"
+                        maxLength={20}
+                        aria-invalid={!!errors.phone}
                         value={formData.phone}
                         onChange={handleChange}
+                        onBlur={() =>
+                          formData.phone &&
+                          setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                        }
                         className={`w-full bg-transparent border-b-2 ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:border-red-600 outline-none py-2 text-sm text-black placeholder-gray-400 transition-colors`}
                       />
                       {errors.phone && <span className="text-xs text-red-600 mt-1 block">{errors.phone}</span>}
@@ -279,7 +314,8 @@ export default function EngagementModelSection() {
                       <textarea
                         name="message"
                         rows={3}
-                        placeholder="Write here Brief about the project..."
+                        placeholder="Write a brief about your project..."
+                        aria-label="Project details"
                         value={formData.message}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-black placeholder-gray-400 resize-y transition-colors"
@@ -372,7 +408,7 @@ export default function EngagementModelSection() {
               <div>
                 <Image
                   src="/images/about/engagement-model/engagement-model-lefts.webp"
-                  alt="Engagement Model"
+                  alt="Choosing the right engagement model with DevApp Grid"
                   width={700}
                   height={450}
                   className="w-full h-auto object-cover"
@@ -408,7 +444,7 @@ export default function EngagementModelSection() {
                       <div className="flex flex-col items-center">
                         <Image
                           src="/images/about/engagement-model/Dev-App-04.webp"
-                          alt="Logo"
+                          alt="DevApp Grid"
                           width={100}
                           height={35}
                           className="w-20 sm:w-30 h-auto"
@@ -423,7 +459,7 @@ export default function EngagementModelSection() {
                       <div className="flex flex-col items-center">
                         <Image
                           src="/images/about/engagement-model/emodel-hourly-icn.webp"
-                          alt=""
+                          alt="Time and material model icon"
                           width={35}
                           height={35}
                           className="w-8 sm:w-11.25 h-auto"
@@ -438,7 +474,7 @@ export default function EngagementModelSection() {
                       <div className="flex flex-col items-center">
                         <Image
                           src="/images/about/engagement-model/fixbg-icn-em.webp"
-                          alt=""
+                          alt="Fixed price model icon"
                           width={35}
                           height={35}
                           className="w-8 sm:w-11.25 h-auto"
@@ -453,7 +489,7 @@ export default function EngagementModelSection() {
                       <div className="flex flex-col items-center">
                         <Image
                           src="/images/about/engagement-model/dedicated-icn-em.webp"
-                          alt=""
+                          alt="Dedicated team model icon"
                           width={35}
                           height={35}
                           className="w-8 sm:w-11.25 h-auto"
@@ -495,61 +531,82 @@ export default function EngagementModelSection() {
         <section className="w-full max-w-6xl mx-auto px-4 py-12 text-black ">
           {/* Navigation Tabs */}
           <div className="border-gray-200 mb-8">
-            <nav className="flex space-x-8">
-              {tabsData.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveModelTab(tab.id)}
-                  className={`pb-3 text-sm font-semibold transition-all relative ${activeModelTab === tab.id
-                    ? "text-red-700 border-b-2 border-red-600"
-                    : "text-gray-400 hover:text-black "
-                    }`}
-                >
-                  {tab.navLabel}
-                </button>
-              ))}
-            </nav>
+            <div role="tablist" aria-label="Engagement models" className="flex flex-wrap gap-x-8 gap-y-2">
+              {tabsData.map((tab) => {
+                const active = activeModelTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    id={`tab-${tab.id}`}
+                    aria-selected={active}
+                    aria-controls={`panel-${tab.id}`}
+                    onClick={() => setActiveModelTab(tab.id)}
+                    className={`pb-3 text-sm font-semibold transition-all relative ${active
+                      ? "text-red-700 border-b-2 border-red-600"
+                      : "text-gray-500 hover:text-black "
+                      }`}
+                  >
+                    {tab.navLabel}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Main Content Layout (LEFT Text, RIGHT Image) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            {/* LEFT SIDE: Text Details */}
-            <div className="lg:col-span-7 space-y-4">
-              <span className="text-sm text-gray-400 font-medium block">
-                {currentTab.modelNum}
-              </span>
-              <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-                {currentTab.title}
-              </h2>
+          {/* Teeno models ka content HTML mein rehta hai (Google parh sake),
+              sirf active tab nazar aata hai */}
+          {tabsData.map((tab) => {
+            const active = activeModelTab === tab.id;
+            return (
+              <div
+                key={tab.id}
+                role="tabpanel"
+                id={`panel-${tab.id}`}
+                aria-labelledby={`tab-${tab.id}`}
+                className={active ? "grid grid-cols-1 lg:grid-cols-12 gap-10 items-start" : "hidden"}
+              >
+                {/* LEFT SIDE: Text Details */}
+                <div className="lg:col-span-7 space-y-4">
+                  <span className="text-sm text-gray-500 font-medium block">
+                    {tab.modelNum}
+                  </span>
+                  <h3 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+                    {tab.title}
+                  </h3>
 
-              <div className="space-y-4 text-sm leading-relaxed text-black ">
-                {currentTab.paragraphs.map((para, index) => (
-                  <p key={index}>{para}</p>
-                ))}
-              </div>
+                  <div className="space-y-4 text-sm leading-relaxed text-black ">
+                    {tab.paragraphs.map((para, index) => (
+                      <p key={index}>{para}</p>
+                    ))}
+                  </div>
 
-              <div className="pt-2">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">
-                  How It Works
-                </h3>
-                <div className="space-y-3 text-sm leading-relaxed text-black ">
-                  {currentTab.howItWorks.map((para, index) => (
-                    <p key={index}>{para}</p>
-                  ))}
+                  <div className="pt-2">
+                    <h4 className="text-lg font-bold text-slate-900 mb-2">
+                      How It Works
+                    </h4>
+                    <div className="space-y-3 text-sm leading-relaxed text-black ">
+                      {tab.howItWorks.map((para, index) => (
+                        <p key={index}>{para}</p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* RIGHT SIDE: Image Container */}
+                <div className="lg:col-span-5 relative w-full aspect-video lg:aspect-auto lg:h-full min-h-75 overflow-hidden rounded-md">
+                  <Image
+                    src={tab.image}
+                    alt={`${tab.title} engagement model`}
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className="object-cover"
+                  />
                 </div>
               </div>
-            </div>
-
-            {/* RIGHT SIDE: Image Container */}
-            <div className="lg:col-span-5 relative w-full aspect-video lg:aspect-auto lg:h-full min-h-75 overflow-hidden rounded-md">
-              <Image
-                src={currentTab.image}
-                alt={currentTab.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+            );
+          })}
         </section>
 
         <section className="w-full bg-red-50 py-16 px-6 font-sans mb-10">
@@ -558,7 +615,7 @@ export default function EngagementModelSection() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain w-auto h-auto"
@@ -573,7 +630,7 @@ export default function EngagementModelSection() {
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-2xl mb-8 leading-relaxed faq">
-              Send your Requirements on :
+              Send your requirements to:
             </p>
 
             {/* Contact Info Box */}
@@ -617,7 +674,7 @@ export default function EngagementModelSection() {
                   <a href="tel:+18669788570" className="transition-colors">
                     +1 (866) 978-8570,
                   </a>
-                  <a href="tel:+1(323)747-7192" className="transition-colors">
+                  <a href="tel:+13237477192" className="transition-colors">
                     +1 (323) 747-7192
                   </a>
                 </div>
@@ -644,8 +701,8 @@ export default function EngagementModelSection() {
             <h2 className="text-4xl font-bold text-center">
               A Development Partner Businesses Actually Trust
             </h2>
-            <p className="w-full mx-auto mt-4 text-center text-1xl leading-8 text-black">
-              Devapp Grid has spent years earning its reputation as a go-to name
+            <p className="w-full mx-auto mt-4 text-center text-xl leading-8 text-black">
+              DevApp Grid has spent years earning its reputation as a go-to name
               in custom software, web, and mobile app development, and it shows in the work.
               We build secure, scalable technology solutions shaped around what each business
               actually needs, not a generic template. Pair that with a team that knows both
@@ -663,7 +720,8 @@ export default function EngagementModelSection() {
                     <div className="absolute -top-8 right-0 w-15.5 h-15.5 rounded-2xl border border-[#E7E7E7] bg-white flex items-center justify-center">
                       <img
                         src={item.icon}
-                        alt=""
+                        alt={`${item.value} ${item.line1 ?? ""} ${item.line2 ?? ""}`.trim()}
+                        loading="lazy"
                         className="w-11 h-11 object-contain"
                       />
                     </div>
@@ -693,7 +751,7 @@ export default function EngagementModelSection() {
             <div className="mb-6 relative w-16 h-16 flex items-center justify-center">
               <Image
                 src="/images/letdiscuss-icon.webp"
-                alt="Custom Logistics App Support"
+                alt="Talk to the DevApp Grid team"
                 width={64}
                 height={64}
                 className="object-contain w-auto h-auto"
@@ -707,7 +765,7 @@ export default function EngagementModelSection() {
 
             {/* Subtitle Paragraph */}
             <p className="text-sm md:text-base text-black max-w-4xl mb-8 leading-relaxed faq">
-              Choosing the right engagement model can make or break a project, and that's exactly where our experts come in. Devapp Grid has built its name as a trusted software, web, and mobile app development company, delivering secure, scalable, custom technology solutions for years. Our team brings together technical know-how and a structured development approach, helping businesses turn great ideas into digital products that actually succeed. Talk to us today, and let's find the model that works for you.
+              Choosing the right engagement model can make or break a project, and that's exactly where our experts come in. DevApp Grid has built its name as a trusted software, web, and mobile app development company, delivering secure, scalable, custom technology solutions for years. Our team brings together technical know-how and a structured development approach, helping businesses turn great ideas into digital products that actually succeed. Talk to us today, and let's find the model that works for you.
             </p>
 
             {/* Contact Info Box */}
@@ -779,7 +837,7 @@ export default function EngagementModelSection() {
             </h2>
 
             <p className="mt-5 text-center text-[17px] text-black  w-full mx-auto">
-              Have questions about working with Devapp Grid? Here are some quick answers to help you understand our
+              Have questions about working with DevApp Grid? Here are some quick answers to help you understand our
               development process, services, and how we can support your project. Still have questions? Reach out
               to our team and we’ll be happy to discuss your requirements. To understand how to choose a
               software development company, evaluate technical expertise, relevant portfolio work,
@@ -835,11 +893,10 @@ export default function EngagementModelSection() {
               </h3>
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-black ">
-                Have a look at the services and development process of the
-                Devapp Grid. See what process we follow for mobile app and
-                software development. Have a look at how we are praised by our
-                clients. Start a conversation to innovate your next great idea
-                into reality with us.
+                Explore DevApp Grid’s services and the development process we
+                follow for mobile app and software projects, and see what our
+                clients say about working with us. Then start a conversation
+                and let’s turn your next great idea into reality together.
               </p>
             </div>
           </div>
