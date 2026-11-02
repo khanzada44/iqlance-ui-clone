@@ -2,6 +2,9 @@ import Script from "next/script";
 import Navbar from "../components/navigation/Navbar";
 import Footer from "../components/footer/Footer";
 import ZendeskWidget from "../components/ZendeskWidget/ZendeskWidget";
+import CostEstimatePromo from "../components/app-cost-calculator/CostEstimatePromo";
+
+// <body> ke andar, footer ke baad:
 
 export default function WebsiteLayout({
   children,
@@ -31,6 +34,7 @@ export default function WebsiteLayout({
         <main className="w-full pt-17">{children}</main>
         <Footer />
         <ZendeskWidget />
+        <CostEstimatePromo />
       </div>
     </div>
   );

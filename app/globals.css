@@ -4,7 +4,6 @@
   overflow: hidden;
   width: 100%;
 }
-
 .marquee-content {
   display: flex;
   gap: 16px;

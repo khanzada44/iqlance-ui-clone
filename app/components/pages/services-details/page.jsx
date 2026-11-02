@@ -26,16 +26,39 @@ import {
 } from "../../../../utils/data";
 
 
-export default function ServicesCategory({ slug }) {
-  const [serviceData, setServiceData] = useState(null);
-  const [serviceLoading, setServiceLoading] = useState(true);
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\\d+\\s()-]/g, "").replace(/(?!^)\\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\\s()-]/g, "");
+  if (!/^\\+?\\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\\d)\\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// Backend ke HTML mein agar <h1> ho to use <h2> bana do (page par sirf EK H1 rahe)
+const demoteH1 = (html = "") =>
+  String(html).replace(/<h1(\s|>)/gi, "<h2$1").replace(/<\/h1>/gi, "</h2>");
+
+const cleanStyles = (html = "") =>
+  String(html).replace(/\sstyle="[^"]*"/gi, "").replace(/\sstyle='[^']*'/gi, "");
+
+export default function ServicesDetails({ slug, initialService = null }) {
+  const [serviceData, setServiceData] = useState(initialService);
+  const [serviceLoading, setServiceLoading] = useState(!initialService);
   const [serviceError, setServiceError] = useState("");
 
   const [activeTab, setActiveTab] = useState("driver");
   const [activetechnologies, setActivetechnologies] = useState(0);
   const [open, setOpen] = useState(-1);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
-  const [blogs, setBlogs] = useState([]);
   const router = useRouter();
 
   const fileInputRef = useRef(null);
@@ -44,8 +67,8 @@ export default function ServicesCategory({ slug }) {
     email: "",
     phone: "",
     message: "",
-    service: "",
-    service_category: "",
+    service: initialService?.name || initialService?.title || "",
+    service_category: initialService?.category_name || initialService?.category || "",
     file: null,
     sendNda: false,
   });
@@ -60,14 +83,17 @@ export default function ServicesCategory({ slug }) {
 
   useEffect(() => {
     const fetchService = async () => {
-      if (!slug) {
+      // Server se data aa chuka hai to dobara fetch nahi
+      if (!slug || initialService) {
         return;
       }
 
       try {
         setServiceLoading(true);
         setServiceError("");
-        const data = await serviceCategorieBySlug(slug);
+        // Route file jaisa hi: res.data ho to wo, warna res
+        const res = await serviceCategorieBySlug(slug);
+        const data = res?.data ?? res ?? null;
         setServiceData(data);
 
         /* Set API service values into form */
@@ -91,10 +117,11 @@ export default function ServicesCategory({ slug }) {
     };
 
     fetchService();
-  }, [slug]);
+  }, [slug, initialService]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
 
     setFormData((prev) => ({
       ...prev,
@@ -131,8 +158,9 @@ export default function ServicesCategory({ slug }) {
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Enter a valid email address";
     }
-    if (!formData.phone || !formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+    const phoneError = getPhoneError(formData.phone);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
     return newErrors;
@@ -158,7 +186,7 @@ export default function ServicesCategory({ slug }) {
 
       payload.append("name", formData.name || "");
       payload.append("email", formData.email || "");
-      payload.append("phone", formData.phone || "");
+      payload.append("phone", (formData.phone || "").replace(/[\s()-]/g, ""));
       payload.append("message", formData.message || "");
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -211,6 +239,27 @@ export default function ServicesCategory({ slug }) {
     } finally {
       setLoading(false);
     }
+  };
+
+  const serviceName = serviceData?.name || serviceData?.title || "";
+
+  // Har service ke apne FAQs (backend se) — na hon to general faqsData
+  const faqList =
+    Array.isArray(serviceData?.faqs) && serviceData.faqs.length > 0
+      ? serviceData.faqs.map((f) => ({ question: f.question, answer: f.answer }))
+      : faqsData;
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqList.map((f) => ({
+      "@type": "Question",
+      name: String(f.question || ""),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: [String(f.answer || ""), ...(f.points || [])].join(" ").replace(/<[^>]*>/g, "").trim(),
+      },
+    })),
   };
 
   if (serviceLoading) {
@@ -271,15 +320,24 @@ export default function ServicesCategory({ slug }) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <div className="w-full max-w-7xl mx-auto">
         <section className="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-16 lg:px-8">
           <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-start">
             <div className="w-full lg:flex-1 lg:min-w-0 px-5">
+              {serviceName && (
+                <h1 className="mb-6 text-2xl font-bold leading-snug text-black sm:text-3xl md:text-4xl">
+                 
+                </h1>
+              )}
               {serviceData?.description && (
                 <div
                   className="portfolio-dynamic-content w-full text-base leading-relaxed text-black md:text-lg"
                   dangerouslySetInnerHTML={{
-                    __html: serviceData.description,
+                    __html: demoteH1(serviceData.description),
                   }}
                 />
               )}
@@ -309,7 +367,7 @@ export default function ServicesCategory({ slug }) {
                 <div className="absolute -right-3 -top-6 z-10 w-24 drop-shadow-md md:w-28">
                   <img
                     src="/images/contact-form-logo.png"
-                    alt="Contact Form"
+                    alt="Same Day Response Guaranteed"
                     className="h-auto w-full object-contain"
                   />
                 </div>
@@ -321,9 +379,12 @@ export default function ServicesCategory({ slug }) {
                 <p className="mb-8 text-xs font-medium text-black md:text-sm">
                   Guaranteed Response within One Business Day!
                 </p>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                   <div>
+                    <label htmlFor="sc-name" className="sr-only">Name</label>
                     <input
+                      id="sc-name"
+                      autoComplete="name"
                       type="text"
                       name="name"
                       placeholder="Name*"
@@ -342,7 +403,10 @@ export default function ServicesCategory({ slug }) {
                   </div>
 
                   <div>
+                    <label htmlFor="sc-email" className="sr-only">Email</label>
                     <input
+                      id="sc-email"
+                      autoComplete="email"
                       type="email"
                       name="email"
                       placeholder="Email*"
@@ -361,12 +425,22 @@ export default function ServicesCategory({ slug }) {
                   </div>
 
                   <div>
+                    <label htmlFor="sc-phone" className="sr-only">Phone</label>
                     <input
+                      id="sc-phone"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      maxLength={20}
+                      aria-invalid={!!errors.phone}
                       type="tel"
                       name="phone"
                       placeholder="Phone*"
                       value={formData.phone}
                       onChange={handleChange}
+                      onBlur={() =>
+                        formData.phone &&
+                        setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                      }
                       className={`w-full border-b-2 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 transition-colors ${errors.phone
                           ? "border-red-500 focus:border-red-600"
                           : "border-gray-300 focus:border-red-600"
@@ -379,10 +453,12 @@ export default function ServicesCategory({ slug }) {
                     )}
                   </div>
 
+                  <label htmlFor="sc-message" className="sr-only">Project details</label>
                   <textarea
+                    id="sc-message"
                     name="message"
                     rows={3}
-                    placeholder="Write here Brief about the project..."
+                    placeholder="Write a brief about your project..."
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full resize-y border-b-2 border-gray-300 bg-transparent py-2 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-red-600"
@@ -448,9 +524,7 @@ export default function ServicesCategory({ slug }) {
             <div
               className="mt-10 w-full"
               dangerouslySetInnerHTML={{
-                __html: serviceData.content_1
-                  .replace(/\sstyle="[^"]*"/gi, "")
-                  .replace(/\sstyle='[^']*'/gi, ""),
+                __html: demoteH1(cleanStyles(serviceData.content_1)),
               }}
             />
           )}
@@ -464,7 +538,7 @@ export default function ServicesCategory({ slug }) {
             </h2>
 
             <p className="max-w-6xl mx-auto text-center text-gray-600 mt-4 sm:mt-6 leading-7 sm:leading-8 text-sm sm:text-base faq px-4">
-              At Devapp Grid, we don't believe in one-size-fits-all every industry
+              At DevApp Grid, we don't believe in one-size-fits-all; every industry
               has its own challenges, and our solutions are built to match.
               Backed by deep, hands-on experience across sectors, we deliver
               high-quality web applications, mobile apps, and custom software
@@ -479,7 +553,8 @@ export default function ServicesCategory({ slug }) {
                 >
                   <img
                     src={item.bgImage}
-                    alt={item.title}
+                    alt={`${item.title} app development`}
+                    loading="lazy"
                     className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition"></div>
@@ -487,7 +562,8 @@ export default function ServicesCategory({ slug }) {
                     <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
                       <img
                         src={item.icon}
-                        alt=""
+                        alt={`${item.title} icon`}
+                        loading="lazy"
                         className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full object-cover"
                       />
                     </div>
@@ -515,7 +591,7 @@ export default function ServicesCategory({ slug }) {
             </p>
 
           <div className="mt-12 space-y-4">
-            {faqsData.map((faq, index) => {
+            {faqList.map((faq, index) => {
               const isOpen = open === index;
 
               return (
@@ -560,16 +636,15 @@ export default function ServicesCategory({ slug }) {
           </div>
 
             <div className="mt-15 text-center">
-              <h3 className="text-4xl font-bold">
+              <h2 className="text-4xl font-bold">
                 Have Something in Mind? Let's Talk
-              </h3>
+              </h2>
 
               <p className="mt-6 w-full mx-auto text-[17px] leading-8 text-gray-600 faq px-4">
-                Have a look at the services and development process of the
-                Devapp Grid. See what process we follow for mobile app and
-                software development. Have a look at how we are praised by our
-                clients. Start a conversation to innovate your next great idea
-                into reality with us.
+                Explore DevApp Grid’s services and the development process we
+                follow for mobile app and software projects, and see what our
+                clients say about working with us. Then start a conversation
+                and let’s turn your next great idea into reality together.
               </p>
             </div>
           </div>
@@ -588,6 +663,7 @@ export default function ServicesCategory({ slug }) {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

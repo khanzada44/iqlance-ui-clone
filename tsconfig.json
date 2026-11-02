@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/components/app-cost-calculator/data.js"  ],
   "exclude": ["node_modules"]
 }

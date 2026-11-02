@@ -2,12 +2,15 @@ import { cache } from "react";
 import { notFound } from "next/navigation";
 import ServicesCategory from "../../../components/pages/services-category/page";
 import { getServicesData } from "@/lib/navigation-data";
+// Wahi API jo component browser mein chala raha tha — ab build ke waqt server par chalegi
+import { serviceCategorieSlug } from "@/services/all-sub-categories";
 
 const SITE_URL = "https://devappgrid.com";
 const ROUTE_BASE = "/services-category";
 
 export const dynamicParams = false;
 
+// Menu wali list (slug + href ke liye)
 const getCategories = cache(async () => {
   const data = await getServicesData();
   return data?.categories || [];
@@ -15,7 +18,7 @@ const getCategories = cache(async () => {
 
 const slugFromHref = (href) => (href ? href.split("/").filter(Boolean).pop() : null);
 
-// href se saaf path: "/services-category/mobile-app/" -> "/services-category/mobile-app"
+
 function cleanPath(href, slug) {
   try {
     const p = new URL(href, SITE_URL).pathname.replace(/\/+$/, "");
@@ -24,7 +27,6 @@ function cleanPath(href, slug) {
     return `${ROUTE_BASE}/${slug}`;
   }
 }
-
 
 function decode(str = "") {
   return String(str)
@@ -36,9 +38,23 @@ function decode(str = "") {
     .replace(/&amp;/g, "&");
 }
 
+const plain = (html = "") =>
+  decode(String(html).replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+
 const getCategory = cache(async (slug) => {
   const categories = await getCategories();
   return categories.find((item) => slugFromHref(item?.href) === slug) || null;
+});
+
+// ASAL content (description, content) — component jaisa hi: data[0]
+const getService = cache(async (slug) => {
+  try {
+    const data = await serviceCategorieSlug(slug);
+    return data?.[0] || null;
+  } catch (error) {
+    console.error(`[services-category] "${slug}" ka content nahi mila:`, error?.message || error);
+    return null; // null hua to component browser mein khud fetch karega
+  }
 });
 
 export async function generateStaticParams() {
@@ -51,13 +67,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const category = await getCategory(slug);
+  const [category, service] = await Promise.all([getCategory(slug), getService(slug)]);
 
-  const name = decode(category?.name || category?.title || "Services");
-  const title = decode(category?.meta_title || `${name} | DevApp Grid`);
+  const name = decode(service?.name || service?.title || category?.name || category?.title || "Services");
+  const title = decode(service?.meta_title || category?.meta_title || `${name} | DevApp Grid`);
   const description = decode(
-    category?.meta_description ||
-      category?.description ||
+    service?.meta_description ||
+      category?.meta_description ||
+      plain(service?.description).slice(0, 160) ||
       `Explore DevApp Grid's ${name} services and solutions for businesses across the USA.`
   );
   const path = cleanPath(category?.href, slug);
@@ -65,7 +82,7 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
-    alternates: { canonical: path }, // -> https://devappgrid.com/<category-url>
+    alternates: { canonical: path },
     openGraph: { title, description, url: path, type: "website" },
     twitter: { card: "summary_large_image", title, description },
   };
@@ -73,10 +90,10 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const { slug } = await params;
-  const category = await getCategory(slug);
+  const [category, service] = await Promise.all([getCategory(slug), getService(slug)]);
   if (!category) notFound();
 
-  const name = decode(category?.name || category?.title || "Services");
+  const name = decode(service?.name || service?.title || category?.name || category?.title || "Services");
   const path = cleanPath(category?.href, slug);
 
   const breadcrumb = {
@@ -95,7 +112,7 @@ export default async function Page({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb).replace(/</g, "\\u003c") }}
       />
-      <ServicesCategory slug={slug} initialCategory={category} />
+      <ServicesCategory slug={slug} initialService={service} />
     </>
   );
 }

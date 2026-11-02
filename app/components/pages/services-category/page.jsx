@@ -12,7 +12,7 @@ import {
   Phone,
 } from "lucide-react";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -33,12 +33,38 @@ import { partners } from "../../../../utils/data";
 
 import Image from "next/image";
 
-export default function ServicesCategory({ slug }) {
+// Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
+const sanitizePhone = (value) =>
+  value.replace(/[^\\d+\\s()-]/g, "").replace(/(?!^)\\+/g, "").slice(0, 20);
+
+// 10–15 digits zaroori
+const getPhoneError = (phone) => {
+  const value = (phone || "").trim();
+  if (!value) return "Phone number is required";
+  const cleaned = value.replace(/[\\s()-]/g, "");
+  if (!/^\\+?\\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\\D/g, "");
+  if (digits.length < 10) return "Phone number must be at least 10 digits";
+  if (digits.length > 15) return "Phone number cannot be more than 15 digits";
+  if (/^(\\d)\\1+$/.test(digits)) return "Enter a valid phone number";
+  return "";
+};
+
+// Backend ke HTML mein <h1> ho to <h2> bana do — page par sirf EK H1 rahe
+const demoteH1 = (html = "") =>
+  String(html).replace(/<h1(\s|>)/gi, "<h2$1").replace(/<\/h1>/gi, "</h2>");
+
+const cleanStyles = (html = "") =>
+  String(html).replace(/\sstyle="[^"]*"/gi, "").replace(/\sstyle='[^']*'/gi, "");
+
+// initialService server (app/.../services-category/[slug]/page.jsx) se aata hai.
+// Is se build ke waqt hi backend ka content HTML mein aa jata hai (Google ko khali page nahi milta).
+export default function ServicesCategory({ slug, initialService = null }) {
   const [errors, setErrors] = useState({});
   const router = useRouter();
-  const [serviceData, setServiceData] = useState(null);
+  const [serviceData, setServiceData] = useState(initialService);
 
-  const [serviceLoading, setServiceLoading] = useState(true);
+  const [serviceLoading, setServiceLoading] = useState(!initialService);
 
   const [serviceError, setServiceError] = useState("");
 
@@ -50,8 +76,6 @@ export default function ServicesCategory({ slug }) {
 
   const [activeStepIndex, setActiveStepIndex] = useState(0);
 
-  const [blogs, setBlogs] = useState([]);
-
   const fileInputRef = useRef(null);
 
   // Fixed: Added firstName and lastName to state initialization
@@ -61,8 +85,8 @@ export default function ServicesCategory({ slug }) {
     email: "",
     phone: "",
     message: "",
-    service: "",
-    service_category: "",
+    service: initialService?.name || initialService?.title || "",
+    service_category: initialService?.category_name || initialService?.category || "",
     file: null,
     sendNda: false,
   });
@@ -76,7 +100,8 @@ export default function ServicesCategory({ slug }) {
 
   useEffect(() => {
     const fetchService = async () => {
-      if (!slug) {
+      // Server se data aa chuka hai to dobara fetch nahi
+      if (!slug || initialService) {
         return;
       }
 
@@ -109,11 +134,12 @@ export default function ServicesCategory({ slug }) {
     };
 
     fetchService();
-  }, [slug]);
+  }, [slug, initialService]);
 
   // Updated: Input change hote hi related error remove ho jayega
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value = name === "phone" ? sanitizePhone(e.target.value) : e.target.value;
 
     setFormData((prev) => ({
       ...prev,
@@ -152,8 +178,9 @@ const validateForm = () => {
   } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
     newErrors.email = "Enter a valid email address";
   }
-  if (!formData.phone || !formData.phone.trim()) {
-    newErrors.phone = "Phone number is required";
+  const phoneError = getPhoneError(formData.phone);
+  if (phoneError) {
+    newErrors.phone = phoneError;
   }
 
   return newErrors;
@@ -178,7 +205,7 @@ const validateForm = () => {
       payload.append("name", fullName);
 
       payload.append("email", formData.email || "");
-      payload.append("phone", formData.phone || "");
+      payload.append("phone", (formData.phone || "").replace(/[\s()-]/g, ""));
       payload.append("message", formData.message || "");
       payload.append("is_nda", formData.sendNda ? "1" : "0");
       payload.append("service", formData.service || "");
@@ -299,6 +326,8 @@ const validateForm = () => {
     );
   }
 
+  const serviceName = serviceData?.name || serviceData?.title || "";
+
   return (
     <>
       <div className="mx-auto w-full">
@@ -306,21 +335,20 @@ const validateForm = () => {
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
             {/* ================= LEFT CONTENT ================= */}
             <div className="min-w-0 lg:col-span-7">
-              {/* CATEGORY DESCRIPTION */}
-              {serviceData?.description ? (
+              {serviceName && (
+                <h1 className="text-2xl font-bold leading-snug text-black sm:text-3xl md:text-4xl">
+                  
+                </h1>
+              )}
+
+              {/* CATEGORY DESCRIPTION — restaurant/café wala fallback text hata diya (har service page par galat text jata tha) */}
+              {serviceData?.description && (
                 <div
                   className="mt-6 text-base leading-7 text-black md:text-lg md:leading-8"
                   dangerouslySetInnerHTML={{
-                    __html: serviceData.description,
+                    __html: demoteH1(serviceData.description),
                   }}
                 />
-              ) : (
-                <p className="mt-6 text-base leading-7 text-black md:text-lg md:leading-8">
-                  Many conventional retailers have moved to digitalization
-                  with the introduction of on-demand options. Technology
-                  advancements, particularly mobile evolution, have
-                  dramatically changed the eatery and café sector.
-                </p>
               )}
             </div>
 
@@ -330,7 +358,7 @@ const validateForm = () => {
                 <div className="absolute -right-3 -top-6 z-10 w-24 drop-shadow-md md:w-28">
                   <img
                     src="/images/contact-form-logo.png"
-                    alt="Contact Form"
+                    alt="Same Day Response Guaranteed"
                     className="h-auto w-full object-contain"
                   />
                 </div>
@@ -344,11 +372,14 @@ const validateForm = () => {
                   Guaranteed Response within One Business Day!
                 </p>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                   {/* First Name & Last Name Fields */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
+                      <label htmlFor="sc-firstName" className="sr-only">First name</label>
                       <input
+                        id="sc-firstName"
+                        autoComplete="given-name"
                         type="text"
                         name="firstName"
                         placeholder="First Name*"
@@ -368,7 +399,10 @@ const validateForm = () => {
                     </div>
 
                     <div>
+                      <label htmlFor="sc-lastName" className="sr-only">Last name</label>
                       <input
+                        id="sc-lastName"
+                        autoComplete="family-name"
                         type="text"
                         name="lastName"
                         placeholder="Last Name*"
@@ -390,7 +424,10 @@ const validateForm = () => {
 
                   {/* Email Field */}
                   <div>
+                    <label htmlFor="sc-email" className="sr-only">Email</label>
                     <input
+                      id="sc-email"
+                      autoComplete="email"
                       type="email"
                       name="email"
                       placeholder="Email*"
@@ -411,12 +448,22 @@ const validateForm = () => {
 
                   {/* Phone Field */}
                   <div>
+                    <label htmlFor="sc-phone" className="sr-only">Phone</label>
                     <input
+                      id="sc-phone"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      maxLength={20}
+                      aria-invalid={!!errors.phone}
                       type="tel"
                       name="phone"
                       placeholder="Phone*"
                       value={formData.phone || ""}
                       onChange={handleChange}
+                      onBlur={() =>
+                        formData.phone &&
+                        setErrors((prev) => ({ ...prev, phone: getPhoneError(formData.phone) }))
+                      }
                       className={`w-full bg-transparent border-b-2 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 transition-colors ${
                         errors.phone
                           ? "border-red-500"
@@ -432,10 +479,12 @@ const validateForm = () => {
 
                   {/* Message Field */}
                   <div>
+                    <label htmlFor="sc-message" className="sr-only">Project details</label>
                     <textarea
+                      id="sc-message"
                       name="message"
                       rows={3}
-                      placeholder="Write here Brief about the project..."
+                      placeholder="Write a brief about your project..."
                       value={formData.message || ""}
                       onChange={handleChange}
                       className="w-full bg-transparent border-b-2 border-gray-300 focus:border-red-600 outline-none py-2 text-sm text-gray-800 placeholder-gray-400 resize-y transition-colors"
@@ -480,6 +529,19 @@ const validateForm = () => {
                       Please Send NDA
                     </label>
                   </div>
+                  {statusMessage.text && (
+                    <div
+                      role="status"
+                      className={`p-3 text-sm font-medium border rounded-sm ${
+                        statusMessage.type === "success"
+                          ? "bg-green-50 border-green-200 text-green-700"
+                          : "bg-red-50 border-red-200 text-red-700"
+                      }`}
+                    >
+                      {statusMessage.text}
+                    </div>
+                  )}
+
                   <div className="pt-2">
                     <button
                       type="submit"
@@ -523,22 +585,13 @@ const validateForm = () => {
 
         <section className="mx-auto w-full max-w-7xl px-6 pb-12 md:pb-16">
           <div className="w-full">
-            {serviceData?.content ? (
+            {serviceData?.content && (
               <div
                 className="w-full"
                 dangerouslySetInnerHTML={{
-                  __html: serviceData.content
-                    .replace(/\sstyle="[^"]*"/gi, "")
-                    .replace(/\sstyle='[^']*'/gi, ""),
+                  __html: demoteH1(cleanStyles(serviceData.content)),
                 }}
               />
-            ) : (
-              <p className="text-base leading-7 text-black md:text-lg md:leading-8">
-                Many conventional retailers have moved to digitalization
-                with the introduction of on-demand options. Technology
-                advancements, particularly mobile evolution, have
-                dramatically changed the eatery and café sector.
-              </p>
             )}
           </div>
         </section>
@@ -559,6 +612,7 @@ const validateForm = () => {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

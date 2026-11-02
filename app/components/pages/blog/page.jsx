@@ -4,28 +4,19 @@ import { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
-import { ChevronRight, ArrowRight, Paperclip } from "lucide-react";
+import {  ArrowRight, Paperclip } from "lucide-react";
 // Assumed service imports
 import { getBlogs } from "@/services/blog";
 import { blogByCategory } from "../../../../services/blog";
 import { submitContactForm } from "../../../../services/send-call-request";
 import {
   partners,
-  bottomFeatures,
-  slides,
-  portfolioSlides,
-  technologies,
-  stats,
-  industries,
-  services,
-  faqsData,
-  testimonials,
 } from "../../../../utils/data";
 
 function BlogContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const categoryId = searchParams.get("category_id"); // URL se category_id check kar rahe hain
+  const categoryId = searchParams.get("category_id"); 
 
   const [formData, setFormData] = useState({
     name: "",

@@ -100,10 +100,6 @@ export default async function Page({ params }) {
     service?.meta_description || plain(service?.description || service?.content, 155)
   );
 
-  const faqs = (Array.isArray(service?.faqs) ? service.faqs : []).filter(
-    (f) => f?.question && f?.answer
-  );
-
   const schemas = [
     {
       "@context": "https://schema.org",
@@ -124,17 +120,7 @@ export default async function Page({ params }) {
       ],
     },
   ];
-  if (faqs.length) {
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: plain(f.question),
-        acceptedAnswer: { "@type": "Answer", text: plain(f.answer) },
-      })),
-    });
-  }
+  // FAQ schema yahan nahi — ServicesDetails component khud banata hai (do baar na aaye)
 
   return (
     <>
