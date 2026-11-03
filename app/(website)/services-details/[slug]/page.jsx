@@ -1,24 +1,56 @@
 import { cache } from "react";
-import { notFound } from "next/navigation";
 import ServicesDetails from "../../../components/pages/services-details/page";
 import { getServicesData } from "@/lib/navigation-data";
 import { serviceCategorieBySlug } from "../../../../services/all-sub-categories";
+
 const SITE_URL = "https://devappgrid.com";
 
 export const dynamicParams = false;
 
-const getService = cache(async (slug) => {
+const MAX_PARALLEL = 3;
+let active = 0;
+const waiting = [];
+async function limited(fn) {
+  if (active >= MAX_PARALLEL) await new Promise((resolve) => waiting.push(resolve));
+  active++;
   try {
-    const res = await serviceCategorieBySlug(slug);
-    const data = res?.data ?? res ?? null;
-    // Khali array / khali object ko bhi "nahi mila" samjho
-    if (!data || (Array.isArray(data) && data.length === 0)) return null;
-    return data;
-  } catch (error) {
-    // Error chupana nahi — build log mein nazar aaye ke kaun sa page khali gaya
-    console.error(`[services-details] "${slug}" ka data nahi mila:`, error?.message || error);
-    return null;
+    return await fn();
+  } finally {
+    active--;
+    const next = waiting.shift();
+    if (next) next();
   }
+}
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const hasContent = (s) =>
+  !!s && typeof s === "object" && !!(s.description || s.content || s.content_1 || s.name || s.title);
+
+const getService = cache(async (slug) => {
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await limited(() => serviceCategorieBySlug(slug));
+      const data = res?.data ?? res ?? null;
+      // Kuch endpoints array dete hain, kuch object
+      const service = Array.isArray(data) ? data[0] : data;
+      if (hasContent(service)) return service;
+      console.warn(`[services-details] "${slug}" — koshish ${attempt}/3: backend ne khaali jawab diya`);
+    } catch (error) {
+      console.warn(
+        `[services-details] "${slug}" — koshish ${attempt}/3 fail:`,
+        error?.response?.status || "",
+        error?.message || error
+      );
+    }
+    if (attempt < 3) await sleep(1000 * attempt);
+  }
+  console.error(`[services-details] "${slug}" ka data build mein NAHI mila — ye page Google ko khaali milega`);
+  if (process.env.STRICT_SERVICE_BUILD === "1") {
+    // Build rok do, taa ke khaali page live na jaye
+    throw new Error(`services-details: "${slug}" ka data nahi mila`);
+  }
+  return null;
 });
 
 function decode(str = "") {
@@ -44,7 +76,6 @@ const nameFromSlug = (slug = "") =>
 export async function generateStaticParams() {
   const servicesData = await getServicesData();
   const slugs = [];
-
   servicesData?.categories?.forEach((category) => {
     category.items?.forEach((item) => {
       if (item.href) {
@@ -53,8 +84,9 @@ export async function generateStaticParams() {
       }
     });
   });
-
-  return [...new Set(slugs)].map((slug) => ({ slug }));
+  const unique = [...new Set(slugs)];
+  console.log(`[services-details] ${unique.length} service pages ban rahe hain`);
+  return unique.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }) {
@@ -72,11 +104,11 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: `${SITE_URL}${path}` },
     openGraph: {
       title,
       description,
-      url: path,
+      url: `${SITE_URL}${path}`,
       type: "website",
       ...(image ? { images: [{ url: image }] } : {}),
     },
@@ -92,7 +124,6 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   const { slug } = await params;
   const service = await getService(slug);
-  if (!service) notFound();
 
   const path = `/services-details/${slug}`;
   const name = decode(service?.h1 || service?.title || service?.name || nameFromSlug(slug));
@@ -120,7 +151,6 @@ export default async function Page({ params }) {
       ],
     },
   ];
-  // FAQ schema yahan nahi — ServicesDetails component khud banata hai (do baar na aaye)
 
   return (
     <>
@@ -131,8 +161,8 @@ export default async function Page({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(s).replace(/</g, "\\u003c") }}
         />
       ))}
-
-      {/* Data server se jata hai — HTML mein content hoga, Google parh sakega */}
+      {/* Data mila → content seedha HTML mein (Google parh sakta hai).
+          Na mila → page khaali nahi rehta: browser mein khud load hota hai (backup). */}
       <ServicesDetails slug={slug} initialService={service} />
     </>
   );
