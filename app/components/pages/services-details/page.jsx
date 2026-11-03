@@ -28,18 +28,18 @@ import {
 
 // Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
 const sanitizePhone = (value) =>
-  value.replace(/[^\\d+\\s()-]/g, "").replace(/(?!^)\\+/g, "").slice(0, 20);
+  value.replace(/[^\d+\s()-]/g, "").replace(/(?!^)\+/g, "").slice(0, 20);
 
 // 10–15 digits zaroori
 const getPhoneError = (phone) => {
   const value = (phone || "").trim();
   if (!value) return "Phone number is required";
-  const cleaned = value.replace(/[\\s()-]/g, "");
-  if (!/^\\+?\\d+$/.test(cleaned)) return "Phone number can only contain digits";
-  const digits = cleaned.replace(/\\D/g, "");
+  const cleaned = value.replace(/[\s()-]/g, "");
+  if (!/^\+?\d+$/.test(cleaned)) return "Phone number can only contain digits";
+  const digits = cleaned.replace(/\D/g, "");
   if (digits.length < 10) return "Phone number must be at least 10 digits";
   if (digits.length > 15) return "Phone number cannot be more than 15 digits";
-  if (/^(\\d)\\1+$/.test(digits)) return "Enter a valid phone number";
+  if (/^(\d)\1+$/.test(digits)) return "Enter a valid phone number";
   return "";
 };
 
@@ -49,6 +49,28 @@ const demoteH1 = (html = "") =>
 
 const cleanStyles = (html = "") =>
   String(html).replace(/\sstyle="[^"]*"/gi, "").replace(/\sstyle='[^']*'/gi, "");
+
+/* Main content ka heading theek karo — page par sirf EK H1:
+   1) Content mein pehle se <h1> hai  → pehla rakho, baaqi <h2>
+   2) <h1> nahi, <h2> hai             → pehla <h2> ko <h1> bana do
+   3) Dono nahi                        → hasH1 = false (phir service ka naam H1 banega) */
+const withSingleH1 = (html = "") => {
+  let out = String(html);
+  if (/<h1[\s>]/i.test(out)) {
+    let open = 0;
+    let close = 0;
+    out = out
+      .replace(/<h1(\s|>)/gi, (m, c) => (++open === 1 ? m : "<h2" + c))
+      .replace(/<\/h1>/gi, (m) => (++close === 1 ? m : "</h2>"));
+    return { html: out, hasH1: true };
+  }
+  const h2 = /<h2(\s[^>]*)?>([\s\S]*?)<\/h2>/i;
+  if (h2.test(out)) {
+    out = out.replace(h2, (m, attrs = "", inner) => `<h1${attrs}>${inner}</h1>`);
+    return { html: out, hasH1: true };
+  }
+  return { html: out, hasH1: false };
+};
 
 export default function ServicesDetails({ slug, initialService = null }) {
   const [serviceData, setServiceData] = useState(initialService);
@@ -241,7 +263,10 @@ export default function ServicesDetails({ slug, initialService = null }) {
     }
   };
 
-  const serviceName = serviceData?.name || serviceData?.title || "";
+  const serviceName = serviceData?.h1 || serviceData?.name || serviceData?.title || "";
+  // Kuch services mein text "description" mein hota hai, kuch mein "content" mein
+  const mainHtml = serviceData?.description || serviceData?.content || "";
+  const main = withSingleH1(cleanStyles(mainHtml));
 
   // Har service ke apne FAQs (backend se) — na hon to general faqsData
   const faqList =
@@ -324,21 +349,37 @@ export default function ServicesDetails({ slug, initialService = null }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
       />
+      {/* Content wale H1 ki styling (backend ka pehla H2 jo ab H1 hai) */}
+      <style>{`
+        .portfolio-dynamic-content h1 {
+          font-size: clamp(30px, 4.2vw, 52px) !important;
+          line-height: 1.12 !important;
+          font-weight: 800 !important;
+          letter-spacing: -0.02em;
+          margin: 0 0 18px !important;
+        }
+        .portfolio-dynamic-content h1 + h4,
+        .portfolio-dynamic-content h1 + h2 {
+          font-size: clamp(17px, 1.6vw, 22px);
+          font-weight: 600;
+          margin-top: 0;
+        }
+      `}</style>
       <div className="w-full max-w-7xl mx-auto">
         <section className="w-full px-4 py-8 sm:px-6 sm:py-12 md:py-16 lg:px-8">
           <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-start">
             <div className="w-full lg:flex-1 lg:min-w-0 px-5">
-              {serviceName && (
+              {/* H1 content ki pehli heading hai (jaise "Top iOS App Development Company in the USA").
+                  Sirf tab service ka naam H1 banta hai jab content mein koi heading hi na ho. */}
+              {!main.hasH1 && serviceName && (
                 <h1 className="mb-6 text-2xl font-bold leading-snug text-black sm:text-3xl md:text-4xl">
-                 
+                  {serviceName}
                 </h1>
               )}
-              {serviceData?.description && (
+              {mainHtml && (
                 <div
                   className="portfolio-dynamic-content w-full text-base leading-relaxed text-black md:text-lg"
-                  dangerouslySetInnerHTML={{
-                    __html: demoteH1(serviceData.description),
-                  }}
+                  dangerouslySetInnerHTML={{ __html: main.html }}
                 />
               )}
               <div className="flex flex-wrap items-center gap-4 pt-6">
@@ -625,9 +666,16 @@ export default function ServicesDetails({ slug, initialService = null }) {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-5 pb-5 text-[16px] leading-8 text-black">
-                        {faq.answer}
-                      </div>
+                      {/<[a-z][\s\S]*>/i.test(String(faq.answer || "")) ? (
+                        <div
+                          className="px-5 pb-5 text-[16px] leading-8 text-black"
+                          dangerouslySetInnerHTML={{ __html: demoteH1(cleanStyles(faq.answer)) }}
+                        />
+                      ) : (
+                        <div className="px-5 pb-5 text-[16px] leading-8 text-black">
+                          {faq.answer}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

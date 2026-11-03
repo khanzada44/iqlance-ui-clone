@@ -92,9 +92,9 @@ export const ServicesMegaDropdown = ({
                 </div>
               ) : (
                 <div className="flex h-full min-h-25 items-center justify-center">
-                  <p className="text-sm text-gray-400">
+                  {/* <p className="text-sm text-gray-400">
                     No services available.
-                  </p>
+                  </p> */}
                 </div>
               )
             ) : (
