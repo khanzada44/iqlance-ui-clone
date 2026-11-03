@@ -513,7 +513,6 @@ export const MobileNav = ({
               )
             ) : (
               <div className="px-4 py-6 text-sm text-gray-400">
-                {/* No services available. */}
               </div>
             )}
           </div>
