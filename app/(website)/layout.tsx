@@ -3,7 +3,7 @@ import Navbar from "../components/navigation/Navbar";
 import Footer from "../components/footer/Footer";
 import ZendeskWidget from "../components/ZendeskWidget/ZendeskWidget";
 import CostEstimatePromo from "../components/app-cost-calculator/CostEstimatePromo";
-
+import NavbarServer from "../components/navigation/NavbarServer";
 // <body> ke andar, footer ke baad:
 
 export default function WebsiteLayout({
@@ -28,7 +28,7 @@ export default function WebsiteLayout({
   `}
       </Script>
       <div className="fixed top-0 left-0 right-0 z-9999 w-full">
-        <Navbar />
+        <NavbarServer />
       </div>
       <div className="w-full overflow-x-clip flex-1">
         <main className="w-full pt-17">{children}</main>
