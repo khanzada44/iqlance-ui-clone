@@ -21,19 +21,31 @@ import { ServicesMegaDropdown } from "../navigation/ServicesMegaDropdown";
 
 import { NavLink, ServicesData, ServiceCategory } from "@/types/navigation";
 
-export default function Navbar() {
-  const [currentNavLinks, setCurrentNavLinks] =
-    useState<NavLink[]>(initialNavLinks);
+interface NavbarProps {
+  /** Build ke waqt server (NavbarServer) se aate hain — is se menu HTML mein hota hai */
+  serverNavLinks?: NavLink[] | null;
+  serverServicesData?: ServicesData | null;
+}
 
-  const [servicesData, setServicesData] = useState<ServicesData>({
-    title: "What we can do for you",
-    categories: [],
-  });
+const EMPTY_SERVICES: ServicesData = { title: "What we can do for you", categories: [] };
+
+export default function Navbar({ serverNavLinks = null, serverServicesData = null }: NavbarProps) {
+  const hasServerLinks = Array.isArray(serverNavLinks) && serverNavLinks.length > 0;
+  const hasServerServices = (serverServicesData?.categories?.length ?? 0) > 0;
+
+  const [currentNavLinks, setCurrentNavLinks] = useState<NavLink[]>(
+    hasServerLinks ? (serverNavLinks as NavLink[]) : initialNavLinks
+  );
+
+  const [servicesData, setServicesData] = useState<ServicesData>(
+    hasServerServices ? (serverServicesData as ServicesData) : EMPTY_SERVICES
+  );
 
   const [isServicesHovered, setIsServicesHovered] = useState(false);
 
-  const [selectedCategory, setSelectedCategory] =
-    useState<ServiceCategory | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<ServiceCategory | null>(
+    hasServerServices ? (serverServicesData as ServicesData).categories[0] : null
+  );
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -49,6 +61,8 @@ export default function Navbar() {
   useLockedBody(mobileMenuOpen);
 
   useEffect(() => {
+    // Server se links aa chuke hain to dobara fetch nahi (backup: sirf tab jab na aaye hon)
+    if (hasServerLinks) return;
     let isMounted = true;
 
     const loadDynamicData = async () => {
@@ -71,6 +85,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    if (hasServerServices) return;
     let isMounted = true;
 
     const loadServicesData = async () => {
@@ -79,6 +94,7 @@ export default function Navbar() {
 
         if (!isMounted) return;
 
+        if (!data?.categories?.length) return;
         setServicesData(data);
 
         // Select first category automatically
@@ -203,7 +219,7 @@ export default function Navbar() {
           >
             <Image
               src="/images/Dev-App-04.png"
-              alt="Devapp Logo"
+              alt="DevApp Grid"
               width={315}
               height={72}
               className="h-20 w-auto sm:h-9 md:h-20"
@@ -220,14 +236,16 @@ export default function Navbar() {
           onServicesLeave={handleServicesMouseLeave}
         />
         
-        <Link href="/request-a-quote">
-          <button className="flex items-center gap-1.5 bg-red-700 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-red-600 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm lg:flex lg:px-5 lg:py-2.5 group w-full justify-center cursor-pointer whitespace-nowrap">
-            Enquire Now
-            <ArrowRight
-              size={18}
-              className="transition-transform duration-300 group-hover:translate-x-1 shrink-0"
-            />
-          </button>
+        {/* <Link> ke andar <button> galat HTML tha — ab sirf link, wahi design */}
+        <Link
+          href="/request-a-quote"
+          className="flex items-center gap-1.5 bg-red-700 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-red-600 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm lg:flex lg:px-5 lg:py-2.5 group justify-center cursor-pointer whitespace-nowrap"
+        >
+          Enquire Now
+          <ArrowRight
+            size={18}
+            className="transition-transform duration-300 group-hover:translate-x-1 shrink-0"
+          />
         </Link>
       </div>
       {servicesData.categories.length > 0 && selectedCategory && (
@@ -253,6 +271,7 @@ export default function Navbar() {
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
         navLinks={currentNavLinks}
+        servicesData={servicesData}
       />
     </header>
   );

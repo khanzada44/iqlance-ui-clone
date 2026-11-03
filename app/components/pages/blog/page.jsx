@@ -1,22 +1,38 @@
 "use client";
 
-import { useState, useEffect, useRef, Suspense } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useSearchParams, useRouter } from "next/navigation";
-import {  ArrowRight, Paperclip } from "lucide-react";
-// Assumed service imports
+import { useRouter } from "next/navigation";
+import { ArrowRight, Paperclip } from "lucide-react";
 import { getBlogs } from "@/services/blog";
 import { blogByCategory } from "../../../../services/blog";
 import { submitContactForm } from "../../../../services/send-call-request";
-import {
-  partners,
-} from "../../../../utils/data";
+import ContactForm from "../../contactForm/ContactForm"; // pehle import hi nahi tha — form kabhi nahi dikhta tha
+import { partners } from "../../../../utils/data";
 
-function BlogContent() {
+/* API ka jawab kisi bhi shape mein ho — list + pagination nikal lo.
+   app/(website)/blog/page.jsx bhi yahi function use karta hai. */
+export function parseBlogs(res) {
+  const paginated = res?.response?.data || res?.data || res;
+  const list = Array.isArray(paginated) ? paginated : paginated?.data || [];
+  return {
+    blogs: Array.isArray(list) ? list : [],
+    currentPage: paginated?.current_page || 1,
+    lastPage: paginated?.last_page || 1,
+  };
+}
+
+
+export default function Blog({ initialBlogs = [], initialLastPage = 1 }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const categoryId = searchParams.get("category_id"); 
+  // ?category_id= browser mein parho (server par nahi — is se page HTML khaali nahi hota)
+  const [categoryId, setCategoryId] = useState(null);
+  useEffect(() => {
+    try {
+      setCategoryId(new URLSearchParams(window.location.search).get("category_id"));
+    } catch {}
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -31,10 +47,10 @@ function BlogContent() {
 
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState(initialBlogs);
   const [currentPage, setCurrentPage] = useState(1);
-  const [lastPage, setLastPage] = useState(1);
-  const [fetchingBlogs, setFetchingBlogs] = useState(false);
+  const [lastPage, setLastPage] = useState(initialLastPage);
+  const [fetchingBlogs, setFetchingBlogs] = useState(initialBlogs.length === 0);
 
   const fileInputRef = useRef(null);
 
@@ -120,15 +136,9 @@ function BlogContent() {
         res = await getBlogs(page);
       }
 
-      const paginatedData = res?.response?.data || res?.data || res;
-
-      const blogList = Array.isArray(paginatedData)
-        ? paginatedData
-        : paginatedData?.data || [];
-
-      setBlogs(blogList);
-      setCurrentPage(paginatedData?.current_page || 1);
-      setLastPage(paginatedData?.last_page || 1);
+      const parsed = parseBlogs(res);
+      setBlogs(parsed.blogs);
+      setLastPage(parsed.lastPage);
     } catch (error) {
       console.error("Error fetching blogs:", error);
       setBlogs([]);
@@ -138,7 +148,15 @@ function BlogContent() {
   };
 
   useEffect(() => {
+    // Pehla page server se aa chuka hai (aur category nahi) — dobara fetch nahi
+    if (currentPage === 1 && !categoryId && initialBlogs.length > 0) {
+      setBlogs(initialBlogs);
+      setLastPage(initialLastPage);
+      setFetchingBlogs(false);
+      return;
+    }
     fetchBlogs(currentPage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, categoryId]);
 
   const handlePageChange = (newPage) => {
@@ -157,8 +175,8 @@ function BlogContent() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 {/* Left Content */}
                 <div>
-                  <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                    <span className="text-red-600">Blog</span>
+                  <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-red-600">
+                    DevApp Grid <span className="text-red-600">Blog</span>
                   </h1>
 
                   <p className="mt-6 text-black leading-8 text-lg">
@@ -183,21 +201,21 @@ function BlogContent() {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                    <button className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                    <Link href="/contact-us" className="group w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
                       Contact Us
                       <ArrowRight
                         size={18}
                         className="transition-transform duration-300 group-hover:translate-x-1"
                       />
-                    </button>
+                    </Link>
 
-                    <button className="group w-full sm:w-auto border border-gray-300 hover:border-red-600 px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
+                    <Link href="/portfolio" className="group w-full sm:w-auto border border-gray-300 hover:border-red-600 px-8 py-4 font-semibold flex justify-center items-center gap-3 transition cursor-pointer">
                       See Our Work
                       <ArrowRight
                         size={18}
                         className="transition-transform duration-300 group-hover:translate-x-1"
                       />
-                    </button>
+                    </Link>
                   </div>
                 </div>
 
@@ -205,7 +223,7 @@ function BlogContent() {
                 <div className="relative">
                   <img
                     src="/images/contact-form-logo.png"
-                    alt="Guaranteed"
+                    alt="Guaranteed response within one business day"
                     className="absolute -top-12 right-6 w-28 z-10"
                   />
 
@@ -334,9 +352,9 @@ function BlogContent() {
 
           <section>
             <div>
-              <h1 className="md:text-5xl text-center leading-tight text-3xl font-bold">
-                Our Blog
-              </h1>
+              <h2 className="md:text-5xl text-center leading-tight text-3xl font-bold">
+                Our Latest Articles
+              </h2>
               <p className="mt-2 space-y-6 text-center md:text-lg leading-7">
                 Get practical ideas, expert perspectives, and useful tips on software, apps, and digital products. Explore our latest articles to make smarter decisions for your next project.
               </p>
@@ -395,17 +413,55 @@ function BlogContent() {
               </div>
             ) : (
               <div className="text-center py-10 text-gray-500">
-                No blogs available.
+                New articles are coming soon.{" "}
+                <Link href="/contact-us" className="font-semibold text-red-600 underline">
+                  Talk to our team
+                </Link>
               </div>
+            )}
+
+            {/* Pagination */}
+            {lastPage > 1 && (
+              <nav className="mt-10 flex items-center justify-center gap-2" aria-label="Blog pages">
+                <button
+                  type="button"
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="border border-gray-300 px-4 py-2 text-sm font-semibold disabled:opacity-40"
+                >
+                  Previous
+                </button>
+                {Array.from({ length: lastPage }, (_, i) => i + 1).map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    onClick={() => handlePageChange(n)}
+                    aria-current={n === currentPage ? "page" : undefined}
+                    className={`h-10 w-10 text-sm font-semibold ${
+                      n === currentPage ? "bg-red-700 text-white" : "border border-gray-300 hover:border-red-600"
+                    }`}
+                  >
+                    {n}
+                  </button>
+                ))}
+                <button
+                  type="button"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === lastPage}
+                  className="border border-gray-300 px-4 py-2 text-sm font-semibold disabled:opacity-40"
+                >
+                  Next
+                </button>
+              </nav>
             )}
           </section>
         </div>
 
-        {typeof ContactForm !== "undefined" && <ContactForm />}
+        <ContactForm />
       </div>
 
       {/* Partners Marquee */}
-      {typeof partners !== "undefined" && Array.isArray(partners) && (
+      {Array.isArray(partners) && partners.length > 0 && (
         <section className="mb-5 overflow-hidden">
           <div className="marquee">
             <div className="marquee-content">
@@ -426,14 +482,5 @@ function BlogContent() {
         </section>
       )}
     </>
-  );
-}
-
-// Wrap in Suspense boundary for Next.js build prerendering
-export default function Blog() {
-  return (
-    <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
-      <BlogContent />
-    </Suspense>
   );
 }

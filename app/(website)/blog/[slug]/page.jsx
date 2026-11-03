@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -8,11 +7,71 @@ import {
   getBlogBySlug,
 } from "../../../components/pages/blog/data";
 
+const SITE_URL = "https://devappgrid.com";
+
+// Static export: sirf yahi slugs bante hain, baaqi 404
+export const dynamicParams = false;
+
 // Required for static export with dynamic blog slugs
 export async function generateStaticParams() {
   return blogs.map((blog) => ({
     slug: blog.slug,
   }));
+}
+
+/* HTML hata kar saaf text — description ke liye */
+function plain(html = "", max = 0) {
+  const text = String(html)
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;|&apos;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!max || text.length <= max) return text;
+  const cut = text.slice(0, max);
+  return cut.slice(0, cut.lastIndexOf(" ")) + "…";
+}
+
+const absUrl = (src) => (!src ? undefined : /^https?:\/\//i.test(src) ? src : `${SITE_URL}${src.startsWith("/") ? "" : "/"}${src}`);
+
+function describe(blog) {
+  if (blog.meta_description) return blog.meta_description;
+  const firstText = (blog.content || []).map((s) => s.text || s.description || "").find(Boolean) || "";
+  return plain(firstText, 155) || `${blog.title} — insights from the DevApp Grid team.`;
+}
+
+// Har post ka apna title, description, canonical aur social tags
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const blog = getBlogBySlug(slug);
+  if (!blog) return {};
+
+  const url = `${SITE_URL}/blog/${slug}`;
+  const title = blog.meta_title || `${blog.title} | DevApp Grid`;
+  const description = describe(blog);
+  const image = absUrl(blog.image);
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+      siteName: "DevApp Grid",
+      ...(image ? { images: [{ url: image }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      ...(image ? { images: [image] } : {}),
+    },
+  };
 }
 
 export default async function BlogDetailPage({ params }) {
@@ -24,10 +83,49 @@ export default async function BlogDetailPage({ params }) {
     notFound();
   }
 
-  const popularPosts = blog.Popular || [];
+  const popularPosts = (blog.Popular || []).filter((p) => p?.slug && p.slug !== slug);
+
+  const url = `${SITE_URL}/blog/${slug}`;
+  const schemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: blog.title,
+      description: describe(blog),
+      ...(absUrl(blog.image) ? { image: absUrl(blog.image) } : {}),
+      ...(blog.date && !isNaN(Date.parse(blog.date)) ? { datePublished: new Date(blog.date).toISOString() } : {}),
+      author: { "@type": blog.author ? "Person" : "Organization", name: blog.author || "DevApp Grid" },
+      publisher: { "@type": "Organization", name: "DevApp Grid", url: SITE_URL },
+      mainEntityOfPage: url,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+        { "@type": "ListItem", position: 3, name: blog.title, item: url },
+      ],
+    },
+  ];
 
   return (
     <div className="w-[90%] max-w-7xl mx-auto py-16">
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+        />
+      ))}
+
+      {/* Breadcrumb (visible) */}
+      <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-500">
+        <Link href="/" className="hover:text-red-600">Home</Link>
+        <span className="mx-2">/</span>
+        <Link href="/blog" className="hover:text-red-600">Blog</Link>
+      </nav>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
         {/* Left Side - Blog Content */}
@@ -44,9 +142,9 @@ export default async function BlogDetailPage({ params }) {
 
             <span className="text-black">Posted</span>
 
-            <span className="text-[#2878ff]">
+            <time className="text-[#2878ff]" dateTime={!isNaN(Date.parse(blog.date)) ? new Date(blog.date).toISOString().slice(0, 10) : undefined}>
               {blog.date}
-            </span>
+            </time>
 
             <span className="text-black">In</span>
 
@@ -104,14 +202,14 @@ export default async function BlogDetailPage({ params }) {
         {/* Right Side - Popular Posts */}
         <aside className="min-w-0">
           <h2 className="text-2xl sm:text-3xl font-bold mb-8">
-            Popular Post
+            Popular Posts
           </h2>
 
           <div className="space-y-6">
             {popularPosts.map((post, index) => (
               <Link
                 key={post.slug || index}
-                href={post.slug ? `/blog/${post.slug}` : "#"}
+                href={`/blog/${post.slug}`}
                 className="flex gap-4 pb-6 border-b border-gray-200 hover:opacity-80 transition"
               >
                 {/* Popular Post Image */}
@@ -127,9 +225,9 @@ export default async function BlogDetailPage({ params }) {
 
                 {/* Popular Post Details */}
                 <div className="min-w-0">
-                  <h3 className="text-sm font-semibold leading-6">
+                  <p className="text-sm font-semibold leading-6">
                     {post.title}
-                  </h3>
+                  </p>
 
                   {post.date && (
                     <p className="text-sm text-black mt-2">

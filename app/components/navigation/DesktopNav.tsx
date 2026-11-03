@@ -21,10 +21,11 @@ export const DesktopNav = ({
   onServicesLeave,
 }: DesktopNavProps) => {
   return (
-    <nav className="hidden items-center gap-4 lg:gap-8 xl:flex">
+    <nav className="hidden items-center gap-4 lg:gap-8 xl:flex" aria-label="Main">
       {navLinks.map((link) => {
         const isActive = activeDropdown === link.label;
         const isServices = link.label === 'Services';
+        const hasDropdown = !!link.dropdown?.length;
 
         return (
           <div
@@ -47,6 +48,8 @@ export const DesktopNav = ({
           >
             <Link
               href={link.href}
+              aria-haspopup={hasDropdown || isServices ? 'true' : undefined}
+              aria-expanded={hasDropdown || isServices ? isActive : undefined}
               className={`flex items-center gap-1 text-sm font-medium transition-colors lg:text-base ${
                 isActive ? 'text-red-600' : 'text-gray-700 hover:text-red-600'
               }`}
@@ -55,14 +58,17 @@ export const DesktopNav = ({
               {link.dropdown && (
                 <ChevronDown
                   size={16}
-                  className={`transition-transform duration-100 ${
-                    isActive ? 'rotate-180' : ''
-                  }`}
+                  className={`transition-transform duration-100 ${isActive ? 'rotate-180' : ''}`}
                 />
               )}
             </Link>
-            {link.dropdown && isActive && !isServices && (
-              <DesktopDropdown items={link.dropdown} />
+
+            {/* Dropdown HAMESHA HTML mein (Industry, Solutions ke links Google ko milte hain);
+                hover na ho to sirf chhupa rehta hai. Services ka mega menu Navbar alag dikhata hai. */}
+            {hasDropdown && !isServices && (
+              <div className={isActive ? 'block' : 'hidden'} aria-hidden={!isActive}>
+                <DesktopDropdown items={link.dropdown!} />
+              </div>
             )}
           </div>
         );

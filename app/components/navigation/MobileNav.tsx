@@ -18,13 +18,17 @@ interface MobileNavProps {
   isOpen: boolean;
   onClose: () => void;
   navLinks: NavLink[];
+  /** Navbar se (build ke waqt server ka data) — is se services HTML mein hoti hain */
+  servicesData?: ServicesData | null;
 }
 
 export const MobileNav = ({
   isOpen,
   onClose,
   navLinks,
+  servicesData: servicesFromParent = null,
 }: MobileNavProps) => {
+  const hasParentServices = (servicesFromParent?.categories?.length ?? 0) > 0;
   const [activeSubMenu, setActiveSubMenu] =
     useState<string | null>(null);
 
@@ -32,28 +36,36 @@ export const MobileNav = ({
     useState<string | null>(null);
 
   // Dynamic services data
-  const [servicesData, setServicesData] =
-    useState<ServicesData>({
-      title: "What we can do for you",
-      categories: [],
-    });
+  const [servicesData, setServicesData] = useState<ServicesData>(
+    hasParentServices
+      ? (servicesFromParent as ServicesData)
+      : { title: "What we can do for you", categories: [] }
+  );
+
+  // Parent (Navbar) ka data baad mein aaye to wahi le lo
+  useEffect(() => {
+    if (hasParentServices) setServicesData(servicesFromParent as ServicesData);
+  }, [hasParentServices, servicesFromParent]);
 
   // Selected category
-  const [selectedCategory, setSelectedCategory] =
-    useState<ServiceCategory | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<ServiceCategory | null>(
+    hasParentServices ? (servicesFromParent as ServicesData).categories[0] : null
+  );
 
   // ==========================================
   // Fetch Dynamic Services
   // ==========================================
 
   useEffect(() => {
+    // Navbar se data mil gaya to dobara fetch nahi (backup: sirf tab jab na mila ho)
+    if (hasParentServices) return;
     let isMounted = true;
 
     const loadServicesData = async () => {
       try {
         const data = await getServicesData();
 
-        if (!isMounted) return;
+        if (!isMounted || !data?.categories?.length) return;
 
         setServicesData(data);
 
@@ -74,7 +86,7 @@ export const MobileNav = ({
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [hasParentServices]);
 
   // ==========================================
   // Reset Menus
@@ -344,9 +356,9 @@ export const MobileNav = ({
             <div className="flex-1 overflow-y-auto py-2">
 
               <div className="px-4 pb-2">
-                <h3 className="text-sm font-semibold text-gray-500">
+                <p className="text-sm font-semibold text-gray-500">
                   {servicesData.title}
-                </h3>
+                </p>
               </div>
 
               {servicesData.categories.length > 0 ? (
@@ -357,7 +369,7 @@ export const MobileNav = ({
                       onClick={() =>
                         handleCategoryClick(category)
                       }
-                      className={`flex w-full items-center justify-between px-4 py-3 text-left text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-red-600 ${
+                      className={`flex w-full items-center justify-between px-4 py-3 text-left text-base text-gray-700 transition-all duration-300 hover:bg-red-50 hover:text-red-600 ${
                         activeSubMenu
                           ? "translate-x-0 opacity-100"
                           : "-translate-x-8 opacity-0"
@@ -378,9 +390,13 @@ export const MobileNav = ({
                   )
                 )
               ) : (
-                <div className="px-4 py-6 text-sm text-gray-400">
-                  No service categories available.
-                </div>
+                <Link
+                  href="/services"
+                  onClick={onClose}
+                  className="block px-4 py-6 text-sm font-semibold text-red-600"
+                >
+                  View all services →
+                </Link>
               )}
             </div>
           ) : (
@@ -390,7 +406,7 @@ export const MobileNav = ({
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`flex items-center gap-3 px-4 py-3 text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-red-600 ${
+                    className={`flex items-center gap-3 px-4 py-3 text-base text-gray-700 transition-all duration-300 hover:bg-red-50 hover:text-red-600 ${
                       activeSubMenu
                         ? "translate-x-0 opacity-100"
                         : "-translate-x-8 opacity-0"
@@ -408,7 +424,7 @@ export const MobileNav = ({
                     {item.icon && (
                       <Image
                         src={item.icon}
-                        alt={item.label}
+                        alt=""
                         width={24}
                         height={24}
                         className="h-6 w-6 shrink-0"
@@ -481,40 +497,51 @@ export const MobileNav = ({
             </span>
           </div>
 
-          {/* Services */}
+          {/* Services — HAR category ki list HTML mein (Google ko saare links milte hain),
+              sirf chuni hui category dikhti hai */}
           <div className="flex-1 overflow-y-auto py-2">
-            {selectedCategory?.items?.length ? (
-              selectedCategory.items.map(
-                (item, itemIndex) => (
-                  <Link
-                    key={`${selectedCategory.id}-${item.href}`}
-                    href={item.href}
-                    className={`flex items-center gap-3 px-4 py-3 text-base text-gray-700 transition-all duration-300 hover:bg-blue-50 hover:text-red-600 ${
-                      activeCategory
-                        ? "translate-x-0 opacity-100"
-                        : "-translate-x-8 opacity-0"
-                    }`}
-                    style={{
-                      transitionDelay: activeCategory
-                        ? `${(itemIndex + 1) * 60}ms`
-                        : "0ms",
-                    }}
-                    onClick={() => {
-                      onClose();
-                      setActiveCategory(null);
-                      setActiveSubMenu(null);
-                    }}
-                  >
-                    <span className="flex-1">
-                      {item.name}
-                    </span>
-                  </Link>
-                )
-              )
-            ) : (
-              <div className="px-4 py-6 text-sm text-gray-400">
-              </div>
-            )}
+            {servicesData.categories.map((category) => {
+              const shown = selectedCategory?.id === category.id;
+              const items = category.items ?? [];
+              return (
+                <div key={category.id} className={shown ? "block" : "hidden"}>
+                  {items.length > 0 ? (
+                    items.map((item, itemIndex) => (
+                      <Link
+                        key={`${category.id}-${item.href}`}
+                        href={item.href}
+                        tabIndex={shown && activeCategory ? undefined : -1}
+                        className={`flex items-center gap-3 px-4 py-3 text-base text-gray-700 transition-all duration-300 hover:bg-red-50 hover:text-red-600 ${
+                          activeCategory
+                            ? "translate-x-0 opacity-100"
+                            : "-translate-x-8 opacity-0"
+                        }`}
+                        style={{
+                          transitionDelay: activeCategory
+                            ? `${(itemIndex + 1) * 60}ms`
+                            : "0ms",
+                        }}
+                        onClick={() => {
+                          onClose();
+                          setActiveCategory(null);
+                          setActiveSubMenu(null);
+                        }}
+                      >
+                        <span className="flex-1">{item.name}</span>
+                      </Link>
+                    ))
+                  ) : (
+                    <Link
+                      href={category.href}
+                      onClick={onClose}
+                      className="block px-4 py-6 text-sm font-semibold text-red-600"
+                    >
+                      Explore {category.name} →
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Bottom CTA */}

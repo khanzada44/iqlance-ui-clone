@@ -351,12 +351,21 @@ export default function ServicesDetails({ slug, initialService = null }) {
       />
       {/* Content wale H1 ki styling (backend ka pehla H2 jo ab H1 hai) */}
       <style>{`
-        .portfolio-dynamic-content h1 {
+        .portfolio-dynamic-content h1,
+        .svc-h1 {
           font-size: clamp(30px, 4.2vw, 52px) !important;
-          line-height: 1.12 !important;
+          line-height: 1.15 !important;
           font-weight: 800 !important;
           letter-spacing: -0.02em;
           margin: 0 0 18px !important;
+          /* Laal se gehra maroon gradient (screenshot jaisa) */
+          background: linear-gradient(90deg, #e10600 0%, #b00012 45%, #5c0712 100%) !important;
+          -webkit-background-clip: text !important;
+          background-clip: text !important;
+          -webkit-text-fill-color: transparent !important;
+          color: #b00012 !important; /* purane browser ke liye */
+          display: inline-block;
+          padding-bottom: 0.06em; /* "g", "y" ke neeche wale hisse na katein */
         }
         .portfolio-dynamic-content h1 + h4,
         .portfolio-dynamic-content h1 + h2 {
@@ -372,7 +381,7 @@ export default function ServicesDetails({ slug, initialService = null }) {
               {/* H1 content ki pehli heading hai (jaise "Top iOS App Development Company in the USA").
                   Sirf tab service ka naam H1 banta hai jab content mein koi heading hi na ho. */}
               {!main.hasH1 && serviceName && (
-                <h1 className="mb-6 text-2xl font-bold leading-snug text-black sm:text-3xl md:text-4xl">
+                <h1 className="svc-h1">
                   {serviceName}
                 </h1>
               )}
