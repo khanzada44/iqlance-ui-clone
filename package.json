@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node init && next dev",
     "build": "node init && next build",
+    "postbuild": "node scripts/dir-index.js",
     "start": "node init && next start",
     "lint": "eslint"
   },
