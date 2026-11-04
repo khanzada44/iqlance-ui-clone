@@ -1,5 +1,10 @@
 "use client";
 
+/* components/pages/single-blog/page.jsx
+   ⚠️ Pehle: useSearchParams + <Suspense> + useEffect fetch → static export mein page ka
+   HTML sirf grey "loading" dabbe hote the; Google ko blog ka text, H1, kuch nahi milta tha.
+   Ab: post build ke waqt server (app/(website)/blog/[slug]/page.jsx) se `initialBlog`
+   mein aati hai, is liye poora article HTML mein hota hai. Browser fetch sirf backup hai. */
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -24,6 +29,13 @@ const catHref = (cat) => {
     ? `/blog?category_id=${encodeURIComponent(id)}&category=${encodeURIComponent(catSlug(cat))}`
     : `/blog?category=${encodeURIComponent(catSlug(cat))}`;
 };
+
+/* Article ke andar (backend/WordPress) apna H1 hota hai — page par pehle se H1 hai.
+   Do H1 se bachne ke liye content wale H1 ko H2 bana do. */
+const noExtraH1 = (html = "") =>
+  String(html || "")
+    .replace(/<h1(\s[^>]*)?>/gi, "<h2$1>")
+    .replace(/<\/h1>/gi, "</h2>");
 
 function formatDate(d) {
   if (!d || isNaN(Date.parse(d))) return "";
@@ -136,7 +148,7 @@ export default function SingleBlog({ slug, initialBlog = null, initialCategories
           {/* WordPress HTML Content */}
           <div
             className="blog-content prose prose-lg max-w-none text-slate-800 leading-relaxed prose-headings:text-slate-900 prose-a:text-blue-600 prose-img:rounded-lg"
-            dangerouslySetInnerHTML={{ __html: blog.content || "" }}
+            dangerouslySetInnerHTML={{ __html: noExtraH1(blog.content) }}
           />
         </article>
 
