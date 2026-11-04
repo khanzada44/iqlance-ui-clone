@@ -11,17 +11,7 @@ import { submitContactForm } from "../../../../services/send-call-request";
 import ContactForm from "../../contactForm/ContactForm"; // pehle import hi nahi tha — form kabhi nahi dikhta tha
 import { partners } from "../../../../utils/data";
 
-/* API ka jawab kisi bhi shape mein ho — list + pagination nikal lo.
-   app/(website)/blog/page.jsx bhi yahi function use karta hai. */
-export function parseBlogs(res) {
-  const paginated = res?.response?.data || res?.data || res;
-  const list = Array.isArray(paginated) ? paginated : paginated?.data || [];
-  return {
-    blogs: Array.isArray(list) ? list : [],
-    currentPage: paginated?.current_page || 1,
-    lastPage: paginated?.last_page || 1,
-  };
-}
+import { parseBlogs } from "./blog-utils"; // server bhi isi file se leta hai
 
 
 export default function Blog({ initialBlogs = [], initialLastPage = 1 }) {
@@ -176,7 +166,7 @@ export default function Blog({ initialBlogs = [], initialLastPage = 1 }) {
                 {/* Left Content */}
                 <div>
                   <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-red-600">
-                    DevApp Grid <span className="text-red-600">Blog</span>
+                    DevApp Grid <span className="text-red-700">Blog</span>
                   </h1>
 
                   <p className="mt-6 text-black leading-8 text-lg">
@@ -383,7 +373,7 @@ export default function Blog({ initialBlogs = [], initialLastPage = 1 }) {
                     className="p-px bg-transparent hover:bg-linear-to-r hover:from-red-300 hover:to-red-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
                   >
                     <Link
-                      href={`/single-blog?slug=${blog.slug}`}
+                      href={`/blog/${encodeURIComponent(blog.slug)}`}
                       className="group block overflow-hidden bg-white h-full"
                     >
                       <div className="relative aspect-4/3 overflow-hidden">

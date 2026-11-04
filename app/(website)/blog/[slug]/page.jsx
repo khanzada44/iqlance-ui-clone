@@ -1,100 +1,183 @@
+// app/(website)/blog/[slug]/page.jsx — SERVER component ("use client" NAHI)
+// Dono blog systems ek URL par: /blog/<slug>
+//   1) components/pages/blog/data.js wali local posts
+//   2) Backend (API) wali posts — pehle /single-blog?slug= par thin, ab yahan
+// Dono ka poora HTML build ke waqt banta hai (Google ko text, H1, schema milta hai).
+
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 
-import {
-  blogs,
-  getBlogBySlug,
-} from "../../../components/pages/blog/data";
+import { blogs, getBlogBySlug } from "../../../components/pages/blog/data";
+import SingleBlog from "../../../components/pages/single-blog/page";
+import { parseBlogs, pickBlog, pickList, blogImageUrl } from "../../../components/pages/blog/blog-utils";
+import { getBlogs, getSingleBlog, blogCategories } from "@/services/blog";
 
 const SITE_URL = "https://devappgrid.com";
 
-// Static export: sirf yahi slugs bante hain, baaqi 404
+// Static export: sirf build wale slugs bante hain, baaqi 404
 export const dynamicParams = false;
 
-// Required for static export with dynamic blog slugs
+/* ---------- build-time fetch: retry + ek waqt mein 3 requests ---------- */
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const MAX_PARALLEL = 3;
+let running = 0;
+const queue = [];
+async function limited(fn) {
+  if (running >= MAX_PARALLEL) await new Promise((r) => queue.push(r));
+  running++;
+  try {
+    return await fn();
+  } finally {
+    running--;
+    queue.shift()?.();
+  }
+}
+async function withRetry(label, fn) {
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      return await limited(fn);
+    } catch (err) {
+      console.warn(`[blog] ${label} koshish ${attempt}/3 fail:`, err?.response?.status || "", err?.message || err);
+      if (attempt < 3) await sleep(1000 * attempt);
+    }
+  }
+  console.error(`[blog] ❌ ${label} — build mein nahi mila`);
+  return null;
+}
+
+// Metadata aur page dono same post mangte hain — ek hi dafa fetch
+const blogCache = new Map();
+function getApiBlog(slug) {
+  if (!blogCache.has(slug)) {
+    blogCache.set(
+      slug,
+      withRetry(`post "${slug}"`, () => getSingleBlog(slug)).then((res) => {
+        const b = pickBlog(res);
+        return b?.title ? b : null;
+      }),
+    );
+  }
+  return blogCache.get(slug);
+}
+let categoriesPromise;
+const getCategories = () =>
+  (categoriesPromise ??= withRetry("categories", () => blogCategories()).then(pickList));
+
+/* Backend ki SAARI posts ke slugs (har page) */
+async function getAllApiSlugs() {
+  const slugs = [];
+  const first = parseBlogs(await withRetry("listing page 1", () => getBlogs(1)));
+  first.blogs.forEach((b) => b?.slug && slugs.push(b.slug));
+  for (let page = 2; page <= Math.min(first.lastPage, 50); page++) {
+    const { blogs: list } = parseBlogs(await withRetry(`listing page ${page}`, () => getBlogs(page)));
+    list.forEach((b) => b?.slug && slugs.push(b.slug));
+  }
+  return slugs;
+}
+
 export async function generateStaticParams() {
-  return blogs.map((blog) => ({
-    slug: blog.slug,
-  }));
+  const local = blogs.map((b) => b.slug);
+  const api = await getAllApiSlugs();
+  if (api.length === 0) console.error("[blog] ❌ backend se 0 posts — sirf local posts banengi");
+  const all = [...new Set([...local, ...api].filter(Boolean).map(String))];
+  console.log(`[blog] ${all.length} posts banengi (local ${local.length}, API ${api.length})`);
+  return all.map((slug) => ({ slug }));
 }
 
 /* HTML hata kar saaf text — description ke liye */
 function plain(html = "", max = 0) {
   const text = String(html)
+    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, " ")
     .replace(/<[^>]*>/g, " ")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')
-    .replace(/&#0?39;|&apos;/g, "'")
+    .replace(/&#0?39;|&apos;|&rsquo;|&lsquo;/g, "'")
+    .replace(/&[a-z0-9#]+;/gi, " ")
     .replace(/\s+/g, " ")
     .trim();
   if (!max || text.length <= max) return text;
   const cut = text.slice(0, max);
-  return cut.slice(0, cut.lastIndexOf(" ")) + "…";
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,.;:\-]+$/, "") + "…";
 }
 
 const absUrl = (src) => (!src ? undefined : /^https?:\/\//i.test(src) ? src : `${SITE_URL}${src.startsWith("/") ? "" : "/"}${src}`);
 
+/* Local post (data.js) ki description */
 function describe(blog) {
   if (blog.meta_description) return blog.meta_description;
   const firstText = (blog.content || []).map((s) => s.text || s.description || "").find(Boolean) || "";
   return plain(firstText, 155) || `${blog.title} — insights from the DevApp Grid team.`;
 }
 
+/* Kisi bhi post ko ek shape mein lao (metadata + schema ke liye) */
+async function loadPost(slug) {
+  const local = getBlogBySlug(slug);
+  if (local) {
+    return {
+      source: "local",
+      blog: local,
+      title: local.title,
+      metaTitle: local.meta_title,
+      description: describe(local),
+      image: absUrl(local.image),
+      date: local.date,
+      author: local.author,
+    };
+  }
+  const api = await getApiBlog(slug);
+  if (!api) return { source: "api", blog: null };
+  return {
+    source: "api",
+    blog: api,
+    title: api.title,
+    metaTitle: api.meta_title,
+    description: api.meta_description || plain(api.content, 155) || `${api.title} — insights from the DevApp Grid team.`,
+    image: blogImageUrl(api.image_url || api.image) || undefined,
+    date: api.created_at || api.updated_at,
+    author: api.author?.name || api.author || null,
+  };
+}
+
 // Har post ka apna title, description, canonical aur social tags
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const blog = getBlogBySlug(slug);
-  if (!blog) return {};
-
+  const post = await loadPost(slug);
   const url = `${SITE_URL}/blog/${slug}`;
-  const title = blog.meta_title || `${blog.title} | DevApp Grid`;
-  const description = describe(blog);
-  const image = absUrl(blog.image);
+  if (!post.blog) return { alternates: { canonical: url } };
 
+  const title = post.metaTitle || `${post.title} | DevApp Grid`;
   return {
-    title,
-    description,
+    title: { absolute: title }, // root layout ka template dobara na lage
+    description: post.description,
     alternates: { canonical: url },
     openGraph: {
       title,
-      description,
+      description: post.description,
       url,
       type: "article",
       siteName: "DevApp Grid",
-      ...(image ? { images: [{ url: image }] } : {}),
+      ...(post.image ? { images: [{ url: post.image }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description,
-      ...(image ? { images: [image] } : {}),
+      description: post.description,
+      ...(post.image ? { images: [post.image] } : {}),
     },
   };
 }
 
-export default async function BlogDetailPage({ params }) {
-  const { slug } = await params;
-
-  const blog = getBlogBySlug(slug);
-
-  if (!blog) {
-    notFound();
-  }
-
-  const popularPosts = (blog.Popular || []).filter((p) => p?.slug && p.slug !== slug);
-
-  const url = `${SITE_URL}/blog/${slug}`;
+function Schemas({ post, url }) {
   const schemas = [
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      headline: blog.title,
-      description: describe(blog),
-      ...(absUrl(blog.image) ? { image: absUrl(blog.image) } : {}),
-      ...(blog.date && !isNaN(Date.parse(blog.date)) ? { datePublished: new Date(blog.date).toISOString() } : {}),
-      author: { "@type": blog.author ? "Person" : "Organization", name: blog.author || "DevApp Grid" },
+      headline: post.title,
+      description: post.description,
+      ...(post.image ? { image: post.image } : {}),
+      ...(post.date && !isNaN(Date.parse(post.date)) ? { datePublished: new Date(post.date).toISOString() } : {}),
+      author: { "@type": post.author ? "Person" : "Organization", name: post.author || "DevApp Grid" },
       publisher: { "@type": "Organization", name: "DevApp Grid", url: SITE_URL },
       mainEntityOfPage: url,
     },
@@ -104,21 +187,51 @@ export default async function BlogDetailPage({ params }) {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
         { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
-        { "@type": "ListItem", position: 3, name: blog.title, item: url },
+        { "@type": "ListItem", position: 3, name: post.title, item: url },
       ],
     },
   ];
+  return schemas.map((schema, i) => (
+    <script
+      key={i}
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+    />
+  ));
+}
+
+export default async function BlogDetailPage({ params }) {
+  const { slug } = await params;
+  const post = await loadPost(slug);
+  const url = `${SITE_URL}/blog/${slug}`;
+
+  // Local post (data.js)
+  if (post.source === "local") {
+    return (
+      <>
+        <Schemas post={post} url={url} />
+        <LocalBlogView blog={post.blog} slug={slug} />
+      </>
+    );
+  }
+
+  // API post. Build mein na mili to bhi page khaali/404 NAHI — browser khud fetch karega
+  const categories = await getCategories();
+  return (
+    <>
+      {post.blog && <Schemas post={post} url={url} />}
+      <SingleBlog slug={slug} initialBlog={post.blog} initialCategories={categories || []} />
+    </>
+  );
+}
+
+/* ================= Local post ka layout (pehle wala hi) ================= */
+function LocalBlogView({ blog, slug }) {
+
+  const popularPosts = (blog.Popular || []).filter((p) => p?.slug && p.slug !== slug);
 
   return (
     <div className="w-[90%] max-w-7xl mx-auto py-16">
-      {schemas.map((schema, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
-        />
-      ))}
-
       {/* Breadcrumb (visible) */}
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-500">
         <Link href="/" className="hover:text-red-600">Home</Link>
