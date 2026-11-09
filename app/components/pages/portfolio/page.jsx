@@ -108,13 +108,23 @@ export default function Portfolio({ initialCategories = [] }) {
 
         <div className="pt-4">
           {/* Case study page ban jaye to is button ko <Link href={`/portfolio/${item.slug}`}> bana dein */}
-          <button
+          {/* <button
             type="button"
             className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
           >
-            View Case Study
+            View Case Study {item.slug}
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          </button> */}
+          <Link
+            href={`/case-study/${item.slug}`}
+            className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
+          >
+            View Case Study
+            <ArrowRight
+              size={18}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </Link>
         </div>
       </div>
       <div className="flex justify-center items-center">
