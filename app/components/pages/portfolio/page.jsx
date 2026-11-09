@@ -107,15 +107,15 @@ export default function Portfolio({ initialCategories = [] }) {
         )}
 
         <div className="pt-4">
-          {/* Case study page ban jaye to is button ko <Link href={`/portfolio/${item.slug}`}> bana dein */}
-          {/* <button
+
+          <button
             type="button"
             className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
           >
-            View Case Study {item.slug}
+            View Case Study 
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </button> */}
-          <Link
+          </button>
+          {/* <Link
             href={`/case-study/${item.slug}`}
             className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
           >
@@ -124,7 +124,7 @@ export default function Portfolio({ initialCategories = [] }) {
               size={18}
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div className="flex justify-center items-center">
@@ -190,11 +190,10 @@ export default function Portfolio({ initialCategories = [] }) {
                 type="button"
                 aria-pressed={activeTab === cat.name}
                 onClick={() => handleTabChange(cat.name)}
-                className={`px-8 py-3 text-base font-medium transition-all whitespace-nowrap ${
-                  activeTab === cat.name
+                className={`px-8 py-3 text-base font-medium transition-all whitespace-nowrap ${activeTab === cat.name
                     ? "border-b-2 border-red-600 text-gray-900 font-semibold"
                     : "text-gray-500 hover:text-red-700"
-                }`}
+                  }`}
               >
                 {cat.name}
               </button>
@@ -207,11 +206,10 @@ export default function Portfolio({ initialCategories = [] }) {
                 type="button"
                 aria-pressed={activeSubCategory.toUpperCase() === category.toUpperCase()}
                 onClick={() => setActiveSubCategory(category)}
-                className={`px-3 py-1.5 rounded transition uppercase ${
-                  activeSubCategory.toUpperCase() === category.toUpperCase()
+                className={`px-3 py-1.5 rounded transition uppercase ${activeSubCategory.toUpperCase() === category.toUpperCase()
                     ? "bg-red-700 text-white"
                     : "bg-transparent text-gray-800 hover:bg-gray-100"
-                }`}
+                  }`}
               >
                 {category}
               </button>

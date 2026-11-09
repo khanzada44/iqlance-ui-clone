@@ -24,6 +24,7 @@ import {
   industries,
   faqsData,
 } from "../../../../utils/data";
+import { serviceFaqs } from "./serviceFaqs"; 
 
 
 // Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
@@ -264,13 +265,12 @@ export default function ServicesDetails({ slug, initialService = null }) {
   };
 
   const serviceName = serviceData?.h1 || serviceData?.name || serviceData?.title || "";
-  // Kuch services mein text "description" mein hota hai, kuch mein "content" mein
   const mainHtml = serviceData?.description || serviceData?.content || "";
   const main = withSingleH1(cleanStyles(mainHtml));
-
-  // Har service ke apne FAQs (backend se) — na hon to general faqsData
-  const faqList =
-    Array.isArray(serviceData?.faqs) && serviceData.faqs.length > 0
+  const svcSlug = String(slug || serviceData?.slug || "").toLowerCase();
+  const faqList = serviceFaqs[svcSlug]?.length
+    ? serviceFaqs[svcSlug]
+    : Array.isArray(serviceData?.faqs) && serviceData.faqs.length > 0
       ? serviceData.faqs.map((f) => ({ question: f.question, answer: f.answer }))
       : faqsData;
 
