@@ -38,7 +38,7 @@ export const footerColumns = [
     title: 'Hire Dedicated Developers',
     links: [
       { label: 'Hire Android Developers', href: '/services-details/hire-android-app-developers' },
-      { label: 'Hire .NET Developers', href: '/services-details/aspnet-development' },
+      { label: 'Hire .NET Developers', href: '/services-details/hire-dot-net-developers' },
       { label: 'Hire Flutter Developers', href: '/services-details/hire-flutter-app-developers' },
       { label: 'Hire iPhone Developers', href: '/services-details/hire-iphone-app-developers' },
       { label: 'Hire Mobile Developers', href: '/services-details/hire-mobile-app-developers' },

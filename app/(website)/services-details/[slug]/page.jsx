@@ -73,9 +73,83 @@ function plain(html = "", max = 0) {
 const nameFromSlug = (slug = "") =>
   slug.split("-").filter(Boolean).map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
 
+/* Sitemap wale saare service slugs — menu API fail ho jaye ya koi service menu mein na ho,
+   tab bhi ye pages zaroor banenge (dynamicParams=false ki wajah se warna 404 hote). */
+const KNOWN_SLUGS = [
+  "ios-app-development",
+  "android-app-development",
+  "swift-app-development",
+  "kotlin-app-development",
+  "ipad-app-development",
+  "pwa-development",
+  "react-native-development",
+  "flutter-app-development",
+  "cross-platform-app-development",
+  "mvp-app-development",
+  "smart-watch-app-development",
+  "hybrid-app-development",
+  "web-design",
+  "uiux-development",
+  "php-development",
+  "joomla-development",
+  "wordpress-development",
+  "magento-development",
+  "drupal-development",
+  "aspnet-development",
+  "angular-js-development",
+  "mvp-software-development",
+  "node-js-development",
+  "python-development-company",
+  "crm-software-development",
+  "ruby-on-rails-development",
+  "erp-software-development",
+  "devops-development",
+  "chat-bot",
+  "iot",
+  "laravel-development",
+  "hire-android-app-developers",
+  "hire-dot-net-developers",
+  "hire-flutter-app-developers",
+  "hire-iphone-app-developers",
+  "hire-laravel-developers",
+  "hire-software-developers",
+  "hire-react-js-developer",
+  "hire-react-native-developers",
+  "hire-full-stack-developers",
+  "hire-ai-developers",
+  "it-staff-augmentation",
+  "it-staffing-agency",
+  "applications-promotions",
+  "search-engine-optimization",
+  "social-media",
+  "pay-per-click",
+  "product-market-search",
+  "aiml-development",
+  "generative-ai-development",
+  "ai-chatbot-development",
+  "llm-integration",
+  "computer-vision-development",
+  "microsoft-power-bi-consultancy-company",
+  "microsoft-dynamics-365-development",
+  "hire-mobile-app-developers",
+];
+
 export async function generateStaticParams() {
-  const servicesData = await getServicesData();
-  const slugs = [];
+  let servicesData = null;
+  // Pehle: menu API ek dafa fail → 0 pages. Ab 3 koshishein.
+  for (let attempt = 1; attempt <= 3 && !servicesData?.categories?.length; attempt++) {
+    try {
+      servicesData = await getServicesData();
+    } catch (error) {
+      console.warn(`[services-details] menu API koshish ${attempt}/3 fail:`, error?.message || error);
+    }
+    if (!servicesData?.categories?.length && attempt < 3) await sleep(1000 * attempt);
+  }
+  if (!servicesData?.categories?.length) {
+    console.error("[services-details] ❌ menu API se list nahi mili — sirf KNOWN_SLUGS se pages banenge");
+  }
+
+  const slugs = [...KNOWN_SLUGS];
   servicesData?.categories?.forEach((category) => {
     category.items?.forEach((item) => {
       if (item.href) {

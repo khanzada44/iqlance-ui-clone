@@ -24,7 +24,7 @@ import {
   industries,
   faqsData,
 } from "../../../../utils/data";
-import { serviceFaqs } from "./serviceFaqs"; 
+import { serviceFaqs } from "./serviceFaqs"; // har service ki apni FAQs (slug ke hisaab se)
 
 
 // Phone: sirf digits, +, space, -, ( ) — "+" sirf shuru mein
@@ -75,7 +75,8 @@ const withSingleH1 = (html = "") => {
 
 export default function ServicesDetails({ slug, initialService = null }) {
   const [serviceData, setServiceData] = useState(initialService);
-  const [serviceLoading, setServiceLoading] = useState(!initialService);
+  // Slug hi na ho to "loading" kabhi khatam nahi hota tha (hamesha skeleton) — ab nahi
+  const [serviceLoading, setServiceLoading] = useState(!initialService && !!slug);
   const [serviceError, setServiceError] = useState("");
 
   const [activeTab, setActiveTab] = useState("driver");
@@ -107,7 +108,10 @@ export default function ServicesDetails({ slug, initialService = null }) {
   useEffect(() => {
     const fetchService = async () => {
       // Server se data aa chuka hai to dobara fetch nahi
-      if (!slug || initialService) {
+      if (initialService) return;
+      if (!slug) {
+        setServiceLoading(false);
+        setServiceError("Service not found.");
         return;
       }
 
@@ -265,8 +269,14 @@ export default function ServicesDetails({ slug, initialService = null }) {
   };
 
   const serviceName = serviceData?.h1 || serviceData?.name || serviceData?.title || "";
+  // Kuch services mein text "description" mein hota hai, kuch mein "content" mein
   const mainHtml = serviceData?.description || serviceData?.content || "";
   const main = withSingleH1(cleanStyles(mainHtml));
+
+  /* FAQs kis order mein:
+     1) serviceFaqs.js mein is slug ki FAQs        → wo (har service ki alag)
+     2) Warna backend ne is service ki FAQs bheji hon → wahi
+     3) Warna general FAQs (faqsData)               → sab services ke liye ek jaisi */
   const svcSlug = String(slug || serviceData?.slug || "").toLowerCase();
   const faqList = serviceFaqs[svcSlug]?.length
     ? serviceFaqs[svcSlug]
