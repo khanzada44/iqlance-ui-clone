@@ -569,7 +569,7 @@ export default function LandingPage() {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2 pt-1">
+                  {/* <div className="flex items-center gap-2 pt-1">
                     <input
                       type="checkbox"
                       id="nda"
@@ -589,7 +589,7 @@ export default function LandingPage() {
                     >
                       Please Send NDA
                     </label>
-                  </div>
+                  </div> */}
                   <div className="pt-2">
                     <button
                       type="submit"
