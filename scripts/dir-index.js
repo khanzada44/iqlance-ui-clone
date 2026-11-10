@@ -1,23 +1,32 @@
-// Build ke baad: agar "x.html" aur "x/" folder dono hain,
-// to x.html ko x/index.html mein bhi copy karo (server folder khole to bhi naya page mile)
+// scripts/check-service-pages.js — build ke baad: koi service page khaali to nahi?
 const fs = require("fs");
 const path = require("path");
 
 const OUT = path.join(__dirname, "..", "out");
+const DIR = path.join(OUT, "services-details");
+const bad = [];
 
-function walk(dir) {
-  for (const name of fs.readdirSync(dir)) {
-    const full = path.join(dir, name);
-    if (fs.statSync(full).isDirectory()) {
-      walk(full);
-    } else if (name.endsWith(".html")) {
-      const folder = full.slice(0, -5); // "blog.html" -> "blog"
-      if (fs.existsSync(folder) && fs.statSync(folder).isDirectory()) {
-        fs.copyFileSync(full, path.join(folder, "index.html"));
-        console.log("✓ copy:", path.relative(OUT, full), "→", path.relative(OUT, path.join(folder, "index.html")));
-      }
-    }
-  }
+const check = (file, label) => {
+  const html = fs.readFileSync(file, "utf8");
+  const hasH1 = /<h1[\s>]/i.test(html);
+  // Skeleton ka asli nishan: "Request a Free Quote" form nahi + animate-pulse hai
+  const isSkeleton = html.includes("animate-pulse") && !html.includes("Request a Free Quote");
+  if (!hasH1 || isSkeleton) bad.push(label);
+};
+
+if (!fs.existsSync(DIR)) {
+  console.error("❌ out/services-details folder hi nahi bana — koi service page nahi bana");
+  process.exit(1);
 }
+const files = fs.readdirSync(DIR).filter((f) => f.endsWith(".html"));
+files.forEach((f) => check(path.join(DIR, f), f));
 
-walk(OUT);
+// /services-details (bina slug) wala page bhi
+const index = path.join(OUT, "services-details.html");
+if (fs.existsSync(index)) check(index, "services-details.html (bina slug wala page — delete karein)");
+
+if (bad.length) {
+  console.error(`❌ ${bad.length} khaali service pages:\n - ` + bad.join("\n - "));
+  process.exit(1);
+}
+console.log(`✓ Saare ${files.length} service pages mein content hai`);

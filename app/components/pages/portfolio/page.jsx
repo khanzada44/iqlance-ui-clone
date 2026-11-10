@@ -6,6 +6,10 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import ContactForm from "../../contactForm/ContactForm";
 import { partners } from "../../../../utils/data";
 import { categoriesWithPortfolio } from "../../../../services/all-sub-categories";
+// Jin projects ka case study page bana hua hai (case-study/[slug]/data) — sirf unhi par "View Case Study" link
+import { caseStudies } from "../../../(website)/case-study/[slug]/data";
+
+const CASE_STUDY_SLUGS = new Set(caseStudies.map((c) => c.slug));
 
 // API response se list nikalna (dono jagah same logic)
 const getList = (res) => res?.response?.data || res?.data || [];
@@ -21,8 +25,7 @@ const flattenPortfolios = (category) =>
     return acc;
   }, []) || [];
 
-// initialCategories server (app/portfolio/page.jsx) se aata hai,
-// is liye saare projects build ke waqt hi HTML mein aa jate hain (Google parh sake).
+
 export default function Portfolio({ initialCategories = [] }) {
   const hasInitial = initialCategories.length > 0;
 
@@ -106,26 +109,22 @@ export default function Portfolio({ initialCategories = [] }) {
           </div>
         )}
 
-        <div className="pt-4">
 
-          <button
-            type="button"
-            className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
-          >
-            View Case Study 
-            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-          {/* <Link
-            href={`/case-study/${item.slug}`}
-            className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
-          >
-            View Case Study
-            <ArrowRight
-              size={18}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </Link> */}
-        </div>
+        {/* {item.slug && CASE_STUDY_SLUGS.has(item.slug) && (
+          <div className="pt-4">
+            <Link
+              href={`/case-study/${item.slug}`}
+              className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
+            >
+              View Case Study
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        )} */}
+        <button  className="group mt-8 inline-flex w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold justify-center items-center gap-3 transition cursor-pointer"
+            >
+          View Case Study
+        </button>
       </div>
       <div className="flex justify-center items-center">
         <img
