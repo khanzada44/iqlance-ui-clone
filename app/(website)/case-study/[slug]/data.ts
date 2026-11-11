@@ -7,11 +7,11 @@ export const caseStudies = [
     tagline: "Introducing a simple way to turn surplus food into impact",
     intro:
       "A mobile platform that connects restaurants, grocery stores, and households with local food banks, so surplus food reaches people instead of landfills.",
-    logo: "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/banner-logo.webp",
-    heroImage: "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/banner-bg.webp",
+    logo: "/images/food-reeq-logo.webp",
+    heroImage: "/images/food-reeq-hero.webp",
     metaDescription:
       "See how DevApp Grid built a food waste management app that connects food donors with local food banks through real-time pickups and tracking.",
-    goalImage:'https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/goal.webp',
+    goalImage:'/images/food-reeq-hero-2.webp',
     goal: [
       "Even with significant digital advancements, the traditional courier delivery system had its fair share of flaws and challenges. Most commonly, users faced delays, high costs, and slow processing. On the other end, riders struggled with difficulties in delivery and mobility. To overcome these issues, SuperFlex visualized a powerful system to redefine the traditional courier delivery service with a dedicated mobile application. The initial project scope was straightforward; they wanted to make things easy for the users and carriers while maintaining market-competitive rates.",
       "The SuperFlex idea was to connect the users directly with their parcel carrier. As a result, riders will be able to track their time and progress on the platform, while the users will enjoy a convenient and fast delivery process. In short, SuperFlex wanted to enhance the traditional courier delivery service by integrating a dynamic, peer-to-peer system. For that, SuperFlex chose Trango Tech, the leading mobile app development company, to design and launch a powerful, custom mobile application.",
@@ -33,24 +33,24 @@ export const caseStudies = [
       impact:
         "The revolutionary idea of SuperFlex greatly impacted the package delivery industry. It empowered riders to secure more job opportunities and improve their financial growth. On the other hand, it provided users with a seamless, convenient, and cost-effective package delivery service. With a diverse, dynamic, and secure peer-to-peer system, SuperFlex package delivery services revolutionized the delivery industry. It cemented the SuperFlex name as a top brand in the market and made it the go-to choice for both users and carriers.",
     },
-    tabsImage: "https://application.trangotech.com/wp-content/uploads/2026/05/tabs-phone-1-1.png",
+    tabsImage: "/images/food-waste-hand-nobg.png",
 
     problem: [
       "Before SuperFlex entered the market, the package delivery services faced numerous issues. The problems were wreaking havoc on both sides, as riders struggled with missed opportunities for better earning potential, while delays and high costs frustrated users. The industry desperately needed a solution to counter these disruptions, bridge the gap between users and carriers, and make the package delivery system more flexible and responsive.",
     ],
-    problemImage: "https://application.trangotech.com/wp-content/uploads/2026/05/problem-img.png",
+    problemImage: "/images/food-waste-app-2.webp",
 
     solution:
       "We designed and developed native-feel mobile apps for Android and iOS, plus a web dashboard for food banks. Smart matching pairs each listing with the nearest food bank, expiry-aware scheduling prioritizes urgent pickups, and live tracking keeps everyone updated until the food is delivered.",
-    solutionImage: "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/solution-bg.webp",
+    solutionImage: "/images/food-waste-banner-3d.webp",
 
     technologies: [
-      { name: "Android", icon: "https://application.trangotech.com/wp-content/uploads/2026/05/android.webp" },
-      { name: "iOS", icon: "https://application.trangotech.com/wp-content/uploads/2026/05/node-js.webp" },
-      { name: "React Native", icon: "https://application.trangotech.com/wp-content/uploads/2026/05/python.webp" },
-      { name: "Node.js", icon: "https://application.trangotech.com/wp-content/uploads/2026/05/react.webp" },
-      { name: "PostgreSQL", icon: "https://application.trangotech.com/wp-content/uploads/2026/05/sql.webp" },
-      { name: "Javascript", icon: "https://application.trangotech.com/wp-content/uploads/2026/05/javascript.webp" },
+      { name: "Android", icon: "/images/android.webp" },
+      { name: "iOS", icon: "/images/node-js.webp" },
+      { name: "React Native", icon: "/images/python.webp" },
+      { name: "Node.js", icon: "/images/react.webp" },
+      { name: "PostgreSQL", icon: "/images/sql.webp" },
+      { name: "Javascript", icon: "/images/javascript.webp" },
     ],
 
     results: {
@@ -62,18 +62,18 @@ export const caseStudies = [
         { value: "5K+", label: "Downloads" }, // SAMPLE
       ],
     },
-    resultsImage: "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/results-bg.webp",
+    resultsImage: "/images/food-waste-banner.webp",
 
     designLibrary: {
-      cover: "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/design-img.webp",
+      cover: "/images/food-waste-screens.webp",
       screens: [
-        "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/phone1.webp",
-        "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/phone2.webp",
-        "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/phone3.webp",
-        "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/phone4.webp",
-        "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/phone5.webp",
-        "https://application.trangotech.com/wp-content/themes/trangoapp/assets/img/super-flex/phone6.webp",
-      ],
+        "/images/food-waste-splash.webp",
+        "/images/food-waste-login.webp",
+        "/images/food-waste-language.webp",
+        "/images/food-waste-dashboard.webp",
+        "/images/food-waste-orders.webp",
+        "/images/food-waste-delivered.webp",
+        ],
     },
     ctaImage:'/public/images/cta-desk.png'
   },
