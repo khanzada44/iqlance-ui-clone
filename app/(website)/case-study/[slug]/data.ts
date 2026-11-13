@@ -1,4 +1,6 @@
+
 export const caseStudies = [
+  
   {
     slug: "food-waste-management-app-development",
     title: "Food Waste Management App Development",
