@@ -51,10 +51,6 @@ const demoteH1 = (html = "") =>
 const cleanStyles = (html = "") =>
   String(html).replace(/\sstyle="[^"]*"/gi, "").replace(/\sstyle='[^']*'/gi, "");
 
-/* Main content ka heading theek karo — page par sirf EK H1:
-   1) Content mein pehle se <h1> hai  → pehla rakho, baaqi <h2>
-   2) <h1> nahi, <h2> hai             → pehla <h2> ko <h1> bana do
-   3) Dono nahi                        → hasH1 = false (phir service ka naam H1 banega) */
 const withSingleH1 = (html = "") => {
   let out = String(html);
   if (/<h1[\s>]/i.test(out)) {
@@ -269,14 +265,8 @@ export default function ServicesDetails({ slug, initialService = null }) {
   };
 
   const serviceName = serviceData?.h1 || serviceData?.name || serviceData?.title || "";
-  // Kuch services mein text "description" mein hota hai, kuch mein "content" mein
   const mainHtml = serviceData?.description || serviceData?.content || "";
   const main = withSingleH1(cleanStyles(mainHtml));
-
-  /* FAQs kis order mein:
-     1) serviceFaqs.js mein is slug ki FAQs        → wo (har service ki alag)
-     2) Warna backend ne is service ki FAQs bheji hon → wahi
-     3) Warna general FAQs (faqsData)               → sab services ke liye ek jaisi */
   const svcSlug = String(slug || serviceData?.slug || "").toLowerCase();
   const faqList = serviceFaqs[svcSlug]?.length
     ? serviceFaqs[svcSlug]

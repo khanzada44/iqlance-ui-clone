@@ -2,7 +2,6 @@ import { cache } from "react";
 import ServicesDetails from "../../../components/pages/services-details/page";
 import { getServicesData } from "@/lib/navigation-data";
 import { serviceCategorieBySlug } from "../../../../services/all-sub-categories";
-
 const SITE_URL = "https://devappgrid.com";
 
 export const dynamicParams = false;
@@ -25,8 +24,7 @@ async function limited(fn) {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const hasContent = (s) =>
-  !!s && typeof s === "object" && !!(s.description || s.content || s.content_1 || s.name || s.title);
-
+  !!s && typeof s === "object" && !!(s.description || s.content || s.content_1);
 const getService = cache(async (slug) => {
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
@@ -133,7 +131,18 @@ const KNOWN_SLUGS = [
   "microsoft-dynamics-365-development",
   "hire-mobile-app-developers",
 ];
+// scripts/test-slugs.mjs
 
+
+for (const slug of ["hire-mobile-app-developers", "aspnet-development", "node-js-development", "kotlin-app-development"]) {
+  try {
+    const res = await serviceCategorieBySlug(slug);
+    const d = res?.data ?? res;
+    console.log(slug, "→", d ? Object.keys(d).slice(0, 8) : "KHALI", "| description:", !!d?.description);
+  } catch (e) {
+    console.log(slug, "→ ERROR", e?.response?.status, e?.message);
+  }
+}
 export async function generateStaticParams() {
   let servicesData = null;
   // Pehle: menu API ek dafa fail → 0 pages. Ab 3 koshishein.
