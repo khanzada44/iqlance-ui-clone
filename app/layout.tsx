@@ -31,22 +31,26 @@ export const metadata: Metadata = {
 
 
 const SOCIAL_LINKS = [
-  "", // https://www.linkedin.com/company/...
-  "", // https://clutch.co/profile/...
-  "", // https://www.goodfirms.co/company/...
-  "", // https://www.facebook.com/...
-  "", // https://www.instagram.com/...
+  "https://www.linkedin.com/company/devapp-grid",
+  "https://www.facebook.com/devappgrid",
+  "https://www.instagram.com/devappgrids",
 ].filter(Boolean);
 
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "DevApp Grid",
+  alternateName: "DevAppGrid",
   url: SITE_URL,
   logo: `${SITE_URL}/images/Dev-App-04.png`,
+  slogan: "Apps Built to Grow Your Business",
+  description:
+    "DevApp Grid is a mobile app and software development company in Los Angeles building iOS, Android, web and AI products for US businesses.",
   email: "info@devappgrid.com",
   telephone: "+1-866-978-8570",
+
   address: {
     "@type": "PostalAddress",
     streetAddress: "6565 Sunset Blvd Ste 190",
@@ -55,6 +59,7 @@ const organizationSchema = {
     postalCode: "90028",
     addressCountry: "US",
   },
+
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+1-866-978-8570",
@@ -62,6 +67,7 @@ const organizationSchema = {
     areaServed: "US",
     availableLanguage: ["English"],
   },
+
   ...(SOCIAL_LINKS.length ? { sameAs: SOCIAL_LINKS } : {}),
 };
 

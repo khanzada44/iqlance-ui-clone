@@ -1,9 +1,3 @@
-// app/(website)/blog/[slug]/page.jsx — SERVER component ("use client" NAHI)
-// Dono blog systems ek URL par: /blog/<slug>
-//   1) components/pages/blog/data.js wali local posts
-//   2) Backend (API) wali posts — pehle /single-blog?slug= par thin, ab yahan
-// Dono ka poora HTML build ke waqt banta hai (Google ko text, H1, schema milta hai).
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -13,6 +7,70 @@ import { parseBlogs, pickBlog, pickList, blogImageUrl } from "../../../component
 import { getBlogs, getSingleBlog, blogCategories } from "@/services/blog";
 
 const SITE_URL = "https://devappgrid.com";
+
+/* ---------- SEO: har post ka meta title, description (aur zaroorat ho to canonical) ---------- */
+const LEGACY_MAIN = `${SITE_URL}/blog/signs-your-business-needs-to-modernize-its-legacy-software`;
+const LA_POST = `${SITE_URL}/blog/custom-software-development-company-in-los-angeles-on-time-and-within-budget`;
+
+const SEO_OVERRIDES = {
+  "signs-your-business-needs-to-modernize-its-legacy-software": {
+    title: "Legacy Software Modernization: 8 Signs It's Time to Act",
+    description:
+      "Legacy software modernization made simple: 8 signs your old system needs an upgrade and how to modernize without starting over or losing data.",
+  },
+  // Duplicate post: jab tak 301 redirect nahi lagta, canonical main post ki taraf
+  "signs-your-business-needs-legacy-software-modernization-and-how-to-fix-it-without-starting-over": {
+    title: "Legacy Software Modernization: 8 Signs It's Time to Act",
+    description:
+      "Legacy software modernization made simple: 8 signs your old system needs an upgrade and how to modernize without starting over or losing data.",
+    canonical: LEGACY_MAIN,
+  },
+  // Purana Dallas URL: canonical naye Los Angeles URL ki taraf
+  "custom-software-development-company-in-los-angeles-how-devapp-grid-delivers-on-time-and-within-budget": {
+    title: "Custom Software Development Company in Los Angeles",
+    description:
+      "Looking for a custom software development company in Los Angeles? See costs, how DevApp Grid delivers on time and on budget, and what to ask first.",
+    canonical: LA_POST,
+  },
+  // Naya Los Angeles URL (backend mein slug badalne ke baad)
+  "custom-software-development-company-in-los-angeles-on-time-and-within-budget": {
+    title: "Custom Software Development Company in Los Angeles",
+    description:
+      "Looking for a custom software development company in Los Angeles? See costs, how DevApp Grid delivers on time and on budget, and what to ask first.",
+  },
+  "connect-your-business-systems-with-devapp-grid": {
+    title: "API Integration Services: Connect Your Business Systems",
+    description:
+      "API integration services that connect your CRM, ERP, payments and apps so data flows on its own. See the signs your business needs integration now.",
+  },
+  "how-devapp-builds-scalable-software-that-grows-with-your-business": {
+    title: "Scalable Software Development: Build Software That Grows",
+    description:
+      "Scalable software development explained: why apps break as you grow and how DevApp Grid builds systems that scale without overengineering.",
+  },
+  "uiux-design-for-mobile-apps-why-users-quit-in-72-hours-and-how-to-keep-them": {
+    title: "Mobile App UI/UX Design: Why Users Quit in 72 Hours",
+    description:
+      "Mobile app UI/UX design mistakes make most users quit within 72 hours. Learn the fixes, when you need a UX audit, and how to keep users coming back.",
+  },
+  "choosing-a-mobile-app-development-partner-16-questions-that-can-save-your-business-from-an-expensive-mistake": {
+    title: "How to Choose a Mobile App Development Company: 16 Questions",
+    description:
+      "How to choose a mobile app development company: ask these 16 questions about cost, code ownership, process and support to avoid an expensive mistake.",
+  },
+};
+
+/* List mein post ho to uska title/description/canonical lagao, warna backend wala */
+function withSeo(slug, post) {
+  const seo = SEO_OVERRIDES[slug];
+  if (!seo || !post.blog) return post;
+  return {
+    ...post,
+    metaTitle: seo.title || post.metaTitle,
+    description: seo.description || post.description,
+    canonical: seo.canonical,
+  };
+}
 
 // Static export: sirf build wale slugs bante hain, baaqi 404
 export const dynamicParams = false;
@@ -111,7 +169,7 @@ function describe(blog) {
 }
 
 /* Kisi bhi post ko ek shape mein lao (metadata + schema ke liye) */
-async function loadPost(slug) {
+async function loadPostRaw(slug) {
   const local = getBlogBySlug(slug);
   if (local) {
     return {
@@ -139,12 +197,14 @@ async function loadPost(slug) {
   };
 }
 
+const loadPost = async (slug) => withSeo(slug, await loadPostRaw(slug));
+
 // Har post ka apna title, description, canonical aur social tags
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = await loadPost(slug);
-  const url = `${SITE_URL}/blog/${slug}`;
-  if (!post.blog) return { alternates: { canonical: url } };
+  const url = post.canonical || `${SITE_URL}/blog/${slug}`;
+  if (!post.blog) return { alternates: { canonical: `${SITE_URL}/blog/${slug}` } };
 
   const title = post.metaTitle || `${post.title} | DevApp Grid`;
   return {

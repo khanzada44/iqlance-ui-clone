@@ -1,7 +1,7 @@
 import Restaurant from "../../../components/pages/restaurant/page";
 export const metadata = {
-  title: "Restaurant Ordering App Development for Easy Online Orders",
-  description: "Stop giving away every order to third-party platforms. DevApp Grid builds branded restaurant apps for ordering, delivery, bookings, and loyalty.",
+  title: "Restaurant App Development Company USA | DevApp Grid",
+  description: "A restaurant app development company building apps for online orders, table booking and loyalty rewards that bring US diners back again and again.",
   alternates: { canonical: "/solutions/restaurant" },
 };
 

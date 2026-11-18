@@ -4,12 +4,12 @@ import { categoriesWithPortfolio } from "../../../services/all-sub-categories";
 const SITE_URL = "https://devappgrid.com";
 
 export const metadata = {
-  title: { absolute: "Our Work | 1500+ Apps Built | DevApp Grid" },
+  title: { absolute: "App Development Portfolio & Case Studies | DevApp Grid" },
   description:
-    "Explore real apps built by DevApp Grid for US businesses. Evaluate how our development teams solved complex challenges across multiple industries.",
+    "Browse our app development portfolio: logistics, food delivery, healthcare and fitness apps, with the problem, solution and results for each client.",
   alternates: { canonical: `${SITE_URL}/portfolio` },
   openGraph: {
-    title: "Our Work | 1500+ Apps Built | DevApp Grid",
+    title: "App Development Portfolio & Case Studies | DevApp Grid",
     description:
       "Explore real apps built by DevApp Grid for US businesses across multiple industries.",
     url: `${SITE_URL}/portfolio`,

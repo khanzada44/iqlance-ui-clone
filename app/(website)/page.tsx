@@ -1,14 +1,20 @@
+
 import Manepage from "@/app/components/pages/home/page";
 
 const SITE_URL = "https://devappgrid.com";
-const TITLE = "Mobile App Development Company That Builds Apps for Growth";
+
+const TITLE =
+  "DevApp Grid | Mobile App Development Company in Los Angeles";
+
 const DESCRIPTION =
-  "Got an app idea but no clear path forward? DevApp Grid has delivered 1500+ apps for US businesses. Get a free consultation with an NDA.";
+  "DevApp Grid is a mobile app development company in Los Angeles building iOS, Android and cross-platform apps. 1,500+ projects. Book a free consultation.";
 
 export const metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  alternates: { canonical: `${SITE_URL}/` },
+  alternates: {
+    canonical: `${SITE_URL}/`,
+  },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
@@ -23,6 +29,26 @@ export const metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "DevApp Grid",
+  alternateName: "DevAppGrid",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+};
+
 export default function Home() {
-  return <Manepage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <Manepage />
+    </>
+  );
 }

@@ -1,8 +1,8 @@
 import Socialmedia from "../../../components/pages/social-networking/page";
 
 export const metadata = {
-  title: "Social Networking App Development Company for Growing Communities",
-  description: "Build a social app ready for real communities and growth. DevApp Grid develops feeds, messaging, profiles, groups, and scalable social features.",
+  title: "Social Network Development Company | DevApp Grid",
+  description: "A social network development company building community and social media apps with feeds, chat, groups and moderation that keep users coming back.",
   alternates: { canonical: "/solutions/social-networking" },
 };
 export default function Devapp() {

@@ -1,7 +1,7 @@
 import Logistics from "../../../components/pages/logistics/page";
 export const metadata = {
-  title: "Logistics App Development Company for Better Fleet Control, DevApp Grid",
-  description: "Replace shipment spreadsheets and manual tracking with smarter logistics software. DevApp Grid builds apps for visibility, dispatch, and operations.",
+  title: "Logistics App Development Company USA | DevApp Grid",
+  description: "A logistics app development company building fleet tracking, dispatch and delivery apps that cut costs and delays for US carriers and shippers.",
   alternates: { canonical: "/industry/logistics" },
 };
 export default function Devapp() {

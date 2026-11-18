@@ -1,8 +1,8 @@
 import Healthcare from "../../../components/pages/healthcare/page";
 
 export const metadata = {
-  title: "Healthcare App Development Company for Smarter Care | DevApp Grid",
-  description: "Build healthcare apps around security, usability, and compliance needs. DevApp Grid helps providers streamline workflows and improve patient experiences.",
+  title: "Healthcare Mobile App Development Company | DevApp Grid",
+  description: "A healthcare mobile app development company building HIPAA-ready telemedicine, patient portal and medical apps for US clinics and startups.",
   alternates: { canonical: "/industry/healthcare" },
 };
 export default function Devapp() {

@@ -4,23 +4,23 @@ import { getBlogs } from "@/services/blog";
 
 const SITE_URL = "https://devappgrid.com";
 export const metadata = {
-  title: { absolute: "Blog – App & Software Development Insights | DevApp Grid" },
+  title: { absolute: "App Development Blog: Guides & Insights | DevApp Grid." },
   description:
-    "Practical tips, ideas, and expert insights on mobile app, web, and software development from the DevApp Grid team.",
+    "The DevApp Grid app development blog: practical guides on app costs, hiring developers, UI/UX and software modernization for US business owners.",
   alternates: { canonical: `${SITE_URL}/blog` },
   openGraph: {
-    title: "Blog – App & Software Development Insights | DevApp Grid",
+    title: "App Development Blog: Guides & Insights | DevApp Grid.",
     description:
-      "Practical tips, ideas, and expert insights on mobile app, web, and software development.",
+      "The DevApp Grid app development blog: practical guides on app costs, hiring developers, UI/UX and software modernization for US business owners.",
     url: `${SITE_URL}/blog`,
     type: "website",
     siteName: "DevApp Grid",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog – App & Software Development Insights | DevApp Grid",
+    title: "App Development Blog: Guides & Insights | DevApp Grid.",
     description:
-      "Practical tips, ideas, and expert insights on mobile app, web, and software development.",
+      "The DevApp Grid app development blog: practical guides on app costs, hiring developers, UI/UX and software modernization for US business owners.",
   },
 };
 
