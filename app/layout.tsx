@@ -22,20 +22,21 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
-
   robots: {
     index: true,
     follow: true,
   },
 };
 
-
+// Sirf woh profiles rakhein jo asal mein maujood hain (har link browser mein khol kar check karein)
 const SOCIAL_LINKS = [
   "https://www.linkedin.com/company/devapp-grid",
   "https://www.facebook.com/devappgrid",
   "https://www.instagram.com/devappgrids",
+  "https://themanifest.com/company/devapp-grid",
+  // "https://clutch.co/profile/devapp-grid",       // profile ho to # hata dein
+  // "https://www.goodfirms.co/company/devapp-grid", // profile ho to # hata dein
 ].filter(Boolean);
-
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -50,7 +51,6 @@ const organizationSchema = {
     "DevApp Grid is a mobile app and software development company in Los Angeles building iOS, Android, web and AI products for US businesses.",
   email: "info@devappgrid.com",
   telephone: "+1-866-978-8570",
-
   address: {
     "@type": "PostalAddress",
     streetAddress: "6565 Sunset Blvd Ste 190",
@@ -59,7 +59,6 @@ const organizationSchema = {
     postalCode: "90028",
     addressCountry: "US",
   },
-
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+1-866-978-8570",
@@ -67,8 +66,17 @@ const organizationSchema = {
     areaServed: "US",
     availableLanguage: ["English"],
   },
-
   ...(SOCIAL_LINKS.length ? { sameAs: SOCIAL_LINKS } : {}),
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "DevApp Grid",
+  url: SITE_URL,
+  inLanguage: "en-US",
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 export default function RootLayout({
@@ -79,19 +87,21 @@ export default function RootLayout({
   return (
     <html lang="en-US">
       <body>
+        {/* Organization + WebSite schema (Google ke liye, visitor ko nazar nahi aata) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
+            __html: JSON.stringify([organizationSchema, websiteSchema]).replace(/</g, "\\u003c"),
           }}
         />
 
+        {/* Google Ads tag */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-18460576382"
+          strategy="afterInteractive"
         />
-
-        <Script id="google-ads-tag">
+        <Script id="google-ads-tag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
